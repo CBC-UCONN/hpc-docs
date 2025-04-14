@@ -1,23 +1,109 @@
 [
   {
-    "objectID": "quickstart.html",
-    "href": "quickstart.html",
-    "title": "Quickstart",
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UConn HPC",
     "section": "",
-    "text": "Brief introduction"
+    "text": "File permissions",
+    "crumbs": [
+      "File Permissions"
+    ]
+  },
+  {
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?",
+    "crumbs": [
+      "Miscellaneous"
+    ]
+  },
+  {
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Info here about the file system, permissions, quotas, backup policies.",
+    "crumbs": [
+      "File System & Storage"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Info here about using Env Modules, Conda, Containers, requesting software installation.",
+    "crumbs": [
+      "Software"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "UConn High Performance Computing",
     "section": "",
-    "text": "UConn high performance computing documentation"
+    "text": "UConn high performance computing documentation.\nIntroduction and quickstart here."
   },
   {
-    "objectID": "advanced.html",
-    "href": "advanced.html",
-    "title": "Advanced",
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "UConn HPC",
     "section": "",
-    "text": "Advanced topics"
+    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs",
+    "crumbs": [
+      "Best Practices"
+    ]
+  },
+  {
+    "objectID": "submission.html",
+    "href": "submission.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Batch job submission\nPartitions\nInteractive Job\nJob status and monitering\nRequest time extensions\nJob Arrays\nBest practices",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "access.html",
+    "href": "access.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Requesting Account\nPasswords\nServer addresses\nTerminal, Putty, & Powershell\nVPN\nSSH Keys",
+    "crumbs": [
+      "Accessing the Cluster"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Getting Help\nIf you have a question that is not answered here, contact: cbcsupport@helpspotmail.com\n\n\nSlack\nRequest to be added to the CBC slack channel to join the user community, receive updates, and ask for help.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "scp\nglobus",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "cli.html",
+    "href": "cli.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?",
+    "crumbs": [
+      "Command Line Interface"
+    ]
   }
 ]

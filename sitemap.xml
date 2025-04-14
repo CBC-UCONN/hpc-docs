@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://CBC-UCONN.github.io/hpc-docs/quickstart.html</loc>
-    <lastmod>2025-04-14T16:49:04.105Z</lastmod>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/permissions.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/misc.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/storage.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/software.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
   </url>
   <url>
     <loc>https://CBC-UCONN.github.io/hpc-docs/index.html</loc>
-    <lastmod>2025-04-14T16:49:04.105Z</lastmod>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
   </url>
   <url>
-    <loc>https://CBC-UCONN.github.io/hpc-docs/advanced.html</loc>
-    <lastmod>2025-04-14T16:49:04.105Z</lastmod>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/bestpractices.html</loc>
+    <lastmod>2025-04-14T18:55:47.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/submission.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/access.html</loc>
+    <lastmod>2025-04-14T18:55:47.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/help.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/transfer.html</loc>
+    <lastmod>2025-04-14T18:55:47.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://CBC-UCONN.github.io/hpc-docs/cli.html</loc>
+    <lastmod>2025-04-14T18:55:47.740Z</lastmod>
   </url>
 </urlset>
