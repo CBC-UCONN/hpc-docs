@@ -1,0 +1,26 @@
+name: Render and Publish Website
+on:
+  push:
+    branches:
+      - main  # changes pushed to this branch will trigger a build.
+
+permissions:
+  contents: write # required to push the rendered files to the gh-pages branch
+  pages: write # required to publish the gh-pages branch to GitHub Pages
+
+jobs:
+  build-deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository
+          uses: actions/checkout@v4
+          
+        - name: Set up Quarto
+          uses: quarto-dev/quarto-actions/setup@v2
+
+        - name: Publish to GitHub Pages (and render)
+          uses: quarto-dev/quarto-actions/publish@v2
+          with:
+            target: gh-pages # renderred html files will be pushed to gh-pages branch
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
