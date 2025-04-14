@@ -1,0 +1,13 @@
+Hardware
+
+Operating System
+
+Statistics
+
+Current Status?
+
+Current Usage?
+
+Acknowledgements
+
+Maybe move all of this to introduction?

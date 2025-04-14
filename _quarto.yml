@@ -4,20 +4,55 @@ project:
 
 website:
   title: "UConn HPC"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - quickstart.qmd
-      - advanced.qmd
+  # navbar:
+    # left:
+      # - href: index.qmd
+        # text: Home
+      # - quickstart.qmd
+      # - advanced.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+
+      - text: "Accessing the Cluster"
+        href: access.qmd
+
+      - text: "File System & Storage"
+        href: storage.qmd
+
+      - text: "Job Submission" 
+        href: submission.qmd
+
+      - text: "Transferring Data"
+        href: transfer.qmd
+      
+      - text: "Software"
+        href: software.qmd
+      
+      - text: "Command Line Interface"
+        href: cli.qmd
+      
+      - text: "File Permissions"
+        href: permissions.qmd
+
+      - text: "Best Practices"
+        href: bestpractices.qmd
+
+      - text: "Miscellaneous"
+        href: misc.qmd
+
+      - text: "Get Help"
+        href: help.qmd
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: 
+      light: flatly
+      dark: darkly
     toc: true
+
+
 
 
 
