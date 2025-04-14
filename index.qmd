@@ -1,5 +1,0 @@
----
-title: "UConn High Performance Computing"
----
-
-UConn high performance computing documentation
