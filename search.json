@@ -171,7 +171,7 @@
     "href": "connect.html",
     "title": "Connecting to cluster",
     "section": "",
-    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nUse: &lt;user&gt;@mantis-submit.cam.uchc.edu\nAlternatively: &lt;user&gt;@mantis-sub-1.cam.uchc.edu &lt;user&gt;@mantis-sub-2.cam.uchc.edu &lt;user&gt;@mantis-sub-3.cam.uchc.edu\n\n\n\n&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.\n\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;",
+    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nUse: &lt;user&gt;@mantis-submit.cam.uchc.edu\nAlternatively: &lt;user&gt;@mantis-sub-1.cam.uchc.edu &lt;user&gt;@mantis-sub-2.cam.uchc.edu &lt;user&gt;@mantis-sub-3.cam.uchc.edu\n\n\n\n&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.\n\nMac and Linux UsersPutty, & Powershell\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;\n\n\nInstructioins for these.",
     "crumbs": [
       "Connecting"
     ]
@@ -191,17 +191,7 @@
     "href": "connect.html#can-login-externally-without-vpn-with",
     "title": "Connecting to cluster",
     "section": "",
-    "text": "&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#mac-and-linux-users",
-    "href": "connect.html#mac-and-linux-users",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "An ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;",
+    "text": "&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.\n\nMac and Linux UsersPutty, & Powershell\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;\n\n\nInstructioins for these.",
     "crumbs": [
       "Connecting"
     ]
