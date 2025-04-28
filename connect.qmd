@@ -16,6 +16,7 @@ Alternatively:
 This requires an ssh key.
 
 
+::: {.panel-tabset}
 ## Mac and Linux Users
 An ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.
 
@@ -24,8 +25,12 @@ Login with
 `ssh <user>@<host>` 
 
 
-# Putty, & Powershell
+## Putty, & Powershell
 Instructioins for these. 
+
+:::
+
+
 
 # VPN
 https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/
