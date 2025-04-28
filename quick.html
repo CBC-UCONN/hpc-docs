@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>bestpractices – UConn HPC</title>
+<title>quick – UConn HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bestpractices.html">Best Practices</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quick.html">Quick Reference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link active">
+  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quick.html" class="sidebar-item-text sidebar-link">
+  <a href="./quick.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Quick Reference</span></a>
   </div>
 </li>
@@ -188,8 +188,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#internal-login-node" id="toc-internal-login-node" class="nav-link active" data-scroll-target="#internal-login-node">Internal Login Node</a></li>
+  <li><a href="#external-login-node" id="toc-external-login-node" class="nav-link" data-scroll-target="#external-login-node">External Login Node</a></li>
+  <li><a href="#transfer-node" id="toc-transfer-node" class="nav-link" data-scroll-target="#transfer-node">Transfer Node</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -197,13 +205,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>How to be a good citizen</p>
-<p>Data storage practices</p>
-<p>Don’t run things on login nodes</p>
-<p>Test before scaling</p>
-<p>Warning about LLMs. Mainly, don’t blindly run output from them.</p>
+<section id="internal-login-node" class="level2">
+<h2 class="anchored" data-anchor-id="internal-login-node">Internal Login Node</h2>
+<p>Accessible on campus or through VPN.</p>
+<section id="automatically-assign-login-node" class="level4">
+<h4 class="anchored" data-anchor-id="automatically-assign-login-node">Automatically assign login node</h4>
+<p><code>mantis-submit.cam.uchc.edu</code></p>
+</section>
+<section id="select-specific-login-node" class="level4">
+<h4 class="anchored" data-anchor-id="select-specific-login-node">Select specific login node</h4>
+<p><code>mantis-sub-1.cam.uchc.edu</code></p>
+<p><code>mantis-sub-2.cam.uchc.edu</code></p>
+<p><code>mantis-sub-3.cam.uchc.edu</code></p>
+</section>
+</section>
+<section id="external-login-node" class="level2">
+<h2 class="anchored" data-anchor-id="external-login-node">External Login Node</h2>
+<p>Requires SSH key.</p>
+<p><code>hpc.cam.uchc.edu</code></p>
+</section>
+<section id="transfer-node" class="level2">
+<h2 class="anchored" data-anchor-id="transfer-node">Transfer Node</h2>
+<p><code>transfer.cam.uchc.edu</code></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

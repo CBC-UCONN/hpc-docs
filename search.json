@@ -1,13 +1,60 @@
 [
   {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UConn HPC",
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "Tranferring Data",
     "section": "",
-    "text": "File permissions",
+    "text": "We recommend two different approaches for transferring data to and from the cluster.\nEach are most suitable for different situations. We explain the usage of each tool below.",
     "crumbs": [
-      "File Permissions"
+      "Transferring Data"
     ]
+  },
+  {
+    "objectID": "transfer.html#secure-copy",
+    "href": "transfer.html#secure-copy",
+    "title": "Tranferring Data",
+    "section": "Secure Copy",
+    "text": "Secure Copy\nSecure copy is ideal for transferring small amounts of data and is much simpler to use than Globus connect. A secure copy can be performed with the scp command. This command can only be used to transfer data to and from the transfer node transfer.cam.uchc.edu.\nThe required syntax for scp is:\nscp &lt;src&gt; &lt;dest&gt;\nThe src and dest arguments specify file or directory paths.\nAny remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:\n&lt;user&gt;@&lt;hostname&gt;:.\nIn order to secure copy a directory use the -r option.\n\nTransfer Host\nUsing scp is only permitted on the transfer\nHigh availability transfer node: haxfer.cam.uchc.edu\n\n\nExamples\nCopy a file from your local computer to your home directory on the cluster:\nscp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;\nCopy a directory from the cluster to your local computer:\nscp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#globus-connect",
+    "href": "transfer.html#globus-connect",
+    "title": "Tranferring Data",
+    "section": "Globus Connect",
+    "text": "Globus Connect\nComing soon!",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Environment Modules",
+    "section": "",
+    "text": "Info here about using Env Modules, Conda, Containers, requesting software installation.\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nHow to use a singularity continer.\n\n\nConda\nHow to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software\nhttps://bioinformatics.uconn.edu/contact-us/software-database-request/",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Request an Account",
+    "section": "",
+    "text": "Request an Account\nIn order to access the cluster, you must first create an account.\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all required fields and click submit.\n\n\n\nPasswords\nUpon approval of an account request you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAnytime you need to reset your password, you can do so in the CAM Password Manager.",
+    "crumbs": [
+      "Account & Password"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UConn High Performance Computing",
+    "section": "",
+    "text": "UConn high performance computing documentation.\nIntroduction and quickstart here."
   },
   {
     "objectID": "misc.html",
@@ -20,80 +67,43 @@
     ]
   },
   {
-    "objectID": "storage.html",
-    "href": "storage.html",
-    "title": "UConn HPC",
-    "section": "",
-    "text": "Info here about the file system, permissions, quotas, backup policies.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "UConn HPC",
-    "section": "",
-    "text": "Info here about using Env Modules, Conda, Containers, requesting software installation.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UConn High Performance Computing",
-    "section": "",
-    "text": "UConn high performance computing documentation.\nIntroduction and quickstart here."
-  },
-  {
-    "objectID": "bestpractices.html",
-    "href": "bestpractices.html",
-    "title": "UConn HPC",
-    "section": "",
-    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs",
-    "crumbs": [
-      "Best Practices"
-    ]
-  },
-  {
-    "objectID": "submission.html",
-    "href": "submission.html",
-    "title": "UConn HPC",
-    "section": "",
-    "text": "Batch job submission\nPartitions\nInteractive Job\nJob status and monitering\nRequest time extensions\nJob Arrays\nBest practices",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "access.html",
-    "href": "access.html",
-    "title": "UConn HPC",
-    "section": "",
-    "text": "Requesting Account\nPasswords\nServer addresses\nTerminal, Putty, & Powershell\nVPN\nSSH Keys",
-    "crumbs": [
-      "Accessing the Cluster"
-    ]
-  },
-  {
     "objectID": "help.html",
     "href": "help.html",
     "title": "Getting Help",
     "section": "",
-    "text": "Getting Help\nIf you have a question that is not answered here, contact: cbcsupport@helpspotmail.com\n\n\nSlack\nRequest to be added to the CBC slack channel to join the user community, receive updates, and ask for help.",
+    "text": "Getting Help\nIf you have a question that is not answered here, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the (cbc slack channel](uconn-cbc.slack.com) to ask questions and receive updates and notifications.",
     "crumbs": [
       "Get Help"
     ]
   },
   {
-    "objectID": "transfer.html",
-    "href": "transfer.html",
+    "objectID": "databases.html",
+    "href": "databases.html",
     "title": "UConn HPC",
     "section": "",
-    "text": "scp\nglobus",
+    "text": "List of databses that are kept up to date and accessible on cluster",
     "crumbs": [
-      "Transferring Data"
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Info here about the file system, permissions, quotas, backup policies.\nTODO: How to show quota",
+    "crumbs": [
+      "File System & Storage"
+    ]
+  },
+  {
+    "objectID": "submission.html",
+    "href": "submission.html",
+    "title": "Batch job submission",
+    "section": "",
+    "text": "Batch job submission\n\n\n\nPartitions\nExplain the purpose of each of these - general - himem - gpu - vcell\n\n\nInteractive Job\nsrun --partition=general --qos=general --pty bash\n\n\nJob status and monitering\n\n\nRequest time extensions\n\n\nJob Arrays\n\n\nBest practices",
+    "crumbs": [
+      "Job Submission"
     ]
   },
   {
@@ -104,6 +114,106 @@
     "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?",
     "crumbs": [
       "Command Line Interface"
+    ]
+  },
+  {
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
+    "crumbs": [
+      "Quick Reference"
+    ]
+  },
+  {
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
+    "crumbs": [
+      "Quick Reference"
+    ]
+  },
+  {
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UConn HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu",
+    "crumbs": [
+      "Quick Reference"
+    ]
+  },
+  {
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UConn HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu",
+    "crumbs": [
+      "Quick Reference"
+    ]
+  },
+  {
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them.",
+    "crumbs": [
+      "Best Practices"
+    ]
+  },
+  {
+    "objectID": "connect.html",
+    "href": "connect.html",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nUse: &lt;user&gt;@mantis-submit.cam.uchc.edu\nAlternatively: &lt;user&gt;@mantis-sub-1.cam.uchc.edu &lt;user&gt;@mantis-sub-2.cam.uchc.edu &lt;user&gt;@mantis-sub-3.cam.uchc.edu\n\n\n\n&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.\n\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#when-on-campus-or-logged-into-vpn",
+    "href": "connect.html#when-on-campus-or-logged-into-vpn",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "Use: &lt;user&gt;@mantis-submit.cam.uchc.edu\nAlternatively: &lt;user&gt;@mantis-sub-1.cam.uchc.edu &lt;user&gt;@mantis-sub-2.cam.uchc.edu &lt;user&gt;@mantis-sub-3.cam.uchc.edu",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#can-login-externally-without-vpn-with",
+    "href": "connect.html#can-login-externally-without-vpn-with",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "&lt;user&gt;@login.hpc.cam.uchc.edu\nThis requires an ssh key.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#mac-and-linux-users",
+    "href": "connect.html#mac-and-linux-users",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "An ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.\nLogin with\nssh &lt;user&gt;@&lt;host&gt;",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UConn HPC",
+    "section": "",
+    "text": "File permissions",
+    "crumbs": [
+      "File Permissions"
     ]
   }
 ]

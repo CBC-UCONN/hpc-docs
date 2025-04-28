@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>bestpractices – UConn HPC</title>
+<title>connect – UConn HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bestpractices.html">Best Practices</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link">
+  <a href="./connect.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Connecting</span></a>
   </div>
 </li>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link active">
+  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
@@ -188,8 +188,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#connecting-to-cluster" id="toc-connecting-to-cluster" class="nav-link active" data-scroll-target="#connecting-to-cluster">Connecting to cluster</a>
+  <ul class="collapse">
+  <li><a href="#when-on-campus-or-logged-into-vpn" id="toc-when-on-campus-or-logged-into-vpn" class="nav-link" data-scroll-target="#when-on-campus-or-logged-into-vpn">When on campus or logged into VPN:</a></li>
+  <li><a href="#can-login-externally-without-vpn-with" id="toc-can-login-externally-without-vpn-with" class="nav-link" data-scroll-target="#can-login-externally-without-vpn-with">Can login externally without VPN with:</a></li>
+  <li><a href="#mac-and-linux-users" id="toc-mac-and-linux-users" class="nav-link" data-scroll-target="#mac-and-linux-users">Mac and Linux Users</a></li>
+  </ul></li>
+  <li><a href="#putty-powershell" id="toc-putty-powershell" class="nav-link" data-scroll-target="#putty-powershell">Putty, &amp; Powershell</a></li>
+  <li><a href="#vpn" id="toc-vpn" class="nav-link" data-scroll-target="#vpn">VPN</a></li>
+  <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">SSH Keys</a>
+  <ul class="collapse">
+  <li><a href="#create-a-public-private-key-pair." id="toc-create-a-public-private-key-pair." class="nav-link" data-scroll-target="#create-a-public-private-key-pair.">Create a public private key pair.</a></li>
+  <li><a href="#copy-to-mantis" id="toc-copy-to-mantis" class="nav-link" data-scroll-target="#copy-to-mantis">Copy to Mantis</a></li>
+  </ul></li>
+  <li><a href="#ssh-tunnelling" id="toc-ssh-tunnelling" class="nav-link" data-scroll-target="#ssh-tunnelling">SSH Tunnelling</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -197,13 +216,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>How to be a good citizen</p>
-<p>Data storage practices</p>
-<p>Don’t run things on login nodes</p>
-<p>Test before scaling</p>
-<p>Warning about LLMs. Mainly, don’t blindly run output from them.</p>
+<section id="connecting-to-cluster" class="level1">
+<h1>Connecting to cluster</h1>
+<p>In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.</p>
+<section id="when-on-campus-or-logged-into-vpn" class="level2">
+<h2 class="anchored" data-anchor-id="when-on-campus-or-logged-into-vpn">When on campus or logged into VPN:</h2>
+<p>Use: <code>&lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
+<p>Alternatively: <code>&lt;user&gt;@mantis-sub-1.cam.uchc.edu</code> <code>&lt;user&gt;@mantis-sub-2.cam.uchc.edu</code> <code>&lt;user&gt;@mantis-sub-3.cam.uchc.edu</code></p>
+</section>
+<section id="can-login-externally-without-vpn-with" class="level2">
+<h2 class="anchored" data-anchor-id="can-login-externally-without-vpn-with">Can login externally without VPN with:</h2>
+<p><code>&lt;user&gt;@login.hpc.cam.uchc.edu</code></p>
+<p>This requires an ssh key.</p>
+</section>
+<section id="mac-and-linux-users" class="level2">
+<h2 class="anchored" data-anchor-id="mac-and-linux-users">Mac and Linux Users</h2>
+<p>An ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.</p>
+<p>Login with</p>
+<p><code>ssh &lt;user&gt;@&lt;host&gt;</code></p>
+</section>
+</section>
+<section id="putty-powershell" class="level1">
+<h1>Putty, &amp; Powershell</h1>
+<p>Instructioins for these.</p>
+</section>
+<section id="vpn" class="level1">
+<h1>VPN</h1>
+<p>https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ <!--TODO: Move the documentation for vnp here eventually --></p>
+</section>
+<section id="ssh-keys" class="level1">
+<h1>SSH Keys</h1>
+<p>Explain a bit about what these are and why they are useful.</p>
+<section id="create-a-public-private-key-pair." class="level3">
+<h3 class="anchored" data-anchor-id="create-a-public-private-key-pair.">Create a public private key pair.</h3>
+<p><code>ssh-keygen -t ed25519 -C &lt;comment&gt;</code></p>
+<p>Comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p>
+</section>
+<section id="copy-to-mantis" class="level3">
+<h3 class="anchored" data-anchor-id="copy-to-mantis">Copy to Mantis</h3>
+<p><code>ssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
+</section>
+</section>
+<section id="ssh-tunnelling" class="level1">
+<h1>SSH Tunnelling</h1>
+<p>Explain why you might need this.</p>
+<p>How to tunnel and set up X11 forwarding</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
