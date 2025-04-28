@@ -6,4 +6,4 @@ Don't run things on login nodes
 
 Test before scaling
 
-Warning about LLMs
+Warning about LLMs. Mainly, don't blindly run output from them.

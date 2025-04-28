@@ -1,3 +1,46 @@
-scp
+---
+title: "Tranferring Data"
+---
 
-globus
+We recommend two different approaches for transferring data to and from the cluster.
+
+1) Secure Copy with transfer node
+2) Globus Connect
+
+Each are most suitable for different situations. We explain the usage of each tool below.
+
+## Secure Copy
+Secure copy is ideal for transferring small amounts of data and is much simpler to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from the transfer node `transfer.cam.uchc.edu`.
+
+The required syntax for `scp` is:
+
+`scp <src> <dest>`
+
+The `src` and `dest` arguments specify file or directory paths.
+
+Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:
+
+`<user>@<hostname>:`.
+
+In order to secure copy a directory use the `-r` option.
+
+### Transfer Host
+Using `scp` is only permitted on the transfer 
+
+High availability transfer node: `haxfer.cam.uchc.edu`
+
+
+### Examples
+Copy a file from your local computer to your home directory on the cluster:
+
+`scp <local path> <user>@transfer.cam.uchc.edu:<remote path>`
+
+Copy a directory from the cluster to your local computer:
+
+`scp -r <user>@transfer.cam.uchc.edu:<remote path> <local path>`
+
+
+
+## Globus Connect
+Coming soon!
+<!-- TODO: Complete this section -->

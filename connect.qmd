@@ -1,0 +1,53 @@
+# Connecting to cluster
+In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.
+
+## When on campus or logged into VPN:
+Use: 
+`<user>@mantis-submit.cam.uchc.edu`
+
+Alternatively:
+`<user>@mantis-sub-1.cam.uchc.edu`
+`<user>@mantis-sub-2.cam.uchc.edu`
+`<user>@mantis-sub-3.cam.uchc.edu`
+
+## Can login externally without VPN with:
+`<user>@login.hpc.cam.uchc.edu`
+
+This requires an ssh key.
+
+
+## Mac and Linux Users
+An ssh client is installed by default on Mac and Linux operating sytems and can be run from the terminal.
+
+Login with 
+
+`ssh <user>@<host>` 
+
+
+# Putty, & Powershell
+Instructioins for these. 
+
+# VPN
+https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/
+<!--TODO: Move the documentation for vnp here eventually -->
+
+# SSH Keys
+Explain a bit about what these are and why they are useful.
+
+### Create a public private key pair.
+
+`ssh-keygen -t ed25519 -C <comment> `
+
+Comment should be something to help you identify which computer this key comes from. For example `<user>-laptop`
+
+### Copy to Mantis
+
+`ssh-copy-id <user>@mantis-submit.cam.uchc.edu`
+
+
+
+
+# SSH Tunnelling
+Explain why you might need this.
+
+How to tunnel and set up X11 forwarding

@@ -15,8 +15,11 @@ website:
     search: true
     contents:
 
-      - text: "Accessing the Cluster"
-        href: access.qmd
+      - text: "Account & Password"
+        href: account.qmd
+      
+      - text: "Connecting"
+        href: connect.qmd
 
       - text: "File System & Storage"
         href: storage.qmd
@@ -35,12 +38,18 @@ website:
       
       - text: "File Permissions"
         href: permissions.qmd
+      
+      - text: "Databases"
+        href: databases.qmd
 
       - text: "Best Practices"
         href: bestpractices.qmd
 
       - text: "Miscellaneous"
         href: misc.qmd
+      
+      - text: "Quick Reference"
+        href: quick.qmd
 
       - text: "Get Help"
         href: help.qmd
@@ -49,7 +58,6 @@ format:
   html:
     theme: 
       light: flatly
-      dark: darkly
     toc: true
 
 

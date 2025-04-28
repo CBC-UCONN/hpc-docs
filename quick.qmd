@@ -1,0 +1,21 @@
+
+## Internal Login Node
+Accessible on campus or through VPN.
+
+#### Automatically assign login node
+`mantis-submit.cam.uchc.edu`
+
+#### Select specific login node 
+`mantis-sub-1.cam.uchc.edu`
+
+`mantis-sub-2.cam.uchc.edu`
+
+`mantis-sub-3.cam.uchc.edu`
+
+## External Login Node
+Requires SSH key.
+
+`hpc.cam.uchc.edu`
+
+## Transfer Node
+`transfer.cam.uchc.edu`

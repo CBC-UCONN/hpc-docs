@@ -1,1 +1,22 @@
 Info here about using Env Modules, Conda, Containers, requesting software installation.
+
+# Environment Modules
+Installed software is managed with Environment modules.
+
+See what software is available:
+`module avail`
+
+Load software into environment:
+
+`module load <software>`
+
+# Singularity
+How to use a singularity continer.
+
+# Conda
+How to install and use Conda.
+
+# Request Software
+Users can request the installation of software 
+
+https://bioinformatics.uconn.edu/contact-us/software-database-request/
