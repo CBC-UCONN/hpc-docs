@@ -1,23 +1,25 @@
 # Batch job submission
 ```bash
 
-
 ```
 
-# Partitions
+## Partitions
 Explain the purpose of each of these
-- general
-- himem
-- gpu
-- vcell
 
-# Interactive Job
+### general
+### himem
+### gpu
+### vcell
+
+
+## Interactive Job
 `srun --partition=general --qos=general --pty bash`
 
-# Job status and monitering
+## Job status and monitering
 
-# Request time extensions
+## Request time extensions
 
-# Job Arrays
+## Job Arrays
 
-# Best practices
+## Best practices
+[Link to best practices page]()
