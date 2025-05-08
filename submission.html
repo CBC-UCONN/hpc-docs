@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c6db4588763f4a9a2c273f612a887a1c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -228,13 +228,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#batch-job-submission" id="toc-batch-job-submission" class="nav-link active" data-scroll-target="#batch-job-submission">Batch job submission</a></li>
-  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a></li>
+  <li><a href="#batch-job-submission" id="toc-batch-job-submission" class="nav-link active" data-scroll-target="#batch-job-submission">Batch job submission</a>
+  <ul class="collapse">
+  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a>
+  <ul class="collapse">
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">general</a></li>
+  <li><a href="#himem" id="toc-himem" class="nav-link" data-scroll-target="#himem">himem</a></li>
+  <li><a href="#gpu" id="toc-gpu" class="nav-link" data-scroll-target="#gpu">gpu</a></li>
+  <li><a href="#vcell" id="toc-vcell" class="nav-link" data-scroll-target="#vcell">vcell</a></li>
+  </ul></li>
   <li><a href="#interactive-job" id="toc-interactive-job" class="nav-link" data-scroll-target="#interactive-job">Interactive Job</a></li>
   <li><a href="#job-status-and-monitering" id="toc-job-status-and-monitering" class="nav-link" data-scroll-target="#job-status-and-monitering">Job status and monitering</a></li>
   <li><a href="#request-time-extensions" id="toc-request-time-extensions" class="nav-link" data-scroll-target="#request-time-extensions">Request time extensions</a></li>
   <li><a href="#job-arrays" id="toc-job-arrays" class="nav-link" data-scroll-target="#job-arrays">Job Arrays</a></li>
   <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -246,29 +254,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="batch-job-submission" class="level1">
 <h1>Batch job submission</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="partitions" class="level2">
+<h2 class="anchored" data-anchor-id="partitions">Partitions</h2>
+<p>Explain the purpose of each of these</p>
+<section id="general" class="level3">
+<h3 class="anchored" data-anchor-id="general">general</h3>
 </section>
-<section id="partitions" class="level1">
-<h1>Partitions</h1>
-<p>Explain the purpose of each of these - general - himem - gpu - vcell</p>
+<section id="himem" class="level3">
+<h3 class="anchored" data-anchor-id="himem">himem</h3>
 </section>
-<section id="interactive-job" class="level1">
-<h1>Interactive Job</h1>
+<section id="gpu" class="level3">
+<h3 class="anchored" data-anchor-id="gpu">gpu</h3>
+</section>
+<section id="vcell" class="level3">
+<h3 class="anchored" data-anchor-id="vcell">vcell</h3>
+</section>
+</section>
+<section id="interactive-job" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-job">Interactive Job</h2>
 <p><code>srun --partition=general --qos=general --pty bash</code></p>
 </section>
-<section id="job-status-and-monitering" class="level1">
-<h1>Job status and monitering</h1>
+<section id="job-status-and-monitering" class="level2">
+<h2 class="anchored" data-anchor-id="job-status-and-monitering">Job status and monitering</h2>
 </section>
-<section id="request-time-extensions" class="level1">
-<h1>Request time extensions</h1>
+<section id="request-time-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="request-time-extensions">Request time extensions</h2>
 </section>
-<section id="job-arrays" class="level1">
-<h1>Job Arrays</h1>
+<section id="job-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="job-arrays">Job Arrays</h2>
 </section>
-<section id="best-practices" class="level1">
-<h1>Best practices</h1>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best practices</h2>
+<p><a href="">Link to best practices page</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
