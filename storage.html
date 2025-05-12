@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -193,12 +193,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#home-directory" id="toc-home-directory" class="nav-link active" data-scroll-target="#home-directory">Home Directory</a></li>
-  <li><a href="#lab" id="toc-lab" class="nav-link" data-scroll-target="#lab">Lab</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
-  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">Scratch</a></li>
+  <li><a href="#homefcamuser" id="toc-homefcamuser" class="nav-link active" data-scroll-target="#homefcamuser">/home/FCAM/&lt;user&gt;</a></li>
+  <li><a href="#labsname" id="toc-labsname" class="nav-link" data-scroll-target="#labsname">/labs/&lt;name&gt;</a></li>
+  <li><a href="#projectsproject-name" id="toc-projectsproject-name" class="nav-link" data-scroll-target="#projectsproject-name">/projects/&lt;project name&gt;</a></li>
+  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
   <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">Tmp</a></li>
-  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">Archive</a></li>
+  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
   <li><a href="#globus" id="toc-globus" class="nav-link" data-scroll-target="#globus">Globus</a></li>
   <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">Seqdata</a></li>
   </ul>
@@ -212,29 +212,25 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Info here about the file system, permissions, quotas, backup policies.</p>
 <p>TODO: How to show quota</p>
-<section id="home-directory" class="level2">
-<h2 class="anchored" data-anchor-id="home-directory">Home Directory</h2>
-<p>Path: <code>/home/FCAM/&lt;user&gt;</code></p>
+<section id="homefcamuser" class="level2">
+<h2 class="anchored" data-anchor-id="homefcamuser">/home/FCAM/&lt;user&gt;</h2>
 <p>All user automatically receive a home directory when their account is created.</p>
 <p>Intended for storage of small files such as scripts, source code, and software installtion. Can accomodate a small amount of data.</p>
 <p>Quota: 1TB</p>
 <p>Data are backed up by <a href="">snapshots</a></p>
 </section>
-<section id="lab" class="level2">
-<h2 class="anchored" data-anchor-id="lab">Lab</h2>
-<p>Path: <code>/labs/&lt;name&gt;</code></p>
+<section id="labsname" class="level2">
+<h2 class="anchored" data-anchor-id="labsname">/labs/&lt;name&gt;</h2>
 <p>Intended for data that needs to be accessed by multiple users</p>
 <p>Quota: 2TB, can be increased upon request</p>
 <p>Backed up.</p>
 </section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Projects</h2>
-<p>Path: <code>/projects/&lt;project name&gt;</code></p>
+<section id="projectsproject-name" class="level2">
+<h2 class="anchored" data-anchor-id="projectsproject-name">/projects/&lt;project name&gt;</h2>
 <p>Created on request to share data with other members of collaborative project.</p>
 </section>
 <section id="scratch" class="level2">
-<h2 class="anchored" data-anchor-id="scratch">Scratch</h2>
-<p>Path: <code>/scratch</code></p>
+<h2 class="anchored" data-anchor-id="scratch">/scratch</h2>
 <p>Anyone can create a directory here.</p>
 <p>Intended as temporary storage. Great place for output of intermediate files.</p>
 <p>TODO: backed up?</p>
@@ -245,14 +241,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.</p>
 </section>
 <section id="archive" class="level2">
-<h2 class="anchored" data-anchor-id="archive">Archive</h2>
+<h2 class="anchored" data-anchor-id="archive">/archive</h2>
 <p>Path: <code>/archive/labs/&lt;name&gt;</code> &amp; <code>/archive/users/&lt;user&gt;</code></p>
 <p>Intended for long term storage of data that is no longer being used for analyses. This directory is not created by default and must be requested by a PI.</p>
 </section>
 <section id="globus" class="level2">
 <h2 class="anchored" data-anchor-id="globus">Globus</h2>
-<p>Path: <code>/globus/labs/&lt;name&gt;</code></p>
-<p>TODO: How is this supposed to be use?</p>
+<p>Path: <code>/globus/labs/\&lt;name\&gt;</code></p>
+<p>TODO: How is this supposed to be used? TODO: What is the actual location of this?</p>
 </section>
 <section id="seqdata" class="level2">
 <h2 class="anchored" data-anchor-id="seqdata">Seqdata</h2>

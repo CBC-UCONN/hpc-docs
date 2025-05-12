@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -195,10 +195,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#secure-copy" id="toc-secure-copy" class="nav-link active" data-scroll-target="#secure-copy">Secure Copy</a>
   <ul class="collapse">
-  <li><a href="#transfer-host" id="toc-transfer-host" class="nav-link" data-scroll-target="#transfer-host">Transfer Host</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul></li>
-  <li><a href="#globus-connect" id="toc-globus-connect" class="nav-link" data-scroll-target="#globus-connect">Globus Connect</a></li>
+  <li><a href="#globus-connect" id="toc-globus-connect" class="nav-link" data-scroll-target="#globus-connect">Globus Connect</a>
+  <ul class="collapse">
+  <li><a href="#connecting-with-globus-connect" id="toc-connecting-with-globus-connect" class="nav-link" data-scroll-target="#connecting-with-globus-connect">Connecting with Globus Connect</a></li>
+  <li><a href="#finding-files-in-uchc-globus-server-collection" id="toc-finding-files-in-uchc-globus-server-collection" class="nav-link" data-scroll-target="#finding-files-in-uchc-globus-server-collection">Finding files in UCHC Globus Server collection</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -226,24 +229,21 @@ ul.task-list li input[type="checkbox"] {
 
 <p>We recommend two different approaches for transferring data to and from the cluster.</p>
 <ol type="1">
-<li>Secure Copy with transfer node</li>
+<li>Secure Copy through transfer node</li>
 <li>Globus Connect</li>
 </ol>
 <p>Each are most suitable for different situations. We explain the usage of each tool below.</p>
 <section id="secure-copy" class="level2">
 <h2 class="anchored" data-anchor-id="secure-copy">Secure Copy</h2>
-<p>Secure copy is ideal for transferring small amounts of data and is much simpler to use than Globus connect. A secure copy can be performed with the <code>scp</code> command. This command can only be used to transfer data to and from the transfer node <code>transfer.cam.uchc.edu</code>.</p>
+<!-- TODO: Incorporate this somewhere -->
+<p><code>transfer.hpc.cam.uchc.edu</code> Three load balancers. Requires ssh key.</p>
+<p>Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the <code>scp</code> command. This command can only be used to transfer data to and from the transfer node <code>transfer.cam.uchc.edu</code>.</p>
 <p>The required syntax for <code>scp</code> is:</p>
 <p><code>scp &lt;src&gt; &lt;dest&gt;</code></p>
 <p>The <code>src</code> and <code>dest</code> arguments specify file or directory paths.</p>
 <p>Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:</p>
 <p><code>&lt;user&gt;@&lt;hostname&gt;:</code>.</p>
 <p>In order to secure copy a directory use the <code>-r</code> option.</p>
-<section id="transfer-host" class="level3">
-<h3 class="anchored" data-anchor-id="transfer-host">Transfer Host</h3>
-<p>Using <code>scp</code> is only permitted on the transfer</p>
-<p>High availability transfer node: <code>haxfer.cam.uchc.edu</code></p>
-</section>
 <section id="examples" class="level3">
 <h3 class="anchored" data-anchor-id="examples">Examples</h3>
 <p>Copy a file from your local computer to your home directory on the cluster:</p>
@@ -254,9 +254,39 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="globus-connect" class="level2">
 <h2 class="anchored" data-anchor-id="globus-connect">Globus Connect</h2>
-<p>Coming soon! <!-- TODO: Complete this section --></p>
+<p>Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.</p>
+<section id="connecting-with-globus-connect" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-with-globus-connect">Connecting with Globus Connect</h3>
+<p>To access 1. Log in to the Globus web app at https://www.globus.org. 2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 3. Once logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the <strong>collection</strong> text field. 5. Select UCHC Globus Server and log in with your CAM credentials.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Globus Connect also has a desktop client available for installation on your local computer if you prefer non-browser interface.</p>
+<p>This can be downloaded at https://www.globus.org/globus-connect-personal</p>
+</div>
+</div>
+</section>
+<section id="finding-files-in-uchc-globus-server-collection" class="level3">
+<h3 class="anchored" data-anchor-id="finding-files-in-uchc-globus-server-collection">Finding files in UCHC Globus Server collection</h3>
+<p>There are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the <strong>path</strong> text field.</p>
+<section id="globus" class="level5">
+<h5 class="anchored" data-anchor-id="globus"><code>/globus</code></h5>
+<p>This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the <code>/labs/&lt;name&gt;</code> or <code>/seqdata</code> cluster file system directories among others.</p>
+</section>
+<section id="home" class="level5">
+<h5 class="anchored" data-anchor-id="home"><code>/home</code></h5>
+<p>This Globus file server directory contains <code>/home</code> cluster file system directory. You would access your home directory by navigating to <code>/home/FCAM/&lt;user&gt;</code> in the Globus file server.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
