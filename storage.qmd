@@ -2,8 +2,7 @@ Info here about the file system, permissions, quotas, backup policies.
 
 TODO: How to show quota
 
-## Home Directory
-Path: `/home/FCAM/<user>`
+## /home/FCAM/\<user\>
 
 All user automatically receive a home directory when their account is created. 
 
@@ -13,8 +12,7 @@ Quota: 1TB
 
 Data are backed up by [snapshots]()
 
-## Lab
-Path: `/labs/<name>`
+## /labs/\<name\>
 
 Intended for data that needs to be accessed by multiple users
 
@@ -22,13 +20,11 @@ Quota: 2TB, can be increased upon request
 
 Backed up.
 
-## Projects
-Path: `/projects/<project name>`
+## /projects/\<project name\>
 
 Created on request to share data with other members of collaborative project.
 
-## Scratch
-Path: `/scratch`
+## /scratch
 
 Anyone can create a directory here.
 
@@ -41,16 +37,17 @@ TODO: periodically purged?
 ## Tmp
 Can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.
 
-## Archive
+## /archive
 Path: `/archive/labs/<name>` & `/archive/users/<user>`
 
 Intended for long term storage of data that is no longer being used for analyses.
 This directory is not created by default and must be requested by a PI.
 
 ## Globus
-Path: `/globus/labs/<name>`
+Path: `/globus/labs/\<name\>`
 
-TODO: How is this supposed to be use?
+TODO: How is this supposed to be used?
+TODO: What is the actual location of this?
 
 ## Seqdata
 Path: `/seqdata`

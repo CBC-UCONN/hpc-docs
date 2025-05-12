@@ -2,22 +2,28 @@
 In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.
 
 ## On Campus or CAM VPN Host URL
-The cluster can be accessed through the host url: 
+While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the [Cam VPN](), the cluster can be accessed through this host url: 
 
 `mantis-submit.cam.uchc.edu` 
 
-You can login through this host if you are connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the [Cam VPN]().
-
-This url will redirect you to one of these host urls: 
+::: {.callout-tip}
+This url will redirect you to one of these hosts: 
 
 - `mantis-sub-1.cam.uchc.edu`
 - `mantis-sub-2.cam.uchc.edu`
 - `mantis-sub-3.cam.uchc.edu`
 - `mantis-sub-4.cam.uchc.edu`
 
-## External Host URL
-The cluster can be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](). 
+If the redirect fails, you can try logging in directly to one of these hosts.
+:::
 
+
+## External Host URL
+The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](). 
+
+::: {.callout-tip}
+As with the previous host url, you will be redirected to one of the four login nodes from this host. 
+:::
 
 ## Using SSH Client
 
@@ -26,22 +32,21 @@ The cluster can be accessed through `login.hpc.cam.uchc.edu` from any network (o
 ### Mac and Linux Users
 An ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.
 
+#### Connecting
+To create a connection, enter the `ssh` command followed by your username and host url like so. 
 Login with 
 
 `ssh <user>@<host>` 
 
-TODO: include gui option?
 
 ### Windows Users
 
 ::: panel-tabset
 #### Command Prompt 
-#### Mobaxterm 
 #### Putty
 :::
 
 :::
-
 
 
 ## VPN

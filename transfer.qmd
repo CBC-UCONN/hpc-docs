@@ -4,13 +4,17 @@ title: "Tranferring Data"
 
 We recommend two different approaches for transferring data to and from the cluster.
 
-1) Secure Copy with transfer node
+1) Secure Copy through transfer node
 2) Globus Connect
 
 Each are most suitable for different situations. We explain the usage of each tool below.
 
 ## Secure Copy
-Secure copy is ideal for transferring small amounts of data and is much simpler to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from the transfer node `transfer.cam.uchc.edu`.
+
+<!-- TODO: Incorporate this somewhere -->
+`transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key.
+
+Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from the transfer node `transfer.cam.uchc.edu`.
 
 The required syntax for `scp` is:
 
@@ -24,11 +28,6 @@ Any remote file path must be prefixed with a user ID along with the transfer nod
 
 In order to secure copy a directory use the `-r` option.
 
-### Transfer Host
-Using `scp` is only permitted on the transfer 
-
-High availability transfer node: `haxfer.cam.uchc.edu`
-
 
 ### Examples
 Copy a file from your local computer to your home directory on the cluster:
@@ -40,7 +39,29 @@ Copy a directory from the cluster to your local computer:
 `scp -r <user>@transfer.cam.uchc.edu:<remote path> <local path>`
 
 
-
 ## Globus Connect
-Coming soon!
-<!-- TODO: Complete this section -->
+Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator. 
+
+### Connecting with Globus Connect
+To access 
+1. Log in to the Globus web app at https://www.globus.org.
+2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 
+3. Once logged in, connect to UConn HPC by searching for "UCHC Globus Server" in the **collection** text field.
+5. Select UCHC Globus Server and log in with your CAM credentials. 
+
+::: {.callout-note}
+Globus Connect also has a desktop client available for installation on your local computer if you prefer non-browser interface.
+
+This can be downloaded at https://www.globus.org/globus-connect-personal 
+:::
+
+### Finding files in UCHC Globus Server collection
+There are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the **path** text field. 
+
+##### `/globus`
+This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the `/labs/<name>` or `/seqdata` cluster file system directories among others.
+
+##### `/home`
+This Globus file server directory contains `/home` cluster file system directory. You would access your home directory by navigating to `/home/FCAM/<user>` in the Globus file server.
+
+

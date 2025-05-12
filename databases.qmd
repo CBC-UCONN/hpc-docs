@@ -1,2 +1,29 @@
-List of databses that are kept up to date and accessible on cluster
+Testing ideas for organizing this page.
 
+
+### Database 1
+<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo"><i class="bi-calendar3-week-fill"></i> 
+Show Paths
+</button>
+<div id="demo" class="collapse">
+<ul>
+  <li>Path 1</li>
+  <li>Path 2</li>
+  <li>Path 3</li>
+</ul>
+
+</div>
+
+
+### Database 2
+<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo"><i class="bi-calendar3-week-fill"></i> 
+Show Paths
+</button>
+<div id="demo" class="collapse">
+<ul>
+  <li>Path 1</li>
+  <li>Path 2</li>
+  <li>Path 3</li>
+</ul>
+
+</div>

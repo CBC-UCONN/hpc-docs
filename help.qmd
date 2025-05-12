@@ -1,8 +1,8 @@
 # Getting Help 
 
-If you have a question that is not answered here, please submit a ticket here:
+If you have a question that is not answered on this site, please submit a ticket here:
 https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/
 
 
 # Slack
-Join the (cbc slack channel](uconn-cbc.slack.com) to ask questions and receive updates and notifications.
+Join the [cbc slack channel](uconn-cbc.slack.com) to ask questions and receive updates and notifications.
