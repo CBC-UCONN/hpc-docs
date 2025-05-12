@@ -2,10 +2,10 @@ Testing ideas for organizing this page.
 
 
 ### Database 1
-<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo"><i class="bi-calendar3-week-fill"></i> 
+<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo0"><i class="bi-calendar3-week-fill"></i> 
 Show Paths
 </button>
-<div id="demo" class="collapse">
+<div id="demo0" class="collapse">
 <ul>
   <li>Path 1</li>
   <li>Path 2</li>
@@ -16,10 +16,10 @@ Show Paths
 
 
 ### Database 2
-<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo"><i class="bi-calendar3-week-fill"></i> 
+<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo1"><i class="bi-calendar3-week-fill"></i> 
 Show Paths
 </button>
-<div id="demo" class="collapse">
+<div id="demo1" class="collapse">
 <ul>
   <li>Path 1</li>
   <li>Path 2</li>
