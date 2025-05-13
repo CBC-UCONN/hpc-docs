@@ -17,7 +17,7 @@ website:
       - text: "Connecting"
         href: connect.qmd
 
-      - text: "File System & Storage"
+      - text: "File Systems & Storage"
         href: storage.qmd
 
       - text: "Job Submission" 
@@ -29,23 +29,23 @@ website:
       - text: "Software"
         href: software.qmd
       
-      - text: "Command Line Interface"
-        href: cli.qmd
-      
-      - text: "File Permissions"
-        href: permissions.qmd
-      
       - text: "Databases"
         href: databases.qmd
 
-      - text: "Best Practices"
-        href: bestpractices.qmd
-
-      - text: "Miscellaneous"
-        href: misc.qmd
+      # - text: "Command Line Interface"
+      #   href: cli.qmd
       
-      - text: "Quick Reference"
-        href: quick.qmd
+      # - text: "File Permissions"
+        # href: permissions.qmd
+
+      # - text: "Best Practices"
+      #   href: bestpractices.qmd
+
+      # - text: "Miscellaneous"
+      #   href: misc.qmd
+      
+      # - text: "Quick Reference"
+      #   href: quick.qmd
 
       - text: "Get Help"
         href: help.qmd
