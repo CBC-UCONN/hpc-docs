@@ -37,7 +37,7 @@ This location is primarily intended for storage of small files such as scripts, 
 Quota: 1TB, can be increased upon request.
 
 
-## /labs/\<name\>
+## /labs
 This can be created at the request of a PI.
 
 This location is intended for storage of active shared project data to facilitate collaboration among members of a PI's lab. 
@@ -45,7 +45,7 @@ This location is intended for storage of active shared project data to facilitat
 Quota: 2TB, can be increased upon request
 
 
-## /projects/\<project name\>
+## /projects
 This can be created at the request of a PI.
 
 This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project. 

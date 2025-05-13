@@ -3,15 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "UConn HPC"
-  # navbar:
-    # left:
-      # - href: index.qmd
-        # text: Home
-      # - quickstart.qmd
-      # - advanced.qmd
+  title: "UCHC HPC"
+  favicon: img/favicon.png
   sidebar:
     style: "docked"
+    logo: img/cbc.png
     search: true
     contents:
 
@@ -61,8 +57,6 @@ format:
     toc: true
     include-in-header:
       - text: <script src="src/toggle.js"></script>
-      # - text: <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      # - text: <script>$(document).ready(function() { $('.db-toggle').on('click', function() {$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up'); }); });</script>
 
 
 

@@ -48,14 +48,13 @@ Copy a directory from the cluster to your local computer:
 Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator. 
 
 ### Connecting with Globus Connect
-To access 
 1. Log in to the Globus web app at https://www.globus.org.
 2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 
 3. Once logged in, connect to UConn HPC by searching for "UCHC Globus Server" in the **collection** text field.
 5. Select UCHC Globus Server and log in with your CAM credentials. 
 
 ::: {.callout-note}
-Globus Connect also has a desktop client available for installation on your local computer if you prefer non-browser interface.
+Globus Connect also has a desktop client available for installation on your local computer.
 
 This can be downloaded at https://www.globus.org/globus-connect-personal 
 :::
@@ -64,9 +63,9 @@ This can be downloaded at https://www.globus.org/globus-connect-personal
 There are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the **path** text field. 
 
 ##### `/globus`
-This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the `/labs/<name>` or `/seqdata` cluster file system directories among others.
+This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the `/labs`, `/projects`, or `/seqdata` cluster file system directories among others.
 
 ##### `/home`
-This Globus file server directory contains `/home` cluster file system directory. You would access your home directory by navigating to `/home/FCAM/<user>` in the Globus file server.
+This Globus file server directory contains the `/home` cluster file system directory. You would access your home directory by navigating to `/home/FCAM/<user>` in the Globus file server.
 
 
