@@ -11,7 +11,7 @@
     "href": "databases.html",
     "title": "UConn HPC",
     "section": "",
-    "text": "Testing ideas for organizing this page.\n\nDatabase 1\n\n Show Paths\n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\nDatabase 2\n\n Show Paths\n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3",
+    "text": "Testing ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
     "crumbs": [
       "Databases"
     ]
@@ -331,7 +331,7 @@
     "href": "account.html",
     "title": "Request an Account",
     "section": "",
-    "text": "Request an Account\nIn order to access the cluster, you must first create an account.\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all required fields and click submit.\n\n\n\nPasswords\nUpon approval of an account request you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAnytime you need to reset your password, you can do so in the CAM Password Manager.",
+    "text": "Request an Account\nIn order to access the cluster, you must first create an account.\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\n\n\nPasswords\nUpon approval of an account request you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAnytime you need to reset your password, you can do so in the CAM Password Manager.",
     "crumbs": [
       "Account & Password"
     ]

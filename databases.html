@@ -67,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 </head>
@@ -205,10 +206,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Testing ideas for organizing this page.</p>
+<p>Put some info here about how databases are managed on the cluster.</p>
 <section id="database-1" class="level3">
 <h3 class="anchored" data-anchor-id="database-1">Database 1</h3>
-<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo0">
-<i class="bi-calendar3-week-fill"></i> Show Paths
+<p>Put a brief description of the database here and maybe some instructions about how it is used.</p>
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#demo0" onclick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');">
+Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 <div id="demo0" class="collapse">
 <ul>
@@ -222,25 +225,43 @@ Path 2
 Path 3
 </li>
 </ul>
+<hr>
+
 </div>
 </section>
 <section id="database-2" class="level3">
 <h3 class="anchored" data-anchor-id="database-2">Database 2</h3>
-<button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#demo1">
-<i class="bi-calendar3-week-fill"></i> Show Paths
+<p>Put a brief description of the database here and maybe some instructions about how it is used.</p>
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#demo1" onclick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');">
+Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 <div id="demo1" class="collapse">
-<ul>
-<li>
-Path 1
-</li>
-<li>
-Path 2
-</li>
-<li>
-Path 3
-</li>
-</ul>
+<table class="table">
+<tbody><tr>
+<th>
+Col1
+</th>
+<th>
+Col2
+</th>
+</tr>
+<tr>
+<td>
+Path
+</td>
+<td>
+Source
+</td>
+</tr>
+<tr>
+<td>
+Path
+</td>
+<td>
+Source
+</td>
+</tr>
+</tbody></table>
 </div>
 
 
