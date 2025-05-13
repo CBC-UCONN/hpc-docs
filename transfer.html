@@ -228,7 +228,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We recommend two different approaches for transferring data to and from the cluster.</p>
+<!-- TODO: Add FileZilla SFTP client -->
+<p>We recommend two approaches for transferring data to and from the cluster.</p>
 <ol type="1">
 <li>Secure Copy through transfer node</li>
 <li>Globus Connect</li>
@@ -236,10 +237,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Each are most suitable for different situations. We explain the usage of each tool below.</p>
 <section id="secure-copy" class="level2">
 <h2 class="anchored" data-anchor-id="secure-copy">Secure Copy</h2>
-<!-- TODO: Incorporate this somewhere -->
-<p><code>transfer.hpc.cam.uchc.edu</code> Three load balancers. Requires ssh key.</p>
-<p>Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the <code>scp</code> command. This command can only be used to transfer data to and from the transfer node <code>transfer.cam.uchc.edu</code>.</p>
-<p>The required syntax for <code>scp</code> is:</p>
+<!-- `transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key. -->
+<p>Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the <code>scp</code> command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.</p>
+<ol type="1">
+<li><code>transfer.cam.uchc.edu</code> which requires a VPN if off campus.</li>
+<li><code>transfer.hpc.cam.uchc.edu</code> which requires an SSH key but can be used with/without a VPN or on/off campus. This will soon be the only transfer node available.</li>
+</ol>
+<p>A secure copy can be performed from the terminal with the <code>scp</code> command which has this required syntax:</p>
 <p><code>scp &lt;src&gt; &lt;dest&gt;</code></p>
 <p>The <code>src</code> and <code>dest</code> arguments specify file or directory paths.</p>
 <p>Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:</p>

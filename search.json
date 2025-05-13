@@ -21,7 +21,7 @@
     "href": "transfer.html",
     "title": "Tranferring Data",
     "section": "",
-    "text": "We recommend two different approaches for transferring data to and from the cluster.\nEach are most suitable for different situations. We explain the usage of each tool below.",
+    "text": "We recommend two approaches for transferring data to and from the cluster.\nEach are most suitable for different situations. We explain the usage of each tool below.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -31,7 +31,7 @@
     "href": "transfer.html#secure-copy",
     "title": "Tranferring Data",
     "section": "Secure Copy",
-    "text": "Secure Copy\n\ntransfer.hpc.cam.uchc.edu Three load balancers. Requires ssh key.\nSecure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the scp command. This command can only be used to transfer data to and from the transfer node transfer.cam.uchc.edu.\nThe required syntax for scp is:\nscp &lt;src&gt; &lt;dest&gt;\nThe src and dest arguments specify file or directory paths.\nAny remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:\n&lt;user&gt;@&lt;hostname&gt;:.\nIn order to secure copy a directory use the -r option.\n\nExamples\nCopy a file from your local computer to your home directory on the cluster:\nscp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;\nCopy a directory from the cluster to your local computer:\nscp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;",
+    "text": "Secure Copy\n\nSecure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the scp command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.\n\ntransfer.cam.uchc.edu which requires a VPN if off campus.\ntransfer.hpc.cam.uchc.edu which requires an SSH key but can be used with/without a VPN or on/off campus. This will soon be the only transfer node available.\n\nA secure copy can be performed from the terminal with the scp command which has this required syntax:\nscp &lt;src&gt; &lt;dest&gt;\nThe src and dest arguments specify file or directory paths.\nAny remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:\n&lt;user&gt;@&lt;hostname&gt;:.\nIn order to secure copy a directory use the -r option.\n\nExamples\nCopy a file from your local computer to your home directory on the cluster:\nscp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;\nCopy a directory from the cluster to your local computer:\nscp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;",
     "crumbs": [
       "Transferring Data"
     ]
@@ -91,7 +91,27 @@
     "href": "storage.html",
     "title": "UConn HPC",
     "section": "",
-    "text": "Info here about the file system, permissions, quotas, backup policies.\nTODO: How to show quota",
+    "text": "Info here about the file system, permissions, quotas, backup policies.",
+    "crumbs": [
+      "File System & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#quotas",
+    "href": "storage.html#quotas",
+    "title": "UConn HPC",
+    "section": "Quotas",
+    "text": "Quotas\nTODO: What are the quotas?\nHow can you check your quotas",
+    "crumbs": [
+      "File System & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#sec-snapshots",
+    "href": "storage.html#sec-snapshots",
+    "title": "UConn HPC",
+    "section": "Snapshots",
+    "text": "Snapshots\nEvery night at 3:00AM the system creates a snapshot of the filesystem and preserves this for 10 days.\nTODO: The timestamps on snapshots say 11:30?\nTo recover a file from a snapshot: 1. Enter the snapshots directory with cd .snapshot. 2. See the available snapshots with ls -l. 3. Choose the desired snapshot date and cd &lt;name&gt;. 4. Copy the file you wish to recover to a location outside of the snapshot `cp  .\n\nThe .snapshot directory is not visible to the ls command but exists for every cluster directory.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -101,7 +121,7 @@
     "href": "storage.html#homefcamuser",
     "title": "UConn HPC",
     "section": "/home/FCAM/<user>",
-    "text": "/home/FCAM/&lt;user&gt;\nAll user automatically receive a home directory when their account is created.\nIntended for storage of small files such as scripts, source code, and software installtion. Can accomodate a small amount of data.\nQuota: 1TB\nData are backed up by snapshots",
+    "text": "/home/FCAM/&lt;user&gt;\nAll users will have a home directory when their account is created.\nThis location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.\nQuota: 1TB, can be increased upon request.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -111,7 +131,7 @@
     "href": "storage.html#labsname",
     "title": "UConn HPC",
     "section": "/labs/<name>",
-    "text": "/labs/&lt;name&gt;\nIntended for data that needs to be accessed by multiple users\nQuota: 2TB, can be increased upon request\nBacked up.",
+    "text": "/labs/&lt;name&gt;\nThis location is intended for storage of active shared project data to facilitate collaboration among team members Intended for data that needs to be accessed by multiple users\nQuota: 2TB, can be increased upon request",
     "crumbs": [
       "File System & Storage"
     ]
@@ -121,7 +141,7 @@
     "href": "storage.html#projectsproject-name",
     "title": "UConn HPC",
     "section": "/projects/<project name>",
-    "text": "/projects/&lt;project name&gt;\nCreated on request to share data with other members of collaborative project.",
+    "text": "/projects/&lt;project name&gt;\nCreated on request to share data among members of collaborative project.\nQuota: 2TB, can be increased upon request.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -131,17 +151,17 @@
     "href": "storage.html#scratch",
     "title": "UConn HPC",
     "section": "/scratch",
-    "text": "/scratch\nAnyone can create a directory here.\nIntended as temporary storage. Great place for output of intermediate files.\nTODO: backed up?\nTODO: periodically purged?",
+    "text": "/scratch\nThis space is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.\nAnyone can create a directory here.\nFiles are removed from this location after 90 days.\nTODO: Should we say something about how much space people can use?",
     "crumbs": [
       "File System & Storage"
     ]
   },
   {
-    "objectID": "storage.html#tmp",
-    "href": "storage.html#tmp",
+    "objectID": "storage.html#seqdata",
+    "href": "storage.html#seqdata",
     "title": "UConn HPC",
-    "section": "Tmp",
-    "text": "Tmp\nCan be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.",
+    "section": "/seqdata",
+    "text": "/seqdata\nThis location is used for storing raw and original sequencing data. Data are stored as read-only.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsuport@helpspotmail.com.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -151,27 +171,17 @@
     "href": "storage.html#archive",
     "title": "UConn HPC",
     "section": "/archive",
-    "text": "/archive\nPath: /archive/labs/&lt;name&gt; & /archive/users/&lt;user&gt;\nIntended for long term storage of data that is no longer being used for analyses. This directory is not created by default and must be requested by a PI.",
+    "text": "/archive\nThis location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. \n\nReading from this directory is slow compared to /seqdata. Request that data be moved back to /seqdata if you will be actively using the data for analysis.",
     "crumbs": [
       "File System & Storage"
     ]
   },
   {
-    "objectID": "storage.html#globus",
-    "href": "storage.html#globus",
+    "objectID": "storage.html#tmp",
+    "href": "storage.html#tmp",
     "title": "UConn HPC",
-    "section": "Globus",
-    "text": "Globus\nPath: /globus/labs/\\&lt;name\\&gt;\nTODO: How is this supposed to be used? TODO: What is the actual location of this?",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#seqdata",
-    "href": "storage.html#seqdata",
-    "title": "UConn HPC",
-    "section": "Seqdata",
-    "text": "Seqdata\nPath: /seqdata\nTODO: What is this and how will users interact?",
+    "section": "/tmp",
+    "text": "/tmp\nThis space can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.\nThe system will remove the contents of this directory after TODO: how long?.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -251,7 +261,7 @@
     "href": "connect.html",
     "title": "Connecting to cluster",
     "section": "",
-    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nWhile connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nThis url will redirect you to one of these hosts:\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\nThe cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nAs with the previous host url, you will be redirected to one of the four login nodes from this host.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ \n\n\n\nTODO: Explain a bit about what these are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nComment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you need this and how to do it.",
+    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nWhile connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\nThe cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ \n\n\n\nTODO: Explain a bit about what these are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nComment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you need this and how to do it.",
     "crumbs": [
       "Connecting"
     ]
@@ -261,7 +271,7 @@
     "href": "connect.html#on-campus-or-cam-vpn-host-url",
     "title": "Connecting to cluster",
     "section": "",
-    "text": "While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nThis url will redirect you to one of these hosts:\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
+    "text": "While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
     "crumbs": [
       "Connecting"
     ]
@@ -271,7 +281,7 @@
     "href": "connect.html#external-host-url",
     "title": "Connecting to cluster",
     "section": "",
-    "text": "The cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nAs with the previous host url, you will be redirected to one of the four login nodes from this host.",
+    "text": "The cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
     "crumbs": [
       "Connecting"
     ]

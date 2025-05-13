@@ -194,14 +194,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#homefcamuser" id="toc-homefcamuser" class="nav-link active" data-scroll-target="#homefcamuser">/home/FCAM/&lt;user&gt;</a></li>
+  <li><a href="#quotas" id="toc-quotas" class="nav-link active" data-scroll-target="#quotas">Quotas</a></li>
+  <li><a href="#sec-snapshots" id="toc-sec-snapshots" class="nav-link" data-scroll-target="#sec-snapshots">Snapshots</a></li>
+  <li><a href="#homefcamuser" id="toc-homefcamuser" class="nav-link" data-scroll-target="#homefcamuser">/home/FCAM/&lt;user&gt;</a></li>
   <li><a href="#labsname" id="toc-labsname" class="nav-link" data-scroll-target="#labsname">/labs/&lt;name&gt;</a></li>
   <li><a href="#projectsproject-name" id="toc-projectsproject-name" class="nav-link" data-scroll-target="#projectsproject-name">/projects/&lt;project name&gt;</a></li>
   <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
-  <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">Tmp</a></li>
+  <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata"><code>/seqdata</code></a></li>
   <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
-  <li><a href="#globus" id="toc-globus" class="nav-link" data-scroll-target="#globus">Globus</a></li>
-  <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">Seqdata</a></li>
+  <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">/tmp</a></li>
   </ul>
 </nav>
     </div>
@@ -212,49 +213,60 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Info here about the file system, permissions, quotas, backup policies.</p>
-<p>TODO: How to show quota</p>
+<section id="quotas" class="level2">
+<h2 class="anchored" data-anchor-id="quotas">Quotas</h2>
+<p>TODO: What are the quotas?</p>
+<p>How can you check your quotas</p>
+</section>
+<section id="sec-snapshots" class="level2">
+<h2 class="anchored" data-anchor-id="sec-snapshots">Snapshots</h2>
+<p>Every night at 3:00AM the system creates a snapshot of the filesystem and preserves this for 10 days.</p>
+<p>TODO: The timestamps on snapshots say 11:30?</p>
+<p>To recover a file from a snapshot: 1. Enter the snapshots directory with <code>cd .snapshot</code>. 2. See the available snapshots with <code>ls -l</code>. 3. Choose the desired snapshot date and <code>cd &lt;name&gt;</code>. 4. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.</destination></file></p>
+<div class="{callout-note}">
+<p>The <code>.snapshot</code> directory is not visible to the <code>ls</code> command but exists for every cluster directory.</p>
+</div>
+</section>
 <section id="homefcamuser" class="level2">
 <h2 class="anchored" data-anchor-id="homefcamuser">/home/FCAM/&lt;user&gt;</h2>
-<p>All user automatically receive a home directory when their account is created.</p>
-<p>Intended for storage of small files such as scripts, source code, and software installtion. Can accomodate a small amount of data.</p>
-<p>Quota: 1TB</p>
-<p>Data are backed up by <a href="">snapshots</a></p>
+<p>All users will have a home directory when their account is created.</p>
+<p>This location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.</p>
+<p>Quota: 1TB, can be increased upon request.</p>
 </section>
 <section id="labsname" class="level2">
 <h2 class="anchored" data-anchor-id="labsname">/labs/&lt;name&gt;</h2>
-<p>Intended for data that needs to be accessed by multiple users</p>
+<p>This location is intended for storage of active shared project data to facilitate collaboration among team members Intended for data that needs to be accessed by multiple users</p>
 <p>Quota: 2TB, can be increased upon request</p>
-<p>Backed up.</p>
 </section>
 <section id="projectsproject-name" class="level2">
 <h2 class="anchored" data-anchor-id="projectsproject-name">/projects/&lt;project name&gt;</h2>
-<p>Created on request to share data with other members of collaborative project.</p>
+<p>Created on request to share data among members of collaborative project.</p>
+<p>Quota: 2TB, can be increased upon request.</p>
 </section>
 <section id="scratch" class="level2">
 <h2 class="anchored" data-anchor-id="scratch">/scratch</h2>
+<p>This space is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.</p>
 <p>Anyone can create a directory here.</p>
-<p>Intended as temporary storage. Great place for output of intermediate files.</p>
-<p>TODO: backed up?</p>
-<p>TODO: periodically purged?</p>
+<p>Files are removed from this location after <strong>90 days</strong>.</p>
+<p>TODO: Should we say something about how much space people can use?</p>
 </section>
-<section id="tmp" class="level2">
-<h2 class="anchored" data-anchor-id="tmp">Tmp</h2>
-<p>Can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.</p>
+<section id="seqdata" class="level2">
+<h2 class="anchored" data-anchor-id="seqdata"><code>/seqdata</code></h2>
+<p>This location is used for storing raw and original sequencing data. Data are stored as read-only.</p>
+<p><strong>Do not copy data from this directory</strong>. For convenience, consider <a href="">making a symlink</a> to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.</p>
+<p>If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsuport@helpspotmail.com.</p>
 </section>
 <section id="archive" class="level2">
 <h2 class="anchored" data-anchor-id="archive">/archive</h2>
-<p>Path: <code>/archive/labs/&lt;name&gt;</code> &amp; <code>/archive/users/&lt;user&gt;</code></p>
-<p>Intended for long term storage of data that is no longer being used for analyses. This directory is not created by default and must be requested by a PI.</p>
+<p>This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. <!-- TODO: Say a bit more about the goal of archive and tape. How safe is data here. Does it need to also be stored elsewhere?  --></p>
+<div class="{callout-note}">
+<p>Reading from this directory is slow compared to <code>/seqdata</code>. Request that data be moved back to <code>/seqdata</code> if you will be actively using the data for analysis.</p>
+</div>
 </section>
-<section id="globus" class="level2">
-<h2 class="anchored" data-anchor-id="globus">Globus</h2>
-<p>Path: <code>/globus/labs/\&lt;name\&gt;</code></p>
-<p>TODO: How is this supposed to be used? TODO: What is the actual location of this?</p>
-</section>
-<section id="seqdata" class="level2">
-<h2 class="anchored" data-anchor-id="seqdata">Seqdata</h2>
-<p>Path: <code>/seqdata</code></p>
-<p>TODO: What is this and how will users interact?</p>
+<section id="tmp" class="level2">
+<h2 class="anchored" data-anchor-id="tmp">/tmp</h2>
+<p>This space can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.</p>
+<p>The system will remove the contents of this directory after TODO: how long?.</p>
 
 
 </section>
