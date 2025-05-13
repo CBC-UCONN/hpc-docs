@@ -65,7 +65,7 @@ https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/
 <!--TODO: Move the documentation for vnp here eventually -->
 
 ## SSH Keys
-TODO: Explain a bit about what these are and why they are useful.
+TODO: Explain a bit about they are and why they are useful.
 
 ::: panel-tabset
 ### Mac/Linux
@@ -86,4 +86,4 @@ TODO: How to do this on Windows
 TODO: Explain why you might need this and how to do it.
 
 ## X11 Forwarding
-TODO: Why you need this and how to do it.
+TODO: Why you might need this and how to do it.

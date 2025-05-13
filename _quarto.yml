@@ -38,8 +38,8 @@ website:
       # - text: "File Permissions"
         # href: permissions.qmd
 
-      # - text: "Best Practices"
-      #   href: bestpractices.qmd
+      - text: "Best Practices"
+        href: bestpractices.qmd
 
       # - text: "Miscellaneous"
       #   href: misc.qmd

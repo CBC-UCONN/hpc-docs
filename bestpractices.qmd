@@ -3,6 +3,9 @@ How to be a good citizen
 Data storage practices
 
 Don't run things on login nodes
+  - conda
+  - file compression
+  - large compilations
 
 Test before scaling
 

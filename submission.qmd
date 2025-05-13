@@ -61,13 +61,13 @@ See the [`sbatch` documentation](https://slurm.schedmd.com/sbatch.html) for more
 
 
 ## Partitions
-There are several partitions within the cluster which are groups of nodes with different capabilities. 
+There are several partitions within the cluster. A partition is a groups of nodes that have certain capabilities. 
 
 ### general
 This partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory. 
 
 ### himem
-This parition contains nodes suitable for jobs that have large memory requirements. These nodes have TODO: how many cpus and how much memory. 
+This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have TODO: how many cpus and how much memory. 
 
 ### gpu
 This parition contains nodes with gpus available. These nodes have TODO: need to describe the specification of these nodes. 
@@ -94,3 +94,7 @@ If you have a job that may not finish within the time limit you can [submit a ti
 
 ## Job Arrays
 Coming soon!
+
+<!-- ## Nextflow 
+Mention the institutional profile and make one for mantis
+-->
