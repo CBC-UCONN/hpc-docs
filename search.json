@@ -124,7 +124,7 @@
     "href": "transfer.html#globus-connect",
     "title": "Tranferring Data",
     "section": "Globus Connect",
-    "text": "Globus Connect\nGlobus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.\n\nConnecting with Globus Connect\nTo access 1. Log in to the Globus web app at https://www.globus.org. 2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 3. Once logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the collection text field. 5. Select UCHC Globus Server and log in with your CAM credentials.\n\n\n\n\n\n\nNote\n\n\n\nGlobus Connect also has a desktop client available for installation on your local computer if you prefer non-browser interface.\nThis can be downloaded at https://www.globus.org/globus-connect-personal\n\n\n\n\nFinding files in UCHC Globus Server collection\nThere are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the path text field.\n\n/globus\nThis Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the /labs/&lt;name&gt; or /seqdata cluster file system directories among others.\n\n\n/home\nThis Globus file server directory contains /home cluster file system directory. You would access your home directory by navigating to /home/FCAM/&lt;user&gt; in the Globus file server.",
+    "text": "Globus Connect\nGlobus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.\n\nConnecting with Globus Connect\n\nLog in to the Globus web app at https://www.globus.org.\nSelect the University of Connecticut as your organization and enter your login credentials when prompted.\nOnce logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the collection text field.\nSelect UCHC Globus Server and log in with your CAM credentials.\n\n\n\n\n\n\n\nNote\n\n\n\nGlobus Connect also has a desktop client available for installation on your local computer.\nThis can be downloaded at https://www.globus.org/globus-connect-personal\n\n\n\n\nFinding files in UCHC Globus Server collection\nThere are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the path text field.\n\n/globus\nThis Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the /labs, /projects, or /seqdata cluster file system directories among others.\n\n\n/home\nThis Globus file server directory contains the /home cluster file system directory. You would access your home directory by navigating to /home/FCAM/&lt;user&gt; in the Globus file server.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -132,7 +132,7 @@
   {
     "objectID": "misc.html",
     "href": "misc.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?",
     "crumbs": [
@@ -212,7 +212,7 @@
   {
     "objectID": "permissions.html",
     "href": "permissions.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "File permissions",
     "crumbs": [
@@ -222,7 +222,7 @@
   {
     "objectID": "databases.html",
     "href": "databases.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "format: html: theme: light: flatly toc: true include-in-header: - text:\n\nTesting ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
     "crumbs": [
@@ -232,7 +232,7 @@
   {
     "objectID": "bestpractices.html",
     "href": "bestpractices.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them.",
     "crumbs": [
@@ -249,7 +249,7 @@
   {
     "objectID": "cli.html",
     "href": "cli.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?",
     "crumbs": [
@@ -277,21 +277,21 @@
     ]
   },
   {
-    "objectID": "storage.html#labsname",
-    "href": "storage.html#labsname",
+    "objectID": "storage.html#labs",
+    "href": "storage.html#labs",
     "title": "Cluster Filesystems",
-    "section": "/labs/<name>",
-    "text": "/labs/&lt;name&gt;\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab.\nQuota: 2TB, can be increased upon request",
+    "section": "/labs",
+    "text": "/labs\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab.\nQuota: 2TB, can be increased upon request",
     "crumbs": [
       "File System & Storage"
     ]
   },
   {
-    "objectID": "storage.html#projectsproject-name",
-    "href": "storage.html#projectsproject-name",
+    "objectID": "storage.html#projects",
+    "href": "storage.html#projects",
     "title": "Cluster Filesystems",
-    "section": "/projects/<project name>",
-    "text": "/projects/&lt;project name&gt;\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.\nQuota: 2TB, can be increased upon request.",
+    "section": "/projects",
+    "text": "/projects\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.\nQuota: 2TB, can be increased upon request.",
     "crumbs": [
       "File System & Storage"
     ]
@@ -339,14 +339,14 @@
   {
     "objectID": "snapshots.html",
     "href": "snapshots.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "Instructions on recovering files from .snapshots"
   },
   {
     "objectID": "quick.html",
     "href": "quick.html",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
     "crumbs": [
@@ -356,7 +356,7 @@
   {
     "objectID": "quick.html#internal-login-node",
     "href": "quick.html#internal-login-node",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "",
     "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
     "crumbs": [
@@ -366,7 +366,7 @@
   {
     "objectID": "quick.html#external-login-node",
     "href": "quick.html#external-login-node",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "External Login Node",
     "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu",
     "crumbs": [
@@ -376,7 +376,7 @@
   {
     "objectID": "quick.html#transfer-node",
     "href": "quick.html#transfer-node",
-    "title": "UConn HPC",
+    "title": "UCHC HPC",
     "section": "Transfer Node",
     "text": "Transfer Node\ntransfer.cam.uchc.edu",
     "crumbs": [

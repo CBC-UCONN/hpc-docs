@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tranferring Data – UConn HPC</title>
+<title>Tranferring Data – UCHC HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -95,9 +96,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">UConn HPC</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/cbc.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -263,7 +264,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.</p>
 <section id="connecting-with-globus-connect" class="level3">
 <h3 class="anchored" data-anchor-id="connecting-with-globus-connect">Connecting with Globus Connect</h3>
-<p>To access 1. Log in to the Globus web app at https://www.globus.org. 2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 3. Once logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the <strong>collection</strong> text field. 5. Select UCHC Globus Server and log in with your CAM credentials.</p>
+<ol type="1">
+<li>Log in to the Globus web app at https://www.globus.org.</li>
+<li>Select the University of Connecticut as your organization and enter your login credentials when prompted.</li>
+<li>Once logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the <strong>collection</strong> text field.</li>
+<li>Select UCHC Globus Server and log in with your CAM credentials.</li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -274,7 +280,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Globus Connect also has a desktop client available for installation on your local computer if you prefer non-browser interface.</p>
+<p>Globus Connect also has a desktop client available for installation on your local computer.</p>
 <p>This can be downloaded at https://www.globus.org/globus-connect-personal</p>
 </div>
 </div>
@@ -284,11 +290,11 @@ Note
 <p>There are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the <strong>path</strong> text field.</p>
 <section id="globus" class="level5">
 <h5 class="anchored" data-anchor-id="globus"><code>/globus</code></h5>
-<p>This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the <code>/labs/&lt;name&gt;</code> or <code>/seqdata</code> cluster file system directories among others.</p>
+<p>This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the <code>/labs</code>, <code>/projects</code>, or <code>/seqdata</code> cluster file system directories among others.</p>
 </section>
 <section id="home" class="level5">
 <h5 class="anchored" data-anchor-id="home"><code>/home</code></h5>
-<p>This Globus file server directory contains <code>/home</code> cluster file system directory. You would access your home directory by navigating to <code>/home/FCAM/&lt;user&gt;</code> in the Globus file server.</p>
+<p>This Globus file server directory contains the <code>/home</code> cluster file system directory. You would access your home directory by navigating to <code>/home/FCAM/&lt;user&gt;</code> in the Globus file server.</p>
 
 
 </section>
