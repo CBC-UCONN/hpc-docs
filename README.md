@@ -4,9 +4,8 @@ Currently under development and not ready for public consumption.
 
 
 Good examples to follow:
-- https://hpc.auburn.edu/hpc/docs/hpcdocs/build/html/index.htm
-- https://rc-docs.northeastern.edu/en/latest/
 - https://hpcdocs.hpc.arizona.edu/
+- https://rc-docs.northeastern.edu/en/latest/
 - https://docs.icer.msu.edu/
 
 TODO:
