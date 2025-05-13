@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -186,6 +186,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Best Practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Help</span></a>
   </div>
@@ -285,14 +291,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="partitions" class="level2">
 <h2 class="anchored" data-anchor-id="partitions">Partitions</h2>
-<p>There are several partitions within the cluster which are groups of nodes with different capabilities.</p>
+<p>There are several partitions within the cluster. A partition is a groups of nodes that have certain capabilities.</p>
 <section id="general" class="level3">
 <h3 class="anchored" data-anchor-id="general">general</h3>
 <p>This partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory.</p>
 </section>
 <section id="himem" class="level3">
 <h3 class="anchored" data-anchor-id="himem">himem</h3>
-<p>This parition contains nodes suitable for jobs that have large memory requirements. These nodes have TODO: how many cpus and how much memory.</p>
+<p>This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have TODO: how many cpus and how much memory.</p>
 </section>
 <section id="gpu" class="level3">
 <h3 class="anchored" data-anchor-id="gpu">gpu</h3>
@@ -320,6 +326,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="job-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="job-arrays">Job Arrays</h2>
 <p>Coming soon!</p>
+<!-- ## Nextflow 
+Mention the institutional profile and make one for mantis
+-->
 
 
 </section>
