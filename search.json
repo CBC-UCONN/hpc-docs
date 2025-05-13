@@ -1,5 +1,247 @@
 [
   {
+    "objectID": "snapshots.html",
+    "href": "snapshots.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Instructions on recovering files from .snapshots"
+  },
+  {
+    "objectID": "databases.html",
+    "href": "databases.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "format: html: theme: light: flatly toc: true include-in-header: - text:\n\nTesting ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "Tranferring Data",
+    "section": "",
+    "text": "We recommend two approaches for transferring data to and from the cluster.\nEach are most suitable for different situations. We explain the usage of each tool below.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#secure-copy",
+    "href": "transfer.html#secure-copy",
+    "title": "Tranferring Data",
+    "section": "Secure Copy",
+    "text": "Secure Copy\nTODO: Are all network storage filesystems mounted to the transfer nodes?\n\nSecure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the scp command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.\n\ntransfer.cam.uchc.edu which requires a VPN if off campus.\ntransfer.hpc.cam.uchc.edu which requires an SSH key but can be used with/without a VPN or on/off campus. This will soon be the only transfer node available.\n\nA secure copy can be performed from the terminal with the scp command which has this required syntax:\nscp &lt;src&gt; &lt;dest&gt;\nThe src and dest arguments specify file or directory paths.\nAny remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:\n&lt;user&gt;@&lt;hostname&gt;:.\nIn order to secure copy a directory use the -r option.\n\nExamples\nCopy a file from your local computer to your home directory on the cluster:\nscp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;\nCopy a directory from the cluster to your local computer:\nscp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#globus-connect",
+    "href": "transfer.html#globus-connect",
+    "title": "Tranferring Data",
+    "section": "Globus Connect",
+    "text": "Globus Connect\nGlobus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.\n\nConnecting with Globus Connect\n\nLog in to the Globus web app at https://www.globus.org.\nSelect the University of Connecticut as your organization and enter your login credentials when prompted.\nOnce logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the collection text field.\nSelect UCHC Globus Server and log in with your CAM credentials.\n\n\n\n\n\n\n\nNote\n\n\n\nGlobus Connect also has a desktop client available for installation on your local computer.\nThis can be downloaded at https://www.globus.org/globus-connect-personal\n\n\n\n\nFinding files in UCHC Globus Server collection\nThere are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the path text field.\n\n/globus\nThis Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the /labs, /projects, or /seqdata cluster file system directories among others.\n\n\n/home\nThis Globus file server directory contains the /home cluster file system directory. You would access your home directory by navigating to /home/FCAM/&lt;user&gt; in the Globus file server.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "submission.html",
+    "href": "submission.html",
+    "title": "Batch job submission",
+    "section": "",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information about appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two ways that a job can be run on a compute node.",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "submission.html#partitions",
+    "href": "submission.html#partitions",
+    "title": "Batch job submission",
+    "section": "Partitions",
+    "text": "Partitions\nThere are several partitions within the cluster which are groups of nodes with different capabilities.\n\ngeneral\nThis partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory.\n\n\nhimem\nThis parition contains nodes suitable for jobs that have large memory requirements. These nodes have TODO: how many cpus and how much memory.\n\n\ngpu\nThis parition contains nodes with gpus available. These nodes have TODO: need to describe the specification of these nodes.\n\n\nvcell\nTODO: What is this partition for?",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "submission.html#interactive-job",
+    "href": "submission.html#interactive-job",
+    "title": "Batch job submission",
+    "section": "Interactive Job",
+    "text": "Interactive Job\nAn interactive session can be started on a compute node using the srun command.\nAt a minimum, you would use these arguments: srun --partition=general --qos=general --pty bash\nMost sbatch arguments can also be used with srun such as --mem or -c if you need to request specific resources.",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "submission.html#job-status-and-monitering",
+    "href": "submission.html#job-status-and-monitering",
+    "title": "Batch job submission",
+    "section": "Job status and monitering",
+    "text": "Job status and monitering\nTo monitor the status of your jobs you can run squeue -u &lt;user&gt;.",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "submission.html#request-time-extensions",
+    "href": "submission.html#request-time-extensions",
+    "title": "Batch job submission",
+    "section": "Request time extensions",
+    "text": "Request time extensions\nIf you have a job that may not finish within the time limit you can submit a time extension request",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "submission.html#job-arrays",
+    "href": "submission.html#job-arrays",
+    "title": "Batch job submission",
+    "section": "Job Arrays",
+    "text": "Job Arrays\nComing soon!",
+    "crumbs": [
+      "Job Submission"
+    ]
+  },
+  {
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "Cluster Filesystems",
+    "section": "",
+    "text": "TODO: Explain quotas\nHow can you check your quotas? Do we have a script for this?",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#homefcamuser",
+    "href": "storage.html#homefcamuser",
+    "title": "Cluster Filesystems",
+    "section": "/home/FCAM/<user>",
+    "text": "/home/FCAM/&lt;user&gt;\nAll users will have a home directory when their account is created.\nThis location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.\nQuota: 1TB, can be increased upon request.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#labs",
+    "href": "storage.html#labs",
+    "title": "Cluster Filesystems",
+    "section": "/labs",
+    "text": "/labs\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab.\nQuota: 2TB, can be increased upon request",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#projects",
+    "href": "storage.html#projects",
+    "title": "Cluster Filesystems",
+    "section": "/projects",
+    "text": "/projects\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.\nQuota: 2TB, can be increased upon request.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#scratch",
+    "href": "storage.html#scratch",
+    "title": "Cluster Filesystems",
+    "section": "/scratch",
+    "text": "/scratch\nAnyone can create a directory here.\nThis location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.\nFiles may be removed from this location after 90 days.\nTODO: Should we say something about how much space people can/should use?",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#seqdata",
+    "href": "storage.html#seqdata",
+    "title": "Cluster Filesystems",
+    "section": "/seqdata",
+    "text": "/seqdata\nThis location is used for storing raw and original sequencing data. Data are stored as read-only.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#archive",
+    "href": "storage.html#archive",
+    "title": "Cluster Filesystems",
+    "section": "/archive",
+    "text": "/archive\nThis location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?\nIf you would like to move data to this location please contact us at cbcsupport@helpspotmail.com\n\nReading from this directory is slow compared to /seqdata. Request that data be moved back to /seqdata if you will be actively using the data for analysis.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#tmp",
+    "href": "storage.html#tmp",
+    "title": "Cluster Filesystems",
+    "section": "/tmp",
+    "text": "/tmp\nEach node has it’s own local /tmp directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.\nOnce an analysis is done, important data need to be moved out of this space and any other files should be removed.\nThe system will remove contents of this directory after TODO: how long or under what conditions?.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them."
+  },
+  {
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UCHC HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UCHC HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Environment Modules",
+    "section": "",
+    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
     "objectID": "connect.html",
     "href": "connect.html",
     "title": "Connecting to cluster",
@@ -80,66 +322,6 @@
     ]
   },
   {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Environment Modules",
-    "section": "",
-    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "transfer.html",
-    "href": "transfer.html",
-    "title": "Tranferring Data",
-    "section": "",
-    "text": "We recommend two approaches for transferring data to and from the cluster.\nEach are most suitable for different situations. We explain the usage of each tool below.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#secure-copy",
-    "href": "transfer.html#secure-copy",
-    "title": "Tranferring Data",
-    "section": "Secure Copy",
-    "text": "Secure Copy\nTODO: Are all network storage filesystems mounted to the transfer nodes?\n\nSecure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the scp command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.\n\ntransfer.cam.uchc.edu which requires a VPN if off campus.\ntransfer.hpc.cam.uchc.edu which requires an SSH key but can be used with/without a VPN or on/off campus. This will soon be the only transfer node available.\n\nA secure copy can be performed from the terminal with the scp command which has this required syntax:\nscp &lt;src&gt; &lt;dest&gt;\nThe src and dest arguments specify file or directory paths.\nAny remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:\n&lt;user&gt;@&lt;hostname&gt;:.\nIn order to secure copy a directory use the -r option.\n\nExamples\nCopy a file from your local computer to your home directory on the cluster:\nscp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;\nCopy a directory from the cluster to your local computer:\nscp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#globus-connect",
-    "href": "transfer.html#globus-connect",
-    "title": "Tranferring Data",
-    "section": "Globus Connect",
-    "text": "Globus Connect\nGlobus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.\n\nConnecting with Globus Connect\n\nLog in to the Globus web app at https://www.globus.org.\nSelect the University of Connecticut as your organization and enter your login credentials when prompted.\nOnce logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the collection text field.\nSelect UCHC Globus Server and log in with your CAM credentials.\n\n\n\n\n\n\n\nNote\n\n\n\nGlobus Connect also has a desktop client available for installation on your local computer.\nThis can be downloaded at https://www.globus.org/globus-connect-personal\n\n\n\n\nFinding files in UCHC Globus Server collection\nThere are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the path text field.\n\n/globus\nThis Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the /labs, /projects, or /seqdata cluster file system directories among others.\n\n\n/home\nThis Globus file server directory contains the /home cluster file system directory. You would access your home directory by navigating to /home/FCAM/&lt;user&gt; in the Globus file server.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "misc.html",
-    "href": "misc.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?",
-    "crumbs": [
-      "Miscellaneous"
-    ]
-  },
-  {
     "objectID": "account.html",
     "href": "account.html",
     "title": "Request an Account",
@@ -150,94 +332,18 @@
     ]
   },
   {
-    "objectID": "submission.html",
-    "href": "submission.html",
-    "title": "Batch job submission",
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "UCHC HPC",
     "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information about appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two ways that a job can be run on a compute node.",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "submission.html#partitions",
-    "href": "submission.html#partitions",
-    "title": "Batch job submission",
-    "section": "Partitions",
-    "text": "Partitions\nThere are several partitions within the cluster which are groups of nodes with different capabilities.\n\ngeneral\nThis partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory.\n\n\nhimem\nThis parition contains nodes suitable for jobs that have large memory requirements. These nodes have TODO: how many cpus and how much memory.\n\n\ngpu\nThis parition contains nodes with gpus available. These nodes have TODO: need to describe the specification of these nodes.\n\n\nvcell\nTODO: What is this partition for?",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "submission.html#interactive-job",
-    "href": "submission.html#interactive-job",
-    "title": "Batch job submission",
-    "section": "Interactive Job",
-    "text": "Interactive Job\nAn interactive session can be started on a compute node using the srun command.\nAt a minimum, you would use these arguments: srun --partition=general --qos=general --pty bash\nMost sbatch arguments can also be used with srun such as --mem or -c if you need to request specific resources.",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "submission.html#job-status-and-monitering",
-    "href": "submission.html#job-status-and-monitering",
-    "title": "Batch job submission",
-    "section": "Job status and monitering",
-    "text": "Job status and monitering\nTo monitor the status of your jobs you can run squeue -u &lt;user&gt;.",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "submission.html#request-time-extensions",
-    "href": "submission.html#request-time-extensions",
-    "title": "Batch job submission",
-    "section": "Request time extensions",
-    "text": "Request time extensions\nIf you have a job that may not finish within the time limit you can submit a time extension request",
-    "crumbs": [
-      "Job Submission"
-    ]
-  },
-  {
-    "objectID": "submission.html#job-arrays",
-    "href": "submission.html#job-arrays",
-    "title": "Batch job submission",
-    "section": "Job Arrays",
-    "text": "Job Arrays\nComing soon!",
-    "crumbs": [
-      "Job Submission"
-    ]
+    "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?"
   },
   {
     "objectID": "permissions.html",
     "href": "permissions.html",
     "title": "UCHC HPC",
     "section": "",
-    "text": "File permissions",
-    "crumbs": [
-      "File Permissions"
-    ]
-  },
-  {
-    "objectID": "databases.html",
-    "href": "databases.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "format: html: theme: light: flatly toc: true include-in-header: - text:\n\nTesting ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
-    "crumbs": [
-      "Databases"
-    ]
-  },
-  {
-    "objectID": "bestpractices.html",
-    "href": "bestpractices.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them.",
-    "crumbs": [
-      "Best Practices"
-    ]
+    "text": "File permissions"
   },
   {
     "objectID": "index.html",
@@ -251,136 +357,6 @@
     "href": "cli.html",
     "title": "UCHC HPC",
     "section": "",
-    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?",
-    "crumbs": [
-      "Command Line Interface"
-    ]
-  },
-  {
-    "objectID": "storage.html",
-    "href": "storage.html",
-    "title": "Cluster Filesystems",
-    "section": "",
-    "text": "TODO: Explain quotas\nHow can you check your quotas? Do we have a script for this?",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#homefcamuser",
-    "href": "storage.html#homefcamuser",
-    "title": "Cluster Filesystems",
-    "section": "/home/FCAM/<user>",
-    "text": "/home/FCAM/&lt;user&gt;\nAll users will have a home directory when their account is created.\nThis location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.\nQuota: 1TB, can be increased upon request.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#labs",
-    "href": "storage.html#labs",
-    "title": "Cluster Filesystems",
-    "section": "/labs",
-    "text": "/labs\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab.\nQuota: 2TB, can be increased upon request",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#projects",
-    "href": "storage.html#projects",
-    "title": "Cluster Filesystems",
-    "section": "/projects",
-    "text": "/projects\nThis can be created at the request of a PI.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.\nQuota: 2TB, can be increased upon request.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#scratch",
-    "href": "storage.html#scratch",
-    "title": "Cluster Filesystems",
-    "section": "/scratch",
-    "text": "/scratch\nAnyone can create a directory here.\nThis location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.\nFiles may be removed from this location after 90 days.\nTODO: Should we say something about how much space people can/should use?",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#seqdata",
-    "href": "storage.html#seqdata",
-    "title": "Cluster Filesystems",
-    "section": "/seqdata",
-    "text": "/seqdata\nThis location is used for storing raw and original sequencing data. Data are stored as read-only.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#archive",
-    "href": "storage.html#archive",
-    "title": "Cluster Filesystems",
-    "section": "/archive",
-    "text": "/archive\nThis location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?\nIf you would like to move data to this location please contact us at cbcsupport@helpspotmail.com\n\nReading from this directory is slow compared to /seqdata. Request that data be moved back to /seqdata if you will be actively using the data for analysis.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#tmp",
-    "href": "storage.html#tmp",
-    "title": "Cluster Filesystems",
-    "section": "/tmp",
-    "text": "/tmp\nEach node has it’s own local /tmp directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.\nOnce an analysis is done, important data need to be moved out of this space and any other files should be removed.\nThe system will remove contents of this directory after TODO: how long or under what conditions?.",
-    "crumbs": [
-      "File System & Storage"
-    ]
-  },
-  {
-    "objectID": "snapshots.html",
-    "href": "snapshots.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Instructions on recovering files from .snapshots"
-  },
-  {
-    "objectID": "quick.html",
-    "href": "quick.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
-    "crumbs": [
-      "Quick Reference"
-    ]
-  },
-  {
-    "objectID": "quick.html#internal-login-node",
-    "href": "quick.html#internal-login-node",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu",
-    "crumbs": [
-      "Quick Reference"
-    ]
-  },
-  {
-    "objectID": "quick.html#external-login-node",
-    "href": "quick.html#external-login-node",
-    "title": "UCHC HPC",
-    "section": "External Login Node",
-    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu",
-    "crumbs": [
-      "Quick Reference"
-    ]
-  },
-  {
-    "objectID": "quick.html#transfer-node",
-    "href": "quick.html#transfer-node",
-    "title": "UCHC HPC",
-    "section": "Transfer Node",
-    "text": "Transfer Node\ntransfer.cam.uchc.edu",
-    "crumbs": [
-      "Quick Reference"
-    ]
+    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
   }
 ]
