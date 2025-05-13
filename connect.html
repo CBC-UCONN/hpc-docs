@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="src/toggle.js"></script>
 
 
 </head>
@@ -281,10 +281,10 @@ Tip
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Command Prompt</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Putty</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-
+<p>TODO: How to do this</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-
+<p>TODO: How to do this</p>
 </div>
 </div>
 </div>
@@ -306,14 +306,15 @@ Tip
 <section id="create-a-public-private-key-pair." class="level4">
 <h4 class="anchored" data-anchor-id="create-a-public-private-key-pair.">Create a public private key pair.</h4>
 <p><code>ssh-keygen -t ed25519 -C &lt;comment&gt;</code></p>
-<p>Comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p>
+<p>The comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p>
 </section>
 <section id="copy-to-mantis" class="level4">
 <h4 class="anchored" data-anchor-id="copy-to-mantis">Copy to Mantis</h4>
+<p><code>ssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
 </section>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p><code>ssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
+<p>TODO: How to do this on Windows</p>
 <section id="ssh-tunnelling" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-tunnelling">SSH Tunnelling</h2>
 <p>TODO: Explain why you might need this and how to do it.</p>

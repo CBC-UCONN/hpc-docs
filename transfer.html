@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="src/toggle.js"></script>
 
 
 </head>
@@ -237,6 +237,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Each are most suitable for different situations. We explain the usage of each tool below.</p>
 <section id="secure-copy" class="level2">
 <h2 class="anchored" data-anchor-id="secure-copy">Secure Copy</h2>
+<p>TODO: Are all network storage filesystems mounted to the transfer nodes?</p>
 <!-- `transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key. -->
 <p>Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the <code>scp</code> command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.</p>
 <ol type="1">

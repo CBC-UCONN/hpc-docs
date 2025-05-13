@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="src/toggle.js"></script>
 
 
 </head>
@@ -205,12 +205,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+format: html: theme: light: flatly toc: true include-in-header: - text:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <p>Testing ideas for organizing this page.</p>
 <p>Put some info here about how databases are managed on the cluster.</p>
 <section id="database-1" class="level3">
 <h3 class="anchored" data-anchor-id="database-1">Database 1</h3>
 <p>Put a brief description of the database here and maybe some instructions about how it is used.</p>
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#demo0" onclick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');">
+<button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" data-bs-target="#demo0">
 Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 <div id="demo0" class="collapse">
@@ -232,7 +234,7 @@ Path 3
 <section id="database-2" class="level3">
 <h3 class="anchored" data-anchor-id="database-2">Database 2</h3>
 <p>Put a brief description of the database here and maybe some instructions about how it is used.</p>
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#demo1" onclick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');">
+<button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" data-bs-target="#demo1">
 Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 <div id="demo1" class="collapse">
