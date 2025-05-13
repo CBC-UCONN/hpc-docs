@@ -151,7 +151,7 @@
     "href": "storage.html#scratch",
     "title": "UConn HPC",
     "section": "/scratch",
-    "text": "/scratch\nThis space is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.\nAnyone can create a directory here.\nFiles are removed from this location after 90 days.\nTODO: Should we say something about how much space people can use?",
+    "text": "/scratch\nThis location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.\nAnyone can create a directory here.\nFiles may be removed from this location after 90 days.\nTODO: Should we say something about how much space people can/should use?",
     "crumbs": [
       "File System & Storage"
     ]
