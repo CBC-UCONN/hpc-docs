@@ -45,13 +45,13 @@ Quota: 2TB, can be increased upon request.
 
 
 ## /scratch
-This space is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
+This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
 
 Anyone can create a directory here.
 
-Files are removed from this location after **90 days**.
+Files may be removed from this location after **90 days**.
 
-TODO: Should we say something about how much space people can use?
+TODO: Should we say something about how much space people can/should use?
 
 
 ## `/seqdata`
