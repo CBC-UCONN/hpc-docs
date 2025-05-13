@@ -1,25 +1,96 @@
-# Batch job submission
-```bash
+The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the [best practices page]() for more information about appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node. 
 
+The UCHC Computer cluster uses [SLURM](https://slurm.schedmd.com) for managing and scheduling jobs. 
+
+With SLURM there are two ways that a job can be run on a compute node. 
+
+1. As a batch submission.
+2. As an interactive job.
+
+# Batch job submission
+To submit a batch job, you will use the `sbatch` command. A basic example might look like: 
+
+```bash
+sbatch \
+  --job-name=<job name> \
+  -c <cpu number> \
+  --mem=<gigabytes memory>G \
+  --partition=general \
+  --qos=general \
+  -o %x-%j.out \
+  <script>.sh
 ```
 
+Alternatively, the `sbatch` commands can be specified as a header in your script like:
+
+```bash
+#SBATCH --job-name=<job name>
+#SBATCH -c <cpu number> 
+#SBATCH --mem=<gigs memory>G
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH -o %x-%j.out
+
+< your script here>
+```
+
+### Commonly used arguments
+
+#### \-\-job-name
+The name of the job. Used for displaying job information when monitoring the job and for naming log files.
+
+#### \-c
+The number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.
+
+#### \-\-mem
+The amount of memory to allocate. This argument takes a number followed by a unit such as M for megabytes or G for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to TODO: what is default memory?
+
+#### \-o
+This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. 
+
+#### \-\-partition
+A group of nodes which the job will be allocated to. A partition must be specified when running a job on the UCHC cluster. The available partitions are documented below. 
+
+#### \-\-qos
+The qos (quality of service) arguments constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the UCHC cluster. This argument will be equivalent to the partition. 
+
+#### Additional commands
+`sbatch` is a powerful tool with many other configuration options beyond the scope of this introduction.
+
+See the [`sbatch` documentation](https://slurm.schedmd.com/sbatch.html) for more information about command arguments.
+
+
 ## Partitions
-Explain the purpose of each of these
+There are several partitions within the cluster which are groups of nodes with different capabilities. 
 
 ### general
+This partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory. 
+
 ### himem
+This parition contains nodes suitable for jobs that have large memory requirements. These nodes have TODO: how many cpus and how much memory. 
+
 ### gpu
+This parition contains nodes with gpus available. These nodes have TODO: need to describe the specification of these nodes. 
+
 ### vcell
+TODO: What is this partition for?
+
 
 
 ## Interactive Job
+An interactive session can be started on a compute node using the `srun` command.
+
+At a minimum, you would use these arguments:
 `srun --partition=general --qos=general --pty bash`
 
+Most sbatch arguments can also be used with srun such as `--mem` or `-c` if you need to request specific resources.
+
+
 ## Job status and monitering
+To monitor the status of your jobs you can run `squeue -u <user>`. 
 
 ## Request time extensions
+If you have a job that may not finish within the time limit you can [submit a time extension request](https://bioinformatics.uconn.edu/contact-us/xanadu-hpc-job-extension/)
 
 ## Job Arrays
-
-## Best practices
-[Link to best practices page]()
+Coming soon!

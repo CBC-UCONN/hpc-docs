@@ -60,9 +60,9 @@ format:
       light: flatly
     toc: true
     include-in-header:
-      - text: <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
+      - text: <script src="src/toggle.js"></script>
+      # - text: <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      # - text: <script>$(document).ready(function() { $('.db-toggle').on('click', function() {$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up'); }); });</script>
 
 
 

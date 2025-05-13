@@ -52,9 +52,11 @@ Login with
 
 ::: panel-tabset
 #### Command Prompt 
-#### Putty
-:::
+TODO: How to do this
 
+#### Putty
+TODO: How to do this
+:::
 :::
 
 
@@ -71,15 +73,13 @@ TODO: Explain a bit about what these are and why they are useful.
 
 `ssh-keygen -t ed25519 -C <comment> `
 
-Comment should be something to help you identify which computer this key comes from. For example `<user>-laptop`
+The comment should be something to help you identify which computer this key comes from. For example `<user>-laptop`
 
 #### Copy to Mantis
-
-### Windows
-
 `ssh-copy-id <user>@mantis-submit.cam.uchc.edu`
 
-
+### Windows
+TODO: How to do this on Windows
 
 
 ## SSH Tunnelling

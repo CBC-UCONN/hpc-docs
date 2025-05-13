@@ -1,27 +1,33 @@
-Info here about the file system, permissions, quotas, backup policies.
+---
+title: "Cluster Filesystems"
+---
 
 
-## Quotas
+# Quotas
 TODO:
-What are the quotas?
+Explain quotas 
 
-How can you check your quotas
+How can you check your quotas? Do we have a script for this?
 
 
-## Snapshots {#sec-snapshots}
-Every night at 3:00AM the system creates a snapshot of the filesystem and preserves this for 10 days.
+# Snapshots
+Every night at 3:00AM a snapshot of the filesystem is created preserved for 10 days.
 
-TODO: The timestamps on snapshots say 11:30?
+TODO: The timestamps on snapshots don't say 3:00. Should we explain why?
 
 To recover a file from a snapshot:
+
 1. Enter the snapshots directory with `cd .snapshot`.
 2. See the available snapshots with `ls -l`.
 3. Choose the desired snapshot date and `cd <name>`. 
 4. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.
 
-::: {callout-note}
-The `.snapshot` directory is not visible to the `ls` command but exists for every cluster directory.
+::: {.callout-note}
+The `.snapshot` directory will not be visible in the output of the `ls` command.
 :::
+
+# Filesystem Locations
+Below is a summary of the primary locations in the cluster file system that users will interact with.
 
 ## /home/FCAM/\<user\>
 All users will have a home directory when their account is created. 
@@ -32,38 +38,43 @@ Quota: 1TB, can be increased upon request.
 
 
 ## /labs/\<name\>
-This location is intended for storage of active shared project data to facilitate collaboration among team members
-Intended for data that needs to be accessed by multiple users
+This can be created at the request of a PI.
+
+This location is intended for storage of active shared project data to facilitate collaboration among members of a PI's lab. 
 
 Quota: 2TB, can be increased upon request
 
 
 ## /projects/\<project name\>
-Created on request to share data among members of collaborative project.
+This can be created at the request of a PI.
+
+This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project. 
 
 Quota: 2TB, can be increased upon request.
 
 
 ## /scratch
-This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
-
 Anyone can create a directory here.
+
+This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
 
 Files may be removed from this location after **90 days**.
 
 TODO: Should we say something about how much space people can/should use?
 
 
-## `/seqdata`
+## /seqdata
 This location is used for storing raw and original sequencing data. Data are stored as read-only. 
 
 **Do not copy data from this directory**. For convenience, consider [making a symlink]() to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
 
-If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsuport@helpspotmail.com.
+If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.
 
 
 ## /archive
-This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. <!-- TODO: Say a bit more about the goal of archive and tape. How safe is data here. Does it need to also be stored elsewhere?  -->  
+This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?
+
+If you would like to move data to this location please contact us at cbcsupport@helpspotmail.com
 
 ::: {callout-note}
 Reading from this directory is slow compared to `/seqdata`. Request that data be moved back to `/seqdata` if you will be actively using the data for analysis.
@@ -71,7 +82,14 @@ Reading from this directory is slow compared to `/seqdata`. Request that data be
 
 
 ## /tmp
-This space can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space. 
+Each node has it's own local `/tmp` directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network. 
 
-The system will remove the contents of this directory after TODO: how long?.
+Once an analysis is done, important data need to be moved out of this space and any other files should be removed. 
 
+The system will remove contents of this directory after TODO: how long or under what conditions?.
+
+
+# Details
+TODO: maybe explain the systems with a bit more detail here?
+- disk types of the mounted file systems and protocols in use for those?
+- Current system capacity in various locations 

@@ -1,3 +1,13 @@
+format:
+  html:
+    theme: 
+      light: flatly
+    toc: true
+    include-in-header:
+      - text: <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
 Testing ideas for organizing this page.
 
 Put some info here about how databases are managed on the cluster.
@@ -5,9 +15,9 @@ Put some info here about how databases are managed on the cluster.
 ### Database 1
 Put a brief description of the database here and maybe some instructions about how it is used.
 
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" 
-  data-bs-target="#demo0" onClick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');"> 
-Show Paths <i class="bi bi-chevron-down"></i>
+<button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
+    data-bs-target="#demo0"> 
+  Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 
 <div id="demo0" class="collapse">
@@ -24,9 +34,9 @@ Show Paths <i class="bi bi-chevron-down"></i>
 ### Database 2
 Put a brief description of the database here and maybe some instructions about how it is used.
 
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" 
-  data-bs-target="#demo1" onClick="$(this).find('.bi').toggleClass('bi-chevron-down bi-chevron-up');"> 
-Show Paths <i class="bi bi-chevron-down"></i>
+<button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
+    data-bs-target="#demo1">
+  Show Paths <i class="bi bi-chevron-down"></i>
 </button>
 <div id="demo1" class="collapse">
 <table class="table">

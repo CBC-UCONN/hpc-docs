@@ -12,6 +12,7 @@ We recommend two approaches for transferring data to and from the cluster.
 Each are most suitable for different situations. We explain the usage of each tool below.
 
 ## Secure Copy
+TODO: Are all network storage filesystems mounted to the transfer nodes?
 
 <!-- `transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key. -->
 
