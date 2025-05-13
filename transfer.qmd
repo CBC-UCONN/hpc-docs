@@ -2,7 +2,9 @@
 title: "Tranferring Data"
 ---
 
-We recommend two different approaches for transferring data to and from the cluster.
+<!-- TODO: Add FileZilla SFTP client -->
+
+We recommend two approaches for transferring data to and from the cluster.
 
 1) Secure Copy through transfer node
 2) Globus Connect
@@ -11,12 +13,14 @@ Each are most suitable for different situations. We explain the usage of each to
 
 ## Secure Copy
 
-<!-- TODO: Incorporate this somewhere -->
-`transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key.
+<!-- `transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key. -->
 
-Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from the transfer node `transfer.cam.uchc.edu`.
+Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.
 
-The required syntax for `scp` is:
+1. `transfer.cam.uchc.edu` which requires a VPN if off campus.
+2. `transfer.hpc.cam.uchc.edu` which requires an SSH key but can be used with/without a VPN or on/off campus. This will soon be the only transfer node available.
+
+A secure copy can be performed from the terminal with the `scp` command which has this required syntax:
 
 `scp <src> <dest>`
 

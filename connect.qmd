@@ -6,8 +6,10 @@ While connected to most networks at the University of Connecticut or Univeristy 
 
 `mantis-submit.cam.uchc.edu` 
 
+This host is planned to be phased out in the near future so that only the external host explained below will be used.
+
 ::: {.callout-tip}
-This url will redirect you to one of these hosts: 
+TODO: Appropriate/accurate to say something about load balancing here
 
 - `mantis-sub-1.cam.uchc.edu`
 - `mantis-sub-2.cam.uchc.edu`
@@ -22,7 +24,14 @@ If the redirect fails, you can try logging in directly to one of these hosts.
 The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](). 
 
 ::: {.callout-tip}
-As with the previous host url, you will be redirected to one of the four login nodes from this host. 
+TODO: Appropriate/accurate to say something about load balancing here
+This url will redirect you to one of these hosts:
+
+- `mantis-sub-5.cam.uchc.edu`
+- `mantis-sub-6.cam.uchc.edu`
+- `mantis-sub-7.cam.uchc.edu`
+
+If the redirect fails, you can try logging in directly to one of these hosts.
 :::
 
 ## Using SSH Client

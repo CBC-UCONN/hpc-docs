@@ -2,8 +2,8 @@
 In order to access the cluster, you must first create an account.
 
 1) Submit an [account request ticket](https://health.uconn.edu/high-performance-computing/contact/).
-1) Select `New Account Request` from the **Request Type** dropdown menu.
-2) Choose `HPC Cluster Account` as the **Account Type**. 
+1) Select `New Account Request` from the `Request Type` dropdown menu.
+2) Choose `HPC Cluster Account` as the `Account Type`. 
 3) Fill in all relevant and required fields and click submit.
 
 # Passwords

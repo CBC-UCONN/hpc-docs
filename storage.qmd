@@ -1,55 +1,77 @@
 Info here about the file system, permissions, quotas, backup policies.
 
-TODO: How to show quota
+
+## Quotas
+TODO:
+What are the quotas?
+
+How can you check your quotas
+
+
+## Snapshots {#sec-snapshots}
+Every night at 3:00AM the system creates a snapshot of the filesystem and preserves this for 10 days.
+
+TODO: The timestamps on snapshots say 11:30?
+
+To recover a file from a snapshot:
+1. Enter the snapshots directory with `cd .snapshot`.
+2. See the available snapshots with `ls -l`.
+3. Choose the desired snapshot date and `cd <name>`. 
+4. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.
+
+::: {callout-note}
+The `.snapshot` directory is not visible to the `ls` command but exists for every cluster directory.
+:::
 
 ## /home/FCAM/\<user\>
+All users will have a home directory when their account is created. 
 
-All user automatically receive a home directory when their account is created. 
+This location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data. 
 
-Intended for storage of small files such as scripts, source code, and software installtion. Can accomodate a small amount of data. 
+Quota: 1TB, can be increased upon request.
 
-Quota: 1TB
-
-Data are backed up by [snapshots]()
 
 ## /labs/\<name\>
-
+This location is intended for storage of active shared project data to facilitate collaboration among team members
 Intended for data that needs to be accessed by multiple users
 
 Quota: 2TB, can be increased upon request
 
-Backed up.
 
 ## /projects/\<project name\>
+Created on request to share data among members of collaborative project.
 
-Created on request to share data with other members of collaborative project.
+Quota: 2TB, can be increased upon request.
+
 
 ## /scratch
+This space is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
 
 Anyone can create a directory here.
 
-Intended as temporary storage. Great place for output of intermediate files.
+Files are removed from this location after **90 days**.
 
-TODO: backed up?
+TODO: Should we say something about how much space people can use?
 
-TODO: periodically purged?
 
-## Tmp
-Can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space.
+## `/seqdata`
+This location is used for storing raw and original sequencing data. Data are stored as read-only. 
+
+**Do not copy data from this directory**. For convenience, consider [making a symlink]() to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
+
+If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsuport@helpspotmail.com.
+
 
 ## /archive
-Path: `/archive/labs/<name>` & `/archive/users/<user>`
+This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. <!-- TODO: Say a bit more about the goal of archive and tape. How safe is data here. Does it need to also be stored elsewhere?  -->  
 
-Intended for long term storage of data that is no longer being used for analyses.
-This directory is not created by default and must be requested by a PI.
+::: {callout-note}
+Reading from this directory is slow compared to `/seqdata`. Request that data be moved back to `/seqdata` if you will be actively using the data for analysis.
+:::
 
-## Globus
-Path: `/globus/labs/\<name\>`
 
-TODO: How is this supposed to be used?
-TODO: What is the actual location of this?
+## /tmp
+This space can be used for temporary storage of data while running analysis. Once analysis is done, data need to be moved out of this space. 
 
-## Seqdata
-Path: `/seqdata`
+The system will remove the contents of this directory after TODO: how long?.
 
-TODO: What is this and how will users interact?
