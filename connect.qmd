@@ -8,14 +8,14 @@ When you connect to Mantis, you will be connected to a **login node**. Please do
 
 ## Internal Host URL
 
-While connected to most networks at the UConn Health or if you connect to the [CAM virtual private network](connect.qmd#sec-vpn), the cluster can be accessed through this host url: 
+If you connect to the [CAM virtual private network](connect.qmd#sec-vpn), the cluster can be accessed through this host url: 
 
 `mantis-submit.cam.uchc.edu` 
 
-This host will drop you onto one of four login nodes, labeled `mantis-sub-[1-4]`. 
 
 ::: {.callout-tip}
-If the redirect fails, you can try logging in directly to one of these hosts.
+This host will drop you onto one of four login nodes, labeled `mantis-sub-[1-4]`. 
+If the redirect fails, you can try logging in directly to one of them:
 
 - `mantis-sub-1.cam.uchc.edu`
 - `mantis-sub-2.cam.uchc.edu`
@@ -30,16 +30,20 @@ The internal host is planned to be phased out in the near future so that only th
 
 ## External Host URL
 
-The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](connect.qmd#sec-ssh-keys). 
+The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication,  however, so to use it you must [set up an ssh key](connect.qmd#sec-ssh-keys).
+
+The host URL is:
+
+`login.hpc.cam.uchc.edu` 
 
 ::: {.callout-tip}
-This url will redirect you to one of these hosts:
+As above, this url will redirect you to one of these hosts:
 
 - `mantis-sub-5.cam.uchc.edu`
 - `mantis-sub-6.cam.uchc.edu`
 - `mantis-sub-7.cam.uchc.edu`
 
-If the redirect fails, you can try logging in directly to one of these hosts.
+If the redirect fails, you can try logging in directly to one of them.
 :::
 
 ## Using SSH Client
