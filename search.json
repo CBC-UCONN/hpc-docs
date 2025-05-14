@@ -2,19 +2,19 @@
   {
     "objectID": "connect.html",
     "href": "connect.html",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
-    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nWhile connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\nThe cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this\n\n\n\n\n\n\n\n\n\nhttps://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ \n\n\n\nSSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\nMac/LinuxWindows\n\n\n\n\nYou can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
+    "text": "In order to connect to the Mantis cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\n\n\n\n\nWarning\n\n\n\nWhen you connect to Mantis, you will be connected to a login node. Please do not do any serious computation on these nodes. To do real work, submit a batch job or request an interactive session. Long running or intensive processes found on login nodes may be killed without notice.\n\n\n\n\nIf you connect to the CAM virtual private network, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nThis host will drop you onto one of four login nodes, labeled mantis-sub-[1-4]. If the redirect fails, you can try logging in directly to one of them:\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nTODO: Appropriate/accurate to say something about load balancing here\n\n\nThe internal host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\nThe cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication, however, so to use it you must set up an ssh key.\nThe host URL is:\nlogin.hpc.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nAs above, this url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of them.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this\n\n\n\n\n\n\n\n\n\nTo connect to the CAM VPN, follow the instructions here.\nNote that the CAM VPN is distinct from the University VPN. \n\n\n\nSSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\nMac/LinuxWindows\n\n\n\n\nYou can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
     "crumbs": [
       "Connecting"
     ]
   },
   {
-    "objectID": "connect.html#on-campus-or-cam-vpn-host-url",
-    "href": "connect.html#on-campus-or-cam-vpn-host-url",
-    "title": "Connecting to cluster",
+    "objectID": "connect.html#internal-host-url",
+    "href": "connect.html#internal-host-url",
+    "title": "Connecting to Mantis",
     "section": "",
-    "text": "While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
+    "text": "If you connect to the CAM virtual private network, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nThis host will drop you onto one of four login nodes, labeled mantis-sub-[1-4]. If the redirect fails, you can try logging in directly to one of them:\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nTODO: Appropriate/accurate to say something about load balancing here\n\n\nThe internal host is planned to be phased out in the near future so that only the external host explained below will be used.",
     "crumbs": [
       "Connecting"
     ]
@@ -22,9 +22,9 @@
   {
     "objectID": "connect.html#external-host-url",
     "href": "connect.html#external-host-url",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
-    "text": "The cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
+    "text": "The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication, however, so to use it you must set up an ssh key.\nThe host URL is:\nlogin.hpc.cam.uchc.edu\n\n\n\n\n\n\nTip\n\n\n\nAs above, this url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of them.",
     "crumbs": [
       "Connecting"
     ]
@@ -32,7 +32,7 @@
   {
     "objectID": "connect.html#using-ssh-client",
     "href": "connect.html#using-ssh-client",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
     "text": "Mac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this",
     "crumbs": [
@@ -42,9 +42,9 @@
   {
     "objectID": "connect.html#vpn",
     "href": "connect.html#vpn",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
-    "text": "https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/",
+    "text": "To connect to the CAM VPN, follow the instructions here.\nNote that the CAM VPN is distinct from the University VPN.",
     "crumbs": [
       "Connecting"
     ]
@@ -52,7 +52,7 @@
   {
     "objectID": "connect.html#sec-ssh-keys",
     "href": "connect.html#sec-ssh-keys",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
     "text": "SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\nMac/LinuxWindows\n\n\n\n\nYou can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "connect.html#ssh-tunnelling",
     "href": "connect.html#ssh-tunnelling",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
     "text": "TODO: Explain why you might need this and how to do it.",
     "crumbs": [
@@ -72,7 +72,7 @@
   {
     "objectID": "connect.html#x11-forwarding",
     "href": "connect.html#x11-forwarding",
-    "title": "Connecting to cluster",
+    "title": "Connecting to Mantis",
     "section": "",
     "text": "TODO: Why you might need this and how to do it.",
     "crumbs": [
@@ -236,9 +236,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "University of Connecticut Health Center High Performance Computing",
+    "title": "UConn Health High Performance Computing",
     "section": "",
-    "text": "Warning! These are currently under development and not yet intended for use."
+    "text": "This site provides documentation for users of the Mantis computer cluster, housed at UConn Health. This cluster is available to all UConn researchers, with a focus on bioinformatics, genomics and other data-intensive computational problems.\nThis page is maintained by the Computational Biology Core at the Institute for Systems Genomics.\nThere is a second high performance computing facility (also available to all UConn researchers) housed at Storrs campus. To learn more about accessing and using that system, visit this site."
   },
   {
     "objectID": "cli.html",

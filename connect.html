@@ -171,9 +171,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connecting-to-cluster" id="toc-connecting-to-cluster" class="nav-link active" data-scroll-target="#connecting-to-cluster">Connecting to cluster</a>
+  <li><a href="#connecting-to-mantis" id="toc-connecting-to-mantis" class="nav-link active" data-scroll-target="#connecting-to-mantis">Connecting to Mantis</a>
   <ul class="collapse">
-  <li><a href="#on-campus-or-cam-vpn-host-url" id="toc-on-campus-or-cam-vpn-host-url" class="nav-link" data-scroll-target="#on-campus-or-cam-vpn-host-url">On Campus or CAM VPN Host URL</a></li>
+  <li><a href="#internal-host-url" id="toc-internal-host-url" class="nav-link" data-scroll-target="#internal-host-url">Internal Host URL</a></li>
   <li><a href="#external-host-url" id="toc-external-host-url" class="nav-link" data-scroll-target="#external-host-url">External Host URL</a></li>
   <li><a href="#using-ssh-client" id="toc-using-ssh-client" class="nav-link" data-scroll-target="#using-ssh-client">Using SSH Client</a></li>
   <li><a href="#vpn" id="toc-vpn" class="nav-link" data-scroll-target="#vpn">VPN</a></li>
@@ -188,14 +188,26 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="connecting-to-cluster" class="level1">
-<h1>Connecting to cluster</h1>
-<p>In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.</p>
-<section id="on-campus-or-cam-vpn-host-url" class="level2">
-<h2 class="anchored" data-anchor-id="on-campus-or-cam-vpn-host-url">On Campus or CAM VPN Host URL</h2>
-<p>While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the <a href="">Cam VPN</a>, the cluster can be accessed through this host url:</p>
+<section id="connecting-to-mantis" class="level1">
+<h1>Connecting to Mantis</h1>
+<p>In order to connect to the Mantis cluster, you must use an SSH client. See below for instructions based on your operating system.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you connect to Mantis, you will be connected to a <strong>login node</strong>. Please do not do any serious computation on these nodes. To do real work, <a href="">submit a batch job</a> or request an <a href="">interactive session</a>. Long running or intensive processes found on login nodes may be killed without notice.</p>
+</div>
+</div>
+<section id="internal-host-url" class="level2">
+<h2 class="anchored" data-anchor-id="internal-host-url">Internal Host URL</h2>
+<p>If you connect to the <a href="./connect.html#sec-vpn">CAM virtual private network</a>, the cluster can be accessed through this host url:</p>
 <p><code>mantis-submit.cam.uchc.edu</code></p>
-<p>This host is planned to be phased out in the near future so that only the external host explained below will be used.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -206,20 +218,23 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO: Appropriate/accurate to say something about load balancing here</p>
+<p>This host will drop you onto one of four login nodes, labeled <code>mantis-sub-[1-4]</code>. If the redirect fails, you can try logging in directly to one of them:</p>
 <ul>
 <li><code>mantis-sub-1.cam.uchc.edu</code></li>
 <li><code>mantis-sub-2.cam.uchc.edu</code></li>
 <li><code>mantis-sub-3.cam.uchc.edu</code></li>
 <li><code>mantis-sub-4.cam.uchc.edu</code></li>
 </ul>
-<p>If the redirect fails, you can try logging in directly to one of these hosts.</p>
+<p>TODO: Appropriate/accurate to say something about load balancing here</p>
 </div>
 </div>
+<p>The internal host is planned to be phased out in the near future so that only the external host explained below will be used.</p>
 </section>
 <section id="external-host-url" class="level2">
 <h2 class="anchored" data-anchor-id="external-host-url">External Host URL</h2>
-<p>The cluster can also be accessed through <code>login.hpc.cam.uchc.edu</code> from any network (on/off campus, with/without VPN) but requires that you <a href="./connect.html#sec-ssh-keys">setup an ssh key</a>.</p>
+<p>The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication, however, so to use it you must <a href="./connect.html#sec-ssh-keys">set up an ssh key</a>.</p>
+<p>The host URL is:</p>
+<p><code>login.hpc.cam.uchc.edu</code></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -230,13 +245,13 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:</p>
+<p>As above, this url will redirect you to one of these hosts:</p>
 <ul>
 <li><code>mantis-sub-5.cam.uchc.edu</code></li>
 <li><code>mantis-sub-6.cam.uchc.edu</code></li>
 <li><code>mantis-sub-7.cam.uchc.edu</code></li>
 </ul>
-<p>If the redirect fails, you can try logging in directly to one of these hosts.</p>
+<p>If the redirect fails, you can try logging in directly to one of them.</p>
 </div>
 </div>
 </section>
@@ -271,7 +286,8 @@ Tip
 </section>
 <section id="vpn" class="level2">
 <h2 class="anchored" data-anchor-id="vpn">VPN</h2>
-<p>https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ <!--TODO: Move the documentation for vnp here eventually --></p>
+<p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
+<p>Note that the CAM VPN is distinct from the University VPN. <!--TODO: Move the documentation for vnp here eventually --></p>
 </section>
 <section id="sec-ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ssh-keys">SSH Keys</h2>
