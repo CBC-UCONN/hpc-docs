@@ -15,12 +15,13 @@ Every night at 3:00AM a snapshot of the filesystem is created preserved for 10 d
 
 TODO: The timestamps on snapshots don't say 3:00. Should we explain why?
 
-To recover a file from a snapshot:
+To recover a file or directory from a snapshot:
 
-1. Enter the snapshots directory with `cd .snapshot`.
-2. See the available snapshots with `ls -l`.
-3. Choose the desired snapshot date and `cd <name>`. 
-4. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.
+1. Navigate to the parent directory which contained the file or directory that you want to recover.
+2. Enter the snapshots directory with `cd .snapshot`.
+3. See the available snapshots with `ls -l`.
+4. Choose the desired snapshot date and `cd <name>`. 
+5. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.
 
 ::: {.callout-note}
 The `.snapshot` directory will not be visible in the output of the `ls` command.
