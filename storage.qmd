@@ -11,9 +11,9 @@ How can you check your quotas? Do we have a script for this?
 
 
 # Snapshots
-Every night at 3:00AM a snapshot of the filesystem is created preserved for 10 days.
+A snapshot of the entire file system is made each day and is preserved for a period of 10 days. You can access this backup to recover files and directories that were lost unintentionally.
 
-TODO: The timestamps on snapshots don't say 3:00. Should we explain why?
+<!-- TODO: The timestamps on snapshots vary. Should we explain why? What time are snapshots generated? -->
 
 To recover a file or directory from a snapshot:
 
@@ -21,7 +21,7 @@ To recover a file or directory from a snapshot:
 2. Enter the snapshots directory with `cd .snapshot`.
 3. See the available snapshots with `ls -l`.
 4. Choose the desired snapshot date and `cd <name>`. 
-5. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.
+5. Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>`.
 
 ::: {.callout-note}
 The `.snapshot` directory will not be visible in the output of the `ls` command.
