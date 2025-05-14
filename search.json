@@ -50,8 +50,8 @@
     ]
   },
   {
-    "objectID": "connect.html#ssh-keys",
-    "href": "connect.html#ssh-keys",
+    "objectID": "connect.html#sec-ssh-keys",
+    "href": "connect.html#sec-ssh-keys",
     "title": "Connecting to cluster",
     "section": "",
     "text": "SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\nMac/LinuxWindows\n\n\n\n\nYou can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
