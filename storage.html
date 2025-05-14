@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-78452510fad45fbae61dfdbf9a6f2d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -218,8 +218,9 @@ ul.task-list li input[type="checkbox"] {
 <h1>Snapshots</h1>
 <p>Every night at 3:00AM a snapshot of the filesystem is created preserved for 10 days.</p>
 <p>TODO: The timestamps on snapshots don’t say 3:00. Should we explain why?</p>
-<p>To recover a file from a snapshot:</p>
+<p>To recover a file or directory from a snapshot:</p>
 <ol type="1">
+<li>Navigate to the parent directory which contained the file or directory that you want to recover.</li>
 <li>Enter the snapshots directory with <code>cd .snapshot</code>.</li>
 <li>See the available snapshots with <code>ls -l</code>.</li>
 <li>Choose the desired snapshot date and <code>cd &lt;name&gt;</code>.</li>

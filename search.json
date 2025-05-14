@@ -1,19 +1,102 @@
 [
   {
-    "objectID": "snapshots.html",
-    "href": "snapshots.html",
-    "title": "UCHC HPC",
+    "objectID": "connect.html",
+    "href": "connect.html",
+    "title": "Connecting to cluster",
     "section": "",
-    "text": "Instructions on recovering files from .snapshots"
+    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nWhile connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\nThe cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this\n\n\n\n\n\n\n\n\n\nhttps://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ \n\n\n\nTODO: Explain a bit about they are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
+    "crumbs": [
+      "Connecting"
+    ]
   },
   {
-    "objectID": "databases.html",
-    "href": "databases.html",
-    "title": "UCHC HPC",
+    "objectID": "connect.html#on-campus-or-cam-vpn-host-url",
+    "href": "connect.html#on-campus-or-cam-vpn-host-url",
+    "title": "Connecting to cluster",
     "section": "",
-    "text": "format: html: theme: light: flatly toc: true include-in-header: - text:\n\nTesting ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
+    "text": "While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
     "crumbs": [
-      "Databases"
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#external-host-url",
+    "href": "connect.html#external-host-url",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "The cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#using-ssh-client",
+    "href": "connect.html#using-ssh-client",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "Mac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#vpn",
+    "href": "connect.html#vpn",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#ssh-keys",
+    "href": "connect.html#ssh-keys",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "TODO: Explain a bit about they are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#ssh-tunnelling",
+    "href": "connect.html#ssh-tunnelling",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "TODO: Explain why you might need this and how to do it.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#x11-forwarding",
+    "href": "connect.html#x11-forwarding",
+    "title": "Connecting to cluster",
+    "section": "",
+    "text": "TODO: Why you might need this and how to do it.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Environment Modules",
+    "section": "",
+    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
+    "crumbs": [
+      "Get Help"
     ]
   },
   {
@@ -44,6 +127,23 @@
     "text": "Globus Connect\nGlobus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator.\n\nConnecting with Globus Connect\n\nLog in to the Globus web app at https://www.globus.org.\nSelect the University of Connecticut as your organization and enter your login credentials when prompted.\nOnce logged in, connect to UConn HPC by searching for “UCHC Globus Server” in the collection text field.\nSelect UCHC Globus Server and log in with your CAM credentials.\n\n\n\n\n\n\n\nNote\n\n\n\nGlobus Connect also has a desktop client available for installation on your local computer.\nThis can be downloaded at https://www.globus.org/globus-connect-personal\n\n\n\n\nFinding files in UCHC Globus Server collection\nThere are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the path text field.\n\n/globus\nThis Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the /labs, /projects, or /seqdata cluster file system directories among others.\n\n\n/home\nThis Globus file server directory contains the /home cluster file system directory. You would access your home directory by navigating to /home/FCAM/&lt;user&gt; in the Globus file server.",
     "crumbs": [
       "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?"
+  },
+  {
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Request an Account",
+    "section": "",
+    "text": "Request an Account\nIn order to access the cluster, you must first create an account.\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\n\n\nPasswords\nUpon approval of an account request you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAnytime you need to reset your password, you can do so in the CAM Password Manager.",
+    "crumbs": [
+      "Account & Password"
     ]
   },
   {
@@ -105,6 +205,47 @@
     "crumbs": [
       "Job Submission"
     ]
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "File permissions"
+  },
+  {
+    "objectID": "databases.html",
+    "href": "databases.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Testing ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes - conda - file compression - large compilations\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them.",
+    "crumbs": [
+      "Best Practices"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "University of Connecticut Health Center High Performance Computing",
+    "section": "",
+    "text": "Warning! These are currently under development and not yet intended for use."
+  },
+  {
+    "objectID": "cli.html",
+    "href": "cli.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
   },
   {
     "objectID": "storage.html",
@@ -187,14 +328,11 @@
     ]
   },
   {
-    "objectID": "bestpractices.html",
-    "href": "bestpractices.html",
+    "objectID": "snapshots.html",
+    "href": "snapshots.html",
     "title": "UCHC HPC",
     "section": "",
-    "text": "How to be a good citizen\nData storage practices\nDon’t run things on login nodes - conda - file compression - large compilations\nTest before scaling\nWarning about LLMs. Mainly, don’t blindly run output from them.",
-    "crumbs": [
-      "Best Practices"
-    ]
+    "text": "Instructions on recovering files from .snapshots"
   },
   {
     "objectID": "quick.html",
@@ -223,143 +361,5 @@
     "title": "UCHC HPC",
     "section": "Transfer Node",
     "text": "Transfer Node\ntransfer.cam.uchc.edu"
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Environment Modules",
-    "section": "",
-    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "connect.html",
-    "href": "connect.html",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.\n\n\nWhile connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\nThe cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.\n\n\n\n\n\n\nMac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this\n\n\n\n\n\n\n\n\n\nhttps://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/ \n\n\n\nTODO: Explain a bit about they are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#on-campus-or-cam-vpn-host-url",
-    "href": "connect.html#on-campus-or-cam-vpn-host-url",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the Cam VPN, the cluster can be accessed through this host url:\nmantis-submit.cam.uchc.edu\nThis host is planned to be phased out in the near future so that only the external host explained below will be used.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu\nmantis-sub-4.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#external-host-url",
-    "href": "connect.html#external-host-url",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "The cluster can also be accessed through login.hpc.cam.uchc.edu from any network (on/off campus, with/without VPN) but requires that you setup an ssh key.\n\n\n\n\n\n\nTip\n\n\n\nTODO: Appropriate/accurate to say something about load balancing here This url will redirect you to one of these hosts:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu\n\nIf the redirect fails, you can try logging in directly to one of these hosts.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#using-ssh-client",
-    "href": "connect.html#using-ssh-client",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "Mac and Linux UsersWindows Users\n\n\nAn ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.\n\n\nTo create a connection, enter the ssh command followed by your username and host url like so. Login with\nssh &lt;user&gt;@&lt;host&gt;\n\n\n\n\nCommand PromptPutty\n\n\nTODO: How to do this\n\n\nTODO: How to do this",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#vpn",
-    "href": "connect.html#vpn",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#ssh-keys",
-    "href": "connect.html#ssh-keys",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "TODO: Explain a bit about they are and why they are useful.\n\nMac/LinuxWindows\n\n\n\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\n\n\n\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\n\n\n\nTODO: How to do this on Windows\n\n\nTODO: Explain why you might need this and how to do it.\n\n\n\nTODO: Why you might need this and how to do it.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#ssh-tunnelling",
-    "href": "connect.html#ssh-tunnelling",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "TODO: Explain why you might need this and how to do it.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "connect.html#x11-forwarding",
-    "href": "connect.html#x11-forwarding",
-    "title": "Connecting to cluster",
-    "section": "",
-    "text": "TODO: Why you might need this and how to do it.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "account.html",
-    "href": "account.html",
-    "title": "Request an Account",
-    "section": "",
-    "text": "Request an Account\nIn order to access the cluster, you must first create an account.\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\n\n\nPasswords\nUpon approval of an account request you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAnytime you need to reset your password, you can do so in the CAM Password Manager.",
-    "crumbs": [
-      "Account & Password"
-    ]
-  },
-  {
-    "objectID": "misc.html",
-    "href": "misc.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Hardware\nOperating System\nStatistics\nCurrent Status?\nCurrent Usage?\nAcknowledgements\nMaybe move all of this to introduction?"
-  },
-  {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "File permissions"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "University of Connecticut Health Center High Performance Computing",
-    "section": "",
-    "text": "Warning! These are currently under development and not yet intended for use."
-  },
-  {
-    "objectID": "cli.html",
-    "href": "cli.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
   }
 ]
