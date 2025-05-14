@@ -275,18 +275,22 @@ Tip
 </section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
-<p>TODO: Explain a bit about they are and why they are useful.</p>
+<p>SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Mac/Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<section id="create-a-public-private-key-pair." class="level4">
-<h4 class="anchored" data-anchor-id="create-a-public-private-key-pair.">Create a public private key pair.</h4>
+<section id="creating-a-public-private-key-pair." class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-public-private-key-pair.">Creating a public private key pair.</h4>
+<p>You can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:</p>
 <p><code>ssh-keygen -t ed25519 -C &lt;comment&gt;</code></p>
 <p>The comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p>
+<p>You will be prompted to specify the location to save the key. You can press enter to accept the default location.</p>
+<p>Next you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.</p>
 </section>
 <section id="copy-to-mantis" class="level4">
 <h4 class="anchored" data-anchor-id="copy-to-mantis">Copy to Mantis</h4>
+<p>After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:</p>
 <p><code>ssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
 </section>
 </div>

@@ -216,15 +216,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="snapshots" class="level1">
 <h1>Snapshots</h1>
-<p>Every night at 3:00AM a snapshot of the filesystem is created preserved for 10 days.</p>
-<p>TODO: The timestamps on snapshots don’t say 3:00. Should we explain why?</p>
+<p>A snapshot of the entire file system is made each day and is preserved for a period of 10 days. You can access this backup to recover files and directories that were lost unintentionally.</p>
+<!-- TODO: The timestamps on snapshots vary. Should we explain why? What time are snapshots generated? -->
 <p>To recover a file or directory from a snapshot:</p>
 <ol type="1">
 <li>Navigate to the parent directory which contained the file or directory that you want to recover.</li>
 <li>Enter the snapshots directory with <code>cd .snapshot</code>.</li>
 <li>See the available snapshots with <code>ls -l</code>.</li>
 <li>Choose the desired snapshot date and <code>cd &lt;name&gt;</code>.</li>
-<li>Copy the file you wish to recover to a location outside of the snapshot `cp <file> <destination>.</destination></file></li>
+<li>Copy the file you wish to recover to a location outside of the snapshot <code>cp &lt;file&gt; &lt;destination&gt;</code>.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
