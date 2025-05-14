@@ -21,7 +21,7 @@ If the redirect fails, you can try logging in directly to one of these hosts.
 
 
 ## External Host URL
-The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](). 
+The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](connect.qmd#sec-ssh-keys). 
 
 ::: {.callout-tip}
 TODO: Appropriate/accurate to say something about load balancing here
@@ -64,7 +64,7 @@ TODO: How to do this
 https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/
 <!--TODO: Move the documentation for vnp here eventually -->
 
-## SSH Keys
+## SSH Keys {#sec-ssh-keys} 
 SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
 ::: panel-tabset
