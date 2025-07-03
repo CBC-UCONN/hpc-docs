@@ -177,4 +177,29 @@ To recover a file or directory from a snapshot:
 The `.snapshot` directory will not be visible in the output of the `ls` command.
 :::
 
+# Connecting to the file system
 
+Users typically interact with the file systems by connecting to the Mantis cluster and using the command line. You can also map any of the file systems to your local computer and access them through your usual graphical user interface. You can drag-and-drop files to move or copy them or open them to edit in any software you use locally. One great use-case for this is to inspect BAM files using IGV (without having to download them). 
+
+To do this, you must first connect to the CAM VPN ([instructions](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/)). Then:
+
+- From a mac, you can select from your top dropdown menu in Finder `Go:Connect to Server` and enter `smb://cfs09.cam.uchc.edu/home/FCAM/<username>`. When prompted, enter your CAM credentials (not your netID/password).
+- From Windows you can map a network filesystem using [these directions](https://health.uconn.edu/high-performance-computing/tutorials/mapping-a-network-resource/) and the address formatted like this: `\\cfs09.cam.uchc.edu\home\FCAM\<username>`
+
+The above instructions are for user home directories. They are located on file system `cfs09`. Other directories, such as `/scratch` and `/seqdata` are on separate file systems. You will need to update the above address accordingly. To list the file systems of root directories, when connected via SSH to Mantis do:
+
+```bash
+df -h
+```
+
+```
+Filesystem               Size  Used Avail Use% Mounted on
+cfs12:/core              2.1P  1.5P  593T  72% /core
+cfs09:/labs              2.3P  1.9P  453T  81% /labs
+cfs08:/ifs/scratch        84T   54T   29T  66% /scratch
+cfs09:/isg                82T   76T  6.5T  93% /isg
+cfs09:/home/FCAM         2.3P  1.9P  453T  81% /home/FCAM
+cfs15:/seqdata           728T  722T  6.1T 100% /seqdata
+```
+
+Some, such as `/seqdata` only mount if you visit them and may not immediately appear using `df`. 
