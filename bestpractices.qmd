@@ -1,6 +1,9 @@
 How to be a good citizen
 
-Data storage practices
+# Data storage practices
+
+## Sharing data with other users
+Users often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate [permissions](https://mason.gmu.edu/~montecin/UNIXpermiss.htm). You are *not permitted* to open permissions for other users to your home directory `/home/FCAM/<user>`. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in `/labs`, `/projects`, or `/scratch` that you have access to. 
 
 Don't run things on login nodes
   - conda
