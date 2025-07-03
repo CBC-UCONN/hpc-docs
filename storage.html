@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cluster Filesystems – UCHC HPC</title>
+<title>File systems and storage – UCHC HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -37,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-671b00e1cfc6432f67ce8456f499223d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -171,19 +206,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quotas" id="toc-quotas" class="nav-link active" data-scroll-target="#quotas">Quotas</a></li>
-  <li><a href="#snapshots" id="toc-snapshots" class="nav-link" data-scroll-target="#snapshots">Snapshots</a></li>
-  <li><a href="#filesystem-locations" id="toc-filesystem-locations" class="nav-link" data-scroll-target="#filesystem-locations">Filesystem Locations</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#data-storage-systems" id="toc-data-storage-systems" class="nav-link" data-scroll-target="#data-storage-systems">Data Storage Systems</a>
+  <ul class="collapse">
+  <li><a href="#active-work-spaces" id="toc-active-work-spaces" class="nav-link" data-scroll-target="#active-work-spaces">Active work spaces</a>
   <ul class="collapse">
   <li><a href="#homefcamuser" id="toc-homefcamuser" class="nav-link" data-scroll-target="#homefcamuser">/home/FCAM/&lt;user&gt;</a></li>
   <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">/labs</a></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">/projects</a></li>
   <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
+  <li><a href="#sandbox" id="toc-sandbox" class="nav-link" data-scroll-target="#sandbox">/sandbox</a></li>
   <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">/seqdata</a></li>
-  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
   <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">/tmp</a></li>
+  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local">/local</a></li>
   </ul></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a></li>
+  <li><a href="#archival-spaces" id="toc-archival-spaces" class="nav-link" data-scroll-target="#archival-spaces">Archival spaces</a>
+  <ul class="collapse">
+  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
+  <li><a href="#tapebackup" id="toc-tapebackup" class="nav-link" data-scroll-target="#tapebackup">/tapebackup</a></li>
+  <li><a href="#tapearchive" id="toc-tapearchive" class="nav-link" data-scroll-target="#tapearchive">/tapearchive</a></li>
+  </ul></li>
+  <li><a href="#summary-table" id="toc-summary-table" class="nav-link" data-scroll-target="#summary-table">Summary table</a></li>
+  </ul></li>
+  <li><a href="#quotas" id="toc-quotas" class="nav-link" data-scroll-target="#quotas">Quotas</a></li>
+  <li><a href="#restoring-lost-data" id="toc-restoring-lost-data" class="nav-link" data-scroll-target="#restoring-lost-data">Restoring lost data</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cluster Filesystems</h1>
+<h1 class="title">File systems and storage</h1>
 </div>
 
 
@@ -209,14 +255,255 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>The HPC offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems below are network-attached, meaning they are accessible from all compute and login nodes.</p>
+</section>
+<section id="data-storage-systems" class="level1">
+<h1>Data Storage Systems</h1>
+<p>Below is a summary of the primary locations in the cluster file system that users will interact with.</p>
+<section id="active-work-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="active-work-spaces">Active work spaces</h2>
+<p>The following spaces are suitable for use for active data analysis.</p>
+<section id="homefcamuser" class="level3">
+<h3 class="anchored" data-anchor-id="homefcamuser">/home/FCAM/&lt;user&gt;</h3>
+<p>All users will have a home directory when their account is created.</p>
+<p>This location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.</p>
+<p>Quota: 1TB, can be increased upon request.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Users are not permitted to open permissions on their home directories. If you need to share files with other users, try any of the below directories you have access to. If you open permissions on your home directory, it may be locked down.</p>
+</div>
+</div>
+</section>
+<section id="labs" class="level3">
+<h3 class="anchored" data-anchor-id="labs">/labs</h3>
+<p>This can be created at the request of a PI.</p>
+<p>This location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab. You will need to be part of the PI’s permission group to access a lab directory.</p>
+<p>Quota: 2TB, can be increased upon request.</p>
+</section>
+<section id="projects" class="level3">
+<h3 class="anchored" data-anchor-id="projects">/projects</h3>
+<p>This can be created at the request of a PI.</p>
+<p>This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.</p>
+<p>Quota: 2TB, can be increased upon request.</p>
+</section>
+<section id="scratch" class="level3">
+<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
+<p>Anyone can create a directory here.</p>
+<p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 84TB of space. Please be considerate of other users of this shared resource.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <code>/scratch</code> files are subject to deletion without notice after <strong>90 days</strong>.</p>
+</div>
+</div>
+</section>
+<section id="sandbox" class="level3">
+<h3 class="anchored" data-anchor-id="sandbox">/sandbox</h3>
+<p>This system has identical policies to <code>/scratch</code>. It is in development. At the time of writing (7/25) it was not up.</p>
+</section>
+<section id="seqdata" class="level3">
+<h3 class="anchored" data-anchor-id="seqdata">/seqdata</h3>
+<p>This location is used for storing raw and original sequencing data. Data are stored as read-only. You may request that raw data be stored here (all data generated by CGI is stored here by default), but CBC will have to move it there for you, as users do not have write access.</p>
+<p>If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.</p>
+<p><strong>Do not copy data from this directory</strong>. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A symlink, or <em>symbolic link</em> is a pointer to a file or directory that behaves like the real thing.</p>
+<p>If you want to use data from <code>/seqdata</code> as if it were in one of your project directories you can create a symlink like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/<span class="op">&lt;</span>user<span class="op">&gt;</span>/AwesomeProject/rawData/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>/seqdata/CGI/Fastq_Files/AwesomeWGS_May2025</code> is the raw data directory and <code>/home/FCAM/&lt;user&gt;/AwesomeProject/rawData/</code> is the destination. You will then have a symlink, <code>/home/FCAM/&lt;user&gt;/AwesomeProject/rawData/AwesomeWGS_May2025</code> that behaves just as if the files contained had been copied without taking up all the space.</p>
+</div>
+</div>
+</section>
+<section id="tmp" class="level3">
+<h3 class="anchored" data-anchor-id="tmp">/tmp</h3>
+<p>Each node has it’s own local <code>/tmp</code> directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.</p>
+<p><code>/tmp</code> is a shared space. Once an analysis is done, important data need to be moved out of this space and any other files should be removed.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On our system <code>/tmp</code> is pretty small and often fills up. Many programs quietly write to <code>/tmp</code> by default without telling users (they usually quietly clean up afterward as well). If <code>/tmp</code> fills up, <code>no space left on device</code> errors frequently result, confusing users who know they still have plenty of space in their storage quota. If you are running a program that does this, say:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can usually get it to write to another temporary directory by setting and exporting the variable <code>TMPDIR</code> to somewhere else before running it:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">TMPDIR</span><span class="op">=</span>myNewTmpDir <span class="co"># this directory must exist or an error will result</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can create your own temporary directory where you are doing the analysis, or you can use <code>/local</code>.</p>
+</div>
+</div>
+<p>The system will remove contents of this directory after TODO: how long or under what conditions?</p>
+</section>
+<section id="local" class="level3">
+<h3 class="anchored" data-anchor-id="local">/local</h3>
+<p>This is another space local to each node and shared among users. It is larger than <code>/tmp</code> and files should be removed immediately after analysis.</p>
+</section>
+</section>
+<section id="archival-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="archival-spaces">Archival spaces</h2>
+<p>These spaces are meant for archiving data for varying durations. Users can request the creation of directories they have read/write access to.</p>
+<section id="archive" class="level3">
+<h3 class="anchored" data-anchor-id="archive">/archive</h3>
+<p>This system is intended for <em>medium term</em> storage of data that is no longer being used for analysis, but which may be needed within a year or so. <code>/archive</code> gives relatively fast access (not as fast as the above directories). The data are securely stored, being geospread across four data centers. As such, it is <em>relatively expensive</em> for us to store data here. Users should not plan on permanently archiving data here.</p>
+<p>PIs and users can request storage space here in a directory structure that mirrors <code>/home/FCAM</code>, <code>/projects</code> and <code>/labs</code> to which they have read/write access.</p>
+<p>Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?</p>
+<p>If you would like to move data to this location please contact us at cbcsupport@helpspotmail.com</p>
+<div class="{callout-note}">
+<p>Reading from this directory is slow compared to <code>/seqdata</code>. Request that data be moved back to <code>/seqdata</code> if you will be actively using the data for analysis.</p>
+</div>
+</section>
+<section id="tapebackup" class="level3">
+<h3 class="anchored" data-anchor-id="tapebackup">/tapebackup</h3>
+<p>This system is intended for <em>longer-term</em> storage (greater than one year). This system stores data on <a href="https://en.wikipedia.org/wiki/Magnetic-tape_data_storage">magnetic tape</a>. Data stored here goes on a single magnetic tape and is not backed up, though magnetic tape is highly stable.</p>
+<p>Access to magnetic tape is <em>slow</em>. Depending on how busy the system is, it may take hours or days for data to be written or retrieved. It is, however, inexpensive.</p>
+<p>The directory structure is similar to <code>/archive</code>. Users can request space here to which they have read/write access.</p>
+</section>
+<section id="tapearchive" class="level3">
+<h3 class="anchored" data-anchor-id="tapearchive">/tapearchive</h3>
+<p>This system is intended for <em>very long term</em> to permanent storage. It also stores data on magnetic tape, but on two redundant systems. Like <code>/tapebackup</code>, access is slow.</p>
+<p>User access and directory structure are the same as <code>/archive</code> and <code>/tapebackup</code>.</p>
+</section>
+</section>
+<section id="summary-table" class="level2">
+<h2 class="anchored" data-anchor-id="summary-table">Summary table</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Directory</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Quota/Capacity</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/home/FCAM/&lt;user&gt;</code></td>
+<td>Personal home directory for code, config, small data</td>
+<td>Created for each user</td>
+<td>1TB (increasable)</td>
+<td>Permissions must remain private. For sharing, use <code>/labs</code> or <code>/projects</code>.</td>
+</tr>
+<tr class="even">
+<td><code>/labs</code></td>
+<td>Shared lab project space</td>
+<td>PI request, lab group members</td>
+<td>2TB (increasable)</td>
+<td>For intra-lab collaboration.</td>
+</tr>
+<tr class="odd">
+<td><code>/projects</code></td>
+<td>Shared inter-lab project space</td>
+<td>PI request, project group members</td>
+<td>2TB (increasable)</td>
+<td>For collaboration across labs.</td>
+</tr>
+<tr class="even">
+<td><code>/scratch</code></td>
+<td>Temporary storage for active analyses</td>
+<td>Open to all users</td>
+<td>84TB (shared)</td>
+<td>Files may be deleted after 90 days.</td>
+</tr>
+<tr class="odd">
+<td><code>/sandbox</code></td>
+<td>Temporary space (in development)</td>
+<td>Same as <code>/scratch</code></td>
+<td>TBD</td>
+<td>Not yet active as of 7/25.</td>
+</tr>
+<tr class="even">
+<td><code>/seqdata</code></td>
+<td>Central store for raw/original sequencing data</td>
+<td>Read-only for users</td>
+<td>NA</td>
+<td>Use symlinks instead of copying. Contact CBC to store new data.</td>
+</tr>
+<tr class="odd">
+<td><code>/tmp</code></td>
+<td>Node-local temporary space</td>
+<td>Shared per node</td>
+<td>Small (varies by node)</td>
+<td>May fill up unexpectedly. Set <code>TMPDIR</code> to redirect temp files.</td>
+</tr>
+<tr class="even">
+<td><code>/local</code></td>
+<td>Larger node-local temp space</td>
+<td>Shared per node</td>
+<td>Larger than <code>/tmp</code></td>
+<td>Clean up after use.</td>
+</tr>
+<tr class="odd">
+<td><code>/archive</code></td>
+<td>Medium-term storage (up to ~1 year)</td>
+<td>Request via CBC, access varies</td>
+<td>NA</td>
+<td>Slower than active spaces, geospread, more expensive.</td>
+</tr>
+<tr class="even">
+<td><code>/tapebackup</code></td>
+<td>Long-term storage (1+ years)</td>
+<td>Request via CBC, access varies</td>
+<td>NA</td>
+<td>Stored on single magnetic tape, not redundant, very slow access.</td>
+</tr>
+<tr class="odd">
+<td><code>/tapearchive</code></td>
+<td>Very long-term or permanent storage</td>
+<td>Request via CBC, access varies</td>
+<td>NA</td>
+<td>Redundant magnetic tape storage, very slow access.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="quotas" class="level1">
 <h1>Quotas</h1>
 <p>TODO: Explain quotas</p>
 <p>How can you check your quotas? Do we have a script for this?</p>
 </section>
-<section id="snapshots" class="level1">
-<h1>Snapshots</h1>
-<p>A snapshot of the entire file system is made each day and is preserved for a period of 10 days. You can access this backup to recover files and directories that were lost unintentionally.</p>
+<section id="restoring-lost-data" class="level1">
+<h1>Restoring lost data</h1>
+<p>A snapshot of systems used for active work (not archival systems) is made each day. Snapshots are preserved for <strong>10 days</strong>. You can access this backup to restore files and directories that were lost or corrupted.</p>
 <!-- TODO: The timestamps on snapshots vary. Should we explain why? What time are snapshots generated? -->
 <p>To recover a file or directory from a snapshot:</p>
 <ol type="1">
@@ -239,59 +526,6 @@ Note
 <p>The <code>.snapshot</code> directory will not be visible in the output of the <code>ls</code> command.</p>
 </div>
 </div>
-</section>
-<section id="filesystem-locations" class="level1">
-<h1>Filesystem Locations</h1>
-<p>Below is a summary of the primary locations in the cluster file system that users will interact with.</p>
-<section id="homefcamuser" class="level2">
-<h2 class="anchored" data-anchor-id="homefcamuser">/home/FCAM/&lt;user&gt;</h2>
-<p>All users will have a home directory when their account is created.</p>
-<p>This location is primarily intended for storage of small files such as scripts, source code, configuration, software installtions, and can accomodate a small amount of data.</p>
-<p>Quota: 1TB, can be increased upon request.</p>
-</section>
-<section id="labs" class="level2">
-<h2 class="anchored" data-anchor-id="labs">/labs</h2>
-<p>This can be created at the request of a PI.</p>
-<p>This location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab.</p>
-<p>Quota: 2TB, can be increased upon request</p>
-</section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">/projects</h2>
-<p>This can be created at the request of a PI.</p>
-<p>This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project.</p>
-<p>Quota: 2TB, can be increased upon request.</p>
-</section>
-<section id="scratch" class="level2">
-<h2 class="anchored" data-anchor-id="scratch">/scratch</h2>
-<p>Anyone can create a directory here.</p>
-<p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.</p>
-<p>Files may be removed from this location after <strong>90 days</strong>.</p>
-<p>TODO: Should we say something about how much space people can/should use?</p>
-</section>
-<section id="seqdata" class="level2">
-<h2 class="anchored" data-anchor-id="seqdata">/seqdata</h2>
-<p>This location is used for storing raw and original sequencing data. Data are stored as read-only.</p>
-<p><strong>Do not copy data from this directory</strong>. For convenience, consider <a href="">making a symlink</a> to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.</p>
-<p>If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.</p>
-</section>
-<section id="archive" class="level2">
-<h2 class="anchored" data-anchor-id="archive">/archive</h2>
-<p>This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?</p>
-<p>If you would like to move data to this location please contact us at cbcsupport@helpspotmail.com</p>
-<div class="{callout-note}">
-<p>Reading from this directory is slow compared to <code>/seqdata</code>. Request that data be moved back to <code>/seqdata</code> if you will be actively using the data for analysis.</p>
-</div>
-</section>
-<section id="tmp" class="level2">
-<h2 class="anchored" data-anchor-id="tmp">/tmp</h2>
-<p>Each node has it’s own local <code>/tmp</code> directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.</p>
-<p>Once an analysis is done, important data need to be moved out of this space and any other files should be removed.</p>
-<p>The system will remove contents of this directory after TODO: how long or under what conditions?.</p>
-</section>
-</section>
-<section id="details" class="level1">
-<h1>Details</h1>
-<p>TODO: maybe explain the systems with a bit more detail here? - disk types of the mounted file systems and protocols in use for those? - Current system capacity in various locations</p>
 
 
 </section>

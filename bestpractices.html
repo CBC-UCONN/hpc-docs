@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1da6c937a5abe082e6185c803ccbec01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-671b00e1cfc6432f67ce8456f499223d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -166,8 +166,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-storage-practices" id="toc-data-storage-practices" class="nav-link active" data-scroll-target="#data-storage-practices">Data storage practices</a>
+  <ul class="collapse">
+  <li><a href="#sharing-data-with-other-users" id="toc-sharing-data-with-other-users" class="nav-link" data-scroll-target="#sharing-data-with-other-users">Sharing data with other users</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -176,12 +185,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>How to be a good citizen</p>
-<p>Data storage practices</p>
+<section id="data-storage-practices" class="level1">
+<h1>Data storage practices</h1>
+<section id="sharing-data-with-other-users" class="level2">
+<h2 class="anchored" data-anchor-id="sharing-data-with-other-users">Sharing data with other users</h2>
+<p>Users often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate <a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">permissions</a>. You are <em>not permitted</em> to open permissions for other users to your home directory <code>/home/FCAM/&lt;user&gt;</code>. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in <code>/labs</code>, <code>/projects</code>, or <code>/scratch</code> that you have access to.</p>
 <p>Don’t run things on login nodes - conda - file compression - large compilations</p>
 <p>Test before scaling</p>
 <p>Warning about LLMs. Mainly, don’t blindly run output from them.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
