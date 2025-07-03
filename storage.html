@@ -230,6 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#quotas" id="toc-quotas" class="nav-link" data-scroll-target="#quotas">Quotas</a></li>
   <li><a href="#restoring-lost-data" id="toc-restoring-lost-data" class="nav-link" data-scroll-target="#restoring-lost-data">Restoring lost data</a></li>
+  <li><a href="#connecting-to-the-file-system" id="toc-connecting-to-the-file-system" class="nav-link" data-scroll-target="#connecting-to-the-file-system">Connecting to the file system</a></li>
   </ul>
 </nav>
     </div>
@@ -526,6 +527,25 @@ Note
 <p>The <code>.snapshot</code> directory will not be visible in the output of the <code>ls</code> command.</p>
 </div>
 </div>
+</section>
+<section id="connecting-to-the-file-system" class="level1">
+<h1>Connecting to the file system</h1>
+<p>Users typically interact with the file systems by connecting to the Mantis cluster and using the command line. You can also map any of the file systems to your local computer and access them through your usual graphical user interface. You can drag-and-drop files to move or copy them or open them to edit in any software you use locally. One great use-case for this is to inspect BAM files using IGV (without having to download them).</p>
+<p>To do this, you must first connect to the CAM VPN (<a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">instructions</a>). Then:</p>
+<ul>
+<li>From a mac, you can select from your top dropdown menu in Finder <code>Go:Connect to Server</code> and enter <code>smb://cfs09.cam.uchc.edu/home/FCAM/&lt;username&gt;</code>. When prompted, enter your CAM credentials (not your netID/password).</li>
+<li>From Windows you can map a network filesystem using <a href="https://health.uconn.edu/high-performance-computing/tutorials/mapping-a-network-resource/">these directions</a> and the address formatted like this: <code>\\cfs09.cam.uchc.edu\home\FCAM\&lt;username&gt;</code></li>
+</ul>
+<p>The above instructions are for user home directories. They are located on file system <code>cfs09</code>. Other directories, such as <code>/scratch</code> and <code>/seqdata</code> are on separate file systems. You will need to update the above address accordingly. To list the file systems of root directories, when connected via SSH to Mantis do:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Filesystem               Size  Used Avail Use% Mounted on
+cfs12:/core              2.1P  1.5P  593T  72% /core
+cfs09:/labs              2.3P  1.9P  453T  81% /labs
+cfs08:/ifs/scratch        84T   54T   29T  66% /scratch
+cfs09:/isg                82T   76T  6.5T  93% /isg
+cfs09:/home/FCAM         2.3P  1.9P  453T  81% /home/FCAM
+cfs15:/seqdata           728T  722T  6.1T 100% /seqdata</code></pre>
+<p>Some, such as <code>/seqdata</code> only mount if you visit them and may not immediately appear using <code>df</code>.</p>
 
 
 </section>
