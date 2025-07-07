@@ -1,28 +1,48 @@
+---
+title: "Databases Available on Mantis"
+---
 
-Testing ideas for organizing this page.
+We keep several commonly used databases on the Mantis cluster. We check for updates to these databases regularly and update them as needed. TODO: More detail about this...
 
-Put some info here about how databases are managed on the cluster.
+## Blast 
+The latest version of the BLAST databases are available on Mantis. You can use them with the `blastn` command or any other BLAST command that requires a database. Inludes custom databases constructed from latest eggNOG, UNIPROT, and orthoDB releases.
 
-### Database 1
-Put a brief description of the database here and maybe some instructions about how it is used.
+### Example:
+```bash
+blastn -db <blast database path> <other options>
+```
 
-<button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
+### Paths to available databases
+- /isg/shared/databases/blast/v5
+- /isg/shared/databases/blast/v4
+- /isg/shared/databases/blast/eggnog
+
+
+## Busco
+
+### Example:
+
+### Paths to available databases
+
+
+
+<!-- <button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
     data-bs-target="#demo0"> 
   Show Paths <i class="bi bi-chevron-down"></i>
-</button>
+</button> -->
 
-<div id="demo0" class="collapse">
+<!-- <div id="demo0" class="collapse">
 <ul>
-  <li>Path 1</li>
-  <li>Path 2</li>
-  <li>Path 3</li>
+  <li>/isg/shared/databases/blast/v5</li>
+  <li>/isg/shared/databases/blast/v4</li>
+  <li>/isg/shared/databases/blast/eggnog</li>
 </ul>
 <hr></hr>
 
-</div>
+</div> -->
 
 
-### Database 2
+<!-- ### Database 2
 Put a brief description of the database here and maybe some instructions about how it is used.
 
 <button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
@@ -47,4 +67,4 @@ Put a brief description of the database here and maybe some instructions about h
   </tr>
 
 </table>
-</div>
+</div> -->
