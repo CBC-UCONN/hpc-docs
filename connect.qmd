@@ -1,37 +1,49 @@
-# Connecting to cluster
-In order to connect to cluster, you must use an SSH client. See below for instructions based on your operating system.
+# Connecting to Mantis
+In order to connect to the Mantis cluster, you must use an SSH client. See below for instructions based on your operating system.
 
-## On Campus or CAM VPN Host URL
-While connected to most networks at the University of Connecticut or Univeristy of Connecticut Health center or if you are connected to the [Cam VPN](), the cluster can be accessed through this host url: 
+::: {.callout-warning}
+When you connect to Mantis, you will be connected to a **login node**. Please do not do any serious computation on these nodes. To do real work, [submit a batch job]() or request an [interactive session](). Long running or intensive processes found on login nodes may be killed without notice. 
+:::
+
+
+## Internal Host URL
+
+If you connect to the [CAM virtual private network](connect.qmd#sec-vpn), the cluster can be accessed through this host url: 
 
 `mantis-submit.cam.uchc.edu` 
 
-This host is planned to be phased out in the near future so that only the external host explained below will be used.
 
 ::: {.callout-tip}
-TODO: Appropriate/accurate to say something about load balancing here
+This host will drop you onto one of four login nodes, labeled `mantis-sub-[1-4]`. 
+If the redirect fails, you can try logging in directly to one of them:
 
 - `mantis-sub-1.cam.uchc.edu`
 - `mantis-sub-2.cam.uchc.edu`
 - `mantis-sub-3.cam.uchc.edu`
 - `mantis-sub-4.cam.uchc.edu`
 
-If the redirect fails, you can try logging in directly to one of these hosts.
+
+TODO: Appropriate/accurate to say something about load balancing here
 :::
 
+The internal host is planned to be phased out in the near future so that only the external host explained below will be used.
 
 ## External Host URL
-The cluster can also be accessed through `login.hpc.cam.uchc.edu` from any network (on/off campus, with/without VPN) but requires that you [setup an ssh key](connect.qmd#sec-ssh-keys). 
+
+The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication,  however, so to use it you must [set up an ssh key](connect.qmd#sec-ssh-keys).
+
+The host URL is:
+
+`login.hpc.cam.uchc.edu` 
 
 ::: {.callout-tip}
-TODO: Appropriate/accurate to say something about load balancing here
-This url will redirect you to one of these hosts:
+As above, this url will redirect you to one of these hosts:
 
 - `mantis-sub-5.cam.uchc.edu`
 - `mantis-sub-6.cam.uchc.edu`
 - `mantis-sub-7.cam.uchc.edu`
 
-If the redirect fails, you can try logging in directly to one of these hosts.
+If the redirect fails, you can try logging in directly to one of them.
 :::
 
 ## Using SSH Client
@@ -61,7 +73,10 @@ TODO: How to do this
 
 
 ## VPN
-https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/
+
+To connect to the CAM VPN, follow the instructions [here](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/). 
+
+Note that the CAM VPN is distinct from the University VPN. 
 <!--TODO: Move the documentation for vnp here eventually -->
 
 ## SSH Keys {#sec-ssh-keys} 
