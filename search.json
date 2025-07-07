@@ -221,9 +221,29 @@
   {
     "objectID": "databases.html",
     "href": "databases.html",
-    "title": "UCHC HPC",
+    "title": "Databases Available on Mantis",
     "section": "",
-    "text": "Testing ideas for organizing this page.\nPut some info here about how databases are managed on the cluster.\n\nDatabase 1\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\nPath 1\n\n\nPath 2\n\n\nPath 3\n\n\n\n\n\n\n\nDatabase 2\nPut a brief description of the database here and maybe some instructions about how it is used.\n\nShow Paths \n\n\n\n\n\nCol1\n\n\nCol2\n\n\n\n\nPath\n\n\nSource\n\n\n\n\nPath\n\n\nSource",
+    "text": "We keep several commonly used databases on the Mantis cluster. We check for updates to these databases regularly and update them as needed. TODO: More detail about this…",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#blast",
+    "href": "databases.html#blast",
+    "title": "Databases Available on Mantis",
+    "section": "Blast",
+    "text": "Blast\nThe latest version of the BLAST databases are available on Mantis. You can use them with the blastn command or any other BLAST command that requires a database. Inludes custom databases constructed from latest eggNOG, UNIPROT, and orthoDB releases.\n\nExample:\nblastn -db &lt;blast database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/blast/v5\n/isg/shared/databases/blast/v4\n/isg/shared/databases/blast/eggnog",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#busco",
+    "href": "databases.html#busco",
+    "title": "Databases Available on Mantis",
+    "section": "Busco",
+    "text": "Busco\n\nExample:\n\n\nPaths to available databases",
     "crumbs": [
       "Databases"
     ]
