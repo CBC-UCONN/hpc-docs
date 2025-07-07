@@ -211,10 +211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example:</a></li>
   <li><a href="#paths-to-available-databases" id="toc-paths-to-available-databases" class="nav-link" data-scroll-target="#paths-to-available-databases">Paths to available databases</a></li>
   </ul></li>
-  <li><a href="#busco" id="toc-busco" class="nav-link" data-scroll-target="#busco">Busco</a>
+  <li><a href="#busco" id="toc-busco" class="nav-link" data-scroll-target="#busco">BUSCO</a>
   <ul class="collapse">
   <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example:</a></li>
   <li><a href="#paths-to-available-databases-1" id="toc-paths-to-available-databases-1" class="nav-link" data-scroll-target="#paths-to-available-databases-1">Paths to available databases</a></li>
+  </ul></li>
+  <li><a href="#cellranger" id="toc-cellranger" class="nav-link" data-scroll-target="#cellranger">CellRanger</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example:</a></li>
+  <li><a href="#paths-to-available-databases-2" id="toc-paths-to-available-databases-2" class="nav-link" data-scroll-target="#paths-to-available-databases-2">Paths to available databases</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -241,30 +246,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>We keep several commonly used databases on the Mantis cluster. We check for updates to these databases regularly and update them as needed. TODO: More detail about this…</p>
+<p>We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly: every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and previous version of each database at all times. We also host several user-made databases where there is demand.</p>
 <section id="blast" class="level2">
 <h2 class="anchored" data-anchor-id="blast">Blast</h2>
-<p>The latest version of the BLAST databases are available on Mantis. You can use them with the <code>blastn</code> command or any other BLAST command that requires a database. Inludes custom databases constructed from latest eggNOG, UNIPROT, and orthoDB releases.</p>
+<p>The latest versions of NCBI’s BLAST databases are available on Mantis. This directory also includes custom databases constructed from the newest eggNOG, orthoDB, and UniProt releases. All databases are compatible with BLAST+ v2.7.1 and up. You may use them with any blast command requiring a database (e.g., <code>blastn</code>, <code>blastp</code>).</p>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example:</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> <span class="op">&lt;</span>blast database path<span class="op">&gt;</span> <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastp</span> <span class="at">-db</span> <span class="op">&lt;</span>blast database path<span class="op">&gt;</span> <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="paths-to-available-databases" class="level3">
 <h3 class="anchored" data-anchor-id="paths-to-available-databases">Paths to available databases</h3>
 <ul>
-<li>/isg/shared/databases/blast/v5</li>
-<li>/isg/shared/databases/blast/v4</li>
-<li>/isg/shared/databases/blast/eggnog</li>
+<li>/isg/shared/databases/blast/v4/</li>
+<li>/isg/shared/databases/blast/v5/</li>
+<li>/isg/shared/databases/blast/eggnog/v5.0.1/</li>
+<li>/isg/shared/databases/blast/eggnog/v5.0.2/</li>
+<li>/isg/shared/databases/blast/orthodb/v12v1/</li>
+<li>/isg/shared/databases/blast/uniprot/v2025.06/</li>
 </ul>
 </section>
 </section>
 <section id="busco" class="level2">
-<h2 class="anchored" data-anchor-id="busco">Busco</h2>
+<h2 class="anchored" data-anchor-id="busco">BUSCO</h2>
+<p>The latest versions of the EZLab’s BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases, compatible with BUSCO v5.0.0 and up.</p>
 <section id="example-1" class="level3">
 <h3 class="anchored" data-anchor-id="example-1">Example:</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">busco</span> <span class="at">-l</span> <span class="op">&lt;</span>busco database path<span class="op">&gt;</span> <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="paths-to-available-databases-1" class="level3">
 <h3 class="anchored" data-anchor-id="paths-to-available-databases-1">Paths to available databases</h3>
+<ul>
+<li>/isg/shared/databases/busco/odb10/</li>
+<li>/isg/shared/databases/busco/odb12/</li>
+</ul>
+</section>
+</section>
+<section id="cellranger" class="level2">
+<h2 class="anchored" data-anchor-id="cellranger">CellRanger</h2>
+<p>The latest versions of 10X Genomics’ CellRanger databases are available on Mantis. This directory contains human, mouse, and rat genomic and transcriptomic reference data, compatible with all versions of CellRanger.</p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example:</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cellranger</span> count <span class="at">--transcriptome</span> <span class="op">&lt;</span>cellranger database path<span class="op">&gt;</span> <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="paths-to-available-databases-2" class="level3">
+<h3 class="anchored" data-anchor-id="paths-to-available-databases-2">Paths to available databases</h3>
+<ul>
+<li>/isg/shared/databases/cellranger/v2020A/</li>
+<li>/isg/shared/databases/cellranger/v2024A/</li>
+</ul>
 <!-- <button type="button" class="btn btn-primary btn-sm chevron-toggle" data-bs-toggle="collapse" 
     data-bs-target="#demo0"> 
   Show Paths <i class="bi bi-chevron-down"></i>

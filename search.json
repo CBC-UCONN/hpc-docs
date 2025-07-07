@@ -223,7 +223,7 @@
     "href": "databases.html",
     "title": "Databases Available on Mantis",
     "section": "",
-    "text": "We keep several commonly used databases on the Mantis cluster. We check for updates to these databases regularly and update them as needed. TODO: More detail about this…",
+    "text": "We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly: every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and previous version of each database at all times. We also host several user-made databases where there is demand.",
     "crumbs": [
       "Databases"
     ]
@@ -233,7 +233,7 @@
     "href": "databases.html#blast",
     "title": "Databases Available on Mantis",
     "section": "Blast",
-    "text": "Blast\nThe latest version of the BLAST databases are available on Mantis. You can use them with the blastn command or any other BLAST command that requires a database. Inludes custom databases constructed from latest eggNOG, UNIPROT, and orthoDB releases.\n\nExample:\nblastn -db &lt;blast database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/blast/v5\n/isg/shared/databases/blast/v4\n/isg/shared/databases/blast/eggnog",
+    "text": "Blast\nThe latest versions of NCBI’s BLAST databases are available on Mantis. This directory also includes custom databases constructed from the newest eggNOG, orthoDB, and UniProt releases. All databases are compatible with BLAST+ v2.7.1 and up. You may use them with any blast command requiring a database (e.g., blastn, blastp).\n\nExample:\nblastp -db &lt;blast database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/blast/v4/\n/isg/shared/databases/blast/v5/\n/isg/shared/databases/blast/eggnog/v5.0.1/\n/isg/shared/databases/blast/eggnog/v5.0.2/\n/isg/shared/databases/blast/orthodb/v12v1/\n/isg/shared/databases/blast/uniprot/v2025.06/",
     "crumbs": [
       "Databases"
     ]
@@ -242,8 +242,18 @@
     "objectID": "databases.html#busco",
     "href": "databases.html#busco",
     "title": "Databases Available on Mantis",
-    "section": "Busco",
-    "text": "Busco\n\nExample:\n\n\nPaths to available databases",
+    "section": "BUSCO",
+    "text": "BUSCO\nThe latest versions of the EZLab’s BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases, compatible with BUSCO v5.0.0 and up.\n\nExample:\nbusco -l &lt;busco database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/busco/odb10/\n/isg/shared/databases/busco/odb12/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#cellranger",
+    "href": "databases.html#cellranger",
+    "title": "Databases Available on Mantis",
+    "section": "CellRanger",
+    "text": "CellRanger\nThe latest versions of 10X Genomics’ CellRanger databases are available on Mantis. This directory contains human, mouse, and rat genomic and transcriptomic reference data, compatible with all versions of CellRanger.\n\nExample:\ncellranger count --transcriptome &lt;cellranger database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/cellranger/v2020A/\n/isg/shared/databases/cellranger/v2024A/",
     "crumbs": [
       "Databases"
     ]
