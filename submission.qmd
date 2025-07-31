@@ -1,100 +1,187 @@
-The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the [best practices page]() for more information about appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node. 
+---
+title: "Job Submission"
+---
+
+<!-- TODO: Make a section or another page with example resource requests for common tools -->
+<!-- TODO: Make nextflow config and update nextflow section -->
+
+The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the [best practices page]() for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node. 
 
 The UCHC Computer cluster uses [SLURM](https://slurm.schedmd.com) for managing and scheduling jobs. 
 
-With SLURM there are two ways that a job can be run on a compute node. 
+With SLURM there are two primary ways that a job can be run on a compute node. 
 
-1. As a batch submission.
-2. As an interactive job.
+1. [Batch Submission](#batch-job-submission)
+2. [Interactive Job](#interactive-job)
 
 # Batch job submission
-To submit a batch job, you will use the `sbatch` command. A basic example might look like: 
+A batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.
+
+To submit a batch job, use the `sbatch` command.  A basic command might look like: 
 
 ```bash
 sbatch \
-  --job-name=<job name> \
-  -c <cpu number> \
-  --mem=<gigabytes memory>G \
-  --partition=general \
-  --qos=general \
-  -o %x-%j.out \
+  --job-name <name> \
+  --cpus-per-task <cpus> \
+  --mem <memory> \
+  --time <time> \
+  --partition <partition \
+  --qos <qos> \
+  --output %x-%j.out \
   <script>.sh
 ```
 
-Alternatively, the `sbatch` commands can be specified as a header in your script like:
+Alternatively, the `sbatch` arguments can be specified as a header in your script:
 
 ```bash
-#SBATCH --job-name=<job name>
-#SBATCH -c <cpu number> 
-#SBATCH --mem=<gigs memory>G
-#SBATCH --partition=general
-#SBATCH --qos=general
-#SBATCH -o %x-%j.out
+#/bin/bash
 
-< your script here>
+#SBATCH --job-name=<job name>
+#SBATCH --cpus-per-task=<cpu number> 
+#SBATCH --mem=<memory>
+#SBATCH --time=<days-hrs:min:sec>
+#SBATCH --partition=<partiion name>
+#SBATCH --qos=<partition name>
+#SBATCH --output=%x-%j.out
+
+<your script here>
 ```
 
-### Commonly used arguments
+### Example
+Here is a complete example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
 
+```bash
+#!/bin/bash
+#SBATCH --job-name=test-job
+#SBATCH --cpus-per-task=1 
+#SBATCH --mem=100mb
+#SBATCH --time=1:00
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --output=%x-%j.out
+
+hostname
+
+echo $SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus
+```
+### Required arguments
+The following arguments are required when running `sbatch` on the Mantis cluster.
+#### \-\-partition
+A group of nodes which the job will be allocated to. A partition must be specified when running a job on the Mantis cluster. The available partitions are [explained below](#partitions). 
+
+#### \-\-qos
+The qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition. 
+
+### Commonly used arguments
+Below are some of the most useful and commonly used arguments for `sbatch`.
 #### \-\-job-name
 The name of the job. Used for displaying job information when monitoring the job and for naming log files.
 
-#### \-c
+#### \-\-cpus-per-task
 The number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.
 
 #### \-\-mem
-The amount of memory to allocate. This argument takes a number followed by a unit such as M for megabytes or G for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to TODO: what is default memory?
+The amount of memory to allocate. This argument takes a number followed by a unit such as `mb` for megabytes or `gb` for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to 120 MB?
 
-#### \-o
-This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. 
+#### \-\-time
+Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format `days-hrs:min:sec`, `days-hrs`, `hrs:min:sec`, `min:sec`, or `sec`. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.
 
-#### \-\-partition
-A group of nodes which the job will be allocated to. A partition must be specified when running a job on the UCHC cluster. The available partitions are documented below. 
+#### \-\-output
+This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options [here](https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN)  
 
-#### \-\-qos
-The qos (quality of service) arguments constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the UCHC cluster. This argument will be equivalent to the partition. 
 
 #### Additional commands
-`sbatch` is a powerful tool with many other configuration options beyond the scope of this introduction.
+`sbatch` is a powerful tool with many other configuration options beyond the scope of this documentation.
 
-See the [`sbatch` documentation](https://slurm.schedmd.com/sbatch.html) for more information about command arguments.
-
-
-## Partitions
-There are several partitions within the cluster. A partition is a groups of nodes that have certain capabilities. 
-
-### general
-This partition contains nodes suitable for most tasks. These nodes have TODO: how many cpus and how much memory. 
-
-### himem
-This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have TODO: how many cpus and how much memory. 
-
-### gpu
-This parition contains nodes with gpus available. These nodes have TODO: need to describe the specification of these nodes. 
-
-### vcell
-TODO: What is this partition for?
+See the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for more information about command arguments.
 
 
-
-## Interactive Job
+# Interactive Job
 An interactive session can be started on a compute node using the `srun` command.
 
 At a minimum, you would use these arguments:
-`srun --partition=general --qos=general --pty bash`
 
-Most sbatch arguments can also be used with srun such as `--mem` or `-c` if you need to request specific resources.
+`srun --partition=general --qos=general --pty=bash`
+
+Most `sbatch` arguments can also be used with `srun`. For `--mem` or `--cpus-per-task` if you needed to request additional resources. 
 
 
-## Job status and monitering
-To monitor the status of your jobs you can run `squeue -u <user>`. 
+# Job status and monitering
+To monitor the status of your jobs you can run `squeue -u <user>` which will list the status of all jobs that belong to you. See the [squeue documentation](https://slurm.schedmd.com/squeue.html) for additional arguments and output formatting options. 
 
-## Request time extensions
-If you have a job that may not finish within the time limit you can [submit a time extension request](https://bioinformatics.uconn.edu/contact-us/xanadu-hpc-job-extension/)
 
-## Job Arrays
-Coming soon!
+# Request time extensions
+If you have a job that may not finish within the allocated time limit you can [submit a time extension request](https://bioinformatics.uconn.edu/contact-us/xanadu-hpc-job-extension/)
 
-<!-- ## Nextflow 
-Mention the institutional profile and make one for mantis
--->
+
+# Partitions
+A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks.
+
+## general
+This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs.
+
+## himem
+This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. 
+
+## debug
+This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
+
+## preemtable 
+Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait time when not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
+
+# SLURM Environment Variables
+SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the [SLURM environment variables documentation](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) for a complete list of available variables.
+
+# GPUs
+A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gpus-per-task=[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. Valid GPU types are listed in the table below.  
+
+### GPU Types
+| GPU         | type |
+|-------------|------|
+| NVIDIA A100 | A100 |
+| NVIDIA L40S | L40S |
+
+
+# Job Arrays
+If you have a large set of similar tasks that can be run in parallel, job arrays offer a convenient solution for managing these. Job arrays are created using the `--array=<indexes>[%limit]` argument where the required `<indexes>` is a range (e.g. `0-4`) or list (e.g. `1,3,5,7`) of indexes and an optional `limit`, separated by a `%` is the maximum allowed number of simultaneously running jobs (e.g. `%20`). Jobs which are part of a job array will have the environment variable `SLURM_ARRAY_TASK_ID` set to the array index value for that job. The maximum index allowed in a job array is 5001.
+
+### Example
+Here is a basic example where the job array will run 10 jobs in parallel, each with a different index value from 1 to 5. A different `param` value is printed to stdout based on the job index. Only 2 jobs will run at the same time due to the `%2`.
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=test-array-job
+#SBATCH --cpus-per-task 1 
+#SBATCH --mem=100M
+#SBATCH --time=1:00
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --output=%x-%j.out
+#SBATCH --array=1-5%2
+
+param="A B C D E"
+
+echo param[$SLURM_ARRAY_TASK_ID]
+
+```
+
+Parameter values will often be stored in a separate file. Below are some examples of ways to access these values in a job array script.  
+
+#### Accessing nth line from a text file
+```bash
+param=$(sed -n "${SLURM_ARRAY_TASK_ID}p" params.txt)
+```
+
+#### Accessing nth value and second column from a csv file
+```bash
+param=$(sed -n "${SLURM_ARRAY_TASK_ID}p" params.csv | cut -d ',' -f 2)
+```
+
+#### Accessing nth value and second column from a csv file with a header row
+```bash
+param=$(sed -n "1~${SLURM_ARRAY_TASK_ID}p" params.csv | cut -d ',' -f 2)
+```
+
+# Nextflow 
+[Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster. 
+

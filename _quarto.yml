@@ -20,7 +20,7 @@ website:
       - text: "File Systems & Storage"
         href: storage.qmd
 
-      - text: "Job Submission" 
+      - text: "Submit Jobs" 
         href: submission.qmd
 
       - text: "Transferring Data"
@@ -55,8 +55,8 @@ format:
     theme: 
       light: flatly
     toc: true
-    include-in-header:
-      - text: <script src="src/toggle.js"></script>
+    # include-in-header:
+      # - text: <script src="src/toggle.js"></script>
 
 
 

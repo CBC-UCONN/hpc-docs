@@ -137,19 +137,19 @@ User access and directory structure are the same as `/archive` and `/tapebackup`
 
 ## Summary table
 
-| **Directory**              | **Purpose**                                            | **Access**                              | **Quota/Capacity**                          | **Notes**                                                                                   |
-|---------------------------|--------------------------------------------------------|-----------------------------------------|---------------------------------------------|---------------------------------------------------------------------------------------------|
-| `/home/FCAM/<user>`       | Personal home directory for code, config, small data   | Created for each user                   | 1TB (increasable)                            | Permissions must remain private. For sharing, use `/labs` or `/projects`.                  |
-| `/labs`                   | Shared lab project space                               | PI request, lab group members           | 2TB (increasable)                            | For intra-lab collaboration.                                                               |
-| `/projects`               | Shared inter-lab project space                         | PI request, project group members       | 2TB (increasable)                            | For collaboration across labs.                                                             |
-| `/scratch`                | Temporary storage for active analyses                  | Open to all users                        | 84TB (shared)                                | Files may be deleted after 90 days.                                                        |
-| `/sandbox`               | Temporary space (in development)                       | Same as `/scratch`                      | TBD                                          | Not yet active as of 7/25.                                                                 |
-| `/seqdata`                | Central store for raw/original sequencing data         | Read-only for users                      | NA                                | Use symlinks instead of copying. Contact CBC to store new data.                            |
-| `/tmp`                    | Node-local temporary space                             | Shared per node                          | Small (varies by node)                       | May fill up unexpectedly. Set `TMPDIR` to redirect temp files.                             |
-| `/local`                  | Larger node-local temp space                           | Shared per node                          | Larger than `/tmp`                           | Clean up after use.                                                                         |
-| `/archive`                | Medium-term storage (up to ~1 year)                    | Request via CBC, access varies   | NA                                | Slower than active spaces, geospread, more expensive.                                       |
-| `/tapebackup`             | Long-term storage (1+ years)                           | Request via CBC, access varies   | NA                                | Stored on single magnetic tape, not redundant, very slow access.                            |
-| `/tapearchive`            | Very long-term or permanent storage                    | Request via CBC, access varies   | NA                                | Redundant magnetic tape storage, very slow access.                                          |
+| **Directory**        | **Purpose**                                            | **Access**                          | **Quota/Capacity**      | **Notes**                                                                  |
+|----------------------|--------------------------------------------------------|-------------------------------------|-------------------------|----------------------------------------------------------------------------|
+| `/home/FCAM/<user>`  | Personal home directory for code, config, small data   | Created for each user               | 1TB (increasable)       | Permissions must remain private. For sharing, use `/labs` or `/projects`.  |
+| `/labs`              | Shared lab project space                               | PI request, lab group members       | 2TB (increasable)       | For intra-lab collaboration.                                               |
+| `/projects`          | Shared inter-lab project space                         | PI request, project group members   | 2TB (increasable)       | For collaboration across labs.                                             |
+| `/scratch`           | Temporary storage for active analyses                  | Open to all users                   | 84TB (shared)           | Files may be deleted after 90 days.                                        |
+| `/sandbox`           | Temporary space (in development)                       | Same as `/scratch`                  | TBD                     | Not yet active as of 7/25.                                                 |
+| `/seqdata`           | Central store for raw/original sequencing data         | Read-only for users                 | NA                      | Use symlinks instead of copying. Contact CBC to store new data.            |
+| `/tmp`               | Node-local temporary space                             | Shared per node                     | Small (varies by node)  | May fill up unexpectedly. Set `TMPDIR` to redirect temp files.             |
+| `/local`             | Larger node-local temp space                           | Shared per node                     | Larger than `/tmp`      | Clean up after use.                                                        |
+| `/archive`           | Medium-term storage (up to ~1 year)                    | Request via CBC, access varies      | NA                      | Slower than active spaces, geospread, more expensive.                      |
+| `/tapebackup`        | Long-term storage (1+ years)                           | Request via CBC, access varies      | NA                      | Stored on single magnetic tape, not redundant, very slow access.           |
+| `/tapearchive`       | Very long-term or permanent storage                    | Request via CBC, access varies      | NA                      | Redundant magnetic tape storage, very slow access.                         |
 
 
 # Quotas
@@ -202,4 +202,60 @@ cfs09:/home/FCAM         2.3P  1.9P  453T  81% /home/FCAM
 cfs15:/seqdata           728T  722T  6.1T 100% /seqdata
 ```
 
+<<<<<<< Updated upstream
 Some, such as `/seqdata` only mount if you visit them and may not immediately appear using `df`. 
+=======
+Quota: 2TB, can be increased upon request
+
+
+## /projects
+This can be created at the request of a PI.
+
+This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project. 
+
+Quota: 2TB, can be increased upon request.
+
+
+## /scratch
+Anyone can create a directory here.
+
+This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
+
+Files may be removed from this location after **90 days**.
+
+
+
+## /sandbox
+
+
+## /seqdata
+This location is used for storing raw and original sequencing data. Data are stored as read-only. 
+
+**Do not copy data from this directory**. For convenience, consider [making a symlink]() to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
+
+If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.
+
+
+## /archive
+This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?
+
+If you would like to move data to this location please contact us at cbcsupport@helpspotmail.com
+
+::: {callout-note}
+Reading from this directory is slow compared to `/seqdata`. Request that data be moved back to `/seqdata` if you will be actively using the data for analysis.
+:::
+
+
+## /tmp
+Each node has it's own local `/tmp` directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network. 
+
+Once an analysis is done, important data need to be moved out of this space and any other files should be removed. 
+
+The system will remove contents of this directory after TODO: how long or under what conditions?.
+
+
+# Details
+TODO: maybe explain the systems with a bit more detail here?
+- disk types of the mounted file systems and protocols in use for those?
+- Current system capacity in various locations 
+>>>>>>> Stashed changes

@@ -1,113 +1,134 @@
-# Connecting to Mantis
-In order to connect to the Mantis cluster, you must use an SSH client. See below for instructions based on your operating system.
+---
+title: "Connecting to Mantis"
+---
+
+<!-- Once you have created a CAM Account there are two ways to connect to the Mantis cluster which are documented on this page:
+1. Open OnDemand: a web-based interface for accessing
+2. SSH (Secure Shell): a command-line interface
+
+
+# Open OnDemand -->
+
+# SSH (Secure Shell)
+Connecting to the cluster with SSH must be done with an SSH client. Most operating systems have an SSH client installed by default. 
 
 ::: {.callout-warning}
-When you connect to Mantis, you will be connected to a **login node**. Please do not do any serious computation on these nodes. To do real work, [submit a batch job]() or request an [interactive session](). Long running or intensive processes found on login nodes may be killed without notice. 
+When connecting to Mantis over SSH, you will be connected to a login node, also known as a head node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users also connecting to these nodes. To do real work, submit a [batch job](submission.qmd#batch-job-submission) or initiate an [interactive session](submission.qmd#interactive-job). Long running or intensive processes found running on login nodes may be killed without notice. This includes some installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
 :::
 
+## SSH Clients
+### Windows users
+Windows users on Windows 10 or later can use the built-in SSH client through the `Windows PowerShell`. 
 
-## Internal Host URL
+Alternatively, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net/).
 
-If you connect to the [CAM virtual private network](connect.qmd#sec-vpn), the cluster can be accessed through this host url: 
+### MacOS and Linux users
+MacOS and Linux users can use the built-in SSH client through the `Terminal` application.
 
-`mantis-submit.cam.uchc.edu` 
+## Using SSH
+To connect to Mantis, open a `Terminal` or `Windows Powershell` window and enter the following command:
 
+```bash
+ssh <user>@<host>
+```
 
-::: {.callout-tip}
-This host will drop you onto one of four login nodes, labeled `mantis-sub-[1-4]`. 
-If the redirect fails, you can try logging in directly to one of them:
+Where `<user>` is your CAM username and `host` is one of the [host URLs](#host-urls) explained below.
+
+#### Example:
+```bash
+ssh myusername@login.cam.hpc.edu
+```
+
+## Host URLs
+There are two host URLs you can use to connect to the Mantis cluster:
+
+1. An internal host URL: `mantis-submit.cam.uchc.edu`, which requires you to be connected to the [CAM VPN](#cam-vpn) or to a Secure WiFi network on one of the UConn or UConn Health campuses.
+2. An external host URL: `login.hpc.cam.uchc.edu`, which can be accessed from anywhere without a VPN connection, but requires that you have [setup an SSH key](#ssh-secure-shell) for authentication.
+
+### Internal URL
+#### `mantis-submit.cam.uchc.edu`
+We recommend using this host only for initial [setup of your SSH keys](#ssh-keys) for more secure authentication. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the [CAM VPN](connect.qmd#sec-vpn) and requires password authentication.
+
+When connecting through this host, you will be redirected to one of 4 login nodes:
 
 - `mantis-sub-1.cam.uchc.edu`
 - `mantis-sub-2.cam.uchc.edu`
 - `mantis-sub-3.cam.uchc.edu`
 - `mantis-sub-4.cam.uchc.edu`
 
-
-TODO: Appropriate/accurate to say something about load balancing here
+::: {callout-note}
+CAM passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
 :::
 
-The internal host is planned to be phased out in the near future so that only the external host explained below will be used.
+### External URL
+#### `login.hpc.cam.uchc.edu`
+This is the recommended host URL for connecting to the Mantis cluster. It can be accessed from anywhere without a VPN connection, but requires that you have [setup an SSH key](#ssh-keys) for authentication. Authenticaion with SSH keys is more secure than password authentication as well as being more convenient.
 
-## External Host URL
-
-The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication,  however, so to use it you must [set up an ssh key](connect.qmd#sec-ssh-keys).
-
-The host URL is:
-
-`login.hpc.cam.uchc.edu` 
-
-::: {.callout-tip}
-As above, this url will redirect you to one of these hosts:
+When connecting through this host, you will be redirected to one of 3 login nodes:
 
 - `mantis-sub-5.cam.uchc.edu`
 - `mantis-sub-6.cam.uchc.edu`
 - `mantis-sub-7.cam.uchc.edu`
 
-If the redirect fails, you can try logging in directly to one of them.
-:::
-
-## Using SSH Client
-
-::: panel-tabset
-
-### Mac and Linux Users
-An ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.
-
-#### Connecting
-To create a connection, enter the `ssh` command followed by your username and host url like so. 
-Login with 
-
-`ssh <user>@<host>` 
-
-
-### Windows Users
-
-::: panel-tabset
-#### Command Prompt 
-TODO: How to do this
-
-#### Putty
-TODO: How to do this
-:::
-:::
-
-
-## VPN
+# CAM VPN
+<!--TODO: Move the documentation for vnp here eventually -->
 
 To connect to the CAM VPN, follow the instructions [here](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/). 
 
-Note that the CAM VPN is distinct from the University VPN. 
-<!--TODO: Move the documentation for vnp here eventually -->
+::: {.callout-note}
+Note that the CAM VPN is distinct from the University of Connecticut VPN. 
+:::
 
-## SSH Keys {#sec-ssh-keys} 
+### Why is it called the CAM VPN?
+Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.
+
+
+# SSH Keys {#sec-ssh-keys} 
 SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
-::: panel-tabset
-### Mac/Linux
-#### Creating a public private key pair.
-You can create an SSH key pair 
-To create an SSH key pair to use with the cluster, use the following command:
+## Creating a public private key pair.
+You can create an SSH key pair using the SSH client.  
 
-`ssh-keygen -t ed25519 -C <comment> `
+1. To create an SSH key pair to use with the cluster, use the following command:
 
-The comment should be something to help you identify which computer this key comes from. For example `<user>-laptop`
+```bash
+ssh-keygen -t ed25519 -C <comment>
+````
 
-You will be prompted to specify the location to save the key. You can press enter to accept the default location.
+2. The comment should be something to help you identify which computer this key comes from. For example `<user>-laptop`
 
-Next you will be prompted to create a passphrase which is optional. If you don't wish to create a passphrase, simply press enter.
+3. You will be prompted to specify the location to save the key. You can press enter to accept the default location.
+
+4. Next you will be prompted to create a passphrase which is optional. If you don't wish to create a passphrase, simply press enter.
 
 
 #### Copy to Mantis
-After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:
+After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster. 
 
-`ssh-copy-id <user>@mantis-submit.cam.uchc.edu`
+::: {.panel-tabset}
+### MacOS and Linux
+On MacOS and Linux, you can copy your public key to the Mantis cluster using the `ssh-copy-id` command:
 
-### Windows
-TODO: How to do this on Windows
+```bash
+ssh-copy-id <user>@mantis-submit.cam.uchc.edu
+```
 
+Where `<user>` is your Mantis username.
 
-## SSH Tunnelling
-TODO: Explain why you might need this and how to do it.
+### Windows PowerShell
+On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
 
-## X11 Forwarding
-TODO: Why you might need this and how to do it.
+```bash
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@mantis-submit.cam.uchc.edu "cat >> .ssh/authorized_keys"
+```
+
+Where `<user>` is your Mantis username.
+:::
+
+<!-- # SSH Tunnelling -->
+<!-- TODO: Explain why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->
+
+<!-- # X11 Forwarding -->
+<!-- TODO: Why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->

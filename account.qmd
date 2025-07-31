@@ -1,14 +1,35 @@
-# Request an Account
-In order to access the cluster, you must first create an account.
+# Requesting an Account
 
-1) Submit an [account request ticket](https://health.uconn.edu/high-performance-computing/contact/).
-1) Select `New Account Request` from the `Request Type` dropdown menu.
-2) Choose `HPC Cluster Account` as the `Account Type`. 
-3) Fill in all relevant and required fields and click submit.
+To request a Mantis account:
+1. Submit an [account request ticket](https://health.uconn.edu/high-performance-computing/contact/).
+2. Select `New Account Request` from the `Request Type` dropdown menu.
+3. Choose `HPC Cluster Account` as the `Account Type`. 
+4. Fill in all relevant and required fields and click submit.
+
+Once your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.
 
 # Passwords
-Upon approval of an account request you will need to enroll in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage) and reset your password.
+Upon approval of an account request, you will need to enroll in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage) and reset your password.
 
 Passwords expire every 90 days.
 
-Anytime you need to reset your password, you can do so in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage). 
+Any time you need to reset your password, you can do so in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+
+#### Why is it called the CAM Password Manager?
+Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.
+
+::: {.callout-important}
+If you are not able to login or transfer files, ensure that you don't have an expired password.
+:::
+
+<!--  
+According to Ion, having access, regardless of mode, is dependent on:
+1. You have a valid SSH key pair using an acceptable encryption algorithm in your home folder .ssh subfolder
+2. Your home folder, .ssh subfolder, and SSH key files have proper ownership and access restrictions
+3. Your account is not locked
+4. Your account is not disabled
+5. Your account does not have an expired password
+6. Your account does not require change-password-on-next-logon
+
+Is it possible to login to globus with invalid password?
+-->
