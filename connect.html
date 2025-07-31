@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>connect – UCHC HPC</title>
+<title>Connecting to Mantis – UCHC HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -40,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-671b00e1cfc6432f67ce8456f499223d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-13f4b029d1d1dc4997cf56c0d4f0f87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,7 +103,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="src/toggle.js"></script>
 
 
 </head>
@@ -128,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./submission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Job Submission</span></a>
+ <span class="menu-text">Submit Jobs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,26 +205,62 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connecting-to-mantis" id="toc-connecting-to-mantis" class="nav-link active" data-scroll-target="#connecting-to-mantis">Connecting to Mantis</a>
+  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link active" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
   <ul class="collapse">
-  <li><a href="#internal-host-url" id="toc-internal-host-url" class="nav-link" data-scroll-target="#internal-host-url">Internal Host URL</a></li>
-  <li><a href="#external-host-url" id="toc-external-host-url" class="nav-link" data-scroll-target="#external-host-url">External Host URL</a></li>
-  <li><a href="#using-ssh-client" id="toc-using-ssh-client" class="nav-link" data-scroll-target="#using-ssh-client">Using SSH Client</a></li>
-  <li><a href="#vpn" id="toc-vpn" class="nav-link" data-scroll-target="#vpn">VPN</a></li>
-  <li><a href="#sec-ssh-keys" id="toc-sec-ssh-keys" class="nav-link" data-scroll-target="#sec-ssh-keys">SSH Keys</a></li>
+  <li><a href="#ssh-clients" id="toc-ssh-clients" class="nav-link" data-scroll-target="#ssh-clients">SSH Clients</a>
+  <ul class="collapse">
+  <li><a href="#windows-users" id="toc-windows-users" class="nav-link" data-scroll-target="#windows-users">Windows users</a></li>
+  <li><a href="#macos-and-linux-users" id="toc-macos-and-linux-users" class="nav-link" data-scroll-target="#macos-and-linux-users">MacOS and Linux users</a></li>
+  </ul></li>
+  <li><a href="#using-ssh" id="toc-using-ssh" class="nav-link" data-scroll-target="#using-ssh">Using SSH</a></li>
+  <li><a href="#host-urls" id="toc-host-urls" class="nav-link" data-scroll-target="#host-urls">Host URLs</a>
+  <ul class="collapse">
+  <li><a href="#internal-url" id="toc-internal-url" class="nav-link" data-scroll-target="#internal-url">Internal URL</a></li>
+  <li><a href="#external-url" id="toc-external-url" class="nav-link" data-scroll-target="#external-url">External URL</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#cam-vpn" id="toc-cam-vpn" class="nav-link" data-scroll-target="#cam-vpn">CAM VPN</a>
+  <ul class="collapse">
+  <li><a href="#why-is-it-called-the-cam-vpn" id="toc-why-is-it-called-the-cam-vpn" class="nav-link" data-scroll-target="#why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</a></li>
+  </ul></li>
+  <li><a href="#sec-ssh-keys" id="toc-sec-ssh-keys" class="nav-link" data-scroll-target="#sec-ssh-keys">SSH Keys</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-public-private-key-pair." id="toc-creating-a-public-private-key-pair." class="nav-link" data-scroll-target="#creating-a-public-private-key-pair.">Creating a public private key pair.</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Connecting to Mantis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="connecting-to-mantis" class="level1">
-<h1>Connecting to Mantis</h1>
-<p>In order to connect to the Mantis cluster, you must use an SSH client. See below for instructions based on your operating system.</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Once you have created a CAM Account there are two ways to connect to the Mantis cluster which are documented on this page:
+1. Open OnDemand: a web-based interface for accessing
+2. SSH (Secure Shell): a command-line interface
+
+
+# Open OnDemand -->
+<section id="ssh-secure-shell" class="level1">
+<h1>SSH (Secure Shell)</h1>
+<p>Connecting to the cluster with SSH must be done with an SSH client. Most operating systems have an SSH client installed by default.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -201,130 +271,134 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When you connect to Mantis, you will be connected to a <strong>login node</strong>. Please do not do any serious computation on these nodes. To do real work, <a href="">submit a batch job</a> or request an <a href="">interactive session</a>. Long running or intensive processes found on login nodes may be killed without notice.</p>
+<p>When connecting to Mantis over SSH, you will be connected to a login node, also known as a head node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users also connecting to these nodes. To do real work, submit a <a href="./submission.html#batch-job-submission">batch job</a> or initiate an <a href="./submission.html#interactive-job">interactive session</a>. Long running or intensive processes found running on login nodes may be killed without notice. This includes some installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
 </div>
 </div>
-<section id="internal-host-url" class="level2">
-<h2 class="anchored" data-anchor-id="internal-host-url">Internal Host URL</h2>
-<p>If you connect to the <a href="./connect.html#sec-vpn">CAM virtual private network</a>, the cluster can be accessed through this host url:</p>
-<p><code>mantis-submit.cam.uchc.edu</code></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This host will drop you onto one of four login nodes, labeled <code>mantis-sub-[1-4]</code>. If the redirect fails, you can try logging in directly to one of them:</p>
+<section id="ssh-clients" class="level2">
+<h2 class="anchored" data-anchor-id="ssh-clients">SSH Clients</h2>
+<section id="windows-users" class="level3">
+<h3 class="anchored" data-anchor-id="windows-users">Windows users</h3>
+<p>Windows users on Windows 10 or later can use the built-in SSH client through the <code>Windows PowerShell</code>.</p>
+<p>Alternatively, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>.</p>
+</section>
+<section id="macos-and-linux-users" class="level3">
+<h3 class="anchored" data-anchor-id="macos-and-linux-users">MacOS and Linux users</h3>
+<p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
+</section>
+</section>
+<section id="using-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
+<p>To connect to Mantis, open a <code>Terminal</code> or <code>Windows Powershell</code> window and enter the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>host<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>&lt;user&gt;</code> is your CAM username and <code>host</code> is one of the <a href="#host-urls">host URLs</a> explained below.</p>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example:</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> myusername@login.cam.hpc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="host-urls" class="level2">
+<h2 class="anchored" data-anchor-id="host-urls">Host URLs</h2>
+<p>There are two host URLs you can use to connect to the Mantis cluster:</p>
+<ol type="1">
+<li>An internal host URL: <code>mantis-submit.cam.uchc.edu</code>, which requires you to be connected to the <a href="#cam-vpn">CAM VPN</a> or to a Secure WiFi network on one of the UConn or UConn Health campuses.</li>
+<li>An external host URL: <code>login.hpc.cam.uchc.edu</code>, which can be accessed from anywhere without a VPN connection, but requires that you have <a href="#ssh-secure-shell">setup an SSH key</a> for authentication.</li>
+</ol>
+<section id="internal-url" class="level3">
+<h3 class="anchored" data-anchor-id="internal-url">Internal URL</h3>
+<section id="mantis-submit.cam.uchc.edu" class="level4">
+<h4 class="anchored" data-anchor-id="mantis-submit.cam.uchc.edu"><code>mantis-submit.cam.uchc.edu</code></h4>
+<p>We recommend using this host only for initial <a href="#ssh-keys">setup of your SSH keys</a> for more secure authentication. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the <a href="./connect.html#sec-vpn">CAM VPN</a> and requires password authentication.</p>
+<p>When connecting through this host, you will be redirected to one of 4 login nodes:</p>
 <ul>
 <li><code>mantis-sub-1.cam.uchc.edu</code></li>
 <li><code>mantis-sub-2.cam.uchc.edu</code></li>
 <li><code>mantis-sub-3.cam.uchc.edu</code></li>
 <li><code>mantis-sub-4.cam.uchc.edu</code></li>
 </ul>
-<p>TODO: Appropriate/accurate to say something about load balancing here</p>
+<div class="{callout-note}">
+<p>CAM passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
 </div>
-</div>
-<p>The internal host is planned to be phased out in the near future so that only the external host explained below will be used.</p>
 </section>
-<section id="external-host-url" class="level2">
-<h2 class="anchored" data-anchor-id="external-host-url">External Host URL</h2>
-<p>The cluster can also be accessed through an external login host available from anywhere (on/off campus, with/without VPN). This host does not allow password authentication, however, so to use it you must <a href="./connect.html#sec-ssh-keys">set up an ssh key</a>.</p>
-<p>The host URL is:</p>
-<p><code>login.hpc.cam.uchc.edu</code></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As above, this url will redirect you to one of these hosts:</p>
+</section>
+<section id="external-url" class="level3">
+<h3 class="anchored" data-anchor-id="external-url">External URL</h3>
+<section id="login.hpc.cam.uchc.edu" class="level4">
+<h4 class="anchored" data-anchor-id="login.hpc.cam.uchc.edu"><code>login.hpc.cam.uchc.edu</code></h4>
+<p>This is the recommended host URL for connecting to the Mantis cluster. It can be accessed from anywhere without a VPN connection, but requires that you have <a href="#ssh-keys">setup an SSH key</a> for authentication. Authenticaion with SSH keys is more secure than password authentication as well as being more convenient.</p>
+<p>When connecting through this host, you will be redirected to one of 3 login nodes:</p>
 <ul>
 <li><code>mantis-sub-5.cam.uchc.edu</code></li>
 <li><code>mantis-sub-6.cam.uchc.edu</code></li>
 <li><code>mantis-sub-7.cam.uchc.edu</code></li>
 </ul>
-<p>If the redirect fails, you can try logging in directly to one of them.</p>
-</div>
-</div>
 </section>
-<section id="using-ssh-client" class="level2">
-<h2 class="anchored" data-anchor-id="using-ssh-client">Using SSH Client</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Mac and Linux Users</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Windows Users</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>An ssh client is installed by default on Mac and Linux operating sytems and can be run from the Terminal App.</p>
-<section id="connecting" class="level4">
-<h4 class="anchored" data-anchor-id="connecting">Connecting</h4>
-<p>To create a connection, enter the <code>ssh</code> command followed by your username and host url like so. Login with</p>
-<p><code>ssh &lt;user&gt;@&lt;host&gt;</code></p>
 </section>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Command Prompt</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Putty</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>TODO: How to do this</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>TODO: How to do this</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="vpn" class="level2">
-<h2 class="anchored" data-anchor-id="vpn">VPN</h2>
+</section>
+<section id="cam-vpn" class="level1">
+<h1>CAM VPN</h1>
+<!--TODO: Move the documentation for vnp here eventually -->
 <p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
-<p>Note that the CAM VPN is distinct from the University VPN. <!--TODO: Move the documentation for vnp here eventually --></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the CAM VPN is distinct from the University of Connecticut VPN.</p>
+</div>
+</div>
+<section id="why-is-it-called-the-cam-vpn" class="level3">
+<h3 class="anchored" data-anchor-id="why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</h3>
+<p>Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.</p>
 </section>
-<section id="sec-ssh-keys" class="level2">
-<h2 class="anchored" data-anchor-id="sec-ssh-keys">SSH Keys</h2>
+</section>
+<section id="sec-ssh-keys" class="level1">
+<h1>SSH Keys</h1>
 <p>SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Mac/Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<section id="creating-a-public-private-key-pair." class="level4">
-<h4 class="anchored" data-anchor-id="creating-a-public-private-key-pair.">Creating a public private key pair.</h4>
-<p>You can create an SSH key pair To create an SSH key pair to use with the cluster, use the following command:</p>
-<p><code>ssh-keygen -t ed25519 -C &lt;comment&gt;</code></p>
-<p>The comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p>
-<p>You will be prompted to specify the location to save the key. You can press enter to accept the default location.</p>
-<p>Next you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.</p>
-</section>
+<section id="creating-a-public-private-key-pair." class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-public-private-key-pair.">Creating a public private key pair.</h2>
+<p>You can create an SSH key pair using the SSH client.</p>
+<ol type="1">
+<li>To create an SSH key pair to use with the cluster, use the following command:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="op">&lt;</span>comment<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p>The comment should be something to help you identify which computer this key comes from. For example <code>&lt;user&gt;-laptop</code></p></li>
+<li><p>You will be prompted to specify the location to save the key. You can press enter to accept the default location.</p></li>
+<li><p>Next you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.</p></li>
+</ol>
 <section id="copy-to-mantis" class="level4">
 <h4 class="anchored" data-anchor-id="copy-to-mantis">Copy to Mantis</h4>
-<p>After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster with the following command:</p>
-<p><code>ssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
-</section>
+<p>After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">MacOS and Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows PowerShell</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>On MacOS and Linux, you can copy your public key to the Mantis cluster using the <code>ssh-copy-id</code> command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@mantis-submit.cam.uchc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>TODO: How to do this on Windows</p>
-<section id="ssh-tunnelling" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-tunnelling">SSH Tunnelling</h2>
-<p>TODO: Explain why you might need this and how to do it.</p>
-</section>
-<section id="x11-forwarding" class="level2">
-<h2 class="anchored" data-anchor-id="x11-forwarding">X11 Forwarding</h2>
-<p>TODO: Why you might need this and how to do it.</p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>On Windows 10 or later, you can copy your public key to the Mantis cluster with <code>Windows PowerShell</code> using the command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\i</span>d_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@mantis-submit.cam.uchc.edu <span class="st">"cat &gt;&gt; .ssh/authorized_keys"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
+</div>
+</div>
+</div>
+<!-- # SSH Tunnelling -->
+<!-- TODO: Explain why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->
+<!-- # X11 Forwarding -->
+<!-- TODO: Why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->
 
 
 </section>
-</div>
-</div>
-</div>
 </section>
 </section>
 
