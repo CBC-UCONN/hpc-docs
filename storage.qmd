@@ -128,6 +128,7 @@ This is another space local to each node and shared among users. It is larger th
 These spaces are meant for archiving data for varying durations. Users can request the creation of directories they or a group of users will have read/write access to. 
 
 Each of the archival spaces have the same directory structure containing the following directories: 
+
 | users       | Owned by users                 |
 | labs        | Shared by users of a PI's lab  |
 | projects    | Shared by users belonging to multiple lab groups collaborating on a specific project |
