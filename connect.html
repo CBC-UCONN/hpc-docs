@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./submission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Submit Jobs</span></a>
+ <span class="menu-text">Submitting Jobs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,20 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./databases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databases</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -372,6 +360,19 @@ Note
 <li><p>You will be prompted to specify the location to save the key. You can press enter to accept the default location.</p></li>
 <li><p>Next you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.</p></li>
 </ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. <strong>We will never ask you for your private key for any reason.</strong></p>
+</div>
+</div>
 <section id="copy-to-mantis" class="level4">
 <h4 class="anchored" data-anchor-id="copy-to-mantis">Copy to Mantis</h4>
 <p>After creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster.</p>
@@ -388,19 +389,6 @@ Note
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\i</span>d_rsa.pub <span class="kw">|</span> <span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@mantis-submit.cam.uchc.edu <span class="st">"cat &gt;&gt; .ssh/authorized_keys"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. <strong>We will never ask you for your private key for any reason.</strong></p>
 </div>
 </div>
 <!-- # SSH Tunnelling -->

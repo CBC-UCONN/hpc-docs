@@ -44,7 +44,7 @@
     "href": "connect.html#creating-a-public-private-key-pair.",
     "title": "Connecting to Mantis",
     "section": "Creating a public private key pair.",
-    "text": "Creating a public private key pair.\nYou can create an SSH key pair using the SSH client.\n\nTo create an SSH key pair to use with the cluster, use the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\n\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\nCopy to Mantis\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your Mantis username.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.",
+    "text": "Creating a public private key pair.\nYou can create an SSH key pair using the SSH client.\n\nTo create an SSH key pair to use with the cluster, use the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\n\nThe comment should be something to help you identify which computer this key comes from. For example &lt;user&gt;-laptop\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.\n\n\n\nCopy to Mantis\nAfter creating a key pair or if you have an existing one that you want to use, you can copy it to the cluster.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your Mantis username.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.",
     "crumbs": [
       "Connecting"
     ]
@@ -54,30 +54,21 @@
     "href": "bestpractices.html",
     "title": "Data storage practices",
     "section": "",
-    "text": "How to be a good citizen",
-    "crumbs": [
-      "Best Practices"
-    ]
+    "text": "How to be a good citizen"
   },
   {
     "objectID": "bestpractices.html#sharing-data-with-other-users",
     "href": "bestpractices.html#sharing-data-with-other-users",
     "title": "Data storage practices",
     "section": "Sharing data with other users",
-    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to.",
-    "crumbs": [
-      "Best Practices"
-    ]
+    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to."
   },
   {
     "objectID": "software.html",
     "href": "software.html",
     "title": "Environment Modules",
     "section": "",
-    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request",
-    "crumbs": [
-      "Software"
-    ]
+    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request"
   },
   {
     "objectID": "permissions.html",
@@ -138,7 +129,7 @@
     "href": "account.html",
     "title": "Requesting an Account",
     "section": "",
-    "text": "Requesting an Account\nTo request a Mantis account: 1. Submit an account request ticket. 2. Select New Account Request from the Request Type dropdown menu. 3. Choose HPC Cluster Account as the Account Type. 4. Fill in all relevant and required fields and click submit.\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your CAM password with anyone! We will never ask you for your password for any reason.\n\n\n\nWhy is it called the CAM Password Manager?\nMuch of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.",
+    "text": "Requesting an Account\nTo request a Mantis account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.\n\n\n\nWhy is it called the CAM Password Manager?\nMuch of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.",
     "crumbs": [
       "Account & Password"
     ]
@@ -158,7 +149,7 @@
     "href": "transfer.html#getting-started",
     "title": "Tranferring Data",
     "section": "Getting Started",
-    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nSpecifics to accessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the Mantis file system, search for and select, the “UCHC Globus Server” in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
+    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nSpecifics to accessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the Mantis file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your Mantis username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -178,7 +169,7 @@
     "href": "transfer.html#sharing-files",
     "title": "Tranferring Data",
     "section": "Sharing Files",
-    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.",
+    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions, you generally will not need to modify the Path test field. The / in this case refers to the root of the collection and not the cluster file system.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -188,7 +179,7 @@
     "href": "transfer.html#connecting",
     "title": "Tranferring Data",
     "section": "Connecting",
-    "text": "Connecting\nTo connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system.\nWhen prompted for a username and password, use your CAM username and password.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on a UConn secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive. \nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\n\n\n\n\nConnect to the CAM VPN if not on a UConn secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\n\n\n\n\nConnect to the CAM VPN if not on a UConn secure WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.",
+    "text": "Connecting\nTo connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system.\nWhen prompted for a username and password, use your Mantis username and password.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on a UConn or UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive. \nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\n\n\n\n\nConnect to the CAM VPN if not on a UConn or UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\n\n\n\n\nConnect to the CAM VPN if not on a UConn or UCHC secure WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and \nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -247,7 +238,7 @@
     "section": "",
     "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
     "crumbs": [
-      "Submit Jobs"
+      "Submitting Jobs"
     ]
   },
   {
@@ -257,7 +248,7 @@
     "section": "general",
     "text": "general\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs.",
     "crumbs": [
-      "Submit Jobs"
+      "Submitting Jobs"
     ]
   },
   {
@@ -267,7 +258,7 @@
     "section": "himem",
     "text": "himem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU.",
     "crumbs": [
-      "Submit Jobs"
+      "Submitting Jobs"
     ]
   },
   {
@@ -277,7 +268,7 @@
     "section": "debug",
     "text": "debug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.",
     "crumbs": [
-      "Submit Jobs"
+      "Submitting Jobs"
     ]
   },
   {
@@ -287,7 +278,7 @@
     "section": "preemtable",
     "text": "preemtable\nJobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait time when not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.",
     "crumbs": [
-      "Submit Jobs"
+      "Submitting Jobs"
     ]
   },
   {

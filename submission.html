@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./submission.html">Submit Jobs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./submission.html">Submitting Jobs</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./submission.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Submit Jobs</span></a>
+ <span class="menu-text">Submitting Jobs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,20 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./databases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databases</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,6 +210,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#preemtable" id="toc-preemtable" class="nav-link" data-scroll-target="#preemtable">preemtable</a></li>
   </ul></li>
   <li><a href="#slurm-environment-variables" id="toc-slurm-environment-variables" class="nav-link" data-scroll-target="#slurm-environment-variables">SLURM Environment Variables</a></li>
+  <li><a href="#cpus" id="toc-cpus" class="nav-link" data-scroll-target="#cpus">CPUs</a>
+  <ul class="collapse">
+  <li><a href="#cpu-types" id="toc-cpu-types" class="nav-link" data-scroll-target="#cpu-types">CPU Types</a></li>
+  </ul></li>
   <li><a href="#gpus" id="toc-gpus" class="nav-link" data-scroll-target="#gpus">GPUs</a>
   <ul class="collapse">
   <li><a href="#gpu-types" id="toc-gpu-types" class="nav-link" data-scroll-target="#gpu-types">GPU Types</a></li>
@@ -379,11 +371,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>SLURM Environment Variables</h1>
 <p>SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables documentation</a> for a complete list of available variables.</p>
 </section>
+<section id="cpus" class="level1">
+<h1>CPUs</h1>
+<p>The Mantis cluster has a mix of AMD and Intel Xeon CPUs. In some cases, software must be compiled for a specific CPU architecture in which case you will need to limit your job to nodes with a compatible CPU type in your job script. The CPU type can be specified using the <code>--constraint</code> argument. The CPU types and their associated constrait argument are listed in the table below.</p>
+<section id="cpu-types" class="level3">
+<h3 class="anchored" data-anchor-id="cpu-types">CPU Types</h3>
+<!-- TODO: Make this tables not full width of screen -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>CPU Type</th>
+<th>constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AMD</td>
+<td>cpu_amd</td>
+</tr>
+<tr class="even">
+<td>Intel Xeon</td>
+<td>cpu_xeon</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="gpus" class="level1">
 <h1>GPUs</h1>
-<p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gpus-per-task=[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. Valid GPU types are listed in the table below.</p>
+<p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gpus-per-task=[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. The types of GPUs nd the associated type arguments are listed in the table below.</p>
 <section id="gpu-types" class="level3">
 <h3 class="anchored" data-anchor-id="gpu-types">GPU Types</h3>
+<!-- TODO: Make this tables not full width of screen -->
 <table class="caption-top table">
 <thead>
 <tr class="header">

@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./submission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Submit Jobs</span></a>
+ <span class="menu-text">Submitting Jobs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,20 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./databases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databases</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bestpractices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -266,14 +254,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="op">&lt;</span>src<span class="op">&gt;</span> <span class="op">&lt;</span>dest<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where <code>src</code> and <code>dest</code> arguments specify file or directory paths.</p>
 <p>Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>hostname<span class="op">&gt;</span>: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>user<span class="op">&gt;</span>@<span class="op">&lt;</span>hostname<span class="op">&gt;</span>:2<span class="op">&lt;</span>path<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In order to secure copy a directory include the <code>-r</code> option.</p>
 <section id="examples" class="level3">
 <h3 class="anchored" data-anchor-id="examples">Examples</h3>
-<p>Copy a file from your local computer to your home directory on the cluster:</p>
-<p><code>scp &lt;local path&gt; &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt;</code></p>
+<p>Copy a file called test.txt from your local computer to your home directory on the cluster:</p>
+<p><code>scp test.txt &lt;user&gt;@transfer.cam.uchc.edu:</code></p>
 <p>Copy a directory from the cluster to your local computer:</p>
-<p><code>scp -r &lt;user&gt;@transfer.cam.uchc.edu:&lt;remote path&gt; &lt;local path&gt;</code></p>
+<p><code>scp -r &lt;user&gt;@transfer.cam.uchc.edu:test.txt .</code></p>
 </section>
 </section>
 <section id="globus-connect" class="level1">
@@ -286,17 +274,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="specifics-to-accessing-the-uchc-globus-server">Specifics to accessing the UCHC Globus Server</h3>
 <section id="organizational-login" class="level4">
 <h4 class="anchored" data-anchor-id="organizational-login">Organizational Login</h4>
-<p>When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your NetID and password.</p>
+<p>When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.</p>
 </section>
 <section id="uchc-globus-server-collection" class="level4">
 <h4 class="anchored" data-anchor-id="uchc-globus-server-collection">UCHC Globus Server Collection</h4>
-<p>To access the Mantis file system, search for and select, the “UCHC Globus Server” in the <strong>collection</strong> text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.</p>
+<p>To access the Mantis file system, search for and select, the <code>UCHC Globus Server</code> in the <strong>collection</strong> text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your Mantis username and password.</p>
+<p><img src="img/globus-uchc-server.png" class="img-fluid" width="500"></p>
 </section>
 <section id="file-paths" class="level4">
 <h4 class="anchored" data-anchor-id="file-paths">File Paths</h4>
 <p>Navigation to your home directory mirrors the cluster file system. You can access your home directory by entering <code>/home/FCAM/&lt;user&gt;</code> in the <strong>path</strong> text field.</p>
 <p>Navigation to other directories has one minor but unintuitive difference. The root of the cluster file system is <code>/globus</code> instead of <code>/</code>. So, for example, to access the labs directory you would enter <code>/globus/labs</code> in the <strong>Path</strong> text field.</p>
-<p><img src="img/globus-root.png" class="img-fluid"></p>
+<p><img src="img/globus-root.png" class="img-fluid" width="500"></p>
 </section>
 </section>
 </section>
@@ -307,6 +296,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sharing-files" class="level2">
 <h2 class="anchored" data-anchor-id="sharing-files">Sharing Files</h2>
 <p>For a guide on sharing files with Globus, see <a href="https://docs.globus.org/guides/tutorials/manage-files/share-files/">this tutorial</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When adding permissions, you generally will not need to modify the <strong>Path</strong> test field. The <code>/</code> in this case refers to the root of the collection and not the cluster file system.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="mounting-smb-share" class="level1">
@@ -316,8 +318,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
-<col style="width: 39%">
-<col style="width: 43%">
+<col style="width: 40%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -329,33 +331,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>/home/FCAM/home</td>
-<td>\cfs09.cam.uchc.edu&lt;user&gt;</td>
-<td>smb://cfs09.cam.uchc.edu/home/FCAM/<user></user></td>
+<td><code>\\cfs09.cam.uchc.edu\home\FCAM\&lt;user&gt;</code></td>
+<td><code>smb://cfs09.cam.uchc.edu/home/FCAM/&lt;user&gt;</code></td>
 </tr>
 <tr class="even">
 <td>/labs</td>
-<td>\cfs09.cam.uchc.edu&lt;path&gt;</td>
-<td>smb://cfs09.cam.uchc.edu/labs/<path></path></td>
+<td><code>\\cfs09.cam.uchc.edu\labs\&lt;path&gt;</code></td>
+<td><code>smb://cfs09.cam.uchc.edu/labs/&lt;path&gt;</code></td>
 </tr>
 <tr class="odd">
 <td>/projects</td>
-<td>\155.37.251.38&lt;path&gt;</td>
-<td>smb://155.37.251.38/projects/<path></path></td>
+<td><code>\\155.37.251.38\projects\&lt;path&gt;</code></td>
+<td><code>smb://155.37.251.38/projects/&lt;path&gt;</code></td>
 </tr>
 <tr class="even">
 <td>/departments</td>
-<td>\155.37.250.151&lt;path&gt;</td>
-<td>smb://155.37.250.151/departments/<path></path></td>
+<td><code>\\155.37.250.151\departments\&lt;path&gt;</code></td>
+<td><code>smb://155.37.250.151/departments/&lt;path&gt;</code></td>
 </tr>
 <tr class="odd">
 <td>/scratch</td>
-<td>\cfs08.cam.uchc.edu&lt;path&gt;</td>
-<td>smb://cfs08.cam.uchc.edu/ifs/scratch/<path></path></td>
+<td><code>\\cfs08.cam.uchc.edu\ifs\scratch\&lt;path&gt;</code></td>
+<td><code>smb://cfs08.cam.uchc.edu/ifs/scratch/&lt;path&gt;</code></td>
 </tr>
 <tr class="even">
 <td>/sandbox</td>
-<td>\155.37.248.191&lt;path&gt;</td>
-<td>smb://155.37.248.191/sandbox/<path></path></td>
+<td><code>\\155.37.248.191\sandbox\&lt;path&gt;</code></td>
+<td><code>smb://155.37.248.191/sandbox/&lt;path&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -364,15 +366,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="connecting" class="level2">
 <h2 class="anchored" data-anchor-id="connecting">Connecting</h2>
 <p>To connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system.</p>
-<p>When prompted for a username and password, use your CAM username and password.</p>
+<p>When prompted for a username and password, use your Mantis username and password.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows 11</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows 10</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">MacOs</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
-<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn secure WiFi network.</li>
+<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
 <li>Open File Explorer from the taskbar or the Start menu.</li>
-<li>Select This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive. <img src="img/map-network-drive-windows11.png" class="img-fluid"></li>
+<li>Select This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive. <img src="img/map-network-drive-windows11.png" class="img-fluid" width="400"></li>
 <li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
 <li>In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
 <li>Select Finish.</li>
@@ -380,10 +382,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
-<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn secure WiFi network.</li>
+<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
 <li>Open File Explorer from the taskbar or the Start menu</li>
 <li>Select This PC from the left pane. Then, on the Computer tab, select Map network drive.<br>
-<img src="img/map-network-drive-windows11.png" class="img-fluid"></li>
+<img src="img/map-network-drive-windows10.png" class="img-fluid" width="400"></li>
 <li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
 <li>In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
 <li>Select Finish.</li>
@@ -391,10 +393,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <ol type="1">
-<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn secure WiFi network.</li>
+<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
 <li>Open Finder and select <code>Go:Connect to Server</code> from the top menu.</li>
 <li>Enter the address of the SMB server URL and path you want to connect to.</li>
-<li></li>
+<li>In order to automatically mount the SMB share, navigate to <code>System Settings</code> &gt; <code>General</code> &gt; <code>Login Items &amp; Extensions</code>.</li>
+<li>Under the <code>Open at Login</code> section, click the <code>+</code> button and <img src="img/add-login-item-mac1.png" class="img-fluid" width="500"></li>
+<li>Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. <img src="img/add-login-item-mac2.png" class="img-fluid" width="500"></li>
 </ol>
 </div>
 </div>
