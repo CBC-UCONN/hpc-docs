@@ -125,6 +125,10 @@ type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@mantis-submit.cam.uchc.edu "c
 Where `<user>` is your Mantis username.
 :::
 
+::: {.callout-warning}
+Do not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. **We will never ask you for your private key for any reason.**
+:::
+
 <!-- # SSH Tunnelling -->
 <!-- TODO: Explain why you might need this and how to do it. -->
 <!-- TODO: How will this change once all traffic must go through external host? -->

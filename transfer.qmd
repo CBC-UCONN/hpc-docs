@@ -4,34 +4,35 @@ title: "Tranferring Data"
 
 <!-- TODO: Add FileZilla SFTP client -->
 
-We recommend two approaches for transferring data to and from the cluster.
+There are several recommended approaches for transferring data to and from the Mantis file system.
 
-1) Secure Copy through transfer node
-2) Globus Connect
+1. [Secure Copy through transfer node](#secure-copy)
+2. [Globus Connect](#globus-connect)
+3. [Mounting SMB Share](#mounting-smb-share)
 
 Each are most suitable for different situations. We explain the usage of each tool below.
 
-## Secure Copy
-TODO: Are all network storage filesystems mounted to the transfer nodes?
-
-<!-- `transfer.hpc.cam.uchc.edu` Three load balancers. Requires ssh key. -->
-
-Secure copy is ideal for transferring small amounts of data and is a bit more straight forward to use than Globus connect. A secure copy can be performed with the `scp` command. This command can only be used to transfer data to and from a transfer node. There are two transfer nodes.
+# Secure Copy
+Secure copy is a simple command line method to transfer data. It is ideal for transferring a small amount of data. A secure copy can be performed with the `scp` command. This command should only be used to transfer data to and from a transfer node. There are two transfer nodes:
 
 1. `transfer.cam.uchc.edu` This will accept password authentication or ssh keys and is available from anywhere. 
 2. `transfer.hpc.cam.uchc.edu` This is actually three load-balanced servers. it will only accept SSH key authentication and can only be reached through the CAM VPN.
 
 A secure copy can be performed from the terminal with the `scp` command which has this required syntax:
 
-`scp <src> <dest>`
+```bash
+scp <src> <dest>
+```
 
-The `src` and `dest` arguments specify file or directory paths.
+Where `src` and `dest` arguments specify file or directory paths.
 
 Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:
 
-`<user>@<hostname>:`.
+```bash
+<user>@<hostname>: 
+```
 
-In order to secure copy a directory use the `-r` option.
+In order to secure copy a directory include the `-r` option.
 
 
 ### Examples
@@ -44,28 +45,79 @@ Copy a directory from the cluster to your local computer:
 `scp -r <user>@transfer.cam.uchc.edu:<remote path> <local path>`
 
 
-## Globus Connect
+# Globus Connect
 Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator. 
 
-### Connecting with Globus Connect
-1. Log in to the Globus web app at https://www.globus.org.
-2. Select the University of Connecticut as your organization and enter your login credentials when prompted. 
-3. Once logged in, connect to UConn HPC by searching for "UCHC Globus Server" in the **collection** text field.
-5. Select UCHC Globus Server and log in with your CAM credentials. 
+## Getting Started
+Globus has excellent [documentation](https://docs.globus.org/guides/). We recommend starting with [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) which contains almost everything you need to know to use Globus in addition to making note of the specifics below.
 
-::: {.callout-note}
-Globus Connect also has a desktop client available for installation on your local computer.
+### Specifics to accessing the UCHC Globus Server
+#### Organizational Login
+When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your NetID and password.
 
-This can be downloaded at https://www.globus.org/globus-connect-personal 
+#### UCHC Globus Server Collection
+To access the Mantis file system, search for and select, the "UCHC Globus Server" in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.
+
+#### File Paths
+Navigation to your home directory mirrors the cluster file system. You can access your home directory by entering `/home/FCAM/<user>` in the **path** text field.
+
+Navigation to other directories has one minor but unintuitive difference. The root of the cluster file system is `/globus` instead of `/`. So, for example, to access the labs directory you would enter `/globus/labs` in the **Path** text field.
+
+![](img/globus-root.png)
+
+## Transferring Files Locally 
+In order to transfer files to a local computer, you will need to install the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) application.
+
+## Sharing Files
+For a guide on sharing files with Globus, see [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/share-files/).
+
+
+# Mounting SMB Share
+SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the Mantis filesystem. 
+
+To connect to the Mantis file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs. 
+
+| Directory       | Windows                                 | MacOS / Linux                               |
+|-----------------|-----------------------------------------|---------------------------------------------|
+| /home/FCAM/home | \\cfs09.cam.uchc.edu\home\FCAM\<user>   | smb://cfs09.cam.uchc.edu/home/FCAM/<user>   |
+| /labs           | \\cfs09.cam.uchc.edu\labs\<path>        | smb://cfs09.cam.uchc.edu/labs/<path>        |
+| /projects       | \\155.37.251.38\projects\<path>         | smb://155.37.251.38/projects/<path>         |
+| /departments    | \\155.37.250.151\departments\<path>     | smb://155.37.250.151/departments/<path>     |
+| /scratch        | \\cfs08.cam.uchc.edu\ifs\scratch\<path> | smb://cfs08.cam.uchc.edu/ifs/scratch/<path> |
+| /sandbox        | \\155.37.248.191\sandbox\<path>         | smb://155.37.248.191/sandbox/<path>         |
+
+Replace `<path>` with the specific subdirectory path that you want to access.
+
+The `df -h` command can be used to list all of file systems and their URLs.
+
+## Connecting
+To connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system. 
+
+When prompted for a username and password, use your CAM username and password.
+
+::: {.panel-tabset}
+## Windows 11
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+2. Open File Explorer from the taskbar or the Start menu.
+3. Select This PC from the left pane. Then, on the File Explorer ribbon, select More > Map network drive.
+![](img/map-network-drive-windows11.png)
+4. In the Drive list, select a drive letter. (Any available letter will do.)
+5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
+6. Select Finish.
+
+## Windows 10
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+2. Open File Explorer from the taskbar or the Start menu
+3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.  
+![](img/map-network-drive-windows11.png)
+4. In the Drive list, select a drive letter. (Any available letter will do.)
+5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
+6. Select Finish.
+
+## MacOs
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+2. Open Finder and select `Go:Connect to Server` from the top menu.
+3. Enter the address of the SMB server URL and path you want to connect to.
+4. 
+
 :::
-
-### Finding files in UCHC Globus Server collection
-There are two root directories within the globus server collection. You can navigate the server file system by entering paths within these two directories into the **path** text field. 
-
-##### `/globus`
-This Globus file server directory contains many of the directories located in root directory of the cluster file system. From here you can access the `/labs`, `/projects`, or `/seqdata` cluster file system directories among others.
-
-##### `/home`
-This Globus file server directory contains the `/home` cluster file system directory. You would access your home directory by navigating to `/home/FCAM/<user>` in the Globus file server.
-
-

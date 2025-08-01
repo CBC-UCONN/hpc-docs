@@ -1,1 +1,0 @@
-Instructions on recovering files from .snapshots

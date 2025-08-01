@@ -15,12 +15,17 @@ Passwords expire every 90 days.
 
 Any time you need to reset your password, you can do so in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
 
+::: {.callout-important}
+If you are ever not able to login or transfer files, ensure that you don't have an expired password.
+:::
+
+::: {.callout-warning}
+Do not share your CAM password with anyone! **We will never ask you for your password for any reason.**
+:::
+
 #### Why is it called the CAM Password Manager?
 Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.
 
-::: {.callout-important}
-If you are not able to login or transfer files, ensure that you don't have an expired password.
-:::
 
 <!--  
 According to Ion, having access, regardless of mode, is dependent on:

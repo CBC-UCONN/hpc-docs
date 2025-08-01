@@ -1,13 +1,15 @@
-Hardware
+<!-- Hardware -->
 
-Operating System
+<!-- Operating System -->
 
-Statistics
+<!-- Statistics -->
 
-Current Status?
+<!-- Current Status? -->
 
-Current Usage?
+<!-- Current Usage? -->
 
-Acknowledgements
+<!-- Acknowledgements -->
 
-Maybe move all of this to introduction?
+<!-- Maybe move all of this to introduction? -->
+
+<!-- # Getting Data from the Sequencing Core -->
