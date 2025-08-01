@@ -29,20 +29,20 @@ Where `src` and `dest` arguments specify file or directory paths.
 Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:
 
 ```bash
-<user>@<hostname>: 
+<user>@<hostname>:2<path> 
 ```
 
 In order to secure copy a directory include the `-r` option.
 
 
 ### Examples
-Copy a file from your local computer to your home directory on the cluster:
+Copy a file called test.txt from your local computer to your home directory on the cluster:
 
-`scp <local path> <user>@transfer.cam.uchc.edu:<remote path>`
+`scp test.txt <user>@transfer.cam.uchc.edu:`
 
 Copy a directory from the cluster to your local computer:
 
-`scp -r <user>@transfer.cam.uchc.edu:<remote path> <local path>`
+`scp -r <user>@transfer.cam.uchc.edu:test.txt .`
 
 
 # Globus Connect
@@ -53,17 +53,19 @@ Globus has excellent [documentation](https://docs.globus.org/guides/). We recomm
 
 ### Specifics to accessing the UCHC Globus Server
 #### Organizational Login
-When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your NetID and password.
+When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.
 
 #### UCHC Globus Server Collection
-To access the Mantis file system, search for and select, the "UCHC Globus Server" in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.
+To access the Mantis file system, search for and select, the `UCHC Globus Server` in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your Mantis username and password.
+
+![](img/globus-uchc-server.png){width=500}
 
 #### File Paths
 Navigation to your home directory mirrors the cluster file system. You can access your home directory by entering `/home/FCAM/<user>` in the **path** text field.
 
 Navigation to other directories has one minor but unintuitive difference. The root of the cluster file system is `/globus` instead of `/`. So, for example, to access the labs directory you would enter `/globus/labs` in the **Path** text field.
 
-![](img/globus-root.png)
+![](img/globus-root.png){width=500}
 
 ## Transferring Files Locally 
 In order to transfer files to a local computer, you will need to install the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) application.
@@ -71,20 +73,23 @@ In order to transfer files to a local computer, you will need to install the [Gl
 ## Sharing Files
 For a guide on sharing files with Globus, see [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/share-files/).
 
+::: {.callout-note}
+When adding permissions, you generally will not need to modify the **Path** test field. The `/` in this case refers to the root of the collection and not the cluster file system.
+:::
 
 # Mounting SMB Share
 SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the Mantis filesystem. 
 
 To connect to the Mantis file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs. 
 
-| Directory       | Windows                                 | MacOS / Linux                               |
-|-----------------|-----------------------------------------|---------------------------------------------|
-| /home/FCAM/home | \\cfs09.cam.uchc.edu\home\FCAM\<user>   | smb://cfs09.cam.uchc.edu/home/FCAM/<user>   |
-| /labs           | \\cfs09.cam.uchc.edu\labs\<path>        | smb://cfs09.cam.uchc.edu/labs/<path>        |
-| /projects       | \\155.37.251.38\projects\<path>         | smb://155.37.251.38/projects/<path>         |
-| /departments    | \\155.37.250.151\departments\<path>     | smb://155.37.250.151/departments/<path>     |
-| /scratch        | \\cfs08.cam.uchc.edu\ifs\scratch\<path> | smb://cfs08.cam.uchc.edu/ifs/scratch/<path> |
-| /sandbox        | \\155.37.248.191\sandbox\<path>         | smb://155.37.248.191/sandbox/<path>         |
+| Directory       | Windows                                   | MacOS / Linux                                 |
+|-----------------|-------------------------------------------|---------------------------------------------  |
+| /home/FCAM/home | `\\cfs09.cam.uchc.edu\home\FCAM\<user>`   | `smb://cfs09.cam.uchc.edu/home/FCAM/<user>`   |
+| /labs           | `\\cfs09.cam.uchc.edu\labs\<path>`        | `smb://cfs09.cam.uchc.edu/labs/<path>`        |
+| /projects       | `\\155.37.251.38\projects\<path>`         | `smb://155.37.251.38/projects/<path>`         |
+| /departments    | `\\155.37.250.151\departments\<path>`     | `smb://155.37.250.151/departments/<path>`     |
+| /scratch        | `\\cfs08.cam.uchc.edu\ifs\scratch\<path>` | `smb://cfs08.cam.uchc.edu/ifs/scratch/<path>` |
+| /sandbox        | `\\155.37.248.191\sandbox\<path>`         | `smb://155.37.248.191/sandbox/<path>`         |
 
 Replace `<path>` with the specific subdirectory path that you want to access.
 
@@ -93,31 +98,35 @@ The `df -h` command can be used to list all of file systems and their URLs.
 ## Connecting
 To connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system. 
 
-When prompted for a username and password, use your CAM username and password.
+When prompted for a username and password, use your Mantis username and password.
 
 ::: {.panel-tabset}
 ## Windows 11
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu.
 3. Select This PC from the left pane. Then, on the File Explorer ribbon, select More > Map network drive.
-![](img/map-network-drive-windows11.png)
+![](img/map-network-drive-windows11.png){width=400}
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
 
 ## Windows 10
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu
 3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.  
-![](img/map-network-drive-windows11.png)
+![](img/map-network-drive-windows10.png){width=400}
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
 
 ## MacOs
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn secure WiFi network.
+1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open Finder and select `Go:Connect to Server` from the top menu.
 3. Enter the address of the SMB server URL and path you want to connect to.
-4. 
+4. In order to automatically mount the SMB share, navigate to `System Settings` > `General` > `Login Items & Extensions`.
+5. Under the `Open at Login` section, click the `+` button and 
+![](img/add-login-item-mac1.png){width=500}
+6. Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. 
+![](img/add-login-item-mac2.png){width=500}
 
 :::

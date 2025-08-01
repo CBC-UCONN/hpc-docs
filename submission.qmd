@@ -132,10 +132,22 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 # SLURM Environment Variables
 SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the [SLURM environment variables documentation](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) for a complete list of available variables.
 
+# CPUs
+The Mantis cluster has a mix of AMD and Intel Xeon CPUs. In some cases, software must be compiled for a specific CPU architecture in which case you will need to limit your job to nodes with a compatible CPU type in your job script. The CPU type can be specified using the `--constraint` argument. The CPU types and their associated constrait argument are listed in the table below. 
+
+### CPU Types
+<!-- TODO: Make this tables not full width of screen -->
+| CPU Type   | constraint |
+|------------|------------|
+| AMD        | cpu_amd    |
+| Intel Xeon | cpu_xeon   |
+
+
 # GPUs
-A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gpus-per-task=[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. Valid GPU types are listed in the table below.  
+A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gpus-per-task=[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. The types of GPUs nd the associated type arguments are listed in the table below.  
 
 ### GPU Types
+<!-- TODO: Make this tables not full width of screen -->
 | GPU         | type |
 |-------------|------|
 | NVIDIA A100 | A100 |

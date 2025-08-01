@@ -20,14 +20,14 @@ website:
       - text: "File Systems & Storage"
         href: storage.qmd
 
-      - text: "Submit Jobs" 
+      - text: "Submitting Jobs" 
         href: submission.qmd
 
       - text: "Transferring Data"
         href: transfer.qmd
       
-      - text: "Software"
-        href: software.qmd
+      # - text: "Software"
+      #   href: software.qmd
       
       - text: "Databases"
         href: databases.qmd
@@ -38,8 +38,8 @@ website:
       # - text: "File Permissions"
         # href: permissions.qmd
 
-      - text: "Best Practices"
-        href: bestpractices.qmd
+      # - text: "Best Practices"
+      #   href: bestpractices.qmd
 
       # - text: "Miscellaneous"
       #   href: misc.qmd
