@@ -1,6 +1,10 @@
 ---
 title: "File systems and storage"
 ---
+<!-- TODO: inact file deletion policy for /tmp. Add details to /tmp section -->
+<!-- TODO: inact file deletion policy for /local. Add details to /local section -->
+<!-- TODO: inact file deletion policy for /scratch and /sandbox -->
+<!-- Mention how long data remain in /seqdata before being moved. -->
 
 # Overview
 
@@ -28,7 +32,7 @@ Users are not permitted to open permissions on their home directories. If you ne
 :::
 
 ### /labs
-Quota: 2TB. can be increased upon request. 
+Quota: 2TB. Can be increased upon request. 
 
 Individual users will always be associated with "lab" groups. PI of the lab group can request a space in `/labs`. 
 
@@ -36,7 +40,7 @@ This location is intended for storage of active shared project data to facilitat
 
 
 ### /projects
-Quota: 2TB, can be increased upon request.
+Quota: 2TB. Can be increased upon request.
 
 This can be created at the request of one or more PIs.
 
@@ -65,6 +69,8 @@ This location is used for storing raw sequencing data and is intended to allevia
 
 If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at `cbcsupport@helpspotmail.com`.
 
+Raw sequence data will be stored here for a period of **2 years**. After this time, the data will be moved to `/tapearchive/seqdata`. [See below](#tapearchive) for more information on `/tapearchive`.
+
 **Do not copy data from this directory**. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
 
 ::: {.callout-tip}
@@ -81,12 +87,15 @@ ln -s /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/<user>/AwesomeProj
 Where `/seqdata/CGI/Fastq_Files/AwesomeWGS_May2025` is the raw data directory and `/home/FCAM/<user>/AwesomeProject/rawData/` is the destination. You will then have a symlink, `/home/FCAM/<user>/AwesomeProject/rawData/AwesomeWGS_May2025` that behaves just as if the files contained had been copied without taking up all the space. 
 :::
 
+
 ### /tmp
 Quota: Shared space. No individual or group quotas. 
 
 Each node has it's own local `/tmp` directory which can be used for temporary storage of data while actively running analyses. This can be desirable when an analysis would be limited by I/O operations across the network. 
 
 `/tmp` is a shared space. Once an analysis is done, nothing should be left behind here. 
+
+<!-- The system will remove contents of this directory after TODO: how long or under what conditions? -->
 
 ::: {.callout-tip}
 On our system `/tmp` is pretty small and often fills up. Many programs quietly write to `/tmp` by default without telling users (they usually quietly clean up afterward as well). If `/tmp` fills up, `no space left on device` errors frequently result, confusing users who know they still have plenty of space in their storage quota. If you are running a program that does this, say:
@@ -107,7 +116,6 @@ You can create your own temporary directory where you are doing the analysis, or
 
 :::
 
-The system will remove contents of this directory after TODO: how long or under what conditions?
 
 ### /local
 Quota: Shared space. No individual or group quotas. 
@@ -117,16 +125,21 @@ This is another space local to each node and shared among users. It is larger th
 
 ## Archival spaces
 
-These spaces are meant for archiving data for varying durations. Users can request the creation of directories they have read/write access to. 
+These spaces are meant for archiving data for varying durations. Users can request the creation of directories they or a group of users will have read/write access to. 
+
+Each of the archival spaces have the same directory structure containing the following directories: 
+| users       | Owned by users                 |
+| labs        | Shared by users of a PI's lab  |
+| projects    | Shared by users belonging to multiple lab groups collaborating on a specific project |
+| departments | Shared by users of a department |
+
 
 ### /archive
 Quota: No current quota policy. 
 
 This system is intended for *medium term* storage of data that is no longer being used for analysis, but which may be needed within a year or so. `/archive` gives relatively fast access (though not as fast as the above directories). The data are securely stored, being geospread across four data centers. As such, it is *relatively expensive* for us to store data here. Users should not plan on permanently archiving data here. 
 
-PIs and users can request storage space here in a directory structure that mirrors `/home/FCAM`, `/projects` and `/labs` to which they have read/write access. 
-
-Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?
+Eventually, data stored here will be moved to tape storage. 
 
 
 ### /tapebackup
@@ -138,35 +151,19 @@ This system stores data on [magnetic tape](https://en.wikipedia.org/wiki/Magneti
 
 Access to magnetic tape is *slow*. Depending on how busy the system is, it may take hours or days for data to be written or retrieved. It is, however, inexpensive. 
 
-The directory structure is similar to `/archive`. Users can request space here to which they have read/write access. 
-
 
 ### /tapearchive
 Quota: No current quota policy. 
 
 This system is intended for *long term* storage. Completed projects and datasets that are no longer currently active can be stored here. 
 
-It also stores data on magnetic tape, but on two redundant systems. Like `/tapebackup`, access is slow. 
+It also stores data on magnetic tape, but on two redundant copies in the same physical location. Like with `/tapebackup`, access is slow. 
 
-User access and directory structure are the same as `/archive` and `/tapebackup`. 
+This system also includes a `seqdata` directory where data from `/seqdata` are moved after a period of 2 years. Users may request that data be moved back to `/seqdata` for a period of time if they need to actively the the data again for anlyses. 
+
 
 ## Summary table
 
-<<<<<<< HEAD
-| **Directory**        | **Purpose**                                            | **Access**                          | **Quota/Capacity**      | **Notes**                                                                  |
-|----------------------|--------------------------------------------------------|-------------------------------------|-------------------------|----------------------------------------------------------------------------|
-| `/home/FCAM/<user>`  | Personal home directory for code, config, small data   | Created for each user               | 1TB (increasable)       | Permissions must remain private. For sharing, use `/labs` or `/projects`.  |
-| `/labs`              | Shared lab project space                               | PI request, lab group members       | 2TB (increasable)       | For intra-lab collaboration.                                               |
-| `/projects`          | Shared inter-lab project space                         | PI request, project group members   | 2TB (increasable)       | For collaboration across labs.                                             |
-| `/scratch`           | Temporary storage for active analyses                  | Open to all users                   | 84TB (shared)           | Files may be deleted after 90 days.                                        |
-| `/sandbox`           | Temporary space (in development)                       | Same as `/scratch`                  | TBD                     | Not yet active as of 7/25.                                                 |
-| `/seqdata`           | Central store for raw/original sequencing data         | Read-only for users                 | NA                      | Use symlinks instead of copying. Contact CBC to store new data.            |
-| `/tmp`               | Node-local temporary space                             | Shared per node                     | Small (varies by node)  | May fill up unexpectedly. Set `TMPDIR` to redirect temp files.             |
-| `/local`             | Larger node-local temp space                           | Shared per node                     | Larger than `/tmp`      | Clean up after use.                                                        |
-| `/archive`           | Medium-term storage (up to ~1 year)                    | Request via CBC, access varies      | NA                      | Slower than active spaces, geospread, more expensive.                      |
-| `/tapebackup`        | Long-term storage (1+ years)                           | Request via CBC, access varies      | NA                      | Stored on single magnetic tape, not redundant, very slow access.           |
-| `/tapearchive`       | Very long-term or permanent storage                    | Request via CBC, access varies      | NA                      | Redundant magnetic tape storage, very slow access.                         |
-=======
 | **Directory**              | **Purpose**                                            | **Access**                              | **Quota/Capacity**                          | **Notes**                                                                                   |
 |---------------------------|--------------------------------------------------------|-----------------------------------------|---------------------------------------------|---------------------------------------------------------------------------------------------|
 | `/home/FCAM/<user>`       | Personal home directory for code, config, small data   | Created for each user                   | 25GB                            | Permissions must remain private. For sharing, use `/labs` or `/projects`.                  |
@@ -180,12 +177,14 @@ User access and directory structure are the same as `/archive` and `/tapebackup`
 | `/archive`                | Medium-term storage (up to ~1 year)                    | Request via CBC, access varies   | NA                                | Slower than active spaces, geospread, more expensive.                                       |
 | `/tapebackup`             | Long-term storage (1+ years)                           | Request via CBC, access varies   | NA                                | Stored on single magnetic tape, not redundant, very slow access.                            |
 | `/tapearchive`            | Very long-term or permanent storage                    | Request via CBC, access varies   | NA                                | Redundant magnetic tape storage, very slow access.                                          |
->>>>>>> 457542131094390cb510c04fe1e4b66dcb413b48
 
 
 # Quotas
 
 To check current usage against quotas for `/labs` and `/projects` directories [visit this link](http://usage.cam.uchc.edu/). You must be connected to the CAM VPN to load the site. 
+
+<!-- TODO: Is there no command that will provide this information in the terminal? -->
+
 
 # Restoring lost data
 
@@ -204,86 +203,3 @@ To recover a file or directory from a snapshot:
 ::: {.callout-note}
 The `.snapshot` directory will not be visible in the output of the `ls` command.
 :::
-
-# Connecting to the file system
-
-Users typically interact with the file systems by connecting to the Mantis cluster and using the command line. You can also map any of the file systems to your local computer and access them through your usual graphical user interface. You can drag-and-drop files to move or copy them or open them to edit in any software you use locally. One great use-case for this is to inspect BAM files using IGV (without having to download them). 
-
-To do this, you must first connect to the CAM VPN ([instructions](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/)). Then:
-
-- From a mac, you can select from your top dropdown menu in Finder `Go:Connect to Server` and enter `smb://cfs09.cam.uchc.edu/home/FCAM/<username>`. When prompted, enter your CAM credentials (not your netID/password).
-- From Windows you can map a network filesystem using [these directions](https://health.uconn.edu/high-performance-computing/tutorials/mapping-a-network-resource/) and the address formatted like this: `\\cfs09.cam.uchc.edu\home\FCAM\<username>`
-
-The above instructions are for user home directories. They are located on file system `cfs09`. Other directories, such as `/scratch` and `/seqdata` are on separate file systems. You will need to update the above address accordingly. To list the file systems of root directories, when connected via SSH to Mantis do:
-
-```bash
-df -h
-```
-
-```
-Filesystem               Size  Used Avail Use% Mounted on
-cfs12:/core              2.1P  1.5P  593T  72% /core
-cfs09:/labs              2.3P  1.9P  453T  81% /labs
-cfs08:/ifs/scratch        84T   54T   29T  66% /scratch
-cfs09:/isg                82T   76T  6.5T  93% /isg
-cfs09:/home/FCAM         2.3P  1.9P  453T  81% /home/FCAM
-cfs15:/seqdata           728T  722T  6.1T 100% /seqdata
-```
-
-<<<<<<< Updated upstream
-Some, such as `/seqdata` only mount if you visit them and may not immediately appear using `df`. 
-=======
-Quota: 2TB, can be increased upon request
-
-
-## /projects
-This can be created at the request of a PI.
-
-This location is intended for storage of active shared project data to facilitate collaboration among multiple labs on a project. 
-
-Quota: 2TB, can be increased upon request.
-
-
-## /scratch
-Anyone can create a directory here.
-
-This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis.
-
-Files may be removed from this location after **90 days**.
-
-
-
-## /sandbox
-
-
-## /seqdata
-This location is used for storing raw and original sequencing data. Data are stored as read-only. 
-
-**Do not copy data from this directory**. For convenience, consider [making a symlink]() to files stored here. By avoiding unneccessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
-
-If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.
-
-
-## /archive
-This location is intended for long term storage of data that is no longer being used for analysis. Eventually, data stored here will be moved to tape storage. TODO: Say a bit more about the goal of archive and tape. How safe is data here? Does it need to also be stored elsewhere such as SRA?
-
-If you would like to move data to this location please contact us at cbcsupport@helpspotmail.com
-
-::: {callout-note}
-Reading from this directory is slow compared to `/seqdata`. Request that data be moved back to `/seqdata` if you will be actively using the data for analysis.
-:::
-
-
-## /tmp
-Each node has it's own local `/tmp` directory which can be used for temporary storage of data while running analyses. This can be desirable when an analysis would be limited by I/O operations across the network. 
-
-Once an analysis is done, important data need to be moved out of this space and any other files should be removed. 
-
-The system will remove contents of this directory after TODO: how long or under what conditions?.
-
-
-# Details
-TODO: maybe explain the systems with a bit more detail here?
-- disk types of the mounted file systems and protocols in use for those?
-- Current system capacity in various locations 
->>>>>>> Stashed changes
