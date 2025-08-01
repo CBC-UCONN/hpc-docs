@@ -129,6 +129,8 @@ These spaces are meant for archiving data for varying durations. Users can reque
 
 Each of the archival spaces have the same directory structure containing the following directories: 
 
+| | |
+|-|------|
 | users       | Owned by users                 |
 | labs        | Shared by users of a PI's lab  |
 | projects    | Shared by users belonging to multiple lab groups collaborating on a specific project |
