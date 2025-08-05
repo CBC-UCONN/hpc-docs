@@ -25,7 +25,7 @@ Do not share your password with anyone! **We will never ask you for your passwor
 :::
 
 #### Why is it called the CAM Password Manager?
-Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department.
+Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.
 
 
 <!--  
