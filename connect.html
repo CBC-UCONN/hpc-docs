@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-13f4b029d1d1dc4997cf56c0d4f0f87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#why-is-it-called-the-cam-vpn" id="toc-why-is-it-called-the-cam-vpn" class="nav-link" data-scroll-target="#why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</a></li>
   </ul></li>
-  <li><a href="#internal-url" id="toc-internal-url" class="nav-link" data-scroll-target="#internal-url">Internal URL</a></li>
+  <li><a href="#internal-host" id="toc-internal-host" class="nav-link" data-scroll-target="#internal-host">Internal Host</a></li>
   </ul>
 </nav>
     </div>
@@ -240,7 +240,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # Open OnDemand -->
 <section id="ssh-secure-shell" class="level1">
 <h1>SSH (Secure Shell)</h1>
-<p>Users can connect to the Mantis cluster through a command-line interface using SSH. Connecting to the cluster with SSH must be done with an SSH client. MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application. Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the <code>Windows PowerShell</code> application. For older versions of Windows, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net">MobaXterm</a>.</p>
+<p>Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client.</p>
+<section id="macos-linux" class="level4">
+<h4 class="anchored" data-anchor-id="macos-linux">MacOS &amp; Linux</h4>
+<p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
+</section>
+<section id="windows" class="level4">
+<h4 class="anchored" data-anchor-id="windows">Windows</h4>
+<p>Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the <code>Windows PowerShell</code> application. For older versions of Windows, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net">MobaXterm</a>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -251,12 +258,13 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When connecting to Mantis over SSH, you will be connected to a login node, also known as a head node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users also connecting to these nodes. To do real work, submit a <a href="./submission.html#batch-job-submission">batch job</a> or initiate an <a href="./submission.html#interactive-job">interactive session</a>. Long running or intensive processes found running on login nodes may be killed without notice. This includes some installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
+<p>When connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./submission.html#batch-job-submission">batch job</a> or initiate an <a href="./submission.html#interactive-job">interactive session</a>. Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
 </div>
 </div>
+</section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
-<p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
+<p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
 <section id="create-ssh-keys" class="level3">
 <h3 class="anchored" data-anchor-id="create-ssh-keys">Create SSH keys</h3>
 <p>You can create a public and private SSH key pair using your SSH client in <code>Windows PowerShell</code> or a MacOS / Linux <code>Terminal</code>.</p>
@@ -308,8 +316,8 @@ Warning
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>On MacOS and Linux, you can copy your public key to the Mantis cluster using the <code>ssh-copy-id</code> command:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@mantis-submit.cam.uchc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
-<p>When prompted, enter your Mantis password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.</p>
+<p>Where <code>&lt;user&gt;</code> is your CAM username.</p>
+<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>On Windows 10 or later, you can copy your public key to the Mantis cluster with <code>Windows PowerShell</code> using the command:</p>
@@ -362,9 +370,9 @@ Note
 <!-- TODO: How will this change once all traffic must go through external host? -->
 </section>
 </section>
-<section id="internal-url" class="level1">
-<h1>Internal URL</h1>
-<p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your Mantis password for authentication. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
+<section id="internal-host" class="level1">
+<h1>Internal Host</h1>
+<p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
 <p>When connecting through this host, you will be redirected to one of 4 login nodes:</p>
 <ul>
