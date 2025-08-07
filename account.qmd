@@ -1,6 +1,7 @@
 # Requesting an Account
+In order to use the Mantis cluster, you must request a **CAM account**. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/cell-analysis-modeling/).
 
-To request a Mantis account:
+To request a CAM account:
 
 1. Submit an [account request ticket](https://health.uconn.edu/high-performance-computing/contact/).
 2. Select `New Account Request` from the `Request Type` dropdown menu.
@@ -23,9 +24,6 @@ If you are ever not able to login or transfer files, ensure that you don't have 
 ::: {.callout-warning}
 Do not share your password with anyone! **We will never ask you for your password for any reason.**
 :::
-
-#### Why is it called the CAM Password Manager?
-Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.
 
 
 <!--  

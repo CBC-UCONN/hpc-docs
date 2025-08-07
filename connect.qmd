@@ -10,15 +10,21 @@ title: "Connecting to Mantis"
 # Open OnDemand -->
 
 # SSH (Secure Shell)
-Users can connect to the Mantis cluster through a command-line interface using SSH. Connecting to the cluster with SSH must be done with an SSH client. MacOS and Linux users can use the built-in SSH client through the `Terminal` application. Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
+Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client. 
+
+#### MacOS & Linux
+MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
+
+#### Windows
+Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
 
 ::: {.callout-warning}
-When connecting to Mantis over SSH, you will be connected to a login node, also known as a head node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users also connecting to these nodes. To do real work, submit a [batch job](submission.qmd#batch-job-submission) or initiate an [interactive session](submission.qmd#interactive-job). Long running or intensive processes found running on login nodes may be killed without notice. This includes some installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
+When connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](submission.qmd#batch-job-submission) or initiate an [interactive session](submission.qmd#interactive-job). Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
 :::
 
 
 ## SSH Keys
-Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys - a private key kept secret on your computer and a public key placed on the remote server you want to access.
+Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys --- a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
 ### Create SSH keys
 You can create a public and private SSH key pair using your SSH client in `Windows PowerShell` or a MacOS / Linux `Terminal`.  
@@ -68,9 +74,9 @@ On MacOS and Linux, you can copy your public key to the Mantis cluster using the
 ssh-copy-id <user>@mantis-submit.cam.uchc.edu
 ```
 
-Where `<user>` is your Mantis username.
+Where `<user>` is your CAM username.
 
-When prompted, enter your Mantis password. Note that for security reasons, your cursor will remain stationary and  will not see any characters appear as you type your password.
+When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and  will not see any characters appear as you type your password.
 
 ### Windows PowerShell
 On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
@@ -127,8 +133,8 @@ Much of the administration of the Mantis cluster is handled by staff in the Cell
 
 
 
-# Internal URL
-There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your Mantis password for authentication. We don't recommend using this host for regular use and it may be decommisioned in the future.
+# Internal Host
+There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication. We don't recommend using this host for regular use and it may be decommisioned in the future.
 
 To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
 

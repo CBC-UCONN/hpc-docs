@@ -126,21 +126,12 @@ This parition contains nodes suitable for jobs that have very large memory requi
 ## debug
 This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
-## preemtable 
-Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait time when not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
+## preemptible 
+Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
+
 
 # SLURM Environment Variables
 SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the [SLURM environment variables documentation](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) for a complete list of available variables.
-
-# CPUs
-The Mantis cluster has a mix of AMD and Intel Xeon CPUs. In some cases, software must be compiled for a specific CPU architecture in which case you will need to limit your job to nodes with a compatible CPU type in your job script. The CPU type can be specified using the `--constraint` argument. The CPU types and their associated constrait argument are listed in the table below. 
-
-### CPU Types
-<!-- TODO: Make this tables not full width of screen -->
-| CPU Type   | constraint |
-|------------|------------|
-| AMD        | cpu_amd    |
-| Intel Xeon | cpu_xeon   |
 
 
 # GPUs
@@ -153,6 +144,35 @@ A GPU will not be allocated to a job unless it is explicitly requested. In order
 | NVIDIA A100 | A100 |
 | NVIDIA L40S | L40S |
 
+
+# Feature Constraints
+When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the `--constraint=<feature>` argument where <feature> is a defined feature of a node. Multiple constraints can be specified with `&` (and) or `|` (or) operators. The defined features and description are listed in the table below. See the [SLURM documentation](https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint) for more information on using constraints.
+
+| Feature   | Description |
+|-----------|-------------|
+| cpu_amd   | AMD CPUs |
+| cpu_xeon  | Intel Xeon CPUs |
+| gpu_A100  | NVIDIA A100 GPUs |
+| gpu_L40S  | NVIDIA L40S GPUs | 
+| epyc_7352 | AMD EPYC 7352 CPUs |
+| xeon_platinum_8462Y+ | Intel Xeon Platinum 8462Y CPUs |
+
+### Example
+Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command to ensure that your job runs on a node with AMD CPUs.
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=test-array-job
+#SBATCH --cpus-per-task 1 
+#SBATCH --mem=100M
+#SBATCH --time=1:00
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --output=%x-%j.out
+#SBATCH --constraint=cpu_amd
+
+<your script here>
+```
 
 # Job Arrays
 If you have a large set of similar tasks that can be run in parallel, job arrays offer a convenient solution for managing these. Job arrays are created using the `--array=<indexes>[%limit]` argument where the required `<indexes>` is a range (e.g. `0-4`) or list (e.g. `1,3,5,7`) of indexes and an optional `limit`, separated by a `%` is the maximum allowed number of simultaneously running jobs (e.g. `%20`). Jobs which are part of a job array will have the environment variable `SLURM_ARRAY_TASK_ID` set to the array index value for that job. The maximum index allowed in a job array is 5001.

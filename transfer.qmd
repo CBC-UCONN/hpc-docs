@@ -13,40 +13,49 @@ There are several recommended approaches for transferring data to and from the M
 Each are most suitable for different situations. We explain the usage of each tool below.
 
 # Secure Copy
-Secure copy is a simple command line method to transfer data. It is ideal for transferring a small amount of data. A secure copy can be performed with the `scp` command. This command should only be used to transfer data to and from a transfer node. There are two transfer nodes:
+Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the `scp` command which is available in the `Windows PowerShell` or MacOS / Linux `Terminal`. 
 
-1. `transfer.cam.uchc.edu` This will accept password authentication or ssh keys and is available from anywhere. 
-2. `transfer.hpc.cam.uchc.edu` This is actually three load-balanced servers. it will only accept SSH key authentication and can only be reached through the CAM VPN.
+This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the `transfer.hpc.cam.uchc.edu` URL. Transferring data through this URL requires athat you have [setup SSH keys](connect.qmd#ssh-keys).
 
-A secure copy can be performed from the terminal with the `scp` command which has this required syntax:
 
-```bash
-scp <src> <dest>
-```
-
-Where `src` and `dest` arguments specify file or directory paths.
-
-Any remote file path must be prefixed with a user ID along with the transfer node address and separated from the path with a colon like so:
+### Transferring a File To Mantis
+In order to transfer data from a local computer to the mantis file system with `scp`:
 
 ```bash
-<user>@<hostname>:2<path> 
+scp <local_file_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
 ```
 
-In order to secure copy a directory include the `-r` option.
+Where `<local_file_path>` is the path to the file on your local computer, `<user>` is your CAM username, and `<remote_path>` is the path on the Mantis file system where you want to copy the file. `<remote_path>` can be excluded if you want to copy the file to your home directory.
 
 
-### Examples
-Copy a file called test.txt from your local computer to your home directory on the cluster:
+### Transferring a File From Mantis
+To transfer data from the mantis file system to a local computer with `scp`:
 
-`scp test.txt <user>@transfer.cam.uchc.edu:`
+```bash
+scp <user>@transfer.hpc.cam.uchc.edu:<remote_file_path> <local_file_path>
+```   
 
-Copy a directory from the cluster to your local computer:
+Where `<user` is your CAM username, `<remote_file_path>` is the path to the file on the Mantis file system, and `<local_file_path>` is the path on your local computer where you want to copy the file. Simply use a `.` for `<local_file_path>` to copy the file to your current working directory. 
 
-`scp -r <user>@transfer.cam.uchc.edu:test.txt .`
+
+### Transferring a Directory
+In order to transfer a directory, you will need to use the `-r` flag to recursively copy all files and subdirectories. For example, to copy a directory from your local computer to the Mantis file system:
+
+```bash 
+scp -r <local_directory_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
+```
+
+### Wildcards
+Secure copy also supports the use of wildcards such as `*` for the remote path as long as wildcard characters are escaped with a `\`.  For example, to copy all `.txt` files from your Mantis home directory to your local computer:
+
+```bash
+scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
+```
+
 
 
 # Globus Connect
-Globus Connect is well suited for large file transfers and for transferring between institutions such as when you need to share files with a collaborator. 
+Globus Connect is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator. 
 
 ## Getting Started
 Globus has excellent [documentation](https://docs.globus.org/guides/). We recommend starting with [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) which contains almost everything you need to know to use Globus in addition to making note of the specifics below.
@@ -74,7 +83,9 @@ In order to transfer files to a local computer, you will need to install the [Gl
 For a guide on sharing files with Globus, see [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/share-files/).
 
 ::: {.callout-note}
-When adding permissions, you generally will not need to modify the **Path** test field. The `/` in this case refers to the root of the collection and not the cluster file system.
+When adding permissions in step 6, you generally will not need to modify the **Path** text field. The `/` in this case refers to the root of the collection and not the cluster file system.
+
+![](img/globus-sharing.png){width=500}
 :::
 
 # Mounting SMB Share

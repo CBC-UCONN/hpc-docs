@@ -2,8 +2,10 @@
 title: "UConn Health High Performance Computing"
 ---
 
-This site provides documentation for users of the [Mantis computer cluster at UConn Health](https://health.uconn.edu/high-performance-computing/). The Mantis cluster is available to all UConn and UConn health researchers. 
+This site provides documentation for users of the [Mantis computer cluster at UConn Health](https://health.uconn.edu/high-performance-computing/). The Mantis cluster is a high performance computing (HPC) system available to all UConn and UConn Health researchers. It is primarily used for bioinformatics and computational biology applications.  
 
-This page is maintained by the [Computational Biology Core in the Institute for Systems Genomics](https://bioinformatics.uconn.edu). 
+This page is maintained by the [University of Connecticut Computational Biology Core in the Institute for Systems Genomics](https://bioinformatics.uconn.edu). 
+
+Administration of the Mantis cluster is jointly handled by the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/cell-analysis-modeling/) and the Computational Biology Core.
 
 There is a second high performance computing facility (also available to all UConn researchers) located at the Storrs campus. To learn more about accessing and using that system, visit [this site](https://kb.uconn.edu/space/SH/26490077279/About+Storrs+HPC). 
