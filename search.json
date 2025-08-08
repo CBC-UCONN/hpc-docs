@@ -1,5 +1,70 @@
 [
   {
+    "objectID": "connect.html",
+    "href": "connect.html",
+    "title": "Connecting to Mantis",
+    "section": "",
+    "text": "Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client.\n\n\nMacOS and Linux users can use the built-in SSH client through the Terminal application.\n\n\n\nSince Windows 10, Windows comes with a built-in SSH client which can be accessed through the Windows PowerShell application. For older versions of Windows, you can use a third-party SSH client such as MobaXterm.\n\n\n\n\n\n\nWarning\n\n\n\nWhen connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a batch job or initiate an interactive session. Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using Conda or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.\n\n\n\n\n\nBefore being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\n\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nWindows PowerShellMacOS / Linux Terminal\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\nls ~/.ssh/\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to Mantis section. If you do not see any files, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.\n\n\n\n\n\nOnce you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.\nIf you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the CAM VPN.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.\n\n\n\n\n\n\n\nOnce you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.\nTo connect to Mantis through SSH, open a Windows PowerShell or Terminal window and enter the following command:\nssh &lt;user&gt;@login.cam.hpc.edu\nWhere &lt;user&gt; is your Mantis username.\nThe login.cam.hpc.edu host will redirect to one of three login nodes:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#ssh-keys",
+    "href": "connect.html#ssh-keys",
+    "title": "Connecting to Mantis",
+    "section": "",
+    "text": "Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\n\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nWindows PowerShellMacOS / Linux Terminal\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\nls ~/.ssh/\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to Mantis section. If you do not see any files, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.\n\n\n\n\n\nOnce you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.\nIf you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the CAM VPN.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "connect.html#using-ssh",
+    "href": "connect.html#using-ssh",
+    "title": "Connecting to Mantis",
+    "section": "",
+    "text": "Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.\nTo connect to Mantis through SSH, open a Windows PowerShell or Terminal window and enter the following command:\nssh &lt;user&gt;@login.cam.hpc.edu\nWhere &lt;user&gt; is your Mantis username.\nThe login.cam.hpc.edu host will redirect to one of three login nodes:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "Data storage practices",
+    "section": "",
+    "text": "How to be a good citizen"
+  },
+  {
+    "objectID": "bestpractices.html#sharing-data-with-other-users",
+    "href": "bestpractices.html#sharing-data-with-other-users",
+    "title": "Data storage practices",
+    "section": "Sharing data with other users",
+    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to."
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Environment Modules",
+    "section": "",
+    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request"
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "File permissions"
+  },
+  {
+    "objectID": "cli.html",
+    "href": "cli.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
+  },
+  {
     "objectID": "databases.html",
     "href": "databases.html",
     "title": "Databases Available on Mantis",
@@ -40,96 +105,14 @@
     ]
   },
   {
-    "objectID": "quick.html",
-    "href": "quick.html",
-    "title": "UCHC HPC",
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Requesting an Account",
     "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#internal-login-node",
-    "href": "quick.html#internal-login-node",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#external-login-node",
-    "href": "quick.html#external-login-node",
-    "title": "UCHC HPC",
-    "section": "External Login Node",
-    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#transfer-node",
-    "href": "quick.html#transfer-node",
-    "title": "UCHC HPC",
-    "section": "Transfer Node",
-    "text": "Transfer Node\ntransfer.cam.uchc.edu"
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
+    "text": "Requesting an Account\nIn order to use the Mantis cluster, you must request a CAM account. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
     "crumbs": [
-      "Get Help"
+      "Account & Password"
     ]
-  },
-  {
-    "objectID": "cli.html",
-    "href": "cli.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
-  },
-  {
-    "objectID": "storage.html",
-    "href": "storage.html",
-    "title": "File systems and storage",
-    "section": "",
-    "text": "The HPC offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems below are network-attached, meaning they are accessible from all compute and login nodes.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#active-work-spaces",
-    "href": "storage.html#active-work-spaces",
-    "title": "File systems and storage",
-    "section": "Active work spaces",
-    "text": "Active work spaces\nThe following spaces are suitable for use for active data analysis.\n\n/home/FCAM/&lt;user&gt;\nQuota: 25GB. Generally cannot be expanded.\nAll users will have a home directory when their account is created.\nThis location is primarily intended for storage of small files such as scripts, source code, configuration, software installations, and can accommodate a small amount of data.\nUse other spaces for analysis of large datasets.\n\n\n\n\n\n\nNote\n\n\n\nUsers are not permitted to open permissions on their home directories. If you need to share files with other users, try any of the below directories you have access to. If you open permissions on your home directory, it may be locked down.\n\n\n\n\n/labs\nQuota: 2TB. Can be increased upon request.\nIndividual users will always be associated with “lab” groups. PI of the lab group can request a space in /labs.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab. You will need to be part of the PI’s permission group to access a lab directory.\n\n\n/projects\nQuota: 2TB. Can be increased upon request.\nThis can be created at the request of one or more PIs.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple groups on a project.\n\n\n/scratch\nQuota: Shared space. No individual or group quotas.\nAnyone can create any number of directories here and set permissions to whatever they choose.\nThis location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, /scratch had 84TB of space. Please be considerate of other users of this shared resource.\n\n\n\n\n\n\nWarning\n\n\n\nIn /scratch unused files are subject to deletion without notice after 90 days.\n\n\n\n\n/sandbox\nQuota: Shared space. No individual or group quotas.\nThis system has identical policies to /scratch. It is in development. At the time of writing (7/25) it was not up.\n\n\n/seqdata\nQuota: Shared space. No individual or group quotas. Users do not have write access.\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. You may request that raw data be stored here (all data generated by CGI is stored here by default), but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, the data will be moved to /tapearchive/seqdata. See below for more information on /tapearchive.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\n\n\n\nTip\n\n\n\nInstead of copying data from /seqdata, create a symlink.\nA symlink, or symbolic link is a pointer to a file or directory that behaves like the real thing.\nIf you want to use data from /seqdata as if it were in one of your project directories you can create a symlink like this:\nln -s /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/\nWhere /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025 is the raw data directory and /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/ is the destination. You will then have a symlink, /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/AwesomeWGS_May2025 that behaves just as if the files contained had been copied without taking up all the space.\n\n\n\n\n/tmp\nQuota: Shared space. No individual or group quotas.\nEach node has it’s own local /tmp directory which can be used for temporary storage of data while actively running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.\n/tmp is a shared space. Once an analysis is done, nothing should be left behind here.\n\n\n\n\n\n\n\nTip\n\n\n\nOn our system /tmp is pretty small and often fills up. Many programs quietly write to /tmp by default without telling users (they usually quietly clean up afterward as well). If /tmp fills up, no space left on device errors frequently result, confusing users who know they still have plenty of space in their storage quota. If you are running a program that does this, say:\ngenomeAssembler -i mySequences.fastq.gz -o myGenome.fasta\nYou can usually get it to write to another temporary directory by setting and exporting the variable TMPDIR to somewhere else before running it:\nexport TMPDIR=myNewTmpDir # this directory must exist or an error will result\n\ngenomeAssembler -i mySequences.fastq.gz -o myGenome.fasta\nYou can create your own temporary directory where you are doing the analysis, or you can use /local.\n\n\n\n\n/local\nQuota: Shared space. No individual or group quotas.\nThis is another space local to each node and shared among users. It is larger than /tmp but files should be removed immediately after analysis.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#archival-spaces",
-    "href": "storage.html#archival-spaces",
-    "title": "File systems and storage",
-    "section": "Archival spaces",
-    "text": "Archival spaces\nThese spaces are meant for archiving data for varying durations. Users can request the creation of directories they or a group of users will have read/write access to.\nEach of the archival spaces have the same directory structure containing the following directories:\n\n\n\n\n\n\n\nusers\nOwned by users\n\n\nlabs\nShared by users of a PI’s lab\n\n\nprojects\nShared by users belonging to multiple lab groups collaborating on a specific project\n\n\ndepartments\nShared by users of a department\n\n\n\n\n/archive\nQuota: No current quota policy.\nThis system is intended for medium term storage of data that is no longer being used for analysis, but which may be needed within a year or so. /archive gives relatively fast access (though not as fast as the above directories). The data are securely stored, being geospread across four data centers. As such, it is relatively expensive for us to store data here. Users should not plan on permanently archiving data here.\nEventually, data stored here will be moved to tape storage.\n\n\n/tapebackup\nQuota: No current quota policy.\nThis system is intended for short term storage (&lt; 1 year). Think of it as a temporary storage space for files you don’t currently need, but are not ready to delete.\nThis system stores data on magnetic tape. Data stored here goes on a single magnetic tape and is not backed up, though magnetic tape is highly stable.\nAccess to magnetic tape is slow. Depending on how busy the system is, it may take hours or days for data to be written or retrieved. It is, however, inexpensive.\n\n\n/tapearchive\nQuota: No current quota policy.\nThis system is intended for long term storage. Completed projects and datasets that are no longer currently active can be stored here.\nIt also stores data on magnetic tape, but on two redundant copies in the same physical location. Like with /tapebackup, access is slow.\nThis system also includes a seqdata directory where data from /seqdata are moved after a period of 2 years. Users may request that data be moved back to /seqdata for a period of time if they need to actively the the data again for anlyses.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#summary-table",
-    "href": "storage.html#summary-table",
-    "title": "File systems and storage",
-    "section": "Summary table",
-    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/labs\nShared lab project space\nPI request, lab group members\n2TB (increasable)\nFor intra-lab collaboration.\n\n\n/projects\nShared inter-lab project space\nPI request, project group members\n2TB (increasable)\nFor collaboration across labs.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n84TB (shared)\nFiles may be deleted after 90 days.\n\n\n/sandbox\nTemporary space (in development)\nSame as /scratch\nTBD\nNot yet active as of 7/25.\n\n\n/seqdata\nCentral store for raw/original sequencing data\nRead-only for users\nNA\nUse symlinks instead of copying. Contact CBC to store new data.\n\n\n/tmp\nNode-local temporary space\nShared per node\nSmall\nMay fill up unexpectedly. Set TMPDIR to redirect temp files.\n\n\n/local\nLarger node-local temp space\nShared per node\nLarger than /tmp\nClean up after use.\n\n\n/archive\nMedium-term storage (up to ~1 year)\nRequest via CBC, access varies\nNA\nSlower than active spaces, geospread, more expensive.\n\n\n/tapebackup\nLong-term storage (1+ years)\nRequest via CBC, access varies\nNA\nStored on single magnetic tape, not redundant, very slow access.\n\n\n/tapearchive\nVery long-term or permanent storage\nRequest via CBC, access varies\nNA\nRedundant magnetic tape storage, very slow access.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "File permissions"
   },
   {
     "objectID": "transfer.html",
@@ -182,64 +165,43 @@
     ]
   },
   {
-    "objectID": "bestpractices.html",
-    "href": "bestpractices.html",
-    "title": "Data storage practices",
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "File systems and storage",
     "section": "",
-    "text": "How to be a good citizen"
-  },
-  {
-    "objectID": "bestpractices.html#sharing-data-with-other-users",
-    "href": "bestpractices.html#sharing-data-with-other-users",
-    "title": "Data storage practices",
-    "section": "Sharing data with other users",
-    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked down and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to."
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Environment Modules",
-    "section": "",
-    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request"
-  },
-  {
-    "objectID": "connect.html",
-    "href": "connect.html",
-    "title": "Connecting to Mantis",
-    "section": "",
-    "text": "Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client.\n\n\nMacOS and Linux users can use the built-in SSH client through the Terminal application.\n\n\n\nSince Windows 10, Windows comes with a built-in SSH client which can be accessed through the Windows PowerShell application. For older versions of Windows, you can use a third-party SSH client such as MobaXterm.\n\n\n\n\n\n\nWarning\n\n\n\nWhen connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a batch job or initiate an interactive session. Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using Conda or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.\n\n\n\n\n\nBefore being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\n\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nWindows PowerShellMacOS / Linux Terminal\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\nls ~/.ssh/\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to Mantis section. If you do not see any files, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.\n\n\n\n\n\nOnce you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.\nIf you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the CAM VPN.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.\n\n\n\n\n\n\n\nOnce you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.\nTo connect to Mantis through SSH, open a Windows PowerShell or Terminal window and enter the following command:\nssh &lt;user&gt;@login.cam.hpc.edu\nWhere &lt;user&gt; is your Mantis username.\nThe login.cam.hpc.edu host will redirect to one of three login nodes:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu",
+    "text": "The HPC offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems below are network-attached, meaning they are accessible from all compute and login nodes.",
     "crumbs": [
-      "Connecting"
+      "File Systems & Storage"
     ]
   },
   {
-    "objectID": "connect.html#ssh-keys",
-    "href": "connect.html#ssh-keys",
-    "title": "Connecting to Mantis",
-    "section": "",
-    "text": "Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\n\n\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nWindows PowerShellMacOS / Linux Terminal\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\nls ~/.ssh/\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to Mantis section. If you do not see any files, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. We will never ask you for your private key for any reason.\n\n\n\n\n\nOnce you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.\nIf you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the CAM VPN.\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the Mantis cluster using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@mantis-submit.cam.uchc.edu\nWhere &lt;user&gt; is your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and will not see any characters appear as you type your password.\n\n\nOn Windows 10 or later, you can copy your public key to the Mantis cluster with Windows PowerShell using the command:\ntype $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh &lt;user&gt;@mantis-submit.cam.uchc.edu \"cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is your Mantis username.",
+    "objectID": "storage.html#active-work-spaces",
+    "href": "storage.html#active-work-spaces",
+    "title": "File systems and storage",
+    "section": "Active work spaces",
+    "text": "Active work spaces\nThe following spaces are suitable for use for active data analysis.\n\n/home/FCAM/&lt;user&gt;\nQuota: 25GB. Generally cannot be expanded.\nAll users will have a home directory when their account is created.\nThis location is primarily intended for storage of small files such as scripts, source code, configuration, software installations, and can accommodate a small amount of data.\nUse other spaces for analysis of large datasets.\n\n\n\n\n\n\nNote\n\n\n\nUsers are not permitted to open permissions on their home directories. If you need to share files with other users, try any of the below directories you have access to. If you open permissions on your home directory, it may be locked down.\n\n\n\n\n/labs\nQuota: 2TB. Can be increased upon request.\nIndividual users will always be associated with “lab” groups. PI of the lab group can request a space in /labs.\nThis location is intended for storage of active shared project data to facilitate collaboration among members of a PI’s lab. You will need to be part of the PI’s permission group to access a lab directory.\n\n\n/projects\nQuota: 2TB. Can be increased upon request.\nThis can be created at the request of one or more PIs.\nThis location is intended for storage of active shared project data to facilitate collaboration among multiple groups on a project.\n\n\n/scratch\nQuota: Shared space. No individual or group quotas.\nAnyone can create any number of directories here and set permissions to whatever they choose.\nThis location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, /scratch had 84TB of space. Please be considerate of other users of this shared resource.\n\n\n\n\n\n\nWarning\n\n\n\nIn /scratch unused files are subject to deletion without notice after 90 days.\n\n\n\n\n/sandbox\nQuota: Shared space. No individual or group quotas.\nThis system has identical policies to /scratch. It is in development. At the time of writing (7/25) it was not up.\n\n\n/seqdata\nQuota: Shared space. No individual or group quotas. Users do not have write access.\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. You may request that raw data be stored here (all data generated by CGI is stored here by default), but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, the data will be moved to /tapearchive/seqdata. See below for more information on /tapearchive.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\n\n\n\nTip\n\n\n\nInstead of copying data from /seqdata, create a symlink.\nA symlink, or symbolic link is a pointer to a file or directory that behaves like the real thing.\nIf you want to use data from /seqdata as if it were in one of your project directories you can create a symlink like this:\nln -s /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/\nWhere /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025 is the raw data directory and /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/ is the destination. You will then have a symlink, /home/FCAM/&lt;user&gt;/AwesomeProject/rawData/AwesomeWGS_May2025 that behaves just as if the files contained had been copied without taking up all the space.\n\n\n\n\n/tmp\nQuota: Shared space. No individual or group quotas.\nEach node has it’s own local /tmp directory which can be used for temporary storage of data while actively running analyses. This can be desirable when an analysis would be limited by I/O operations across the network.\n/tmp is a shared space. Once an analysis is done, nothing should be left behind here.\n\n\n\n\n\n\n\nTip\n\n\n\nOn our system /tmp is pretty small and often fills up. Many programs quietly write to /tmp by default without telling users (they usually quietly clean up afterward as well). If /tmp fills up, no space left on device errors frequently result, confusing users who know they still have plenty of space in their storage quota. If you are running a program that does this, say:\ngenomeAssembler -i mySequences.fastq.gz -o myGenome.fasta\nYou can usually get it to write to another temporary directory by setting and exporting the variable TMPDIR to somewhere else before running it:\nexport TMPDIR=myNewTmpDir # this directory must exist or an error will result\n\ngenomeAssembler -i mySequences.fastq.gz -o myGenome.fasta\nYou can create your own temporary directory where you are doing the analysis, or you can use /local.\n\n\n\n\n/local\nQuota: Shared space. No individual or group quotas.\nThis is another space local to each node and shared among users. It is larger than /tmp but files should be removed immediately after analysis.",
     "crumbs": [
-      "Connecting"
+      "File Systems & Storage"
     ]
   },
   {
-    "objectID": "connect.html#using-ssh",
-    "href": "connect.html#using-ssh",
-    "title": "Connecting to Mantis",
-    "section": "",
-    "text": "Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.\nTo connect to Mantis through SSH, open a Windows PowerShell or Terminal window and enter the following command:\nssh &lt;user&gt;@login.cam.hpc.edu\nWhere &lt;user&gt; is your Mantis username.\nThe login.cam.hpc.edu host will redirect to one of three login nodes:\n\nmantis-sub-5.cam.uchc.edu\nmantis-sub-6.cam.uchc.edu\nmantis-sub-7.cam.uchc.edu",
+    "objectID": "storage.html#archival-spaces",
+    "href": "storage.html#archival-spaces",
+    "title": "File systems and storage",
+    "section": "Archival spaces",
+    "text": "Archival spaces\nThese spaces are meant for archiving data for varying durations. Users can request the creation of directories they or a group of users will have read/write access to.\nEach of the archival spaces have the same directory structure containing the following directories:\n\n\n\n\n\n\n\nusers\nOwned by users\n\n\nlabs\nShared by users of a PI’s lab\n\n\nprojects\nShared by users belonging to multiple lab groups collaborating on a specific project\n\n\ndepartments\nShared by users of a department\n\n\n\n\n/archive\nQuota: No current quota policy.\nThis system is intended for medium term storage of data that is no longer being used for analysis, but which may be needed within a year or so. /archive gives relatively fast access (though not as fast as the above directories). The data are securely stored, being geospread across four data centers. As such, it is relatively expensive for us to store data here. Users should not plan on permanently archiving data here.\nEventually, data stored here will be moved to tape storage.\n\n\n/tapebackup\nQuota: No current quota policy.\nThis system is intended for short term storage (&lt; 1 year). Think of it as a temporary storage space for files you don’t currently need, but are not ready to delete.\nThis system stores data on magnetic tape. Data stored here goes on a single magnetic tape and is not backed up, though magnetic tape is highly stable.\nAccess to magnetic tape is slow. Depending on how busy the system is, it may take hours or days for data to be written or retrieved. It is, however, inexpensive.\n\n\n/tapearchive\nQuota: No current quota policy.\nThis system is intended for long term storage. Completed projects and datasets that are no longer currently active can be stored here.\nIt also stores data on magnetic tape, but on two redundant copies in the same physical location. Like with /tapebackup, access is slow.\nThis system also includes a seqdata directory where data from /seqdata are moved after a period of 2 years. Users may request that data be moved back to /seqdata for a period of time if they need to actively the the data again for anlyses.",
     "crumbs": [
-      "Connecting"
+      "File Systems & Storage"
     ]
   },
   {
-    "objectID": "account.html",
-    "href": "account.html",
-    "title": "Requesting an Account",
-    "section": "",
-    "text": "Requesting an Account\nIn order to use the Mantis cluster, you must request a CAM account. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
+    "objectID": "storage.html#summary-table",
+    "href": "storage.html#summary-table",
+    "title": "File systems and storage",
+    "section": "Summary table",
+    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/labs\nShared lab project space\nPI request, lab group members\n2TB (increasable)\nFor intra-lab collaboration.\n\n\n/projects\nShared inter-lab project space\nPI request, project group members\n2TB (increasable)\nFor collaboration across labs.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n84TB (shared)\nFiles may be deleted after 90 days.\n\n\n/sandbox\nTemporary space (in development)\nSame as /scratch\nTBD\nNot yet active as of 7/25.\n\n\n/seqdata\nCentral store for raw/original sequencing data\nRead-only for users\nNA\nUse symlinks instead of copying. Contact CBC to store new data.\n\n\n/tmp\nNode-local temporary space\nShared per node\nSmall\nMay fill up unexpectedly. Set TMPDIR to redirect temp files.\n\n\n/local\nLarger node-local temp space\nShared per node\nLarger than /tmp\nClean up after use.\n\n\n/archive\nMedium-term storage (up to ~1 year)\nRequest via CBC, access varies\nNA\nSlower than active spaces, geospread, more expensive.\n\n\n/tapebackup\nLong-term storage (1+ years)\nRequest via CBC, access varies\nNA\nStored on single magnetic tape, not redundant, very slow access.\n\n\n/tapearchive\nVery long-term or permanent storage\nRequest via CBC, access varies\nNA\nRedundant magnetic tape storage, very slow access.",
     "crumbs": [
-      "Account & Password"
+      "File Systems & Storage"
     ]
   },
   {
@@ -297,6 +259,44 @@
     "text": "preemptible\nJobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.",
     "crumbs": [
       "Submitting Jobs"
+    ]
+  },
+  {
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UCHC HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UCHC HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu"
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the cbc slack channel to ask questions and receive updates and notifications.",
+    "crumbs": [
+      "Get Help"
     ]
   }
 ]
