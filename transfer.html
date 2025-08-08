@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-13f4b029d1d1dc4997cf56c0d4f0f87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ef1d8436a83b6c5425fa16f6995381e1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -371,7 +371,7 @@ Note
 </tr>
 </tbody>
 </table>
-<p>Replace <code>&lt;path&gt;</code> with the specific subdirectory path that you want to access.</p>
+<p>Replace <code>&lt;user</code> with your CAM usern<code>&lt;path&gt;</code> with the specific subdirectory path that you want to access.</p>
 <p>The <code>df -h</code> command can be used to list all of file systems and their URLs.</p>
 <section id="connecting" class="level2">
 <h2 class="anchored" data-anchor-id="connecting">Connecting</h2>
@@ -382,26 +382,33 @@ Note
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
-<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
+<li>Connect to the <a href="./connect.html#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
 <li>Open File Explorer from the taskbar or the Start menu.</li>
-<li>Select This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive. <img src="img/map-network-drive-windows11.png" class="img-fluid" width="400"></li>
-<li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
-<li>In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
-<li>Select Finish.</li>
-<li>When prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password. <!-- TODO: Add image of username here --></li>
+<li>Select This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.</li>
 </ol>
+<p><img src="img/map-network-drive-windows11.png" class="img-fluid" width="400"></p>
+<ol start="4" type="1">
+<li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
+<li>In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
+<li>Select Finish.</li>
+<li>When prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.</li>
+</ol>
+<p><img src="img/map-network-drive-username.png" class="img-fluid" width="300"></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
-<li>Connect to the <a href="connecting.qmd#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
+<li>Connect to the <a href="./connect.html#cam-vpn">CAM VPN</a> if not on a UConn or UCHC secure WiFi network.</li>
 <li>Open File Explorer from the taskbar or the Start menu</li>
-<li>Select This PC from the left pane. Then, on the Computer tab, select Map network drive.<br>
-<img src="img/map-network-drive-windows10.png" class="img-fluid" width="400"></li>
-<li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
-<li>In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
-<li>Select Finish.</li>
-<li>When prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password. <!-- TODO: Add image of username here --></li>
+<li>Select This PC from the left pane. Then, on the Computer tab, select Map network drive.</li>
 </ol>
+<p><img src="img/map-network-drive-windows10.png" class="img-fluid" width="400"></p>
+<ol start="4" type="1">
+<li>In the Drive list, select a drive letter. (Any available letter will do.)</li>
+<li>In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.</li>
+<li>Select Finish.</li>
+<li>When prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.</li>
+</ol>
+<p><img src="img/map-network-drive-username.png" class="img-fluid" width="300"></p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <ol type="1">
@@ -409,8 +416,14 @@ Note
 <li>Open Finder and select <code>Go:Connect to Server</code> from the top menu.</li>
 <li>Enter the address of the SMB server URL and path you want to connect to.</li>
 <li>In order to automatically mount the SMB share, navigate to <code>System Settings</code> &gt; <code>General</code> &gt; <code>Login Items &amp; Extensions</code>.</li>
-<li>Under the <code>Open at Login</code> section, click the <code>+</code> button and <img src="img/add-login-item-mac1.png" class="img-fluid" width="500"></li>
-<li>Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. <img src="img/add-login-item-mac2.png" class="img-fluid" width="500"></li>
+<li>Under the <code>Open at Login</code> section, click the <code>+</code> button and</li>
+</ol>
+<p><img src="img/add-login-item-mac1.png" class="img-fluid" width="500"></p>
+<ol start="6" type="1">
+<li>Select the mounted SMB share on the sidebar and then the directory or directories in your finder window.</li>
+</ol>
+<p><img src="img/add-login-item-mac2.png" class="img-fluid" width="500"></p>
+<ol start="7" type="1">
 <li>When prompted for a username and password, enter your CAM username and password.</li>
 </ol>
 </div>
