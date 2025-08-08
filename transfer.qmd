@@ -109,7 +109,7 @@ The `df -h` command can be used to list all of file systems and their URLs.
 ## Connecting
 To connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system. 
 
-When prompted for a username and password, use your Mantis username and password.
+<!-- When prompted for a username and password, use your Mantis username and password. -->
 
 ::: {.panel-tabset}
 ## Windows 11
@@ -120,6 +120,8 @@ When prompted for a username and password, use your Mantis username and password
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
+7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
+<!-- TODO: Add image of username here -->
 
 ## Windows 10
 1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
@@ -129,9 +131,11 @@ When prompted for a username and password, use your Mantis username and password
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
+7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
+<!-- TODO: Add image of username here -->
 
 ## MacOs
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open Finder and select `Go:Connect to Server` from the top menu.
 3. Enter the address of the SMB server URL and path you want to connect to.
 4. In order to automatically mount the SMB share, navigate to `System Settings` > `General` > `Login Items & Extensions`.
@@ -139,5 +143,6 @@ When prompted for a username and password, use your Mantis username and password
 ![](img/add-login-item-mac1.png){width=500}
 6. Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. 
 ![](img/add-login-item-mac2.png){width=500}
+7. When prompted for a username and password, enter your CAM username and password.
 
 :::
