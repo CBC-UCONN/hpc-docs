@@ -2,7 +2,7 @@
 title: "Databases Available on Mantis"
 ---
 
-We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly: every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and previous version of each database at all times. We also host several user-made databases where there is demand.
+We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly---every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and previous version of each database at all times. We also host several user-made databases where there is demand.
 
 ## Blast
 

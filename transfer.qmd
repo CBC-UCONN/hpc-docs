@@ -102,7 +102,7 @@ To connect to the Mantis file system using SMB and mount one of the directories,
 | /scratch        | `\\cfs08.cam.uchc.edu\ifs\scratch\<path>` | `smb://cfs08.cam.uchc.edu/ifs/scratch/<path>` |
 | /sandbox        | `\\155.37.248.191\sandbox\<path>`         | `smb://155.37.248.191/sandbox/<path>`         |
 
-Replace `<path>` with the specific subdirectory path that you want to access.
+Replace `<user` with your CAM usern`<path>` with the specific subdirectory path that you want to access.
 
 The `df -h` command can be used to list all of file systems and their URLs.
 
@@ -113,26 +113,32 @@ To connect to the Mantis file system using SMB, you will need to follow the inst
 
 ::: {.panel-tabset}
 ## Windows 11
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu.
 3. Select This PC from the left pane. Then, on the File Explorer ribbon, select More > Map network drive.
+
 ![](img/map-network-drive-windows11.png){width=400}
+
 4. In the Drive list, select a drive letter. (Any available letter will do.)
-5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
+5. In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
 7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
-<!-- TODO: Add image of username here -->
+
+![](img/map-network-drive-username.png){width=300}
 
 ## Windows 10
-1. Connect to the [CAM VPN](connecting.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu
 3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.  
+
 ![](img/map-network-drive-windows10.png){width=400}
+
 4. In the Drive list, select a drive letter. (Any available letter will do.)
-5. In the Folder box, enter the SMB server URL and path you want to mount. To connect every time you sign in to your PC, select Reconnect at sign-in.
+5. In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
 7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
-<!-- TODO: Add image of username here -->
+
+![](img/map-network-drive-username.png){width=300}
 
 ## MacOs
 1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
@@ -140,9 +146,13 @@ To connect to the Mantis file system using SMB, you will need to follow the inst
 3. Enter the address of the SMB server URL and path you want to connect to.
 4. In order to automatically mount the SMB share, navigate to `System Settings` > `General` > `Login Items & Extensions`.
 5. Under the `Open at Login` section, click the `+` button and 
+
 ![](img/add-login-item-mac1.png){width=500}
+
 6. Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. 
+
 ![](img/add-login-item-mac2.png){width=500}
+
 7. When prompted for a username and password, enter your CAM username and password.
 
 :::
