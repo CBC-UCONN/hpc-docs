@@ -166,10 +166,10 @@ A GPU will not be allocated to a job unless it is explicitly requested. In order
 
 ### GPU Types
 <!-- TODO: Make this tables not full width of screen -->
-| GPU         | type |
-|-------------|------|
-| NVIDIA A100 | A100 |
-| NVIDIA L40S | L40S |
+| GPU         | type | number per node |
+|-------------|------|-----------------|
+| NVIDIA A100 | A100 | 1               |
+| NVIDIA L40S | L40S | 1-3             |
 
 ### Example
 ```bash
