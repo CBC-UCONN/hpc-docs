@@ -96,7 +96,7 @@ To connect to the Mantis file system using SMB and mount one of the directories,
 | Directory       | Windows                                   | MacOS / Linux                                 |
 |-----------------|-------------------------------------------|---------------------------------------------  |
 | /home/FCAM/home | `\\cfs09.cam.uchc.edu\home\FCAM\<user>`   | `smb://cfs09.cam.uchc.edu/home/FCAM/<user>`   |
-| /labs           | `\\cfs09.cam.uchc.edu\labs\<path>`        | `smb://cfs09.cam.uchc.edu/labs/<path>`        |
+| /labs           | `\\cfs15.cam.uchc.edu\labs\<path>`        | `smb://cfs15.cam.uchc.edu/labs/<path>`        |
 | /projects       | `\\155.37.251.38\projects\<path>`         | `smb://155.37.251.38/projects/<path>`         |
 | /departments    | `\\155.37.250.151\departments\<path>`     | `smb://155.37.250.151/departments/<path>`     |
 | /scratch        | `\\cfs08.cam.uchc.edu\ifs\scratch\<path>` | `smb://cfs08.cam.uchc.edu/ifs/scratch/<path>` |
