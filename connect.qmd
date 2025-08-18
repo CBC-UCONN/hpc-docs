@@ -64,14 +64,14 @@ Do not share your private key with anyone! Your private key should be kept secre
 ### Copy Public SSH Key to Mantis
 Once you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.
 
-If you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the [CAM VPN](connect.qmd#sec-vpn). 
+If you are not connected to a UConn or UCHC Secure WiFi network, you must first connect to the [CAM VPN](#cam-vpn). 
 
 ::: {.panel-tabset}
 ### MacOS and Linux
 On MacOS and Linux, you can copy your public key to the Mantis cluster using the `ssh-copy-id` command:
 
 ```bash
-ssh-copy-id <user>@mantis-submit.cam.uchc.edu
+ssh-copy-id <user>@transfer.cam.uchc.edu
 ```
 
 Where `<user>` is your CAM username.
@@ -82,7 +82,7 @@ When prompted, enter your CAM password. Note that for security reasons, your cur
 On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
 
 ```bash
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@mantis-submit.cam.uchc.edu "cat >> .ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@transfer.cam.uchc.edu "cat >> .ssh/authorized_keys"
 ```
 
 Where `<user>` is your Mantis username.
@@ -95,7 +95,7 @@ Once you have copied your public SSH key to the Mantis cluster, you can connect 
 To connect to Mantis through SSH, open a `Windows PowerShell` or `Terminal` window and enter the following command:
 
 ```bash
-ssh <user>@login.cam.hpc.edu
+ssh <user>@login.hpc.cam.hpc.edu
 ```
 
 Where `<user>` is your Mantis username.
@@ -134,7 +134,7 @@ Much of the administration of the Mantis cluster is handled by staff in the Cell
 
 
 # Internal Host
-There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication. We don't recommend using this host for regular use and it may be decommisioned in the future.
+There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don't recommend using this host for regular use and it may be decommisioned in the future.
 
 To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
 

@@ -52,6 +52,10 @@ Secure copy also supports the use of wildcards such as `*` for the remote path a
 scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
 ```
 
+### Internal Transfer Host
+There is an additional host that can be used to transfer data without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don't recommend using this host for regular use and it may be decommisioned in the future.
+
+The URL for this host is `transfer.cam.uchc.edu`.
 
 
 # Globus Connect
@@ -60,7 +64,7 @@ Globus Connect is well suited for large file transfers, sharing files, and for t
 ## Getting Started
 Globus has excellent [documentation](https://docs.globus.org/guides/). We recommend starting with [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) which contains almost everything you need to know to use Globus in addition to making note of the specifics below.
 
-### Specifics to accessing the UCHC Globus Server
+### Accessing the UCHC Globus Server
 #### Organizational Login
 When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.
 
