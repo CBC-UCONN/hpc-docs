@@ -2,6 +2,7 @@
 title: "Connecting to Mantis"
 ---
 
+[Test](#test-section)
 <!-- Once you have created a CAM Account there are two ways to connect to the Mantis cluster which are documented on this page:
 1. Open OnDemand: a web-based interface for accessing
 2. SSH (Secure Shell): a command-line interface

@@ -5,4 +5,4 @@ https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/
 
 
 # Slack
-Join the [cbc slack channel](uconn-cbc.slack.com) to ask questions and receive updates and notifications.
+Join the [CBC slack channel](https://uconn-cbc.slack.com) to ask questions and receive cluster updates and notifications.
