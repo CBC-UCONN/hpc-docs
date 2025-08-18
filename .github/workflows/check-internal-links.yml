@@ -1,0 +1,25 @@
+name: Check for broken links 
+
+on:
+  push:
+    branches: 
+      - main
+  # Allow manual triggering
+  workflow_dispatch:
+  # Run every Monday at 10AM Eastern 
+  schedule:
+    - cron: "0 14 * * 1"
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check links
+        uses: tcort/github-action-markdown-link-check@v1
+        with:
+          base-branch: main
+          file-extension: qmd
+          # use-quiet-mode: yes

@@ -24,7 +24,7 @@ When connecting to Mantis over SSH, you will be connected to a login node, also 
 
 
 ## SSH Keys
-Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without needing passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys --- a private key kept secret on your computer and a public key placed on the remote server you want to access.
+Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys --- a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
 ### Create SSH keys
 You can create a public and private SSH key pair using your SSH client in `Windows PowerShell` or a MacOS / Linux `Terminal`.  
@@ -43,7 +43,7 @@ ls ~/.ssh/
 ```
 :::
 
-If you see files named `id_ed25519.pub` and `id_ed25519`, you already have an SSH key pair and can skip ahead to the [Copy to Mantis](#copy-to-mantis) section. If you do not see any files, you will need to create a new SSH key pair.
+If you see files named `id_ed25519.pub` and `id_ed25519`, you already have an SSH key pair and can skip ahead to the [Copy to Mantis](#copy-public-ssh-key-to-mantis) section. If you do not see any files, you will need to create a new SSH key pair.
 
 2. To create a key pair run the following command:
 
