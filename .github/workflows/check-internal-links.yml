@@ -22,4 +22,4 @@ jobs:
         with:
           base-branch: main
           file-extension: qmd
-          # use-quiet-mode: yes
+          use-quiet-mode: yes
