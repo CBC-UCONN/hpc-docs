@@ -199,12 +199,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#transferring-a-file-from-mantis" id="toc-transferring-a-file-from-mantis" class="nav-link" data-scroll-target="#transferring-a-file-from-mantis">Transferring a File From Mantis</a></li>
   <li><a href="#transferring-a-directory" id="toc-transferring-a-directory" class="nav-link" data-scroll-target="#transferring-a-directory">Transferring a Directory</a></li>
   <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
+  <li><a href="#internal-transfer-host" id="toc-internal-transfer-host" class="nav-link" data-scroll-target="#internal-transfer-host">Internal Transfer Host</a></li>
   </ul></li>
   <li><a href="#globus-connect" id="toc-globus-connect" class="nav-link" data-scroll-target="#globus-connect">Globus Connect</a>
   <ul class="collapse">
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
-  <li><a href="#specifics-to-accessing-the-uchc-globus-server" id="toc-specifics-to-accessing-the-uchc-globus-server" class="nav-link" data-scroll-target="#specifics-to-accessing-the-uchc-globus-server">Specifics to accessing the UCHC Globus Server</a></li>
+  <li><a href="#accessing-the-uchc-globus-server" id="toc-accessing-the-uchc-globus-server" class="nav-link" data-scroll-target="#accessing-the-uchc-globus-server">Accessing the UCHC Globus Server</a></li>
   </ul></li>
   <li><a href="#transferring-files-locally" id="toc-transferring-files-locally" class="nav-link" data-scroll-target="#transferring-files-locally">Transferring Files Locally</a></li>
   <li><a href="#sharing-files" id="toc-sharing-files" class="nav-link" data-scroll-target="#sharing-files">Sharing Files</a></li>
@@ -272,6 +273,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Secure copy also supports the use of wildcards such as <code>*</code> for the remote path as long as wildcard characters are escaped with a <code>\</code>. For example, to copy all <code>.txt</code> files from your Mantis home directory to your local computer:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.hpc.cam.uchc.edu:\*.txt <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="internal-transfer-host" class="level3">
+<h3 class="anchored" data-anchor-id="internal-transfer-host">Internal Transfer Host</h3>
+<p>There is an additional host that can be used to transfer data without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
+<p>The URL for this host is <code>transfer.cam.uchc.edu</code>.</p>
+</section>
 </section>
 <section id="globus-connect" class="level1">
 <h1>Globus Connect</h1>
@@ -279,8 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>Globus has excellent <a href="https://docs.globus.org/guides/">documentation</a>. We recommend starting with <a href="https://docs.globus.org/guides/tutorials/manage-files/transfer-files/">this tutorial</a> which contains almost everything you need to know to use Globus in addition to making note of the specifics below.</p>
-<section id="specifics-to-accessing-the-uchc-globus-server" class="level3">
-<h3 class="anchored" data-anchor-id="specifics-to-accessing-the-uchc-globus-server">Specifics to accessing the UCHC Globus Server</h3>
+<section id="accessing-the-uchc-globus-server" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-the-uchc-globus-server">Accessing the UCHC Globus Server</h3>
 <section id="organizational-login" class="level4">
 <h4 class="anchored" data-anchor-id="organizational-login">Organizational Login</h4>
 <p>When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.</p>
