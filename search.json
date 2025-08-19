@@ -40,49 +40,21 @@
     ]
   },
   {
-    "objectID": "quick.html",
-    "href": "quick.html",
-    "title": "UCHC HPC",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UConn Health High Performance Computing",
     "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+    "text": "This site provides documentation for users of the Mantis computer cluster at UConn Health. The Mantis cluster is a high performance computing (HPC) system available to all UConn and UConn Health researchers. It is primarily used for bioinformatics and computational biology applications.\nThis page is maintained by the University of Connecticut Computational Biology Core in the Institute for Systems Genomics.\nAdministration of the Mantis cluster is jointly handled by the Center for Cell Analysis and Modeling at UConn Health and the Computational Biology Core.\nThere is a second high performance computing facility (also available to all UConn researchers) located at the Storrs campus. To learn more about accessing and using that system, visit this site."
   },
   {
-    "objectID": "quick.html#internal-login-node",
-    "href": "quick.html#internal-login-node",
-    "title": "UCHC HPC",
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Requesting an Account",
     "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#external-login-node",
-    "href": "quick.html#external-login-node",
-    "title": "UCHC HPC",
-    "section": "External Login Node",
-    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#transfer-node",
-    "href": "quick.html#transfer-node",
-    "title": "UCHC HPC",
-    "section": "Transfer Node",
-    "text": "Transfer Node\ntransfer.cam.uchc.edu"
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the CBC slack channel to ask questions and receive cluster updates and notifications.",
+    "text": "Requesting an Account\nIn order to use the Mantis cluster, you must request a CAM account. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
     "crumbs": [
-      "Get Help"
+      "Account & Password"
     ]
-  },
-  {
-    "objectID": "cli.html",
-    "href": "cli.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Intro command line shell scripting\nFrequently used commands\nMove file permissions here as a subcategory?"
   },
   {
     "objectID": "storage.html",
@@ -125,11 +97,18 @@
     ]
   },
   {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
+    "objectID": "bestpractices.html",
+    "href": "bestpractices.html",
+    "title": "Data storage practices",
     "section": "",
-    "text": "File permissions"
+    "text": "How to be a good citizen"
+  },
+  {
+    "objectID": "bestpractices.html#sharing-data-with-other-users",
+    "href": "bestpractices.html#sharing-data-with-other-users",
+    "title": "Data storage practices",
+    "section": "Sharing data with other users",
+    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to."
   },
   {
     "objectID": "transfer.html",
@@ -182,25 +161,68 @@
     ]
   },
   {
-    "objectID": "bestpractices.html",
-    "href": "bestpractices.html",
-    "title": "Data storage practices",
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
     "section": "",
-    "text": "How to be a good citizen"
+    "text": "File permissions"
   },
   {
-    "objectID": "bestpractices.html#sharing-data-with-other-users",
-    "href": "bestpractices.html#sharing-data-with-other-users",
-    "title": "Data storage practices",
-    "section": "Sharing data with other users",
-    "text": "Sharing data with other users\nUsers often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are not permitted to open permissions for other users to your home directory /home/FCAM/&lt;user&gt;. If you do this, your directory may be locked and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in /labs, /projects, or /scratch that you have access to."
+    "objectID": "running.html",
+    "href": "running.html",
+    "title": "Job Submission",
+    "section": "",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#general",
+    "href": "running.html#general",
+    "title": "Job Submission",
+    "section": "general",
+    "text": "general\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#himem",
+    "href": "running.html#himem",
+    "title": "Job Submission",
+    "section": "himem",
+    "text": "himem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#debug",
+    "href": "running.html#debug",
+    "title": "Job Submission",
+    "section": "debug",
+    "text": "debug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#preemptible",
+    "href": "running.html#preemptible",
+    "title": "Job Submission",
+    "section": "preemptible",
+    "text": "preemptible\nJobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.",
+    "crumbs": [
+      "Running Jobs"
+    ]
   },
   {
     "objectID": "software.html",
     "href": "software.html",
-    "title": "Environment Modules",
+    "title": "Software",
     "section": "",
-    "text": "TODO: Write intro here\n\nEnvironment Modules\nInstalled software is managed with Environment modules.\nSee what software is available: module avail\nLoad software into environment:\nmodule load &lt;software&gt;\n\n\nSingularity\nTODO: How to use a singularity continer.\n\n\nConda\nTODO: How to install and use Conda.\n\n\nRequest Software\nUsers can request the installation of software by submitting a software request"
+    "text": "Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.\n\nRequest Software\nUsers can request the installation of software by submitting a software request\n\n\nEnvironment Modules\nEnvironment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\nThe Mantis cluster uses the Lmod implementation of environment modules.\n\n\nSpack\nGoing forward, most software on the Mantis cluster will now be installed using Spack, a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.\n\nInitialization\nTo initialize spack, run the following command:\nsource /isg/shared/spack/share/spack/setup-env.sh\nYou could add this to your .bashrc or .bash_profile to automatically source it in future sessions.\nTo initialize spack with other shells, find the appropriate setup script in source /isg/shared/spack/share/spack/.\n\n\nLoading Software\nAlready installed software can be loaded using spack load &lt;software&gt;. To see a list of available software, run spack find.\n\n\nInstalling Software\nIf you want to install packages with Spack, you must first chain your home directory configuration to the cluster’s Spack installation. To do so run:\nspack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack\n\n\n\nSingularity\n\nReproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.\nSingularity is in your PATH by default so it can be run without loading a module.\nTypically you will use singularity exec to run a command inside a container like so:\nsingularity exec &lt;path to container.sif&gt; &lt;command&gt; &lt;command-args&gt;\n\n\nConda\n\nConda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.\nSee the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.\n::: {. callout-waring} Some conda commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running conda install, conda create, or conda update on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.\n:::"
   },
   {
     "objectID": "connect.html",
@@ -233,70 +255,41 @@
     ]
   },
   {
-    "objectID": "account.html",
-    "href": "account.html",
-    "title": "Requesting an Account",
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
     "section": "",
-    "text": "Requesting an Account\nIn order to use the Mantis cluster, you must request a CAM account. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
+    "text": "Getting Help\nIf you have a question that is not answered on this site, please submit a ticket here: https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/\n\n\nSlack\nJoin the CBC slack channel to ask questions and receive cluster updates and notifications.",
     "crumbs": [
-      "Account & Password"
+      "Get Help"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UConn Health High Performance Computing",
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UCHC HPC",
     "section": "",
-    "text": "This site provides documentation for users of the Mantis computer cluster at UConn Health. The Mantis cluster is a high performance computing (HPC) system available to all UConn and UConn Health researchers. It is primarily used for bioinformatics and computational biology applications.\nThis page is maintained by the University of Connecticut Computational Biology Core in the Institute for Systems Genomics.\nAdministration of the Mantis cluster is jointly handled by the Center for Cell Analysis and Modeling at UConn Health and the Computational Biology Core.\nThere is a second high performance computing facility (also available to all UConn researchers) located at the Storrs campus. To learn more about accessing and using that system, visit this site."
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
   },
   {
-    "objectID": "submission.html",
-    "href": "submission.html",
-    "title": "Job Submission",
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UCHC HPC",
     "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
-    "crumbs": [
-      "Submitting Jobs"
-    ]
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
   },
   {
-    "objectID": "submission.html#general",
-    "href": "submission.html#general",
-    "title": "Job Submission",
-    "section": "general",
-    "text": "general\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs.",
-    "crumbs": [
-      "Submitting Jobs"
-    ]
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UCHC HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
   },
   {
-    "objectID": "submission.html#himem",
-    "href": "submission.html#himem",
-    "title": "Job Submission",
-    "section": "himem",
-    "text": "himem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU.",
-    "crumbs": [
-      "Submitting Jobs"
-    ]
-  },
-  {
-    "objectID": "submission.html#debug",
-    "href": "submission.html#debug",
-    "title": "Job Submission",
-    "section": "debug",
-    "text": "debug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.",
-    "crumbs": [
-      "Submitting Jobs"
-    ]
-  },
-  {
-    "objectID": "submission.html#preemptible",
-    "href": "submission.html#preemptible",
-    "title": "Job Submission",
-    "section": "preemptible",
-    "text": "preemptible\nJobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.",
-    "crumbs": [
-      "Submitting Jobs"
-    ]
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UCHC HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu"
   }
 ]

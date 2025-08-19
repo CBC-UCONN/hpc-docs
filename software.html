@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>software – UCHC HPC</title>
+<title>Software – UCHC HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Software</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,8 +161,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./submission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Submitting Jobs</span></a>
+  <a href="./running.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Running Jobs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,38 +193,117 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
+  <li><a href="#request-software" id="toc-request-software" class="nav-link active" data-scroll-target="#request-software">Request Software</a></li>
+  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link" data-scroll-target="#environment-modules">Environment Modules</a></li>
+  <li><a href="#spack" id="toc-spack" class="nav-link" data-scroll-target="#spack">Spack</a>
+  <ul class="collapse">
+  <li><a href="#initialization" id="toc-initialization" class="nav-link" data-scroll-target="#initialization">Initialization</a></li>
+  <li><a href="#loading-software" id="toc-loading-software" class="nav-link" data-scroll-target="#loading-software">Loading Software</a></li>
+  <li><a href="#installing-software" id="toc-installing-software" class="nav-link" data-scroll-target="#installing-software">Installing Software</a></li>
+  </ul></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
   <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a></li>
-  <li><a href="#request-software" id="toc-request-software" class="nav-link" data-scroll-target="#request-software">Request Software</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Software</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>TODO: Write intro here</p>
-<section id="environment-modules" class="level1">
-<h1>Environment Modules</h1>
-<p>Installed software is managed with Environment modules.</p>
-<p>See what software is available: <code>module avail</code></p>
-<p>Load software into environment:</p>
-<p><code>module load &lt;software&gt;</code></p>
-</section>
-<section id="singularity" class="level1">
-<h1>Singularity</h1>
-<p>TODO: How to use a singularity continer.</p>
-</section>
-<section id="conda" class="level1">
-<h1>Conda</h1>
-<p>TODO: How to install and use Conda.</p>
-</section>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.</p>
 <section id="request-software" class="level1">
 <h1>Request Software</h1>
 <p>Users can request the installation of software by <a href="https://bioinformatics.uconn.edu/contact-us/software-database-request/">submitting a software request</a></p>
+</section>
+<section id="environment-modules" class="level1">
+<h1>Environment Modules</h1>
+<p>Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).</p>
+<p>Below is a list of commonly used commands, where <code>&lt;module&gt;</code> is the target module.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Module Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>module avail</code></td>
+<td>Display all available modules.</td>
+</tr>
+<tr class="even">
+<td><code>module load &lt;module&gt;</code></td>
+<td>Loads a specific module into environemnt.</td>
+</tr>
+<tr class="odd">
+<td><code>module list</code></td>
+<td>Show list of currently loaded modules.</td>
+</tr>
+<tr class="even">
+<td><code>module unload &lt;module&gt;</code></td>
+<td>Unloads a specific module.</td>
+</tr>
+<tr class="odd">
+<td><code>module purge</code></td>
+<td>Unloads all loaded modules.</td>
+</tr>
+</tbody>
+</table>
+<p>The Mantis cluster uses the <a href="lmod.readthedocs.io">Lmod</a> implementation of environment modules.</p>
+</section>
+<section id="spack" class="level1">
+<h1>Spack</h1>
+<p>Going forward, most software on the Mantis cluster will now be installed using <a href="https://spack.io/">Spack</a>, a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.</p>
+<section id="initialization" class="level3">
+<h3 class="anchored" data-anchor-id="initialization">Initialization</h3>
+<p>To initialize spack, run the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /isg/shared/spack/share/spack/setup-env.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You could add this to your <code>.bashrc</code> or <code>.bash_profile</code> to automatically source it in future sessions.</p>
+<p>To initialize spack with other shells, find the appropriate setup script in <code>source /isg/shared/spack/share/spack/</code>.</p>
+</section>
+<section id="loading-software" class="level3">
+<h3 class="anchored" data-anchor-id="loading-software">Loading Software</h3>
+<p>Already installed software can be loaded using <code>spack load &lt;software&gt;</code>. To see a list of available software, run <code>spack find</code>.</p>
+</section>
+<section id="installing-software" class="level3">
+<h3 class="anchored" data-anchor-id="installing-software">Installing Software</h3>
+<p>If you want to install packages with Spack, you must first chain your home directory configuration to the cluster’s Spack installation. To do so run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="singularity" class="level1">
+<h1>Singularity</h1>
+<!-- TODO: Finish this section -->
+<p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.</p>
+<p>Singularity is in your <code>PATH</code> by default so it can be run without loading a module.</p>
+<p>Typically you will use <code>singularity exec</code> to run a command inside a container like so:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec <span class="op">&lt;</span>path to container.sif<span class="op">&gt;</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="op">&lt;</span>command-args<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="conda" class="level1">
+<h1>Conda</h1>
+<!-- TODO: Expand on this section -->
+<p>Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.</p>
+<p>See the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.</p>
+<p>::: {. callout-waring} Some <code>conda</code> commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running <code>conda install</code>, <code>conda create</code>, or <code>conda update</code> on login nodes. Instead, use an <a href="submission.qmd#interactive-job">interactive session</a> or a <a href="submission.qmd#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.<br>
+:::</p>
 
 
 </section>
