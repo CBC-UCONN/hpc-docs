@@ -1,20 +1,74 @@
-TODO: Write intro here
+---
+title: Software
+---
 
-# Environment Modules
-Installed software is managed with Environment modules.
-
-See what software is available:
-`module avail`
-
-Load software into environment:
-
-`module load <software>`
-
-# Singularity
-TODO: How to use a singularity continer.
-
-# Conda
-TODO: How to install and use Conda.
+Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.
 
 # Request Software
 Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/)
+
+
+# Environment Modules
+Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).  
+
+Below is a list of commonly used commands, where `<module>` is the target module. 
+
+| Module Command           | Description |
+|--------------------------|-------------|
+| `module avail`           | Display all available modules. |
+| `module load <module>`   | Loads a specific module into environemnt. |
+| `module list`            | Show list of currently loaded modules. |
+| `module unload <module>` | Unloads a specific module. |
+| `module purge`           | Unloads all loaded modules. |
+
+The Mantis cluster uses the [Lmod](lmod.readthedocs.io) implementation of environment modules. 
+
+
+
+# Spack
+Going forward, most software on the Mantis cluster will now be installed using [Spack](https://spack.io/), a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.
+
+### Initialization
+To initialize spack, run the following command:
+```bash 
+source /isg/shared/spack/share/spack/setup-env.sh
+```
+
+You could add this to your `.bashrc` or `.bash_profile` to automatically source it in future sessions.
+
+To initialize spack with other shells, find the appropriate setup script in `source /isg/shared/spack/share/spack/`.
+
+### Loading Software
+Already installed software can be loaded using `spack load <software>`. To see a list of available software, run `spack find`.
+
+
+### Installing Software
+If you want to install packages with Spack, you must first chain your home directory configuration to the cluster's Spack installation. To do so run:
+```bash
+spack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack
+```
+
+
+
+# Singularity
+<!-- TODO: Finish this section -->
+Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.
+
+Singularity is in your `PATH` by default so it can be run without loading a module.
+
+Typically you will use `singularity exec` to run a command inside a container like so:
+
+```bash 
+singularity exec <path to container.sif> <command> <command-args>
+```
+
+
+# Conda
+<!-- TODO: Expand on this section -->
+Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well. 
+
+See the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.
+
+::: {. callout-waring}
+Some `conda` commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running `conda install`, `conda create`, or `conda update` on login nodes. Instead, use an [interactive session](submission.qmd#interactive-job) or a [batch job](submission.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
+:::

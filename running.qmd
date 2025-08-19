@@ -110,6 +110,13 @@ Most `sbatch` arguments can also be used with `srun`. For `--mem` or `--cpus-per
 To monitor the status of your jobs you can run `squeue -u <user>` which will list the status of all jobs that belong to you. See the [squeue documentation](https://slurm.schedmd.com/squeue.html) for additional arguments and output formatting options. 
 
 
+# Canceling a job
+If you need to cancel a job that is currently running or in the queue, you can use the `scancel` command. The basic syntax is:
+```bash
+scancel <job_id>
+```
+
+
 # Request time extensions
 If you have a job that may not finish within the allocated time limit you can [submit a time extension request](https://bioinformatics.uconn.edu/contact-us/xanadu-hpc-job-extension/)
 
@@ -118,10 +125,10 @@ If you have a job that may not finish within the allocated time limit you can [s
 A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks.
 
 ## general
-This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs.
+This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.
 
 ## himem
-This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. 
+This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
 
 ## debug
 This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
@@ -259,4 +266,3 @@ param=$(sed -n "1~${SLURM_ARRAY_TASK_ID}p" params.csv | cut -d ',' -f 2)
 
 # Nextflow 
 [Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster. 
-

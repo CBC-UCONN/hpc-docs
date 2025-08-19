@@ -20,8 +20,8 @@ website:
       - text: "File Systems & Storage"
         href: storage.qmd
 
-      - text: "Submitting Jobs" 
-        href: submission.qmd
+      - text: "Running Jobs" 
+        href: running.qmd
 
       - text: "Transferring Data"
         href: transfer.qmd

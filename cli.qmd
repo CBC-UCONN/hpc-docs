@@ -1,5 +1,0 @@
-Intro command line shell scripting
-
-Frequently used commands
-
-Move file permissions here as a subcategory?

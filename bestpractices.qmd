@@ -5,6 +5,8 @@ How to be a good citizen
 ## Sharing data with other users
 Users often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are *not permitted* to open permissions for other users to your home directory `/home/FCAM/<user>`. If you do this, your directory may be locked and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in `/labs`, `/projects`, or `/scratch` that you have access to. 
 
+<!-- How to run seff to monitor efficiency -->
+
 <!-- Don't run things on login nodes
   - conda
   - file compression
@@ -16,5 +18,4 @@ Warning about LLMs. Mainly, don't blindly run output from them. -->
 
 <!-- How to ask for help and what to include in your help request -->
 
-
-<!-- ## Keeping and deleting temporary files -->
+<!-- ## Keeping and deleting intermediate and temporary files -->
