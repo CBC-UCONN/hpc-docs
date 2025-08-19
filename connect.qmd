@@ -19,7 +19,7 @@ MacOS and Linux users can use the built-in SSH client through the `Terminal` app
 Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
 
 ::: {.callout-warning}
-When connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](submission.qmd#batch-job-submission) or initiate an [interactive session](submission.qmd#interactive-job). Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
+When connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](running.qmd#batch-job-submission) or initiate an [interactive session](running.qmd#interactive-job). Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
 :::
 
 
