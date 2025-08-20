@@ -332,7 +332,7 @@ Warning
 <h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
 <p>Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.</p>
 <p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.hpc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
 <p>The login.cam.hpc.edu host will redirect to one of three login nodes:</p>
 <ul>
@@ -372,7 +372,7 @@ Note
 </section>
 <section id="internal-host" class="level1">
 <h1>Internal Host</h1>
-<p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible from the UCHC Secure WiFi network or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
+<p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible through the CAM VPN and requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
 <p>When connecting through this host, you will be redirected to one of 4 login nodes:</p>
 <ul>
