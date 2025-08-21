@@ -224,7 +224,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   </ul></li>
-  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow">Nextflow</a></li>
   </ul>
 </nav>
     </div>
@@ -268,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--cpus-per-task</span> <span class="op">&lt;</span>cpus<span class="op">&gt;</span> <span class="dt">\</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--mem</span> <span class="op">&lt;</span>memory<span class="op">&gt;</span> <span class="dt">\</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--time</span> <span class="op">&lt;</span>time<span class="op">&gt;</span> <span class="dt">\</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--partition</span> <span class="op">&lt;</span>partition <span class="dt">\</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--partition</span> <span class="op">&lt;</span>partition<span class="op">&gt;</span> <span class="dt">\</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--qos</span> <span class="op">&lt;</span>qos<span class="op">&gt;</span> <span class="dt">\</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">--output</span> %x-%j.out <span class="dt">\</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>script<span class="op">&gt;</span>.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -292,8 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1 </span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100mb</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
@@ -377,28 +376,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="slurm-environment-variables" class="level1">
 <h1>SLURM Environment Variables</h1>
 <p>SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables documentation</a> for a complete list of available variables.</p>
-<!-- # GPUs -->
-<!-- A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gpus-per-task=[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.   -->
-<!-- ### GPU Types -->
-<!-- TODO: Make this tables not full width of screen -->
-<!-- | GPU         | type | -->
-<!-- |-------------|------| -->
-<!-- | NVIDIA A100 | A100 | -->
-<!-- | NVIDIA L40S | L40S | -->
-<!-- ### Example -->
-<!-- ```bash -->
-<!-- #!/bin/bash -->
-<!-- #SBATCH --job-name=test-gpu -->
-<!-- #SBATCH --cpus-per-task 1  -->
-<!-- #SBATCH --mem=100M -->
-<!-- #SBATCH --time=1:00 -->
-<!-- #SBATCH --partition=general -->
-<!-- #SBATCH --qos=general -->
-<!-- #SBATCH --output=%x-%j.out -->
-<!-- ##SBATCH --gpus-per-task=A100:1 -->
-<!-- # Detect GPU -->
-<!-- nvidia-smi  -->
-<!-- ``` -->
 </section>
 <section id="gpus" class="level1">
 <h1>GPUs</h1>
@@ -435,8 +412,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">##SBATCH --gres=gpu:A100:1</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -464,14 +441,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Intel Xeon CPUs</td>
 </tr>
 <tr class="odd">
-<td>gpu_A100</td>
-<td>NVIDIA A100 GPUs</td>
-</tr>
-<tr class="even">
-<td>gpu_L40S</td>
-<td>NVIDIA L40S GPUs</td>
-</tr>
-<tr class="odd">
 <td>epyc_7352</td>
 <td>AMD EPYC 7352 CPUs</td>
 </tr>
@@ -489,12 +458,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1 </span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --constraint=cpu_amd</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>your <span class="ex">script</span> here<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ex">lscpu</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="job-arrays" class="level1">
@@ -508,14 +477,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1 </span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array=1-5%2</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="st">"A B C D E"</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> param<span class="pp">[</span><span class="ss">$SLURM_ARRAY_TASK_ID</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="va">params</span><span class="op">=</span><span class="va">(</span><span class="st">"A"</span> <span class="st">"B"</span> <span class="st">"C"</span> <span class="st">"D"</span> <span class="st">"E"</span><span class="va">)</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="va">${params</span><span class="op">[</span><span class="va">$SLURM_ARRAY_TASK_ID</span>-1<span class="op">]</span><span class="va">}</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$param</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Parameter values will often be stored in a separate file. Below are some examples of ways to access these values in a job array script.</p>
 <section id="accessing-nth-line-from-a-text-file" class="level4">
 <h4 class="anchored" data-anchor-id="accessing-nth-line-from-a-text-file">Accessing nth line from a text file</h4>
@@ -528,14 +497,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="accessing-nth-value-and-second-column-from-a-csv-file-with-a-header-row" class="level4">
 <h4 class="anchored" data-anchor-id="accessing-nth-value-and-second-column-from-a-csv-file-with-a-header-row">Accessing nth value and second column from a csv file with a header row</h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="va">$(</span><span class="fu">sed</span> <span class="at">-n</span> <span class="st">"1~</span><span class="va">${SLURM_ARRAY_TASK_ID}</span><span class="st">p"</span> params.csv <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span> <span class="st">','</span> <span class="at">-f</span> 2<span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-</section>
-<section id="nextflow" class="level1">
-<h1>Nextflow</h1>
-<p><a href="https://www.nextflow.io/">Nextflow</a> is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the <a href="TODO:">institutional Nextflow profile</a> available for the Mantis cluster.</p>
+<!-- # Nextflow 
+[Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster.  -->
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

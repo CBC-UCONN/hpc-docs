@@ -310,7 +310,22 @@ Warning
 <section id="sandbox" class="level3">
 <h3 class="anchored" data-anchor-id="sandbox">/sandbox</h3>
 <p>Quota: Shared space. No individual or group quotas.</p>
-<p>This system has identical policies to <code>/scratch</code>. It is in development. At the time of writing (7/25) it was not up.</p>
+<p>This system has identical policies to <code>/scratch</code>.</p>
+<p>Anyone can create any number of directories here and set permissions to whatever they choose.</p>
+<p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. Please be considerate of other users of this shared resource.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <code>/sandbox</code> unused files are subject to deletion without notice after <strong>90 days</strong>.</p>
+</div>
+</div>
 </section>
 <section id="seqdata" class="level3">
 <h3 class="anchored" data-anchor-id="seqdata">/seqdata</h3>
@@ -422,11 +437,11 @@ Tip
 <h2 class="anchored" data-anchor-id="summary-table">Summary table</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 14%">
+<col style="width: 13%">
 <col style="width: 21%">
-<col style="width: 15%">
-<col style="width: 17%">
-<col style="width: 35%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -446,20 +461,6 @@ Tip
 <td>Permissions must remain private. For sharing, use <code>/labs</code> or <code>/projects</code>.</td>
 </tr>
 <tr class="even">
-<td><code>/labs</code></td>
-<td>Shared lab project space</td>
-<td>PI request, lab group members</td>
-<td>2TB (increasable)</td>
-<td>For intra-lab collaboration.</td>
-</tr>
-<tr class="odd">
-<td><code>/projects</code></td>
-<td>Shared inter-lab project space</td>
-<td>PI request, project group members</td>
-<td>2TB (increasable)</td>
-<td>For collaboration across labs.</td>
-</tr>
-<tr class="even">
 <td><code>/scratch</code></td>
 <td>Temporary storage for active analyses</td>
 <td>Open to all users</td>
@@ -471,7 +472,7 @@ Tip
 <td>Temporary space (in development)</td>
 <td>Same as <code>/scratch</code></td>
 <td>TBD</td>
-<td>Not yet active as of 7/25.</td>
+<td>Files may be deleted after 90 days.</td>
 </tr>
 <tr class="even">
 <td><code>/seqdata</code></td>
