@@ -57,10 +57,20 @@ This location is intended to serve as temporary storage. This would be an ideal 
 In `/scratch` unused files are subject to deletion without notice after **90 days**. 
 :::
 
-### /sandbox
-Quota: Shared space. No individual or group quotas. 
 
-This system has identical policies to `/scratch`. It is in development. At the time of writing (7/25) it was not up. 
+### /sandbox
+Quota: Shared space. No individual or group quotas.
+
+This system has identical policies to `/scratch`.
+
+Anyone can create any number of directories here and set permissions to whatever they choose. 
+
+This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. Please be considerate of other users of this shared resource. 
+
+::: {.callout-warning}
+In `/sandbox` unused files are subject to deletion without notice after **90 days**. 
+:::
+
 
 ### /seqdata
 Quota: Shared space. No individual or group quotas. Users do not have write access. 
@@ -173,7 +183,7 @@ This system also includes a `seqdata` directory where data from `/seqdata` are m
 | `/labs`                   | Shared lab project space                               | PI request, lab group members           | 2TB (increasable)                            | For intra-lab collaboration.                                                               |
 | `/projects`               | Shared inter-lab project space                         | PI request, project group members       | 2TB (increasable)                            | For collaboration across labs.                                                             |
 | `/scratch`                | Temporary storage for active analyses                  | Open to all users                        | 84TB (shared)                                | Files may be deleted after 90 days.                                                        |
-| `/sandbox`               | Temporary space (in development)                       | Same as `/scratch`                      | TBD                                          | Not yet active as of 7/25.                                                                 |
+| `/sandbox`               | Temporary space (in development)                       | Same as `/scratch`                      | TBD                                          | Files may be deleted after 90 days. |
 | `/seqdata`                | Central store for raw/original sequencing data         | Read-only for users                      | NA                                | Use symlinks instead of copying. Contact CBC to store new data.                            |
 | `/tmp`                    | Node-local temporary space                             | Shared per node                          | Small                        | May fill up unexpectedly. Set `TMPDIR` to redirect temp files.                             |
 | `/local`                  | Larger node-local temp space                           | Shared per node                          | Larger than `/tmp`                           | Clean up after use.                                                                         |
