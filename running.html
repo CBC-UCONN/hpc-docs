@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#commonly-used-arguments" id="toc-commonly-used-arguments" class="nav-link" data-scroll-target="#commonly-used-arguments">Commonly used arguments</a></li>
   </ul></li>
   <li><a href="#interactive-job" id="toc-interactive-job" class="nav-link" data-scroll-target="#interactive-job">Interactive Job</a></li>
-  <li><a href="#job-status-and-monitering" id="toc-job-status-and-monitering" class="nav-link" data-scroll-target="#job-status-and-monitering">Job status and monitering</a></li>
+  <li><a href="#job-status-and-monitoring" id="toc-job-status-and-monitoring" class="nav-link" data-scroll-target="#job-status-and-monitoring">Job status and monitoring</a></li>
   <li><a href="#canceling-a-job" id="toc-canceling-a-job" class="nav-link" data-scroll-target="#canceling-a-job">Canceling a job</a></li>
   <li><a href="#request-time-extensions" id="toc-request-time-extensions" class="nav-link" data-scroll-target="#request-time-extensions">Request time extensions</a></li>
   <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a>
@@ -224,6 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   </ul></li>
+  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding">X11 Forwarding</a></li>
   </ul>
 </nav>
     </div>
@@ -340,8 +341,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>srun --partition=general --qos=general --pty=bash</code></p>
 <p>Most <code>sbatch</code> arguments can also be used with <code>srun</code>. For <code>--mem</code> or <code>--cpus-per-task</code> if you needed to request additional resources.</p>
 </section>
-<section id="job-status-and-monitering" class="level1">
-<h1>Job status and monitering</h1>
+<section id="job-status-and-monitoring" class="level1">
+<h1>Job status and monitoring</h1>
 <p>To monitor the status of your jobs you can run <code>squeue -u &lt;user&gt;</code> which will list the status of all jobs that belong to you. See the <a href="https://slurm.schedmd.com/squeue.html">squeue documentation</a> for additional arguments and output formatting options.</p>
 </section>
 <section id="canceling-a-job" class="level1">
@@ -499,10 +500,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="va">$(</span><span class="fu">sed</span> <span class="at">-n</span> <span class="st">"1~</span><span class="va">${SLURM_ARRAY_TASK_ID}</span><span class="st">p"</span> params.csv <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span> <span class="st">','</span> <span class="at">-f</span> 2<span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!-- # Nextflow 
 [Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster.  -->
-
-
 </section>
 </section>
+</section>
+<section id="x11-forwarding" class="level1">
+<h1>X11 Forwarding</h1>
+<p>Some applications, such as <code>R</code>, can produce graphical output. <a href="https://en.wikipedia.org/wiki/X_Window_System">X Windows</a>, a.k.a. <code>X11</code>, is an option for displaying that output in an interactive session.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>First you need to install <a href="https://www.xquartz.org/">XQuartz</a> on your local machine.</p>
+<p>Then, when connecting to Mantis, use the the ssh option <code>-X</code> (or possibly <code>-Y</code> if your application requires it) like this:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># external:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-X</span> <span class="op">&lt;</span>username<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or when connected to the VPN:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-X</span> <span class="op">&lt;</span>username<span class="op">&gt;</span>@mantis-submit.cam.uchc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, to run your software in an interactive session, start it using the option <code>--x11</code>. For example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--x11</span> <span class="at">--partition</span><span class="op">=</span>general <span class="at">--qos</span><span class="op">=</span>general <span class="at">--mem</span><span class="op">=</span>5G <span class="at">--pty</span> bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now that you’re in an interactive session, you should be able to run your application.</p>
+<p>Try launching <code>R</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then plot a histogram of random draws from a normal distribution:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The histogram should pop up in an XQuartz window.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>In development</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>In development</p>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
