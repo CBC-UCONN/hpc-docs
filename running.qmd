@@ -106,7 +106,7 @@ At a minimum, you would use these arguments:
 Most `sbatch` arguments can also be used with `srun`. For `--mem` or `--cpus-per-task` if you needed to request additional resources. 
 
 
-# Job status and monitering
+# Job status and monitoring
 To monitor the status of your jobs you can run `squeue -u <user>` which will list the status of all jobs that belong to you. See the [squeue documentation](https://slurm.schedmd.com/squeue.html) for additional arguments and output formatting options. 
 
 
@@ -237,3 +237,50 @@ param=$(sed -n "1~${SLURM_ARRAY_TASK_ID}p" params.csv | cut -d ',' -f 2)
 
 <!-- # Nextflow 
 [Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster.  -->
+
+# X11 Forwarding
+
+Some applications, such as `R`, can produce graphical output. [X Windows](https://en.wikipedia.org/wiki/X_Window_System), a.k.a. `X11`, is an option for displaying that output in an interactive session. 
+
+::: {.panel-tabset}
+### MacOS
+
+First you need to install [XQuartz](https://www.xquartz.org/) on your local machine. 
+
+Then, when connecting to Mantis, use the the ssh option `-X` (or possibly `-Y` if your application requires it) like this:
+
+```bash
+# external:
+ssh -X <username>@login.hpc.cam.uchc.edu
+# or when connected to the VPN:
+ssh -X <username>@mantis-submit.cam.uchc.edu
+```
+
+Now, to run your software in an interactive session, start it using the option `--x11`. For example:
+
+```bash
+srun --x11 --partition=general --qos=general --mem=5G --pty bash
+```
+
+Now that you're in an interactive session, you should be able to run your application. 
+
+Try launching `R`:
+
+```bash
+R
+```
+
+And then plot a histogram of random draws from a normal distribution:
+
+```r
+hist(rnorm(10000))
+```
+
+The histogram should pop up in an XQuartz window. 
+
+### Windows
+In development
+
+### Linux
+In development
+:::

@@ -181,7 +181,7 @@ This system also includes a `seqdata` directory where data from `/seqdata` are m
 |---------------|-------------|------------|--------------------|-------------------------------|
 | `/home/FCAM/<user>`| Personal home directory for code, config, small data | Created for each user | 25GB| Permissions must remain private. For sharing, use `/labs` or `/projects`. |
 | `/scratch` | Temporary storage for active analyses | Open to all users | 84TB (shared) | Files may be deleted after 90 days. |
-| `/sandbox`  | Temporary space (in development) | Same as `/scratch` | TBD | Files may be deleted after 90 days. |
+| `/sandbox`  | Temporary space | Same as `/scratch` | Bigger than scratch | Files may be deleted after 90 days. |
 | `/seqdata`  | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |
 | `/tmp` | Node-local temporary space  | Shared per node  | Small | May fill up unexpectedly. Set `TMPDIR` to redirect temp files. |
 | `/local` | Larger node-local temp space | Shared per node | Larger than `/tmp` | Clean up after use. |
