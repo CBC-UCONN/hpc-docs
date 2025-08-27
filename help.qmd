@@ -1,7 +1,6 @@
 # Getting Help 
 
-If you have a question that is not answered on this site, please submit a ticket here:
-https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/
+If you have a question that is not answered on this site, please [submit a ticket](https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/)
 
 
 # Slack
