@@ -23,3 +23,5 @@ jobs:
           base-branch: main
           file-extension: qmd
           use-quiet-mode: yes
+          check-modified-files-only: yes
+          config-file: .github/workflows/link-check-config.json

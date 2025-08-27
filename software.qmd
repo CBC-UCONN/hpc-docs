@@ -134,7 +134,7 @@ We have a floating license with 10 seats (10 users can simultaneously run it).
    [UConn Health CAM VPN Tutorial](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/)
 
 3. Use the following URL to download the client for your computer:  
-   
+<!-- markdown-link-check-disable-next-line --> 
      http://geneious.cam.uchc.edu:8080/GeneiousServer/clients.jsp
   
 4. Select "Return to Home Page" and select the "Download the Geneious Server bundled plugin file"  link on the home page to download the correct plugins.
