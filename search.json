@@ -222,7 +222,80 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.\n\nRequest Software\nUsers can request the installation of software by submitting a software request\n\n\nEnvironment Modules\nEnvironment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\nThe Mantis cluster uses the Lmod implementation of environment modules.\n\n\nSpack\nGoing forward, most software on the Mantis cluster will now be installed using Spack, a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.\n\nInitialization\nTo initialize spack, run the following command:\nsource /isg/shared/spack/share/spack/setup-env.sh\nYou could add this to your .bashrc or .bash_profile to automatically source it in future sessions.\nTo initialize spack with other shells, find the appropriate setup script in source /isg/shared/spack/share/spack/.\n\n\nLoading Software\nAlready installed software can be loaded using spack load &lt;software&gt;. To see a list of available software, run spack find.\n\n\nInstalling Software\nIf you want to install packages with Spack, you must first chain your home directory configuration to the cluster’s Spack installation. To do so run:\nspack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack\n\n\n\nSingularity\n\nReproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.\nSingularity is in your PATH by default so it can be run without loading a module.\nTypically you will use singularity exec to run a command inside a container like so:\nsingularity exec &lt;path to container.sif&gt; &lt;command&gt; &lt;command-args&gt;\n\n\nConda\n\nConda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.\nSee the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.\n::: {. callout-waring} Some conda commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running conda install, conda create, or conda update on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.\n:::"
+    "text": "Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\nThe Mantis cluster uses the Lmod implementation of environment modules.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#environment-modules",
+    "href": "software.html#environment-modules",
+    "title": "Software",
+    "section": "",
+    "text": "Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\nThe Mantis cluster uses the Lmod implementation of environment modules.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#compiling-software-yourself",
+    "href": "software.html#compiling-software-yourself",
+    "title": "Software",
+    "section": "Compiling software yourself",
+    "text": "Compiling software yourself\nSome software is pretty easy to install. See this classic softare in population genetics, psmc.\nAll you have to do to install are the following commands (the instructions are in the README.md file):\n# clone the repository\ngit clone https://github.com/lh3/psmc.git\ncd psmc\nmake; (cd utils; make)\nAnd it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.\nSome software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with Singularity or use isolated environments created with Conda",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#singularity",
+    "href": "software.html#singularity",
+    "title": "Software",
+    "section": "Singularity",
+    "text": "Singularity\nReproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).\nSingularity is in your PATH by default so it can be run without loading a module.\nTo get an existing container from a repository, you use the command singularity pull &lt;URL&gt;. For example:\nsingularity pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0\nThis will create the file fastqc:0.12.1--hdfd78af_0, a singularity image (some image files will have the extension .sif). This containst the package fastqc.\nTo run a command (e.g. fastqc --help) inside the container, particularly when submitting SLURM batch scripts, you typically you will use singularity exec &lt;container&gt; &lt;command&gt;:\nsingularity exec fastqc:0.12.1--hdfd78af_0 fastqc --help\nYou can also start up a shell inside the container and explore interactively with singularity shell &lt;container&gt;.\nsingularity shell fastqc:0.12.1--hdfd78af_0\nSee here for a more in-depth tutorial.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#conda",
+    "href": "software.html#conda",
+    "title": "Software",
+    "section": "Conda",
+    "text": "Conda\n\nConda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.\nSee the conda-forge website for documentation on using conda.\nFor a brief intro on using conda on Mantis, see here\n\n\n\n\n\n\nWarning\n\n\n\nSome conda commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running conda install, conda create, or conda update on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#request-software-installation",
+    "href": "software.html#request-software-installation",
+    "title": "Software",
+    "section": "Request Software Installation",
+    "text": "Request Software Installation\nUsers can request the installation of software by submitting a software request. We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#commercial-software",
+    "href": "software.html#commercial-software",
+    "title": "Software",
+    "section": "Commercial Software",
+    "text": "Commercial Software\nTogether with the HPC admins we help manage the use of software for which we have commercial licenses.\n\nIPA\nIngenuity Pathway Analysis from Qiagen “allows you to “quickly visualize and understand complex ’omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.\nRequest an account here.\nLog in here\nSome training materials\n\n\nGeneious\nGeneious is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine, not Mantis. Some features:\n\nReference mapping of sequencing data.\nAlignment and phylogeny estimation.\nVisualization of the data and analysis.\nSearching NCBI databases.\n\nWe have a floating license with 10 seats (10 users can simultaneously run it).\n\nHow to Access Geneious\n\nRequest an account here.\nOnce the request has been approved, connect to the UCHC VPN using Pulse Secure:\nUConn Health CAM VPN Tutorial\nUse the following URL to download the client for your computer:\nhttp://geneious.cam.uchc.edu:8080/GeneiousServer/clients.jsp\nSelect “Return to Home Page” and select the “Download the Geneious Server bundled plugin file” link on the home page to download the correct plugins.\n\n\n\nInstallation and Login\n\nDouble-click to open the Geneious Prime installation file and follow the prompts to accept license agreement and download\nLeave the defaults for the Select Destination Directory window, Select Start Menu Folder window, and Select File Associations window, clicking “Next &gt;” after each one\nClick “Finish” to complete installation\nOpen the Geneious Prime application and click “Activate a License” on the pop-up message\nClick “License server” and enter geneious.cam.uchc.edu next to Server and leave the port as default, Enter your email address and click “OK”\nYou will get a notification that the license has been obtained from the FLEXnet server\nInstall plugins by double clicking the GeneiousServerbundle.gplugin file\nExit out of Geneious once installation is complete, Re-open to begin analyzing data",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#virtual-machines",
+    "href": "software.html#virtual-machines",
+    "title": "Software",
+    "section": "Virtual Machines",
+    "text": "Virtual Machines\nIf you need to run something that requires a virtual machine, you can request one here.",
+    "crumbs": [
+      "Software"
+    ]
   },
   {
     "objectID": "connect.html",

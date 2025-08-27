@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Software</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./software.html">Software</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,6 +173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./software.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Software</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./databases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Databases</span></a>
   </div>
@@ -193,16 +199,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#request-software" id="toc-request-software" class="nav-link active" data-scroll-target="#request-software">Request Software</a></li>
-  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link" data-scroll-target="#environment-modules">Environment Modules</a></li>
-  <li><a href="#spack" id="toc-spack" class="nav-link" data-scroll-target="#spack">Spack</a>
-  <ul class="collapse">
-  <li><a href="#initialization" id="toc-initialization" class="nav-link" data-scroll-target="#initialization">Initialization</a></li>
-  <li><a href="#loading-software" id="toc-loading-software" class="nav-link" data-scroll-target="#loading-software">Loading Software</a></li>
-  <li><a href="#installing-software" id="toc-installing-software" class="nav-link" data-scroll-target="#installing-software">Installing Software</a></li>
-  </ul></li>
+  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
+  <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
   <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a></li>
+  <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
+  <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
+  <ul class="collapse">
+  <li><a href="#ipa" id="toc-ipa" class="nav-link" data-scroll-target="#ipa">IPA</a></li>
+  <li><a href="#geneious" id="toc-geneious" class="nav-link" data-scroll-target="#geneious">Geneious</a></li>
+  </ul></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
   </ul>
 </nav>
     </div>
@@ -228,13 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.</p>
-<section id="request-software" class="level1">
-<h1>Request Software</h1>
-<p>Users can request the installation of software by <a href="https://bioinformatics.uconn.edu/contact-us/software-database-request/">submitting a software request</a></p>
-</section>
-<section id="environment-modules" class="level1">
-<h1>Environment Modules</h1>
+<section id="environment-modules" class="level2">
+<h2 class="anchored" data-anchor-id="environment-modules">Environment Modules</h2>
 <p>Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).</p>
 <p>Below is a list of commonly used commands, where <code>&lt;module&gt;</code> is the target module.</p>
 <table class="caption-top table">
@@ -268,42 +270,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>The Mantis cluster uses the <a href="https://lmod.readthedocs.io">Lmod</a> implementation of environment modules.</p>
+<!-- # Spack -->
+<!-- Going forward, most software on the Mantis cluster will now be installed using [Spack](https://spack.io/), a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner. -->
+<!-- ### Initialization -->
+<!-- To initialize spack, run the following command: -->
+<!-- ```bash  -->
+<!-- source /isg/shared/spack/share/spack/setup-env.sh -->
+<!-- ``` -->
+<!-- You could add this to your `.bashrc` or `.bash_profile` to automatically source it in future sessions. -->
+<!-- To initialize spack with other shells, find the appropriate setup script in `source /isg/shared/spack/share/spack/`. -->
+<!-- ### Loading Software -->
+<!-- Already installed software can be loaded using `spack load <software>`. To see a list of available software, run `spack find`. -->
+<!-- ### Installing Software -->
+<!-- If you want to install packages with Spack, you must first chain your home directory configuration to the cluster's Spack installation. To do so run: -->
+<!-- ```bash -->
+<!-- spack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack -->
+<!-- ``` -->
 </section>
-<section id="spack" class="level1">
-<h1>Spack</h1>
-<p>Going forward, most software on the Mantis cluster will now be installed using <a href="https://spack.io/">Spack</a>, a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.</p>
-<section id="initialization" class="level3">
-<h3 class="anchored" data-anchor-id="initialization">Initialization</h3>
-<p>To initialize spack, run the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /isg/shared/spack/share/spack/setup-env.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You could add this to your <code>.bashrc</code> or <code>.bash_profile</code> to automatically source it in future sessions.</p>
-<p>To initialize spack with other shells, find the appropriate setup script in <code>source /isg/shared/spack/share/spack/</code>.</p>
+<section id="compiling-software-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="compiling-software-yourself">Compiling software yourself</h2>
+<p>Some software is pretty easy to install. See this classic softare in population genetics, <a href="https://github.com/lh3/psmc">psmc</a>.</p>
+<p>All you have to do to install are the following commands (the instructions are in the README.md file):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clone the repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lh3/psmc.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> psmc</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span><span class="kw">;</span> <span class="kw">(</span><span class="bu">cd</span> utils<span class="kw">;</span> <span class="fu">make</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.</p>
+<p>Some software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with <a href="#singularity">Singularity</a> or use isolated environments created with <a href="#conda">Conda</a></p>
 </section>
-<section id="loading-software" class="level3">
-<h3 class="anchored" data-anchor-id="loading-software">Loading Software</h3>
-<p>Already installed software can be loaded using <code>spack load &lt;software&gt;</code>. To see a list of available software, run <code>spack find</code>.</p>
-</section>
-<section id="installing-software" class="level3">
-<h3 class="anchored" data-anchor-id="installing-software">Installing Software</h3>
-<p>If you want to install packages with Spack, you must first chain your home directory configuration to the cluster’s Spack installation. To do so run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="singularity" class="level1">
-<h1>Singularity</h1>
-<!-- TODO: Finish this section -->
-<p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.</p>
+<section id="singularity" class="level2">
+<h2 class="anchored" data-anchor-id="singularity">Singularity</h2>
+<p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).</p>
 <p>Singularity is in your <code>PATH</code> by default so it can be run without loading a module.</p>
-<p>Typically you will use <code>singularity exec</code> to run a command inside a container like so:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec <span class="op">&lt;</span>path to container.sif<span class="op">&gt;</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="op">&lt;</span>command-args<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To get an existing container from a repository, you use the command <code>singularity pull &lt;URL&gt;</code>. For example:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will create the file <code>fastqc:0.12.1--hdfd78af_0</code>, a singularity image (some image files will have the extension <code>.sif</code>). This containst the package <code>fastqc</code>.</p>
+<p>To run a command (e.g.&nbsp;<code>fastqc --help</code>) inside the container, particularly when submitting SLURM batch scripts, you typically you will use <code>singularity exec &lt;container&gt; &lt;command&gt;</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec fastqc:0.12.1--hdfd78af_0 fastqc <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also start up a shell inside the container and explore interactively with <code>singularity shell &lt;container&gt;</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell fastqc:0.12.1--hdfd78af_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See <a href="https://singularity-tutorial.github.io/">here</a> for a more in-depth tutorial.</p>
 </section>
-<section id="conda" class="level1">
-<h1>Conda</h1>
+<section id="conda" class="level2">
+<h2 class="anchored" data-anchor-id="conda">Conda</h2>
 <!-- TODO: Expand on this section -->
 <p>Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.</p>
-<p>See the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.</p>
-<p>::: {. callout-waring} Some <code>conda</code> commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running <code>conda install</code>, <code>conda create</code>, or <code>conda update</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.<br>
-:::</p>
+<p>See the <a href="https://conda-forge.org/download/">conda-forge</a> website for documentation on using conda.</p>
+<p>For a brief intro on using conda on Mantis, see <a href="https://isg-certificate.github.io/ISG5311/02_3_software.html#conda">here</a></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some <code>conda</code> commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running <code>conda install</code>, <code>conda create</code>, or <code>conda update</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
+</div>
+</div>
+</section>
+<section id="request-software-installation" class="level2">
+<h2 class="anchored" data-anchor-id="request-software-installation">Request Software Installation</h2>
+<p>Users can request the installation of software by <a href="https://bioinformatics.uconn.edu/contact-us/software-database-request/">submitting a software request</a>. We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.</p>
+</section>
+<section id="commercial-software" class="level2">
+<h2 class="anchored" data-anchor-id="commercial-software">Commercial Software</h2>
+<p>Together with the HPC admins we help manage the use of software for which we have commercial licenses.</p>
+<section id="ipa" class="level3">
+<h3 class="anchored" data-anchor-id="ipa">IPA</h3>
+<p>Ingenuity Pathway Analysis from Qiagen “allows you to “quickly visualize and understand complex ’omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.</p>
+<p>Request an account <a href="https://bioinformatics.uconn.edu/ipa_registration/">here</a>.</p>
+<p>Log in <a href="https://apps.ingenuity.com/ingsso/login?service=https%3A%2F%2Fanalysis.ingenuity.com%2Fpa%2Flogin%2Fcas">here</a></p>
+<p><a href="https://digitalinsights.qiagen.com/ipa-training/">Some training materials</a></p>
+</section>
+<section id="geneious" class="level3">
+<h3 class="anchored" data-anchor-id="geneious">Geneious</h3>
+<p><a href="https://www.geneious.com/">Geneious</a> is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine, not Mantis. Some features:</p>
+<ul>
+<li>Reference mapping of sequencing data.</li>
+<li>Alignment and phylogeny estimation.</li>
+<li>Visualization of the data and analysis.</li>
+<li>Searching NCBI databases.</li>
+</ul>
+<p>We have a floating license with 10 seats (10 users can simultaneously run it).</p>
+<section id="how-to-access-geneious" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-access-geneious">How to Access Geneious</h4>
+<ol type="1">
+<li><p>Request an account <a href="https://bioinformatics.uconn.edu/">here</a>.</p></li>
+<li><p>Once the request has been approved, connect to the UCHC VPN using Pulse Secure:</p>
+<p><a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">UConn Health CAM VPN Tutorial</a></p></li>
+<li><p>Use the following URL to download the client for your computer:</p>
+<p>http://geneious.cam.uchc.edu:8080/GeneiousServer/clients.jsp</p></li>
+<li><p>Select “Return to Home Page” and select the “Download the Geneious Server bundled plugin file” link on the home page to download the correct plugins.</p></li>
+</ol>
+</section>
+<section id="installation-and-login" class="level4">
+<h4 class="anchored" data-anchor-id="installation-and-login">Installation and Login</h4>
+<ol type="1">
+<li><p>Double-click to open the Geneious Prime installation file and follow the prompts to accept license agreement and download</p></li>
+<li><p>Leave the defaults for the <strong>Select Destination Directory</strong> window, <strong>Select Start Menu Folder</strong> window, and <strong>Select File Associations</strong> window, clicking “Next &gt;” after each one</p></li>
+<li><p>Click “Finish” to complete installation</p></li>
+<li><p>Open the Geneious Prime application and click “Activate a License” on the pop-up message</p></li>
+<li><p>Click “License server” and enter geneious.cam.uchc.edu next to Server and leave the port as default, Enter your email address and click “OK”</p></li>
+<li><p>You will get a notification that the license has been obtained from the FLEXnet server</p></li>
+<li><p>Install plugins by double clicking the <em>GeneiousServerbundle.gplugin</em> file</p></li>
+<li><p>Exit out of Geneious once installation is complete, Re-open to begin analyzing data</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="virtual-machines" class="level2">
+<h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
+<p>If you need to run something that requires a virtual machine, you can request one <a href="https://health.uconn.edu/high-performance-computing/contact/">here</a>.</p>
 
 
 </section>
