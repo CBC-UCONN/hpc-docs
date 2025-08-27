@@ -26,8 +26,8 @@ website:
       - text: "Transferring Data"
         href: transfer.qmd
       
-      # - text: "Software"
-      #   href: software.qmd
+      - text: "Software"
+        href: software.qmd
       
       - text: "Databases"
         href: databases.qmd

@@ -2,13 +2,7 @@
 title: Software
 ---
 
-Many commonly used bioinformatics software packages are already installed on the cluster. This page provides information on how find and use this software as well as ways to install software yourself.
-
-# Request Software
-Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/)
-
-
-# Environment Modules
+## Environment Modules
 Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).  
 
 Below is a list of commonly used commands, where `<module>` is the target module. 
@@ -25,50 +19,145 @@ The Mantis cluster uses the [Lmod](https://lmod.readthedocs.io) implementation o
 
 
 
-# Spack
-Going forward, most software on the Mantis cluster will now be installed using [Spack](https://spack.io/), a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner.
+<!-- # Spack -->
+<!-- Going forward, most software on the Mantis cluster will now be installed using [Spack](https://spack.io/), a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner. -->
 
-### Initialization
-To initialize spack, run the following command:
-```bash 
-source /isg/shared/spack/share/spack/setup-env.sh
-```
+<!-- ### Initialization -->
+<!-- To initialize spack, run the following command: -->
+<!-- ```bash  -->
+<!-- source /isg/shared/spack/share/spack/setup-env.sh -->
+<!-- ``` -->
 
-You could add this to your `.bashrc` or `.bash_profile` to automatically source it in future sessions.
+<!-- You could add this to your `.bashrc` or `.bash_profile` to automatically source it in future sessions. -->
 
-To initialize spack with other shells, find the appropriate setup script in `source /isg/shared/spack/share/spack/`.
+<!-- To initialize spack with other shells, find the appropriate setup script in `source /isg/shared/spack/share/spack/`. -->
 
-### Loading Software
-Already installed software can be loaded using `spack load <software>`. To see a list of available software, run `spack find`.
+<!-- ### Loading Software -->
+<!-- Already installed software can be loaded using `spack load <software>`. To see a list of available software, run `spack find`. -->
 
 
-### Installing Software
-If you want to install packages with Spack, you must first chain your home directory configuration to the cluster's Spack installation. To do so run:
+<!-- ### Installing Software -->
+<!-- If you want to install packages with Spack, you must first chain your home directory configuration to the cluster's Spack installation. To do so run: -->
+<!-- ```bash -->
+<!-- spack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack -->
+<!-- ``` -->
+
+## Compiling software yourself
+
+Some software is pretty easy to install. See this classic softare in population genetics, [psmc](https://github.com/lh3/psmc). 
+
+All you have to do to install are the following commands (the instructions are in the README.md file):
+
 ```bash
-spack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack
+# clone the repository
+git clone https://github.com/lh3/psmc.git
+cd psmc
+make; (cd utils; make)
 ```
 
+And it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users. 
 
+Some software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with [Singularity](#singularity) or use isolated environments created with [Conda](#conda)
 
-# Singularity
-<!-- TODO: Finish this section -->
-Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution to this problem, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can use existing Docker images.
+## Singularity
+Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis). 
 
-Singularity is in your `PATH` by default so it can be run without loading a module.
+Singularity is in your `PATH` by default so it can be run without loading a module. 
 
-Typically you will use `singularity exec` to run a command inside a container like so:
+To get an existing container from a repository, you use the command `singularity pull <URL>`. For example:
+
+```bash
+singularity pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0
+```
+This will create the file `fastqc:0.12.1--hdfd78af_0`, a singularity image (some image files will have the extension `.sif`). This containst the package `fastqc`. 
+
+To run a command (e.g. `fastqc --help`) inside the container, particularly when submitting SLURM batch scripts, you typically you will use `singularity exec <container> <command>`:
 
 ```bash 
-singularity exec <path to container.sif> <command> <command-args>
+singularity exec fastqc:0.12.1--hdfd78af_0 fastqc --help
 ```
 
+You can also start up a shell inside the container and explore interactively with `singularity shell <container>`. 
 
-# Conda
+```bash
+singularity shell fastqc:0.12.1--hdfd78af_0
+```
+
+See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial. 
+
+## Conda
 <!-- TODO: Expand on this section -->
 Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well. 
 
-See the [conda-forge]https://conda-forge.org/download/ website for documentation on using conda.
+See the [conda-forge](https://conda-forge.org/download/) website for documentation on using conda.
 
-::: {. callout-waring}
+For a brief intro on using conda on Mantis, see [here](https://isg-certificate.github.io/ISG5311/02_3_software.html#conda)
+
+::: {.callout-warning}
 Some `conda` commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running `conda install`, `conda create`, or `conda update` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
 :::
+
+## Request Software Installation
+Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/). We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda. 
+
+## Commercial Software
+
+Together with the HPC admins we help manage the use of software for which we have commercial licenses. 
+
+### IPA
+
+Ingenuity Pathway Analysis from Qiagen "allows you to “quickly visualize and understand complex ‘omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.
+
+Request an account [here](https://bioinformatics.uconn.edu/ipa_registration/). 
+
+Log in [here](https://apps.ingenuity.com/ingsso/login?service=https%3A%2F%2Fanalysis.ingenuity.com%2Fpa%2Flogin%2Fcas)
+
+[Some training materials](https://digitalinsights.qiagen.com/ipa-training/)
+
+### Geneious
+
+[Geneious](https://www.geneious.com/) is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine, not Mantis. Some features:
+
+ - Reference mapping of sequencing data.
+ - Alignment and phylogeny estimation.
+ - Visualization of the data and analysis.
+ - Searching NCBI databases.
+  
+We have a floating license with 10 seats (10 users can simultaneously run it). 
+
+#### How to Access Geneious
+ 
+1. Request an account [here](https://bioinformatics.uconn.edu/). 
+ 
+2. Once the request has been approved, connect to the UCHC VPN using Pulse Secure:   
+ 
+   [UConn Health CAM VPN Tutorial](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/)
+
+3. Use the following URL to download the client for your computer:  
+   
+     http://geneious.cam.uchc.edu:8080/GeneiousServer/clients.jsp
+  
+4. Select "Return to Home Page" and select the "Download the Geneious Server bundled plugin file"  link on the home page to download the correct plugins.
+
+#### Installation and Login
+
+1. Double-click to open the Geneious Prime installation file and follow the prompts to accept license agreement and download
+
+2. Leave the defaults for the **Select Destination Directory** window, **Select Start Menu Folder** window, and **Select File Associations** window, clicking "Next >" after each one
+
+3. Click "Finish" to complete installation
+
+4. Open the Geneious Prime application and click "Activate a License" on the pop-up message
+
+5. Click "License server" and enter geneious.cam.uchc.edu next to Server and leave the port as default, Enter your email address and click "OK"
+
+6. You will get a notification that the license has been obtained from the FLEXnet server
+
+7. Install plugins by double clicking the *GeneiousServerbundle.gplugin* file
+
+8. Exit out of Geneious once installation is complete, Re-open to begin analyzing data
+
+
+## Virtual Machines
+
+If you need to run something that requires a virtual machine, you can request one [here](https://health.uconn.edu/high-performance-computing/contact/). 
