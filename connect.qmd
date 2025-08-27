@@ -82,7 +82,7 @@ When prompted, enter your CAM password. Note that for security reasons, your cur
 On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
 
 ```bash
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@transfer.cam.uchc.edu "cat >> .ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh <user>@transfer.cam.uchc.edu "mkdir -p .ssh && cat >> .ssh/authorized_keys"
 ```
 
 Where `<user>` is your Mantis username.
