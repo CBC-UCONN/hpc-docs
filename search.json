@@ -4,7 +4,7 @@
     "href": "databases.html",
     "title": "Databases Available on Mantis",
     "section": "",
-    "text": "We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly—every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and previous version of each database at all times. We also host several user-made databases where there is demand.",
+    "text": "We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly – every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and the previous version of each database at all times. We also host several user-made databases where there is demand.",
     "crumbs": [
       "Databases"
     ]
@@ -13,8 +13,8 @@
     "objectID": "databases.html#blast",
     "href": "databases.html#blast",
     "title": "Databases Available on Mantis",
-    "section": "Blast",
-    "text": "Blast\nThe latest versions of NCBI’s BLAST databases are available on Mantis. This directory also includes custom databases constructed from the newest eggNOG, orthoDB, and UniProt releases. All databases are compatible with BLAST+ v2.7.1 and up. You may use them with any blast command requiring a database (e.g., blastn, blastp).\n\nExample:\nblastp -db &lt;blast database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/blast/v4/\n/isg/shared/databases/blast/v5/\n/isg/shared/databases/blast/eggnog/v5.0.1/\n/isg/shared/databases/blast/eggnog/v5.0.2/\n/isg/shared/databases/blast/orthodb/v12v1/\n/isg/shared/databases/blast/uniprot/v2025.06/",
+    "section": "BLAST",
+    "text": "BLAST\nThe latest versions of the official NCBI BLAST databases are available on Mantis. This directory also includes custom databases constructed from the latest eggNOG, OrthoDB, and UniProt releases.\n\nExample usage:\nblastp -db /isg/shared/databases/blast/v5/nr &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/blast/v4/\n/isg/shared/databases/blast/v5/\n/isg/shared/databases/blast/eggnog/v5.0.1/\n/isg/shared/databases/blast/eggnog/v5.0.2/\n/isg/shared/databases/blast/orthodb/v12v1/\n/isg/shared/databases/blast/uniprot/v2025.06/",
     "crumbs": [
       "Databases"
     ]
@@ -24,7 +24,7 @@
     "href": "databases.html#busco",
     "title": "Databases Available on Mantis",
     "section": "BUSCO",
-    "text": "BUSCO\nThe latest versions of the EZLab’s BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases, compatible with BUSCO v5.0.0 and up.\n\nExample:\nbusco -l &lt;busco database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/busco/odb10/\n/isg/shared/databases/busco/odb12/",
+    "text": "BUSCO\nThe latest versions of the EZLab BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases.\n\nExample usage:\nbusco -l /isg/shared/databases/busco/odb12/insecta_odb12/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/busco/odb10/\n/isg/shared/databases/busco/odb12/",
     "crumbs": [
       "Databases"
     ]
@@ -34,7 +34,217 @@
     "href": "databases.html#cellranger",
     "title": "Databases Available on Mantis",
     "section": "CellRanger",
-    "text": "CellRanger\nThe latest versions of 10X Genomics’ CellRanger databases are available on Mantis. This directory contains human, mouse, and rat genomic and transcriptomic reference data, compatible with all versions of CellRanger.\n\nExample:\ncellranger count --transcriptome &lt;cellranger database path&gt; &lt;other options&gt;\n\n\nPaths to available databases\n\n/isg/shared/databases/cellranger/v2020A/\n/isg/shared/databases/cellranger/v2024A/",
+    "text": "CellRanger\nThe latest versions of 10X Genomics’ CellRanger databases are available on Mantis. This directory contains the official human, mouse, and rat genomic and transcriptomic references.\n\nExample usage:\ncellranger count --transcriptome /isg/shared/databases/cellranger/v2024A/refdata-gex-GRCm39-2024-A/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/cellranger/v2020A/\n/isg/shared/databases/cellranger/v2024A/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#centrifuge",
+    "href": "databases.html#centrifuge",
+    "title": "Databases Available on Mantis",
+    "section": "Centrifuge",
+    "text": "Centrifuge\nThe latest official Centrifuge databases, as well as several custom databases, are available on Mantis. This directory contains databases generated from bacterial, archaean, human, viral, and other data, as well as a database generated from NCBI-sourced non-redundant nucleotide sequences.\n\nExample usage:\ncentrifuge -q -x /isg/shared/databases/centrifuge/v2018.04/refseq_b+a+v+h/p+h+v &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/centrifuge/custom/\n/isg/shared/databases/centrifuge/v2018.04/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#dfam",
+    "href": "databases.html#dfam",
+    "title": "Databases Available on Mantis",
+    "section": "Dfam",
+    "text": "Dfam\nThe latest Dfam FamDB databases are available on Mantis. This directory contains all lineage-specific partitions in HDF5 format.\n\nExample usage:\nfamdb.py -i /isg/shared/databases/dfam/v3.9/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/dfam/v3.8/\n/isg/shared/databases/dfam/v3.9/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#diamond",
+    "href": "databases.html#diamond",
+    "title": "Databases Available on Mantis",
+    "section": "DIAMOND",
+    "text": "DIAMOND\nSeveral DIAMOND databases are available on Mantis. This directory contains the official eggNOG diamond databases, the BLAST v4 and v5 nr databases in DIAMOND format, and custom databases generated from OrthoDB, RefSeq, and UniProt protein data.\n\nExample usage:\ndiamond blastp -d /isg/shared/databases/diamond/nr/v5/nr.dmnd &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/diamond/eggnog/v5.0.1/\n/isg/shared/databases/diamond/eggnog/v5.0.2/\n/isg/shared/databases/diamond/nr/v4/\n/isg/shared/databases/diamond/nr/v5/\n/isg/shared/databases/diamond/orthodb/v12v1/\n/isg/shared/databases/diamond/refseq/release_230/\n/isg/shared/databases/diamond/uniprot/v2025.06/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#eggnog",
+    "href": "databases.html#eggnog",
+    "title": "Databases Available on Mantis",
+    "section": "eggNOG",
+    "text": "eggNOG\nThe latest eggNOG (emapper) databases are available on Mantis. This directory contains the eggNOG SQL database, DIAMOND database, mmseqs database, and Pfam-A HMM database.\n\nExample usage:\nemapper.py --mmseqs_db /isg/shared/databases/eggnog/v5.0.1/mmseqs/mmseqs.db &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/eggnog/v5.0.1/\n/isg/shared/databases/eggnog/v5.0.2/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#entap",
+    "href": "databases.html#entap",
+    "title": "Databases Available on Mantis",
+    "section": "EnTAP",
+    "text": "EnTAP\nThe latest EnTAP databases are available on Mantis. This directory contains EnTAP’s binary and SQL databases. Other databases commonly used with EnTAP (e.g., assorted DIAMOND databases) may be found in their respective directories.\n\nExample usage:\nEnTAP --entap-db-sql /isg/shared/databases/entap/v2.1.0/entap_database.db &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/entap/v1.0.0\n/isg/shared/databases/entap/v2.1.0",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#fcs-gx",
+    "href": "databases.html#fcs-gx",
+    "title": "Databases Available on Mantis",
+    "section": "FCS-GX",
+    "text": "FCS-GX\nThe latest FCS-GX databases are available on Mantis. This directory contains the sequence file, index file, and full set of metadata files from each release.\n\nExample usage:\npython3 fcs.py screen genome --gx-db /isg/shared/databases/fcs-gx/v2023.01.24/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/fcs-gx/v2022.07.08/\n/isg/shared/databases/fcs-gx/v2023.01.24/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#gene-ontology-go",
+    "href": "databases.html#gene-ontology-go",
+    "title": "Databases Available on Mantis",
+    "section": "Gene Ontology (GO)",
+    "text": "Gene Ontology (GO)\nThe latest Gene Ontology databases, as well as several external ontology-to-gene ontology databases, are available on Mantis. This directory contains the full go.obo and go-basic.obo files as well as several files linking external ontological terms to gene ontological terms (e.g., interpro2go, pfam2go, reactome2go).\n\nUsage note:\nThese data are general-purpose and may be interfaced with using a variety of software.\n\n\nPaths to available databases:\n\n/isg/shared/databases/gene_ontology/v06.2025/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#gtdb",
+    "href": "databases.html#gtdb",
+    "title": "Databases Available on Mantis",
+    "section": "GTDB",
+    "text": "GTDB\nThe latest Genome Taxonomy (GT) databases are available on Mantis. This directory contains all GTDB taxonomy, reference tree, metadata files, and marker genes for all archaean and bacterial GTDB genomes. It also contains the full set of 16S rRNA sequences identified across all high-quality GTDB genomes.\n\nUsage note:\nThese data are general-purpose and may be interfaced with using a variety of software.\n\n\nPaths to available databases:\n\n/isg/shared/databases/gtdb/v220.0/\n/isg/shared/databases/gtdb/v226.0/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#humann",
+    "href": "databases.html#humann",
+    "title": "Databases Available on Mantis",
+    "section": "HUMAnN",
+    "text": "HUMAnN\nThe latest HUMAnN databases compatible with our HUMAnN modules are available on Mantis. This directory contains the annotated UniRef50 and UniRef90 databases, filtered UniRef50 and UniRef90 bases, and the full chochophlan database.\n\nExample usage:\nhumann --protein-database /isg/shared/databases/humann/v3/uniref90_annotated/uniref90_201901b_full.dmnd &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/humann/v2/\n/isg/shared/databases/humann/v3/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#kraken",
+    "href": "databases.html#kraken",
+    "title": "Databases Available on Mantis",
+    "section": "Kraken",
+    "text": "Kraken\nThe latest Kraken2 databases are available on Mantis. This directory contains a custom archaean+bacterial+viral+fungal Kraken2 database as well as several official Kraken/Kraken2 databases (e.g., standard, pluspf_16gb, pluspfp_16gb, core_nt).\n\nExample usage:\nkraken2 --db /isg/shared/databases/kraken/v06.2025/standard/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/kraken/custom/\n/isg/shared/databases/kraken/v06.2025/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#long-ranger",
+    "href": "databases.html#long-ranger",
+    "title": "Databases Available on Mantis",
+    "section": "Long Ranger",
+    "text": "Long Ranger\nThe latest versions of 10X Genomics’ Long Ranger databases are available on Mantis. This directory contains the Long Ranger-compatible hg19 (GRCh37), hg38 (GRCh38), and b37/1000 Genomes references.\n\nExample usage:\nlongranger --reference=/isg/shared/databases/longranger/v2.1.0/refdata-GRCh38-2.1.0/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/longranger/v2.1.0/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#metaphlan",
+    "href": "databases.html#metaphlan",
+    "title": "Databases Available on Mantis",
+    "section": "MetaPHlAn",
+    "text": "MetaPHlAn\nThe latest MetaPHlAn databases compatible with our MetaPHlAn modules are available on Mantis. This directory contains the official Bowtie2 databases and various metadata files.\n\nExample usage:\nmetaphlan --bowtie2db /isg/shared/databases/metaphlan/vOct22/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/metaphlan/v30/\n/isg/shared/databases/metaphlan/vOct22/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#mothur",
+    "href": "databases.html#mothur",
+    "title": "Databases Available on Mantis",
+    "section": "Mothur",
+    "text": "Mothur\nThe latest Mothur databases are available on Mantis. This directory contains the official full-length sequence and taxonomy databases (nr), seed databases (seed), and chimera.slayer-compatible silva alignment (gold).\n\nExample usage:\nalign.seqs(reference=/isg/shared/databases/mothur/v138.2/silva.nr_v138_2.align, &lt;other options&gt;)\n\n\nPaths to available databases:\n\n/isg/shared/databases/mothur/v132/\n/isg/shared/databases/mothur/v138.2/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#orthodb",
+    "href": "databases.html#orthodb",
+    "title": "Databases Available on Mantis",
+    "section": "OrthoDB",
+    "text": "OrthoDB\nThe latest OrthoDB databases are available on Mantis. This directory contains OrthoDB amino acid and coding sequence data as well as several metadata files that describe the relationships between species, sequences, orthogroups, ontological terms, etc.\n\n\n\n\n\n\nImportant\n\n\n\nPlease do not copy these files in their entirety. If you need data for a particular species (e.g., Mus musculus [ID:10090_1]), we recommend using seqkit to extract those sequences and write them to a new file.\n\n\n\nExample usage:\nCDS=\"/isg/shared/databases/orthodb/v12v1/odb12v1_cds_fasta\"\nseqkit grep -pr \"10090_1\" \"${CDS}\" &gt; mmusculus.fna\n\n\nPaths to available databases:\n\n/isg/shared/databases/orthodb/v12v1/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#pfam",
+    "href": "databases.html#pfam",
+    "title": "Databases Available on Mantis",
+    "section": "Pfam",
+    "text": "Pfam\nThe latest Pfam-A databases are available on Mantis. This directory contains the official Pfam-A FASTA and HMM files as well as metadata and alignments in Stockholm format.\n\nExample usage:\nThese data are general-purpose and may be interfaced with using a variety of software.\n\n\nPaths to available databases:\n\n/isg/shared/databases/pfam/v37.3/\n/isg/shared/databases/pfam/v37.4/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#recentrifuge",
+    "href": "databases.html#recentrifuge",
+    "title": "Databases Available on Mantis",
+    "section": "Recentrifuge",
+    "text": "Recentrifuge\nThe latest Recentrifuge databases are available on Mantis. This directory contains the full set of NCBI Taxonomy taxdump files, including the nodes.dmp and names.dmp files required by Recentrifuge.\n\nExample usage:\nrcf -n /isg/shared/databases/recentrifuge/v2025.06/taxdump/ &lt;other options&gt;\n\nPaths to available databases:\n\n/isg/shared/databases/recentrifuge/v2025.06/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#refseq-genomes",
+    "href": "databases.html#refseq-genomes",
+    "title": "Databases Available on Mantis",
+    "section": "RefSeq Genomes",
+    "text": "RefSeq Genomes\nThe latest genomic data for most major RefSeq Genome lineages are available on Mantis. This directory contains one FASTA file per lineage containing all genomic data for the species in said lineages.\n\n\n\n\n\n\nImportant\n\n\n\nPlease do not copy these files in their entirety. If you need data for a particular species (e.g., Drosophila melanogaster), we recommend using seqkit to extract those sequences and write them to a new file.\n\n\n\nExample usage:\nINVERTS=\"/isg/shared/databases/refseq_genomes/release_230/invertebrate/invertebrate.genomic.230.fna\"\nseqkit grep -npr \"Drosophila melanogaster\" \"${INVERTS}\" &gt; dmel.fna\n\n\nPaths to available databases:\n\n/isg/shared/databases/refseq_genomes/release_230/archaea/\n/isg/shared/databases/refseq_genomes/release_230/bacteria/\n/isg/shared/databases/refseq_genomes/release_230/fungi/\n/isg/shared/databases/refseq_genomes/release_230/invertebrate/\n/isg/shared/databases/refseq_genomes/release_230/plant/\n/isg/shared/databases/refseq_genomes/release_230/protozoa/\n/isg/shared/databases/refseq_genomes/release_230/vertebrate_mammalian/\n/isg/shared/databases/refseq_genomes/release_230/vertebrate_other/\n/isg/shared/databases/refseq_genomes/release_230/viral/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#snpeff",
+    "href": "databases.html#snpeff",
+    "title": "Databases Available on Mantis",
+    "section": "SnpEff",
+    "text": "SnpEff\nThe latest pre-built hg19 and hg38 SnpEff databases are available on Mantis.\n\nExample usage:\njava -jar snpEff.jar -dataDir /isg/shared/databases/snpeff/v4.3/hg38/ &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/snpeff/v4.3/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#sortmerna",
+    "href": "databases.html#sortmerna",
+    "title": "Databases Available on Mantis",
+    "section": "SortMeRNA",
+    "text": "SortMeRNA\nThe latest SortMeRNA databases are available on Mantis. This directory contains the fast, default, and sensitive / sensitive_rfam_seeds rRNA reference data in FASTA format.\n\nExample usage:\nsortmerna -ref /isg/shared/databases/sortmerna/v4.3.4/smr_v4.3_default_db.fasta &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/sortmerna/v4.3.3/\n/isg/shared/databases/sortmerna/v4.3.4/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#trinotate",
+    "href": "databases.html#trinotate",
+    "title": "Databases Available on Mantis",
+    "section": "Trinotate",
+    "text": "Trinotate\nThe latest Trinotate databases compatible with our Trinotate modules are available on Mantis. This directory contains the Trinotate SQLite database, as well as the Pfam-A HMMER and UniProt/Swiss-Prot BLAST databases released around the time of Trinotate v3.2.1.\n\nExample usage:\ncp /isg/shared/databases/trinotate/v3.2.1/Trinotate.sqlite myTrinotate.sqlite\nTrinotate myTrinotate.sqlite &lt;other options&gt;\n\n\nPaths to available databases:\n\n/isg/shared/databases/trinotate/v3.2.1/",
+    "crumbs": [
+      "Databases"
+    ]
+  },
+  {
+    "objectID": "databases.html#uniprot",
+    "href": "databases.html#uniprot",
+    "title": "Databases Available on Mantis",
+    "section": "UniProt",
+    "text": "UniProt\nA set of the latest UniProt databases are available on Mantis. This directory contains the UniProt/SwissProt, UniRef50, and UniRef90 protein data in FASTA format.\n\n\n\n\n\n\nImportant\n\n\n\nPlease do not copy these files in their entirety. If you need data for a particular species (e.g., Homo sapiens), we recommend using seqkit to extract those sequences and write them to a new file.\n\n\n\nExample usage:\nUNIREF=\"/isg/shared/databases/uniprot/v2025.06/uniref90.fasta\"\nseqkit grep -nrp \"Homo sapiens\" \"${UNIREF}\" &gt; hsapiens.fna\n\n\nPaths to available databases:\n\n/isg/shared/databases/uniprot/v2025.06/",
     "crumbs": [
       "Databases"
     ]
