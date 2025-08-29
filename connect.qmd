@@ -10,8 +10,16 @@ title: "Connecting to Mantis"
 # Open OnDemand -->
 
 # SSH (Secure Shell)
-Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client. 
+Users can connect to the Mantis cluster through a command-line interface using SSH.
 
+Logging in through SSH requires:
+
+1. [A CAM account](account.qmd)
+2. [An SSH client](#ssh-client)
+3. [An SSH key pair](#ssh-keys) 
+4. [Connecting through the `ogin.cam.uchc.edu` host](#using-ssh)
+
+## SSH Client
 #### MacOS & Linux
 MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
 
@@ -100,12 +108,7 @@ ssh <user>@login.hpc.cam.uchc.edu
 
 Where `<user>` is your Mantis username.
 
-The login.cam.hpc.edu host will redirect to one of three login nodes:
-
-- `mantis-sub-5.cam.uchc.edu`
-- `mantis-sub-6.cam.uchc.edu`
-- `mantis-sub-7.cam.uchc.edu`
-
+When connecting through this host, you will be redirected to one of seven login nodes `mantis-sub-[1-7].cam.uchc.edu`.
 
 
 # CAM VPN
@@ -138,12 +141,7 @@ There is an additional host that can be used to connect to the Mantis cluster wi
 
 To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
 
-When connecting through this host, you will be redirected to one of 4 login nodes:
-
-- `mantis-sub-1.cam.uchc.edu`
-- `mantis-sub-2.cam.uchc.edu`
-- `mantis-sub-3.cam.uchc.edu`
-- `mantis-sub-4.cam.uchc.edu`
+When connecting through this host, you will be redirected to one of seven login nodes `mantis-sub-[1-7].cam.uchc.edu`.
 
 ::: {callout-note}
 Passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
