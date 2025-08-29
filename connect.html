@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-21e246651e1b5bb22b0dbf251f7ee916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -201,6 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link active" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
   <ul class="collapse">
+  <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">SSH Client</a></li>
   <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">SSH Keys</a>
   <ul class="collapse">
   <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link" data-scroll-target="#create-ssh-keys">Create SSH keys</a></li>
@@ -246,7 +247,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # Open OnDemand -->
 <section id="ssh-secure-shell" class="level1">
 <h1>SSH (Secure Shell)</h1>
-<p>Users can connect to the Mantis cluster through a command-line interface using SSH which requires an SSH client.</p>
+<p>Users can connect to the Mantis cluster through a command-line interface using SSH.</p>
+<p>Logging in through SSH requires:</p>
+<ol type="1">
+<li><a href="./account.html">A CAM account</a></li>
+<li><a href="#ssh-client">An SSH client</a></li>
+<li><a href="#ssh-keys">An SSH key pair</a></li>
+<li><a href="#using-ssh">Connecting through the <code>ogin.cam.uchc.edu</code> host</a></li>
+</ol>
+<section id="ssh-client" class="level2">
+<h2 class="anchored" data-anchor-id="ssh-client">SSH Client</h2>
 <section id="macos-linux" class="level4">
 <h4 class="anchored" data-anchor-id="macos-linux">MacOS &amp; Linux</h4>
 <p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
@@ -267,6 +277,7 @@ Warning
 <p>When connecting to Mantis over SSH, you will be connected to a login node, also known as a head or submit node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
@@ -340,12 +351,7 @@ Warning
 <p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
-<p>The login.cam.hpc.edu host will redirect to one of three login nodes:</p>
-<ul>
-<li><code>mantis-sub-5.cam.uchc.edu</code></li>
-<li><code>mantis-sub-6.cam.uchc.edu</code></li>
-<li><code>mantis-sub-7.cam.uchc.edu</code></li>
-</ul>
+<p>When connecting through this host, you will be redirected to one of seven login nodes <code>mantis-sub-[1-7].cam.uchc.edu</code>.</p>
 </section>
 </section>
 <section id="cam-vpn" class="level1">
@@ -380,13 +386,7 @@ Note
 <h1>Internal Host</h1>
 <p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible through the CAM VPN and requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
-<p>When connecting through this host, you will be redirected to one of 4 login nodes:</p>
-<ul>
-<li><code>mantis-sub-1.cam.uchc.edu</code></li>
-<li><code>mantis-sub-2.cam.uchc.edu</code></li>
-<li><code>mantis-sub-3.cam.uchc.edu</code></li>
-<li><code>mantis-sub-4.cam.uchc.edu</code></li>
-</ul>
+<p>When connecting through this host, you will be redirected to one of seven login nodes <code>mantis-sub-[1-7].cam.uchc.edu</code>.</p>
 <div class="{callout-note}">
 <p>Passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
 </div>
