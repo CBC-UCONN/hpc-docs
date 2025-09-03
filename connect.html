@@ -199,7 +199,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link active" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link active" data-scroll-target="#quick-reference">Quick Reference</a></li>
+  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
   <ul class="collapse">
   <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">SSH Client</a></li>
   <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">SSH Keys</a>
@@ -245,6 +246,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 # Open OnDemand -->
+<section id="quick-reference" class="level1">
+<h1>Quick Reference</h1>
+<p>Login hosts are listed below. If you need a bit more detail, skip to the next section.</p>
+<p>We have two main login hosts:</p>
+<ul>
+<li><code>login.hpc.cam.uchc.edu</code>
+<ul>
+<li>Available externally.</li>
+<li>Only accepts ssh key authentication, not password.</li>
+<li>The host will drop you onto one of 7 login nodes: <code>mantis-sub-[1-7]</code></li>
+</ul></li>
+<li><code>mantis-submit.cam.uchc.edu</code>
+<ul>
+<li>This host is available when connected to the <a href="#cam-vpn">CAM VPN</a>.</li>
+<li>Accepts CAM username/password as well as ssh key authentication.</li>
+<li>This host will drop you onto one of 4 login nodes: <code>mantis-sub-[1-4]</code></li>
+</ul></li>
+</ul>
+<p>When connected to the CAM VPN, you can also log in directly to one of the 7 login nodes with <code>ssh &lt;username&gt;@mantis-sub-[1-7].cam.uchc.edu</code>. This is sometimes worth trying if the load balancing hosts are not responding.</p>
+</section>
 <section id="ssh-secure-shell" class="level1">
 <h1>SSH (Secure Shell)</h1>
 <p>Users can connect to the Mantis cluster through a command-line interface using SSH.</p>
