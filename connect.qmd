@@ -9,6 +9,23 @@ title: "Connecting to Mantis"
 
 # Open OnDemand -->
 
+# Quick Reference
+
+Login hosts are listed below. If you need a bit more detail, skip to the next section. 
+
+We have two main login hosts:
+
+- `login.hpc.cam.uchc.edu`
+  - Available externally. 
+  - Only accepts ssh key authentication, not password. 
+  - The host will drop you onto one of 7 login nodes: `mantis-sub-[1-7]`
+- `mantis-submit.cam.uchc.edu`
+  - This host is available when connected to the [CAM VPN](#cam-vpn). 
+  - Accepts CAM username/password as well as ssh key authentication. 
+  - This host will drop you onto one of 4 login nodes: `mantis-sub-[1-4]`
+
+When connected to the CAM VPN, you can also log in directly to one of the 7 login nodes with `ssh <username>@mantis-sub-[1-7].cam.uchc.edu`. This is sometimes worth trying if the load balancing hosts are not responding. 
+
 # SSH (Secure Shell)
 Users can connect to the Mantis cluster through a command-line interface using SSH.
 
