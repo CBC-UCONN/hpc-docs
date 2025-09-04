@@ -16,15 +16,17 @@ Login hosts are listed below. If you need a bit more detail, skip to the next se
 We have two main login hosts:
 
 - `login.hpc.cam.uchc.edu`
+  - The recommended host
   - Available externally. 
   - Only accepts ssh key authentication, not password. 
-  - The host will drop you onto one of 7 login nodes: `mantis-sub-[1-7]`
 - `mantis-submit.cam.uchc.edu`
+  - An alternative login host
   - This host is available when connected to the [CAM VPN](#cam-vpn). 
   - Accepts CAM username/password as well as ssh key authentication. 
-  - This host will drop you onto one of 4 login nodes: `mantis-sub-[1-4]`
 
-When connected to the CAM VPN, you can also log in directly to one of the 7 login nodes with `ssh <username>@mantis-sub-[1-7].cam.uchc.edu`. This is sometimes worth trying if the load balancing hosts are not responding. 
+Both of these hosts serve to balance the load across the 7 login nodes: `mantis-sub-[1-7].cam.uchc.edu`
+You can log in directly to one of the 7 login nodes with `ssh <user>@mantis-sub-[1-7].cam.uchc.edu` if you are connected to the CAM VPN or to a UCHC secure WiFi network. This is worth trying if both of the load balancing host are not responding. Please do this only if the load balancing nodes are not working. 
+
 
 # SSH (Secure Shell)
 Users can connect to the Mantis cluster through a command-line interface using SSH.
