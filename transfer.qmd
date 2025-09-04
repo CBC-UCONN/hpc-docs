@@ -58,15 +58,15 @@ There is an additional host that can be used to transfer data without an SSH key
 The URL for this host is `transfer.cam.uchc.edu`.
 
 
-# Globus Connect
-Globus Connect is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator. 
+# Globus
+[Globus](https://globus.org) is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator. 
 
 ## Getting Started
 Globus has excellent [documentation](https://docs.globus.org/guides/). We recommend starting with [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) which contains almost everything you need to know to use Globus in addition to making note of the specifics below.
 
 ### Accessing the UCHC Globus Server
 #### Organizational Login
-When first logging in to Globus, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.
+When first logging in to the [Globus App](https://app.globus.org), you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.
 
 #### UCHC Globus Server Collection
 To access the Mantis file system, search for and select, the `UCHC Globus Server` in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your Mantis username and password.
