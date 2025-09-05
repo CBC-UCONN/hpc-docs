@@ -25,7 +25,7 @@ We have two main login hosts:
   - Accepts CAM username/password as well as ssh key authentication. 
 
 Both of these hosts serve to balance the load across the 7 login nodes: `mantis-sub-[1-7].cam.uchc.edu`
-You can log in directly to one of the 7 login nodes with `ssh <user>@mantis-sub-[1-7].cam.uchc.edu` if you are connected to the CAM VPN or to a UCHC secure WiFi network. This is worth trying if both of the load balancing host are not responding. Please do this only if the load balancing nodes are not working. 
+You can log in directly to one of the 7 login nodes with `ssh <user>@mantis-sub-[1-7].cam.uchc.edu` if you are connected to the CAM VPN or to a UCHC secure WiFi network. This is worth trying if both of the load balancing hosts are not responding. Please do this only if the load balancing nodes are not working. 
 
 
 # SSH (Secure Shell)
