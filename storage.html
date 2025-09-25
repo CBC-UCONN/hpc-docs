@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-21e246651e1b5bb22b0dbf251f7ee916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fb7c9abc17d36d8f171624f5bcedd762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/cbc.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./img/cbc.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/cbc.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -353,7 +355,7 @@ Tip
 <p>Instead of copying data from <code>/seqdata</code>, create a symlink.</p>
 <p>A symlink, or <em>symbolic link</em> is a pointer to a file or directory that behaves like the real thing.</p>
 <p>If you want to use data from <code>/seqdata</code> as if it were in one of your project directories you can create a symlink like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/<span class="op">&lt;</span>user<span class="op">&gt;</span>/AwesomeProject/rawData/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /seqdata/CGI/Fastq_Files/AwesomeWGS_May2025/ /home/FCAM/<span class="op">&lt;</span>user<span class="op">&gt;</span>/AwesomeProject/rawData/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Where <code>/seqdata/CGI/Fastq_Files/AwesomeWGS_May2025</code> is the raw data directory and <code>/home/FCAM/&lt;user&gt;/AwesomeProject/rawData/</code> is the destination. You will then have a symlink, <code>/home/FCAM/&lt;user&gt;/AwesomeProject/rawData/AwesomeWGS_May2025</code> that behaves just as if the files contained had been copied without taking up all the space.</p>
 </div>
 </div>
@@ -375,11 +377,11 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>On our system <code>/tmp</code> is pretty small and often fills up. Many programs quietly write to <code>/tmp</code> by default without telling users (they usually quietly clean up afterward as well). If <code>/tmp</code> fills up, <code>no space left on device</code> errors frequently result, confusing users who know they still have plenty of space in their storage quota. If you are running a program that does this, say:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can usually get it to write to another temporary directory by setting and exporting the variable <code>TMPDIR</code> to somewhere else before running it:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">TMPDIR</span><span class="op">=</span>myNewTmpDir <span class="co"># this directory must exist or an error will result</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">TMPDIR</span><span class="op">=</span>myNewTmpDir <span class="co"># this directory must exist or an error will result</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">genomeAssembler</span> <span class="at">-i</span> mySequences.fastq.gz <span class="at">-o</span> myGenome.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can create your own temporary directory where you are doing the analysis, or you can use <code>/local</code>.</p>
 </div>
 </div>
@@ -477,7 +479,7 @@ Tip
 <td><code>/sandbox</code></td>
 <td>Temporary space</td>
 <td>Same as <code>/scratch</code></td>
-<td>Bigger than scratch</td>
+<td>664TB (shared)</td>
 <td>Files may be deleted after 90 days.</td>
 </tr>
 <tr class="even">
@@ -533,7 +535,7 @@ Tip
 </section>
 <section id="restoring-lost-data" class="level1">
 <h1>Restoring lost data</h1>
-<p>A snapshot of systems used for active work (not archival systems) is made each day. Snapshots are preserved for <strong>10 days</strong>. You can access this backup to restore files and directories that were lost or corrupted.</p>
+<p>A snapshot of systems used for active work (excluding archival systems, /scratch, and /sandbox) is made each day. Snapshots are preserved for <strong>10 days</strong>. You can access this backup to restore files and directories that were lost or corrupted.</p>
 <!-- TODO: The timestamps on snapshots vary. Should we explain why? What time are snapshots generated? -->
 <p>To recover a file or directory from a snapshot:</p>
 <ol type="1">
@@ -612,13 +614,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
