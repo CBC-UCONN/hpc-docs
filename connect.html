@@ -201,17 +201,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link active" data-scroll-target="#quick-reference">Quick Reference</a></li>
-  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
+  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link active" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
   <ul class="collapse">
-  <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">SSH Client</a></li>
-  <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">SSH Keys</a>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick Reference</a></li>
+  <li><a href="#using-ssh" id="toc-using-ssh" class="nav-link" data-scroll-target="#using-ssh">Using SSH</a></li>
+  <li><a href="#cam-account" id="toc-cam-account" class="nav-link" data-scroll-target="#cam-account">1. CAM Account</a></li>
+  <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">2. SSH Client</a></li>
+  <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">3. SSH Keys</a>
   <ul class="collapse">
   <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link" data-scroll-target="#create-ssh-keys">Create SSH keys</a></li>
   <li><a href="#copy-public-ssh-key-to-mantis" id="toc-copy-public-ssh-key-to-mantis" class="nav-link" data-scroll-target="#copy-public-ssh-key-to-mantis">Copy Public SSH Key to Mantis</a></li>
   </ul></li>
-  <li><a href="#using-ssh" id="toc-using-ssh" class="nav-link" data-scroll-target="#using-ssh">Using SSH</a></li>
+  <li><a href="#connecting-with-ssh" id="toc-connecting-with-ssh" class="nav-link" data-scroll-target="#connecting-with-ssh">4. Connecting with SSH</a></li>
   </ul></li>
+  <li><a href="#cam-vpn" id="toc-cam-vpn" class="nav-link" data-scroll-target="#cam-vpn">CAM VPN</a>
+  <ul class="collapse">
+  <li><a href="#why-is-it-called-the-cam-vpn" id="toc-why-is-it-called-the-cam-vpn" class="nav-link" data-scroll-target="#why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</a></li>
+  </ul></li>
+  <li><a href="#internal-host" id="toc-internal-host" class="nav-link" data-scroll-target="#internal-host">Internal Host</a></li>
   </ul>
 </nav>
     </div>
@@ -241,42 +248,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 1. Open OnDemand: a web-based interface for accessing
 2. SSH (Secure Shell): a command-line interface
 
-
 # Open OnDemand -->
-<section id="quick-reference" class="level1">
-<h1>Quick Reference</h1>
-<p>Login hosts are listed below. If you need a bit more detail, skip to the next section.</p>
-<p>We have two main login hosts:</p>
+<section id="ssh-secure-shell" class="level1">
+<h1>SSH (Secure Shell)</h1>
+<p>Users can connect to the Mantis cluster through a command-line interface using SSH.</p>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<p>Login hosts are listed below. If you need more details, skip to the next section.</p>
+<p>We have two login hosts:</p>
 <ul>
 <li><code>login.hpc.cam.uchc.edu</code>
 <ul>
 <li>The recommended host</li>
 <li>Available externally.</li>
-<li>Only accepts ssh key authentication, not password.</li>
-<li>This host is not accessible throught the CAM VPN.</li>
+<li>Only accepts ssh key authentication, not password authentication.</li>
+<li>This host is not accessible through the CAM VPN.</li>
 </ul></li>
 <li><code>mantis-submit.cam.uchc.edu</code>
 <ul>
 <li>Not recommended unless the other is down.</li>
-<li>An alternative login host</li>
 <li>Accepts CAM username/password as well as ssh key authentication.</li>
 <li>This host is only available when connected to the <a href="#cam-vpn">CAM VPN</a> or a UCHC secure WiFi network.</li>
 </ul></li>
 </ul>
-<p>Both of these hosts serve to balance the load across the 4 login nodes: <code>mantis-sub-[3-6].cam.uchc.edu</code> You can log in directly to one of the 4 login nodes with <code>ssh &lt;user&gt;@mantis-sub-[3-6].cam.uchc.edu</code> if you are connected to the CAM VPN or to a UCHC secure WiFi network. This is worth trying if both of the load balancing hosts are not responding. Please do this only if the load balancing nodes are not working.</p>
 </section>
-<section id="ssh-secure-shell" class="level1">
-<h1>SSH (Secure Shell)</h1>
-<p>Users can connect to the Mantis cluster through a command-line interface using SSH.</p>
-<p>Logging in through SSH requires:</p>
+<section id="using-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
+<p>The recommended way of logging in through SSH requires:</p>
 <ol type="1">
-<li><a href="./account.html">A CAM account</a></li>
+<li><a href="#cam-account">A CAM account</a></li>
 <li><a href="#ssh-client">An SSH client</a></li>
 <li><a href="#ssh-keys">An SSH key pair</a></li>
-<li><a href="#using-ssh">Connecting through the <code>ogin.cam.uchc.edu</code> host</a></li>
+<li><a href="#using-ssh">Connecting through the login.cam.uchc.edu host</a></li>
 </ol>
+</section>
+<section id="cam-account" class="level2">
+<h2 class="anchored" data-anchor-id="cam-account">1. CAM Account</h2>
+<p>See the <a href="accounts.qmd">account page</a> for details on obtaining a CAM account</p>
+</section>
 <section id="ssh-client" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-client">SSH Client</h2>
+<h2 class="anchored" data-anchor-id="ssh-client">2. SSH Client</h2>
 <section id="macos-linux" class="level4">
 <h4 class="anchored" data-anchor-id="macos-linux">MacOS &amp; Linux</h4>
 <p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
@@ -284,23 +295,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="windows" class="level4">
 <h4 class="anchored" data-anchor-id="windows">Windows</h4>
 <p>Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the <code>Windows PowerShell</code> application. For older versions of Windows, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net">MobaXterm</a>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
-</div>
-</div>
 </section>
 </section>
 <section id="ssh-keys" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
+<h2 class="anchored" data-anchor-id="ssh-keys">3. SSH Keys</h2>
 <p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
 <section id="create-ssh-keys" class="level3">
 <h3 class="anchored" data-anchor-id="create-ssh-keys">Create SSH keys</h3>
@@ -366,23 +364,43 @@ Warning
 </div>
 </section>
 </section>
-<section id="using-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
+<section id="connecting-with-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-with-ssh">4. Connecting with SSH</h2>
 <p>Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.</p>
 <p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
-<p>When connecting through this host, you will be redirected to one of 4 login nodes <code>mantis-sub-[3-6].cam.uchc.edu</code>.</p>
+<p>Where <code>&lt;user&gt;</code> is your CAM username.</p>
+<p>When connecting through this host, you will be redirected to one of several login nodes.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>CAM VPN
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><code>login.hpc.cam.uchc.edu</code> cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="cam-vpn" class="level1">
+<h1>CAM VPN</h1>
 <!--TODO: Move the documentation for vnp here eventually -->
 <p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -408,20 +426,17 @@ Note
 <!-- TODO: Why you might need this and how to do it. -->
 <!-- TODO: How will this change once all traffic must go through external host? -->
 </section>
+</section>
 <section id="internal-host" class="level1">
 <h1>Internal Host</h1>
 <p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network and requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
-<p>When connecting through this host, you will be redirected to one of 4 login nodes <code>mantis-sub-[3-6].cam.uchc.edu</code>.</p>
+<p>When connecting through this host, you will be redirected to one of several login nodes.</p>
 <div class="{callout-note}">
 <p>Passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
 </div>
 
 
-</section>
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
