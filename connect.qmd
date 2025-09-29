@@ -6,53 +6,48 @@ title: "Connecting to Mantis"
 1. Open OnDemand: a web-based interface for accessing
 2. SSH (Secure Shell): a command-line interface
 
-
 # Open OnDemand -->
-
-# Quick Reference
-
-Login hosts are listed below. If you need a bit more detail, skip to the next section. 
-
-We have two main login hosts:
-
-- `login.hpc.cam.uchc.edu`
-  - The recommended host
-  - Available externally. 
-  - Only accepts ssh key authentication, not password. 
-  - This host is not accessible throught the CAM VPN.
-- `mantis-submit.cam.uchc.edu`
-  - Not recommended unless the other is down.
-  - An alternative login host
-  - Accepts CAM username/password as well as ssh key authentication. 
-  - This host is only available when connected to the [CAM VPN](#cam-vpn) or a UCHC secure WiFi network. 
-
-Both of these hosts serve to balance the load across the 4 login nodes: `mantis-sub-[3-6].cam.uchc.edu`
-You can log in directly to one of the 4 login nodes with `ssh <user>@mantis-sub-[3-6].cam.uchc.edu` if you are connected to the CAM VPN or to a UCHC secure WiFi network. This is worth trying if both of the load balancing hosts are not responding. Please do this only if the load balancing nodes are not working. 
 
 
 # SSH (Secure Shell)
 Users can connect to the Mantis cluster through a command-line interface using SSH.
 
-Logging in through SSH requires:
+## Quick Reference
+Login hosts are listed below. If you need more details, skip to the next section. 
 
-1. [A CAM account](account.qmd)
+We have two login hosts:
+
+- `login.hpc.cam.uchc.edu`
+  - The recommended host
+  - Available externally. 
+  - Only accepts ssh key authentication, not password authentication. 
+  - This host is not accessible through the CAM VPN.
+- `mantis-submit.cam.uchc.edu`
+  - Not recommended unless the other is down.
+  - Accepts CAM username/password as well as ssh key authentication. 
+  - This host is only available when connected to the [CAM VPN](#cam-vpn) or a UCHC secure WiFi network. 
+
+## Using SSH
+The recommended way of logging in through SSH requires:
+
+1. [A CAM account](#cam-account)
 2. [An SSH client](#ssh-client)
 3. [An SSH key pair](#ssh-keys) 
-4. [Connecting through the `ogin.cam.uchc.edu` host](#using-ssh)
+4. [Connecting through the login.cam.uchc.edu host](#using-ssh)
 
-## SSH Client
+## 1. CAM Account
+See the [account page](accounts.qmd) for details on obtaining a CAM account
+
+
+## 2. SSH Client
 #### MacOS & Linux
 MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
 
 #### Windows
 Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
 
-::: {.callout-warning}
-When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](running.qmd#batch-job-submission) or initiate an [interactive session](running.qmd#interactive-job). Long running or intensive processes runnong on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
-:::
 
-
-## SSH Keys
+## 3. SSH Keys
 Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys --- a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
 ### Create SSH keys
@@ -121,7 +116,7 @@ When prompted, enter your CAM password. Note that for security reasons, your cur
 :::
 
 
-## Using SSH
+## 4. Connecting with SSH
 Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.
 
 To connect to Mantis through SSH, open a `Windows PowerShell` or `Terminal` window and enter the following command:
@@ -130,12 +125,17 @@ To connect to Mantis through SSH, open a `Windows PowerShell` or `Terminal` wind
 ssh <user>@login.hpc.cam.uchc.edu
 ```
 
-Where `<user>` is your Mantis username.
+Where `<user>` is your CAM username.
 
-When connecting through this host, you will be redirected to one of 4 login nodes `mantis-sub-[3-6].cam.uchc.edu`.
+When connecting through this host, you will be redirected to one of several login nodes.
+
+::: {.callout-warning}
+When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](running.qmd#batch-job-submission) or initiate an [interactive session](running.qmd#interactive-job). Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
+:::
 
 ::: {.callout-note}
-
+`login.hpc.cam.uchc.edu` cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.
+:::
 
 # CAM VPN
 <!--TODO: Move the documentation for vnp here eventually -->
@@ -167,7 +167,7 @@ There is an additional host that can be used to connect to the Mantis cluster wi
 
 To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
 
-When connecting through this host, you will be redirected to one of 4 login nodes `mantis-sub-[3-6].cam.uchc.edu`.
+When connecting through this host, you will be redirected to one of several login nodes.
 
 ::: {callout-note}
 Passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
