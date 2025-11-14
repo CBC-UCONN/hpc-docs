@@ -16,6 +16,7 @@ Users can connect to the Mantis cluster through a command-line interface using S
 Login hosts are listed below. If you need more details, skip to the next section. 
 
 We have two login hosts:
+
 - `login.hpc.cam.uchc.edu`
   - The recommended host.
   - Accessible externally (doesn't require VPN or UCHC secure WiFI). 
