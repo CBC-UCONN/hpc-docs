@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fb7c9abc17d36d8f171624f5bcedd762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -255,26 +255,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="quick-reference" class="level2">
 <h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
 <p>Login hosts are listed below. If you need more details, skip to the next section.</p>
-<p>We have two login hosts:</p>
-<ul>
-<li><code>login.hpc.cam.uchc.edu</code>
-<ul>
-<li>The recommended host</li>
-<li>Available externally.</li>
-<li>Only accepts ssh key authentication, not password authentication.</li>
-<li>This host is not accessible through the CAM VPN.</li>
-</ul></li>
-<li><code>mantis-submit.cam.uchc.edu</code>
-<ul>
-<li>Not recommended unless the other is down.</li>
-<li>Accepts CAM username/password as well as ssh key authentication.</li>
-<li>This host is only available when connected to the <a href="#cam-vpn">CAM VPN</a> or a UCHC secure WiFi network.</li>
-</ul></li>
-</ul>
+<p>We have two login hosts: - <code>login.hpc.cam.uchc.edu</code> - The recommended host. - Accessible externally (doesn’t require VPN or UCHC secure WiFI). - This host is not accessible through the CAM VPN. - <code>mantis-submit.cam.uchc.edu</code> - Not recommended unless the other is down or in specific circumstances where VPN is needed. - This host is only available when connected to the <a href="#cam-vpn">CAM VPN</a> or a UCHC secure WiFi network.</p>
 </section>
 <section id="using-ssh" class="level2">
 <h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
-<p>The recommended way of logging in through SSH requires:</p>
+<p>Logging in through SSH requires:</p>
 <ol type="1">
 <li><a href="#cam-account">A CAM account</a></li>
 <li><a href="#ssh-client">An SSH client</a></li>
@@ -299,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">3. SSH Keys</h2>
-<p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
+<p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access. Only ed25519 keys are accepted.</p>
 <section id="create-ssh-keys" class="level3">
 <h3 class="anchored" data-anchor-id="create-ssh-keys">Create SSH keys</h3>
 <p>You can create a public and private SSH key pair using your SSH client in <code>Windows PowerShell</code> or a MacOS / Linux <code>Terminal</code>.</p>
@@ -317,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-mantis">Copy to Mantis</a> section. If you do not see any files, you will need to create a new SSH key pair.</p>
+<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-mantis">Copy to Mantis</a> section. If you do not see these files, you will need to create a new SSH key pair.</p>
 <ol start="2" type="1">
 <li>To create a key pair run the following command:</li>
 </ol>
@@ -351,14 +336,14 @@ Warning
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>On MacOS and Linux, you can copy your public key to the Mantis cluster using the <code>ssh-copy-id</code> command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is your CAM username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password.</p>
+<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
+<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>On Windows 10 or later, you can copy your public key to the Mantis cluster with <code>Windows PowerShell</code> using the command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\i</span>d_ed25519.pub <span class="kw">|</span> <span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu <span class="st">"mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is your Mantis username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password.</p>
+<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
+<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
 </div>
 </div>
 </div>
@@ -369,7 +354,7 @@ Warning
 <p>Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.</p>
 <p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is your CAM username.</p>
+<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
 <p>When connecting through this host, you will be redirected to one of several login nodes.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -401,7 +386,7 @@ Note
 </section>
 <section id="cam-vpn" class="level1">
 <h1>CAM VPN</h1>
-<!--TODO: Move the documentation for vnp here eventually -->
+<!--TODO: Move the documentation for vnp here eventually? -->
 <p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -418,7 +403,7 @@ Note
 </div>
 <section id="why-is-it-called-the-cam-vpn" class="level3">
 <h3 class="anchored" data-anchor-id="why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</h3>
-<p>Much of the administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.</p>
+<p>The administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.</p>
 <!-- # SSH Tunnelling -->
 <!-- TODO: Explain why you might need this and how to do it. -->
 <!-- TODO: How will this change once all traffic must go through external host? -->
@@ -429,12 +414,9 @@ Note
 </section>
 <section id="internal-host" class="level1">
 <h1>Internal Host</h1>
-<p>There is an additional host that can be used to connect to the Mantis cluster without an SSH key. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network and requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
+<p>There is an additional host that can be used to connect to the Mantis cluster. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network. We don’t recommend using this host for regular use and it may be decommisioned in the future. There are specific use cases such as when you need to use the CAM VPN where the other host does not currently allow connections. For example if you need to establish an SSH tunnel to a compute node. This host can also be used if the other is down.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
 <p>When connecting through this host, you will be redirected to one of several login nodes.</p>
-<div class="{callout-note}">
-<p>Passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
-</div>
 
 
 </section>
