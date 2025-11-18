@@ -135,6 +135,7 @@ This partition contains nodes suitable for most tasks. These nodes have 64-128 A
 
 ## himem
 This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
+
 #### Slurm Arguments:
 
 ```
