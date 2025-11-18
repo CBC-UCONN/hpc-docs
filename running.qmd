@@ -197,6 +197,7 @@ nvidia-smi
 # Feature Constraints
 When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the `--constraint=<feature>` argument where <feature> is a defined feature of a node. Multiple constraints can be specified with `&` (and) or `|` (or) operators. The defined features and description are listed in the table below. See the [SLURM documentation](https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint) for more information on using constraints.
 
+### Defined Features
 | Feature   | Description |
 |-----------|-------------|
 | cpu_amd   | AMD CPUs |
