@@ -127,15 +127,34 @@ A partition is a group of compute nodes that share certain specifications and po
 ## general
 This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.
 
+#### Slurm Arguments:
+```
+#SBATCH --partition=general
+#SBATCH --qos=general
+```
+
 ## himem
 This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
+#### Slurm Arguments:
+
+```
+#SBATCH --partition=himem
+#SBATCH --qos=himem
+```
 
 ## debug
 This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
+#### Slurm Arguments:
+```
+#SBATCH --partition=debug
+#SBATCH --qos=debug
+```
+
+<!-- 
 ## preemptible 
 Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
-
+-->
 
 # SLURM Environment Variables
 SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the [SLURM environment variables documentation](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) for a complete list of available variables.
