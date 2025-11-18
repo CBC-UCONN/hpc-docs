@@ -225,6 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#feature-constraints" id="toc-feature-constraints" class="nav-link" data-scroll-target="#feature-constraints">Feature Constraints</a>
   <ul class="collapse">
+  <li><a href="#defined-features" id="toc-defined-features" class="nav-link" data-scroll-target="#defined-features">Defined Features</a></li>
   <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
   </ul></li>
   <li><a href="#job-arrays" id="toc-job-arrays" class="nav-link" data-scroll-target="#job-arrays">Job Arrays</a>
@@ -453,6 +454,8 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 <section id="feature-constraints" class="level1">
 <h1>Feature Constraints</h1>
 <p>When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the <code>--constraint=&lt;feature&gt;</code> argument where <feature> is a defined feature of a node. Multiple constraints can be specified with <code>&amp;</code> (and) or <code>|</code> (or) operators. The defined features and description are listed in the table below. See the <a href="https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint">SLURM documentation</a> for more information on using constraints.</feature></p>
+<section id="defined-features" class="level3">
+<h3 class="anchored" data-anchor-id="defined-features">Defined Features</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -479,6 +482,7 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 </tr>
 </tbody>
 </table>
+</section>
 <section id="example-2" class="level3">
 <h3 class="anchored" data-anchor-id="example-2">Example</h3>
 <p>Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command to ensure that your job runs on a node with AMD CPUs.</p>
