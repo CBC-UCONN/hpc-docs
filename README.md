@@ -7,3 +7,10 @@ Every Monday, and after each pushed commit, all links are checked to ensure no b
 TODO:
 - [ ] Something about seff
 - [ ] Make note about how it is bad to request multiple cores if tool cannot parallelize and more cores is not always better.
+- [ ] Make a section or another page with example resource requests for common tools
+- [ ] Make nextflow config and update nextflow section
+- [ ] Tips and shortcuts page
+- [ ] SFTP FileZilla
+- [ ] Mamba instructions
+- [ ] Jupyter Instructions
+- [ ] RStudio Instructions
