@@ -333,7 +333,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="output" class="level4">
 <h4 class="anchored" data-anchor-id="output">--output</h4>
-<p>This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options <a href="https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN">here</a></p>
+<p>This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options <a href="https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN">here</a>.</p>
+</section>
+<section id="mail-type" class="level4">
+<h4 class="anchored" data-anchor-id="mail-type">--mail-type</h4>
+<p>When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.</p>
+</section>
+<section id="mail-user" class="level4">
+<h4 class="anchored" data-anchor-id="mail-user">--mail-user</h4>
+<p>Address to send mail to.</p>
 </section>
 <section id="additional-commands" class="level4">
 <h4 class="anchored" data-anchor-id="additional-commands">Additional commands</h4>
