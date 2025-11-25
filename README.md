@@ -1,18 +1,9 @@
 # UCONN CBC HPC Documentation
 
-Currently under development and not ready for public consumption.
+Any changes commited and pushed to main branch are automatically rendered and served to website url.
 
-
-Good examples to follow:
-- https://ulhpc-tutorials.readthedocs.io
-- https://hpcdocs.hpc.arizona.edu
-- https://rc-docs.northeastern.edu/en/latest
-- https://docs.icer.msu.edu
-- https://docs.olcf.ornl.gov
-- https://hpc.nmsu.edu/discovery
-- https://www.hpc.iastate.edu/
+Every Monday, and after each pushed commit, all links are checked to ensure no broken links
 
 TODO:
-- [ ] Add something to the github action to check for dead links
 - [ ] Something about seff
 - [ ] Make note about how it is bad to request multiple cores if tool cannot parallelize and more cores is not always better.
