@@ -87,8 +87,13 @@ The amount of memory to allocate. This argument takes a number followed by a uni
 Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format `days-hrs:min:sec`, `days-hrs`, `hrs:min:sec`, `min:sec`, or `sec`. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.
 
 #### \-\-output
-This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options [here](https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN)  
+This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options [here](https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN).
 
+#### \-\-mail-type
+When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.
+
+#### \-\-mail-user
+Address to send mail to. 
 
 #### Additional commands
 `sbatch` is a powerful tool with many other configuration options beyond the scope of this documentation.
