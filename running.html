@@ -520,7 +520,7 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%A-%a.out</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array=1-5%2</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="va">params</span><span class="op">=</span><span class="va">(</span><span class="st">"A"</span> <span class="st">"B"</span> <span class="st">"C"</span> <span class="st">"D"</span> <span class="st">"E"</span><span class="va">)</span></span>
