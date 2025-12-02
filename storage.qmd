@@ -150,6 +150,8 @@ Each of the archival spaces have the same directory structure containing the fol
 ### /archive
 Quota: No current quota policy. 
 
+This space is currently read only. Users can only read data that is already stored there.
+
 This system is intended for *medium term* storage of data that is no longer being used for analysis, but which may be needed within a year or so. `/archive` gives relatively fast access (though not as fast as the above directories). The data are securely stored, being geospread across four data centers. As such, it is *relatively expensive* for us to store data here. Users should not plan on permanently archiving data here. 
 
 Eventually, data stored here will be moved to tape storage. 
