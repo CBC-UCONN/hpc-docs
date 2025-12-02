@@ -58,7 +58,7 @@ In `/scratch` unused files are subject to deletion without notice after **90 day
 :::
 
 
-### /sandbox
+<!-- ### /sandbox
 Quota: Shared space. No individual or group quotas.
 
 This system has identical policies to `/scratch`.
@@ -69,7 +69,7 @@ This location is intended to serve as temporary storage. This would be an ideal 
 
 ::: {.callout-warning}
 In `/sandbox` unused files are subject to deletion without notice after **90 days**. 
-:::
+::: -->
 
 
 ### /seqdata
