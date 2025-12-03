@@ -393,7 +393,37 @@
     "href": "running.html",
     "title": "Job Submission",
     "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.\n\nBatch Submission\nInteractive Job\n\n\nBatch job submission\nA batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.\nTo submit a batch job, use the sbatch command. A basic command might look like:\nsbatch \\\n  --job-name &lt;name&gt; \\\n  --cpus-per-task &lt;cpus&gt; \\\n  --mem &lt;memory&gt; \\\n  --time &lt;time&gt; \\\n  --qos &lt;qos&gt; \\\n  --output %x-%j.out \\\n  &lt;script&gt;.sh\nWhere",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#general",
+    "href": "running.html#general",
+    "title": "Job Submission",
+    "section": "general",
+    "text": "general\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=general",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#himem",
+    "href": "running.html#himem",
+    "title": "Job Submission",
+    "section": "himem",
+    "text": "himem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#debug",
+    "href": "running.html#debug",
+    "title": "Job Submission",
+    "section": "debug",
+    "text": "debug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.\n\nSlurm Arguments:\n#SBATCH --partition=debug\n#SBATCH --qos=debug",
     "crumbs": [
       "Running Jobs"
     ]
