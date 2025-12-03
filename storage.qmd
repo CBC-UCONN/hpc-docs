@@ -194,9 +194,10 @@ This system also includes a `seqdata` directory where data from `/seqdata` are m
 
 # Quotas
 
-To check current usage against quotas for `/labs` and `/projects` directories [visit this link](http://usage.cam.uchc.edu/). You must be connected to the CAM VPN to load the site. 
+To check current usage against quotas for `/labs` and `/projects` directories [visit this link](http://usage.cam.uchc.edu/).
 
 <!-- TODO: Is there no command that will provide this information in the terminal? -->
+<!-- On some systems, there are command like myquota which display usage info. -->
 
 
 # Restoring lost data
