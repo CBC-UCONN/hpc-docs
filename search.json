@@ -99,11 +99,11 @@
     ]
   },
   {
-    "objectID": "software.html#conda",
-    "href": "software.html#conda",
+    "objectID": "software.html#mamba",
+    "href": "software.html#mamba",
     "title": "Software",
-    "section": "Conda",
-    "text": "Conda\n\nConda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.\nSee the conda-forge website for documentation on using conda.\nFor a brief intro on using conda on Mantis, see here\n\n\n\n\n\n\nWarning\n\n\n\nSome conda commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running conda install, conda create, or conda update on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.",
+    "section": "Mamba",
+    "text": "Mamba\nMamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well.\n\n\n\n\n\n\nWarning\n\n\n\nSome mamba commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.\n\n\n\nInstalling Mamba\nWe recommend installing Mamba using the Miniforge installer, which is a minimalist installation of Mamba. Below are the steps to install Miniforge and set up Mamba on the Mantis cluster.\n\nStart interactive session\nDo this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.\nsrun --qos=general --mem=8gb --pty bash\n\n\nDownload miniforge installer\nwget -O Miniforge3.sh \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh\"\nThere is not need to substitue anything in the URL. The command as given will download the installation script.\n\n\nRun the Miniforge Installation Script\nbash Miniforge3.sh\n\nAgree to license terms (yes)\nChoose installation path (default is fine)\nImportant: Choose whether to initialize mamba (select “yes”)\n\n\n\nLoad Mamba into your shell\nNext load the Mamba into your shell. This happens automatically when you start a new interactive shell session, but to load it into your current session, run:\nsource ~/.bashrc\nYou will also need to add this command to any batch job scripts that use Mamba.\n\n\n\nUsing Mamba\nIt is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base envrionment. Below are the basic commands for creating environments, activating them, and installing packages.\n\nCreating an Environment\nOnce installed, you can create environments with:\nmamba create -n &lt;environemnt name&gt; \nReplace &lt;environment name&gt; with the desired name for your environment.\nConfirm changes when prompted.\n\n\nActivating & Deactivating an Environment\nOnce you have created an environment, you can activate it with:\nmamba activate &lt;environment name&gt;\nReplace &lt;environment name&gt; with the name of the environment you want to activate.\nOnce activated you can install or use packages within that environment.\nTo see a list of all your environments, run:\nmamba env list\nTo deactivate the current environment and return to the base environment, run:\nmamba deactivate\n\n\nInstalling Packages\nIn order to install packages into a Mamba environment, you first need to activate the environment (see above). Once activated, packages can be installed with:\nmamba install &lt;package name&gt;\nSome packages may require specifying a channel with the -c &lt;channel name&gt; argument. For example, to install a package from the bioconda channel, you would run:\nmamba install -c bioconda &lt;package name&gt;\nconda-forge is another commonly used channel.\nTo see a list of installed packages in the current environment, run:\nmamba list",
     "crumbs": [
       "Software"
     ]
@@ -393,37 +393,7 @@
     "href": "running.html",
     "title": "Job Submission",
     "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "running.html#general",
-    "href": "running.html#general",
-    "title": "Job Submission",
-    "section": "general",
-    "text": "general\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=general",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "running.html#himem",
-    "href": "running.html#himem",
-    "title": "Job Submission",
-    "section": "himem",
-    "text": "himem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "running.html#debug",
-    "href": "running.html#debug",
-    "title": "Job Submission",
-    "section": "debug",
-    "text": "debug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.\n\nSlurm Arguments:\n#SBATCH --partition=debug\n#SBATCH --qos=debug",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the best practices page for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer cluster uses SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.\n\nBatch Submission\nInteractive Job\n\n\nBatch job submission\nA batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.\nTo submit a batch job, use the sbatch command. A basic command might look like:\nsbatch \\\n  --job-name &lt;name&gt; \\\n  --cpus-per-task &lt;cpus&gt; \\\n  --mem &lt;memory&gt; \\\n  --time &lt;time&gt; \\\n  --qos &lt;qos&gt; \\\n  --output %x-%j.out \\\n  &lt;script&gt;.sh\nWhere",
     "crumbs": [
       "Running Jobs"
     ]

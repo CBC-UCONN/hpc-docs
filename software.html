@@ -204,7 +204,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
   <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
-  <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a></li>
+  <li><a href="#mamba" id="toc-mamba" class="nav-link" data-scroll-target="#mamba">Mamba</a>
+  <ul class="collapse">
+  <li><a href="#installing-mamba" id="toc-installing-mamba" class="nav-link" data-scroll-target="#installing-mamba">Installing Mamba</a></li>
+  <li><a href="#using-mamba" id="toc-using-mamba" class="nav-link" data-scroll-target="#using-mamba">Using Mamba</a></li>
+  </ul></li>
   <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
   <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
   <ul class="collapse">
@@ -313,12 +317,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See <a href="https://singularity-tutorial.github.io/">here</a> for a more in-depth tutorial.</p>
 </section>
-<section id="conda" class="level2">
-<h2 class="anchored" data-anchor-id="conda">Conda</h2>
-<!-- TODO: Expand on this section -->
-<p>Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well.</p>
-<p>See the <a href="https://conda-forge.org/download/">conda-forge</a> website for documentation on using conda.</p>
-<p>For a brief intro on using conda on Mantis, see <a href="https://isg-certificate.github.io/ISG5311/02_3_software.html#conda">here</a></p>
+<section id="mamba" class="level2">
+<h2 class="anchored" data-anchor-id="mamba">Mamba</h2>
+<p>Mamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -329,9 +330,70 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Some <code>conda</code> commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running <code>conda install</code>, <code>conda create</code>, or <code>conda update</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
+<p>Some <code>mamba</code> commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
 </div>
 </div>
+<section id="installing-mamba" class="level3">
+<h3 class="anchored" data-anchor-id="installing-mamba">Installing Mamba</h3>
+<p>We recommend installing Mamba using the Miniforge installer, which is a minimalist installation of Mamba. Below are the steps to install Miniforge and set up Mamba on the Mantis cluster.</p>
+<section id="start-interactive-session" class="level4">
+<h4 class="anchored" data-anchor-id="start-interactive-session">Start interactive session</h4>
+<p>Do this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.</p>
+<pre><code>srun --qos=general --mem=8gb --pty bash</code></pre>
+</section>
+<section id="download-miniforge-installer" class="level4">
+<h4 class="anchored" data-anchor-id="download-miniforge-installer">Download miniforge installer</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> Miniforge3.sh <span class="st">"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span><span class="st">-</span><span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span><span class="st">.sh"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>There is not need to substitue anything in the URL. The command as given will download the installation script.</p>
+</section>
+<section id="run-the-miniforge-installation-script" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-miniforge-installation-script">Run the Miniforge Installation Script</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> Miniforge3.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="1">
+<li>Agree to license terms (yes)</li>
+<li>Choose installation path (default is fine)</li>
+<li><strong>Important</strong>: Choose whether to initialize mamba (select “yes”)</li>
+</ol>
+</section>
+<section id="load-mamba-into-your-shell" class="level4">
+<h4 class="anchored" data-anchor-id="load-mamba-into-your-shell">Load Mamba into your shell</h4>
+<p>Next load the Mamba into your shell. This happens automatically when you start a new interactive shell session, but to load it into your current session, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You will also need to add this command to any batch job scripts that use Mamba.</p>
+</section>
+</section>
+<section id="using-mamba" class="level3">
+<h3 class="anchored" data-anchor-id="using-mamba">Using Mamba</h3>
+<p>It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base envrionment. Below are the basic commands for creating environments, activating them, and installing packages.</p>
+<section id="creating-an-environment" class="level4">
+<h4 class="anchored" data-anchor-id="creating-an-environment">Creating an Environment</h4>
+<p>Once installed, you can create environments with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> <span class="op">&lt;</span>environemnt name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Replace <code>&lt;environment name&gt;</code> with the desired name for your environment.</p>
+<p>Confirm changes when prompted.</p>
+</section>
+<section id="activating-deactivating-an-environment" class="level4">
+<h4 class="anchored" data-anchor-id="activating-deactivating-an-environment">Activating &amp; Deactivating an Environment</h4>
+<p>Once you have created an environment, you can activate it with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Replace <code>&lt;environment name&gt;</code> with the name of the environment you want to activate.</p>
+<p>Once activated you can install or use packages within that environment.</p>
+<p>To see a list of all your environments, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> env list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To deactivate the current environment and return to the base environment, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="installing-packages" class="level4">
+<h4 class="anchored" data-anchor-id="installing-packages">Installing Packages</h4>
+<p>In order to install packages into a Mamba environment, you first need to activate the environment (see above). Once activated, packages can be installed with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Some packages may require specifying a channel with the <code>-c &lt;channel name&gt;</code> argument. For example, to install a package from the <code>bioconda</code> channel, you would run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>conda-forge</code> is another commonly used channel.</p>
+<p>To see a list of installed packages in the current environment, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
 </section>
 <section id="request-software-installation" class="level2">
 <h2 class="anchored" data-anchor-id="request-software-installation">Request Software Installation</h2>
