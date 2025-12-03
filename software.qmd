@@ -90,7 +90,7 @@ See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial
 Mamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well. 
 
 ::: {.callout-warning}
-Some `mamba` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
+Some `mamba` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba command such as `mamba install`, `mamba update`, or `mamba create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
 :::
 
 ### Installing Mamba
