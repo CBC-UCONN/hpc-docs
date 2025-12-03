@@ -27,9 +27,10 @@ sbatch \
   --time <time> \
   --qos <qos> \
   --output %x-%j.out \
-  <script>.sh
+  <script>
 ```
-Where <script> is the name of the script that you want to run as a job.
+
+Where `<script>` is the name of the script that you want to run as a job.
 
 Alternatively, the `sbatch` arguments can be specified as a header in your script:
 
