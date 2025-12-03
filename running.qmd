@@ -25,11 +25,11 @@ sbatch \
   --cpus-per-task <cpus> \
   --mem <memory> \
   --time <time> \
-  --partition <partition> \
   --qos <qos> \
   --output %x-%j.out \
   <script>.sh
 ```
+Where <script>.sh is the script that you want to run as a job.
 
 Alternatively, the `sbatch` arguments can be specified as a header in your script:
 
@@ -40,12 +40,12 @@ Alternatively, the `sbatch` arguments can be specified as a header in your scrip
 #SBATCH --cpus-per-task=<cpu number> 
 #SBATCH --mem=<memory>
 #SBATCH --time=<days-hrs:min:sec>
-#SBATCH --partition=<partiion name>
 #SBATCH --qos=<partition name>
 #SBATCH --output=%x-%j.out
 
 <your script here>
 ```
+This would be run with the command: `sbatch <script>.sh`
 
 ### Example
 Here is a complete example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
@@ -64,16 +64,16 @@ hostname
 
 echo $SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus
 ```
+
 ### Required arguments
 The following arguments are required when running `sbatch` on the Mantis cluster.
-#### \-\-partition
-A group of nodes which the job will be allocated to. A partition must be specified when running a job on the Mantis cluster. The available partitions are [explained below](#partitions). 
 
 #### \-\-qos
-The qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition. 
+The qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition if specifying a partition. If using the `general` paritition, only the qos needs to be specified.  
 
 ### Commonly used arguments
 Below are some of the most useful and commonly used arguments for `sbatch`.
+
 #### \-\-job-name
 The name of the job. Used for displaying job information when monitoring the job and for naming log files.
 
@@ -88,6 +88,9 @@ Time limit for the job. Jobs not finished by the end of the allocated time will 
 
 #### \-\-output
 This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options [here](https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN).
+
+#### \-\-partition 
+A group of nodes which the job will be allocated to. This defaults to `general`. See the [partitions section](#partitions) for available partitions.
 
 #### \-\-mail-type
 When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.
@@ -268,7 +271,11 @@ param=$(sed -n "1~${SLURM_ARRAY_TASK_ID}p" params.csv | cut -d ',' -f 2)
 ```
 
 <!-- # Nextflow 
-[Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster.  -->
+[Nextflow](https://www.nextflow.io/) is a workflow management system that provides a convenient way to manage complex workflows and dependencies. If you are a Nextflow user, you can utilize the [institutional Nextflow profile](TODO:) available for the Mantis cluster.  
+
+A shared Nextflow Singularity cache is available at `/isg/shared/databases/nfx_mantis_singularity_cache` 
+
+-->
 
 # X11 Forwarding
 

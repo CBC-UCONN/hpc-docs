@@ -85,17 +85,107 @@ singularity shell fastqc:0.12.1--hdfd78af_0
 
 See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial. 
 
-## Conda
-<!-- TODO: Expand on this section -->
-Conda is a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and many other languages and tools as well. 
 
-See the [conda-forge](https://conda-forge.org/download/) website for documentation on using conda.
-
-For a brief intro on using conda on Mantis, see [here](https://isg-certificate.github.io/ISG5311/02_3_software.html#conda)
+## Mamba
+Mamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well. 
 
 ::: {.callout-warning}
-Some `conda` commands will utilize all of the available CPU resources for long periods of time on login nodes. This can negatively impact other users on these nodes. Please refrain from running `conda install`, `conda create`, or `conda update` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
+Some `mamba` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
 :::
+
+### Installing Mamba
+We recommend installing Mamba using the Miniforge installer, which is a minimalist installation of Mamba. Below are the steps to install Miniforge and set up Mamba on the Mantis cluster.
+
+#### Start interactive session
+
+Do this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.
+
+```
+srun --qos=general --mem=8gb --pty bash
+```
+
+#### Download miniforge installer
+```bash
+wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+```
+There is not need to substitue anything in the URL. The command as given will download the installation script.
+
+#### Run the Miniforge Installation Script
+```bash
+bash Miniforge3.sh
+```
+
+1. Agree to license terms (yes)
+2. Choose installation path (default is fine)
+3. **Important**: Choose whether to initialize mamba (select "yes")
+
+
+#### Load Mamba into your shell
+Next load the Mamba into your shell. This happens automatically when you start a new interactive shell session, but to load it into your current session, run:
+
+```bash
+source ~/.bashrc
+```
+
+You will also need to add this command to any batch job scripts that use Mamba. 
+
+
+### Using Mamba
+It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base envrionment. Below are the basic commands for creating environments, activating them, and installing packages.
+
+#### Creating an Environment
+Once installed, you can create environments with:
+
+```bash
+mamba create -n <environemnt name> 
+```
+Replace `<environment name>` with the desired name for your environment.
+
+Confirm changes when prompted.
+
+
+#### Activating & Deactivating an Environment
+Once you have created an environment, you can activate it with:
+
+```bash
+mamba activate <environment name>
+```
+Replace `<environment name>` with the name of the environment you want to activate.
+
+Once activated you can install or use packages within that environment.
+
+To see a list of all your environments, run:
+```bash
+mamba env list
+```
+
+To deactivate the current environment and return to the base environment, run:
+```bash
+mamba deactivate
+```
+
+#### Installing Packages
+In order to install packages into a Mamba environment, you first need to activate the environment (see above).
+Once activated, packages can be installed with: 
+
+```bash
+mamba install <package name>
+```
+
+Some packages may require specifying a channel with the `-c <channel name>` argument. For example, to install a package from the `bioconda` channel, you would run:
+```bash
+mamba install -c bioconda <package name>
+```
+
+`conda-forge` is another commonly used channel.
+
+To see a list of installed packages in the current environment, run:
+```bash
+mamba list
+```
+
+
+
 
 ## Request Software Installation
 Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/). We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda. 
