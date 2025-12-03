@@ -121,13 +121,15 @@ bash Miniforge3.sh
 
 
 #### Load Mamba into your shell
-Next load the Mamba into your shell. This happens automatically when you start a new interactive shell session, but to load it into your current session, run:
+Next load Mamba into your shell. This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:
 
 ```bash
 source ~/.bashrc
 ```
 
-You will also need to add this command to any batch job scripts that use Mamba. 
+:::{.callout-note}
+~/.bashrc is only sourced within interactive sessions. If you want to use Mamba in non-interactive sessions (e.g. batch jobs), you will need to add the above `source` command to your batch job scripts.
+:::
 
 
 ### Using Mamba
