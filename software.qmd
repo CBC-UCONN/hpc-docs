@@ -100,7 +100,7 @@ We recommend installing Mamba using the Miniforge installer, which is a minimali
 
 Do this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.
 
-```
+```bash
 srun --qos=general --mem=8gb --pty bash
 ```
 
