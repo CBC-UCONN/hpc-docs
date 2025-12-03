@@ -357,9 +357,21 @@ Warning
 </section>
 <section id="load-mamba-into-your-shell" class="level4">
 <h4 class="anchored" data-anchor-id="load-mamba-into-your-shell">Load Mamba into your shell</h4>
-<p>Next load the Mamba into your shell. This happens automatically when you start a new interactive shell session, but to load it into your current session, run:</p>
+<p>Next load Mamba into your shell. This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You will also need to add this command to any batch job scripts that use Mamba.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>~/.bashrc is only sourced within interactive sessions. If you want to use Mamba in non-interactive sessions (e.g.&nbsp;batch jobs), you will need to add the above <code>source</code> command to your batch job scripts.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="using-mamba" class="level3">
