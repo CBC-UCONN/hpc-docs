@@ -54,14 +54,14 @@ You can create a public and private SSH key pair using your SSH client in `Windo
 1. First check for an existing SSH key pair by running the following command: 
 
 ::: {.panel-tabset}
-#### Windows PowerShell
-```bash
-ls $env:USERPROFILE\.ssh\
-```
-
 #### MacOS / Linux Terminal
 ```bash
 ls ~/.ssh/
+```
+
+#### Windows PowerShell
+```bash
+ls $env:USERPROFILE\.ssh\
 ```
 :::
 
