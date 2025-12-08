@@ -138,7 +138,6 @@ This partition contains nodes suitable for most tasks. These nodes have 64-128 A
 
 ##### Slurm Arguments:
 ```
-#SBATCH --partition=general
 #SBATCH --qos=general
 ```
 

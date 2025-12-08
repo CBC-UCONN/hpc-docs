@@ -197,7 +197,7 @@ mamba install jupyter
 ```
 
 ### Launching a Jupyter Server
-To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter_job.sh`) with the following content:
+To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter.sh`) with the following content:
 
 ```bash
 #!/bin/bash
@@ -233,7 +233,7 @@ jupyter lab --no-browser --port=$port --ip=localhost --IdentityProvider.token=$t
 
 Submit the job with:
 ```bash
-sbatch jupyter_job.sh <environment name>
+sbatch jupyter.sh <environment name>
 ```
 Replacing `<environment name>` with the name of the Mamba environment where Jupyter is installed.
 
