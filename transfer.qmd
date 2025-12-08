@@ -10,7 +10,7 @@ There are several recommended approaches for transferring data to and from the M
 2. [Globus Connect](#globus-connect)
 3. [Mounting SMB Share](#mounting-smb-share)
 
-Each are most suitable for different situations. We explain the usage of each tool below.
+Each is most suitable for different situations. We explain the usage of each tool below.
 
 # Secure Copy
 Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the `scp` command which is available in the `Windows PowerShell` or MacOS / Linux `Terminal`. 
