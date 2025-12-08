@@ -209,6 +209,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installing-mamba" id="toc-installing-mamba" class="nav-link" data-scroll-target="#installing-mamba">Installing Mamba</a></li>
   <li><a href="#using-mamba" id="toc-using-mamba" class="nav-link" data-scroll-target="#using-mamba">Using Mamba</a></li>
   </ul></li>
+  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#launching-a-jupyter-server" id="toc-launching-a-jupyter-server" class="nav-link" data-scroll-target="#launching-a-jupyter-server">Launching a Jupyter Server</a></li>
+  <li><a href="#connecting-to-the-jupyter-server" id="toc-connecting-to-the-jupyter-server" class="nav-link" data-scroll-target="#connecting-to-the-jupyter-server">Connecting to the Jupyter Server</a></li>
+  </ul></li>
   <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
   <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
   <ul class="collapse">
@@ -405,6 +411,55 @@ Note
 <p>To see a list of installed packages in the current environment, run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+</section>
+</section>
+<section id="jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="jupyter">Jupyter</h2>
+<p>Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.</p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>We recommend installing Jupyter using Mamba <a href="#mamba">(see above)</a>. Once Mamba is installed, you can install Jupyter into a Mamba environment with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="launching-a-jupyter-server" class="level3">
+<h3 class="anchored" data-anchor-id="launching-a-jupyter-server">Launching a Jupyter Server</h3>
+<p>To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., <code>jupyter.sh</code>) with the following content:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name jupyter</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos general </span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 8gb</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time 0-6:00:00</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output %x_%j.out</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="va">conda_env</span><span class="op">=</span><span class="va">${1}</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="va">port</span><span class="op">=</span><span class="va">$(</span><span class="fu">shuf</span> <span class="at">-i8000-9999</span> <span class="at">-n1</span><span class="va">)</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="va">user</span><span class="op">=</span><span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="va">token</span><span class="op">=</span><span class="va">$(</span><span class="ex">openssl</span> rand <span class="at">-hex</span> 16<span class="va">)</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc   </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="va">$conda_env</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="st"># Execute in local terminal to create SSH tunnel:</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="st">ssh -N -L </span><span class="va">$port</span><span class="st">:localhost:</span><span class="va">$port</span><span class="st"> </span><span class="va">$user</span><span class="st">@</span><span class="va">$(</span><span class="fu">hostname</span> <span class="at">-s</span><span class="va">)</span><span class="st">.cam.uchc.edu</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="st"># URL to enter into your browser:</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="st">http://localhost:</span><span class="va">$port</span><span class="st">/?token=</span><span class="va">$token</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span> <span class="op">&gt;</span> jupyter_connection.txt</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab <span class="at">--no-browser</span> <span class="at">--port</span><span class="op">=</span><span class="va">$port</span> <span class="at">--ip</span><span class="op">=</span>localhost <span class="at">--IdentityProvider.token</span><span class="op">=</span><span class="va">$token</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Submit the job with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jupyter.sh <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Replacing <code>&lt;environment name&gt;</code> with the name of the Mamba environment where Jupyter is installed.</p>
+</section>
+<section id="connecting-to-the-jupyter-server" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-to-the-jupyter-server">Connecting to the Jupyter Server</h3>
+<p>After the job starts, look in the <code>jupyter_connections.txt</code> file for connection details. In order to connect: 1. Start the CAM VPN using Pulse Secure if you are not connected to the UCHC Secure WiFi network. Note that you will need to use the <code>mantis-submit.cam.uchc.edu</code> host if you want to have a simultaneous terminal session on Mantis while connected to the CAM VPN. 2. Open a terminal on your local machine and run the command shown in the <code>jupyter_connections.txt</code> file to create an SSH tunnel. 3. Open a web browser and navigate to the URL provided in the <code>jupyter_connections.txt</code> file.</p>
 </section>
 </section>
 <section id="request-software-installation" class="level2">
