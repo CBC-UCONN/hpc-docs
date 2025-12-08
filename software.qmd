@@ -186,6 +186,62 @@ To see a list of installed packages in the current environment, run:
 mamba list
 ```
 
+## Jupyter
+Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
+
+### Installation
+We recommend installing Jupyter using Mamba [(see above)](#mamba). Once Mamba is installed, you can install Jupyter into a Mamba environment with: 
+```bash
+mamba activate <environment name>
+mamba install jupyter
+```
+
+### Launching a Jupyter Server
+To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter_job.sh`) with the following content:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name jupyter
+#SBATCH --qos general 
+#SBATCH --cpus-per-task 1
+#SBATCH --mem 8gb
+#SBATCH --time 0-6:00:00
+#SBATCH --output %x_%j.out
+
+conda_env=${1}
+
+port=$(shuf -i8000-9999 -n1)
+user=$(whoami)
+token=$(openssl rand -hex 16)
+
+source ~/.bashrc   
+mamba activate $conda_env
+
+echo -e "
+
+# Execute in local terminal to create SSH tunnel:
+ssh -N -L $port:localhost:$port $user@$(hostname -s).cam.uchc.edu
+
+# URL to enter into your browser:
+http://localhost:$port/?token=$token
+
+" > jupyter_connection.txt
+
+jupyter lab --no-browser --port=$port --ip=localhost --IdentityProvider.token=$token
+
+```
+
+Submit the job with:
+```bash
+sbatch jupyter_job.sh <environment name>
+```
+Replacing `<environment name>` with the name of the Mamba environment where Jupyter is installed.
+
+### Connecting to the Jupyter Server
+After the job starts, look in the `jupyter_connections.txt` file for connection details. In order to connect:
+1. Start the CAM VPN using Pulse Secure if you are not connected to the UCHC Secure WiFi network. Note that you will need to use the `mantis-submit.cam.uchc.edu` host if you want to have a simultaneous terminal session on Mantis while connected to the CAM VPN.
+2. Open a terminal on your local machine and run the command shown in the `jupyter_connections.txt` file to create an SSH tunnel.
+3. Open a web browser and navigate to the URL provided in the `jupyter_connections.txt` file.
 
 
 
