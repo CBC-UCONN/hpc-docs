@@ -490,7 +490,7 @@
     "href": "transfer.html",
     "title": "Tranferring Data",
     "section": "",
-    "text": "There are several recommended approaches for transferring data to and from the Mantis file system.\nEach are most suitable for different situations. We explain the usage of each tool below.",
+    "text": "There are several recommended approaches for transferring data to and from the Mantis file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
     "crumbs": [
       "Transferring Data"
     ]
