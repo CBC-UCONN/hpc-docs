@@ -11,11 +11,11 @@ To request a CAM account:
 Once your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.
 
 # Passwords
-Upon approval of an account request, you will need to enroll in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage) and reset your password.
+Upon approval of an account request, you will need to enroll in the [CAM Password Manager](https://password.cam.uchc.edu/) and reset your password.
 
 Passwords expire every 90 days.
 
-Any time you need to reset your password, you can do so in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+Any time you need to reset your password, you can do so in the [CAM Password Manager](https://password.cam.uchc.edu/).
 
 ::: {.callout-important}
 If you are ever not able to login or transfer files, ensure that you don't have an expired password.
