@@ -496,6 +496,69 @@
     ]
   },
   {
+    "objectID": "intro-slides.html#uconn-computational-biology-core",
+    "href": "intro-slides.html#uconn-computational-biology-core",
+    "title": "UCHC HPC",
+    "section": "UConn Computational Biology Core",
+    "text": "UConn Computational Biology Core\n\n \n\n\n\n\n\nJill Wegrzyn - Director\n\n\n\n\n\n\nNoah Reid - Acting Associate Director\n\n\n\n\n\n\nKerry Cobb - Computational Biologist\n\n\n\n\n\n\nAdam Rork - Bioninformatics Analyst\n\n\n\n\n\n\nKendra Maas - Facility Scientist"
+  },
+  {
+    "objectID": "intro-slides.html#what-we-do",
+    "href": "intro-slides.html#what-we-do",
+    "title": "UCHC HPC",
+    "section": "What We Do",
+    "text": "What We Do\n\nComputational analysis as a service\nComputational analysis consultation\nTechnical support\nTraining and workshops\nHigh-performance computing resources\nSoftware licenses"
+  },
+  {
+    "objectID": "intro-slides.html#computational-analysis",
+    "href": "intro-slides.html#computational-analysis",
+    "title": "UCHC HPC",
+    "section": "Computational Analysis",
+    "text": "Computational Analysis\n\n\n\nExtensive expierience with NGS data analysis:\n\nRNA-seq (bulk & single-cell)\nATAC-seq / ChIP-seq\nVariant Calling\nGenome Assembly\n\nmore!\n\n\nCost effective"
+  },
+  {
+    "objectID": "intro-slides.html#consulting",
+    "href": "intro-slides.html#consulting",
+    "title": "UCHC HPC",
+    "section": "Consulting",
+    "text": "Consulting\n\n\n\nNo cost for brief consultations\nHelp with experimental design\nAdvice on data analysis strategies\nGuidance on software and tools\nCome to us before you start your project!"
+  },
+  {
+    "objectID": "intro-slides.html#technical-support",
+    "href": "intro-slides.html#technical-support",
+    "title": "UCHC HPC",
+    "section": "Technical Support",
+    "text": "Technical Support\n\n\n\nHit a roadblock?\n\nDon’t waste hours\nQuick assistance available\n\nSlack - uconn-cbc.slack.com\nHelpdesk - https://bioinformatics.uconn.edu/bioinformatics-support/\n\n\nNeed help with software installation or usage?\nAssistance with data management and organization\nNo cost"
+  },
+  {
+    "objectID": "intro-slides.html#workshops",
+    "href": "intro-slides.html#workshops",
+    "title": "UCHC HPC",
+    "section": "Workshops",
+    "text": "Workshops\n\n\n\nMonthly workshops\n\n3 days, 4 hours/day\nHands-on intensive training\nZero experience necessary\nLeave prepared to analyze your data\n\n\n\n\n\nRecurring Topics\n\nBulk RNA-seq\nSingle-cell RNA-seq\nATAC/ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nSchedule & Registration"
+  },
+  {
+    "objectID": "intro-slides.html#high-performance-computing",
+    "href": "intro-slides.html#high-performance-computing",
+    "title": "UCHC HPC",
+    "section": "High-performance Computing",
+    "text": "High-performance Computing\n\nDocumentation: https://cbc-uconn.github.io/hpc-docs/\nSome administration of HPC in partnership with department of Cell Analysis & Modeling\nData management"
+  },
+  {
+    "objectID": "intro-slides.html#software-licenses",
+    "href": "intro-slides.html#software-licenses",
+    "title": "UCHC HPC",
+    "section": "Software Licenses",
+    "text": "Software Licenses\nAvailable to UConn & UCHC researchers at no cost:\n\nIngenuity Pathway Analysis\nGeneious"
+  },
+  {
+    "objectID": "intro-slides.html#useful-links",
+    "href": "intro-slides.html#useful-links",
+    "title": "UCHC HPC",
+    "section": "Useful Links",
+    "text": "Useful Links\n\nhttps://bioinformatics.uconn.edu/\nhttps://cbc-uconn.github.io/hpc-docs/"
+  },
+  {
     "objectID": "transfer.html",
     "href": "transfer.html",
     "title": "Tranferring Data",
