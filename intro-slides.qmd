@@ -1,16 +1,156 @@
 ---
-title: "Computational Biology Core"
 format: revealjs
 revealjs:
   theme: simple
----
-
-# UConn Computational Biology Core 
-
-https://bioinformatics.uconn.edu/
-
-
-https://cbc-uconn.github.io/hpc-docs/
-
 
 ---
+
+## UConn Computational Biology Core 
+
+```{=html}
+<style>
+figcaption, .caption {
+  /* font-size: 0.5em; */
+  font-size: 16px !important;
+  text-align: center !important;
+}
+</style>
+```
+
+<br>
+<br>
+
+::: columns
+::: {.column width="20%"}
+![Jill Wegrzyn - Director](img/intro-slides/jill.jpg){width=150px}
+:::
+
+::: {.column width="20%"}
+![Noah Reid - Acting Associate Director](img/intro-slides/noah.jpg){width=150px}
+:::
+
+::: {.column width="20%"}
+![Kerry Cobb - Computational Biologist](img/intro-slides/kerry.jpg){width=150px}
+:::
+
+::: {.column width="20%"}
+![Adam Rork - Bioninformatics Analyst](img/intro-slides/adam.jpg){width=150px}
+:::
+
+::: {.column width="20%"}
+![Kendra Maas - Facility Scientist](img/intro-slides/kendra.jpg){width=150px}
+:::
+:::
+
+
+## What We Do
+1. Computational analysis as a service
+2. Computational analysis consultation
+3. Technical support
+4. Training and workshops
+5. High-performance computing resources
+6. Software licenses
+
+
+## Computational Analysis
+::: columns
+::: {.column width="75%"}
+- Extensive expierience with NGS data analysis:
+  - RNA-seq (bulk & single-cell)
+  - ATAC-seq / ChIP-seq
+  - Variant Calling
+  - Genome Assembly
+  - + more!
+- Cost effective
+:::
+
+::: {.column width="25%"}
+![](img/intro-slides/bioinformatics.jpg){width=300px}
+:::
+:::
+
+
+## Consulting 
+::: columns
+::: {.column width="80%"}
+- No cost for brief consultations
+- Help with experimental design
+- Advice on data analysis strategies
+- Guidance on software and tools
+- Come to us before you start your project!
+:::
+::: {.column width="20%"}
+![](img/intro-slides/consulting.png){width=350px}
+:::
+:::
+
+## Technical Support {.smaller}
+::: columns
+::: {.column width="70%"}
+- Hit a roadblock?
+  - Don't waste hours
+  - Quick assistance available
+    - Slack - [uconn-cbc.slack.com](uconn-cbc.slack.com)
+    - Helpdesk - [https://bioinformatics.uconn.edu/bioinformatics-support/](https://bioinformatics.uconn.edu/bioinformatics-support/)
+- Need help with software installation or usage?
+- Assistance with data management and organization
+- No cost
+:::
+::: {.column width="30%"}
+![](img/intro-slides/tech-support.png){width=350px}
+:::
+:::
+
+## Workshops {.smaller}
+::: columns
+::: {.column width="50%"}
+- Monthly workshops
+  - 3 days, 4 hours/day
+  - Hands-on intensive training
+  - Zero experience necessary
+  - Leave prepared to analyze your data 
+
+![](img/intro-slides/workshop.jpg){width=300px}
+:::
+::: {.column width="50%"}
+- Recurring Topics
+  - Bulk RNA-seq
+  - Single-cell RNA-seq
+  - ATAC/ChIP-seq
+  - Variant Calling
+  - Genome Assembly
+  - \+ more!
+- [Schedule & Registration](https://cbc-uconn.github.io/workshops/)
+:::
+:::
+
+## High-performance Computing
+- Documentation: [https://cbc-uconn.github.io/hpc-docs/](https://cbc-uconn.github.io/hpc-docs/)
+- Some administration of HPC in partnership with department of Cell Analysis & Modeling
+- Data management
+
+![](img/intro-slides/hpc.jpg){width=200px}
+
+
+## Software Licenses
+Available to UConn & UCHC researchers at no cost:
+
+- Ingenuity Pathway Analysis
+- Geneious
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+![](img/intro-slides/ipa.jpg)
+:::
+::: {.column width="50%"}
+![](img/intro-slides/geneious.svg){width=500px}
+:::
+:::
+
+
+## Useful Links
+- [https://bioinformatics.uconn.edu/](https://bioinformatics.uconn.edu/)
+- [https://cbc-uconn.github.io/hpc-docs/](https://cbc-uconn.github.io/hpc-docs/)
+
