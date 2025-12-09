@@ -1,0 +1,16 @@
+---
+title: "Computational Biology Core"
+format: revealjs
+revealjs:
+  theme: simple
+---
+
+# UConn Computational Biology Core 
+
+https://bioinformatics.uconn.edu/
+
+
+https://cbc-uconn.github.io/hpc-docs/
+
+
+---
