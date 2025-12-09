@@ -34,7 +34,7 @@ figcaption, .caption {
 :::
 
 ::: {.column width="20%"}
-![Adam Rork - Bioninformatics Analyst](img/intro-slides/adam.jpg){width=150px}
+![Adam Rork - Bioinformatics Analyst](img/intro-slides/adam.jpg){width=150px}
 :::
 
 ::: {.column width="20%"}
