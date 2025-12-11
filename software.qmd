@@ -197,7 +197,7 @@ mamba install jupyter
 ```
 
 ### Launching a Jupyter Server
-To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter.sh`) with the following content which can be copied and pasted with no modification necessary:
+To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter.sh`) with the following content which can be copied and pasted with no modification necessary unless you want to change resource requests by modifying the `#SBATCH` directives.:
 
 ```bash
 #!/bin/bash
@@ -244,6 +244,9 @@ After the job starts, look in the `jupyter_connections.txt` file for connection 
 2. Open a terminal on your local machine and run the command shown in the `jupyter_connections.txt` file to create an SSH tunnel.
 3. Open a web browser and navigate to the URL provided in the `jupyter_connections.txt` file.
 
+::: {.callout-warning}
+Please remember to properly close your Jupyter server and terminate the SLURM job when you are finished to free up resources on the cluster. Intentionally running Jupyter servers for extended periods when they are not being utilized is not acceptable and users will recieve warnings for doing so.
+:::
 
 
 ## Request Software Installation
