@@ -204,9 +204,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
   <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
-  <li><a href="#mamba" id="toc-mamba" class="nav-link" data-scroll-target="#mamba">Mamba</a>
+  <li><a href="#condamamba" id="toc-condamamba" class="nav-link" data-scroll-target="#condamamba">Conda/Mamba</a>
   <ul class="collapse">
-  <li><a href="#installing-mamba" id="toc-installing-mamba" class="nav-link" data-scroll-target="#installing-mamba">Installing Mamba</a></li>
+  <li><a href="#installing-conda-and-mamba" id="toc-installing-conda-and-mamba" class="nav-link" data-scroll-target="#installing-conda-and-mamba">Installing Conda and Mamba</a></li>
   <li><a href="#using-mamba" id="toc-using-mamba" class="nav-link" data-scroll-target="#using-mamba">Using Mamba</a></li>
   </ul></li>
   <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
@@ -323,9 +323,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See <a href="https://singularity-tutorial.github.io/">here</a> for a more in-depth tutorial.</p>
 </section>
-<section id="mamba" class="level2">
-<h2 class="anchored" data-anchor-id="mamba">Mamba</h2>
-<p>Mamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well.</p>
+<section id="condamamba" class="level2">
+<h2 class="anchored" data-anchor-id="condamamba">Conda/Mamba</h2>
+<p><code>conda</code> is a package and environment manager that allows users install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages. <code>mamba</code> is a drop-in replacement for <code>conda</code> that offers a faster resolution of dependencies during software installation.</p>
+<p>When users install software with conda/mamba the software and dependencies are downloaded from one or more repositories, known as <em>channels</em>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -339,18 +340,19 @@ Warning
 <p>Some <code>mamba</code> commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba command such as <code>mamba install</code>, <code>mamba update</code>, or <code>mamba create</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
 </div>
 </div>
-<section id="installing-mamba" class="level3">
-<h3 class="anchored" data-anchor-id="installing-mamba">Installing Mamba</h3>
-<p>We recommend installing Mamba using the Miniforge installer, which is a minimalist installation of Mamba. Below are the steps to install Miniforge and set up Mamba on the Mantis cluster.</p>
+<section id="installing-conda-and-mamba" class="level3">
+<h3 class="anchored" data-anchor-id="installing-conda-and-mamba">Installing Conda and Mamba</h3>
+<p>Conda is distributed in many ways (e.g.&nbsp;anaconda, miniconda), but we ask our users to install the <a href="https://github.com/conda-forge/miniforge"><code>Miniforge</code></a> distribution which includes both conda and mamba.</p>
+<p>Miniforge is a minimalist installation that includes both conda and mamba. Importantly, Miniforge only uses the <code>conda-forge</code> channel by default. <code>conda-forge</code> is free and community-maintained. Other distributions are configured to use the <code>defaults</code> channel. While <code>defaults</code> is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.</p>
 <section id="start-interactive-session" class="level4">
 <h4 class="anchored" data-anchor-id="start-interactive-session">Start interactive session</h4>
-<p>Do this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.</p>
+<p>To get the Miniforge conda/mamba distribution first start an interactive session.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--qos</span><span class="op">=</span>general <span class="at">--mem</span><span class="op">=</span>8gb <span class="at">--pty</span> bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="download-miniforge-installer" class="level4">
 <h4 class="anchored" data-anchor-id="download-miniforge-installer">Download miniforge installer</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> Miniforge3.sh <span class="st">"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span><span class="st">-</span><span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span><span class="st">.sh"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>There is not need to substitue anything in the URL. The command as given will download the installation script.</p>
+<p>There is no need to substitute anything in the URL. The command as given will download the installation script.</p>
 </section>
 <section id="run-the-miniforge-installation-script" class="level4">
 <h4 class="anchored" data-anchor-id="run-the-miniforge-installation-script">Run the Miniforge Installation Script</h4>
@@ -382,11 +384,24 @@ Note
 </section>
 <section id="using-mamba" class="level3">
 <h3 class="anchored" data-anchor-id="using-mamba">Using Mamba</h3>
-<p>It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base envrionment. Below are the basic commands for creating environments, activating them, and installing packages.</p>
+<p>It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>conda</code> and <code>mamba</code> commands are interchangeable. If the installation guide for a piece of software says to use the command <code>conda install awesomeSoftware</code>, you can run <code>mamba install awesomeSoftware</code> or the conda command. The mamba command is likely to be faster.</p>
+</div>
+</div>
 <section id="creating-an-environment" class="level4">
 <h4 class="anchored" data-anchor-id="creating-an-environment">Creating an Environment</h4>
-<p>Once installed, you can create environments with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> <span class="op">&lt;</span>environemnt name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Once Miniforge is installed, you can create environments with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> <span class="op">&lt;</span>environment name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Replace <code>&lt;environment name&gt;</code> with the desired name for your environment.</p>
 <p>Confirm changes when prompted.</p>
 </section>
@@ -410,6 +425,19 @@ Note
 <p><code>conda-forge</code> is another commonly used channel.</p>
 <p>To see a list of installed packages in the current environment, run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please avoid using the <code>defaults</code> channel, or any channel that is not free. <code>conda-forge</code> and <code>bioconda</code> are free, community maintained channels that should fit the needs of most users.</p>
+</div>
+</div>
 </section>
 </section>
 </section>
