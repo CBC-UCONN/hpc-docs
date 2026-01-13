@@ -86,19 +86,23 @@ singularity shell fastqc:0.12.1--hdfd78af_0
 See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial. 
 
 
-## Mamba
-Mamba is a fast, drop-in replacement for Conda, a popular package and environment management system that allows users to install, run, and update software packages in isolated environments. It is particularly popular for Python users but can be used for R packages and to install tools written in other languages as well. 
+## Conda/Mamba
+`conda` is a package and environment manager that allows users install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages. `mamba` is a drop-in replacement for `conda` that offers a faster resolution of dependencies during software installation. 
+
+When users install software with conda/mamba the software and dependencies are downloaded from one or more repositories, known as *channels*. 
 
 ::: {.callout-warning}
 Some `mamba` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba command such as `mamba install`, `mamba update`, or `mamba create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
 :::
 
-### Installing Mamba
-We recommend installing Mamba using the Miniforge installer, which is a minimalist installation of Mamba. Below are the steps to install Miniforge and set up Mamba on the Mantis cluster.
+### Installing Conda and Mamba
+Conda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the [`Miniforge`](https://github.com/conda-forge/miniforge) distribution which includes both conda and mamba.
+
+Miniforge is a minimalist installation that includes both conda and mamba. Importantly, Miniforge only uses the `conda-forge` channel by default. `conda-forge` is free and community-maintained. Other distributions are configured to use the `defaults` channel. While `defaults` is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use. 
 
 #### Start interactive session
 
-Do this anytime you want to create a Mamba environment or install packages. These tasks are resource-intensive and should not be done on the login node.
+To get the Miniforge conda/mamba distribution first start an interactive session. 
 
 ```bash
 srun --qos=general --mem=8gb --pty bash
@@ -108,7 +112,7 @@ srun --qos=general --mem=8gb --pty bash
 ```bash
 wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 ```
-There is not need to substitue anything in the URL. The command as given will download the installation script.
+There is no need to substitute anything in the URL. The command as given will download the installation script.
 
 #### Run the Miniforge Installation Script
 ```bash
@@ -133,18 +137,21 @@ source ~/.bashrc
 
 
 ### Using Mamba
-It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base envrionment. Below are the basic commands for creating environments, activating them, and installing packages.
+It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages. 
+
+:::{.callout-note}
+`conda` and `mamba` commands are interchangeable. If the installation guide for a piece of software says to use the command `conda install awesomeSoftware`, you can run `mamba install awesomeSoftware` or the conda command. The mamba command is likely to be faster. 
+:::
 
 #### Creating an Environment
-Once installed, you can create environments with:
+Once Miniforge is installed, you can create environments with:
 
 ```bash
-mamba create -n <environemnt name> 
+mamba create -n <environment name> 
 ```
 Replace `<environment name>` with the desired name for your environment.
 
 Confirm changes when prompted.
-
 
 #### Activating & Deactivating an Environment
 Once you have created an environment, you can activate it with:
@@ -185,6 +192,9 @@ To see a list of installed packages in the current environment, run:
 ```bash
 mamba list
 ```
+:::{.callout-warning}
+Please avoid using the `defaults` channel, or any channel that is not free. `conda-forge` and `bioconda` are free, community maintained channels that should fit the needs of most users. 
+:::
 
 ## Jupyter
 Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
