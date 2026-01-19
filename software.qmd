@@ -86,23 +86,23 @@ singularity shell fastqc:0.12.1--hdfd78af_0
 See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial. 
 
 
-## Conda/Mamba
-`conda` is a package and environment manager that allows users install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages. `mamba` is a drop-in replacement for `conda` that offers a faster resolution of dependencies during software installation. 
+## Conda
+Conda is a package and environment manager that allows users to install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages.
 
-When users install software with conda/mamba the software and dependencies are downloaded from one or more repositories, known as *channels*. 
+When users install software with conda the software and dependencies are downloaded from one or more repositories, known as *channels*. 
 
 ::: {.callout-warning}
-Some `mamba` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba command such as `mamba install`, `mamba update`, or `mamba create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
+Some `conda` commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running conda command such as `conda install`, `conda update`, or `conda create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
 :::
 
-### Installing Conda and Mamba
-Conda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the [`Miniforge`](https://github.com/conda-forge/miniforge) distribution which includes both conda and mamba.
+### Installing Conda
+Conda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the [`Miniforge`](https://github.com/conda-forge/miniforge) distribution.
 
-Miniforge is a minimalist installation that includes both conda and mamba. Importantly, Miniforge only uses the `conda-forge` channel by default. `conda-forge` is free and community-maintained. Other distributions are configured to use the `defaults` channel. While `defaults` is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use. 
+Miniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the `conda-forge` channel by default. `conda-forge` is free and community-maintained. Other distributions are configured to use the `defaults` channel. While `defaults` is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use. 
 
 #### Start interactive session
 
-To get the Miniforge conda/mamba distribution first start an interactive session. 
+To get the Miniforge conda distribution first start an interactive session. 
 
 ```bash
 srun --qos=general --mem=8gb --pty bash
@@ -121,33 +121,29 @@ bash Miniforge3.sh
 
 1. Agree to license terms (yes)
 2. Choose installation path (default is fine)
-3. **Important**: Choose whether to initialize mamba (select "yes")
+3. **Important**: Choose whether to initialize conda (select "yes")
 
 
-#### Load Mamba into your shell
-Next load Mamba into your shell. This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:
+#### Activate Conda
+This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:
 
 ```bash
 source ~/.bashrc
 ```
 
 :::{.callout-note}
-~/.bashrc is only sourced within interactive sessions. If you want to use Mamba in non-interactive sessions (e.g. batch jobs), you will need to add the above `source` command to your batch job scripts.
+~/.bashrc is only sourced within interactive sessions. If you want to use Conda in non-interactive sessions (e.g. batch jobs), you will need to add the above `source` command to your batch job scripts.
 :::
 
 
-### Using Mamba
+### Using Conda
 It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages. 
-
-:::{.callout-note}
-`conda` and `mamba` commands are interchangeable. If the installation guide for a piece of software says to use the command `conda install awesomeSoftware`, you can run `mamba install awesomeSoftware` or the conda command. The mamba command is likely to be faster. 
-:::
 
 #### Creating an Environment
 Once Miniforge is installed, you can create environments with:
 
 ```bash
-mamba create -n <environment name> 
+conda create -n <environment name> 
 ```
 Replace `<environment name>` with the desired name for your environment.
 
@@ -157,7 +153,7 @@ Confirm changes when prompted.
 Once you have created an environment, you can activate it with:
 
 ```bash
-mamba activate <environment name>
+conda activate <environment name>
 ```
 Replace `<environment name>` with the name of the environment you want to activate.
 
@@ -165,32 +161,31 @@ Once activated you can install or use packages within that environment.
 
 To see a list of all your environments, run:
 ```bash
-mamba env list
+conda env list
 ```
 
 To deactivate the current environment and return to the base environment, run:
 ```bash
-mamba deactivate
+conda deactivate
 ```
 
 #### Installing Packages
-In order to install packages into a Mamba environment, you first need to activate the environment (see above).
+In order to install packages into a Conda environment, you first need to activate the environment (see above).
 Once activated, packages can be installed with: 
 
 ```bash
-mamba install <package name>
+conda install <package name>
 ```
 
 Some packages may require specifying a channel with the `-c <channel name>` argument. For example, to install a package from the `bioconda` channel, you would run:
 ```bash
-mamba install -c bioconda <package name>
+conda install -c bioconda <package name>
 ```
 
-`conda-forge` is another commonly used channel.
 
 To see a list of installed packages in the current environment, run:
 ```bash
-mamba list
+conda list
 ```
 :::{.callout-warning}
 Please avoid using the `defaults` channel, or any channel that is not free. `conda-forge` and `bioconda` are free, community maintained channels that should fit the needs of most users. 
@@ -200,10 +195,10 @@ Please avoid using the `defaults` channel, or any channel that is not free. `con
 Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
 
 ### Installation
-We recommend installing Jupyter using Mamba [(see above)](#mamba). Once Mamba is installed, you can install Jupyter into a Mamba environment with: 
+We recommend installing Jupyter using Conda [(see above)](#conda). Once Conda is installed, you can install Jupyter into a Conda environment with: 
 ```bash
-mamba activate <environment name>
-mamba install jupyter
+conda activate <environment name>
+conda install jupyter
 ```
 
 ### Launching a Jupyter Server
@@ -225,7 +220,7 @@ user=$(whoami)
 token=$(openssl rand -hex 16)
 
 source ~/.bashrc   
-mamba activate $conda_env
+conda activate $conda_env
 
 echo -e "
 
@@ -245,7 +240,7 @@ Submit the job with:
 ```bash
 sbatch jupyter.sh <environment name>
 ```
-Replacing `<environment name>` with the name of the Mamba environment where Jupyter is installed.
+Replacing `<environment name>` with the name of the Conda environment where Jupyter is installed.
 
 ### Connecting to the Jupyter Server
 After the job starts, look in the `jupyter_connections.txt` file for connection details. In order to connect:
