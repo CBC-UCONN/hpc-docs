@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fb7c9abc17d36d8f171624f5bcedd762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -204,10 +204,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
   <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
-  <li><a href="#condamamba" id="toc-condamamba" class="nav-link" data-scroll-target="#condamamba">Conda/Mamba</a>
+  <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a>
   <ul class="collapse">
-  <li><a href="#installing-conda-and-mamba" id="toc-installing-conda-and-mamba" class="nav-link" data-scroll-target="#installing-conda-and-mamba">Installing Conda and Mamba</a></li>
-  <li><a href="#using-mamba" id="toc-using-mamba" class="nav-link" data-scroll-target="#using-mamba">Using Mamba</a></li>
+  <li><a href="#installing-conda" id="toc-installing-conda" class="nav-link" data-scroll-target="#installing-conda">Installing Conda</a></li>
+  <li><a href="#using-conda" id="toc-using-conda" class="nav-link" data-scroll-target="#using-conda">Using Conda</a></li>
   </ul></li>
   <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
   <ul class="collapse">
@@ -323,10 +323,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See <a href="https://singularity-tutorial.github.io/">here</a> for a more in-depth tutorial.</p>
 </section>
-<section id="condamamba" class="level2">
-<h2 class="anchored" data-anchor-id="condamamba">Conda/Mamba</h2>
-<p><code>conda</code> is a package and environment manager that allows users install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages. <code>mamba</code> is a drop-in replacement for <code>conda</code> that offers a faster resolution of dependencies during software installation.</p>
-<p>When users install software with conda/mamba the software and dependencies are downloaded from one or more repositories, known as <em>channels</em>.</p>
+<section id="conda" class="level2">
+<h2 class="anchored" data-anchor-id="conda">Conda</h2>
+<p>Conda is a package and environment manager that allows users to install and run software in isolated environments. Is is particularly useful for software with complicated dependencies that may span multiple languages.</p>
+<p>When users install software with conda the software and dependencies are downloaded from one or more repositories, known as <em>channels</em>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -337,16 +337,16 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Some <code>mamba</code> commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running mamba command such as <code>mamba install</code>, <code>mamba update</code>, or <code>mamba create</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
+<p>Some <code>conda</code> commands utilize a lot of CPU which can negatively impact other users on these nodes. Please refrain from running conda command such as <code>conda install</code>, <code>conda update</code>, or <code>conda create</code> on login nodes. Instead, use an <a href="./running.html#interactive-job">interactive session</a> or a <a href="./running.html#batch-job-submission">batch job</a> to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.</p>
 </div>
 </div>
-<section id="installing-conda-and-mamba" class="level3">
-<h3 class="anchored" data-anchor-id="installing-conda-and-mamba">Installing Conda and Mamba</h3>
-<p>Conda is distributed in many ways (e.g.&nbsp;anaconda, miniconda), but we ask our users to install the <a href="https://github.com/conda-forge/miniforge"><code>Miniforge</code></a> distribution which includes both conda and mamba.</p>
-<p>Miniforge is a minimalist installation that includes both conda and mamba. Importantly, Miniforge only uses the <code>conda-forge</code> channel by default. <code>conda-forge</code> is free and community-maintained. Other distributions are configured to use the <code>defaults</code> channel. While <code>defaults</code> is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.</p>
+<section id="installing-conda" class="level3">
+<h3 class="anchored" data-anchor-id="installing-conda">Installing Conda</h3>
+<p>Conda is distributed in many ways (e.g.&nbsp;anaconda, miniconda), but we ask our users to install the <a href="https://github.com/conda-forge/miniforge"><code>Miniforge</code></a> distribution.</p>
+<p>Miniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the <code>conda-forge</code> channel by default. <code>conda-forge</code> is free and community-maintained. Other distributions are configured to use the <code>defaults</code> channel. While <code>defaults</code> is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.</p>
 <section id="start-interactive-session" class="level4">
 <h4 class="anchored" data-anchor-id="start-interactive-session">Start interactive session</h4>
-<p>To get the Miniforge conda/mamba distribution first start an interactive session.</p>
+<p>To get the Miniforge conda distribution first start an interactive session.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--qos</span><span class="op">=</span>general <span class="at">--mem</span><span class="op">=</span>8gb <span class="at">--pty</span> bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="download-miniforge-installer" class="level4">
@@ -360,12 +360,12 @@ Warning
 <ol type="1">
 <li>Agree to license terms (yes)</li>
 <li>Choose installation path (default is fine)</li>
-<li><strong>Important</strong>: Choose whether to initialize mamba (select “yes”)</li>
+<li><strong>Important</strong>: Choose whether to initialize conda (select “yes”)</li>
 </ol>
 </section>
-<section id="load-mamba-into-your-shell" class="level4">
-<h4 class="anchored" data-anchor-id="load-mamba-into-your-shell">Load Mamba into your shell</h4>
-<p>Next load Mamba into your shell. This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:</p>
+<section id="activate-conda" class="level4">
+<h4 class="anchored" data-anchor-id="activate-conda">Activate Conda</h4>
+<p>This will happen automatically when you start a new interactive shell session, but to load it into your current session, run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -377,54 +377,40 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>~/.bashrc is only sourced within interactive sessions. If you want to use Mamba in non-interactive sessions (e.g.&nbsp;batch jobs), you will need to add the above <code>source</code> command to your batch job scripts.</p>
+<p>~/.bashrc is only sourced within interactive sessions. If you want to use Conda in non-interactive sessions (e.g.&nbsp;batch jobs), you will need to add the above <code>source</code> command to your batch job scripts.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="using-mamba" class="level3">
-<h3 class="anchored" data-anchor-id="using-mamba">Using Mamba</h3>
+<section id="using-conda" class="level3">
+<h3 class="anchored" data-anchor-id="using-conda">Using Conda</h3>
 <p>It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>conda</code> and <code>mamba</code> commands are interchangeable. If the installation guide for a piece of software says to use the command <code>conda install awesomeSoftware</code>, you can run <code>mamba install awesomeSoftware</code> or the conda command. The mamba command is likely to be faster.</p>
-</div>
-</div>
 <section id="creating-an-environment" class="level4">
 <h4 class="anchored" data-anchor-id="creating-an-environment">Creating an Environment</h4>
 <p>Once Miniforge is installed, you can create environments with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> <span class="op">&lt;</span>environment name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="op">&lt;</span>environment name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Replace <code>&lt;environment name&gt;</code> with the desired name for your environment.</p>
 <p>Confirm changes when prompted.</p>
 </section>
 <section id="activating-deactivating-an-environment" class="level4">
 <h4 class="anchored" data-anchor-id="activating-deactivating-an-environment">Activating &amp; Deactivating an Environment</h4>
 <p>Once you have created an environment, you can activate it with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Replace <code>&lt;environment name&gt;</code> with the name of the environment you want to activate.</p>
 <p>Once activated you can install or use packages within that environment.</p>
 <p>To see a list of all your environments, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> env list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To deactivate the current environment and return to the base environment, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="installing-packages" class="level4">
 <h4 class="anchored" data-anchor-id="installing-packages">Installing Packages</h4>
-<p>In order to install packages into a Mamba environment, you first need to activate the environment (see above). Once activated, packages can be installed with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In order to install packages into a Conda environment, you first need to activate the environment (see above). Once activated, packages can be installed with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Some packages may require specifying a channel with the <code>-c &lt;channel name&gt;</code> argument. For example, to install a package from the <code>bioconda</code> channel, you would run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>conda-forge</code> is another commonly used channel.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda <span class="op">&lt;</span>package name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To see a list of installed packages in the current environment, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -446,9 +432,9 @@ Warning
 <p>Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.</p>
 <section id="installation" class="level3">
 <h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p>We recommend installing Jupyter using Mamba <a href="#mamba">(see above)</a>. Once Mamba is installed, you can install Jupyter into a Mamba environment with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We recommend installing Jupyter using Conda <a href="#conda">(see above)</a>. Once Conda is installed, you can install Jupyter into a Conda environment with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="launching-a-jupyter-server" class="level3">
 <h3 class="anchored" data-anchor-id="launching-a-jupyter-server">Launching a Jupyter Server</h3>
@@ -468,7 +454,7 @@ Warning
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="va">token</span><span class="op">=</span><span class="va">$(</span><span class="ex">openssl</span> rand <span class="at">-hex</span> 16<span class="va">)</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc   </span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate <span class="va">$conda_env</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="va">$conda_env</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -483,7 +469,7 @@ Warning
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab <span class="at">--no-browser</span> <span class="at">--port</span><span class="op">=</span><span class="va">$port</span> <span class="at">--ip</span><span class="op">=</span>localhost <span class="at">--IdentityProvider.token</span><span class="op">=</span><span class="va">$token</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Submit the job with:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jupyter.sh <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Replacing <code>&lt;environment name&gt;</code> with the name of the Mamba environment where Jupyter is installed.</p>
+<p>Replacing <code>&lt;environment name&gt;</code> with the name of the Conda environment where Jupyter is installed.</p>
 </section>
 <section id="connecting-to-the-jupyter-server" class="level3">
 <h3 class="anchored" data-anchor-id="connecting-to-the-jupyter-server">Connecting to the Jupyter Server</h3>
