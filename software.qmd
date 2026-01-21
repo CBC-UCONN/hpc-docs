@@ -132,8 +132,16 @@ source ~/.bashrc
 ```
 
 :::{.callout-note}
-~/.bashrc is only sourced within interactive sessions. If you want to use Conda in non-interactive sessions (e.g. batch jobs), you will need to add the above `source` command to your batch job scripts.
+~/.bashrc is only sourced within interactive sessions such as when you are logged in to a login node or have an interactive job running. If you want to use Conda in non-interactive sessions (e.g. batch jobs), you will need to take an extra step. One option is to simply add `source ~/.bashrc` to your batch job scripts which will recreate your typical environment on a compute node. Another option is to explicitly source the conda setup script in your batch job scripts with: `source ~/miniforge3/etc/profile.d/conda.sh` (assuming you installed Miniforge to the default location of `~/miniforge3`) or `source <miniforge path>/etc/profile.d/conda.sh`, sustituting `<miniforge path` with the appropriat path if you did not install to the default location. This can be desirable if you want more control over what is loaded in your batch job environment.
 :::
+
+
+#### Base Envirionment 
+By default, conda creates a "base" environment when it is installed. This environment contains the core conda packages and tools. It is generally recommended to avoid installing additional packages into the base environment to keep it clean and stable. You can prevent the base environment from being activated automatically when you start a new shell session by running the following command:
+```bash
+conda config --set auto_activate false
+``` 
+This only needs to be run one time. After running this command, the base environment will not be activated automatically in new shell sessions.
 
 
 ### Using Conda
@@ -190,6 +198,9 @@ conda list
 :::{.callout-warning}
 Please avoid using the `defaults` channel, or any channel that is not free. `conda-forge` and `bioconda` are free, community maintained channels that should fit the needs of most users. 
 :::
+
+#### Mamba
+The `mamba` command, a faster drop in replacement for `conda`, will also by installed with Miniforge. We encourage the use of `mamba` in place of any `conda` commands. No changes to the syntax are necessary, simply replace `conda` with `mamba`.
 
 ## Jupyter
 Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
