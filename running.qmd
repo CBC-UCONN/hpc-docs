@@ -110,7 +110,7 @@ An interactive session can be started on a compute node using the `srun` command
 
 At a minimum, you would use these arguments:
 
-`srun --partition=general --qos=general --pty=bash`
+`srun --qos=general --pty bash`
 
 Most `sbatch` arguments can also be used with `srun`. For `--mem` or `--cpus-per-task` if you needed to request additional resources. 
 
