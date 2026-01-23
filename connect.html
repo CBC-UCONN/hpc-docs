@@ -315,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-mantis">Copy to Mantis</a> section. If you do not see these files, you will need to create a new SSH key pair.</p>
+<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-mantis">Copy to Mantis</a> section. If you do not see these files or get an error message, you will need to create a new SSH key pair.</p>
 <ol start="2" type="1">
 <li>To create a key pair run the following command:</li>
 </ol>
@@ -382,6 +382,12 @@ Warning
 <p>When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
 </div>
 </div>
+</section>
+</section>
+<section id="cam-vpn" class="level1">
+<h1>CAM VPN</h1>
+<!--TODO: Move the documentation for vnp here eventually? -->
+<p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -395,12 +401,6 @@ Note
 <p><code>login.hpc.cam.uchc.edu</code> cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="cam-vpn" class="level1">
-<h1>CAM VPN</h1>
-<!--TODO: Move the documentation for vnp here eventually? -->
-<p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -429,7 +429,7 @@ Note
 <h1>Internal Host</h1>
 <p>There is an additional host that can be used to connect to the Mantis cluster. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network. We don’t recommend using this host for regular use and it may be decommisioned in the future. There are specific use cases such as when you need to use the CAM VPN where the other host does not currently allow connections. For example if you need to establish an SSH tunnel to a compute node. This host can also be used if the other is down.</p>
 <p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
-<p>When connecting through this host, you will be redirected to one of several login nodes.</p>
+<p>When connecting through this host, you will be redirected to one of the several login nodes as when connecting through the recommended host.</p>
 
 
 </section>
