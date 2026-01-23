@@ -362,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Interactive Job</h1>
 <p>An interactive session can be started on a compute node using the <code>srun</code> command.</p>
 <p>At a minimum, you would use these arguments:</p>
-<p><code>srun --partition=general --qos=general --pty=bash</code></p>
+<p><code>srun --qos=general --pty bash</code></p>
 <p>Most <code>sbatch</code> arguments can also be used with <code>srun</code>. For <code>--mem</code> or <code>--cpus-per-task</code> if you needed to request additional resources.</p>
 </section>
 <section id="job-status-and-monitoring" class="level1">
