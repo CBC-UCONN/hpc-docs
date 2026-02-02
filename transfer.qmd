@@ -117,7 +117,7 @@ To connect to the Mantis file system using SMB, you will need to follow the inst
 
 ::: {.panel-tabset}
 ## Windows 11
-1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on the UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu.
 3. Select This PC from the left pane. Then, on the File Explorer ribbon, select More > Map network drive.
 
