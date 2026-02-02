@@ -131,7 +131,7 @@ To connect to the Mantis file system using SMB, you will need to follow the inst
 ![](img/map-network-drive-username.png){width=300}
 
 ## Windows 10
-1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on the UCHC secure WiFi network.
 2. Open File Explorer from the taskbar or the Start menu
 3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.  
 
@@ -145,7 +145,7 @@ To connect to the Mantis file system using SMB, you will need to follow the inst
 ![](img/map-network-drive-username.png){width=300}
 
 ## MacOs
-1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on a UConn or UCHC secure WiFi network.
+1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on the UCHC secure WiFi network.
 2. Open Finder and select `Go:Connect to Server` from the top menu.
 3. Enter the address of the SMB server URL and path you want to connect to.
 4. In order to automatically mount the SMB share, navigate to `System Settings` > `General` > `Login Items & Extensions`.
