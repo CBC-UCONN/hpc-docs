@@ -195,7 +195,7 @@ A GPU will not be allocated to a job unless it is explicitly requested. In order
 #SBATCH --partition=debug
 #SBATCH --qos=debug
 #SBATCH --output=%x-%j.out
-##SBATCH --gres=gpu:A100:1
+#SBATCH --gres=gpu:A100:1
 
 # Detect GPU
 nvidia-smi
