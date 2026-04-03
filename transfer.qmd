@@ -15,7 +15,7 @@ Each is most suitable for different situations. We explain the usage of each too
 # Secure Copy
 Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the `scp` command which is available in the `Windows PowerShell` or MacOS / Linux `Terminal`. 
 
-This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the `transfer.hpc.cam.uchc.edu` URL. Transferring data through this URL requires athat you have [setup SSH keys](connect.qmd#ssh-keys).
+This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the `transfer.hpc.cam.uchc.edu` URL. Transferring data through this URL requires that you have [setup SSH keys](connect.qmd#ssh-keys) and that you be connected to the UConnHealth-SECURE WiFi or the CAM VPN.
 
 
 ### Transferring a File To Mantis
@@ -51,11 +51,6 @@ Secure copy also supports the use of wildcards such as `*` for the remote path a
 ```bash
 scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
 ```
-
-### Internal Transfer Host
-There is an additional host that can be used to transfer data without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don't recommend using this host for regular use and it may be decommisioned in the future.
-
-The URL for this host is `transfer.cam.uchc.edu`.
 
 
 # Globus
