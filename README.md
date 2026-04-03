@@ -14,3 +14,26 @@ TODO:
 - [ ] Mamba instructions
 - [ ] Jupyter Instructions
 - [ ] RStudio Instructions
+
+
+Notes:
+Xanadu
+  Internal Host
+    VPN if not on UCHC SECURE network
+    Password Auth or SSH Keys
+  External Host
+    SSH Keys
+    Two-factor
+
+Mantis 
+  Internal Host
+    VPN if not on UCHC SECURE network
+    Password Auth or SSH Keys
+  External Host
+    SSH Keys
+    Two-factor
+
+Virtual Machines
+  Internal Only
+    VPN if not on UCHC SECURE network
+    Password Auth or SSH Keys

@@ -9,13 +9,35 @@ website:
     style: "docked"
     logo: img/cbc.png
     search: true
+    collapse-level: 1
     contents:
+      - text: "About"
+        href: about.qmd
+      
+      - text: "Intro to HPC"
+        href: intro.qmd
+
+      - text: "Getting Started"
+        href: starting.qmd
 
       - text: "Account & Password"
         href: account.qmd
       
-      - text: "Connecting"
+      - section: "Connecting"
         href: connect.qmd
+        contents:
+        - text: "Overview"
+          href: connect.qmd
+        - text: "Web Access"
+          href: ondemand.qmd
+        - text: "Command Line"
+          href: cli.qmd
+        - text: "SSH Keys"
+          href: keys.qmd
+        - text: "VPN"
+          href: vpn.qmd
+        - text: "Two Factor"
+          href: twofactor.qmd
 
       - text: "File Systems & Storage"
         href: storage.qmd
@@ -31,29 +53,23 @@ website:
       
       - text: "Databases"
         href: databases.qmd
-
-      # - text: "Command Line Interface"
-      #   href: cli.qmd
       
-      # - text: "File Permissions"
-        # href: permissions.qmd
+      - text: "File Permissions"
+        href: permissions.qmd
 
-      # - text: "Best Practices"
-      #   href: bestpractices.qmd
-
-      # - text: "Miscellaneous"
-      #   href: misc.qmd
-      
-      # - text: "Quick Reference"
-      #   href: quick.qmd
+      - text: "Best Practices"
+        href: bestpractices.qmd
 
       - text: "Get Help"
         href: help.qmd
 
+      - text: "Miscellaneous"
+        href: misc.qmd
+
 format:
   html:
     theme: 
-      light: flatly
+      light: [flatly, src/custom.scss]
     toc: true
     # include-in-header:
       # - text: <script src="src/toggle.js"></script>

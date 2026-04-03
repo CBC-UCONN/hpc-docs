@@ -11,10 +11,13 @@ Users often need to share files with others, or work collaboratively in a direct
   - conda
   - file compression
   - large compilations
+-->
 
-Test before scaling
+<!-- Do not upload or process private health information on Mantis-->
 
-Warning about LLMs. Mainly, don't blindly run output from them. -->
+<!-- Test before scaling -->
+
+<!-- Warning about LLMs. Mainly, don't blindly run output from them. -->
 
 <!-- How to ask for help and what to include in your help request -->
 

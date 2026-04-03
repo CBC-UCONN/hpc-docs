@@ -3,7 +3,7 @@ title: Software
 ---
 
 ## Environment Modules
-Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).  
+Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).  
 
 Below is a list of commonly used commands, where `<module>` is the target module. 
 
@@ -15,8 +15,25 @@ Below is a list of commonly used commands, where `<module>` is the target module
 | `module unload <module>` | Unloads a specific module. |
 | `module purge`           | Unloads all loaded modules. |
 
-The Mantis cluster uses the [Lmod](https://lmod.readthedocs.io) implementation of environment modules. 
+### Important Caveat
+Some of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.
 
+#### Modules on Mantis
+When `module avail` is run on Mantis, you will see three different sections:
+
+Two which contain software compiled to run on Mantis:
+
+- `/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3`
+- `/isg/shared/mantis/modulefiles`
+
+And one that contains software which may or may not run on Mantis:
+
+- `/isg/shared/modulefiles`
+
+See [Request Software Installation](#request-software-installation) to request a new installation of incompatible software.
+
+#### Modules on Xanadu
+All of the modules available on Xanadu are for software compiled to run on Xanadu.
 
 
 <!-- # Spack -->
@@ -60,9 +77,10 @@ And it should create an executable binary. Some software is slightly more compli
 Some software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with [Singularity](#singularity) or use isolated environments created with [Conda](#conda)
 
 ## Singularity
+<!-- TODO: Replace this section with Apptainer -->
 Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis). 
 
-Singularity is in your `PATH` by default so it can be run without loading a module. 
+Singularity is in your `PATH` by default on Mantis so it can be run without loading a module.  
 
 To get an existing container from a repository, you use the command `singularity pull <URL>`. For example:
 

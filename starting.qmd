@@ -1,0 +1,23 @@
+---
+title: "Getting Started"
+---
+
+The steps for getting started with using the UConn Health High Performance Computing Facility:
+
+### 1) Request an account
+
+### 2) Reset you password
+
+### 3) Read Intro to HPC 
+
+### 4) Connect
+  - Can connect through Open OnDemand or through a terminal using SSH.
+  - For terminal access, you will need to setup SSH keys and connect through the login host. See the [Terminal](terminal.qmd) page for details on how to connect through a terminal.
+
+### 5) Understanding the file system and storage options.
+
+### 6) Learn how to use software.
+
+### 7) Learn how to submit jobs.
+
+### 8) Read about best practices.

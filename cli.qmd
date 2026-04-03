@@ -1,0 +1,138 @@
+---
+title: "Connecting through the Command Line Interface"
+---
+
+For more advanced usage and greater control, users can connect to UCHC HPC resources using a Command Line Interface (CLI). The requirements and process for connecting through the CLI vary depending on the cluster or server, specific host URL used to connect, and the internet network that you are connected to.
+
+
+# SSH (Secure Shell)
+Any connection made through the command line interface must be made through SSH (Secure Shell) using an SSH client. SSH is a secure protocol that allows users to connect to a remote server and execute commands on that server.
+
+## SSH Client
+An SSH client is a software tool that allows you to connect to a remote server using the SSH protocol.
+
+#### MacOS & Linux
+MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
+
+#### Windows
+Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
+
+
+## Hosts
+
+
+## Connecting to host
+
+1) Setup up SSH if necessary
+2) Enroll in two factor if necessry
+3) Activate VPN if necessary
+
+ssh <user>@<host url>
+
+### Examples
+
+#### Mantis External
+
+#### Mantis Internal
+
+#### Xanadu External
+
+#### Xanadu Internal
+
+# SSH Tunnelling
+
+# X11 Forwarding
+
+
+<!-- # SSH Tunnelling -->
+<!-- TODO: Explain why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->
+
+
+<!-- # X11 Forwarding -->
+<!-- TODO: Why you might need this and how to do it. -->
+<!-- TODO: How will this change once all traffic must go through external host? -->
+
+
+
+<!-- ## Quick Reference
+Login hosts are listed below. If you need more details, skip to the next section. 
+
+We have two login hosts:
+
+- `login.hpc.cam.uchc.edu`
+  - The recommended host.
+  - Accessible externally (doesn't require VPN or UCHC secure WiFI). 
+  - This host is not accessible through the CAM VPN.
+- `mantis-submit.cam.uchc.edu`
+  - Not recommended unless the other is down or in specific circumstances where VPN is needed.
+  - This host is only available when connected to the [CAM VPN](#cam-vpn) or a UCHC secure WiFi network.
+
+## Using SSH
+Logging in through SSH requires:
+
+1. [A CAM account](#cam-account)
+2. [An SSH client](#ssh-client)
+3. [An SSH key pair](#ssh-keys) 
+4. [Connecting through the login.cam.uchc.edu host](#using-ssh)
+
+## 1. CAM Account
+See the [account page](accounts.qmd) for details on obtaining a CAM account
+
+
+## 2. SSH Client
+#### MacOS & Linux
+MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
+
+#### Windows
+Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
+
+
+## 3. SSH Keys
+
+
+
+## 4. Connecting with SSH
+Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.
+
+To connect to Mantis through SSH, open a `Windows PowerShell` or `Terminal` window and enter the following command:
+
+```bash
+ssh <user>@login.hpc.cam.uchc.edu
+```
+
+Where `<user>` is changed to your CAM username.
+
+When connecting through this host, you will be redirected to one of several login nodes.
+
+::: {.callout-warning}
+When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a [batch job](running.qmd#batch-job-submission) or initiate an [interactive session](running.qmd#interactive-job). Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using `Conda` or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.
+:::
+
+
+# CAM VPN
+
+To connect to the CAM VPN, follow the instructions [here](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/). 
+
+::: {.callout-note}
+`login.hpc.cam.uchc.edu` cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.
+:::
+
+::: {.callout-note}
+Note that the CAM VPN is distinct from the University of Connecticut VPN. 
+:::
+
+
+### Why is it called the CAM VPN?
+The administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.
+
+
+
+
+
+# Internal Host
+There is an additional host that can be used to connect to the Mantis cluster. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network. We don't recommend using this host for regular use and it may be decommisioned in the future. There are specific use cases such as when you need to use the CAM VPN where the other host does not currently allow connections. For example if you need to establish an SSH tunnel to a compute node. This host can also be used if the other is down.
+
+To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
+
+When connecting through this host, you will be redirected to one of the several login nodes as when connecting through the recommended host. -->
