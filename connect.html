@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Connecting to Mantis – UCHC HPC</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,15 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fb7c9abc17d36d8f171624f5bcedd762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -210,13 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">3. SSH Keys</a>
   <ul class="collapse">
   <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link" data-scroll-target="#create-ssh-keys">Create SSH keys</a></li>
-  <li><a href="#copy-public-ssh-key-to-mantis" id="toc-copy-public-ssh-key-to-mantis" class="nav-link" data-scroll-target="#copy-public-ssh-key-to-mantis">Copy Public SSH Key to Mantis</a></li>
   </ul></li>
   <li><a href="#connecting-with-ssh" id="toc-connecting-with-ssh" class="nav-link" data-scroll-target="#connecting-with-ssh">4. Connecting with SSH</a></li>
-  </ul></li>
-  <li><a href="#cam-vpn" id="toc-cam-vpn" class="nav-link" data-scroll-target="#cam-vpn">CAM VPN</a>
-  <ul class="collapse">
-  <li><a href="#why-is-it-called-the-cam-vpn" id="toc-why-is-it-called-the-cam-vpn" class="nav-link" data-scroll-target="#why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</a></li>
   </ul></li>
   <li><a href="#internal-host" id="toc-internal-host" class="nav-link" data-scroll-target="#internal-host">Internal Host</a></li>
   </ul>
@@ -276,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><a href="#cam-account">A CAM account</a></li>
 <li><a href="#ssh-client">An SSH client</a></li>
-<li><a href="#ssh-keys">An SSH key pair</a></li>
+<li>An SSH key pair</li>
 <li><a href="#using-ssh">Connecting through the login.cam.uchc.edu host</a></li>
 </ol>
 </section>
@@ -338,35 +335,42 @@ Warning
 <p>Do not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. <strong>We will never ask you for your private key for any reason.</strong></p>
 </div>
 </div>
-</section>
-<section id="copy-public-ssh-key-to-mantis" class="level3">
-<h3 class="anchored" data-anchor-id="copy-public-ssh-key-to-mantis">Copy Public SSH Key to Mantis</h3>
-<p>Once you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.</p>
-<p>In order to do so you must first connect to the <a href="#cam-vpn">CAM VPN</a> or be using a UCHC secure WiFi network.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">MacOS and Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows PowerShell</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>On MacOS and Linux, you can copy your public key to the Mantis cluster using the <code>ssh-copy-id</code> command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>On Windows 10 or later, you can copy your public key to the Mantis cluster with <code>Windows PowerShell</code> using the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\i</span>d_ed25519.pub <span class="kw">|</span> <span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu <span class="st">"mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
-</div>
-</div>
-</div>
+<!-- ### Copy Public SSH Key to Mantis
+Once you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.
+
+In order to do so you must first connect to the [CAM VPN](#cam-vpn) or be using a UCHC secure WiFi network.
+
+::: {.panel-tabset}
+### MacOS and Linux
+On MacOS and Linux, you can copy your public key to the Mantis cluster using the `ssh-copy-id` command:
+
+```bash
+ssh-copy-id <user>@transfer.cam.uchc.edu
+```
+
+Where `<user>` is changed to your CAM username.
+
+When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+
+### Windows PowerShell
+On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
+
+```bash
+type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh <user>@transfer.cam.uchc.edu "mkdir -p .ssh && cat >> .ssh/authorized_keys"
+```
+
+Where `<user>` is changed to your CAM username.
+
+When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+
+::: -->
 </section>
 </section>
 <section id="connecting-with-ssh" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-with-ssh">4. Connecting with SSH</h2>
 <p>Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.</p>
 <p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
 <p>When connecting through this host, you will be redirected to one of several login nodes.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -382,41 +386,21 @@ Warning
 <p>When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="cam-vpn" class="level1">
-<h1>CAM VPN</h1>
-<!--TODO: Move the documentation for vnp here eventually? -->
-<p>To connect to the CAM VPN, follow the instructions <a href="https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/">here</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>login.hpc.cam.uchc.edu</code> cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that the CAM VPN is distinct from the University of Connecticut VPN.</p>
-</div>
-</div>
-<section id="why-is-it-called-the-cam-vpn" class="level3">
-<h3 class="anchored" data-anchor-id="why-is-it-called-the-cam-vpn">Why is it called the CAM VPN?</h3>
-<p>The administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center.</p>
+<!-- # CAM VPN
+
+To connect to the CAM VPN, follow the instructions [here](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/). 
+
+::: {.callout-note}
+`login.hpc.cam.uchc.edu` cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.
+:::
+
+::: {.callout-note}
+Note that the CAM VPN is distinct from the University of Connecticut VPN. 
+:::
+
+
+### Why is it called the CAM VPN?
+The administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center. -->
 <!-- # SSH Tunnelling -->
 <!-- TODO: Explain why you might need this and how to do it. -->
 <!-- TODO: How will this change once all traffic must go through external host? -->

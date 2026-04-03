@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Tranferring Data – UCHC HPC</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,15 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fb7c9abc17d36d8f171624f5bcedd762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -207,7 +209,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#transferring-a-file-from-mantis" id="toc-transferring-a-file-from-mantis" class="nav-link" data-scroll-target="#transferring-a-file-from-mantis">Transferring a File From Mantis</a></li>
   <li><a href="#transferring-a-directory" id="toc-transferring-a-directory" class="nav-link" data-scroll-target="#transferring-a-directory">Transferring a Directory</a></li>
   <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
-  <li><a href="#internal-transfer-host" id="toc-internal-transfer-host" class="nav-link" data-scroll-target="#internal-transfer-host">Internal Transfer Host</a></li>
   </ul></li>
   <li><a href="#globus" id="toc-globus" class="nav-link" data-scroll-target="#globus">Globus</a>
   <ul class="collapse">
@@ -258,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="secure-copy" class="level1">
 <h1>Secure Copy</h1>
 <p>Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the <code>scp</code> command which is available in the <code>Windows PowerShell</code> or MacOS / Linux <code>Terminal</code>.</p>
-<p>This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the <code>transfer.hpc.cam.uchc.edu</code> URL. Transferring data through this URL requires athat you have <a href="./connect.html#ssh-keys">setup SSH keys</a>.</p>
+<p>This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the <code>transfer.hpc.cam.uchc.edu</code> URL. Transferring data through this URL requires that you have <a href="./connect.html#ssh-keys">setup SSH keys</a> and that you be connected to the UConnHealth-SECURE WiFi or the CAM VPN.</p>
 <section id="transferring-a-file-to-mantis" class="level3">
 <h3 class="anchored" data-anchor-id="transferring-a-file-to-mantis">Transferring a File To Mantis</h3>
 <p>In order to transfer data from a local computer to the mantis file system with <code>scp</code>:</p>
@@ -280,11 +281,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="wildcards">Wildcards</h3>
 <p>Secure copy also supports the use of wildcards such as <code>*</code> for the remote path as long as wildcard characters are escaped with a <code>\</code>. For example, to copy all <code>.txt</code> files from your Mantis home directory to your local computer:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.hpc.cam.uchc.edu:\*.txt <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="internal-transfer-host" class="level3">
-<h3 class="anchored" data-anchor-id="internal-transfer-host">Internal Transfer Host</h3>
-<p>There is an additional host that can be used to transfer data without an SSH key. This host is only accessible from the UConn or UCHC Secure WiFi networks or through the CAM VPN. This host requires your CAM password for authentication if you have not setup an SSH key. We don’t recommend using this host for regular use and it may be decommisioned in the future.</p>
-<p>The URL for this host is <code>transfer.cam.uchc.edu</code>.</p>
 </section>
 </section>
 <section id="globus" class="level1">
