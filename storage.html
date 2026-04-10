@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b03702c9ef21fea8d72dd07e0cc9489.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -147,16 +147,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Account &amp; Password</span></a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting</span></a>
+  <a href="./starting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Account &amp; Password</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ondemand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open OnDemand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command Line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSH Keys</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vpn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPN</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./storage.html" class="sidebar-item-text sidebar-link active">
@@ -203,29 +250,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#data-storage-systems" id="toc-data-storage-systems" class="nav-link" data-scroll-target="#data-storage-systems">Data Storage Systems</a>
-  <ul class="collapse">
-  <li><a href="#active-work-spaces" id="toc-active-work-spaces" class="nav-link" data-scroll-target="#active-work-spaces">Active work spaces</a>
+  <li><a href="#active-work-spaces" id="toc-active-work-spaces" class="nav-link active" data-scroll-target="#active-work-spaces">Active work spaces</a>
   <ul class="collapse">
   <li><a href="#homefcamuser" id="toc-homefcamuser" class="nav-link" data-scroll-target="#homefcamuser">/home/FCAM/&lt;user&gt;</a></li>
   <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">/labs</a></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">/projects</a></li>
   <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
-  <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">/seqdata</a></li>
-  <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">/tmp</a></li>
-  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local">/local</a></li>
   </ul></li>
-  <li><a href="#archival-spaces" id="toc-archival-spaces" class="nav-link" data-scroll-target="#archival-spaces">Archival spaces</a>
-  <ul class="collapse">
-  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
-  <li><a href="#tapebackup" id="toc-tapebackup" class="nav-link" data-scroll-target="#tapebackup">/tapebackup</a></li>
-  <li><a href="#tapearchive" id="toc-tapearchive" class="nav-link" data-scroll-target="#tapearchive">/tapearchive</a></li>
-  </ul></li>
-  <li><a href="#summary-table" id="toc-summary-table" class="nav-link" data-scroll-target="#summary-table">Summary table</a></li>
-  </ul></li>
-  <li><a href="#quotas" id="toc-quotas" class="nav-link" data-scroll-target="#quotas">Quotas</a></li>
-  <li><a href="#restoring-lost-data" id="toc-restoring-lost-data" class="nav-link" data-scroll-target="#restoring-lost-data">Restoring lost data</a></li>
   </ul>
 </nav>
     </div>
@@ -255,15 +286,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- TODO: inact file deletion policy for /local. Add details to /local section -->
 <!-- TODO: inact file deletion policy for /scratch and /sandbox -->
 <!-- Mention how long data remain in /seqdata before being moved. -->
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>The HPC offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems below are network-attached, meaning they are accessible from all compute and login nodes.</p>
-</section>
-<section id="data-storage-systems" class="level1">
-<h1>Data Storage Systems</h1>
-<p>Below is a summary of the primary locations in the cluster file system that users will interact with.</p>
-<section id="active-work-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="active-work-spaces">Active work spaces</h2>
+<p>The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines.</p>
+<section id="active-work-spaces" class="level1">
+<h1>Active work spaces</h1>
 <p>The following spaces are suitable for use for active data analysis.</p>
 <section id="homefcamuser" class="level3">
 <h3 class="anchored" data-anchor-id="homefcamuser">/home/FCAM/&lt;user&gt;</h3>
@@ -298,10 +323,21 @@ Note
 <p>This location is intended for storage of active shared project data to facilitate collaboration among multiple groups on a project.</p>
 </section>
 <section id="scratch" class="level3">
-<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
+<h3 class="anchored">/scratch</h3>
 <p>Quota: Shared space. No individual or group quotas.</p>
 <p>Anyone can create any number of directories here and set permissions to whatever they choose.</p>
-<p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 91TB of space. Please be considerate of other users of this shared resource.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 91TB of space. Please be considerate of other users of this shared resource.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>In <code>/scratch</code>, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 60TB of space. Please be considerate of other users of this shared resource.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -312,7 +348,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In <code>/scratch</code>, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST.</p>
+<p>Files in <code>/scratch</code> are deleted <strong>90 days</strong> after they were last modified. If you have files in <code>/scratch</code> that you need to keep, move them to another location. &gt;&gt;&gt;&gt;&gt;&gt;&gt; kerry-dev</p>
 </div>
 </div>
 <!-- ### /sandbox
@@ -327,7 +363,6 @@ This location is intended to serve as temporary storage. This would be an ideal 
 ::: {.callout-warning}
 In `/sandbox`, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST. 
 ::: -->
-</section>
 <section id="seqdata" class="level3">
 <h3 class="anchored" data-anchor-id="seqdata">/seqdata</h3>
 <p>Quota: Shared space. No individual or group quotas. Users do not have write access.</p>
@@ -384,9 +419,8 @@ Tip
 <p>Quota: Shared space. No individual or group quotas.</p>
 <p>This is another space local to each node and shared among users. It is larger than <code>/tmp</code> but files should be removed immediately after analysis.</p>
 </section>
-</section>
-<section id="archival-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="archival-spaces">Archival spaces</h2>
+<section id="archival-spaces" class="level1">
+<h1>Archival spaces</h1>
 <p>These spaces are meant for archiving data for varying durations. Users can request the creation of directories they or a group of users will have read/write access to.</p>
 <p>Each of the archival spaces have the same directory structure containing the following directories:</p>
 <table class="caption-top table">
@@ -433,7 +467,6 @@ Tip
 <p>This system is intended for <em>long term</em> storage. Completed projects and datasets that are no longer currently active can be stored here.</p>
 <p>It also stores data on magnetic tape, but on two redundant copies in the same physical location. Like with <code>/tapebackup</code>, access is slow.</p>
 <p>This system also includes a <code>seqdata</code> directory where data from <code>/seqdata</code> are moved after a period of 2 years. Users may request that data be moved back to <code>/seqdata</code> for a period of time if they need to actively the the data again for anlyses.</p>
-</section>
 </section>
 <section id="summary-table" class="level2">
 <h2 class="anchored" data-anchor-id="summary-table">Summary table</h2>
@@ -555,6 +588,10 @@ Note
 </div>
 
 
+</section>
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

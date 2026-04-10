@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Connecting to the HPC system – UCHC HPC</title>
+<title>About the UConn Health HPC – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -119,7 +84,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">About</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="./about.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -165,16 +130,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./connect.html" class="sidebar-item-text sidebar-link active">
+            <a href="./connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link active">
+  <a href="./connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -250,22 +215,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#web-access-through-open-ondemand" id="toc-web-access-through-open-ondemand" class="nav-link active" data-scroll-target="#web-access-through-open-ondemand">1) Web Access through Open OnDemand</a></li>
-  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
+  <li><a href="#hpc-clusters" id="toc-hpc-clusters" class="nav-link active" data-scroll-target="#hpc-clusters">HPC Clusters</a>
   <ul class="collapse">
-  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick Reference</a></li>
-  <li><a href="#using-ssh" id="toc-using-ssh" class="nav-link" data-scroll-target="#using-ssh">Using SSH</a></li>
-  <li><a href="#cam-account" id="toc-cam-account" class="nav-link" data-scroll-target="#cam-account">1. CAM Account</a></li>
-  <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">2. SSH Client</a></li>
-  <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">3. SSH Keys</a>
+  <li><a href="#mantis-cluster" id="toc-mantis-cluster" class="nav-link" data-scroll-target="#mantis-cluster">Mantis Cluster</a></li>
+  <li><a href="#xanadu-cluster" id="toc-xanadu-cluster" class="nav-link" data-scroll-target="#xanadu-cluster">Xanadu Cluster</a></li>
+  </ul></li>
+  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a>
   <ul class="collapse">
-  <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link" data-scroll-target="#create-ssh-keys">Create SSH keys</a></li>
+  <li><a href="#compute-clusters" id="toc-compute-clusters" class="nav-link" data-scroll-target="#compute-clusters">Compute Clusters:</a></li>
+  <li><a href="#virtualization-infrastructure" id="toc-virtualization-infrastructure" class="nav-link" data-scroll-target="#virtualization-infrastructure">Virtualization Infrastructure</a></li>
+  <li><a href="#datacenter-infrastructure" id="toc-datacenter-infrastructure" class="nav-link" data-scroll-target="#datacenter-infrastructure">Datacenter Infrastructure</a></li>
+  <li><a href="#network-100-gbe" id="toc-network-100-gbe" class="nav-link" data-scroll-target="#network-100-gbe">Network (100+ Gbe)</a></li>
+  <li><a href="#storage-1" id="toc-storage-1" class="nav-link" data-scroll-target="#storage-1">Storage</a></li>
   </ul></li>
-  <li><a href="#connecting-with-ssh" id="toc-connecting-with-ssh" class="nav-link" data-scroll-target="#connecting-with-ssh">4. Connecting with SSH</a></li>
-  </ul></li>
-  <li><a href="#internal-host" id="toc-internal-host" class="nav-link" data-scroll-target="#internal-host">Internal Host</a></li>
-  <li><a href="#when-connecting-through-this-host-you-will-be-redirected-to-one-of-the-several-login-nodes-as-when-connecting-through-the-recommended-host." id="toc-when-connecting-through-this-host-you-will-be-redirected-to-one-of-the-several-login-nodes-as-when-connecting-through-the-recommended-host." class="nav-link" data-scroll-target="#when-connecting-through-this-host-you-will-be-redirected-to-one-of-the-several-login-nodes-as-when-connecting-through-the-recommended-host.">When connecting through this host, you will be redirected to one of the several login nodes as when connecting through the recommended host.</a></li>
-  <li><a href="#command-line-interface" id="toc-command-line-interface" class="nav-link" data-scroll-target="#command-line-interface">2) Command Line Interface</a></li>
   </ul>
 </nav>
     </div>
@@ -274,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Connecting to the HPC system</h1>
+<h1 class="title">About the UConn Health HPC</h1>
 </div>
 
 
@@ -291,188 +255,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Once an account has been created and a new password has been set, users can connect to the HPC system. There are two optons for connecting:</p>
-<section id="web-access-through-open-ondemand" class="level1">
-<h1><a href="./ondemand.html">1) Web Access through Open OnDemand</a></h1>
-<p>Open OnDemand is a web-based portal that provides users with access to Mantis and the HPC filesystem. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface.</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p>The UConn Health HPC facility provides access to over 12,000 processor cores, 77 TB of memory and over 14 PB of storage housed in a secure, state of the art data center supported 24/7 by a dedicated staff of professionals. These resources are available to any University of Connecticut of UConn Health researcher for use in support of their research activities.</p>
+<section id="hpc-clusters" class="level1">
+<h1>HPC Clusters</h1>
+<p>Most users access the HPC resources through one of the HPC clusters. The clusters are designed to support a wide range of reserach applications, including computational biology, bioinformatics, machine learning, and data analysis.</p>
+<section id="mantis-cluster" class="level2">
+<h2 class="anchored" data-anchor-id="mantis-cluster">Mantis Cluster</h2>
+<p>Mantis is the newest cluster, intended to replace the Xanadu cluster. Mantis is recommended over Xanadu for nearly all users.</p>
 </section>
-<section id="ssh-secure-shell" class="level1">
-<h1>SSH (Secure Shell)</h1>
-<p>Users can connect to the Mantis cluster through a command-line interface using SSH.</p>
-<section id="quick-reference" class="level2">
-<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
-<p>Login hosts are listed below. If you need more details, skip to the next section.</p>
-<p>We have two login hosts:</p>
+<section id="xanadu-cluster" class="level2">
+<h2 class="anchored" data-anchor-id="xanadu-cluster">Xanadu Cluster</h2>
+<p>Xanadu is a legacy cluster that has been replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.</p>
+</section>
+</section>
+<section id="storage" class="level1">
+<h1>Storage</h1>
+<p>The UConn HPC facility provides access to over 14 PB of storage through a variety of storage systems which are accessible from HPC clusters as well as virtual machines.</p>
+</section>
+<section id="virtual-machines" class="level1">
+<h1>Virtual Machines</h1>
+<p>Users can request access to self-supported virtual Linux or Windows instances for running applications that are not compatible with the HPC clusters. These virtual machines are hosted on a high performance virtualization infrastructure and can be accessed from anywhere with an internet connection.</p>
+</section>
+<section id="hardware" class="level1">
+<h1>Hardware</h1>
+<section id="compute-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="compute-clusters">Compute Clusters:</h2>
 <ul>
-<li><code>login.hpc.cam.uchc.edu</code>
-<ul>
-<li>The recommended host.</li>
-<li>Accessible externally (doesn’t require VPN or UCHC secure WiFI).</li>
-<li>This host is not accessible through the CAM VPN.</li>
-</ul></li>
-<li><code>mantis-submit.cam.uchc.edu</code>
-<ul>
-<li>Not recommended unless the other is down or in specific circumstances where VPN is needed.</li>
-<li>This host is only available when connected to the <a href="#cam-vpn">CAM VPN</a> or a UCHC secure WiFi network.</li>
-</ul></li>
+<li>4 Dell R620 nodes with two, 10-core Intel(R) Xeon(R) CPU E5-2660 v2 processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>17 Dell R660 nodes with two, 64-core Intel(R) Xeon(R) Platinum 8462Y+ processors, 512 GB RAM, and 10 GB interfaces</li>
+<li>21 Dell R730 nodes with two, 18-core Intel Xeon E5-2697v4 processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>27 Dell R740 nodes with two, 40-core Intel Xeon Gold 6138 processors, 192/384 GB RAM, and 10 GB interfaces</li>
+<li>3 Dell R815 nodes with four, 12-core AMD Opteron 6172 processors, 396 GB RAM, and 10 GB interfaces</li>
+<li>1 Dell R905 node with four, 6-core AMD Opteron 8435 processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>9 Dell C6145 nodes with four, 12-core AMD Opteron 6172 processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>8 Dell R6525 nodes with two, 64-core AMD EPYC 7662 64-Core processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>21 Dell R7525 nodes with two, 64-core AMD EPYC 7453 processors, 256 GB RAM, and 10 GB interfaces</li>
+<li>24 Penguin MH61-HD3-ZB nodes with Intel Xeon Gold 6230 processors, 192 GB RAM, and 10 GB interfaces</li>
+<li>15 Supermicro AS 2024US-TRT nodes with two, 64-Core AMD EPYC 7713 processors, 512 GB RAM, and 10 GB interfaces</li>
+<li>1 Penguin MZ92-FS0-00 node with eight, 6-Core AMD EPYC 7352 processors, 2048 GB RAM, and 10 GB interfaces</li>
+<li>2 Dell XE8545 AI nodes with two, 64-Core AMD EPYC 7763 processors, 2048 GB RAM, and 10 GB interfaces</li>
+<li>1 Supermicro 6049GP-TRT node with four, 28-Core Intel Xeon 8176 processors, 1500 GB RAM, and 10 GB interfaces</li>
+<li>2 Quanta Cloud S76 nodes with NVIDIA Grace Hopper Superchip, Grace CPU, Hopper GPU processors, 480 GB RAM, and 10 GB interfaces</li>
+<li>15 NVIDIA A100 80gb PCIe GPUs, 6 NVIDIA A10 GPUs, and 2 NVIDIA M10 GPUs</li>
 </ul>
 </section>
-<section id="using-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="using-ssh">Using SSH</h2>
-<p>Logging in through SSH requires:</p>
-<ol type="1">
-<li><a href="#cam-account">A CAM account</a></li>
-<li><a href="#ssh-client">An SSH client</a></li>
-<li>An SSH key pair</li>
-<li><a href="#using-ssh">Connecting through the login.cam.uchc.edu host</a></li>
-</ol>
+<section id="virtualization-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="virtualization-infrastructure">Virtualization Infrastructure</h2>
+<ul>
+<li>16 Dell PowerEdge R640 hosts with 1280 CPU cores and 10.8 TB RAM running VMWare 8 hosting 300+ Windows and Linux virtual machines with SSD high OPS performance cache tier</li>
+</ul>
 </section>
-<section id="cam-account" class="level2">
-<h2 class="anchored" data-anchor-id="cam-account">1. CAM Account</h2>
-<p>See the <a href="accounts.qmd">account page</a> for details on obtaining a CAM account</p>
+<section id="datacenter-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="datacenter-infrastructure">Datacenter Infrastructure</h2>
+<ul>
+<li>UPS generator backed power with redundant cooling</li>
+<li>3×40 Gbe dark fiber connection to off-site DR location</li>
+</ul>
 </section>
-<section id="ssh-client" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-client">2. SSH Client</h2>
-<section id="macos-linux" class="level4">
-<h4 class="anchored" data-anchor-id="macos-linux">MacOS &amp; Linux</h4>
-<p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
+<section id="network-100-gbe" class="level2">
+<h2 class="anchored" data-anchor-id="network-100-gbe">Network (100+ Gbe)</h2>
+<ul>
+<li>Full non-oversubscribed 10/40/100/400 GbE datacenter network core layer</li>
+<li>BioScienceCT Research Network – 100 GbE to CEN, Internet2, Storrs</li>
+<li>HPC Science DMZ – low latency, 80 Gb-capable firewall</li>
+</ul>
 </section>
-<section id="windows" class="level4">
-<h4 class="anchored" data-anchor-id="windows">Windows</h4>
-<p>Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the <code>Windows PowerShell</code> application. For older versions of Windows, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net">MobaXterm</a>.</p>
+<section id="storage-1" class="level2">
+<h2 class="anchored" data-anchor-id="storage-1">Storage</h2>
+<ul>
+<li>Over 22 PB of storage including 775 TB Quantum, 3.4 PB EMC Isilon, 10.5 PB Qumulo scale-out clusters, 2 PiB Spectra tape backup and archive along with 2.3 PB Amplidata, and 3.1 PB Scality Geo-Spread cloud storage</li>
+</ul>
+
+
 </section>
-</section>
-<section id="ssh-keys" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-keys">3. SSH Keys</h2>
-<p>Before being able to login with your SSH client, you will need to setup SSH keys. SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access. Only ed25519 keys are accepted.</p>
-<section id="create-ssh-keys" class="level3">
-<h3 class="anchored" data-anchor-id="create-ssh-keys">Create SSH keys</h3>
-<p>You can create a public and private SSH key pair using your SSH client in <code>Windows PowerShell</code> or a MacOS / Linux <code>Terminal</code>.</p>
-<ol type="1">
-<li>First check for an existing SSH key pair by running the following command:</li>
-</ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">MacOS / Linux Terminal</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows PowerShell</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/.ssh/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-mantis">Copy to Mantis</a> section. If you do not see these files or get an error message, you will need to create a new SSH key pair.</p>
-<ol start="2" type="1">
-<li>To create a key pair run the following command:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="op">&lt;</span>comment<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Replacing <code>&lt;comment&gt;</code> with something to help you identify which computer this key pair was created for. For example: <code>laptop</code></p>
-<ol start="3" type="1">
-<li>You will be prompted to specify the location to save the key. You can press enter to accept the default location.</li>
-<li>Next you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the Mantis cluster as you. <strong>We will never ask you for your private key for any reason.</strong></p>
-</div>
-</div>
-<!-- ### Copy Public SSH Key to Mantis
-Once you have created your SSH key pair, you will need to copy the public key to the Mantis cluster.
-
-In order to do so you must first connect to the [CAM VPN](#cam-vpn) or be using a UCHC secure WiFi network.
-
-::: {.panel-tabset}
-### MacOS and Linux
-On MacOS and Linux, you can copy your public key to the Mantis cluster using the `ssh-copy-id` command:
-
-```bash
-ssh-copy-id <user>@transfer.cam.uchc.edu
-```
-
-Where `<user>` is changed to your CAM username.
-
-When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
-
-### Windows PowerShell
-On Windows 10 or later, you can copy your public key to the Mantis cluster with `Windows PowerShell` using the command:
-
-```bash
-type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh <user>@transfer.cam.uchc.edu "mkdir -p .ssh && cat >> .ssh/authorized_keys"
-```
-
-Where `<user>` is changed to your CAM username.
-
-When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
-
-::: -->
-</section>
-</section>
-<section id="connecting-with-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-with-ssh">4. Connecting with SSH</h2>
-<p>Once you have copied your public SSH key to the Mantis cluster, you can connect using the SSH client.</p>
-<p>To connect to Mantis through SSH, open a <code>Windows PowerShell</code> or <code>Terminal</code> window and enter the following command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@login.hpc.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is changed to your CAM username.</p>
-<p>When connecting through this host, you will be redirected to one of several login nodes.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When connecting to Mantis over SSH, you will be connected to a submit node, also known as login node. Please do not run anything on these nodes that is computationally demanding as this can negatively impact other users who are also connecting to these nodes. To do real work, submit a <a href="./running.html#batch-job-submission">batch job</a> or initiate an <a href="./running.html#interactive-job">interactive session</a>. Long running or intensive processes running on login nodes may be killed without notice. This includes some software installations such as when using <code>Conda</code> or compiling code. When in doubt, it is best to submit a batch job or initiate an interactive session.</p>
-</div>
-</div>
-<!-- # CAM VPN
-
-To connect to the CAM VPN, follow the instructions [here](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/). 
-
-::: {.callout-note}
-`login.hpc.cam.uchc.edu` cannot be used when you are connected to the CAM VPN. You will be able to connect initially but will lose the connection shortly after.
-:::
-
-::: {.callout-note}
-Note that the CAM VPN is distinct from the University of Connecticut VPN. 
-:::
-
-
-### Why is it called the CAM VPN?
-The administration of the Mantis cluster is handled by staff in the Cell Analysis and Modeling (CAM) department at the University of Connecticut Health Center. -->
-<!-- # SSH Tunnelling -->
-<!-- TODO: Explain why you might need this and how to do it. -->
-<!-- TODO: How will this change once all traffic must go through external host? -->
-<!-- # X11 Forwarding -->
-<!-- TODO: Why you might need this and how to do it. -->
-<!-- TODO: How will this change once all traffic must go through external host? -->
-</section>
-</section>
-<section id="internal-host" class="level1">
-<h1>Internal Host</h1>
-<p>There is an additional host that can be used to connect to the Mantis cluster. This host is only accessible through the CAM VPN or through a UCHC secure WiFi network. We don’t recommend using this host for regular use and it may be decommisioned in the future. There are specific use cases such as when you need to use the CAM VPN where the other host does not currently allow connections. For example if you need to establish an SSH tunnel to a compute node. This host can also be used if the other is down.</p>
-<p>To login, use the command: <code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code></p>
-</section>
-<section id="when-connecting-through-this-host-you-will-be-redirected-to-one-of-the-several-login-nodes-as-when-connecting-through-the-recommended-host." class="level1">
-<h1>When connecting through this host, you will be redirected to one of the several login nodes as when connecting through the recommended host.</h1>
-</section>
-<section id="command-line-interface" class="level1">
-<h1><a href="./cli.html">2) Command Line Interface</a></h1>
-<p>User can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve. &gt;&gt;&gt;&gt;&gt;&gt;&gt; kerry-dev</p>
-
-
 </section>
 
 </main> <!-- /main -->

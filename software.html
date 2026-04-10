@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b03702c9ef21fea8d72dd07e0cc9489.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -147,16 +147,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Account &amp; Password</span></a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting</span></a>
+  <a href="./starting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Account &amp; Password</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ondemand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open OnDemand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command Line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSH Keys</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vpn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPN</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./storage.html" class="sidebar-item-text sidebar-link">
@@ -203,19 +250,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a></li>
+  <li><a href="#environment-modules" id="toc-environment-modules" class="nav-link active" data-scroll-target="#environment-modules">Environment Modules</a>
+  <ul class="collapse">
+  <li><a href="#important-caveat" id="toc-important-caveat" class="nav-link" data-scroll-target="#important-caveat">Important Caveat</a></li>
+  </ul></li>
   <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
   <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
   <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a>
   <ul class="collapse">
   <li><a href="#installing-conda" id="toc-installing-conda" class="nav-link" data-scroll-target="#installing-conda">Installing Conda</a></li>
   <li><a href="#using-conda" id="toc-using-conda" class="nav-link" data-scroll-target="#using-conda">Using Conda</a></li>
-  </ul></li>
-  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#launching-a-jupyter-server" id="toc-launching-a-jupyter-server" class="nav-link" data-scroll-target="#launching-a-jupyter-server">Launching a Jupyter Server</a></li>
-  <li><a href="#connecting-to-the-jupyter-server" id="toc-connecting-to-the-jupyter-server" class="nav-link" data-scroll-target="#connecting-to-the-jupyter-server">Connecting to the Jupyter Server</a></li>
   </ul></li>
   <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
   <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
@@ -251,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="environment-modules" class="level2">
 <h2 class="anchored" data-anchor-id="environment-modules">Environment Modules</h2>
-<p>Environment modules provide a convenient way of using most of the installed sotfware on the Mantis cluster. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).</p>
+<p>Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).</p>
 <p>Below is a list of commonly used commands, where <code>&lt;module&gt;</code> is the target module.</p>
 <table class="caption-top table">
 <thead>
@@ -283,7 +327,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>The Mantis cluster uses the <a href="https://lmod.readthedocs.io">Lmod</a> implementation of environment modules.</p>
+<section id="important-caveat" class="level3">
+<h3 class="anchored" data-anchor-id="important-caveat">Important Caveat</h3>
+<p>Some of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.</p>
+<section id="modules-on-mantis" class="level4">
+<h4 class="anchored" data-anchor-id="modules-on-mantis">Modules on Mantis</h4>
+<p>When <code>module avail</code> is run on Mantis, you will see three different sections:</p>
+<p>Two which contain software compiled to run on Mantis:</p>
+<ul>
+<li><code>/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3</code></li>
+<li><code>/isg/shared/mantis/modulefiles</code></li>
+</ul>
+<p>And one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:</p>
+<ul>
+<li><code>/isg/shared/modulefiles</code></li>
+</ul>
+<p>See <a href="#request-software-installation">Request Software Installation</a> to request a new installation of incompatible software.</p>
+</section>
+<section id="modules-on-xanadu" class="level4">
+<h4 class="anchored" data-anchor-id="modules-on-xanadu">Modules on Xanadu</h4>
+<p>All of the modules available on Xanadu are for software compiled to run on Xanadu.</p>
 <!-- # Spack -->
 <!-- Going forward, most software on the Mantis cluster will now be installed using [Spack](https://spack.io/), a package manager designed for high-performance computing (HPC) environments. All software installed with Spack can be loaded with environment modules, but users can use spack for managing their sotware environment instead. Spack provides a flexible and powerful way to install, configure, and manage software packages and their dependencies in a reproducible manner. -->
 <!-- ### Initialization -->
@@ -301,6 +364,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- spack config add upstreams:spack-instance-1:install_tree:/isg/shared/spack/opt/spack -->
 <!-- ``` -->
 </section>
+</section>
+</section>
 <section id="compiling-software-yourself" class="level2">
 <h2 class="anchored" data-anchor-id="compiling-software-yourself">Compiling software yourself</h2>
 <p>Some software is pretty easy to install. See this classic softare in population genetics, <a href="https://github.com/lh3/psmc">psmc</a>.</p>
@@ -314,8 +379,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="singularity" class="level2">
 <h2 class="anchored" data-anchor-id="singularity">Singularity</h2>
+<!-- TODO: Replace this section with Apptainer -->
 <p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).</p>
-<p>Singularity is in your <code>PATH</code> by default so it can be run without loading a module.</p>
+<p>Singularity is in your <code>PATH</code> by default on Mantis so it can be run without loading a module.</p>
 <p>To get an existing container from a repository, you use the command <code>singularity pull &lt;URL&gt;</code>. For example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will create the file <code>fastqc:0.12.1--hdfd78af_0</code>, a singularity image (some image files will have the extension <code>.sif</code>). This containst the package <code>fastqc</code>.</p>
@@ -436,74 +502,68 @@ Warning
 <section id="mamba" class="level4">
 <h4 class="anchored" data-anchor-id="mamba">Mamba</h4>
 <p>The <code>mamba</code> command, a faster drop in replacement for <code>conda</code>, will also by installed with Miniforge. We encourage the use of <code>mamba</code> in place of any <code>conda</code> commands. No changes to the syntax are necessary, simply replace <code>conda</code> with <code>mamba</code>.</p>
+<!-- ## Jupyter
+Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
+
+### Installation
+We recommend installing Jupyter using Conda [(see above)](#conda). Once Conda is installed, you can install Jupyter into a Conda environment with: 
+```bash
+conda activate <environment name>
+conda install jupyter
+```
+
+### Launching a Jupyter Server
+To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., `jupyter.sh`) with the following content which can be copied and pasted with no modification necessary unless you want to change resource requests by modifying the `#SBATCH` directives.:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name jupyter
+#SBATCH --qos general 
+#SBATCH --cpus-per-task 1
+#SBATCH --mem 8gb
+#SBATCH --time 0-6:00:00
+#SBATCH --output %x_%j.out
+
+conda_env=${1}
+
+port=$(shuf -i8000-9999 -n1)
+user=$(whoami)
+token=$(openssl rand -hex 16)
+
+source ~/.bashrc   
+conda activate $conda_env
+
+echo -e "
+
+# Execute in local terminal to create SSH tunnel:
+ssh -N -L $port:localhost:$port $user@$(hostname -s).cam.uchc.edu
+
+# URL to enter into your browser:
+http://localhost:$port/?token=$token
+
+" > jupyter_connection.txt
+
+jupyter lab --no-browser --port=$port --ip=localhost --IdentityProvider.token=$token
+
+```
+
+Submit the job with:
+```bash
+sbatch jupyter.sh <environment name>
+```
+Replacing `<environment name>` with the name of the Conda environment where Jupyter is installed.
+
+### Connecting to the Jupyter Server
+After the job starts, look in the `jupyter_connections.txt` file for connection details. In order to connect:
+
+1. Start the CAM VPN using Pulse Secure if you are not connected to the UCHC Secure WiFi network. Note that you will need to use the `mantis-submit.cam.uchc.edu` host if you want to have a simultaneous terminal session on Mantis while connected to the CAM VPN.
+2. Open a terminal on your local machine and run the command shown in the `jupyter_connections.txt` file to create an SSH tunnel.
+3. Open a web browser and navigate to the URL provided in the `jupyter_connections.txt` file.
+
+::: {.callout-warning}
+Please remember to properly close your Jupyter server and terminate the SLURM job when you are finished to free up resources on the cluster. Intentionally running Jupyter servers for extended periods when they are not being utilized is not acceptable and users will recieve warnings for doing so.
+::: -->
 </section>
-</section>
-</section>
-<section id="jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="jupyter">Jupyter</h2>
-<p>Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.</p>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p>We recommend installing Jupyter using Conda <a href="#conda">(see above)</a>. Once Conda is installed, you can install Jupyter into a Conda environment with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="launching-a-jupyter-server" class="level3">
-<h3 class="anchored" data-anchor-id="launching-a-jupyter-server">Launching a Jupyter Server</h3>
-<p>To launch a Jupyter server on Mantis, create a SLURM batch script (e.g., <code>jupyter.sh</code>) with the following content which can be copied and pasted with no modification necessary unless you want to change resource requests by modifying the <code>#SBATCH</code> directives.:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name jupyter</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos general </span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 8gb</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time 0-6:00:00</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output %x_%j.out</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="va">conda_env</span><span class="op">=</span><span class="va">${1}</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="va">port</span><span class="op">=</span><span class="va">$(</span><span class="fu">shuf</span> <span class="at">-i8000-9999</span> <span class="at">-n1</span><span class="va">)</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="va">user</span><span class="op">=</span><span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="va">token</span><span class="op">=</span><span class="va">$(</span><span class="ex">openssl</span> rand <span class="at">-hex</span> 16<span class="va">)</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc   </span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="va">$conda_env</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="st"># Execute in local terminal to create SSH tunnel:</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="st">ssh -N -L </span><span class="va">$port</span><span class="st">:localhost:</span><span class="va">$port</span><span class="st"> </span><span class="va">$user</span><span class="st">@</span><span class="va">$(</span><span class="fu">hostname</span> <span class="at">-s</span><span class="va">)</span><span class="st">.cam.uchc.edu</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="st"># URL to enter into your browser:</span></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="st">http://localhost:</span><span class="va">$port</span><span class="st">/?token=</span><span class="va">$token</span></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="st">"</span> <span class="op">&gt;</span> jupyter_connection.txt</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab <span class="at">--no-browser</span> <span class="at">--port</span><span class="op">=</span><span class="va">$port</span> <span class="at">--ip</span><span class="op">=</span>localhost <span class="at">--IdentityProvider.token</span><span class="op">=</span><span class="va">$token</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Submit the job with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jupyter.sh <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Replacing <code>&lt;environment name&gt;</code> with the name of the Conda environment where Jupyter is installed.</p>
-</section>
-<section id="connecting-to-the-jupyter-server" class="level3">
-<h3 class="anchored" data-anchor-id="connecting-to-the-jupyter-server">Connecting to the Jupyter Server</h3>
-<p>After the job starts, look in the <code>jupyter_connections.txt</code> file for connection details. In order to connect:</p>
-<ol type="1">
-<li>Start the CAM VPN using Pulse Secure if you are not connected to the UCHC Secure WiFi network. Note that you will need to use the <code>mantis-submit.cam.uchc.edu</code> host if you want to have a simultaneous terminal session on Mantis while connected to the CAM VPN.</li>
-<li>Open a terminal on your local machine and run the command shown in the <code>jupyter_connections.txt</code> file to create an SSH tunnel.</li>
-<li>Open a web browser and navigate to the URL provided in the <code>jupyter_connections.txt</code> file.</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please remember to properly close your Jupyter server and terminate the SLURM job when you are finished to free up resources on the cluster. Intentionally running Jupyter servers for extended periods when they are not being utilized is not acceptable and users will recieve warnings for doing so.</p>
-</div>
-</div>
 </section>
 </section>
 <section id="request-software-installation" class="level2">
@@ -512,7 +572,7 @@ Warning
 </section>
 <section id="commercial-software" class="level2">
 <h2 class="anchored" data-anchor-id="commercial-software">Commercial Software</h2>
-<p>Together with the HPC admins we help manage the use of software for which we have commercial licenses.</p>
+<p>The Computational Biology Core posesses licenses for some commercial software and is available to use by any UConn or UConn Health researcher.</p>
 <section id="ipa" class="level3">
 <h3 class="anchored" data-anchor-id="ipa">IPA</h3>
 <p>Ingenuity Pathway Analysis from Qiagen “allows you to “quickly visualize and understand complex ‘omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.</p>

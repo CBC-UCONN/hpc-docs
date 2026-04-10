@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>bestpractices – UCHC HPC</title>
+<title>Open OnDemand – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -40,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b03702c9ef21fea8d72dd07e0cc9489.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./ondemand.html">Open OnDemand</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -112,16 +112,63 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Account &amp; Password</span></a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting</span></a>
+  <a href="./starting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Account &amp; Password</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ondemand.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Open OnDemand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command Line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSH Keys</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vpn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPN</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./storage.html" class="sidebar-item-text sidebar-link">
@@ -168,39 +215,97 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-storage-practices" id="toc-data-storage-practices" class="nav-link active" data-scroll-target="#data-storage-practices">Data storage practices</a>
-  <ul class="collapse">
-  <li><a href="#sharing-data-with-other-users" id="toc-sharing-data-with-other-users" class="nav-link" data-scroll-target="#sharing-data-with-other-users">Sharing data with other users</a></li>
-  </ul></li>
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#connecting" id="toc-connecting" class="nav-link" data-scroll-target="#connecting">Connecting</a></li>
+  <li><a href="#interactive-apps" id="toc-interactive-apps" class="nav-link" data-scroll-target="#interactive-apps">Interactive Apps</a></li>
+  <li><a href="#availabe-applications" id="toc-availabe-applications" class="nav-link" data-scroll-target="#availabe-applications">Availabe Applications</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./ondemand.html">Open OnDemand</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Open OnDemand</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>How to be a good citizen</p>
-<section id="data-storage-practices" class="level1">
-<h1>Data storage practices</h1>
-<section id="sharing-data-with-other-users" class="level2">
-<h2 class="anchored" data-anchor-id="sharing-data-with-other-users">Sharing data with other users</h2>
-<p>Users often need to share files with others, or work collaboratively in a directory. To do this, you need to set appropriate permissions. You are <em>not permitted</em> to open permissions for other users to your home directory <code>/home/FCAM/&lt;user&gt;</code>. If you do this, your directory may be locked and you may temporarily lose access to HPC resources. To share or collaborate on work, use a directory in <code>/labs</code>, <code>/projects</code>, or <code>/scratch</code> that you have access to.</p>
-<!-- How to run seff to monitor efficiency -->
-<!-- Don't run things on login nodes
-  - conda
-  - file compression
-  - large compilations
-
-Test before scaling
-
-Warning about LLMs. Mainly, don't blindly run output from them. -->
-<!-- How to ask for help and what to include in your help request -->
-<!-- ## Keeping and deleting intermediate and temporary files -->
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand <strong>only provides access to the Mantis cluster</strong>. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the <a href="./cli.html">Command Line Interface</a> page for instructions on how to connect through a terminal.</p>
+<section id="pre-requisites" class="level2">
+<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
+<p>In order to use Open OnDemand you will need:</p>
+<ul>
+<li>A CAM account and a password that has not expired. See the <a href="./starting.html">Getting Started</a> page for instructions on how to request an account and reset your password.</li>
+<li>A web browser. Open OnDemand is compatible with most modern web browsers.</li>
+<li>The CAM VPN if you are not connected to the UConnHealth-SECURE WiFi or wired ethernet. See <a href="./vpn.html">CAM VPN</a> page for instructions on how to connect to the CAM VPN.</li>
+</ul>
 </section>
+<section id="connecting" class="level2">
+<h2 class="anchored" data-anchor-id="connecting">Connecting</h2>
+<p>To connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.</p>
+<p><img src="img/ood-login.png" class="img-fluid" width="500"></p>
+<p><img src="img/ood-dashboard.png" class="img-fluid" width="500"></p>
+</section>
+<section id="interactive-apps" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-apps">Interactive Apps</h2>
+<p>Open OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.</p>
+<section id="to-launch-an-interactive-app" class="level4">
+<h4 class="anchored" data-anchor-id="to-launch-an-interactive-app">To launch an interactive app:</h4>
+<ol type="1">
+<li>Click the link to the app you want to use.</li>
+<li>Fill and modify the form specifying the desired resource allocation for you job.</li>
+<li>The “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.</li>
+</ol>
+<p><img src="img/ood-env-config.png" class="img-fluid" width="400"></p>
+<ol start="4" type="1">
+<li>Click the “Launch” button to submit the job to the cluster.</li>
+</ol>
+<p><img src="img/ood-launch.png" class="img-fluid" width="400"></p>
+<ol start="5" type="1">
+<li>Once the job is running, click the “Connect” button to open the application in a new browser tab.</li>
+</ol>
+<p><img src="img/ood-connect.png" class="img-fluid" width="400"></p>
+<ol start="6" type="1">
+<li><strong>Important</strong>. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.</li>
+</ol>
+<p><img src="img/ood-delete.png" class="img-fluid" width="400"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Leaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="availabe-applications" class="level2">
+<h2 class="anchored" data-anchor-id="availabe-applications">Availabe Applications</h2>
+<ul>
+<li><strong>JupyterLab</strong>: A web-based interactive development environment for Jupyter notebooks, code, and data.</li>
+<li><strong>RStudio</strong>: An integrated development environment for R programming language.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

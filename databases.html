@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Databases Available on Mantis – UCHC HPC</title>
+<title>Databases Available on the UConn Health HPC System – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -75,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79c920b4234fabadc33fa4796eee2c7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b03702c9ef21fea8d72dd07e0cc9489.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -147,16 +147,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./account.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Account &amp; Password</span></a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting</span></a>
+  <a href="./starting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Account &amp; Password</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ondemand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open OnDemand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command Line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSH Keys</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vpn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPN</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./storage.html" class="sidebar-item-text sidebar-link">
@@ -235,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Databases Available on Mantis</h1>
+<h1 class="title">Databases Available on the UConn Health HPC System</h1>
 </div>
 
 
@@ -252,10 +299,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly – every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and the previous version of each database at all times. We also host several user-made databases where there is demand.</p>
+<p>We host several commonly used bioinformatics databases on the UConn Health HPC system. We update these regularly – every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and the previous version of each database at all times. We also host several user-made databases where there is demand.</p>
 <section id="blast" class="level2">
 <h2 class="anchored" data-anchor-id="blast">BLAST</h2>
-<p>The latest versions of the official NCBI BLAST databases are available on Mantis. This directory also includes custom databases constructed from the latest eggNOG, OrthoDB, and UniProt releases.</p>
+<p>The latest versions of the official NCBI BLAST databases are available on UConn Health HPC system. This directory also includes custom databases constructed from the latest eggNOG, OrthoDB, and UniProt releases.</p>
 <section id="example-usage" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastp</span> <span class="at">-db</span> /isg/shared/databases/blast/v5/nr <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -274,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="busco" class="level2">
 <h2 class="anchored" data-anchor-id="busco">BUSCO</h2>
-<p>The latest versions of the EZLab BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases.</p>
+<p>The latest versions of the EZLab BUSCO databases are available on UConn Health HPC system. This directory includes all lineage-specific odb10 and odb12 databases.</p>
 <section id="example-usage-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-1">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">busco</span> <span class="at">-l</span> /isg/shared/databases/busco/odb12/insecta_odb12/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -289,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="cellranger" class="level2">
 <h2 class="anchored" data-anchor-id="cellranger">CellRanger</h2>
-<p>The latest versions of 10X Genomics’ CellRanger databases are available on Mantis. This directory contains the official human, mouse, and rat genomic and transcriptomic references.</p>
+<p>The latest versions of 10X Genomics’ CellRanger databases are available on UConn Health HPC system. This directory contains the official human, mouse, and rat genomic and transcriptomic references.</p>
 <section id="example-usage-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-2">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cellranger</span> count <span class="at">--transcriptome</span> /isg/shared/databases/cellranger/v2024A/refdata-gex-GRCm39-2024-A/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -304,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="centrifuge" class="level2">
 <h2 class="anchored" data-anchor-id="centrifuge">Centrifuge</h2>
-<p>The latest official Centrifuge databases, as well as several custom databases, are available on Mantis. This directory contains databases generated from bacterial, archaean, human, viral, and other data, as well as a database generated from NCBI-sourced non-redundant nucleotide sequences.</p>
+<p>The latest official Centrifuge databases, as well as several custom databases, are available on UConn Health HPC system. This directory contains databases generated from bacterial, archaean, human, viral, and other data, as well as a database generated from NCBI-sourced non-redundant nucleotide sequences.</p>
 <section id="example-usage-3" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-3">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">centrifuge</span> <span class="at">-q</span> <span class="at">-x</span> /isg/shared/databases/centrifuge/v2018.04/refseq_b+a+v+h/p+h+v <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -319,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dfam" class="level2">
 <h2 class="anchored" data-anchor-id="dfam">Dfam</h2>
-<p>The latest Dfam FamDB databases are available on Mantis. This directory contains all lineage-specific partitions in HDF5 format.</p>
+<p>The latest Dfam FamDB databases are available on UConn Health HPC system. This directory contains all lineage-specific partitions in HDF5 format.</p>
 <section id="example-usage-4" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-4">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">famdb.py</span> <span class="at">-i</span> /isg/shared/databases/dfam/v3.9/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -334,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="diamond" class="level2">
 <h2 class="anchored" data-anchor-id="diamond">DIAMOND</h2>
-<p>Several DIAMOND databases are available on Mantis. This directory contains the official eggNOG diamond databases, the BLAST v4 and v5 nr databases in DIAMOND format, and custom databases generated from OrthoDB, RefSeq, and UniProt protein data.</p>
+<p>Several DIAMOND databases are available on UConn Health HPC system. This directory contains the official eggNOG diamond databases, the BLAST v4 and v5 nr databases in DIAMOND format, and custom databases generated from OrthoDB, RefSeq, and UniProt protein data.</p>
 <section id="example-usage-5" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-5">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">diamond</span> blastp <span class="at">-d</span> /isg/shared/databases/diamond/nr/v5/nr.dmnd <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -354,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="eggnog" class="level2">
 <h2 class="anchored" data-anchor-id="eggnog">eggNOG</h2>
-<p>The latest eggNOG (emapper) databases are available on Mantis. This directory contains the eggNOG SQL database, DIAMOND database, mmseqs database, and Pfam-A HMM database.</p>
+<p>The latest eggNOG (emapper) databases are available on UConn Health HPC system. This directory contains the eggNOG SQL database, DIAMOND database, mmseqs database, and Pfam-A HMM database.</p>
 <section id="example-usage-6" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-6">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">emapper.py</span> <span class="at">--mmseqs_db</span> /isg/shared/databases/eggnog/v5.0.1/mmseqs/mmseqs.db <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -369,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="entap" class="level2">
 <h2 class="anchored" data-anchor-id="entap">EnTAP</h2>
-<p>The latest EnTAP databases are available on Mantis. This directory contains EnTAP’s binary and SQL databases. Other databases commonly used with EnTAP (e.g., assorted DIAMOND databases) may be found in their respective directories.</p>
+<p>The latest EnTAP databases are available on UConn Health HPC system. This directory contains EnTAP’s binary and SQL databases. Other databases commonly used with EnTAP (e.g., assorted DIAMOND databases) may be found in their respective directories.</p>
 <section id="example-usage-7" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-7">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">EnTAP</span> <span class="at">--entap-db-sql</span> /isg/shared/databases/entap/v2.1.0/entap_database.db <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -384,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fcs-gx" class="level2">
 <h2 class="anchored" data-anchor-id="fcs-gx">FCS-GX</h2>
-<p>The latest FCS-GX databases are available on Mantis. This directory contains the sequence file, index file, and full set of metadata files from each release.</p>
+<p>The latest FCS-GX databases are available on UConn Health HPC system. This directory contains the sequence file, index file, and full set of metadata files from each release.</p>
 <section id="example-usage-8" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-8">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> fcs.py screen genome <span class="at">--gx-db</span> /isg/shared/databases/fcs-gx/v2023.01.24/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -399,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="gene-ontology-go" class="level2">
 <h2 class="anchored" data-anchor-id="gene-ontology-go">Gene Ontology (GO)</h2>
-<p>The latest Gene Ontology databases, as well as several external ontology-to-gene ontology databases, are available on Mantis. This directory contains the full go.obo and go-basic.obo files as well as several files linking external ontological terms to gene ontological terms (e.g., interpro2go, pfam2go, reactome2go).</p>
+<p>The latest Gene Ontology databases, as well as several external ontology-to-gene ontology databases, are available on UConn Health HPC system. This directory contains the full go.obo and go-basic.obo files as well as several files linking external ontological terms to gene ontological terms (e.g., interpro2go, pfam2go, reactome2go).</p>
 <section id="usage-note" class="level4">
 <h4 class="anchored" data-anchor-id="usage-note">Usage note:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">These</span> data are general-purpose and may be interfaced with using a variety of software.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -413,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="gtdb" class="level2">
 <h2 class="anchored" data-anchor-id="gtdb">GTDB</h2>
-<p>The latest Genome Taxonomy (GT) databases are available on Mantis. This directory contains all GTDB taxonomy, reference tree, metadata files, and marker genes for all archaean and bacterial GTDB genomes. It also contains the full set of 16S rRNA sequences identified across all high-quality GTDB genomes.</p>
+<p>The latest Genome Taxonomy (GT) databases are available on UConn Health HPC system. This directory contains all GTDB taxonomy, reference tree, metadata files, and marker genes for all archaean and bacterial GTDB genomes. It also contains the full set of 16S rRNA sequences identified across all high-quality GTDB genomes.</p>
 <section id="usage-note-1" class="level4">
 <h4 class="anchored" data-anchor-id="usage-note-1">Usage note:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">These</span> data are general-purpose and may be interfaced with using a variety of software.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -428,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="humann" class="level2">
 <h2 class="anchored" data-anchor-id="humann">HUMAnN</h2>
-<p>The latest HUMAnN databases compatible with our HUMAnN modules are available on Mantis. This directory contains the annotated UniRef50 and UniRef90 databases, filtered UniRef50 and UniRef90 bases, and the full chochophlan database.</p>
+<p>The latest HUMAnN databases compatible with our HUMAnN modules are available on UConn Health HPC system. This directory contains the annotated UniRef50 and UniRef90 databases, filtered UniRef50 and UniRef90 bases, and the full chochophlan database.</p>
 <section id="example-usage-9" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-9">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">humann</span> <span class="at">--protein-database</span> /isg/shared/databases/humann/v3/uniref90_annotated/uniref90_201901b_full.dmnd <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -443,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="kraken" class="level2">
 <h2 class="anchored" data-anchor-id="kraken">Kraken</h2>
-<p>The latest Kraken2 databases are available on Mantis. This directory contains a custom archaean+bacterial+viral+fungal Kraken2 database as well as several official Kraken/Kraken2 databases (e.g., standard, pluspf_16gb, pluspfp_16gb, core_nt).</p>
+<p>The latest Kraken2 databases are available on UConn Health HPC system. This directory contains a custom archaean+bacterial+viral+fungal Kraken2 database as well as several official Kraken/Kraken2 databases (e.g., standard, pluspf_16gb, pluspfp_16gb, core_nt).</p>
 <section id="example-usage-10" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-10">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kraken2</span> <span class="at">--db</span> /isg/shared/databases/kraken/v06.2025/standard/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -458,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="long-ranger" class="level2">
 <h2 class="anchored" data-anchor-id="long-ranger">Long Ranger</h2>
-<p>The latest versions of 10X Genomics’ Long Ranger databases are available on Mantis. This directory contains the Long Ranger-compatible hg19 (GRCh37), hg38 (GRCh38), and b37/1000 Genomes references.</p>
+<p>The latest versions of 10X Genomics’ Long Ranger databases are available on UConn Health HPC system. This directory contains the Long Ranger-compatible hg19 (GRCh37), hg38 (GRCh38), and b37/1000 Genomes references.</p>
 <section id="example-usage-11" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-11">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">longranger</span> <span class="at">--reference</span><span class="op">=</span>/isg/shared/databases/longranger/v2.1.0/refdata-GRCh38-2.1.0/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -472,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="metaphlan" class="level2">
 <h2 class="anchored" data-anchor-id="metaphlan">MetaPHlAn</h2>
-<p>The latest MetaPHlAn databases compatible with our MetaPHlAn modules are available on Mantis. This directory contains the official Bowtie2 databases and various metadata files.</p>
+<p>The latest MetaPHlAn databases compatible with our MetaPHlAn modules are available on UConn Health HPC system. This directory contains the official Bowtie2 databases and various metadata files.</p>
 <section id="example-usage-12" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-12">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">metaphlan</span> <span class="at">--bowtie2db</span> /isg/shared/databases/metaphlan/vOct22/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -487,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="mothur" class="level2">
 <h2 class="anchored" data-anchor-id="mothur">Mothur</h2>
-<p>The latest Mothur databases are available on Mantis. This directory contains the official full-length sequence and taxonomy databases (nr), seed databases (seed), and chimera.slayer-compatible silva alignment (gold).</p>
+<p>The latest Mothur databases are available on UConn Health HPC system. This directory contains the official full-length sequence and taxonomy databases (nr), seed databases (seed), and chimera.slayer-compatible silva alignment (gold).</p>
 <section id="example-usage-13" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-13">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">align.seqs</span><span class="er">(</span><span class="va">reference</span><span class="op">=</span>/isg/shared/databases/mothur/v138.2/silva.nr_v138_2.align, <span class="op">&lt;</span>other <span class="ex">options</span><span class="op">&gt;</span><span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -502,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="orthodb" class="level2">
 <h2 class="anchored" data-anchor-id="orthodb">OrthoDB</h2>
-<p>The latest OrthoDB databases are available on Mantis. This directory contains OrthoDB amino acid and coding sequence data as well as several metadata files that describe the relationships between species, sequences, orthogroups, ontological terms, etc.</p>
+<p>The latest OrthoDB databases are available on UConn Health HPC system. This directory contains OrthoDB amino acid and coding sequence data as well as several metadata files that describe the relationships between species, sequences, orthogroups, ontological terms, etc.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -530,7 +577,7 @@ Important
 </section>
 <section id="pfam" class="level2">
 <h2 class="anchored" data-anchor-id="pfam">Pfam</h2>
-<p>The latest Pfam-A databases are available on Mantis. This directory contains the official Pfam-A FASTA and HMM files as well as metadata and alignments in Stockholm format.</p>
+<p>The latest Pfam-A databases are available on UConn Health HPC system. This directory contains the official Pfam-A FASTA and HMM files as well as metadata and alignments in Stockholm format.</p>
 <section id="example-usage-15" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-15">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">These</span> data are general-purpose and may be interfaced with using a variety of software.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -545,7 +592,7 @@ Important
 </section>
 <section id="recentrifuge" class="level2">
 <h2 class="anchored" data-anchor-id="recentrifuge">Recentrifuge</h2>
-<p>The latest Recentrifuge databases are available on Mantis. This directory contains the full set of NCBI Taxonomy taxdump files, including the nodes.dmp and names.dmp files required by Recentrifuge.</p>
+<p>The latest Recentrifuge databases are available on UConn Health HPC system. This directory contains the full set of NCBI Taxonomy taxdump files, including the nodes.dmp and names.dmp files required by Recentrifuge.</p>
 <section id="example-usage-16" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-16">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rcf</span> <span class="at">-n</span> /isg/shared/databases/recentrifuge/v2025.06/taxdump/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -559,7 +606,7 @@ Important
 </section>
 <section id="refseq-genomes" class="level2">
 <h2 class="anchored" data-anchor-id="refseq-genomes">RefSeq Genomes</h2>
-<p>The latest genomic data for most major RefSeq Genome lineages are available on Mantis. This directory contains one FASTA file per lineage containing all genomic data for the species in said lineages.</p>
+<p>The latest genomic data for most major RefSeq Genome lineages are available on UConn Health HPC system. This directory contains one FASTA file per lineage containing all genomic data for the species in said lineages.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -595,7 +642,7 @@ Important
 </section>
 <section id="snpeff" class="level2">
 <h2 class="anchored" data-anchor-id="snpeff">SnpEff</h2>
-<p>The latest pre-built hg19 and hg38 SnpEff databases are available on Mantis.</p>
+<p>The latest pre-built hg19 and hg38 SnpEff databases are available on UConn Health HPC system.</p>
 <section id="example-usage-18" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-18">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">java</span> <span class="at">-jar</span> snpEff.jar <span class="at">-dataDir</span> /isg/shared/databases/snpeff/v4.3/hg38/ <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -609,7 +656,7 @@ Important
 </section>
 <section id="sortmerna" class="level2">
 <h2 class="anchored" data-anchor-id="sortmerna">SortMeRNA</h2>
-<p>The latest SortMeRNA databases are available on Mantis. This directory contains the fast, default, and sensitive / sensitive_rfam_seeds rRNA reference data in FASTA format.</p>
+<p>The latest SortMeRNA databases are available on UConn Health HPC system. This directory contains the fast, default, and sensitive / sensitive_rfam_seeds rRNA reference data in FASTA format.</p>
 <section id="example-usage-19" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-19">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sortmerna</span> <span class="at">-ref</span> /isg/shared/databases/sortmerna/v4.3.4/smr_v4.3_default_db.fasta <span class="op">&lt;</span>other options<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -624,7 +671,7 @@ Important
 </section>
 <section id="trinotate" class="level2">
 <h2 class="anchored" data-anchor-id="trinotate">Trinotate</h2>
-<p>The latest Trinotate databases compatible with our Trinotate modules are available on Mantis. This directory contains the Trinotate SQLite database, as well as the Pfam-A HMMER and UniProt/Swiss-Prot BLAST databases released around the time of Trinotate v3.2.1.</p>
+<p>The latest Trinotate databases compatible with our Trinotate modules are available on UConn Health HPC system. This directory contains the Trinotate SQLite database, as well as the Pfam-A HMMER and UniProt/Swiss-Prot BLAST databases released around the time of Trinotate v3.2.1.</p>
 <section id="example-usage-20" class="level4">
 <h4 class="anchored" data-anchor-id="example-usage-20">Example usage:</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /isg/shared/databases/trinotate/v3.2.1/Trinotate.sqlite myTrinotate.sqlite</span>
@@ -639,7 +686,7 @@ Important
 </section>
 <section id="uniprot" class="level2">
 <h2 class="anchored" data-anchor-id="uniprot">UniProt</h2>
-<p>A set of the latest UniProt databases are available on Mantis. This directory contains the UniProt/SwissProt, UniRef50, and UniRef90 protein data in FASTA format.</p>
+<p>A set of the latest UniProt databases are available on UConn Health HPC system. This directory contains the UniProt/SwissProt, UniRef50, and UniRef90 protein data in FASTA format.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
