@@ -8,7 +8,7 @@ Some modes of access to the HPC system require users to be connected to a VPN us
 
 ### Reqesting VPN access
 1) Users must submit a request for access by submitting a [Request Ticket](https://health.uconn.edu/high-performance-computing/contact/)
-2) YOu will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO.
+2) You will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO.
 
 ### Installation
 Once granted access, install the Cisco Secure Client. The client can be downloaded from the links below. 
