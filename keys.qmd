@@ -2,11 +2,11 @@
 title: "SSH Keys"
 ---
 
+Some modes of access to the HPC system require users to use SSH keys for authentication. 
+
 SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys --- a private key kept secret on your computer and a public key placed on the remote server you want to access.
 
-SSH keys are required for logging into either [internal]() or [external]() [Mantis]() login hosts.
-
-The use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.
+While in many cases it is required, the use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.
 
 To be able to login using SSH keys, you will need to follow the setup process outlined below. Only ed25519 keys are accepted.
 
@@ -59,9 +59,9 @@ On MacOS and Linux, you can copy your public key to the UCHC HPC system using th
 ssh-copy-id <user>@transfer.cam.uchc.edu
 ```
 
-Where `<user>` is changed to your CAM username.
+Where `<user>` is replaced with your CAM username.
 
-When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
 
 ### Windows PowerShell
 On Windows 10 or later, you can copy your public key to the UCHC HPC system using `Windows PowerShell` with the command:
@@ -70,8 +70,8 @@ On Windows 10 or later, you can copy your public key to the UCHC HPC system usin
 type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh <user>@transfer.cam.uchc.edu "mkdir -p .ssh && cat >> .ssh/authorized_keys"
 ```
 
-Where `<user>` is changed to your CAM username.
+Where `<user>` is replaced with your CAM username.
 
-When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
+When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the [CAM Password Manager](https://pm-app.cam.uchc.edu/portal/Home/LandingPage).
 
 :::

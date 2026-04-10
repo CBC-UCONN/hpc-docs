@@ -6,9 +6,8 @@ title: "File systems and storage"
 <!-- TODO: inact file deletion policy for /scratch and /sandbox -->
 <!-- Mention how long data remain in /seqdata before being moved. -->
 
-# Overview
 
-The HPC offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines. 
+The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines. 
 
 
 # Active work spaces
@@ -49,10 +48,10 @@ Quota: Shared space. No individual or group quotas.
 
 Anyone can create any number of directories here and set permissions to whatever they choose. 
 
-This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, `/scratch` had 84TB of space. Please be considerate of other users of this shared resource. 
+This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, `/scratch` had 60TB of space. Please be considerate of other users of this shared resource. 
 
 ::: {.callout-warning}
-In `/scratch` unused files are subject to deletion without notice after **90 days**. 
+Files in `/scratch` are deleted **90 days** after they were last modified. If you have files in `/scratch` that you need to keep, move them to another location.
 :::
 
 

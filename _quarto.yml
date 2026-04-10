@@ -14,8 +14,8 @@ website:
       - text: "About"
         href: about.qmd
       
-      - text: "Intro to HPC"
-        href: intro.qmd
+      # - text: "Intro to HPC"
+      #   href: intro.qmd
 
       - text: "Getting Started"
         href: starting.qmd
@@ -28,7 +28,7 @@ website:
         contents:
         - text: "Overview"
           href: connect.qmd
-        - text: "Web Access"
+        - text: "Open OnDemand"
           href: ondemand.qmd
         - text: "Command Line"
           href: cli.qmd
@@ -36,8 +36,8 @@ website:
           href: keys.qmd
         - text: "VPN"
           href: vpn.qmd
-        - text: "Two Factor"
-          href: twofactor.qmd
+        # - text: "Two Factor"
+        #   href: twofactor.qmd
 
       - text: "File Systems & Storage"
         href: storage.qmd
@@ -54,17 +54,17 @@ website:
       - text: "Databases"
         href: databases.qmd
       
-      - text: "File Permissions"
-        href: permissions.qmd
+      # - text: "File Permissions"
+      #   href: permissions.qmd
 
-      - text: "Best Practices"
-        href: bestpractices.qmd
+      # - text: "Best Practices"
+      #   href: bestpractices.qmd
 
       - text: "Get Help"
         href: help.qmd
 
-      - text: "Miscellaneous"
-        href: misc.qmd
+      # - text: "Miscellaneous"
+      #   href: misc.qmd
 
 format:
   html:

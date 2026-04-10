@@ -10,10 +10,6 @@ TODO:
 - [ ] Make a section or another page with example resource requests for common tools
 - [ ] Make nextflow config and update nextflow section
 - [ ] Tips and shortcuts page
-- [ ] SFTP FileZilla
-- [ ] Mamba instructions
-- [ ] Jupyter Instructions
-- [ ] RStudio Instructions
 
 
 Notes:

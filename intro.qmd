@@ -1,5 +1,0 @@
----
-title: "Introduction to HPC"
----
-
-Explain HPC to beginners here.

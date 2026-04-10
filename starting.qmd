@@ -2,22 +2,28 @@
 title: "Getting Started"
 ---
 
-The steps for getting started with using the UConn Health High Performance Computing Facility:
+This page outlines the steps necessary to begin using the UConn Health HPC system.
 
 ### 1) Request an account
+To begin using the HPC system, you will need to request an account. Visit the [Account & Passwords](account.qmd) page for instructions on how to request an account.
 
 ### 2) Reset you password
+Once you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the [Account & Passwords](account.qmd) page for instructions on how to reset your password.
 
-### 3) Read Intro to HPC 
+<!-- ### 3) Read Intro to HPC 
+If you are new to high performance computing, it is recommended that you read the [Intro to HPC](intro.qmd) page to learn about the basics. -->
+ 
+### 3) Connecting
+When you are ready to connect, see the [Connecting to the HPC system](connect.qmd) page for instructions on connecting to the HPC system.
 
-### 4) Connect
-  - Can connect through Open OnDemand or through a terminal using SSH.
-  - For terminal access, you will need to setup SSH keys and connect through the login host. See the [Terminal](terminal.qmd) page for details on how to connect through a terminal.
+### 4) Understanding the file system and storage options.
+Before running jobs, it is important to understand the file system and storage options available on the HPC system. See the [Storage](storage.qmd) page for more information on storage options and best practices for using storage on the HPC system.
 
-### 5) Understanding the file system and storage options.
+### 5) Learn how to use software.
+A large number of software tools are available on the HPC system. See the [Software](software.qmd) page for information on how to find and use software on the HPC system. 
 
-### 6) Learn how to use software.
+### 6) Learn how to submit jobs.
+It is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the [Running Jobs](scheduler.qmd) page for instructions on how to submit jobs to compute nodes.
 
-### 7) Learn how to submit jobs.
-
-### 8) Read about best practices.
+<!-- ### 8) Read about best practices.
+To ensure that you are using the HPC system efficiently and effectively, we strongly encourage users to read over our [Best Practices](best-practices.qmd) page in order to avoid mistakes that can impact your work and the work of others.  -->

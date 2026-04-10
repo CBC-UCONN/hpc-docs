@@ -4,8 +4,8 @@ title: "Connecting to the HPC system"
 
 Once an account has been created and a new password has been set, users can connect to the HPC system. There are two optons for connecting: 
 
-# 1) Web Access through Open OnDemand
-Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface. See the [Open OnDemand](ondemand.qmd) page for more information. 
+# [1) Web Access through Open OnDemand](ondemand.qmd)
+Open OnDemand is a web-based portal that provides users with access to Mantis and the HPC filesystem. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface.
 
-# 2) Command Line Interface
-User can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve. See the [Command Line Interface](cli.qmd) page for more information.
+# [2) Command Line Interface](cli.qmd)
+User can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve.

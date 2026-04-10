@@ -26,7 +26,7 @@ Two which contain software compiled to run on Mantis:
 - `/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3`
 - `/isg/shared/mantis/modulefiles`
 
-And one that contains software which may or may not run on Mantis:
+And one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:
 
 - `/isg/shared/modulefiles`
 
@@ -220,7 +220,7 @@ Please avoid using the `defaults` channel, or any channel that is not free. `con
 #### Mamba
 The `mamba` command, a faster drop in replacement for `conda`, will also by installed with Miniforge. We encourage the use of `mamba` in place of any `conda` commands. No changes to the syntax are necessary, simply replace `conda` with `mamba`.
 
-## Jupyter
+<!-- ## Jupyter
 Jupyter notebooks provide an interactive environment for data analysis and visualization. You can run Jupyter notebooks on the Mantis cluster using a SLURM job to launch a Jupyter server and then connect to it from your local machine via SSH tunneling.
 
 ### Installation
@@ -280,7 +280,7 @@ After the job starts, look in the `jupyter_connections.txt` file for connection 
 
 ::: {.callout-warning}
 Please remember to properly close your Jupyter server and terminate the SLURM job when you are finished to free up resources on the cluster. Intentionally running Jupyter servers for extended periods when they are not being utilized is not acceptable and users will recieve warnings for doing so.
-:::
+::: -->
 
 
 ## Request Software Installation
@@ -288,7 +288,7 @@ Users can request the installation of software by [submitting a software request
 
 ## Commercial Software
 
-Together with the HPC admins we help manage the use of software for which we have commercial licenses. 
+The Computational Biology Core posesses licenses for some commercial software and is available to use by any UConn or UConn Health researcher.
 
 ### IPA
 

@@ -1,5 +1,5 @@
 # Requesting an Account
-In order to use the Mantis cluster, you must request a **CAM account**. It is referred to as a CAM account because much of the administration of the Mantis cluster, in addition to other systems, is handled by the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/cell-analysis-modeling/).
+In order to use the UConn Health HPC system, you must request a **CAM account**. It is referred to as a CAM account because much of the administration of the UConn Health HPC system is handled by the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/cell-analysis-modeling/).
 
 To request a CAM account:
 

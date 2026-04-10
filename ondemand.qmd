@@ -1,3 +1,49 @@
 ---
 title: "Open OnDemand"
 ---
+
+Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand **only provides access to the Mantis cluster**. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the [Command Line Interface](cli.qmd) page for instructions on how to connect through a terminal.
+
+## Pre-requisites
+In order to use Open OnDemand you will need:
+
+- A CAM account and a password that has not expired. See the [Getting Started](starting.qmd) page for instructions on how to request an account and reset your password.
+- A web browser. Open OnDemand is compatible with most modern web browsers. 
+- The CAM VPN if you are not connected to the UConnHealth-SECURE WiFi or wired ethernet. See [CAM VPN](vpn.qmd) page for instructions on how to connect to the CAM VPN.
+
+## Connecting
+To connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.
+
+![](img/ood-login.png){width=500px} 
+
+![](img/ood-dashboard.png){width=500px}
+
+## Interactive Apps
+Open OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster. 
+
+#### To launch an interactive app:
+1. Click the link to the app you want to use.
+2. Fill and modify the form specifying the desired resource allocation for you job.
+3. The "Environment Configuration" field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named "myenv" is activated. The app, when launched, will run in the context of the "myenv" conda environment. 
+
+![](img/ood-env-config.png){width=400px}
+
+4. Click the "Launch" button to submit the job to the cluster.
+
+![](img/ood-launch.png){width=400px}
+
+5. Once the job is running, click the "Connect" button to open the application in a new browser tab.
+
+![](img/ood-connect.png){width=400px}
+
+6. **Important**. When you are finished using the application, navigate back to "My Interactive Sessions" and click delete to stop the job and free up resources for other users.
+
+![](img/ood-delete.png){width=400px}
+
+::: callout-warning
+Leaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.
+:::
+
+## Availabe Applications
+- **JupyterLab**: A web-based interactive development environment for Jupyter notebooks, code, and data.
+- **RStudio**: An integrated development environment for R programming language.
