@@ -48,17 +48,10 @@ Quota: Shared space. No individual or group quotas.
 
 Anyone can create any number of directories here and set permissions to whatever they choose. 
 
-<<<<<<< HEAD
-This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, `/scratch` had 91TB of space. Please be considerate of other users of this shared resource. 
-
-::: {.callout-warning}
-In `/scratch`, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST. 
-=======
 This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, `/scratch` had 60TB of space. Please be considerate of other users of this shared resource. 
 
 ::: {.callout-warning}
 Files in `/scratch` are deleted **90 days** after they were last modified. If you have files in `/scratch` that you need to keep, move them to another location.
->>>>>>> kerry-dev
 :::
 
 

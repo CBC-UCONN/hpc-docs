@@ -11,8 +11,8 @@ This site serves as documentation for users of UConn Health HPC system and is ma
 ### Getting Started
 New users should visit the [Getting Started](starting.qmd) page for instructions on how to request an account and access the system. Visit the [Get Help](help.qmd) page for a list of ways to seek help on using the system.
 
-### New to High Performance Computing?
-If you are new to high performance computing, we recommend visiting the [Intro to HPC](intro.qmd) page for an introduction to HPC concepts and terminology. 
+<!-- ### New to High Performance Computing?
+If you are new to high performance computing, we recommend visiting the [Intro to HPC](intro.qmd) page for an introduction to HPC concepts and terminology.  -->
 
 ### Storrs HPC Facility
 There is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit [this site](https://kb.uconn.edu/space/SH/26490077279/About+Storrs+HPC).
