@@ -256,7 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">/labs</a></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">/projects</a></li>
   <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
+  <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">/seqdata</a></li>
+  <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">/tmp</a></li>
+  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local">/local</a></li>
   </ul></li>
+  <li><a href="#archival-spaces" id="toc-archival-spaces" class="nav-link" data-scroll-target="#archival-spaces">Archival spaces</a>
+  <ul class="collapse">
+  <li><a href="#archive" id="toc-archive" class="nav-link" data-scroll-target="#archive">/archive</a></li>
+  <li><a href="#tapebackup" id="toc-tapebackup" class="nav-link" data-scroll-target="#tapebackup">/tapebackup</a></li>
+  <li><a href="#tapearchive" id="toc-tapearchive" class="nav-link" data-scroll-target="#tapearchive">/tapearchive</a></li>
+  <li><a href="#summary-table" id="toc-summary-table" class="nav-link" data-scroll-target="#summary-table">Summary table</a></li>
+  </ul></li>
+  <li><a href="#quotas" id="toc-quotas" class="nav-link" data-scroll-target="#quotas">Quotas</a></li>
+  <li><a href="#restoring-lost-data" id="toc-restoring-lost-data" class="nav-link" data-scroll-target="#restoring-lost-data">Restoring lost data</a></li>
   </ul>
 </nav>
     </div>
@@ -323,20 +335,9 @@ Note
 <p>This location is intended for storage of active shared project data to facilitate collaboration among multiple groups on a project.</p>
 </section>
 <section id="scratch" class="level3">
-<h3 class="anchored">/scratch</h3>
+<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
 <p>Quota: Shared space. No individual or group quotas.</p>
 <p>Anyone can create any number of directories here and set permissions to whatever they choose.</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 91TB of space. Please be considerate of other users of this shared resource.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>In <code>/scratch</code>, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST.
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>This location is intended to serve as temporary storage. This would be an ideal place for the output of intermediate files during analysis. As of last update, <code>/scratch</code> had 60TB of space. Please be considerate of other users of this shared resource.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -348,7 +349,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Files in <code>/scratch</code> are deleted <strong>90 days</strong> after they were last modified. If you have files in <code>/scratch</code> that you need to keep, move them to another location. &gt;&gt;&gt;&gt;&gt;&gt;&gt; kerry-dev</p>
+<p>Files in <code>/scratch</code> are deleted <strong>90 days</strong> after they were last modified. If you have files in <code>/scratch</code> that you need to keep, move them to another location.</p>
 </div>
 </div>
 <!-- ### /sandbox
@@ -363,6 +364,7 @@ This location is intended to serve as temporary storage. This would be an ideal 
 ::: {.callout-warning}
 In `/sandbox`, files unmodified for over 90 days will be deleted without notice each Sunday at 9:00 PM EST. 
 ::: -->
+</section>
 <section id="seqdata" class="level3">
 <h3 class="anchored" data-anchor-id="seqdata">/seqdata</h3>
 <p>Quota: Shared space. No individual or group quotas. Users do not have write access.</p>
@@ -418,6 +420,7 @@ Tip
 <h3 class="anchored" data-anchor-id="local">/local</h3>
 <p>Quota: Shared space. No individual or group quotas.</p>
 <p>This is another space local to each node and shared among users. It is larger than <code>/tmp</code> but files should be removed immediately after analysis.</p>
+</section>
 </section>
 <section id="archival-spaces" class="level1">
 <h1>Archival spaces</h1>
@@ -588,10 +591,6 @@ Note
 </div>
 
 
-</section>
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -256,9 +256,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#transferring-a-file-from-the-uconn-health-hpc-file-system" id="toc-transferring-a-file-from-the-uconn-health-hpc-file-system" class="nav-link" data-scroll-target="#transferring-a-file-from-the-uconn-health-hpc-file-system">Transferring a File From the UConn Health HPC File System</a></li>
   <li><a href="#transferring-a-directory" id="toc-transferring-a-directory" class="nav-link" data-scroll-target="#transferring-a-directory">Transferring a Directory</a></li>
   <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
-  </ul></li>
-  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</a>
-  <ul class="collapse">
   <li><a href="#internal-transfer-host" id="toc-internal-transfer-host" class="nav-link" data-scroll-target="#internal-transfer-host">Internal Transfer Host</a></li>
   </ul></li>
   <li><a href="#globus" id="toc-globus" class="nav-link" data-scroll-target="#globus">Globus</a>
@@ -333,28 +330,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Secure copy also supports the use of wildcards such as <code>*</code> for the remote path as long as wildcard characters are escaped with a <code>\</code>. For example, to copy all <code>.txt</code> files from your UConn Health HPC file system home directory to your local computer:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.hpc.cam.uchc.edu:\*.txt <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-</section>
-<section id="head" class="level1">
-<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <section id="internal-transfer-host" class="level3">
 <h3 class="anchored" data-anchor-id="internal-transfer-host">Internal Transfer Host</h3>
 <p>There is an additional host that can be used to transfer data without an SSH key. This host is only accessible through the CAM VPN or the UConnHealth-SECURE WiFi or wired ethernet. This host requires your CAM password for authentication if you have not setup an SSH key.</p>
 <p>The URL for this host is <code>transfer.cam.uchc.edu</code>.</p>
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<blockquote class="blockquote">
-<p>kerry-dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 </section>
 </section>
 <section id="globus" class="level1">
