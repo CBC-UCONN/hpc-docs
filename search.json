@@ -243,7 +243,7 @@
     "href": "vpn.html#installing-cisco-secure-client",
     "title": "VPN Access",
     "section": "Installing Cisco Secure Client",
-    "text": "Installing Cisco Secure Client\n\nReqesting VPN access\n\nUsers must submit a request for access by submitting a Request Ticket\nYOu will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.\n\n\n\nInstallation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\nUConn UsersUConn Health Users\n\n\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\n\n\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter you UConn Health Net ID and password when prompted to access the insructions.",
+    "text": "Installing Cisco Secure Client\n\nReqesting VPN access\n\nUsers must submit a request for access by submitting a Request Ticket\nYou will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.\n\n\n\nInstallation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\nUConn UsersUConn Health Users\n\n\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\n\n\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter you UConn Health Net ID and password when prompted to access the insructions.",
     "crumbs": [
       "Connecting",
       "VPN"
