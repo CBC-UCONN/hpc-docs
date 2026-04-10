@@ -4,7 +4,7 @@ title: "Tranferring Data"
 
 <!-- TODO: Add FileZilla SFTP client -->
 
-There are several recommended approaches for transferring data to and from the Mantis file system.
+There are several recommended approaches for transferring data to and from the UConn Health HPC file system.
 
 1. [Secure Copy through transfer node](#secure-copy)
 2. [Globus Connect](#globus-connect)
@@ -18,40 +18,48 @@ Secure copy is ideal for transferring small amounts of data. A secure copy can b
 This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the `transfer.hpc.cam.uchc.edu` URL. Transferring data through this URL requires that you have [setup SSH keys](connect.qmd#ssh-keys) and that you be connected to the UConnHealth-SECURE WiFi or the CAM VPN.
 
 
-### Transferring a File To Mantis
-In order to transfer data from a local computer to the mantis file system with `scp`:
+### Transferring a File To the UConn Health HPC File System
+In order to transfer data from a local computer to the UConn Health HPC file system with `scp`:
 
 ```bash
 scp <local_file_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
 ```
 
-Where `<local_file_path>` is the path to the file on your local computer, `<user>` is your CAM username, and `<remote_path>` is the path on the Mantis file system where you want to copy the file. `<remote_path>` can be excluded if you want to copy the file to your home directory.
+Where `<local_file_path>` is the path to the file on your local computer, `<user>` is your CAM username, and `<remote_path>` is the path on the UConn Health HPC file system where you want to copy the file. `<remote_path>` can be excluded if you want to copy the file to your home directory.
 
 
-### Transferring a File From Mantis
-To transfer data from the mantis file system to a local computer with `scp`:
+### Transferring a File From the UConn Health HPC File System
+To transfer data from the UConn Health HPC file system to a local computer with `scp`:
 
 ```bash
 scp <user>@transfer.hpc.cam.uchc.edu:<remote_file_path> <local_file_path>
 ```   
 
-Where `<user` is your CAM username, `<remote_file_path>` is the path to the file on the Mantis file system, and `<local_file_path>` is the path on your local computer where you want to copy the file. Simply use a `.` for `<local_file_path>` to copy the file to your current working directory. 
+Where `<user` is your CAM username, `<remote_file_path>` is the path to the file on the UConn Health HPC file system, and `<local_file_path>` is the path on your local computer where you want to copy the file. Simply use a `.` for `<local_file_path>` to copy the file to your current working directory. 
 
 
 ### Transferring a Directory
-In order to transfer a directory, you will need to use the `-r` flag to recursively copy all files and subdirectories. For example, to copy a directory from your local computer to the Mantis file system:
+In order to transfer a directory, you will need to use the `-r` flag to recursively copy all files and subdirectories. For example, to copy a directory from your local computer to the UConn Health HPC file system:
 
 ```bash 
 scp -r <local_directory_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
 ```
 
 ### Wildcards
-Secure copy also supports the use of wildcards such as `*` for the remote path as long as wildcard characters are escaped with a `\`.  For example, to copy all `.txt` files from your Mantis home directory to your local computer:
+Secure copy also supports the use of wildcards such as `*` for the remote path as long as wildcard characters are escaped with a `\`.  For example, to copy all `.txt` files from your UConn Health HPC file system home directory to your local computer:
 
 ```bash
 scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
 ```
 
+<<<<<<< HEAD
+=======
+### Internal Transfer Host
+There is an additional host that can be used to transfer data without an SSH key. This host is only accessible through the CAM VPN or the UConnHealth-SECURE WiFi or wired ethernet. This host requires your CAM password for authentication if you have not setup an SSH key.
+
+The URL for this host is `transfer.cam.uchc.edu`.
+
+>>>>>>> kerry-dev
 
 # Globus
 [Globus](https://globus.org) is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator. 
@@ -64,7 +72,7 @@ Globus has excellent [documentation](https://docs.globus.org/guides/). We recomm
 When first logging in to the [Globus App](https://app.globus.org), you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.
 
 #### UCHC Globus Server Collection
-To access the Mantis file system, search for and select, the `UCHC Globus Server` in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your Mantis username and password.
+To access the UConn Health HPC file system, search for and select, the `UCHC Globus Server` in the **collection** text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.
 
 ![](img/globus-uchc-server.png){width=500}
 
@@ -88,9 +96,9 @@ When adding permissions in step 6, you generally will not need to modify the **P
 :::
 
 # Mounting SMB Share
-SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the Mantis filesystem. 
+SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the UConn Health HPC file system. 
 
-To connect to the Mantis file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs. 
+To connect to the UConn Health HPC file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs. 
 
 | Directory       | Windows                                   | MacOS / Linux                                 |
 |-----------------|-------------------------------------------|---------------------------------------------  |
@@ -106,9 +114,8 @@ Replace `<user` with your CAM usern`<path>` with the specific subdirectory path 
 The `df -h` command can be used to list all of file systems and their URLs.
 
 ## Connecting
-To connect to the Mantis file system using SMB, you will need to follow the instructions below for your specific operating system. 
+To connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system. 
 
-<!-- When prompted for a username and password, use your Mantis username and password. -->
 
 ::: {.panel-tabset}
 ## Windows 11

@@ -1,0 +1,58 @@
+---
+title: "About the UConn Health HPC"
+---
+
+The UConn Health HPC facility provides access to over 12,000 processor cores, 77 TB of memory and over 14 PB of storage housed in a secure, state of the art data center supported 24/7 by a dedicated staff of professionals. These resources are available to any University of Connecticut of UConn Health researcher for use in support of their research activities.
+
+# HPC Clusters
+Most users access the HPC resources through one of the HPC clusters. The clusters are designed to support a wide range of reserach applications, including computational biology, bioinformatics, machine learning, and data analysis.
+
+## Mantis Cluster
+Mantis is the newest cluster, intended to replace the Xanadu cluster. Mantis is recommended over Xanadu for nearly all users. 
+
+## Xanadu Cluster
+Xanadu is a legacy cluster that has been replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible. 
+
+# Storage
+The UConn HPC facility provides access to over 14 PB of storage through a variety of storage systems which are accessible from HPC clusters as well as virtual machines. 
+
+# Virtual Machines
+Users can request access to self-supported virtual Linux or Windows instances for running applications that are not compatible with the HPC clusters. These virtual machines are hosted on a high performance virtualization infrastructure and can be accessed from anywhere with an internet connection.
+
+# Hardware
+## Compute Clusters:
+
+- 4 Dell R620 nodes with two, 10-core Intel(R) Xeon(R) CPU E5-2660 v2 processors, 256 GB RAM, and 10 GB interfaces
+- 17 Dell R660 nodes with two, 64-core Intel(R) Xeon(R) Platinum 8462Y+ processors, 512 GB RAM, and 10 GB interfaces
+- 21 Dell R730 nodes with two, 18-core Intel Xeon E5-2697v4 processors, 256 GB RAM, and 10 GB interfaces
+- 27 Dell R740 nodes with two, 40-core Intel Xeon Gold 6138 processors, 192/384 GB RAM, and 10 GB interfaces
+- 3 Dell R815 nodes with four, 12-core AMD Opteron 6172 processors, 396 GB RAM, and 10 GB interfaces
+- 1 Dell R905 node with four, 6-core AMD Opteron 8435 processors, 256 GB RAM, and 10 GB interfaces
+- 9 Dell C6145 nodes with four, 12-core AMD Opteron 6172 processors, 256 GB RAM, and 10 GB interfaces
+- 8 Dell R6525 nodes with two, 64-core AMD EPYC 7662 64-Core processors, 256 GB RAM, and 10 GB interfaces
+- 21 Dell R7525 nodes with two, 64-core AMD EPYC 7453 processors, 256 GB RAM, and 10 GB interfaces
+- 24 Penguin MH61-HD3-ZB nodes with Intel Xeon Gold 6230 processors, 192 GB RAM, and 10 GB interfaces
+- 15 Supermicro AS 2024US-TRT nodes with two, 64-Core AMD EPYC 7713 processors, 512 GB RAM, and 10 GB interfaces
+- 1 Penguin MZ92-FS0-00 node with eight, 6-Core AMD EPYC 7352 processors, 2048 GB RAM, and 10 GB interfaces
+- 2 Dell XE8545 AI nodes with two, 64-Core AMD EPYC 7763 processors, 2048 GB RAM, and 10 GB interfaces
+- 1 Supermicro 6049GP-TRT node with four, 28-Core Intel Xeon 8176 processors, 1500 GB RAM, and 10 GB interfaces
+- 2 Quanta Cloud S76 nodes with NVIDIA Grace Hopper Superchip, Grace CPU, Hopper GPU processors, 480 GB RAM, and 10 GB interfaces
+- 15 NVIDIA A100 80gb PCIe GPUs, 6 NVIDIA A10 GPUs, and 2 NVIDIA M10 GPUs
+
+## Virtualization Infrastructure
+- 16 Dell PowerEdge R640 hosts with 1280 CPU cores and 10.8 TB RAM running VMWare 8 hosting 300+ Windows and Linux virtual machines with SSD high OPS performance cache tier
+
+ 
+## Datacenter Infrastructure
+- UPS generator backed power with redundant cooling
+- 3×40 Gbe dark fiber connection to off-site DR location
+
+ 
+## Network (100+ Gbe)
+- Full non-oversubscribed 10/40/100/400 GbE datacenter network core layer
+- BioScienceCT Research Network – 100 GbE to CEN, Internet2, Storrs
+- HPC Science DMZ – low latency, 80 Gb-capable firewall
+
+ 
+## Storage
+- Over 22 PB of storage including 775 TB Quantum, 3.4 PB EMC Isilon, 10.5 PB Qumulo scale-out clusters, 2 PiB Spectra tape backup and archive along with 2.3 PB Amplidata, and 3.1 PB Scality Geo-Spread cloud storage

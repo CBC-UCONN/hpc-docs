@@ -1,0 +1,78 @@
+---
+title: "Connecting through the Command Line Interface"
+---
+
+For more advanced usage and greater control, users can connect to UCHC HPC resources using a Command Line Interface (CLI). 
+
+# Hosts
+In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the [SSH](#ssh) section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:
+
+
+1. Ensure that you have setup an [SSH key](ssh-keys.qmd) for authentication.
+2. Connect to the [CAM VPN](vpn.qmd) if necessary.
+3. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
+
+## Mantis External `login.hpc.cam.uchc.edu`
+The mantis external host will connect you to a Mantis login node. 
+
+#### Requirements
+- [SSH key](ssh-keys.qmd)
+- **Cannot** be used while connected to CAM VPN.
+  - Connection will happen momentarily before being dropped.
+
+#### Usage
+`ssh <user>@login.hpc.cam.uchc.edu` where <user> is replaced with your CAM username.
+
+
+## Mantis Internal `mantis-submit.cam.uchc.edu`
+
+#### Requirements
+- [SSH key](ssh-keys.qmd)
+- Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.
+
+#### Usage
+`ssh <user>@mantis-submit.cam.uchc.edu` where <user> is replaced with your CAM username.
+
+
+## Xanadu External `xanadu-submit-ext.cam.uchc.edu`
+#### Requirements
+- Valid [CAM password](account.qmd) or [SSH key](ssh-keys.qmd)
+
+#### Usage
+`ssh <user>@xanadu-submit-ext.cam.uchc.edu` where <user> is replaced with your CAM username.
+
+
+## Virtual Machines
+A number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.
+
+
+# SSH (Secure Shell)
+Any connection made through the command line interface must be made through SSH (Secure Shell) using an SSH client. SSH is a secure protocol that allows users to connect to a remote server and execute commands on that server.
+
+## SSH Client
+An SSH client is a software tool that allows you to connect to a remote server using the SSH protocol. Most operating systems come with a built-in SSH client, but there are also third-party SSH clients available for download.
+
+#### MacOS & Linux
+MacOS and Linux users can use the built-in SSH client through the `Terminal` application. 
+
+#### Windows
+Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
+
+#### Usage
+If using the built-in SSH client, you simply open a `Terminal` or `Windows PowerShell` application and use the SSH command `ssh` to connect to the desired host. The general syntax for the SSH command is: `ssh <user>@<host url>` where `<user>` is your CAM username and `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the [SSH Keys](ssh-keys.qmd) section below for more information on SSH keys and how to generate and use them for authentication.
+
+## SSH Keys
+Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the [SSH Keys](ssh-keys.qmd) page for more information and for instructions on how to generate and use SSH keys for authentication. 
+
+
+
+
+
+<!-- # SSH Tunnelling -->
+<!-- TODO: Explain why you might need this and how to do it. -->
+
+
+<!-- # X11 Forwarding -->
+<!-- TODO: Why you might need this and how to do it. -->
+
+

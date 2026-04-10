@@ -1,12 +1,12 @@
 ---
-title: "Databases Available on Mantis"
+title: "Databases Available on the UConn Health HPC System"
 ---
 
-We host several commonly used bioinformatics databases on the Mantis cluster. We update these regularly – every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and the previous version of each database at all times. We also host several user-made databases where there is demand.
+We host several commonly used bioinformatics databases on the UConn Health HPC system. We update these regularly – every three months for databases sourced from NCBI, EMBL-EBI, and SIB repositories and every six months for all other databases. We aim to host the latest version and the previous version of each database at all times. We also host several user-made databases where there is demand.
 
 ## BLAST
 
-The latest versions of the official NCBI BLAST databases are available on Mantis. This directory also includes custom databases constructed from the latest eggNOG, OrthoDB, and UniProt releases.
+The latest versions of the official NCBI BLAST databases are available on UConn Health HPC system. This directory also includes custom databases constructed from the latest eggNOG, OrthoDB, and UniProt releases.
 
 #### Example usage:
 
@@ -25,7 +25,7 @@ blastp -db /isg/shared/databases/blast/v5/nr <other options>
 
 ## BUSCO
 
-The latest versions of the EZLab BUSCO databases are available on Mantis. This directory includes all lineage-specific odb10 and odb12 databases.
+The latest versions of the EZLab BUSCO databases are available on UConn Health HPC system. This directory includes all lineage-specific odb10 and odb12 databases.
 
 #### Example usage:
 
@@ -40,7 +40,7 @@ busco -l /isg/shared/databases/busco/odb12/insecta_odb12/ <other options>
 
 ## CellRanger
 
-The latest versions of 10X Genomics' CellRanger databases are available on Mantis. This directory contains the official human, mouse, and rat genomic and transcriptomic references.
+The latest versions of 10X Genomics' CellRanger databases are available on UConn Health HPC system. This directory contains the official human, mouse, and rat genomic and transcriptomic references.
 
 #### Example usage:
 
@@ -55,7 +55,7 @@ cellranger count --transcriptome /isg/shared/databases/cellranger/v2024A/refdata
 
 ## Centrifuge
 
-The latest official Centrifuge databases, as well as several custom databases, are available on Mantis. This directory contains databases generated from bacterial, archaean, human, viral, and other data, as well as a database generated from NCBI-sourced non-redundant nucleotide sequences.
+The latest official Centrifuge databases, as well as several custom databases, are available on UConn Health HPC system. This directory contains databases generated from bacterial, archaean, human, viral, and other data, as well as a database generated from NCBI-sourced non-redundant nucleotide sequences.
 
 #### Example usage:
 
@@ -70,7 +70,7 @@ centrifuge -q -x /isg/shared/databases/centrifuge/v2018.04/refseq_b+a+v+h/p+h+v 
 
 ## Dfam
 
-The latest Dfam FamDB databases are available on Mantis. This directory contains all lineage-specific partitions in HDF5 format.
+The latest Dfam FamDB databases are available on UConn Health HPC system. This directory contains all lineage-specific partitions in HDF5 format.
 
 #### Example usage:
 
@@ -85,7 +85,7 @@ famdb.py -i /isg/shared/databases/dfam/v3.9/ <other options>
 
 ## DIAMOND
 
-Several DIAMOND databases are available on Mantis. This directory contains the official eggNOG diamond databases, the BLAST v4 and v5 nr databases in DIAMOND format, and custom databases generated from OrthoDB, RefSeq, and UniProt protein data.
+Several DIAMOND databases are available on UConn Health HPC system. This directory contains the official eggNOG diamond databases, the BLAST v4 and v5 nr databases in DIAMOND format, and custom databases generated from OrthoDB, RefSeq, and UniProt protein data.
 
 #### Example usage:
 
@@ -105,7 +105,7 @@ diamond blastp -d /isg/shared/databases/diamond/nr/v5/nr.dmnd <other options>
 
 ## eggNOG
 
-The latest eggNOG (emapper) databases are available on Mantis. This directory contains the eggNOG SQL database, DIAMOND database, mmseqs database, and Pfam-A HMM database.
+The latest eggNOG (emapper) databases are available on UConn Health HPC system. This directory contains the eggNOG SQL database, DIAMOND database, mmseqs database, and Pfam-A HMM database.
 
 #### Example usage:
 
@@ -120,7 +120,7 @@ emapper.py --mmseqs_db /isg/shared/databases/eggnog/v5.0.1/mmseqs/mmseqs.db <oth
 
 ## EnTAP
 
-The latest EnTAP databases are available on Mantis. This directory contains EnTAP's binary and SQL databases. Other databases commonly used with EnTAP (e.g., assorted DIAMOND databases) may be found in their respective directories.
+The latest EnTAP databases are available on UConn Health HPC system. This directory contains EnTAP's binary and SQL databases. Other databases commonly used with EnTAP (e.g., assorted DIAMOND databases) may be found in their respective directories.
 
 #### Example usage:
 
@@ -135,7 +135,7 @@ EnTAP --entap-db-sql /isg/shared/databases/entap/v2.1.0/entap_database.db <other
 
 ## FCS-GX
 
-The latest FCS-GX databases are available on Mantis. This directory contains the sequence file, index file, and full set of metadata files from each release.
+The latest FCS-GX databases are available on UConn Health HPC system. This directory contains the sequence file, index file, and full set of metadata files from each release.
 
 #### Example usage:
 
@@ -150,7 +150,7 @@ python3 fcs.py screen genome --gx-db /isg/shared/databases/fcs-gx/v2023.01.24/ <
 
 ## Gene Ontology (GO)
 
-The latest Gene Ontology databases, as well as several external ontology-to-gene ontology databases, are available on Mantis. This directory contains the full go.obo and go-basic.obo files as well as several files linking external ontological terms to gene ontological terms (e.g., interpro2go, pfam2go, reactome2go).
+The latest Gene Ontology databases, as well as several external ontology-to-gene ontology databases, are available on UConn Health HPC system. This directory contains the full go.obo and go-basic.obo files as well as several files linking external ontological terms to gene ontological terms (e.g., interpro2go, pfam2go, reactome2go).
 
 #### Usage note:
 
@@ -164,7 +164,7 @@ These data are general-purpose and may be interfaced with using a variety of sof
 
 ## GTDB
 
-The latest Genome Taxonomy (GT) databases are available on Mantis. This directory contains all GTDB taxonomy, reference tree, metadata files, and marker genes for all archaean and bacterial GTDB genomes. It also contains the full set of 16S rRNA sequences identified across all high-quality GTDB genomes.
+The latest Genome Taxonomy (GT) databases are available on UConn Health HPC system. This directory contains all GTDB taxonomy, reference tree, metadata files, and marker genes for all archaean and bacterial GTDB genomes. It also contains the full set of 16S rRNA sequences identified across all high-quality GTDB genomes.
 
 #### Usage note:
 
@@ -179,7 +179,7 @@ These data are general-purpose and may be interfaced with using a variety of sof
 
 ## HUMAnN
 
-The latest HUMAnN databases compatible with our HUMAnN modules are available on Mantis. This directory contains the annotated UniRef50 and UniRef90 databases, filtered UniRef50 and UniRef90 bases, and the full chochophlan database.
+The latest HUMAnN databases compatible with our HUMAnN modules are available on UConn Health HPC system. This directory contains the annotated UniRef50 and UniRef90 databases, filtered UniRef50 and UniRef90 bases, and the full chochophlan database.
 
 #### Example usage:
 
@@ -194,7 +194,7 @@ humann --protein-database /isg/shared/databases/humann/v3/uniref90_annotated/uni
 
 ## Kraken
 
-The latest Kraken2 databases are available on Mantis. This directory contains a custom archaean+bacterial+viral+fungal Kraken2 database as well as several official Kraken/Kraken2 databases (e.g., standard, pluspf_16gb, pluspfp_16gb, core_nt).
+The latest Kraken2 databases are available on UConn Health HPC system. This directory contains a custom archaean+bacterial+viral+fungal Kraken2 database as well as several official Kraken/Kraken2 databases (e.g., standard, pluspf_16gb, pluspfp_16gb, core_nt).
 
 #### Example usage:
 
@@ -209,7 +209,7 @@ kraken2 --db /isg/shared/databases/kraken/v06.2025/standard/ <other options>
 
 ## Long Ranger
 
-The latest versions of 10X Genomics' Long Ranger databases are available on Mantis. This directory contains the Long Ranger-compatible hg19 (GRCh37), hg38 (GRCh38), and b37/1000 Genomes references.
+The latest versions of 10X Genomics' Long Ranger databases are available on UConn Health HPC system. This directory contains the Long Ranger-compatible hg19 (GRCh37), hg38 (GRCh38), and b37/1000 Genomes references.
 
 #### Example usage:
 
@@ -223,7 +223,7 @@ longranger --reference=/isg/shared/databases/longranger/v2.1.0/refdata-GRCh38-2.
 
 ## MetaPHlAn
 
-The latest MetaPHlAn databases compatible with our MetaPHlAn modules are available on Mantis. This directory contains the official Bowtie2 databases and various metadata files.
+The latest MetaPHlAn databases compatible with our MetaPHlAn modules are available on UConn Health HPC system. This directory contains the official Bowtie2 databases and various metadata files.
 
 #### Example usage:
 
@@ -238,7 +238,7 @@ metaphlan --bowtie2db /isg/shared/databases/metaphlan/vOct22/ <other options>
 
 ## Mothur
 
-The latest Mothur databases are available on Mantis. This directory contains the official full-length sequence and taxonomy databases (nr), seed databases (seed), and chimera.slayer-compatible silva alignment (gold).
+The latest Mothur databases are available on UConn Health HPC system. This directory contains the official full-length sequence and taxonomy databases (nr), seed databases (seed), and chimera.slayer-compatible silva alignment (gold).
 
 #### Example usage:
 
@@ -253,7 +253,7 @@ align.seqs(reference=/isg/shared/databases/mothur/v138.2/silva.nr_v138_2.align, 
 
 ## OrthoDB
 
-The latest OrthoDB databases are available on Mantis. This directory contains OrthoDB amino acid and coding sequence data as well as several metadata files that describe the relationships between species, sequences, orthogroups, ontological terms, etc.
+The latest OrthoDB databases are available on UConn Health HPC system. This directory contains OrthoDB amino acid and coding sequence data as well as several metadata files that describe the relationships between species, sequences, orthogroups, ontological terms, etc.
 
 ::: callout-important
 Please do not copy these files in their entirety. If you need data for a particular species (e.g., *Mus musculus* \[ID:10090_1\]), we recommend using seqkit to extract those sequences and write them to a new file.
@@ -272,7 +272,7 @@ seqkit grep -pr "10090_1" "${CDS}" > mmusculus.fna
 
 ## Pfam
 
-The latest Pfam-A databases are available on Mantis. This directory contains the official Pfam-A FASTA and HMM files as well as metadata and alignments in Stockholm format.
+The latest Pfam-A databases are available on UConn Health HPC system. This directory contains the official Pfam-A FASTA and HMM files as well as metadata and alignments in Stockholm format.
 
 #### Example usage:
 
@@ -287,7 +287,7 @@ These data are general-purpose and may be interfaced with using a variety of sof
 
 ## Recentrifuge
 
-The latest Recentrifuge databases are available on Mantis. This directory contains the full set of NCBI Taxonomy taxdump files, including the nodes.dmp and names.dmp files required by Recentrifuge.
+The latest Recentrifuge databases are available on UConn Health HPC system. This directory contains the full set of NCBI Taxonomy taxdump files, including the nodes.dmp and names.dmp files required by Recentrifuge.
 
 #### Example usage:
 
@@ -301,7 +301,7 @@ rcf -n /isg/shared/databases/recentrifuge/v2025.06/taxdump/ <other options>
 
 ## RefSeq Genomes
 
-The latest genomic data for most major RefSeq Genome lineages are available on Mantis. This directory contains one FASTA file per lineage containing all genomic data for the species in said lineages.
+The latest genomic data for most major RefSeq Genome lineages are available on UConn Health HPC system. This directory contains one FASTA file per lineage containing all genomic data for the species in said lineages.
 
 ::: callout-important
 Please do not copy these files in their entirety. If you need data for a particular species (e.g., *Drosophila melanogaster*), we recommend using seqkit to extract those sequences and write them to a new file.
@@ -328,7 +328,7 @@ seqkit grep -npr "Drosophila melanogaster" "${INVERTS}" > dmel.fna
 
 ## SnpEff
 
-The latest pre-built hg19 and hg38 SnpEff databases are available on Mantis.
+The latest pre-built hg19 and hg38 SnpEff databases are available on UConn Health HPC system.
 
 #### Example usage:
 
@@ -342,7 +342,7 @@ java -jar snpEff.jar -dataDir /isg/shared/databases/snpeff/v4.3/hg38/ <other opt
 
 ## SortMeRNA
 
-The latest SortMeRNA databases are available on Mantis. This directory contains the fast, default, and sensitive / sensitive_rfam_seeds rRNA reference data in FASTA format.
+The latest SortMeRNA databases are available on UConn Health HPC system. This directory contains the fast, default, and sensitive / sensitive_rfam_seeds rRNA reference data in FASTA format.
 
 #### Example usage:
 
@@ -357,7 +357,7 @@ sortmerna -ref /isg/shared/databases/sortmerna/v4.3.4/smr_v4.3_default_db.fasta 
 
 ## Trinotate
 
-The latest Trinotate databases compatible with our Trinotate modules are available on Mantis. This directory contains the Trinotate SQLite database, as well as the Pfam-A HMMER and UniProt/Swiss-Prot BLAST databases released around the time of Trinotate v3.2.1.
+The latest Trinotate databases compatible with our Trinotate modules are available on UConn Health HPC system. This directory contains the Trinotate SQLite database, as well as the Pfam-A HMMER and UniProt/Swiss-Prot BLAST databases released around the time of Trinotate v3.2.1.
 
 #### Example usage:
 
@@ -372,7 +372,7 @@ Trinotate myTrinotate.sqlite <other options>
 
 ## UniProt
 
-A set of the latest UniProt databases are available on Mantis. This directory contains the UniProt/SwissProt, UniRef50, and UniRef90 protein data in FASTA format.
+A set of the latest UniProt databases are available on UConn Health HPC system. This directory contains the UniProt/SwissProt, UniRef50, and UniRef90 protein data in FASTA format.
 
 ::: callout-important
 Please do not copy these files in their entirety. If you need data for a particular species (e.g., *Homo sapiens*), we recommend using seqkit to extract those sequences and write them to a new file.

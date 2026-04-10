@@ -2,6 +2,14 @@
 
 If you have a question that is not answered on this site, please [submit a ticket](https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/)
 
+## Slack
+Users can also ask questions and receive cluster updates and notifications by joining the [CBC slack channel](https://uconn-cbc.slack.com).
 
-# Slack
-Join the [CBC slack channel](https://uconn-cbc.slack.com) to ask questions and receive cluster updates and notifications.
+## Data Therapy
+The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the [CBC website](https://bioinformatics.uconn.edu/data-therapy-sessions/).
+
+## Workshops
+The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the [CBC Workshops])https://bioinformatics.uconn.edu/cbc-workshops/) page. 
+
+## Consulations
+The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services and full end to end project support are available. See the [Service Rates](https://bioinformatics.uconn.edu/cbc_rates-4/) page for more information.

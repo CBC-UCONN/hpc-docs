@@ -1,13 +1,13 @@
 ---
-title: "Connecting to Mantis"
+title: "Connecting to the HPC system"
 ---
 
-<!-- Once you have created a CAM Account there are two ways to connect to the Mantis cluster which are documented on this page:
-1. Open OnDemand: a web-based interface for accessing
-2. SSH (Secure Shell): a command-line interface
+Once an account has been created and a new password has been set, users can connect to the HPC system. There are two optons for connecting: 
 
-# Open OnDemand -->
+# [1) Web Access through Open OnDemand](ondemand.qmd)
+Open OnDemand is a web-based portal that provides users with access to Mantis and the HPC filesystem. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface.
 
+<<<<<<< HEAD
 
 # SSH (Secure Shell)
 Users can connect to the Mantis cluster through a command-line interface using SSH.
@@ -167,3 +167,7 @@ There is an additional host that can be used to connect to the Mantis cluster. T
 To login, use the command: `ssh <user>@mantis-submit.cam.uchc.edu`
 
 When connecting through this host, you will be redirected to one of the several login nodes as when connecting through the recommended host.
+=======
+# [2) Command Line Interface](cli.qmd)
+User can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve.
+>>>>>>> kerry-dev

@@ -2,10 +2,17 @@
 title: "UConn Health High Performance Computing"
 ---
 
-This site provides documentation for users of the [Mantis computer cluster at UConn Health](https://health.uconn.edu/high-performance-computing/). The Mantis cluster is a high performance computing (HPC) system available to all UConn and UConn Health researchers. It is primarily used for bioinformatics and computational biology applications.  
+### Introduction
+The University of Connecticut Health High Performanc Computing Facility provides a variety of high performance computing services and resources to both University of Connecticut and UConn Health researchers at no cost. Most notably the Mantis computer cluster. A summary of available resources and services can be found at the [About](about.qmd) page. Administration of the UConn Health HPC system is jointly handled by the University of Connecticut Computational Biology Core ](https://bioinformatics.uconn.edu) and the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/high-performance-computing/).
 
-This page is maintained by the [University of Connecticut Computational Biology Core in the Institute for Systems Genomics](https://bioinformatics.uconn.edu). 
+### Documentation 
+This site serves as documentation for users of UConn Health HPC system and is maintained by the [University of Connecticut Computational Biology Core](https://bioinformatics.uconn.edu). 
 
-Administration of the Mantis cluster is jointly handled by the [Center for Cell Analysis and Modeling at UConn Health](https://health.uconn.edu/cell-analysis-modeling/) and the Computational Biology Core.
+### Getting Started
+New users should visit the [Getting Started](starting.qmd) page for instructions on how to request an account and access the system. Visit the [Get Help](help.qmd) page for a list of ways to seek help on using the system.
 
-There is a second high performance computing facility (also available to all UConn researchers) located at the Storrs campus. To learn more about accessing and using that system, visit [this site](https://kb.uconn.edu/space/SH/26490077279/About+Storrs+HPC). 
+### New to High Performance Computing?
+If you are new to high performance computing, we recommend visiting the [Intro to HPC](intro.qmd) page for an introduction to HPC concepts and terminology. 
+
+### Storrs HPC Facility
+There is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit [this site](https://kb.uconn.edu/space/SH/26490077279/About+Storrs+HPC).

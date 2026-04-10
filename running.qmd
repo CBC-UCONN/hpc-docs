@@ -5,9 +5,11 @@ title: "Job Submission"
 <!-- TODO: Make a section or another page with example resource requests for common tools -->
 <!-- TODO: Make nextflow config and update nextflow section -->
 
-The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. See the [best practices page]() for more information on appropriate use of the submit nodes. When in doubt it is better to complete a task as a job on a compute node. 
+The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands. 
+<!-- See the [best practices page]() for more information on appropriate use of the submit nodes.  -->
+When in doubt it is better to complete a task as a job on a compute node. 
 
-The UCHC Computer cluster uses [SLURM](https://slurm.schedmd.com) for managing and scheduling jobs. 
+The UCHC Computer clusters use [SLURM](https://slurm.schedmd.com) for managing and scheduling jobs. 
 
 With SLURM there are two primary ways that a job can be run on a compute node. 
 
