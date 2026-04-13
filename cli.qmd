@@ -8,7 +8,7 @@ For more advanced usage and greater control, users can connect to UCHC HPC resou
 In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the [SSH](#ssh) section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:
 
 
-1. Ensure that you have setup an [SSH key](ssh-keys.qmd) for authentication.
+1. Ensure that you have setup an [SSH key](keys.qmd) for authentication.
 2. Connect to the [CAM VPN](vpn.qmd) if necessary.
 3. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
 
@@ -16,7 +16,7 @@ In order to connect to the HPC system through the command line, users must conne
 The mantis external host will connect you to a Mantis login node. 
 
 #### Requirements
-- [SSH key](ssh-keys.qmd)
+- [SSH key](keys.qmd)
 - **Cannot** be used while connected to CAM VPN.
   - Connection will happen momentarily before being dropped.
 
@@ -27,7 +27,7 @@ The mantis external host will connect you to a Mantis login node.
 ## Mantis Internal `mantis-submit.cam.uchc.edu`
 
 #### Requirements
-- [SSH key](ssh-keys.qmd)
+- [SSH key](keys.qmd)
 - Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.
 
 #### Usage
@@ -36,7 +36,7 @@ The mantis external host will connect you to a Mantis login node.
 
 ## Xanadu External `xanadu-submit-ext.cam.uchc.edu`
 #### Requirements
-- Valid [CAM password](account.qmd) or [SSH key](ssh-keys.qmd)
+- Valid [CAM password](account.qmd) or [SSH key](keys.qmd)
 
 #### Usage
 `ssh <user>@xanadu-submit-ext.cam.uchc.edu` where <user> is replaced with your CAM username.
@@ -59,20 +59,37 @@ MacOS and Linux users can use the built-in SSH client through the `Terminal` app
 Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
 
 #### Usage
-If using the built-in SSH client, you simply open a `Terminal` or `Windows PowerShell` application and use the SSH command `ssh` to connect to the desired host. The general syntax for the SSH command is: `ssh <user>@<host url>` where `<user>` is your CAM username and `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the [SSH Keys](ssh-keys.qmd) section below for more information on SSH keys and how to generate and use them for authentication.
+If using the built-in SSH client, you simply open a `Terminal` or `Windows PowerShell` application and use the SSH command `ssh` to connect to the desired host. The general syntax for the SSH command is: `ssh <user>@<host url>` where `<user>` is your CAM username and `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the [SSH Keys](keys.qmd) section below for more information on SSH keys and how to generate and use them for authentication.
 
 ## SSH Keys
-Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the [SSH Keys](ssh-keys.qmd) page for more information and for instructions on how to generate and use SSH keys for authentication. 
+Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the [SSH Keys](keys.qmd) page for more information and for instructions on how to generate and use SSH keys for authentication. 
 
 
 
 
+<!-- # SSH Tunnelling
+ TODO: Verify and improve this
+In some cases, you may need to use SSH tunneling to access certain resources on the cluster. SSH tunneling allows you to create a secure connection between your local machine and a remote server, allowing you to access resources on the remote server as if they were on your local machine.
 
-<!-- # SSH Tunnelling -->
-<!-- TODO: Explain why you might need this and how to do it. -->
+## Usage
+`ssh -L <local port>:<remote host>:<remote port> <user>@<host url>`
+Where:
+- `<local port>` is the port on your local machine that you want to use for the tunnel (e.g. 8888)
+- `<remote host>` is the host on the remote server that you want to access (e.g. `localhost` if the resource is on the same server you are connecting to)
+- `<remote port>` is the port on the remote server that the resource is running on (e.g. 8888 for a Jupyter notebook)
+- `<user>` is your CAM username
+- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external -->
 
 
-<!-- # X11 Forwarding -->
-<!-- TODO: Why you might need this and how to do it. -->
+<!-- # X11 Forwarding
+ TODO: Verify and improve this
+X11 forwarding allows you to run graphical applications on the remote server and have the display forwarded to your local machine. This can be useful for running applications that require a graphical interface, such as RStudio or Jupyter notebooks with interactive plots.
+
+## Usage
+`ssh -X <user>@<host url>`
+Where:
+- `<user>` is your CAM username
+- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external) -->
+
 
 

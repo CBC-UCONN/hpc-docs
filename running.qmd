@@ -133,9 +133,11 @@ If you have a job that may not finish within the allocated time limit you can [s
 
 
 # Partitions
-A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks.
+A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks. The Mantis and Xanadu cluster have slightly different partitions summarized below.
 
-## general
+::: {.panel-tabset}
+## Mantis
+### general
 This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.
 
 ##### Slurm Arguments:
@@ -143,7 +145,7 @@ This partition contains nodes suitable for most tasks. These nodes have 64-128 A
 #SBATCH --qos=general
 ```
 
-## himem
+### himem
 This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
 
 ##### Slurm Arguments:
@@ -153,7 +155,7 @@ This parition contains nodes suitable for jobs that have very large memory requi
 #SBATCH --qos=himem
 ```
 
-## debug
+### debug
 This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
 ##### Slurm Arguments:
@@ -162,22 +164,43 @@ This partition is intended for testing and debugging jobs. It has a time limit o
 #SBATCH --qos=debug
 ```
 
-<!-- 
-## preemptible 
+<!-- ## preemptible 
 Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
 
 ##### Slurm Arguments:
 ```
 #SBATCH --partition=preemtible
 #SBATCH --qos=preemtible
-```
--->
+``` -->
+
+## Xanadu
+
+### general
+
+### xeon
+
+### amd
+
+### himem
+
+### gpu
+
+### mcbstudent
+
+
+:::
+
 
 # SLURM Environment Variables
+<!-- TODO: Show a couple of examples to illustrate their use -->
 SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the [SLURM environment variables documentation](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) for a complete list of available variables.
 
 
 # GPUs
+Allocation of a GPU differs on Mantis and Xanadu. See below for details on how to request a GPU on each cluster.
+
+::: {.panel-tabset}
+## Mantis
 A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gres=gpu:[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.  
 
 ### GPU Types
@@ -203,10 +226,20 @@ A GPU will not be allocated to a job unless it is explicitly requested. In order
 nvidia-smi
 ```
 
+## Xanadu
+<!-- TODO: How it's done on Xanadu -->
+
+:::
 
 # Feature Constraints
 When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the `--constraint=<feature>` argument where <feature> is a defined feature of a node. Multiple constraints can be specified with `&` (and) or `|` (or) operators. The defined features and description are listed in the table below. See the [SLURM documentation](https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint) for more information on using constraints.
 
+<!-- TODO: How to list constraints -->
+
+The defined features will differ between the Mantis and Xanadu clusters. See below for the features available on each cluster.
+
+::: {.panel-tabset}
+## Mantis
 ### Defined Features
 | Feature   | Description |
 |-----------|-------------|
@@ -215,8 +248,12 @@ When a job requires specific hardware or software features on a compute node, a 
 | epyc_7352 | AMD EPYC 7352 CPUs |
 | xeon_platinum_8462Y+ | Intel Xeon Platinum 8462Y CPUs |
 
+## Xanadu
+<!-- TODO: What is available on Xanadu -->
+:::
+
 ### Example
-Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command to ensure that your job runs on a node with AMD CPUs.
+Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command on Mantis to ensure that your job runs on a node with AMD CPUs.
 
 ```bash
 #!/bin/bash
