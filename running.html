@@ -260,21 +260,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#job-status-and-monitoring" id="toc-job-status-and-monitoring" class="nav-link" data-scroll-target="#job-status-and-monitoring">Job status and monitoring</a></li>
   <li><a href="#canceling-a-job" id="toc-canceling-a-job" class="nav-link" data-scroll-target="#canceling-a-job">Canceling a job</a></li>
   <li><a href="#request-time-extensions" id="toc-request-time-extensions" class="nav-link" data-scroll-target="#request-time-extensions">Request time extensions</a></li>
-  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a>
-  <ul class="collapse">
-  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">general</a></li>
-  <li><a href="#himem" id="toc-himem" class="nav-link" data-scroll-target="#himem">himem</a></li>
-  <li><a href="#debug" id="toc-debug" class="nav-link" data-scroll-target="#debug">debug</a></li>
-  </ul></li>
+  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a></li>
   <li><a href="#slurm-environment-variables" id="toc-slurm-environment-variables" class="nav-link" data-scroll-target="#slurm-environment-variables">SLURM Environment Variables</a></li>
-  <li><a href="#gpus" id="toc-gpus" class="nav-link" data-scroll-target="#gpus">GPUs</a>
-  <ul class="collapse">
-  <li><a href="#gpu-types" id="toc-gpu-types" class="nav-link" data-scroll-target="#gpu-types">GPU Types</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
-  </ul></li>
+  <li><a href="#gpus" id="toc-gpus" class="nav-link" data-scroll-target="#gpus">GPUs</a></li>
   <li><a href="#feature-constraints" id="toc-feature-constraints" class="nav-link" data-scroll-target="#feature-constraints">Feature Constraints</a>
   <ul class="collapse">
-  <li><a href="#defined-features" id="toc-defined-features" class="nav-link" data-scroll-target="#defined-features">Defined Features</a></li>
   <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
   </ul></li>
   <li><a href="#job-arrays" id="toc-job-arrays" class="nav-link" data-scroll-target="#job-arrays">Job Arrays</a>
@@ -429,17 +419,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="partitions" class="level1">
 <h1>Partitions</h1>
-<p>A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks.</p>
-<section id="general" class="level2">
-<h2 class="anchored" data-anchor-id="general">general</h2>
+<p>A partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks. The Mantis and Xanadu cluster have slightly different partitions summarized below.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="general" class="level3">
+<h3 class="anchored" data-anchor-id="general">general</h3>
 <p>This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.</p>
 <section id="slurm-arguments" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments">Slurm Arguments:</h5>
 <pre><code>#SBATCH --qos=general</code></pre>
 </section>
 </section>
-<section id="himem" class="level2">
-<h2 class="anchored" data-anchor-id="himem">himem</h2>
+<section id="himem" class="level3">
+<h3 class="anchored" data-anchor-id="himem">himem</h3>
 <p>This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.</p>
 <section id="slurm-arguments-1" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-1">Slurm Arguments:</h5>
@@ -447,32 +441,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #SBATCH --qos=himem</code></pre>
 </section>
 </section>
-<section id="debug" class="level2">
-<h2 class="anchored" data-anchor-id="debug">debug</h2>
+<section id="debug" class="level3">
+<h3 class="anchored" data-anchor-id="debug">debug</h3>
 <p>This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.</p>
 <section id="slurm-arguments-2" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-2">Slurm Arguments:</h5>
 <pre><code>#SBATCH --partition=debug
 #SBATCH --qos=debug</code></pre>
-<!-- 
-## preemptible 
+<!-- ## preemptible 
 Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
 
 ##### Slurm Arguments:
 ```
 #SBATCH --partition=preemtible
 #SBATCH --qos=preemtible
-```
--->
+``` -->
 </section>
 </section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="general-1" class="level3">
+<h3 class="anchored" data-anchor-id="general-1">general</h3>
+</section>
+<section id="xeon" class="level3">
+<h3 class="anchored" data-anchor-id="xeon">xeon</h3>
+</section>
+<section id="amd" class="level3">
+<h3 class="anchored" data-anchor-id="amd">amd</h3>
+</section>
+<section id="himem-1" class="level3">
+<h3 class="anchored" data-anchor-id="himem-1">himem</h3>
+</section>
+<section id="gpu" class="level3">
+<h3 class="anchored" data-anchor-id="gpu">gpu</h3>
+</section>
+<section id="mcbstudent" class="level3">
+<h3 class="anchored" data-anchor-id="mcbstudent">mcbstudent</h3>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="slurm-environment-variables" class="level1">
 <h1>SLURM Environment Variables</h1>
+<!-- TODO: Show a couple of examples to illustrate their use -->
 <p>SLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables documentation</a> for a complete list of available variables.</p>
 </section>
 <section id="gpus" class="level1">
 <h1>GPUs</h1>
+<p>Allocation of a GPU differs on Mantis and Xanadu. See below for details on how to request a GPU on each cluster.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gres=gpu:[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.</p>
 <section id="gpu-types" class="level3">
 <h3 class="anchored" data-anchor-id="gpu-types">GPU Types</h3>
@@ -514,10 +535,22 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect GPU</span></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="ex">nvidia-smi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<!-- TODO: How it's done on Xanadu -->
+</div>
+</div>
+</div>
 </section>
 <section id="feature-constraints" class="level1">
 <h1>Feature Constraints</h1>
 <p>When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the <code>--constraint=&lt;feature&gt;</code> argument where <feature> is a defined feature of a node. Multiple constraints can be specified with <code>&amp;</code> (and) or <code>|</code> (or) operators. The defined features and description are listed in the table below. See the <a href="https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint">SLURM documentation</a> for more information on using constraints.</feature></p>
+<!-- TODO: How to list constraints -->
+<p>The defined features will differ between the Mantis and Xanadu clusters. See below for the features available on each cluster.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <section id="defined-features" class="level3">
 <h3 class="anchored" data-anchor-id="defined-features">Defined Features</h3>
 <table class="caption-top table">
@@ -547,9 +580,15 @@ Jobs run in this partition my be preempted by higher priority users. This partit
 </tbody>
 </table>
 </section>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<!-- TODO: What is available on Xanadu -->
+</div>
+</div>
+</div>
 <section id="example-2" class="level3">
 <h3 class="anchored" data-anchor-id="example-2">Example</h3>
-<p>Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command to ensure that your job runs on a node with AMD CPUs.</p>
+<p>Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command on Mantis to ensure that your job runs on a node with AMD CPUs.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-feature-constraint</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1 </span></span>
@@ -607,9 +646,9 @@ A shared Nextflow Singularity cache is available at `/isg/shared/databases/nfx_m
 <h1>X11 Forwarding</h1>
 <p>Some applications, such as <code>R</code>, can produce graphical output. <a href="https://en.wikipedia.org/wiki/X_Window_System">X Windows</a>, a.k.a. <code>X11</code>, is an option for displaying that output in an interactive session.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Linux</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>First you need to install <a href="https://www.xquartz.org/">XQuartz</a> on your local machine.</p>
 <p>Then, when connecting to Mantis, use the the ssh option <code>-X</code> (or possibly <code>-Y</code> if your application requires it) like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># external:</span></span>
@@ -625,10 +664,10 @@ A shared Nextflow Singularity cache is available at `/isg/shared/databases/nfx_m
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The histogram should pop up in an XQuartz window.</p>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <p>In development</p>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <p>In development</p>
 </div>
 </div>

@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Hosts</h1>
 <p>In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the <a href="#ssh">SSH</a> section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:</p>
 <ol type="1">
-<li>Ensure that you have setup an <a href="ssh-keys.qmd">SSH key</a> for authentication.</li>
+<li>Ensure that you have setup an <a href="./keys.html">SSH key</a> for authentication.</li>
 <li>Connect to the <a href="./vpn.html">CAM VPN</a> if necessary.</li>
 <li>Connect with your <a href="#ssh-client">SSH client</a> (e.g.&nbsp;Terminal or Windows PowerShell) via the host url using the SSH command:<code>ssh &lt;user&gt;@&lt;host url&gt;</code></li>
 </ol>
@@ -267,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="requirements" class="level4">
 <h4 class="anchored" data-anchor-id="requirements">Requirements</h4>
 <ul>
-<li><a href="ssh-keys.qmd">SSH key</a></li>
+<li><a href="./keys.html">SSH key</a></li>
 <li><strong>Cannot</strong> be used while connected to CAM VPN.
 <ul>
 <li>Connection will happen momentarily before being dropped.</li>
@@ -284,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="requirements-1" class="level4">
 <h4 class="anchored" data-anchor-id="requirements-1">Requirements</h4>
 <ul>
-<li><a href="ssh-keys.qmd">SSH key</a></li>
+<li><a href="./keys.html">SSH key</a></li>
 <li>Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.</li>
 </ul>
 </section>
@@ -298,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="requirements-2" class="level4">
 <h4 class="anchored" data-anchor-id="requirements-2">Requirements</h4>
 <ul>
-<li>Valid <a href="./account.html">CAM password</a> or <a href="ssh-keys.qmd">SSH key</a></li>
+<li>Valid <a href="./account.html">CAM password</a> or <a href="./keys.html">SSH key</a></li>
 </ul>
 </section>
 <section id="usage-2" class="level4">
@@ -327,16 +327,33 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="usage-3" class="level4">
 <h4 class="anchored" data-anchor-id="usage-3">Usage</h4>
-<p>If using the built-in SSH client, you simply open a <code>Terminal</code> or <code>Windows PowerShell</code> application and use the SSH command <code>ssh</code> to connect to the desired host. The general syntax for the SSH command is: <code>ssh &lt;user&gt;@&lt;host url&gt;</code> where <code>&lt;user&gt;</code> is your CAM username and <code>&lt;host url&gt;</code> is the URL of the host you want to connect to (e.g.&nbsp;<code>login.hpc.cam.uchc.edu</code> for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the <a href="ssh-keys.qmd">SSH Keys</a> section below for more information on SSH keys and how to generate and use them for authentication.</p>
+<p>If using the built-in SSH client, you simply open a <code>Terminal</code> or <code>Windows PowerShell</code> application and use the SSH command <code>ssh</code> to connect to the desired host. The general syntax for the SSH command is: <code>ssh &lt;user&gt;@&lt;host url&gt;</code> where <code>&lt;user&gt;</code> is your CAM username and <code>&lt;host url&gt;</code> is the URL of the host you want to connect to (e.g.&nbsp;<code>login.hpc.cam.uchc.edu</code> for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> section below for more information on SSH keys and how to generate and use them for authentication.</p>
 </section>
 </section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
-<p>Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the <a href="ssh-keys.qmd">SSH Keys</a> page for more information and for instructions on how to generate and use SSH keys for authentication.</p>
-<!-- # SSH Tunnelling -->
-<!-- TODO: Explain why you might need this and how to do it. -->
-<!-- # X11 Forwarding -->
-<!-- TODO: Why you might need this and how to do it. -->
+<p>Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> page for more information and for instructions on how to generate and use SSH keys for authentication.</p>
+<!-- # SSH Tunnelling
+ TODO: Verify and improve this
+In some cases, you may need to use SSH tunneling to access certain resources on the cluster. SSH tunneling allows you to create a secure connection between your local machine and a remote server, allowing you to access resources on the remote server as if they were on your local machine.
+
+## Usage
+`ssh -L <local port>:<remote host>:<remote port> <user>@<host url>`
+Where:
+- `<local port>` is the port on your local machine that you want to use for the tunnel (e.g. 8888)
+- `<remote host>` is the host on the remote server that you want to access (e.g. `localhost` if the resource is on the same server you are connecting to)
+- `<remote port>` is the port on the remote server that the resource is running on (e.g. 8888 for a Jupyter notebook)
+- `<user>` is your CAM username
+- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external -->
+<!-- # X11 Forwarding
+ TODO: Verify and improve this
+X11 forwarding allows you to run graphical applications on the remote server and have the display forwarded to your local machine. This can be useful for running applications that require a graphical interface, such as RStudio or Jupyter notebooks with interactive plots.
+
+## Usage
+`ssh -X <user>@<host url>`
+Where:
+- `<user>` is your CAM username
+- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external) -->
 
 
 </section>
