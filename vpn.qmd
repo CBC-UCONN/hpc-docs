@@ -32,3 +32,7 @@ Enter you UConn Health Net ID and password when prompted to access the insructio
 ![](img/vpn-cam.png){width="400px"}
 
 
+## Help
+If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk by email at servicedesk@uchc.edu or by phone at 860-679-4400.
+
+We do not have administrative access to the VPN to be able to assist with VPN issues.
