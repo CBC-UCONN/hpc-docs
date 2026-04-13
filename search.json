@@ -15,7 +15,7 @@
     "href": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
     "section": "Mantis External login.hpc.cam.uchc.edu",
-    "text": "Mantis External login.hpc.cam.uchc.edu\nThe mantis external host will connect you to a Mantis login node.\n\nRequirements\n\nSSH key\nCannot be used while connected to CAM VPN.\n\nConnection will happen momentarily before being dropped.\n\n\n\n\nUsage\nssh &lt;user&gt;@login.hpc.cam.uchc.edu where  is replaced with your CAM username.",
+    "text": "Mantis External login.hpc.cam.uchc.edu\nThe mantis external host will connect you to a Mantis login node.\n\nRequirements\n\nSSH key\nCannot be used while connected to CAM VPN.\n\nConnection will happen momentarily before being dropped.\n\n\n\n\nUsage\nssh &lt;user&gt;@login.hpc.cam.uchc.edu where user is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"
@@ -26,7 +26,7 @@
     "href": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
     "section": "Mantis Internal mantis-submit.cam.uchc.edu",
-    "text": "Mantis Internal mantis-submit.cam.uchc.edu\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.\n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where  is replaced with your CAM username.",
+    "text": "Mantis Internal mantis-submit.cam.uchc.edu\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.\n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where user is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"
@@ -37,7 +37,7 @@
     "href": "cli.html#xanadu-external-xanadu-submit-ext.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
     "section": "Xanadu External xanadu-submit-ext.cam.uchc.edu",
-    "text": "Xanadu External xanadu-submit-ext.cam.uchc.edu\n\nRequirements\n\nValid CAM password or SSH key\n\n\n\nUsage\nssh &lt;user&gt;@xanadu-submit-ext.cam.uchc.edu where  is replaced with your CAM username.",
+    "text": "Xanadu External xanadu-submit-ext.cam.uchc.edu\n\nRequirements\n\nValid CAM password or SSH key\n\n\n\nUsage\nssh &lt;user&gt;@xanadu-submit-ext.cam.uchc.edu where user is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"
@@ -225,6 +225,17 @@
     "title": "VPN Access",
     "section": "Connecting",
     "text": "Connecting\n\nOpen the Cisco Secure Client application on your computer.\nIn the address field, enter connect.uchc.edu/cam. Click on the “Connect” button.\nWhen prompted, enter your CAM username and password to login.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#help",
+    "href": "vpn.html#help",
+    "title": "VPN Access",
+    "section": "Help",
+    "text": "Help\nIf you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk by email at servicedesk@uchc.edu or by phone at 860-679-4400.\nWe do not have administrative access to the VPN to be able to assist with VPN issues.",
     "crumbs": [
       "Connecting",
       "VPN"
