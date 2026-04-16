@@ -224,7 +224,7 @@
     "href": "vpn.html#installation",
     "title": "VPN Access",
     "section": "Installation",
-    "text": "Installation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\n\nUConn UsersUConn Health Users\n\n\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\nEnter your UConn Net ID and password when prompted to access the instructions and download links.\n\n\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter your UConn Health Net ID and password when prompted to access the instructions and download links.",
+    "text": "Installation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\n\nUConn Users\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\nEnter your UConn Net ID and password when prompted to access the instructions and download links.\n\n\nUConn Health Users\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter your UConn Health Net ID and password when prompted to access the instructions and download links.",
     "crumbs": [
       "Connecting",
       "VPN"
