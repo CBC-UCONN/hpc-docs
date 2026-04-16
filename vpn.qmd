@@ -20,17 +20,15 @@ The Cisco Secure Client can be downloaded at [here](https://uchc.sharepoint.com/
 
 When prompted, enter your UConn Net ID and password to access the download instructions and download links. -->
 
-::: {.panel-tabset}
-#### UConn Users
+### UConn Users
 UConn users can download the Cisco Secure Client following the [UConn IT instructions](https://kb.uconn.edu/space/IKB/10907091023/Cisco+AnyConnect+VPN). 
 
 Enter your UConn Net ID and password when prompted to access the instructions and download links.
 
-#### UConn Health Users
+### UConn Health Users
 UConn Health users can download the Cisco Secure Client following the [UCHC IT instructions](https://uchc.sharepoint.com/sites/myUCONNHealth/updates/Lists/Posts/Post.aspx?ID=466&CT=1771426801029&OR=OWA-NT-Mail&CID=4f4de9bc-66a0-e44e-d76f-eb7cf9875b1f).
 
 Enter your UConn Health Net ID and password when prompted to access the instructions and download links.
-::::
 
 
 ## Connecting
