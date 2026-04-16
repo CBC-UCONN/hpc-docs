@@ -12,23 +12,11 @@ Before using the VPN, users must request to be added to the VPN group and enroll
 2) You will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO.
 
 ## Installation
-Once granted access, install the Cisco Secure Client. The client can be downloaded from the links below. 
+Once granted access, install the Cisco Secure Client if you do not already have it installed.
 
-<!-- 
-TODO: Supposedly everyone should be able to access this link. Doesn't work when I use my UConn Credentials
-The Cisco Secure Client can be downloaded at [here](https://uchc.sharepoint.com/sites/myUCONNHealth/updates/Lists/Posts/Post.aspx?ID=466&CT=1771426801029&OR=OWA-NT-Mail&CID=4f4de9bc-66a0-e44e-d76f-eb7cf9875b1f).
+The Cisco Secure Client can be downloaded [here](https://connect.uchc.edu/)
 
-When prompted, enter your UConn Net ID and password to access the download instructions and download links. -->
-
-### UConn Users
-UConn users can download the Cisco Secure Client following the [UConn IT instructions](https://kb.uconn.edu/space/IKB/10907091023/Cisco+AnyConnect+VPN). 
-
-Enter your UConn Net ID and password when prompted to access the instructions and download links.
-
-### UConn Health Users
-UConn Health users can download the Cisco Secure Client following the [UCHC IT instructions](https://uchc.sharepoint.com/sites/myUCONNHealth/updates/Lists/Posts/Post.aspx?ID=466&CT=1771426801029&OR=OWA-NT-Mail&CID=4f4de9bc-66a0-e44e-d76f-eb7cf9875b1f).
-
-Enter your UConn Health Net ID and password when prompted to access the instructions and download links.
+When prompted, enter your CAM username and password to access the download link and follow the instructions to install the client.
 
 
 ## Connecting
@@ -37,6 +25,13 @@ Enter your UConn Health Net ID and password when prompted to access the instruct
 3) When prompted, enter your CAM username and password to login.
 
 ![](img/vpn-cam.png){width="400px"}
+
+### UConn Health IT managed devices
+For HPC users who use UConn Health IT managed (UCH domain member) devices, the Cisco Secure Client will already be installed.
+
+1) Open the Cisco Secure Client application on your computer.
+2) In the address field, enter `connect.uchc.edu`. Click on the “Connect” button.
+3) When prompted, enter your UConn Health Net ID and password to login.
 
 
 ## Help
