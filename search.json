@@ -202,18 +202,29 @@
     "href": "vpn.html",
     "title": "VPN Access",
     "section": "",
-    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client. Below are instructions for",
+    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.",
     "crumbs": [
       "Connecting",
       "VPN"
     ]
   },
   {
-    "objectID": "vpn.html#installing-cisco-secure-client",
-    "href": "vpn.html#installing-cisco-secure-client",
+    "objectID": "vpn.html#requesting-vpn-access",
+    "href": "vpn.html#requesting-vpn-access",
     "title": "VPN Access",
-    "section": "Installing Cisco Secure Client",
-    "text": "Installing Cisco Secure Client\n\nReqesting VPN access\n\nUsers must submit a request for access by submitting a Request Ticket\nYou will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.\n\n\n\nInstallation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\nUConn UsersUConn Health Users\n\n\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\n\n\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter you UConn Health Net ID and password when prompted to access the insructions.",
+    "section": "Requesting VPN access",
+    "text": "Requesting VPN access\nBefore using the VPN, users must request to be added to the VPN group and enroll in DUO.\n\nTo request to be added to the VPN group, submit a Request Ticket\nYou will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#installation",
+    "href": "vpn.html#installation",
+    "title": "VPN Access",
+    "section": "Installation",
+    "text": "Installation\nOnce granted access, install the Cisco Secure Client. The client can be downloaded from the links below.\n\n\nUConn UsersUConn Health Users\n\n\nUConn users can download the Cisco Secure Client following the UConn IT instructions.\nEnter your UConn Net ID and password when prompted to access the instructions and download links.\n\n\nUConn Health users can download the Cisco Secure Client following the UCHC IT instructions.\nEnter your UConn Health Net ID and password when prompted to access the instructions and download links.",
     "crumbs": [
       "Connecting",
       "VPN"
@@ -802,7 +813,7 @@
     "href": "help.html",
     "title": "Getting Help",
     "section": "",
-    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services and full end to end project support are available. See the Service Rates page for more information.",
+    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
     "crumbs": [
       "Get Help"
     ]
@@ -838,11 +849,11 @@
     ]
   },
   {
-    "objectID": "help.html#consulations",
-    "href": "help.html#consulations",
+    "objectID": "help.html#consultations",
+    "href": "help.html#consultations",
     "title": "Getting Help",
     "section": "",
-    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services and full end to end project support are available. See the Service Rates page for more information.",
+    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
     "crumbs": [
       "Get Help"
     ]
