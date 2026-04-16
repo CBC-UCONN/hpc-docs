@@ -2,25 +2,34 @@
 title: "VPN Access"
 ---
 
-Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client. Below are instructions for 
+Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.
 
-## Installing Cisco Secure Client 
 
-### Reqesting VPN access
-1) Users must submit a request for access by submitting a [Request Ticket](https://health.uconn.edu/high-performance-computing/contact/)
+## Requesting VPN access
+Before using the VPN, users must request to be added to the VPN group and enroll in DUO.
+
+1) To request to be added to the VPN group, submit a [Request Ticket](https://health.uconn.edu/high-performance-computing/contact/)
 2) You will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO.
 
-### Installation
+## Installation
 Once granted access, install the Cisco Secure Client. The client can be downloaded from the links below. 
+
+<!-- 
+TODO: Supposedly everyone should be able to access this link. Doesn't work when I use my UConn Credentials
+The Cisco Secure Client can be downloaded at [here](https://uchc.sharepoint.com/sites/myUCONNHealth/updates/Lists/Posts/Post.aspx?ID=466&CT=1771426801029&OR=OWA-NT-Mail&CID=4f4de9bc-66a0-e44e-d76f-eb7cf9875b1f).
+
+When prompted, enter your UConn Net ID and password to access the download instructions and download links. -->
 
 ::: {.panel-tabset}
 #### UConn Users
 UConn users can download the Cisco Secure Client following the [UConn IT instructions](https://kb.uconn.edu/space/IKB/10907091023/Cisco+AnyConnect+VPN). 
 
+Enter your UConn Net ID and password when prompted to access the instructions and download links.
+
 #### UConn Health Users
 UConn Health users can download the Cisco Secure Client following the [UCHC IT instructions](https://uchc.sharepoint.com/sites/myUCONNHealth/updates/Lists/Posts/Post.aspx?ID=466&CT=1771426801029&OR=OWA-NT-Mail&CID=4f4de9bc-66a0-e44e-d76f-eb7cf9875b1f).
 
-Enter you UConn Health Net ID and password when prompted to access the insructions.
+Enter your UConn Health Net ID and password when prompted to access the instructions and download links.
 ::::
 
 
@@ -33,6 +42,6 @@ Enter you UConn Health Net ID and password when prompted to access the insructio
 
 
 ## Help
-If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk by email at [uconnprod@service-now.com](mailto:uconnprod@service-now.com) or by phone at 860-679-4400.
+If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk by email at [uconnprod@service-now.com](mailto:uconnprod@service-now.com) or by phone at [860-679-4400](tel:860-679-4400).
 
 We do not have administrative access to the VPN to be able to assist with VPN issues.
