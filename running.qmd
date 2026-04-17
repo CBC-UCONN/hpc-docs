@@ -37,8 +37,7 @@ Where `<script>` is the name of the script that you want to run as a job.
 Alternatively, the `sbatch` arguments can be specified as a header in your script:
 
 ```bash
-#/bin/bash
-
+#!/bin/bash
 #SBATCH --job-name=<job name>
 #SBATCH --cpus-per-task=<cpu number> 
 #SBATCH --mem=<memory>
