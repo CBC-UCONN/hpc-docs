@@ -12,7 +12,7 @@ In order to use Open OnDemand you will need:
 - The CAM VPN if you are not connected to the UConnHealth-SECURE WiFi or wired ethernet. See [CAM VPN](vpn.qmd) page for instructions on how to connect to the CAM VPN.
 
 ## Connecting
-To connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.
+To connect through Open OnDemand, navigate to [https://ondemand.cam.uchc.edu](https://ondemand.cam.uchc.edu) in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.
 
 ![](img/ood-login.png){width=500px} 
 
