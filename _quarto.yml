@@ -48,6 +48,9 @@ website:
       - text: "Transferring Data"
         href: transfer.qmd
       
+      - text: "Storage Policies"
+        href: datapolicy.qmd
+      
       - text: "Software"
         href: software.qmd
       

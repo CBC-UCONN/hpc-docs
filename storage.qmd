@@ -15,7 +15,7 @@ The UConn Health HPC System offers a variety of systems for storage and archivin
 The following spaces are suitable for use for active data analysis. 
 
 ### /home/FCAM/\<user\>
-Quota: 25GB. Generally cannot be expanded. 
+Quota: 2 TB. Generally cannot be expanded. 
 
 All users will have a home directory when their account is created. 
 
@@ -76,7 +76,9 @@ This location is used for storing raw sequencing data and is intended to allevia
 
 If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at `cbcsupport@helpspotmail.com`.
 
-Raw sequence data will be stored here for a period of **2 years**. After this time, the data will be moved to `/tapearchive/seqdata`. [See below](#tapearchive) for more information on `/tapearchive`.
+Raw sequence data will be stored here for a period of **2 years**. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still finalized, but users will be able to request that data be moved back to `/seqdata` for a period of time if they need to actively the the data again for anlyses. 
+
+<!-- After this time, the data will be moved to `/tapearchive/seqdata`. [See below](#tapearchive) for more information on `/tapearchive`. -->
 
 **Do not copy data from this directory**. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own. 
 
@@ -154,7 +156,7 @@ This system is intended for *medium term* storage of data that is no longer bein
 Eventually, data stored here will be moved to tape storage. 
 
 
-### /tapebackup
+<!-- ### /tapebackup
 Quota: No current quota policy. 
 
 This system is intended for *short term* storage (< 1 year). Think of it as a temporary storage space for files you don't currently need, but are not ready to delete. 
@@ -171,7 +173,7 @@ This system is intended for *long term* storage. Completed projects and datasets
 
 It also stores data on magnetic tape, but on two redundant copies in the same physical location. Like with `/tapebackup`, access is slow. 
 
-This system also includes a `seqdata` directory where data from `/seqdata` are moved after a period of 2 years. Users may request that data be moved back to `/seqdata` for a period of time if they need to actively the the data again for anlyses. 
+This system also includes a `seqdata` directory where data from `/seqdata` are moved after a period of 2 years. Users may request that data be moved back to `/seqdata` for a period of time if they need to actively the the data again for anlyses.  -->
 
 
 ## Summary table
@@ -180,7 +182,7 @@ This system also includes a `seqdata` directory where data from `/seqdata` are m
 |---------------|-------------|------------|--------------------|-------------------------------|
 | `/home/FCAM/<user>`| Personal home directory for code, config, small data | Created for each user | 25GB| Permissions must remain private. For sharing, use `/labs` or `/projects`. |
 | `/scratch` | Temporary storage for active analyses | Open to all users | 91TB (shared) | Files unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST. |
-| `/sandbox`  | Temporary space | Same as `/scratch` | 664TB (shared) | Files unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST. |
+<!-- | `/sandbox`  | Temporary space | Same as `/scratch` | 664TB (shared) | Files unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST. | -->
 | `/seqdata`  | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |
 | `/tmp` | Node-local temporary space  | Shared per node  | Small | May fill up unexpectedly. Set `TMPDIR` to redirect temp files. |
 | `/local` | Larger node-local temp space | Shared per node | Larger than `/tmp` | Clean up after use. |
