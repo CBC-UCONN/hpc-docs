@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open OnDemand – UCHC HPC</title>
+<title>datapolicy – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./ondemand.html">Open OnDemand</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./datapolicy.html">Storage Policies</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,11 +132,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect.html" class="sidebar-item-text sidebar-link">
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ondemand.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ondemand.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open OnDemand</span></a>
   </div>
 </li>
@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./datapolicy.html" class="sidebar-item-text sidebar-link">
+  <a href="./datapolicy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Storage Policies</span></a>
   </div>
 </li>
@@ -221,97 +221,57 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
-  <li><a href="#connecting" id="toc-connecting" class="nav-link" data-scroll-target="#connecting">Connecting</a></li>
-  <li><a href="#interactive-apps" id="toc-interactive-apps" class="nav-link" data-scroll-target="#interactive-apps">Interactive Apps</a></li>
-  <li><a href="#availabe-applications" id="toc-availabe-applications" class="nav-link" data-scroll-target="#availabe-applications">Availabe Applications</a></li>
+  <li><a href="#storage-policies" id="toc-storage-policies" class="nav-link active" data-scroll-target="#storage-policies">Storage Policies</a>
+  <ul class="collapse">
+  <li><a href="#managed-storage" id="toc-managed-storage" class="nav-link" data-scroll-target="#managed-storage">Managed Storage</a>
+  <ul class="collapse">
+  <li><a href="#seqdata" id="toc-seqdata" class="nav-link" data-scroll-target="#seqdata">/seqdata</a></li>
+  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
+  <li><a href="#tmp" id="toc-tmp" class="nav-link" data-scroll-target="#tmp">/tmp</a></li>
+  </ul></li>
+  <li><a href="#user-managed-storage" id="toc-user-managed-storage" class="nav-link" data-scroll-target="#user-managed-storage">User Managed Storage</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./ondemand.html">Open OnDemand</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Open OnDemand</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand <strong>only provides access to the Mantis cluster</strong>. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the <a href="./cli.html">Command Line Interface</a> page for instructions on how to connect through a terminal.</p>
-<section id="pre-requisites" class="level2">
-<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
-<p>In order to use Open OnDemand you will need:</p>
-<ul>
-<li>A CAM account and a password that has not expired. See the <a href="./starting.html">Getting Started</a> page for instructions on how to request an account and reset your password.</li>
-<li>A web browser. Open OnDemand is compatible with most modern web browsers.</li>
-<li>The CAM VPN if you are not connected to the UConnHealth-SECURE WiFi or wired ethernet. See <a href="./vpn.html">CAM VPN</a> page for instructions on how to connect to the CAM VPN.</li>
-</ul>
+<section id="storage-policies" class="level1">
+<h1>Storage Policies</h1>
+<p>This page summarizes storage policies and management practices on the UConn Health HPC. For more information about the file systems and storage locations available on the cluster, please see the <a href="./storage.html">storage page</a>.</p>
+<section id="managed-storage" class="level2">
+<h2 class="anchored" data-anchor-id="managed-storage">Managed Storage</h2>
+<section id="seqdata" class="level3">
+<h3 class="anchored" data-anchor-id="seqdata">/seqdata</h3>
+<p>This location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core is stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.</p>
+<p>If you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at <code>cbcsupport@helpspotmail.com</code>.</p>
+<p>Raw sequence data will be stored here for a period of <strong>2 years</strong>. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still finalized, but users will be able to request that data be moved back to <code>/seqdata</code> for a period of time if they need to actively the the data again for anlyses.</p>
+<p><strong>Do not copy data from this directory</strong>. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.</p>
 </section>
-<section id="connecting" class="level2">
-<h2 class="anchored" data-anchor-id="connecting">Connecting</h2>
-<p>To connect through Open OnDemand, navigate to <a href="https://ondemand.cam.uchc.edu">https://ondemand.cam.uchc.edu</a> in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.</p>
-<p><img src="img/ood-login.png" class="img-fluid" width="500"></p>
-<p><img src="img/ood-dashboard.png" class="img-fluid" width="500"></p>
+<section id="scratch" class="level3">
+<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
+<p>Files will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.</p>
 </section>
-<section id="interactive-apps" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-apps">Interactive Apps</h2>
-<p>Open OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.</p>
-<section id="to-launch-an-interactive-app" class="level4">
-<h4 class="anchored" data-anchor-id="to-launch-an-interactive-app">To launch an interactive app:</h4>
-<ol type="1">
-<li>Click the link to the app you want to use.</li>
-<li>Fill and modify the form specifying the desired resource allocation for you job.</li>
-<li>The “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.</li>
-</ol>
-<p><img src="img/ood-env-config.png" class="img-fluid" width="400"></p>
-<ol start="4" type="1">
-<li>Click the “Launch” button to submit the job to the cluster.</li>
-</ol>
-<p><img src="img/ood-launch.png" class="img-fluid" width="400"></p>
-<ol start="5" type="1">
-<li>Once the job is running, click the “Connect” button to open the application in a new browser tab.</li>
-</ol>
-<p><img src="img/ood-connect.png" class="img-fluid" width="400"></p>
-<ol start="6" type="1">
-<li><strong>Important</strong>. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.</li>
-</ol>
-<p><img src="img/ood-delete.png" class="img-fluid" width="400"></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Leaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.</p>
-</div>
-</div>
+<section id="tmp" class="level3">
+<h3 class="anchored" data-anchor-id="tmp">/tmp</h3>
+<p>Any files in <code>/tmp</code> belonging to a user without an active job on a node may be removed at any time.</p>
 </section>
 </section>
-<section id="availabe-applications" class="level2">
-<h2 class="anchored" data-anchor-id="availabe-applications">Availabe Applications</h2>
-<ul>
-<li><strong>JupyterLab</strong>: A web-based interactive development environment for Jupyter notebooks, code, and data.</li>
-<li><strong>RStudio</strong>: An integrated development environment for R programming language.</li>
-</ul>
+<section id="user-managed-storage" class="level2">
+<h2 class="anchored" data-anchor-id="user-managed-storage">User Managed Storage</h2>
+<p>All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for <code>\lab</code>, <code>\projects</code>, and <code>\department</code>. To request a quota increase, please <a href="https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/">submit a ticket</a>.</p>
+<div class="line-block">Location | Quota |<br>
+/home/FCAM/&lt;user&gt; | 2 TB |<br>
+/labs | 2 TB |<br>
+/projects | 2 TB |<br>
+/department | 2 TB |</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
