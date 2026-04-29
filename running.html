@@ -518,7 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="premtible-qos" class="level1">
 <h1>Premtible QOS</h1>
-<p>The preemptible qos is available on the Mantis cluster. Jobs running with this qos may be preempted by higher priority jobs. This qos is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restarted are good candidates for this qos. This qos can be used with any of the Mantis partitions.</p>
+<p>The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.</p>
 <section id="slurm-arguments-9" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-9">Slurm Arguments:</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
