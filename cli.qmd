@@ -17,6 +17,7 @@ The mantis external host will connect you to a Mantis login node.
 
 #### Requirements
 - [SSH key](keys.qmd)
+- VPN not required.
 - **Cannot** be used while connected to CAM VPN.
   - Connection will happen momentarily before being dropped.
 

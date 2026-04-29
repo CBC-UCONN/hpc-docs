@@ -140,7 +140,7 @@ A partition is a group of compute nodes that share certain specifications and po
 This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.
 
 ##### Slurm Arguments:
-```
+```bash
 #SBATCH --qos=general
 ```
 
@@ -149,7 +149,7 @@ This parition contains nodes suitable for jobs that have very large memory requi
 
 ##### Slurm Arguments:
 
-```
+```bash
 #SBATCH --partition=himem
 #SBATCH --qos=himem
 ```
@@ -158,37 +158,79 @@ This parition contains nodes suitable for jobs that have very large memory requi
 This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
 ##### Slurm Arguments:
-```
+```bash
 #SBATCH --partition=debug
 #SBATCH --qos=debug
 ```
 
-<!-- ## preemptible 
-Jobs run in this partition my be preempted by higher priority users. This partition is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restartd are good candidates for this partition.
 
-##### Slurm Arguments:
-```
-#SBATCH --partition=preemtible
-#SBATCH --qos=preemtible
-``` -->
 
 ## Xanadu
 
 ### general
+These nodes are suitable for most tasks.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=general
+#SBATCH --qos=general
+```
 
 ### xeon
+Use this partition if you need to run on Intel Xeon CPUs.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=xeon
+#SBATCH --qos=general
+```
 
 ### amd
+Use this partition if you need to run on AMD CPUs.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=amd
+#SBATCH --qos=general
+```
 
 ### himem
+Use this partition if you have very large memory requirements > 500 GB.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=himem
+#SBATCH --qos=himem
+```
 
 ### gpu
+Use this partition if you need to run on a GPU.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=gpu
+#SBATCH --qos=general
+```
 
 ### mcbstudent
+This partition is available for students in courses or workshops who have been given access.
 
-
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=mcbstudent
+#SBATCH --qos=mcbstudent
+```
 :::
 
+
+# Premtible QOS
+The preemptible qos is available on the Mantis cluster. Jobs running with this qos may be preempted by higher priority jobs. This qos is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restarted are good candidates for this qos. This qos can be used with any of the Mantis partitions.
+
+##### Slurm Arguments:
+```bash
+#SBATCH --partition=general
+#SBATCH --qos=preemptible
+``` 
 
 # SLURM Environment Variables
 <!-- TODO: Show a couple of examples to illustrate their use -->
@@ -226,16 +268,16 @@ nvidia-smi
 ```
 
 ## Xanadu
-<!-- TODO: How it's done on Xanadu -->
+Visit [https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage](https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage) for information about requesting and using GPUs on the Xanadu cluster.
 
 :::
 
 # Feature Constraints
 When a job requires specific hardware or software features on a compute node, a user can specify these requirements using the `--constraint=<feature>` argument where <feature> is a defined feature of a node. Multiple constraints can be specified with `&` (and) or `|` (or) operators. The defined features and description are listed in the table below. See the [SLURM documentation](https://slurm.schedmd.com/archive/slurm-18.08.5/sbatch.html#OPT_constraint) for more information on using constraints.
 
-<!-- TODO: How to list constraints -->
+The features defined for each node can be listed with the command `sinfo -o "%N %f"`.
 
-The defined features will differ between the Mantis and Xanadu clusters. See below for the features available on each cluster.
+The defined features will differ between the Mantis and Xanadu clusters. See below for information about the defined features on each cluster.
 
 ::: {.panel-tabset}
 ## Mantis
@@ -248,7 +290,14 @@ The defined features will differ between the Mantis and Xanadu clusters. See bel
 | xeon_platinum_8462Y+ | Intel Xeon Platinum 8462Y CPUs |
 
 ## Xanadu
-<!-- TODO: What is available on Xanadu -->
+### Some Defined Features
+| Feature   | Description |
+|-----------|-------------|
+| cpu_amd   | AMD CPUs |
+| cpu_xeon  | Intel Xeon CPUs |
+
+For others run `sinfo -o "%N %f"`.
+
 :::
 
 ### Example
