@@ -224,7 +224,7 @@ This partition is available for students in courses or workshops who have been g
 
 
 # Premtible QOS
-The preemptible qos is available on the Mantis cluster. Jobs running with this qos may be preempted by higher priority jobs. This qos is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority users. Jobs with short run times or jobs that can be restarted are good candidates for this qos. This qos can be used with any of the Mantis partitions.
+The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.
 
 ##### Slurm Arguments:
 ```bash
