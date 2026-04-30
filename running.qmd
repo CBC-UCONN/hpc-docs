@@ -50,7 +50,7 @@ Alternatively, the `sbatch` arguments can be specified as a header in your scrip
 This would be run with the command: `sbatch <script>.sh`
 
 ### Example
-Below is an example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
+Here is a complete example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
 
 ```bash
 #!/bin/bash
@@ -98,10 +98,7 @@ A group of nodes which the job will be allocated to. This defaults to `general`.
 When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.
 
 #### \-\-mail-user
-Address to send mail to.
-
-#### \-\-export
-This specifies which environment variables to export to the job. The default on the UConn Health HPC system is `NONE` which means that no environment variables are exported. If you want to export all environment variables, use `ALL`. You can also specify a comma separated list of specific environment variables to export. For example, `--export=VAR1,VAR2` would export the environment variables VAR1 and VAR2 to the job.
+Address to send mail to. 
 
 #### Additional commands
 `sbatch` is a powerful tool with many other configuration options beyond the scope of this documentation.
@@ -148,7 +145,7 @@ This partition contains nodes suitable for most tasks. These nodes have 64-128 A
 ```
 
 ### himem
-This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1-2 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless &ge;500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
+This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.
 
 ##### Slurm Arguments:
 
