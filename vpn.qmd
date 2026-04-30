@@ -35,6 +35,6 @@ For HPC users who use UConn Health IT managed (UCH domain member) devices, the C
 
 
 ## Help
-If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk by email at [uconnprod@service-now.com](mailto:uconnprod@service-now.com) or by phone at [860-679-4400](tel:860-679-4400).
+If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk through [uconnprod.service-now.com](uconnprod.service-now.com) or by phone at [860-679-4400](tel:860-679-4400).
 
 We do not have administrative access to the VPN to be able to assist with VPN issues.
