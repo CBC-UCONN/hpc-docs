@@ -47,3 +47,6 @@ Leaving interactive jobs running while you are not actively using them constitut
 ## Availabe Applications
 - **JupyterLab**: A web-based interactive development environment for Jupyter notebooks, code, and data.
 - **RStudio**: An integrated development environment for R programming language.
+
+## Popup & Ad Blockers
+Some features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the [ondemand.cam.uchc.edu](https://ondemand.cam.uchc.edu) url and see if that resolves the issue.
