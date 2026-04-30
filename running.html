@@ -339,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This would be run with the command: <code>sbatch &lt;script&gt;.sh</code></p>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Below is an example which also demonstrates the use of <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables</a> which access the values of the <code>--job-name</code> and <code>--cpus-per-task</code> arguments in the job script. Note the use of the <code>hostname</code> command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.</p>
+<p>Here is a complete example which also demonstrates the use of <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables</a> which access the values of the <code>--job-name</code> and <code>--cpus-per-task</code> arguments in the job script. Note the use of the <code>hostname</code> command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-job</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1 </span></span>
@@ -396,10 +396,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="mail-user">--mail-user</h4>
 <p>Address to send mail to.</p>
 </section>
-<section id="export" class="level4">
-<h4 class="anchored" data-anchor-id="export">--export</h4>
-<p>This specifies which environment variables to export to the job. The default on the UConn Health HPC system is <code>NONE</code> which means that no environment variables are exported. If you want to export all environment variables, use <code>ALL</code>. You can also specify a comma separated list of specific environment variables to export. For example, <code>--export=VAR1,VAR2</code> would export the environment variables VAR1 and VAR2 to the job.</p>
-</section>
 <section id="additional-commands" class="level4">
 <h4 class="anchored" data-anchor-id="additional-commands">Additional commands</h4>
 <p><code>sbatch</code> is a powerful tool with many other configuration options beyond the scope of this documentation.</p>
@@ -444,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="himem" class="level3">
 <h3 class="anchored" data-anchor-id="himem">himem</h3>
-<p>This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1-2 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless ≥500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.</p>
+<p>This parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.</p>
 <section id="slurm-arguments-1" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-1">Slurm Arguments:</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=himem</span></span>
