@@ -53,7 +53,7 @@ scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
 ```
 
 ### Internal Transfer Host
-There is an additional host that can be used to transfer data without an SSH key. This host is only accessible through the CAM VPN or the UConnHealth-SECURE WiFi or wired ethernet. This host requires your CAM password for authentication if you have not setup an SSH key.
+There is an additional host that can be used to transfer data without an SSH key. This host is only accessible through the CAM VPN or the UConnHealth-SECURE WiFi <!-- or UCHC ethernet ?-->. This host requires your CAM password for authentication if you have not setup an SSH key.
 
 The URL for this host is `transfer.cam.uchc.edu`.
 

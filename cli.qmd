@@ -29,7 +29,7 @@ The mantis external host will connect you to a Mantis login node.
 
 #### Requirements
 - [SSH key](keys.qmd)
-- Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network or UCHC ethernet.
+- Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network. <!-- or UCHC ethernet. ? -->
 
 #### Usage
 `ssh <user>@mantis-submit.cam.uchc.edu` where `user` is replaced with your CAM username.
