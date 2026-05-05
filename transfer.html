@@ -333,8 +333,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="wildcards" class="level3">
 <h3 class="anchored" data-anchor-id="wildcards">Wildcards</h3>
-<p>Secure copy also supports the use of wildcards such as <code>*</code> for the remote path as long as wildcard characters are escaped with a <code>\</code>. For example, to copy all <code>.txt</code> files from your UConn Health HPC file system home directory to your local computer:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.hpc.cam.uchc.edu:\*.txt <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Secure copy also supports the use of wildcards such as <code>*</code> for the remote path as long as wildcard characters are escaped with a <code>\</code> or the url + path are enclosed in quotes. For example, to copy all <code>.txt</code> files from your UConn Health HPC file system home directory to your local computer:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="st">"&lt;user&gt;@transfer.hpc.cam.uchc.edu:\*.txt"</span> <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="st">"&lt;user&gt;@transfer.hpc.cam.uchc.edu:*.txt"</span> <span class="op">&lt;</span>local_directory_path<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="internal-transfer-host" class="level3">
 <h3 class="anchored" data-anchor-id="internal-transfer-host">Internal Transfer Host</h3>
