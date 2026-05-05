@@ -46,10 +46,16 @@ scp -r <local_directory_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
 ```
 
 ### Wildcards
-Secure copy also supports the use of wildcards such as `*` for the remote path as long as wildcard characters are escaped with a `\`.  For example, to copy all `.txt` files from your UConn Health HPC file system home directory to your local computer:
+Secure copy also supports the use of wildcards such as `*` for the remote path as long as wildcard characters are escaped with a `\` or the url + path are enclosed in quotes.  For example, to copy all `.txt` files from your UConn Health HPC file system home directory to your local computer:
 
 ```bash
-scp <user>@transfer.hpc.cam.uchc.edu:\*.txt <local_directory_path>
+scp "<user>@transfer.hpc.cam.uchc.edu:\*.txt" <local_directory_path>
+```
+
+or
+
+```bash
+scp "<user>@transfer.hpc.cam.uchc.edu:*.txt" <local_directory_path>
 ```
 
 ### Internal Transfer Host
