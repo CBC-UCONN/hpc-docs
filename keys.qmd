@@ -49,7 +49,7 @@ Do not share your private key with anyone! Your private key should be kept secre
 ### Copy Public SSH Key to the UCHC HPC system
 Once you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system.
 
-In order to do so you must first connect to the [CAM VPN](#cam-vpn) or be using a UCHC secure WiFi network.
+<!-- In order to do so you must first connect to the [CAM VPN](#cam-vpn) or be using a UCHC secure WiFi network. -->
 
 ::: {.panel-tabset}
 ### MacOS and Linux
