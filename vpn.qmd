@@ -14,7 +14,7 @@ Before using the VPN, users must request to be added to the VPN group and enroll
 ## Installation
 Once granted access, install the Cisco Secure Client if you do not already have it installed.
 
-The Cisco Secure Client can be downloaded [here](https://connect.uchc.edu/)
+The Cisco Secure Client can be downloaded [here](https://connect.uchc.edu/+CSCOE+/logon.html#form_title_text)
 
 When prompted, enter your CAM username and password to access the download link and follow the instructions to install the client.
 
