@@ -1,79 +1,22 @@
 [
   {
-    "objectID": "cli.html",
-    "href": "cli.html",
-    "title": "Connecting through the Command Line Interface",
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "File systems and storage",
     "section": "",
-    "text": "For more advanced usage and greater control, users can connect to UCHC HPC resources using a Command Line Interface (CLI).",
+    "text": "The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines.",
     "crumbs": [
-      "Connecting",
-      "Command Line"
+      "File Systems & Storage"
     ]
   },
   {
-    "objectID": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
-    "href": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
-    "title": "Connecting through the Command Line Interface",
-    "section": "Mantis External login.hpc.cam.uchc.edu",
-    "text": "Mantis External login.hpc.cam.uchc.edu\nThe mantis external host will connect you to a Mantis login node.\n\nRequirements\n\nSSH key\nVPN not required.\nCannot be used while connected to CAM VPN.\n\nConnection will happen momentarily before being dropped.\n\n\n\n\nUsage\nssh &lt;user&gt;@login.hpc.cam.uchc.edu where user is replaced with your CAM username.",
+    "objectID": "storage.html#summary-table",
+    "href": "storage.html#summary-table",
+    "title": "File systems and storage",
+    "section": "Summary table",
+    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n91TB (shared)\nFiles unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST.\n\n\n\n\n/seqdata | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |\n/tmp | Node-local temporary space | Shared per node | Small | May fill up unexpectedly. Set TMPDIR to redirect temp files. |\n/local | Larger node-local temp space | Shared per node | Larger than /tmp | Clean up after use. |\n/archive | Medium-term storage (up to ~1 year) | Request via CBC, access varies | NA | Slower than active spaces, geospread, more expensive. |\n/tapebackup | Long-term storage (1+ years) | Request via CBC, access varies | NA | Stored on single magnetic tape, not redundant, very slow access. |\n/tapearchive | Very long-term or permanent storage | Request via CBC, access varies | NA | Redundant magnetic tape storage, very slow access. |",
     "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
-    "href": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
-    "title": "Connecting through the Command Line Interface",
-    "section": "Mantis Internal mantis-submit.cam.uchc.edu",
-    "text": "Mantis Internal mantis-submit.cam.uchc.edu\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network. \n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where user is replaced with your CAM username.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#xanadu-external-xanadu-submit-ext.cam.uchc.edu",
-    "href": "cli.html#xanadu-external-xanadu-submit-ext.cam.uchc.edu",
-    "title": "Connecting through the Command Line Interface",
-    "section": "Xanadu External xanadu-submit-ext.cam.uchc.edu",
-    "text": "Xanadu External xanadu-submit-ext.cam.uchc.edu\n\nRequirements\n\nValid CAM password or SSH key\n\n\n\nUsage\nssh &lt;user&gt;@xanadu-submit-ext.cam.uchc.edu where user is replaced with your CAM username.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#virtual-machines",
-    "href": "cli.html#virtual-machines",
-    "title": "Connecting through the Command Line Interface",
-    "section": "Virtual Machines",
-    "text": "Virtual Machines\nA number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#ssh-client",
-    "href": "cli.html#ssh-client",
-    "title": "Connecting through the Command Line Interface",
-    "section": "SSH Client",
-    "text": "SSH Client\nAn SSH client is a software tool that allows you to connect to a remote server using the SSH protocol. Most operating systems come with a built-in SSH client, but there are also third-party SSH clients available for download.\n\nMacOS & Linux\nMacOS and Linux users can use the built-in SSH client through the Terminal application.\n\n\nWindows\nSince Windows 10, Windows comes with a built-in SSH client which can be accessed through the Windows PowerShell application. For older versions of Windows, you can use a third-party SSH client such as MobaXterm.\n\n\nUsage\nIf using the built-in SSH client, you simply open a Terminal or Windows PowerShell application and use the SSH command ssh to connect to the desired host. The general syntax for the SSH command is: ssh &lt;user&gt;@&lt;host url&gt; where &lt;user&gt; is your CAM username and &lt;host url&gt; is the URL of the host you want to connect to (e.g. login.hpc.cam.uchc.edu for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the SSH Keys section below for more information on SSH keys and how to generate and use them for authentication.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#ssh-keys",
-    "href": "cli.html#ssh-keys",
-    "title": "Connecting through the Command Line Interface",
-    "section": "SSH Keys",
-    "text": "SSH Keys\nMost SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the SSH Keys page for more information and for instructions on how to generate and use SSH keys for authentication.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
+      "File Systems & Storage"
     ]
   },
   {
@@ -87,45 +30,11 @@
     ]
   },
   {
-    "objectID": "connect.html",
-    "href": "connect.html",
-    "title": "Connecting to the HPC system",
-    "section": "",
-    "text": "Once an account has been created and a new password has been set, users can connect to the HPC system. There are two optons for connecting:\n\n1) Web Access through Open OnDemand\nOpen OnDemand is a web-based portal that provides users with access to Mantis and the HPC filesystem. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface.\n\n\n2) Command Line Interface\nUser can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve.",
-    "crumbs": [
-      "Connecting"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UConn Health High Performance Computing",
-    "section": "",
-    "text": "Introduction\nThe University of Connecticut Health High Performanc Computing Facility provides a variety of high performance computing services and resources to both University of Connecticut and UConn Health researchers at no cost. Most notably the Mantis computer cluster. A summary of available resources and services can be found at the About page. Administration of the UConn Health HPC system is jointly handled by the University of Connecticut Computational Biology Core and the Center for Cell Analysis and Modeling at UConn Health.\n\n\nDocumentation\nThis site serves as documentation for users of UConn Health HPC system and is maintained by the University of Connecticut Computational Biology Core.\n\n\nGetting Started\nNew users should visit the Getting Started page for instructions on how to request an account and access the system. Visit the Get Help page for a list of ways to seek help on using the system.\n\n\n\nStorrs HPC Facility\nThere is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit this site."
-  },
-  {
-    "objectID": "examples.html",
-    "href": "examples.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "https://services.rt.nyu.edu/docs/hpc/getting_started/intro/ https://www.hpc.caltech.edu/"
-  },
-  {
-    "objectID": "running.html",
-    "href": "running.html",
-    "title": "Job Submission",
-    "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands.  When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer clusters use SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.\n\nBatch Submission\nInteractive Job\n\n\nBatch job submission\nA batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.\nTo submit a batch job, use the sbatch command. A basic command might look like:\nsbatch \\\n  --job-name &lt;name&gt; \\\n  --cpus-per-task &lt;cpus&gt; \\\n  --mem &lt;memory&gt; \\\n  --time &lt;time&gt; \\\n  --qos &lt;qos&gt; \\\n  --output %x-%j.out \\\n  &lt;script&gt;\nWhere &lt;script&gt; is the name of the script that you want to run as a job.\nAlternatively, the sbatch arguments can be specified as a header in your script:\n#!/bin/bash\n#SBATCH --job-name=&lt;job name&gt;\n#SBATCH --cpus-per-task=&lt;cpu number&gt; \n#SBATCH --mem=&lt;memory&gt;\n#SBATCH --time=&lt;days-hrs:min:sec&gt;\n#SBATCH --qos=&lt;partition name&gt;\n#SBATCH --output=%x-%j.out\n\n&lt;your script here&gt;\nThis would be run with the command: sbatch &lt;script&gt;.sh\n\nExample\nHere is a complete example which also demonstrates the use of SLURM environment variables which access the values of the --job-name and --cpus-per-task arguments in the job script. Note the use of the hostname command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.\n#!/bin/bash\n#SBATCH --job-name=test-job\n#SBATCH --cpus-per-task=1 \n#SBATCH --mem=100mb\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n\nhostname\n\necho $SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus\n\n\nRequired arguments\nThe following arguments are required when running sbatch on the Mantis cluster.\n\n--qos\nThe qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition if specifying a partition. If using the general paritition, only the qos needs to be specified.\n\n\n\nCommonly used arguments\nBelow are some of the most useful and commonly used arguments for sbatch.\n\n--job-name\nThe name of the job. Used for displaying job information when monitoring the job and for naming log files.\n\n\n--cpus-per-task\nThe number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.\n\n\n--mem\nThe amount of memory to allocate. This argument takes a number followed by a unit such as mb for megabytes or gb for gigabytes. If no unit is given, megabytes are used. If no --mem argument is used, a job defaults to 120 MB?\n\n\n--time\nTime limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format days-hrs:min:sec, days-hrs, hrs:min:sec, min:sec, or sec. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.\n\n\n--output\nThis specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options here.\n\n\n--partition\nA group of nodes which the job will be allocated to. This defaults to general. See the partitions section for available partitions.\n\n\n--mail-type\nWhen to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.\n\n\n--mail-user\nAddress to send mail to.\n\n\nAdditional commands\nsbatch is a powerful tool with many other configuration options beyond the scope of this documentation.\nSee the sbatch documentation for more information about command arguments.\n\n\n\n\nInteractive Job\nAn interactive session can be started on a compute node using the srun command.\nAt a minimum, you would use these arguments:\nsrun --qos=general --pty bash\nMost sbatch arguments can also be used with srun. For --mem or --cpus-per-task if you needed to request additional resources.\n\n\nJob status and monitoring\nTo monitor the status of your jobs you can run squeue -u &lt;user&gt; which will list the status of all jobs that belong to you. See the squeue documentation for additional arguments and output formatting options.\n\n\nCanceling a job\nIf you need to cancel a job that is currently running or in the queue, you can use the scancel command. The basic syntax is:\nscancel &lt;job_id&gt;\n\n\nRequest time extensions\nIf you have a job that may not finish within the allocated time limit you can submit a time extension request\n\n\nPartitions\nA partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks. The Mantis and Xanadu cluster have slightly different partitions summarized below.\n\nMantisXanadu\n\n\n\ngeneral\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.\n\nSlurm Arguments:\n#SBATCH --qos=general\n\n\n\nhimem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem\n\n\n\ndebug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.\n\nSlurm Arguments:\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n\n\n\n\n\ngeneral\nThese nodes are suitable for most tasks.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=general\n\n\n\nxeon\nUse this partition if you need to run on Intel Xeon CPUs.\n\nSlurm Arguments:\n#SBATCH --partition=xeon\n#SBATCH --qos=general\n\n\n\namd\nUse this partition if you need to run on AMD CPUs.\n\nSlurm Arguments:\n#SBATCH --partition=amd\n#SBATCH --qos=general\n\n\n\nhimem\nUse this partition if you have very large memory requirements &gt; 500 GB.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem\n\n\n\ngpu\nUse this partition if you need to run on a GPU.\n\nSlurm Arguments:\n#SBATCH --partition=gpu\n#SBATCH --qos=general\n\n\n\nmcbstudent\nThis partition is available for students in courses or workshops who have been given access.\n\nSlurm Arguments:\n#SBATCH --partition=mcbstudent\n#SBATCH --qos=mcbstudent\n\n\n\n\n\n\n\nPremtible QOS\nThe preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=preemptible\n\n\n\nSLURM Environment Variables\n\nSLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the SLURM environment variables documentation for a complete list of available variables.\n\n\nGPUs\nAllocation of a GPU differs on Mantis and Xanadu. See below for details on how to request a GPU on each cluster.\n\nMantisXanadu\n\n\nA GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the --gres=gpu:[type:]&lt;number&gt; agrument where the required &lt;number&gt; is the number of GPUs to allocate to the job. The type is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.\n\nGPU Types\n\n\n\n\nGPU\ntype\nnumber per node\n\n\n\n\nNVIDIA A100\nA100\n1\n\n\nNVIDIA L40S\nL40S\n1-3\n\n\n\n\n\nExample\n#!/bin/bash\n#SBATCH --job-name=test-gpu\n#SBATCH --cpus-per-task 1\n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n#SBATCH --gres=gpu:A100:1\n\n# Detect GPU\nnvidia-smi\n\n\n\nVisit https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage for information about requesting and using GPUs on the Xanadu cluster.\n\n\n\n\n\nFeature Constraints\nWhen a job requires specific hardware or software features on a compute node, a user can specify these requirements using the --constraint=&lt;feature&gt; argument where  is a defined feature of a node. Multiple constraints can be specified with & (and) or | (or) operators. The defined features and description are listed in the table below. See the SLURM documentation for more information on using constraints.\nThe features defined for each node can be listed with the command sinfo -o \"%N %f\".\nThe defined features will differ between the Mantis and Xanadu clusters. See below for information about the defined features on each cluster.\n\nMantisXanadu\n\n\n\nDefined Features\n\n\n\nFeature\nDescription\n\n\n\n\ncpu_amd\nAMD CPUs\n\n\ncpu_xeon\nIntel Xeon CPUs\n\n\nepyc_7352\nAMD EPYC 7352 CPUs\n\n\nxeon_platinum_8462Y+\nIntel Xeon Platinum 8462Y CPUs\n\n\n\n\n\n\n\nSome Defined Features\n\n\n\nFeature\nDescription\n\n\n\n\ncpu_amd\nAMD CPUs\n\n\ncpu_xeon\nIntel Xeon CPUs\n\n\n\nFor others run sinfo -o \"%N %f\".\n\n\n\n\n\nExample\nHaving software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command on Mantis to ensure that your job runs on a node with AMD CPUs.\n#!/bin/bash\n#SBATCH --job-name=test-feature-constraint\n#SBATCH --cpus-per-task 1 \n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n#SBATCH --constraint=cpu_amd\n\nlscpu\n\n\n\nJob Arrays\nIf you have a large set of similar tasks that can be run in parallel, job arrays offer a convenient solution for managing these. Job arrays are created using the --array=&lt;indexes&gt;[%limit] argument where the required &lt;indexes&gt; is a range (e.g. 0-4) or list (e.g. 1,3,5,7) of indexes and an optional limit, separated by a % is the maximum allowed number of simultaneously running jobs (e.g. %20). Jobs which are part of a job array will have the environment variable SLURM_ARRAY_TASK_ID set to the array index value for that job. The maximum index allowed in a job array is 5001.\n\nExample\nHere is a basic example where the job array will run 5 jobs in parallel, each with a different index value from 1 to 5. A different param value is printed to stdout based on the job index. Only 2 jobs will run at the same time due to the %2.\n#!/bin/bash\n#SBATCH --job-name=test-array-job\n#SBATCH --cpus-per-task 1 \n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%A-%a.out\n#SBATCH --array=1-5%2\n\nparams=(\"A\" \"B\" \"C\" \"D\" \"E\")\nparam=${params[$SLURM_ARRAY_TASK_ID-1]}\necho $param\nParameter values will often be stored in a separate file. Below are some examples of ways to access these values in a job array script.\n\nAccessing nth line from a text file\nparam=$(sed -n \"${SLURM_ARRAY_TASK_ID}p\" params.txt)\n\n\nAccessing nth value and second column from a csv file\nparam=$(sed -n \"${SLURM_ARRAY_TASK_ID}p\" params.csv | cut -d ',' -f 2)\n\n\nAccessing nth value and second column from a csv file with a header row\nparam=$(sed -n \"1~${SLURM_ARRAY_TASK_ID}p\" params.csv | cut -d ',' -f 2)\n\n\n\n\n\nX11 Forwarding\nSome applications, such as R, can produce graphical output. X Windows, a.k.a. X11, is an option for displaying that output in an interactive session.\n\nMacOSWindowsLinux\n\n\nFirst you need to install XQuartz on your local machine.\nThen, when connecting to Mantis, use the the ssh option -X (or possibly -Y if your application requires it) like this:\n# external:\nssh -X &lt;username&gt;@login.hpc.cam.uchc.edu\n# or when connected to the VPN:\nssh -X &lt;username&gt;@mantis-submit.cam.uchc.edu\nNow, to run your software in an interactive session, start it using the option --x11. For example:\nsrun --x11 --partition=general --qos=general --mem=5G --pty bash\nNow that you’re in an interactive session, you should be able to run your application.\nTry launching R:\nR\nAnd then plot a histogram of random draws from a normal distribution:\nhist(rnorm(10000))\nThe histogram should pop up in an XQuartz window.\n\n\nIn development\n\n\nIn development",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
     "objectID": "intro-slides.html#uconn-computational-biology-core",
     "href": "intro-slides.html#uconn-computational-biology-core",
     "title": "UCHC HPC",
     "section": "UConn Computational Biology Core",
-    "text": "UConn Computational Biology Core\n\n \n\n\n\n\n\nJill Wegrzyn - Director\n\n\n\n\n\n\nNoah Reid - Acting Associate Director\n\n\n\n\n\n\nKerry Cobb - Computational Biologist\n\n\n\n\n\n\nAdam Rork - Bioinformatics Analyst\n\n\n\n\n\n\nKendra Maas - Facility Scientist"
+    "text": "UConn Computational Biology Core\n\n \n\n\n\n\n\nJill Wegrzyn - Director\n\n\n\n\n\n\nNoah Reid - Acting Associate Director\n\n\n\n\n\n\nKerry Cobb - Bioinformatics Analyst\n\n\n\n\n\n\nAdam Rork - Bioinformatics Analyst\n\n\n\n\n\n\nKendra Maas - Facility Scientist"
   },
   {
     "objectID": "intro-slides.html#what-we-do",
@@ -160,14 +69,14 @@
     "href": "intro-slides.html#workshops",
     "title": "UCHC HPC",
     "section": "Workshops",
-    "text": "Workshops\n\n\n\nMonthly workshops\n\n3 days, 4 hours/day\nHands-on intensive training\nZero experience necessary\nLeave prepared to analyze your data\n\n\n\n\n\nRecurring Topics\n\nBulk RNA-seq\nSingle-cell RNA-seq\nATAC/ChIP-seq\nVariant Calling\nGenome Assembly\n\nmore!\n\n\nSchedule & Registration"
+    "text": "Workshops\n\n\n\nMonthly workshops\n\n3 days, 4 hours/day\nHands-on, intensive training\nZero experience necessary\nLeave prepared to analyze your data\n\n\n\n\n\nRecurring Topics\n\nBulk RNA-seq\nSingle-cell RNA-seq\nATAC/ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nSchedule & Registration"
   },
   {
     "objectID": "intro-slides.html#high-performance-computing",
     "href": "intro-slides.html#high-performance-computing",
     "title": "UCHC HPC",
     "section": "High-performance Computing",
-    "text": "High-performance Computing\n\nDocumentation: https://cbc-uconn.github.io/hpc-docs/\nSome administration of HPC in partnership with department of Cell Analysis & Modeling\nData management"
+    "text": "High-performance Computing\n\nSome administration of HPC in partnership with department of Cell Analysis & Modeling\nUser support\nDocumentation: https://cbc-uconn.github.io/hpc-docs/\nData management"
   },
   {
     "objectID": "intro-slides.html#software-licenses",
@@ -181,127 +90,7 @@
     "href": "intro-slides.html#useful-links",
     "title": "UCHC HPC",
     "section": "Useful Links",
-    "text": "Useful Links\n\nhttps://bioinformatics.uconn.edu/\nhttps://cbc-uconn.github.io/hpc-docs/"
-  },
-  {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "File permissions"
-  },
-  {
-    "objectID": "datapolicy.html",
-    "href": "datapolicy.html",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "This page summarizes storage policies and management practices on the UConn Health HPC. For more information about the file systems and storage locations available on the cluster, please see the storage page.\n\n\n\n\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time.\n\n\n\n\nAll other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "datapolicy.html#managed-storage",
-    "href": "datapolicy.html#managed-storage",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "This location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time.",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "datapolicy.html#user-managed-storage",
-    "href": "datapolicy.html#user-managed-storage",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "vpn.html",
-    "href": "vpn.html",
-    "title": "VPN Access",
-    "section": "",
-    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.",
-    "crumbs": [
-      "Connecting",
-      "VPN"
-    ]
-  },
-  {
-    "objectID": "vpn.html#requesting-vpn-access",
-    "href": "vpn.html#requesting-vpn-access",
-    "title": "VPN Access",
-    "section": "Requesting VPN access",
-    "text": "Requesting VPN access\nBefore using the VPN, users must request to be added to the VPN group and enroll in DUO.\n\nTo request to be added to the VPN group, submit a Request Ticket\nYou will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.",
-    "crumbs": [
-      "Connecting",
-      "VPN"
-    ]
-  },
-  {
-    "objectID": "vpn.html#installation",
-    "href": "vpn.html#installation",
-    "title": "VPN Access",
-    "section": "Installation",
-    "text": "Installation\nOnce granted access, install the Cisco Secure Client if you do not already have it installed.\nThe Cisco Secure Client can be downloaded here\nWhen prompted, enter your CAM username and password to access the download link and follow the instructions to install the client.",
-    "crumbs": [
-      "Connecting",
-      "VPN"
-    ]
-  },
-  {
-    "objectID": "vpn.html#connecting",
-    "href": "vpn.html#connecting",
-    "title": "VPN Access",
-    "section": "Connecting",
-    "text": "Connecting\n\nOpen the Cisco Secure Client application on your computer.\nIn the address field, enter connect.uchc.edu/cam. Click on the “Connect” button.\nWhen prompted, enter your CAM username and password to login.\n\n\n\nUConn Health IT managed devices\nFor HPC users who use UConn Health IT managed (UCH domain member) devices, the Cisco Secure Client will already be installed.\n\nOpen the Cisco Secure Client application on your computer.\nIn the address field, enter connect.uchc.edu. Click on the “Connect” button.\nWhen prompted, enter your UConn Health Net ID and password to login.",
-    "crumbs": [
-      "Connecting",
-      "VPN"
-    ]
-  },
-  {
-    "objectID": "vpn.html#help",
-    "href": "vpn.html#help",
-    "title": "VPN Access",
-    "section": "Help",
-    "text": "Help\nIf you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk through uconnprod@service-now.com or by phone at 860-679-4400.\nWe do not have administrative access to the VPN to be able to assist with VPN issues.",
-    "crumbs": [
-      "Connecting",
-      "VPN"
-    ]
-  },
-  {
-    "objectID": "twofactor.html",
-    "href": "twofactor.html",
-    "title": "Two Factor Authentication",
-    "section": "",
-    "text": "Instructions here for enrolling in two factor authentication."
-  },
-  {
-    "objectID": "keys.html",
-    "href": "keys.html",
-    "title": "SSH Keys",
-    "section": "",
-    "text": "Some modes of access to the HPC system require users to use SSH keys for authentication.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nWhile in many cases it is required, the use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.\nTo be able to login using SSH keys, you will need to follow the setup process outlined below. Only ed25519 keys are accepted.\n\nCreate SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\nCopy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system.\n\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the UCHC HPC system using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@transfer.cam.uchc.edu\nWhere &lt;user&gt; is replaced with your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the CAM Password Manager.\n\n\nOn Windows 10 or later, you can copy your public key to the UCHC HPC system using Windows PowerShell with the command:\ntype $env:USERPROFILE\\.ssh\\id_ed25519.pub | ssh &lt;user&gt;@transfer.cam.uchc.edu \"mkdir -p .ssh && cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is replaced with your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the CAM Password Manager.",
-    "crumbs": [
-      "Connecting",
-      "SSH Keys"
-    ]
-  },
-  {
-    "objectID": "account.html",
-    "href": "account.html",
-    "title": "Requesting an Account",
-    "section": "",
-    "text": "Requesting an Account\nIn order to use the UConn Health HPC system, you must request a CAM account. It is referred to as a CAM account because much of the administration of the UConn Health HPC system is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
-    "crumbs": [
-      "Account & Password"
-    ]
+    "text": "Useful Links\n\nhttps://bioinformatics.uconn.edu/\nhttps://cbc-uconn.github.io/hpc-docs/\n\n\n\nLink to Slides"
   },
   {
     "objectID": "software.html",
@@ -382,6 +171,380 @@
     "crumbs": [
       "Software"
     ]
+  },
+  {
+    "objectID": "keys.html",
+    "href": "keys.html",
+    "title": "SSH Keys",
+    "section": "",
+    "text": "Some modes of access to the HPC system require users to use SSH keys for authentication.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nWhile in many cases it is required, the use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.\nTo be able to login using SSH keys, you will need to follow the setup process outlined below. Only ed25519 keys are accepted.\n\nCreate SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\nCopy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system.\n\n\nMacOS and LinuxWindows PowerShell\n\n\nOn MacOS and Linux, you can copy your public key to the UCHC HPC system using the ssh-copy-id command:\nssh-copy-id &lt;user&gt;@transfer.cam.uchc.edu\nWhere &lt;user&gt; is replaced with your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the CAM Password Manager.\n\n\nOn Windows 10 or later, you can copy your public key to the UCHC HPC system using Windows PowerShell with the command:\ntype $env:USERPROFILE\\.ssh\\id_ed25519.pub | ssh &lt;user&gt;@transfer.cam.uchc.edu \"mkdir -p .ssh && cat &gt;&gt; .ssh/authorized_keys\"\nWhere &lt;user&gt; is replaced with your CAM username.\nWhen prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the CAM Password Manager.",
+    "crumbs": [
+      "Connecting",
+      "SSH Keys"
+    ]
+  },
+  {
+    "objectID": "running.html",
+    "href": "running.html",
+    "title": "Job Submission",
+    "section": "",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands.  When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer clusters use SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.\n\nBatch Submission\nInteractive Job\n\n\nBatch job submission\nA batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.\nTo submit a batch job, use the sbatch command. A basic command might look like:\nsbatch \\\n  --job-name &lt;name&gt; \\\n  --cpus-per-task &lt;cpus&gt; \\\n  --mem &lt;memory&gt; \\\n  --time &lt;time&gt; \\\n  --qos &lt;qos&gt; \\\n  --output %x-%j.out \\\n  &lt;script&gt;\nWhere &lt;script&gt; is the name of the script that you want to run as a job.\nAlternatively, the sbatch arguments can be specified as a header in your script:\n#!/bin/bash\n#SBATCH --job-name=&lt;job name&gt;\n#SBATCH --cpus-per-task=&lt;cpu number&gt; \n#SBATCH --mem=&lt;memory&gt;\n#SBATCH --time=&lt;days-hrs:min:sec&gt;\n#SBATCH --qos=&lt;partition name&gt;\n#SBATCH --output=%x-%j.out\n\n&lt;your script here&gt;\nThis would be run with the command: sbatch &lt;script&gt;.sh\n\nExample\nHere is a complete example which also demonstrates the use of SLURM environment variables which access the values of the --job-name and --cpus-per-task arguments in the job script. Note the use of the hostname command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.\n#!/bin/bash\n#SBATCH --job-name=test-job\n#SBATCH --cpus-per-task=1 \n#SBATCH --mem=100mb\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n\nhostname\n\necho $SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus\n\n\nRequired arguments\nThe following arguments are required when running sbatch on the Mantis cluster.\n\n--qos\nThe qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition if specifying a partition. If using the general paritition, only the qos needs to be specified.\n\n\n\nCommonly used arguments\nBelow are some of the most useful and commonly used arguments for sbatch.\n\n--job-name\nThe name of the job. Used for displaying job information when monitoring the job and for naming log files.\n\n\n--cpus-per-task\nThe number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.\n\n\n--mem\nThe amount of memory to allocate. This argument takes a number followed by a unit such as mb for megabytes or gb for gigabytes. If no unit is given, megabytes are used. If no --mem argument is used, a job defaults to 120 MB?\n\n\n--time\nTime limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format days-hrs:min:sec, days-hrs, hrs:min:sec, min:sec, or sec. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.\n\n\n--output\nThis specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options here.\n\n\n--partition\nA group of nodes which the job will be allocated to. This defaults to general. See the partitions section for available partitions.\n\n\n--mail-type\nWhen to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.\n\n\n--mail-user\nAddress to send mail to.\n\n\nAdditional commands\nsbatch is a powerful tool with many other configuration options beyond the scope of this documentation.\nSee the sbatch documentation for more information about command arguments.\n\n\n\n\nInteractive Job\nAn interactive session can be started on a compute node using the srun command.\nAt a minimum, you would use these arguments:\nsrun --qos=general --pty bash\nMost sbatch arguments can also be used with srun. For --mem or --cpus-per-task if you needed to request additional resources.\n\n\nJob status and monitoring\nTo monitor the status of your jobs you can run squeue -u &lt;user&gt; which will list the status of all jobs that belong to you. See the squeue documentation for additional arguments and output formatting options.\n\n\nCanceling a job\nIf you need to cancel a job that is currently running or in the queue, you can use the scancel command. The basic syntax is:\nscancel &lt;job_id&gt;\n\n\nRequest time extensions\nIf you have a job that may not finish within the allocated time limit you can submit a time extension request\n\n\nPartitions\nA partition is a group of compute nodes that share certain specifications and policies. Each partition is best suited to different types of tasks. The Mantis and Xanadu cluster have slightly different partitions summarized below.\n\nMantisXanadu\n\n\n\ngeneral\nThis partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.\n\nSlurm Arguments:\n#SBATCH --qos=general\n\n\n\nhimem\nThis parition contains nodes suitable for jobs that have very large memory requirements. These nodes have 128 AMD CPUs and 1 TB of ram. Each node in this partition has one NVIDIA A100 GPU. Jobs cannot run in this partition unless 500 GB of memory is requested. Only two jobs per user will run concurrently in this partition.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem\n\n\n\ndebug\nThis partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.\n\nSlurm Arguments:\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n\n\n\n\n\ngeneral\nThese nodes are suitable for most tasks.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=general\n\n\n\nxeon\nUse this partition if you need to run on Intel Xeon CPUs.\n\nSlurm Arguments:\n#SBATCH --partition=xeon\n#SBATCH --qos=general\n\n\n\namd\nUse this partition if you need to run on AMD CPUs.\n\nSlurm Arguments:\n#SBATCH --partition=amd\n#SBATCH --qos=general\n\n\n\nhimem\nUse this partition if you have very large memory requirements &gt; 500 GB.\n\nSlurm Arguments:\n#SBATCH --partition=himem\n#SBATCH --qos=himem\n\n\n\ngpu\nUse this partition if you need to run on a GPU.\n\nSlurm Arguments:\n#SBATCH --partition=gpu\n#SBATCH --qos=general\n\n\n\nmcbstudent\nThis partition is available for students in courses or workshops who have been given access.\n\nSlurm Arguments:\n#SBATCH --partition=mcbstudent\n#SBATCH --qos=mcbstudent\n\n\n\n\n\n\n\nPremtible QOS\nThe preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.\n\nSlurm Arguments:\n#SBATCH --partition=general\n#SBATCH --qos=preemptible\n\n\n\nSLURM Environment Variables\n\nSLURM provides a number of environment variables that can be used in job scripts to access information about the job and the resources allocated to it. See the SLURM environment variables documentation for a complete list of available variables.\n\n\nGPUs\nAllocation of a GPU differs on Mantis and Xanadu. See below for details on how to request a GPU on each cluster.\n\nMantisXanadu\n\n\nA GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the --gres=gpu:[type:]&lt;number&gt; agrument where the required &lt;number&gt; is the number of GPUs to allocate to the job. The type is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.\n\nGPU Types\n\n\n\n\nGPU\ntype\nnumber per node\n\n\n\n\nNVIDIA A100\nA100\n1\n\n\nNVIDIA L40S\nL40S\n1-3\n\n\n\n\n\nExample\n#!/bin/bash\n#SBATCH --job-name=test-gpu\n#SBATCH --cpus-per-task 1\n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n#SBATCH --gres=gpu:A100:1\n\n# Detect GPU\nnvidia-smi\n\n\n\nVisit https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage for information about requesting and using GPUs on the Xanadu cluster.\n\n\n\n\n\nFeature Constraints\nWhen a job requires specific hardware or software features on a compute node, a user can specify these requirements using the --constraint=&lt;feature&gt; argument where  is a defined feature of a node. Multiple constraints can be specified with & (and) or | (or) operators. The defined features and description are listed in the table below. See the SLURM documentation for more information on using constraints.\nThe features defined for each node can be listed with the command sinfo -o \"%N %f\".\nThe defined features will differ between the Mantis and Xanadu clusters. See below for information about the defined features on each cluster.\n\nMantisXanadu\n\n\n\nDefined Features\n\n\n\nFeature\nDescription\n\n\n\n\ncpu_amd\nAMD CPUs\n\n\ncpu_xeon\nIntel Xeon CPUs\n\n\nepyc_7352\nAMD EPYC 7352 CPUs\n\n\nxeon_platinum_8462Y+\nIntel Xeon Platinum 8462Y CPUs\n\n\n\n\n\n\n\nSome Defined Features\n\n\n\nFeature\nDescription\n\n\n\n\ncpu_amd\nAMD CPUs\n\n\ncpu_xeon\nIntel Xeon CPUs\n\n\n\nFor others run sinfo -o \"%N %f\".\n\n\n\n\n\nExample\nHaving software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command on Mantis to ensure that your job runs on a node with AMD CPUs.\n#!/bin/bash\n#SBATCH --job-name=test-feature-constraint\n#SBATCH --cpus-per-task 1 \n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%j.out\n#SBATCH --constraint=cpu_amd\n\nlscpu\n\n\n\nJob Arrays\nIf you have a large set of similar tasks that can be run in parallel, job arrays offer a convenient solution for managing these. Job arrays are created using the --array=&lt;indexes&gt;[%limit] argument where the required &lt;indexes&gt; is a range (e.g. 0-4) or list (e.g. 1,3,5,7) of indexes and an optional limit, separated by a % is the maximum allowed number of simultaneously running jobs (e.g. %20). Jobs which are part of a job array will have the environment variable SLURM_ARRAY_TASK_ID set to the array index value for that job. The maximum index allowed in a job array is 5001.\n\nExample\nHere is a basic example where the job array will run 5 jobs in parallel, each with a different index value from 1 to 5. A different param value is printed to stdout based on the job index. Only 2 jobs will run at the same time due to the %2.\n#!/bin/bash\n#SBATCH --job-name=test-array-job\n#SBATCH --cpus-per-task 1 \n#SBATCH --mem=100M\n#SBATCH --time=1:00\n#SBATCH --partition=debug\n#SBATCH --qos=debug\n#SBATCH --output=%x-%A-%a.out\n#SBATCH --array=1-5%2\n\nparams=(\"A\" \"B\" \"C\" \"D\" \"E\")\nparam=${params[$SLURM_ARRAY_TASK_ID-1]}\necho $param\nParameter values will often be stored in a separate file. Below are some examples of ways to access these values in a job array script.\n\nAccessing nth line from a text file\nparam=$(sed -n \"${SLURM_ARRAY_TASK_ID}p\" params.txt)\n\n\nAccessing nth value and second column from a csv file\nparam=$(sed -n \"${SLURM_ARRAY_TASK_ID}p\" params.csv | cut -d ',' -f 2)\n\n\nAccessing nth value and second column from a csv file with a header row\nparam=$(sed -n \"1~${SLURM_ARRAY_TASK_ID}p\" params.csv | cut -d ',' -f 2)\n\n\n\n\n\nX11 Forwarding\nSome applications, such as R, can produce graphical output. X Windows, a.k.a. X11, is an option for displaying that output in an interactive session.\n\nMacOSWindowsLinux\n\n\nFirst you need to install XQuartz on your local machine.\nThen, when connecting to Mantis, use the the ssh option -X (or possibly -Y if your application requires it) like this:\n# external:\nssh -X &lt;username&gt;@login.hpc.cam.uchc.edu\n# or when connected to the VPN:\nssh -X &lt;username&gt;@mantis-submit.cam.uchc.edu\nNow, to run your software in an interactive session, start it using the option --x11. For example:\nsrun --x11 --partition=general --qos=general --mem=5G --pty bash\nNow that you’re in an interactive session, you should be able to run your application.\nTry launching R:\nR\nAnd then plot a histogram of random draws from a normal distribution:\nhist(rnorm(10000))\nThe histogram should pop up in an XQuartz window.\n\n\nIn development\n\n\nIn development",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Requesting an Account",
+    "section": "",
+    "text": "Requesting an Account\nIn order to use the UConn Health HPC system, you must request a CAM account. It is referred to as a CAM account because much of the administration of the UConn Health HPC system is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
+    "crumbs": [
+      "Account & Password"
+    ]
+  },
+  {
+    "objectID": "cli.html",
+    "href": "cli.html",
+    "title": "Connecting through the Command Line Interface",
+    "section": "",
+    "text": "For more advanced usage and greater control, users can connect to UCHC HPC resources using a Command Line Interface (CLI).",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
+    "href": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
+    "title": "Connecting through the Command Line Interface",
+    "section": "Mantis External login.hpc.cam.uchc.edu",
+    "text": "Mantis External login.hpc.cam.uchc.edu\nThe mantis external host will connect you to a Mantis login node.\n\nRequirements\n\nSSH key\nVPN not required.\nCannot be used while connected to CAM VPN.\n\nConnection will happen momentarily before being dropped.\n\n\n\n\nUsage\nssh &lt;user&gt;@login.hpc.cam.uchc.edu where user is replaced with your CAM username.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
+    "href": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
+    "title": "Connecting through the Command Line Interface",
+    "section": "Mantis Internal mantis-submit.cam.uchc.edu",
+    "text": "Mantis Internal mantis-submit.cam.uchc.edu\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network. \n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where user is replaced with your CAM username.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#xanadu-external-xanadu-submit-ext.cam.uchc.edu",
+    "href": "cli.html#xanadu-external-xanadu-submit-ext.cam.uchc.edu",
+    "title": "Connecting through the Command Line Interface",
+    "section": "Xanadu External xanadu-submit-ext.cam.uchc.edu",
+    "text": "Xanadu External xanadu-submit-ext.cam.uchc.edu\n\nRequirements\n\nValid CAM password or SSH key\n\n\n\nUsage\nssh &lt;user&gt;@xanadu-submit-ext.cam.uchc.edu where user is replaced with your CAM username.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#virtual-machines",
+    "href": "cli.html#virtual-machines",
+    "title": "Connecting through the Command Line Interface",
+    "section": "Virtual Machines",
+    "text": "Virtual Machines\nA number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#ssh-client",
+    "href": "cli.html#ssh-client",
+    "title": "Connecting through the Command Line Interface",
+    "section": "SSH Client",
+    "text": "SSH Client\nAn SSH client is a software tool that allows you to connect to a remote server using the SSH protocol. Most operating systems come with a built-in SSH client, but there are also third-party SSH clients available for download.\n\nMacOS & Linux\nMacOS and Linux users can use the built-in SSH client through the Terminal application.\n\n\nWindows\nSince Windows 10, Windows comes with a built-in SSH client which can be accessed through the Windows PowerShell application. For older versions of Windows, you can use a third-party SSH client such as MobaXterm.\n\n\nUsage\nIf using the built-in SSH client, you simply open a Terminal or Windows PowerShell application and use the SSH command ssh to connect to the desired host. The general syntax for the SSH command is: ssh &lt;user&gt;@&lt;host url&gt; where &lt;user&gt; is your CAM username and &lt;host url&gt; is the URL of the host you want to connect to (e.g. login.hpc.cam.uchc.edu for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the SSH Keys section below for more information on SSH keys and how to generate and use them for authentication.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "cli.html#ssh-keys",
+    "href": "cli.html#ssh-keys",
+    "title": "Connecting through the Command Line Interface",
+    "section": "SSH Keys",
+    "text": "SSH Keys\nMost SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the SSH Keys page for more information and for instructions on how to generate and use SSH keys for authentication.",
+    "crumbs": [
+      "Connecting",
+      "Command Line"
+    ]
+  },
+  {
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UCHC HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UCHC HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu"
+  },
+  {
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "Tranferring Data",
+    "section": "",
+    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#getting-started",
+    "href": "transfer.html#getting-started",
+    "title": "Tranferring Data",
+    "section": "Getting Started",
+    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#transferring-files-locally",
+    "href": "transfer.html#transferring-files-locally",
+    "title": "Tranferring Data",
+    "section": "Transferring Files Locally",
+    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#sharing-files",
+    "href": "transfer.html#sharing-files",
+    "title": "Tranferring Data",
+    "section": "Sharing Files",
+    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#connecting",
+    "href": "transfer.html#connecting",
+    "title": "Tranferring Data",
+    "section": "Connecting",
+    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#slack",
+    "href": "help.html#slack",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#data-therapy",
+    "href": "help.html#data-therapy",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#workshops",
+    "href": "help.html#workshops",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#consultations",
+    "href": "help.html#consultations",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "vpn.html",
+    "href": "vpn.html",
+    "title": "VPN Access",
+    "section": "",
+    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#requesting-vpn-access",
+    "href": "vpn.html#requesting-vpn-access",
+    "title": "VPN Access",
+    "section": "Requesting VPN access",
+    "text": "Requesting VPN access\nBefore using the VPN, users must request to be added to the VPN group and enroll in DUO.\n\nTo request to be added to the VPN group, submit a Request Ticket\nYou will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#installation",
+    "href": "vpn.html#installation",
+    "title": "VPN Access",
+    "section": "Installation",
+    "text": "Installation\nOnce granted access, install the Cisco Secure Client if you do not already have it installed.\nThe Cisco Secure Client can be downloaded here\nWhen prompted, enter your CAM username and password to access the download link and follow the instructions to install the client.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#connecting",
+    "href": "vpn.html#connecting",
+    "title": "VPN Access",
+    "section": "Connecting",
+    "text": "Connecting\n\nOpen the Cisco Secure Client application on your computer.\nIn the address field, enter connect.uchc.edu/cam. Click on the “Connect” button.\nWhen prompted, enter your CAM username and password to login.\n\n\n\nUConn Health IT managed devices\nFor HPC users who use UConn Health IT managed (UCH domain member) devices, the Cisco Secure Client will already be installed.\n\nOpen the Cisco Secure Client application on your computer.\nIn the address field, enter connect.uchc.edu. Click on the “Connect” button.\nWhen prompted, enter your UConn Health Net ID and password to login.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "vpn.html#help",
+    "href": "vpn.html#help",
+    "title": "VPN Access",
+    "section": "Help",
+    "text": "Help\nIf you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk through uconnprod@service-now.com or by phone at 860-679-4400.\nWe do not have administrative access to the VPN to be able to assist with VPN issues.",
+    "crumbs": [
+      "Connecting",
+      "VPN"
+    ]
+  },
+  {
+    "objectID": "connect.html",
+    "href": "connect.html",
+    "title": "Connecting to the HPC system",
+    "section": "",
+    "text": "Once an account has been created and a new password has been set, users can connect to the HPC system. There are two optons for connecting:\n\n1) Web Access through Open OnDemand\nOpen OnDemand is a web-based portal that provides users with access to Mantis and the HPC filesystem. It allows users to run jobs, manage files, open a terminal, and access applications through a user-friendly interface.\n\n\n2) Command Line Interface\nUser can connect to the HPC system through a Command Line Interface (CLI) using a terminal. This approach allows for more advanced usage and greater control, but is more complex with a steeper learning curve.",
+    "crumbs": [
+      "Connecting"
+    ]
+  },
+  {
+    "objectID": "ondemand.html",
+    "href": "ondemand.html",
+    "title": "Open OnDemand",
+    "section": "",
+    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the Command Line Interface page for instructions on how to connect through a terminal.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#pre-requisites",
+    "href": "ondemand.html#pre-requisites",
+    "title": "Open OnDemand",
+    "section": "Pre-requisites",
+    "text": "Pre-requisites\nIn order to use Open OnDemand you will need:\n\nA CAM account and a password that has not expired. See the Getting Started page for instructions on how to request an account and reset your password.\nA web browser. Open OnDemand is compatible with most modern web browsers.\nThe CAM VPN if you are not connected to the UConnHealth-SECURE WiFi  . See CAM VPN page for instructions on how to connect to the CAM VPN.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#connecting",
+    "href": "ondemand.html#connecting",
+    "title": "Open OnDemand",
+    "section": "Connecting",
+    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#interactive-apps",
+    "href": "ondemand.html#interactive-apps",
+    "title": "Open OnDemand",
+    "section": "Interactive Apps",
+    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#availabe-applications",
+    "href": "ondemand.html#availabe-applications",
+    "title": "Open OnDemand",
+    "section": "Availabe Applications",
+    "text": "Availabe Applications\n\nJupyterLab: A web-based interactive development environment for Jupyter notebooks, code, and data.\nRStudio: An integrated development environment for R programming language.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#popup-ad-blockers",
+    "href": "ondemand.html#popup-ad-blockers",
+    "title": "Open OnDemand",
+    "section": "Popup & Ad Blockers",
+    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.cam.uchc.edu url and see if that resolves the issue.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UConn Health High Performance Computing",
+    "section": "",
+    "text": "Introduction\nThe University of Connecticut Health High Performanc Computing Facility provides a variety of high performance computing services and resources to both University of Connecticut and UConn Health researchers at no cost. Most notably the Mantis computer cluster. A summary of available resources and services can be found at the About page. Administration of the UConn Health HPC system is jointly handled by the University of Connecticut Computational Biology Core and the Center for Cell Analysis and Modeling at UConn Health.\n\n\nDocumentation\nThis site serves as documentation for users of UConn Health HPC system and is maintained by the University of Connecticut Computational Biology Core.\n\n\nGetting Started\nNew users should visit the Getting Started page for instructions on how to request an account and access the system. Visit the Get Help page for a list of ways to seek help on using the system.\n\n\n\nStorrs HPC Facility\nThere is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit this site."
   },
   {
     "objectID": "databases.html",
@@ -634,54 +797,55 @@
     ]
   },
   {
-    "objectID": "transfer.html",
-    "href": "transfer.html",
-    "title": "Tranferring Data",
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
     "section": "",
-    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "text": "File permissions"
+  },
+  {
+    "objectID": "examples.html",
+    "href": "examples.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "https://services.rt.nyu.edu/docs/hpc/getting_started/intro/ https://www.hpc.caltech.edu/"
+  },
+  {
+    "objectID": "datapolicy.html",
+    "href": "datapolicy.html",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "This page summarizes storage policies and management practices on the UConn Health HPC. For more information about the file systems and storage locations available on the cluster, please see the storage page.\n\n\n\n\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time.\n\n\n\n\nAll other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
     "crumbs": [
-      "Transferring Data"
+      "Storage Policies"
     ]
   },
   {
-    "objectID": "transfer.html#getting-started",
-    "href": "transfer.html#getting-started",
-    "title": "Tranferring Data",
-    "section": "Getting Started",
-    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
+    "objectID": "datapolicy.html#managed-storage",
+    "href": "datapolicy.html#managed-storage",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "This location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time.",
     "crumbs": [
-      "Transferring Data"
+      "Storage Policies"
     ]
   },
   {
-    "objectID": "transfer.html#transferring-files-locally",
-    "href": "transfer.html#transferring-files-locally",
-    "title": "Tranferring Data",
-    "section": "Transferring Files Locally",
-    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
+    "objectID": "datapolicy.html#user-managed-storage",
+    "href": "datapolicy.html#user-managed-storage",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
     "crumbs": [
-      "Transferring Data"
+      "Storage Policies"
     ]
   },
   {
-    "objectID": "transfer.html#sharing-files",
-    "href": "transfer.html#sharing-files",
-    "title": "Tranferring Data",
-    "section": "Sharing Files",
-    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#connecting",
-    "href": "transfer.html#connecting",
-    "title": "Tranferring Data",
-    "section": "Connecting",
-    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UCHC secure WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
-    "crumbs": [
-      "Transferring Data"
-    ]
+    "objectID": "twofactor.html",
+    "href": "twofactor.html",
+    "title": "Two Factor Authentication",
+    "section": "",
+    "text": "Instructions here for enrolling in two factor authentication."
   },
   {
     "objectID": "about.html",
@@ -762,169 +926,5 @@
     "crumbs": [
       "About"
     ]
-  },
-  {
-    "objectID": "storage.html",
-    "href": "storage.html",
-    "title": "File systems and storage",
-    "section": "",
-    "text": "The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#summary-table",
-    "href": "storage.html#summary-table",
-    "title": "File systems and storage",
-    "section": "Summary table",
-    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n91TB (shared)\nFiles unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST.\n\n\n\n\n/seqdata | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |\n/tmp | Node-local temporary space | Shared per node | Small | May fill up unexpectedly. Set TMPDIR to redirect temp files. |\n/local | Larger node-local temp space | Shared per node | Larger than /tmp | Clean up after use. |\n/archive | Medium-term storage (up to ~1 year) | Request via CBC, access varies | NA | Slower than active spaces, geospread, more expensive. |\n/tapebackup | Long-term storage (1+ years) | Request via CBC, access varies | NA | Stored on single magnetic tape, not redundant, very slow access. |\n/tapearchive | Very long-term or permanent storage | Request via CBC, access varies | NA | Redundant magnetic tape storage, very slow access. |",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "ondemand.html",
-    "href": "ondemand.html",
-    "title": "Open OnDemand",
-    "section": "",
-    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the Command Line Interface page for instructions on how to connect through a terminal.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#pre-requisites",
-    "href": "ondemand.html#pre-requisites",
-    "title": "Open OnDemand",
-    "section": "Pre-requisites",
-    "text": "Pre-requisites\nIn order to use Open OnDemand you will need:\n\nA CAM account and a password that has not expired. See the Getting Started page for instructions on how to request an account and reset your password.\nA web browser. Open OnDemand is compatible with most modern web browsers.\nThe CAM VPN if you are not connected to the UConnHealth-SECURE WiFi  . See CAM VPN page for instructions on how to connect to the CAM VPN.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#connecting",
-    "href": "ondemand.html#connecting",
-    "title": "Open OnDemand",
-    "section": "Connecting",
-    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#interactive-apps",
-    "href": "ondemand.html#interactive-apps",
-    "title": "Open OnDemand",
-    "section": "Interactive Apps",
-    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#availabe-applications",
-    "href": "ondemand.html#availabe-applications",
-    "title": "Open OnDemand",
-    "section": "Availabe Applications",
-    "text": "Availabe Applications\n\nJupyterLab: A web-based interactive development environment for Jupyter notebooks, code, and data.\nRStudio: An integrated development environment for R programming language.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#popup-ad-blockers",
-    "href": "ondemand.html#popup-ad-blockers",
-    "title": "Open OnDemand",
-    "section": "Popup & Ad Blockers",
-    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.cam.uchc.edu url and see if that resolves the issue.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#slack",
-    "href": "help.html#slack",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#data-therapy",
-    "href": "help.html#data-therapy",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#workshops",
-    "href": "help.html#workshops",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#consultations",
-    "href": "help.html#consultations",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "quick.html",
-    "href": "quick.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#internal-login-node",
-    "href": "quick.html#internal-login-node",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#external-login-node",
-    "href": "quick.html#external-login-node",
-    "title": "UCHC HPC",
-    "section": "External Login Node",
-    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#transfer-node",
-    "href": "quick.html#transfer-node",
-    "title": "UCHC HPC",
-    "section": "Transfer Node",
-    "text": "Transfer Node\ntransfer.cam.uchc.edu"
   }
 ]
