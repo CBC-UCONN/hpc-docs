@@ -30,7 +30,7 @@ figcaption, .caption {
 :::
 
 ::: {.column width="20%"}
-![Kerry Cobb - Computational Biologist](img/intro-slides/kerry.jpg){width=150px}
+![Kerry Cobb - Bioinformatics Analyst](img/intro-slides/kerry.jpg){width=150px}
 :::
 
 ::: {.column width="20%"}
@@ -106,7 +106,7 @@ figcaption, .caption {
 ::: {.column width="50%"}
 - Monthly workshops
   - 3 days, 4 hours/day
-  - Hands-on intensive training
+  - Hands-on, intensive training
   - Zero experience necessary
   - Leave prepared to analyze your data 
 
@@ -119,14 +119,15 @@ figcaption, .caption {
   - ATAC/ChIP-seq
   - Variant Calling
   - Genome Assembly
-  - + more!
+  - \+ more!
 - [Schedule & Registration](https://cbc-uconn.github.io/workshops/)
 :::
 :::
 
 ## High-performance Computing
-- Documentation: [https://cbc-uconn.github.io/hpc-docs/](https://cbc-uconn.github.io/hpc-docs/)
 - Some administration of HPC in partnership with department of Cell Analysis & Modeling
+- User support
+- Documentation: [https://cbc-uconn.github.io/hpc-docs/](https://cbc-uconn.github.io/hpc-docs/)
 - Data management
 
 ![](img/intro-slides/hpc.jpg){width=200px}
@@ -154,3 +155,10 @@ Available to UConn & UCHC researchers at no cost:
 - [https://bioinformatics.uconn.edu/](https://bioinformatics.uconn.edu/)
 - [https://cbc-uconn.github.io/hpc-docs/](https://cbc-uconn.github.io/hpc-docs/)
 
+::: {style="text-align: center;"}
+
+![](img/intro-slides/slides-qr-code.jpg){width=300px}
+
+#### Link to Slides
+
+:::
