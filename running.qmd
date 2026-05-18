@@ -83,7 +83,7 @@ The name of the job. Used for displaying job information when monitoring the job
 The number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.
 
 #### \-\-mem
-The amount of memory to allocate. This argument takes a number followed by a unit such as `mb` for megabytes or `gb` for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to 120 MB?
+The amount of memory to allocate. This argument takes a number followed by a unit such as `mb` for megabytes or `gb` for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to 120 MB.
 
 #### \-\-time
 Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format `days-hrs:min:sec`, `days-hrs`, `hrs:min:sec`, `min:sec`, or `sec`. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.
