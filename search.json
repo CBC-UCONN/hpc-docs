@@ -104,7 +104,7 @@
     "href": "vpn.html",
     "title": "VPN Access",
     "section": "",
-    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.\nBelow are instructions for connecting to the VPN.\nIf you use a UConn Health IT managed device, you can simply connect to the UConn Health VPN. See the UConn Health IT managed device section for detailed instructions.\nAll other users must use the CAM VPN. See the Non UConn Health IT managed device section for detailed instructions.",
+    "text": "Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.\nBelow are instructions for connecting to the VPN.",
     "crumbs": [
       "Connecting",
       "VPN"
