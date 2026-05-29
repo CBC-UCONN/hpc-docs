@@ -9,10 +9,6 @@ Below are instructions for connecting to the VPN.
 1. [Non-UConn Health IT managed devices (CAM VPN)](#non-uconn-health-it-managed-devices)
 2. [UConn Health IT managed devices (UConn Health VPN)](#uconn-health-it-managed-devices)
 
-If you use a UConn Health IT managed device, you can simply connect to the UConn Health VPN. See the [UConn Health IT managed device](#uconn-health-it-managed-devices) section for detailed instructions.
-
-All other users must use the CAM VPN. See the [Non UConn Health IT managed device](#non-uconn-health-it-managed-devices) section for detailed instructions.
-
 ## Non-UConn Health IT Managed Devices
 If you are using a device that is not managed by UConn Health IT, you will need to use the CAM VPN. 
 
