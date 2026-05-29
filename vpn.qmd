@@ -4,29 +4,43 @@ title: "VPN Access"
 
 Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.
 
+Below are instructions for connecting to the VPN.
 
-## Requesting VPN access
-Before using the VPN, users must request to be added to the VPN group and enroll in DUO.
+1. [Non-UConn Health IT managed devices (CAM VPN)](#non-uconn-health-it-managed-devices)
+2. [UConn Health IT managed devices (UConn Health VPN)](#uconn-health-it-managed-devices)
 
-1) To request to be added to the VPN group, submit a [Request Ticket](https://health.uconn.edu/high-performance-computing/contact/)
-2) You will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO.
+If you use a UConn Health IT managed device, you can simply connect to the UConn Health VPN. See the [UConn Health IT managed device](#uconn-health-it-managed-devices) section for detailed instructions.
 
-## Installation
-Once granted access, install the Cisco Secure Client if you do not already have it installed.
+All other users must use the CAM VPN. See the [Non UConn Health IT managed device](#non-uconn-health-it-managed-devices) section for detailed instructions.
 
-The Cisco Secure Client can be downloaded [here](https://connect.uchc.edu/cam).
+## Non-UConn Health IT Managed Devices
+If you are using a device that is not managed by UConn Health IT, you will need to use the CAM VPN. 
 
-When prompted, enter your CAM username and password to access the download link and follow the instructions to install the client.
+### Enrollment
+There are three steps that must be completed before you can connect to the CAM VPN.
 
+#### 1. Request VPN Access
+To request to be added to the VPN group, submit a [Request Ticket](https://health.uconn.edu/high-performance-computing/contact/)
 
-## Connecting
-1) Open the Cisco Secure Client application on your computer.
-2) In the address field, enter `connect.uchc.edu/cam`. Click on the “Connect” button.
-3) When prompted, enter your CAM username and password to login.
+#### 2. Enroll in DUO
+Once your request to be added to the VPN group is approved, you will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO. You will need to have a device with DUO installed to complete this step. See [here](https://kb.uconn.edu/space/IKB/10726900331/Duo+Two-Factor+Authentication) for more information on DUO and how to install it.
+
+#### 3. Install the Cisco Secure Client
+Once you have enrolled in DUO, you can download the Cisco Secure Client from [here](https://connect.uchc.edu/cam). 
+
+Enter you CAM username and password when prompted. You should then receive a DUO authentication request. Approve the request to access the download link and follow the instructions to install the client. If you do not receive the DUO authentication request, ensure that you have completed DUO enrollment and that you have a device with DUO installed.
+
+### Connecting
+Once you have completed the enrollment steps above, you can connect to the CAM VPN.
+
+1. Open the Cisco Secure Client application on your computer.
+2. In the address field, enter `connect.uchc.edu/cam`. Click on the “Connect” button.
+3. When prompted, enter your CAM username and password to login.
 
 ![](img/vpn-cam.png){width="400px"}
 
-### UConn Health IT managed devices
+
+## UConn Health IT managed devices
 For HPC users who use UConn Health IT managed (UCH domain member) devices, the Cisco Secure Client will already be installed.
 
 1) Open the Cisco Secure Client application on your computer.
@@ -38,3 +52,5 @@ For HPC users who use UConn Health IT managed (UCH domain member) devices, the C
 If you have any issues with the CAM VPN apart from requesting access and DUO enrollment, please contact UConn Health IT Service Desk through [uconnprod@service-now.com](mailto:uconnprod@service-now.com) or by phone at [860-679-4400](tel:860-679-4400).
 
 We do not have administrative access to the VPN to be able to assist with VPN issues.
+
+Check carefully that you have completed all of the enrollment steps. Skipping DUO enrollment is a common issue that prevents users from being able to download or connect to the CAM VPN.  
