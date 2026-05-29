@@ -4,7 +4,7 @@ title: "VPN Access"
 
 Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.
 
-Below are instructions for connecting to the VPN.
+There are two VPNs that can be used to connect to the HPC system, depending on the type of device you are using.
 
 1. [Non-UConn Health IT managed devices (CAM VPN)](#non-uconn-health-it-managed-devices)
 2. [UConn Health IT managed devices (UConn Health VPN)](#uconn-health-it-managed-devices)
