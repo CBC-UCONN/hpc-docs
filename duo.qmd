@@ -1,0 +1,21 @@
+---
+title: "DUO Two-Factor Authentication"
+---
+
+Access to all UCHC HPC compute resources requires two-factor authentication through DUO. 
+
+### Enrollment
+Once a CAM account has been requested, users will receive an email regarding DUO enrollment from "DUO Security". Follow the instructions to enroll in DUO. 
+
+### DUO Installation
+You will need to have a device with DUO installed to complete this step. See [here](https://kb.uconn.edu/space/IKB/10726900331/Duo+Two-Factor+Authentication) for more information on DUO and how to install it. The UCHC HPC DUO license requires the use of a mobile device such as a mobile phone or tablet. Hardware tokens and Touch ID are not accepted
+
+::: {.callout-note}
+Note that the UCHC HPC DUO account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the DUO app as "UCHC HPC" as pictured below.
+
+![](img/duo-uchc-hpc.png){width="200px"}
+
+:::
+
+### Authentication
+When connecting to the HPC system through any method that requires DUO authentication, you will receive a DUO authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. **Do no approve DUO requests that you did not initiate!** If you receive a DUO request that you did not initiate, deny the request and contact us at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com).

@@ -18,11 +18,9 @@ The mantis external host will connect you to a Mantis login node.
 #### Requirements
 - [SSH key](keys.qmd)
 - VPN not required.
-- **Cannot** be used while connected to CAM VPN.
-  - Connection will happen momentarily before being dropped.
 
 #### Usage
-`ssh <user>@login.hpc.cam.uchc.edu` where `user` is replaced with your CAM username.
+`ssh <user>@login.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
 ## Mantis Internal `mantis-submit.cam.uchc.edu`
@@ -32,15 +30,16 @@ The mantis external host will connect you to a Mantis login node.
 - Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network. <!-- or UCHC ethernet. ? -->
 
 #### Usage
-`ssh <user>@mantis-submit.cam.uchc.edu` where `user` is replaced with your CAM username.
+`ssh <user>@mantis-submit.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
-## Xanadu External `xanadu-submit-ext.cam.uchc.edu`
+## Xanadu `xanadu.hpc.cam.uchc.edu`
 #### Requirements
-- Valid [CAM password](account.qmd) or [SSH key](keys.qmd)
+- [SSH key](keys.qmd)
+- [DUO enrollment](duo.qmd)
 
 #### Usage
-`ssh <user>@xanadu-submit-ext.cam.uchc.edu` where `user` is replaced with your CAM username.
+`ssh <user>@xanadu.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
 ## Virtual Machines
