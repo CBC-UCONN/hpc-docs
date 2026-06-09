@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Connecting through the Command Line Interface – UCHC HPC</title>
+<title>DUO Two-Factor Authentication – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./cli.html">Command Line</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DUO Two-Factor Authentication</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,11 +132,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect.html" class="sidebar-item-text sidebar-link">
@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cli.html" class="sidebar-item-text sidebar-link active">
+  <a href="./cli.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Command Line</span></a>
   </div>
 </li>
@@ -221,27 +221,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hosts" id="toc-hosts" class="nav-link active" data-scroll-target="#hosts">Hosts</a>
-  <ul class="collapse">
-  <li><a href="#mantis-external-login.hpc.cam.uchc.edu" id="toc-mantis-external-login.hpc.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-external-login.hpc.cam.uchc.edu">Mantis External <code>login.hpc.cam.uchc.edu</code></a></li>
-  <li><a href="#mantis-internal-mantis-submit.cam.uchc.edu" id="toc-mantis-internal-mantis-submit.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></a></li>
-  <li><a href="#xanadu-xanadu.hpc.cam.uchc.edu" id="toc-xanadu-xanadu.hpc.cam.uchc.edu" class="nav-link" data-scroll-target="#xanadu-xanadu.hpc.cam.uchc.edu">Xanadu <code>xanadu.hpc.cam.uchc.edu</code></a></li>
-  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
-  </ul></li>
-  <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
-  <ul class="collapse">
-  <li><a href="#ssh-client" id="toc-ssh-client" class="nav-link" data-scroll-target="#ssh-client">SSH Client</a></li>
-  <li><a href="#ssh-keys" id="toc-ssh-keys" class="nav-link" data-scroll-target="#ssh-keys">SSH Keys</a></li>
-  </ul></li>
+  <li><a href="#enrollment" id="toc-enrollment" class="nav-link active" data-scroll-target="#enrollment">Enrollment</a></li>
+  <li><a href="#duo-installation" id="toc-duo-installation" class="nav-link" data-scroll-target="#duo-installation">DUO Installation</a></li>
+  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication">Authentication</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./cli.html">Command Line</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Connecting through the Command Line Interface</h1>
+<h1 class="title">DUO Two-Factor Authentication</h1>
 </div>
 
 
@@ -258,109 +249,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>For more advanced usage and greater control, users can connect to UCHC HPC resources using a Command Line Interface (CLI).</p>
-<section id="hosts" class="level1">
-<h1>Hosts</h1>
-<p>In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the <a href="#ssh">SSH</a> section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:</p>
-<ol type="1">
-<li>Ensure that you have setup an <a href="./keys.html">SSH key</a> for authentication.</li>
-<li>Connect to the <a href="./vpn.html">CAM VPN</a> if necessary.</li>
-<li>Connect with your <a href="#ssh-client">SSH client</a> (e.g.&nbsp;Terminal or Windows PowerShell) via the host url using the SSH command:<code>ssh &lt;user&gt;@&lt;host url&gt;</code></li>
-</ol>
-<section id="mantis-external-login.hpc.cam.uchc.edu" class="level2">
-<h2 class="anchored" data-anchor-id="mantis-external-login.hpc.cam.uchc.edu">Mantis External <code>login.hpc.cam.uchc.edu</code></h2>
-<p>The mantis external host will connect you to a Mantis login node.</p>
-<section id="requirements" class="level4">
-<h4 class="anchored" data-anchor-id="requirements">Requirements</h4>
-<ul>
-<li><a href="./keys.html">SSH key</a></li>
-<li>VPN not required.</li>
-</ul>
+<p>Access to all UCHC HPC compute resources requires two-factor authentication through DUO.</p>
+<section id="enrollment" class="level3">
+<h3 class="anchored" data-anchor-id="enrollment">Enrollment</h3>
+<p>Once a CAM account has been requested, users will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.</p>
 </section>
-<section id="usage" class="level4">
-<h4 class="anchored" data-anchor-id="usage">Usage</h4>
-<p><code>ssh &lt;user&gt;@login.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
+<section id="duo-installation" class="level3">
+<h3 class="anchored" data-anchor-id="duo-installation">DUO Installation</h3>
+<p>You will need to have a device with DUO installed to complete this step. See <a href="https://kb.uconn.edu/space/IKB/10726900331/Duo+Two-Factor+Authentication">here</a> for more information on DUO and how to install it. The UCHC HPC DUO license requires the use of a mobile device such as a mobile phone or tablet. Hardware tokens and Touch ID are not accepted</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the UCHC HPC DUO account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the DUO app as “UCHC HPC” as pictured below.</p>
+<p><img src="img/duo-uchc-hpc.png" class="img-fluid" width="200"></p>
+</div>
+</div>
 </section>
-</section>
-<section id="mantis-internal-mantis-submit.cam.uchc.edu" class="level2">
-<h2 class="anchored" data-anchor-id="mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></h2>
-<section id="requirements-1" class="level4">
-<h4 class="anchored" data-anchor-id="requirements-1">Requirements</h4>
-<ul>
-<li><a href="./keys.html">SSH key</a></li>
-<li>Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network. <!-- or UCHC ethernet. ? --></li>
-</ul>
-</section>
-<section id="usage-1" class="level4">
-<h4 class="anchored" data-anchor-id="usage-1">Usage</h4>
-<p><code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
-</section>
-</section>
-<section id="xanadu-xanadu.hpc.cam.uchc.edu" class="level2">
-<h2 class="anchored" data-anchor-id="xanadu-xanadu.hpc.cam.uchc.edu">Xanadu <code>xanadu.hpc.cam.uchc.edu</code></h2>
-<section id="requirements-2" class="level4">
-<h4 class="anchored" data-anchor-id="requirements-2">Requirements</h4>
-<ul>
-<li><a href="./keys.html">SSH key</a></li>
-<li><a href="./duo.html">DUO enrollment</a></li>
-</ul>
-</section>
-<section id="usage-2" class="level4">
-<h4 class="anchored" data-anchor-id="usage-2">Usage</h4>
-<p><code>ssh &lt;user&gt;@xanadu.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
-</section>
-</section>
-<section id="virtual-machines" class="level2">
-<h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
-<p>A number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.</p>
-</section>
-</section>
-<section id="ssh-secure-shell" class="level1">
-<h1>SSH (Secure Shell)</h1>
-<p>Any connection made through the command line interface must be made through SSH (Secure Shell) using an SSH client. SSH is a secure protocol that allows users to connect to a remote server and execute commands on that server.</p>
-<section id="ssh-client" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-client">SSH Client</h2>
-<p>An SSH client is a software tool that allows you to connect to a remote server using the SSH protocol. Most operating systems come with a built-in SSH client, but there are also third-party SSH clients available for download.</p>
-<section id="macos-linux" class="level4">
-<h4 class="anchored" data-anchor-id="macos-linux">MacOS &amp; Linux</h4>
-<p>MacOS and Linux users can use the built-in SSH client through the <code>Terminal</code> application.</p>
-</section>
-<section id="windows" class="level4">
-<h4 class="anchored" data-anchor-id="windows">Windows</h4>
-<p>Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the <code>Windows PowerShell</code> application. For older versions of Windows, you can use a third-party SSH client such as <a href="https://mobaxterm.mobatek.net">MobaXterm</a>.</p>
-</section>
-<section id="usage-3" class="level4">
-<h4 class="anchored" data-anchor-id="usage-3">Usage</h4>
-<p>If using the built-in SSH client, you simply open a <code>Terminal</code> or <code>Windows PowerShell</code> application and use the SSH command <code>ssh</code> to connect to the desired host. The general syntax for the SSH command is: <code>ssh &lt;user&gt;@&lt;host url&gt;</code> where <code>&lt;user&gt;</code> is your CAM username and <code>&lt;host url&gt;</code> is the URL of the host you want to connect to (e.g.&nbsp;<code>login.hpc.cam.uchc.edu</code> for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> section below for more information on SSH keys and how to generate and use them for authentication.</p>
-</section>
-</section>
-<section id="ssh-keys" class="level2">
-<h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
-<p>Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> page for more information and for instructions on how to generate and use SSH keys for authentication.</p>
-<!-- # SSH Tunnelling
- TODO: Verify and improve this
-In some cases, you may need to use SSH tunneling to access certain resources on the cluster. SSH tunneling allows you to create a secure connection between your local machine and a remote server, allowing you to access resources on the remote server as if they were on your local machine.
-
-## Usage
-`ssh -L <local port>:<remote host>:<remote port> <user>@<host url>`
-Where:
-- `<local port>` is the port on your local machine that you want to use for the tunnel (e.g. 8888)
-- `<remote host>` is the host on the remote server that you want to access (e.g. `localhost` if the resource is on the same server you are connecting to)
-- `<remote port>` is the port on the remote server that the resource is running on (e.g. 8888 for a Jupyter notebook)
-- `<user>` is your CAM username
-- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external -->
-<!-- # X11 Forwarding
- TODO: Verify and improve this
-X11 forwarding allows you to run graphical applications on the remote server and have the display forwarded to your local machine. This can be useful for running applications that require a graphical interface, such as RStudio or Jupyter notebooks with interactive plots.
-
-## Usage
-`ssh -X <user>@<host url>`
-Where:
-- `<user>` is your CAM username
-- `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external) -->
+<section id="authentication" class="level3">
+<h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
+<p>When connecting to the HPC system through any method that requires DUO authentication, you will receive a DUO authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. <strong>Do no approve DUO requests that you did not initiate!</strong> If you receive a DUO request that you did not initiate, deny the request and contact us at <a href="mailto:cbcsupport@helpspotmail.com">cbcsupport@helpspotmail.com</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
