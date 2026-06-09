@@ -36,8 +36,8 @@ website:
           href: keys.qmd
         - text: "VPN"
           href: vpn.qmd
-        # - text: "Two Factor"
-        #   href: twofactor.qmd
+        - text: "DUO Two-Factor"
+          href: duo.qmd
 
       - text: "File Systems & Storage"
         href: storage.qmd

@@ -1,5 +1,0 @@
----
-title: "Two Factor Authentication"
----
-
-Instructions here for enrolling in two factor authentication.
