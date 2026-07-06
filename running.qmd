@@ -109,11 +109,22 @@ See the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for more i
 # Interactive Job
 An interactive session can be started on a compute node using the `srun` command.
 
-At a minimum, you would use these arguments:
+A special QOS (`interactive`) can optionally be used for starting interactive jobs which will give the job a higher priority in the queue. This QOS has the following limits:
 
-`srun --qos=general --pty bash`
+- 1 concurrent job
+- no more than 8 CPUs
+- no more than 64 GB memory
+- no more than 8 hours of wall time
 
-Most `sbatch` arguments can also be used with `srun`. For `--mem` or `--cpus-per-task` if you needed to request additional resources. 
+At a minimum, you would use these arguments when requesting an interactive session:
+
+`srun --qos interactive --pty bash`
+
+or if you don't want to be bound by the limits of the `interactive` QOS:
+
+`srun --qos general --pty bash`
+
+Most `sbatch` arguments can also be used with `srun`. For example, `--mem` or `--cpus-per-task` if you needed to request additional resources. 
 
 
 # Job status and monitoring
