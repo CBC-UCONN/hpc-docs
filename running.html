@@ -412,9 +412,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="interactive-job" class="level1">
 <h1>Interactive Job</h1>
 <p>An interactive session can be started on a compute node using the <code>srun</code> command.</p>
-<p>At a minimum, you would use these arguments:</p>
-<p><code>srun --qos=general --pty bash</code></p>
-<p>Most <code>sbatch</code> arguments can also be used with <code>srun</code>. For <code>--mem</code> or <code>--cpus-per-task</code> if you needed to request additional resources.</p>
+<p>A special QOS (<code>interactive</code>) can optionally be used for starting interactive jobs which will give the job a higher priority in the queue. This QOS has the following limits:</p>
+<ul>
+<li>1 concurrent job</li>
+<li>no more than 8 CPUs</li>
+<li>no more than 64 GB memory</li>
+<li>no more than 8 hours of wall time</li>
+</ul>
+<p>At a minimum, you would use these arguments when requesting an interactive session:</p>
+<p><code>srun --qos interactive --pty bash</code></p>
+<p>or if you don’t want to be bound by the limits of the <code>interactive</code> QOS:</p>
+<p><code>srun --qos general --pty bash</code></p>
+<p>Most <code>sbatch</code> arguments can also be used with <code>srun</code>. For example, <code>--mem</code> or <code>--cpus-per-task</code> if you needed to request additional resources.</p>
 </section>
 <section id="job-status-and-monitoring" class="level1">
 <h1>Job status and monitoring</h1>
