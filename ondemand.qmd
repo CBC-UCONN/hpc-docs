@@ -2,7 +2,7 @@
 title: "Open OnDemand"
 ---
 
-Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand **only provides access to the Mantis cluster**. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the [Command Line Interface](cli.qmd) page for instructions on how to connect through a terminal.
+Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand **only provides access to the Mantis cluster**. If you want to connect to Xanadu or to a virtual machine, you will need to connect with SSH through a terminal or SSH client. See the [Command Line Interface](cli.qmd) page for instructions on how to connect through a terminal.
 
 ## Prerequisites
 In order to use Open OnDemand you will need:
@@ -51,4 +51,4 @@ Leaving interactive jobs running while you are not actively using them constitut
 - **RStudio**: An integrated development environment for R programming language.
 
 ## Popup & Ad Blockers
-Some features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the [ondemand.cam.uchc.edu](https://ondemand.cam.uchc.edu) url and see if that resolves the issue.
+Some features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the [ondemand.hpc.cam.uchc.edu](https://ondemand.hpc.cam.uchc.edu) url and see if that resolves the issue.
