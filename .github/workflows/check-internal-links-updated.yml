@@ -1,0 +1,24 @@
+name: Check for broken links 
+
+on:
+  push:
+    branches: 
+      - main
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check links
+        uses: tcort/github-action-markdown-link-check@v1
+        with:
+          base-branch: main
+          file-extension: qmd
+          use-verbose-mode: yes
+          check-modified-files-only: yes
+          config-file: .github/workflows/link-check-config.json
