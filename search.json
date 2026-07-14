@@ -457,18 +457,18 @@
     "href": "ondemand.html",
     "title": "Open OnDemand",
     "section": "",
-    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the Command Line Interface page for instructions on how to connect through a terminal.",
+    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect with SSH through a terminal or SSH client. See the Command Line Interface page for instructions on how to connect through a terminal.",
     "crumbs": [
       "Connecting",
       "Open OnDemand"
     ]
   },
   {
-    "objectID": "ondemand.html#pre-requisites",
-    "href": "ondemand.html#pre-requisites",
+    "objectID": "ondemand.html#prerequisites",
+    "href": "ondemand.html#prerequisites",
     "title": "Open OnDemand",
-    "section": "Pre-requisites",
-    "text": "Pre-requisites\nIn order to use Open OnDemand you will need:\n\nA CAM account and a password that has not expired. See the Getting Started page for instructions on how to request an account and reset your password.\nA web browser. Open OnDemand is compatible with most modern web browsers.\nThe CAM VPN if you are not connected to the UConnHealth-SECURE WiFi  . See CAM VPN page for instructions on how to connect to the CAM VPN.",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nIn order to use Open OnDemand you will need:\n\nA CAM account with a non-expired password. See the Getting Started page for instructions on how to request an account and reset your password.\nEnrollment in Duo two-factor authentication for UCHC HPC. See the Duo Two-Factor Authentication page for instructions on how to enroll and install the Duo mobile app on your device.\nA web browser. Open OnDemand is compatible with most modern web browsers.",
     "crumbs": [
       "Connecting",
       "Open OnDemand"
@@ -479,7 +479,7 @@
     "href": "ondemand.html#connecting",
     "title": "Open OnDemand",
     "section": "Connecting",
-    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.",
+    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.hpc.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. When ready, click the “Log in to Open OnDemand” button. You will then recieve a Duo authentication request on your enrolled device. Approve the request to complete the authentication process.\n\nUpon successful authentication, you will be taken to the Open OnDemand dashboard. From here, you can access various features and applications available through Open OnDemand.",
     "crumbs": [
       "Connecting",
       "Open OnDemand"
@@ -490,7 +490,7 @@
     "href": "ondemand.html#interactive-apps",
     "title": "Open OnDemand",
     "section": "Interactive Apps",
-    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
+    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that run on the Mantis cluster and permit access to the UCHC HPC filesystem.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
     "crumbs": [
       "Connecting",
       "Open OnDemand"
@@ -512,7 +512,7 @@
     "href": "ondemand.html#popup-ad-blockers",
     "title": "Open OnDemand",
     "section": "Popup & Ad Blockers",
-    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.cam.uchc.edu url and see if that resolves the issue.",
+    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.hpc.cam.uchc.edu url and see if that resolves the issue.",
     "crumbs": [
       "Connecting",
       "Open OnDemand"
@@ -868,9 +868,9 @@
   {
     "objectID": "duo.html",
     "href": "duo.html",
-    "title": "DUO Two-Factor Authentication",
+    "title": "Duo Two-Factor Authentication",
     "section": "",
-    "text": "Access to all UCHC HPC compute resources requires two-factor authentication through DUO.\n\nEnrollment\nOnce a CAM account has been requested, users will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.\n\n\nDUO Installation\nYou will need to have a device with DUO installed to complete this step. See here for more information on DUO and how to install it. The UCHC HPC DUO license requires the use of a mobile device such as a mobile phone or tablet. Hardware tokens and Touch ID are not accepted\n\n\n\n\n\n\nNote\n\n\n\nNote that the UCHC HPC DUO account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the DUO app as “UCHC HPC” as pictured below.\n\n\n\n\n\nAuthentication\nWhen connecting to the HPC system through any method that requires DUO authentication, you will receive a DUO authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. Do no approve DUO requests that you did not initiate! If you receive a DUO request that you did not initiate, deny the request and contact us at cbcsupport@helpspotmail.com.",
+    "text": "Access to all UCHC HPC resources requires two-factor authentication through Duo.\n\nEnrollment in Duo for UCHC HPC\nOnce your CAM account has been approved, you will receive an enrollment invitation email from “Duo Security.” Follow the link in the email to begin the setup process.\n\n\nDuo Mobile App Installation\nYou will then need to install the Duo Mobile app on a mobile device such as a smartphone or tablet. Hardware tokens and Touch ID are not accepted. The Duo Mobile app can be downloaded from the Apple App Store or Google Play Store. Once installed, follow the instructions in the enrollment email to complete the setup process.\n\n\n\n\n\n\nNote\n\n\n\nNote that the UCHC HPC Duo account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the Duo app as “UCHC HPC” as pictured below.\n\n\n\n\n\nAuthentication\nWhen connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. Do no approve Duo requests that you did not initiate! If you receive a Duo request that you did not initiate, deny the request and contact us at cbcsupport@helpspotmail.com.",
     "crumbs": [
       "Connecting",
       "DUO Two-Factor"

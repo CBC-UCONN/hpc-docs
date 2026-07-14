@@ -227,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#connecting" id="toc-connecting" class="nav-link" data-scroll-target="#connecting">Connecting</a></li>
   <li><a href="#interactive-apps" id="toc-interactive-apps" class="nav-link" data-scroll-target="#interactive-apps">Interactive Apps</a></li>
   <li><a href="#availabe-applications" id="toc-availabe-applications" class="nav-link" data-scroll-target="#availabe-applications">Availabe Applications</a></li>
@@ -257,25 +257,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand <strong>only provides access to the Mantis cluster</strong>. If you want to connect to Xanadu or to a virtual machine, you will need to connect through a terminal using SSH. See the <a href="./cli.html">Command Line Interface</a> page for instructions on how to connect through a terminal.</p>
-<section id="pre-requisites" class="level2">
-<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
+<p>Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand <strong>only provides access to the Mantis cluster</strong>. If you want to connect to Xanadu or to a virtual machine, you will need to connect with SSH through a terminal or SSH client. See the <a href="./cli.html">Command Line Interface</a> page for instructions on how to connect through a terminal.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>In order to use Open OnDemand you will need:</p>
 <ul>
-<li>A CAM account and a password that has not expired. See the <a href="./starting.html">Getting Started</a> page for instructions on how to request an account and reset your password.</li>
+<li>A CAM account with a non-expired password. See the <a href="./starting.html">Getting Started</a> page for instructions on how to request an account and reset your password.</li>
+<li>Enrollment in Duo two-factor authentication for UCHC HPC. See the <a href="./duo.html">Duo Two-Factor Authentication</a> page for instructions on how to enroll and install the Duo mobile app on your device.</li>
 <li>A web browser. Open OnDemand is compatible with most modern web browsers.</li>
-<li>The CAM VPN if you are not connected to the UConnHealth-SECURE WiFi <!-- or UCHC ethernet ?--> . See <a href="./vpn.html">CAM VPN</a> page for instructions on how to connect to the CAM VPN.</li>
 </ul>
 </section>
 <section id="connecting" class="level2">
 <h2 class="anchored" data-anchor-id="connecting">Connecting</h2>
-<p>To connect through Open OnDemand, navigate to <a href="https://ondemand.cam.uchc.edu">https://ondemand.cam.uchc.edu</a> in your web browser. You will be prompted to enter your CAM username and password. Once you have successfully logged in, you will be taken to the Open OnDemand dashboard where you can access various applications and tools.</p>
+<p>To connect through Open OnDemand, navigate to <a href="https://ondemand.hpc.cam.uchc.edu">https://ondemand.hpc.cam.uchc.edu</a> in your web browser. You will be prompted to enter your CAM username and password. When ready, click the “Log in to Open OnDemand” button. You will then recieve a Duo authentication request on your enrolled device. Approve the request to complete the authentication process.</p>
 <p><img src="img/ood-login.png" class="img-fluid" width="500"></p>
+<p>Upon successful authentication, you will be taken to the Open OnDemand dashboard. From here, you can access various features and applications available through Open OnDemand.</p>
 <p><img src="img/ood-dashboard.png" class="img-fluid" width="500"></p>
 </section>
 <section id="interactive-apps" class="level2">
 <h2 class="anchored" data-anchor-id="interactive-apps">Interactive Apps</h2>
-<p>Open OnDemand provides access to various interactive applications that allow you to run jobs and visualize data in real-time. These applications can be launched directly from the Open OnDemand dashboard. When launched these applications run as jobs on the cluster.</p>
+<p>Open OnDemand provides access to various interactive applications that run on the Mantis cluster and permit access to the UCHC HPC filesystem.</p>
 <section id="to-launch-an-interactive-app" class="level4">
 <h4 class="anchored" data-anchor-id="to-launch-an-interactive-app">To launch an interactive app:</h4>
 <ol type="1">
@@ -320,7 +321,7 @@ Warning
 </section>
 <section id="popup-ad-blockers" class="level2">
 <h2 class="anchored" data-anchor-id="popup-ad-blockers">Popup &amp; Ad Blockers</h2>
-<p>Some features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the <a href="https://ondemand.cam.uchc.edu">ondemand.cam.uchc.edu</a> url and see if that resolves the issue.</p>
+<p>Some features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the <a href="https://ondemand.hpc.cam.uchc.edu">ondemand.hpc.cam.uchc.edu</a> url and see if that resolves the issue.</p>
 
 
 </section>

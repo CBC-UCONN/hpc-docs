@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DUO Two-Factor Authentication – UCHC HPC</title>
+<title>Duo Two-Factor Authentication – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -227,8 +227,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#enrollment" id="toc-enrollment" class="nav-link active" data-scroll-target="#enrollment">Enrollment</a></li>
-  <li><a href="#duo-installation" id="toc-duo-installation" class="nav-link" data-scroll-target="#duo-installation">DUO Installation</a></li>
+  <li><a href="#enrollment-in-duo-for-uchc-hpc" id="toc-enrollment-in-duo-for-uchc-hpc" class="nav-link active" data-scroll-target="#enrollment-in-duo-for-uchc-hpc">Enrollment in Duo for UCHC HPC</a></li>
+  <li><a href="#duo-mobile-app-installation" id="toc-duo-mobile-app-installation" class="nav-link" data-scroll-target="#duo-mobile-app-installation">Duo Mobile App Installation</a></li>
   <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication">Authentication</a></li>
   </ul>
 </nav>
@@ -238,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect.html">Connecting</a></li><li class="breadcrumb-item"><a href="./duo.html">DUO Two-Factor</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">DUO Two-Factor Authentication</h1>
+<h1 class="title">Duo Two-Factor Authentication</h1>
 </div>
 
 
@@ -255,14 +255,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Access to all UCHC HPC compute resources requires two-factor authentication through DUO.</p>
-<section id="enrollment" class="level3">
-<h3 class="anchored" data-anchor-id="enrollment">Enrollment</h3>
-<p>Once a CAM account has been requested, users will receive an email regarding DUO enrollment from “DUO Security”. Follow the instructions to enroll in DUO.</p>
+<p><img src="img/duo-logo.png" class="img-fluid" width="200"></p>
+<p>Access to all UCHC HPC resources requires two-factor authentication through Duo.</p>
+<section id="enrollment-in-duo-for-uchc-hpc" class="level3">
+<h3 class="anchored" data-anchor-id="enrollment-in-duo-for-uchc-hpc">Enrollment in Duo for UCHC HPC</h3>
+<p>Once your CAM account has been approved, you will receive an enrollment invitation email from “Duo Security.” Follow the link in the email to begin the setup process.</p>
 </section>
-<section id="duo-installation" class="level3">
-<h3 class="anchored" data-anchor-id="duo-installation">DUO Installation</h3>
-<p>You will need to have a device with DUO installed to complete this step. See <a href="https://kb.uconn.edu/space/IKB/10726900331/Duo+Two-Factor+Authentication">here</a> for more information on DUO and how to install it. The UCHC HPC DUO license requires the use of a mobile device such as a mobile phone or tablet. Hardware tokens and Touch ID are not accepted</p>
+<section id="duo-mobile-app-installation" class="level3">
+<h3 class="anchored" data-anchor-id="duo-mobile-app-installation">Duo Mobile App Installation</h3>
+<p>You will then need to install the Duo Mobile app on a mobile device such as a smartphone or tablet. Hardware tokens and Touch ID are not accepted. The <strong>Duo Mobile</strong> app can be downloaded from the Apple App Store or Google Play Store. Once installed, follow the instructions in the enrollment email to complete the setup process.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -273,14 +274,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note that the UCHC HPC DUO account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the DUO app as “UCHC HPC” as pictured below.</p>
+<p>Note that the UCHC HPC Duo account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the Duo app as “UCHC HPC” as pictured below.</p>
 <p><img src="img/duo-uchc-hpc.png" class="img-fluid" width="200"></p>
 </div>
 </div>
 </section>
 <section id="authentication" class="level3">
 <h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
-<p>When connecting to the HPC system through any method that requires DUO authentication, you will receive a DUO authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. <strong>Do no approve DUO requests that you did not initiate!</strong> If you receive a DUO request that you did not initiate, deny the request and contact us at <a href="mailto:cbcsupport@helpspotmail.com">cbcsupport@helpspotmail.com</a>.</p>
+<p>When connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. <strong>Do no approve Duo requests that you did not initiate!</strong> If you receive a Duo request that you did not initiate, deny the request and contact us at <a href="mailto:cbcsupport@helpspotmail.com">cbcsupport@helpspotmail.com</a>.</p>
 
 
 </section>
