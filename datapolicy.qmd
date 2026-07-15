@@ -15,7 +15,7 @@ Raw sequence data will be stored here for a period of **2 years**. After this ti
 Files will automatically be removed from `/scratch` after 90 days. If you have files in `/scratch` that you would like to keep, please move them to another location before this time.
 
 ### /tmp
-Any files in `/tmp` belonging to a user without an active job on a node may be removed at any time. 
+Any files in `/tmp` belonging to a user without an active job on a node may be removed at any time after the job has ended.
 
 ## User Managed Storage
 All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for `\lab`, `\projects`, and `\department`. To request a quota increase, please [submit a ticket](https://bioinformatics.uconn.edu/contact-us/bioinformatics-technical-issues/). 

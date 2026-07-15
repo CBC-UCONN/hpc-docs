@@ -9,6 +9,7 @@ In order to connect to the HPC system through the command line, users must conne
 
 
 1. Ensure that you have setup an [SSH key](keys.qmd) for authentication.
+<!-- 2. Ensure that you have completed [Duo enrollment](duo.qmd) for two-factor authentication. -->
 2. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
 
 ## Mantis `mantis.hpc.cam.uchc.edu`
