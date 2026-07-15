@@ -336,27 +336,42 @@ Warning
 </section>
 <section id="copy-public-ssh-key-to-the-uchc-hpc-system" class="level3">
 <h3 class="anchored" data-anchor-id="copy-public-ssh-key-to-the-uchc-hpc-system">Copy Public SSH Key to the UCHC HPC system</h3>
-<p>Once you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system.</p>
-<!-- In order to do so you must first connect to the [CAM VPN](#cam-vpn) or be using a UCHC secure WiFi network. -->
+<p>Once you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the <a href="./ondemand.html">Open OnDemand</a> web portal. To copy your public key to the UCHC HPC system, follow the steps below:</p>
+<section id="copy-your-public-key." class="level4">
+<h4 class="anchored" data-anchor-id="copy-your-public-key.">1. Copy your public key.</h4>
+<p>Your public key will be located in the <code>~/.ssh/</code> directory located inside of your user home directory. Select your operating system below for instructions on how to copy your public key to your clipboard.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">MacOS and Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows PowerShell</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">MacOS / Linux Terminal</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows PowerShell</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>On MacOS and Linux, you can copy your public key to the UCHC HPC system using the <code>ssh-copy-id</code> command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
+<p>On MacOS or Linux operating systems, you can easily copy this key to your clipboard by running the following command in the terminal application:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> ~/.ssh/id_ed25519.pub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>On Windows 10 or later, you can copy your public key to the UCHC HPC system using <code>Windows PowerShell</code> with the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span> <span class="va">$env</span>:USERPROFILE<span class="dt">\.</span>ssh<span class="dt">\i</span>d_ed25519.pub <span class="kw">|</span> <span class="fu">ssh</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>@transfer.cam.uchc.edu <span class="st">"mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
-<p>When prompted, enter your CAM password. Note that for security reasons, your cursor will remain stationary and you will not see any characters appear as you type your password. Also note that passwords expire every 90 days and can be reset in the <a href="https://pm-app.cam.uchc.edu/portal/Home/LandingPage">CAM Password Manager</a>.</p>
+<p>On Windows operating systems, you can easily copy this key to your clipboard by running the following command in the PowerShell application:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Get-Content</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\.ssh\id_ed25519.pub"</span> <span class="kw">|</span> <span class="ex">Set-Clipboard</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+</section>
+<section id="log-in-to-open-ondemand" class="level4">
+<h4 class="anchored" data-anchor-id="log-in-to-open-ondemand">2. Log in to Open OnDemand</h4>
+<p>See the <a href="./ondemand.html">Open OnDemand</a> page for more information about logging in.</p>
+</section>
+<section id="click-the-files-dropdown-menu-and-under-utilities-select-ssh-key-manager." class="level4">
+<h4 class="anchored" data-anchor-id="click-the-files-dropdown-menu-and-under-utilities-select-ssh-key-manager.">3. Click the “Files” dropdown menu and under “Utilities” select “SSH Key Manager”.</h4>
+<p><img src="img/key-manager-menu-item.png" class="img-fluid" width="400"></p>
+</section>
+<section id="paste-your-key-into-the-add-a-key-text-box." class="level4">
+<h4 class="anchored" data-anchor-id="paste-your-key-into-the-add-a-key-text-box.">4. Paste your key into the “Add a key” text box.</h4>
+<p><img src="img/key-manager-input.png" class="img-fluid" width="400"></p>
+</section>
+<section id="click-the-add-key-button." class="level4">
+<h4 class="anchored" data-anchor-id="click-the-add-key-button.">5. Click the “Add Key” button.</h4>
+<p>Keys can be removed at any time by clicking the “Remove” button next to the key you wish to remove.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
