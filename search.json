@@ -825,22 +825,11 @@
     ]
   },
   {
-    "objectID": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
-    "href": "cli.html#mantis-external-login.hpc.cam.uchc.edu",
+    "objectID": "cli.html#mantis-mantis.hpc.cam.uchc.edu",
+    "href": "cli.html#mantis-mantis.hpc.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
-    "section": "Mantis External login.hpc.cam.uchc.edu",
-    "text": "Mantis External login.hpc.cam.uchc.edu\nThe mantis external host will connect you to a Mantis login node.\n\nRequirements\n\nSSH key\nVPN not required.\n\n\n\nUsage\nssh &lt;user&gt;@login.hpc.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
-    "crumbs": [
-      "Connecting",
-      "Command Line"
-    ]
-  },
-  {
-    "objectID": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
-    "href": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
-    "title": "Connecting through the Command Line Interface",
-    "section": "Mantis Internal mantis-submit.cam.uchc.edu",
-    "text": "Mantis Internal mantis-submit.cam.uchc.edu\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network.\n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
+    "section": "Mantis mantis.hpc.cam.uchc.edu",
+    "text": "Mantis mantis.hpc.cam.uchc.edu\nMantis is the newest cluster and recommended for nearly all users.\n\nRequirements\n\nSSH key \n\n\n\nUsage\nssh &lt;user&gt;@mantis.hpc.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"
@@ -851,18 +840,18 @@
     "href": "cli.html#xanadu-xanadu.hpc.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
     "section": "Xanadu xanadu.hpc.cam.uchc.edu",
-    "text": "Xanadu xanadu.hpc.cam.uchc.edu\n\nRequirements\n\nSSH key\nDUO enrollment\n\n\n\nUsage\nssh &lt;user&gt;@xanadu.hpc.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
+    "text": "Xanadu xanadu.hpc.cam.uchc.edu\nXanadu is a legacy cluster replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.\n\nRequirements\n\nSSH key\nDuo enrollment\n\n\n\nUsage\nssh &lt;user&gt;@xanadu.hpc.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"
     ]
   },
   {
-    "objectID": "cli.html#virtual-machines",
-    "href": "cli.html#virtual-machines",
+    "objectID": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
+    "href": "cli.html#mantis-internal-mantis-submit.cam.uchc.edu",
     "title": "Connecting through the Command Line Interface",
-    "section": "Virtual Machines",
-    "text": "Virtual Machines\nA number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.",
+    "section": "Mantis Internal mantis-submit.cam.uchc.edu",
+    "text": "Mantis Internal mantis-submit.cam.uchc.edu\nThe Mantis internal host is an alternative access point for Mantis that is only accessible from the UConn Health network or while connected to the CAM VPN. This host is no longer likely to be useful to most users.\n\nRequirements\n\nSSH key\nMust be connected to the CAM VPN or the UConnHealth-SECURE WiFi network.\n\n\n\nUsage\nssh &lt;user&gt;@mantis-submit.cam.uchc.edu where &lt;user&gt; is replaced with your CAM username.",
     "crumbs": [
       "Connecting",
       "Command Line"

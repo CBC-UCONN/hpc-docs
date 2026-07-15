@@ -229,10 +229,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#hosts" id="toc-hosts" class="nav-link active" data-scroll-target="#hosts">Hosts</a>
   <ul class="collapse">
-  <li><a href="#mantis-external-login.hpc.cam.uchc.edu" id="toc-mantis-external-login.hpc.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-external-login.hpc.cam.uchc.edu">Mantis External <code>login.hpc.cam.uchc.edu</code></a></li>
-  <li><a href="#mantis-internal-mantis-submit.cam.uchc.edu" id="toc-mantis-internal-mantis-submit.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></a></li>
+  <li><a href="#mantis-mantis.hpc.cam.uchc.edu" id="toc-mantis-mantis.hpc.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-mantis.hpc.cam.uchc.edu">Mantis <code>mantis.hpc.cam.uchc.edu</code></a></li>
   <li><a href="#xanadu-xanadu.hpc.cam.uchc.edu" id="toc-xanadu-xanadu.hpc.cam.uchc.edu" class="nav-link" data-scroll-target="#xanadu-xanadu.hpc.cam.uchc.edu">Xanadu <code>xanadu.hpc.cam.uchc.edu</code></a></li>
-  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
+  <li><a href="#mantis-internal-mantis-submit.cam.uchc.edu" id="toc-mantis-internal-mantis-submit.cam.uchc.edu" class="nav-link" data-scroll-target="#mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></a></li>
   </ul></li>
   <li><a href="#ssh-secure-shell" id="toc-ssh-secure-shell" class="nav-link" data-scroll-target="#ssh-secure-shell">SSH (Secure Shell)</a>
   <ul class="collapse">
@@ -270,55 +269,51 @@ ul.task-list li input[type="checkbox"] {
 <p>In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the <a href="#ssh">SSH</a> section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:</p>
 <ol type="1">
 <li>Ensure that you have setup an <a href="./keys.html">SSH key</a> for authentication.</li>
-<li>Connect to the <a href="./vpn.html">CAM VPN</a> if necessary.</li>
 <li>Connect with your <a href="#ssh-client">SSH client</a> (e.g.&nbsp;Terminal or Windows PowerShell) via the host url using the SSH command:<code>ssh &lt;user&gt;@&lt;host url&gt;</code></li>
 </ol>
-<section id="mantis-external-login.hpc.cam.uchc.edu" class="level2">
-<h2 class="anchored" data-anchor-id="mantis-external-login.hpc.cam.uchc.edu">Mantis External <code>login.hpc.cam.uchc.edu</code></h2>
-<p>The mantis external host will connect you to a Mantis login node.</p>
+<section id="mantis-mantis.hpc.cam.uchc.edu" class="level2">
+<h2 class="anchored" data-anchor-id="mantis-mantis.hpc.cam.uchc.edu">Mantis <code>mantis.hpc.cam.uchc.edu</code></h2>
+<p>Mantis is the newest cluster and recommended for nearly all users.</p>
 <section id="requirements" class="level4">
 <h4 class="anchored" data-anchor-id="requirements">Requirements</h4>
 <ul>
-<li><a href="./keys.html">SSH key</a></li>
-<li>VPN not required.</li>
+<li><a href="./keys.html">SSH key</a> <!-- - [Duo enrollment](duo.qmd) --></li>
 </ul>
 </section>
 <section id="usage" class="level4">
 <h4 class="anchored" data-anchor-id="usage">Usage</h4>
-<p><code>ssh &lt;user&gt;@login.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
-</section>
-</section>
-<section id="mantis-internal-mantis-submit.cam.uchc.edu" class="level2">
-<h2 class="anchored" data-anchor-id="mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></h2>
-<section id="requirements-1" class="level4">
-<h4 class="anchored" data-anchor-id="requirements-1">Requirements</h4>
-<ul>
-<li><a href="./keys.html">SSH key</a></li>
-<li>Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network.</li>
-</ul>
-</section>
-<section id="usage-1" class="level4">
-<h4 class="anchored" data-anchor-id="usage-1">Usage</h4>
-<p><code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
+<p><code>ssh &lt;user&gt;@mantis.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
 </section>
 </section>
 <section id="xanadu-xanadu.hpc.cam.uchc.edu" class="level2">
 <h2 class="anchored" data-anchor-id="xanadu-xanadu.hpc.cam.uchc.edu">Xanadu <code>xanadu.hpc.cam.uchc.edu</code></h2>
+<p>Xanadu is a legacy cluster replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.</p>
+<section id="requirements-1" class="level4">
+<h4 class="anchored" data-anchor-id="requirements-1">Requirements</h4>
+<ul>
+<li><a href="./keys.html">SSH key</a></li>
+<li><a href="./duo.html">Duo enrollment</a></li>
+</ul>
+</section>
+<section id="usage-1" class="level4">
+<h4 class="anchored" data-anchor-id="usage-1">Usage</h4>
+<p><code>ssh &lt;user&gt;@xanadu.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
+</section>
+</section>
+<section id="mantis-internal-mantis-submit.cam.uchc.edu" class="level2">
+<h2 class="anchored" data-anchor-id="mantis-internal-mantis-submit.cam.uchc.edu">Mantis Internal <code>mantis-submit.cam.uchc.edu</code></h2>
+<p>The Mantis internal host is an alternative access point for Mantis that is only accessible from the UConn Health network or while connected to the <a href="./vpn.html">CAM VPN</a>. This host is no longer likely to be useful to most users.</p>
 <section id="requirements-2" class="level4">
 <h4 class="anchored" data-anchor-id="requirements-2">Requirements</h4>
 <ul>
 <li><a href="./keys.html">SSH key</a></li>
-<li><a href="./duo.html">DUO enrollment</a></li>
+<li>Must be connected to the <a href="./vpn.html">CAM VPN</a> or the UConnHealth-SECURE WiFi network.</li>
 </ul>
 </section>
 <section id="usage-2" class="level4">
 <h4 class="anchored" data-anchor-id="usage-2">Usage</h4>
-<p><code>ssh &lt;user&gt;@xanadu.hpc.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
+<p><code>ssh &lt;user&gt;@mantis-submit.cam.uchc.edu</code> where <code>&lt;user&gt;</code> is replaced with your CAM username.</p>
 </section>
-</section>
-<section id="virtual-machines" class="level2">
-<h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
-<p>A number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.</p>
 </section>
 </section>
 <section id="ssh-secure-shell" class="level1">
