@@ -9,41 +9,39 @@ In order to connect to the HPC system through the command line, users must conne
 
 
 1. Ensure that you have setup an [SSH key](keys.qmd) for authentication.
-2. Connect to the [CAM VPN](vpn.qmd) if necessary.
-3. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
+2. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
 
-## Mantis External `login.hpc.cam.uchc.edu`
-The mantis external host will connect you to a Mantis login node. 
-
-#### Requirements
-- [SSH key](keys.qmd)
-- VPN not required.
-
-#### Usage
-`ssh <user>@login.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
-
-
-## Mantis Internal `mantis-submit.cam.uchc.edu`
+## Mantis `mantis.hpc.cam.uchc.edu`
+Mantis is the newest cluster and recommended for nearly all users. 
 
 #### Requirements
 - [SSH key](keys.qmd)
-- Must be connected to the CAM VPN or the UConnHealth-SECURE WiFi network.
+<!-- - [Duo enrollment](duo.qmd) -->
 
 #### Usage
-`ssh <user>@mantis-submit.cam.uchc.edu` where `<user>` is replaced with your CAM username.
+`ssh <user>@mantis.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
 ## Xanadu `xanadu.hpc.cam.uchc.edu`
+Xanadu is a legacy cluster replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.
+
 #### Requirements
 - [SSH key](keys.qmd)
-- [DUO enrollment](duo.qmd)
+- [Duo enrollment](duo.qmd)
 
 #### Usage
 `ssh <user>@xanadu.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
-## Virtual Machines
-A number of virtual machines exist for specific purposes. Details on connecting to these will be communicated to users as needed but will generally have the same SSH key and VPN requirements as internal hosts.
+## Mantis Internal `mantis-submit.cam.uchc.edu`
+The Mantis internal host is an alternative access point for Mantis that is only accessible from the UConn Health network or while connected to the [CAM VPN](vpn.qmd). This host is no longer likely to be useful to most users.
+
+#### Requirements
+- [SSH key](keys.qmd)
+- Must be connected to the [CAM VPN](vpn.qmd) or the UConnHealth-SECURE WiFi network.
+
+#### Usage
+`ssh <user>@mantis-submit.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
 # SSH (Secure Shell)
