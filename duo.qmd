@@ -4,7 +4,7 @@ title: "Duo Two-Factor Authentication"
 
 ![](img/duo-logo.png){width=200px}
 
-Access to all UCHC HPC resources requires two-factor authentication through Duo. 
+Access to all UCHC HPC resources requires two-factor authentication through Duo if you are not connected to UConnHealth-SECURE WiFi or the CAM VPN. 
 
 ### Enrollment in Duo for UCHC HPC
 Once your CAM account has been approved, you will receive an enrollment invitation email from "Duo Security." Follow the link in the email to begin the setup process.
