@@ -9,15 +9,15 @@ In order to connect to the HPC system through the command line, users must conne
 
 
 1. Ensure that you have setup an [SSH key](keys.qmd) for authentication.
-<!-- 2. Ensure that you have completed [Duo enrollment](duo.qmd) for two-factor authentication. -->
-2. Connect with your [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
+2. Ensure that you have completed [Duo enrollment](duo.qmd) for two-factor authentication.
+3. Connect with an [SSH client](#ssh-client) (e.g. Terminal or Windows PowerShell) via the host url using the SSH command:`ssh <user>@<host url>`
 
 ## Mantis `mantis.hpc.cam.uchc.edu`
 Mantis is the newest cluster and recommended for nearly all users. 
 
 #### Requirements
 - [SSH key](keys.qmd)
-<!-- - [Duo enrollment](duo.qmd) -->
+- [Duo enrollment](duo.qmd)
 
 #### Usage
 `ssh <user>@mantis.hpc.cam.uchc.edu` where `<user>` is replaced with your CAM username.
@@ -58,10 +58,10 @@ MacOS and Linux users can use the built-in SSH client through the `Terminal` app
 Since Windows 10, Windows comes with a built-in SSH client which can be accessed through the `Windows PowerShell` application. For older versions of Windows, you can use a third-party SSH client such as [MobaXterm](https://mobaxterm.mobatek.net). 
 
 #### Usage
-If using the built-in SSH client, you simply open a `Terminal` or `Windows PowerShell` application and use the SSH command `ssh` to connect to the desired host. The general syntax for the SSH command is: `ssh <user>@<host url>` where `<user>` is your CAM username and `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the [SSH Keys](keys.qmd) section below for more information on SSH keys and how to generate and use them for authentication.
+If using the built-in SSH client, you simply open a `Terminal` or `Windows PowerShell` application and use the SSH command `ssh` to connect to the desired host. The general syntax for the SSH command is: `ssh <user>@<host url>` where `<user>` is your CAM username and `<host url>` is the URL of the host you want to connect to (e.g. `login.hpc.cam.uchc.edu` for Mantis external). 
 
 ## SSH Keys
-Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the [SSH Keys](keys.qmd) page for more information and for instructions on how to generate and use SSH keys for authentication. 
+All SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the [SSH Keys](keys.qmd) page for more information and for instructions on how to generate and use SSH keys for authentication. 
 
 
 

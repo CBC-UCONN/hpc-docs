@@ -2,9 +2,7 @@
 title: "VPN Access"
 ---
 
-Some modes of access to the HPC system require users to be connected to a VPN using the Cisco Secure Client.
-
-There are two VPNs that can be used to connect to the HPC system, depending on the type of device you are using.
+Most connections to the UCHC HPC system can be made using [two-factor authentication](duo.qmd) through DUO. However, some modes of access may require users to be connected to a VPN using the Cisco Secure Client. There are two VPNs that can be used to connect to the HPC system, depending on the type of device you are using. 
 
 1. [Non-UConn Health IT managed devices (CAM VPN)](#non-uconn-health-it-managed-devices)
 2. [UConn Health IT managed devices (UConn Health VPN)](#uconn-health-it-managed-devices)
