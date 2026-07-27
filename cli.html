@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e5c3464210d532c08d9d5494c8abb3e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-281de4cc31e2ebf9bb6eea29946d2277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -268,8 +271,9 @@ ul.task-list li input[type="checkbox"] {
 <h1>Hosts</h1>
 <p>In order to connect to the HPC system through the command line, users must connect via SSH through a login host. See the <a href="#ssh">SSH</a> section below if you are unfamiliar with SSH. Details on the most frequently used hosts are provided in the sections below. The general steps for connecting to each of them are the same:</p>
 <ol type="1">
-<li>Ensure that you have setup an <a href="./keys.html">SSH key</a> for authentication. <!-- 2. Ensure that you have completed [Duo enrollment](duo.qmd) for two-factor authentication. --></li>
-<li>Connect with your <a href="#ssh-client">SSH client</a> (e.g.&nbsp;Terminal or Windows PowerShell) via the host url using the SSH command:<code>ssh &lt;user&gt;@&lt;host url&gt;</code></li>
+<li>Ensure that you have setup an <a href="./keys.html">SSH key</a> for authentication.</li>
+<li>Ensure that you have completed <a href="./duo.html">Duo enrollment</a> for two-factor authentication.</li>
+<li>Connect with an <a href="#ssh-client">SSH client</a> (e.g.&nbsp;Terminal or Windows PowerShell) via the host url using the SSH command:<code>ssh &lt;user&gt;@&lt;host url&gt;</code></li>
 </ol>
 <section id="mantis-mantis.hpc.cam.uchc.edu" class="level2">
 <h2 class="anchored" data-anchor-id="mantis-mantis.hpc.cam.uchc.edu">Mantis <code>mantis.hpc.cam.uchc.edu</code></h2>
@@ -277,7 +281,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="requirements" class="level4">
 <h4 class="anchored" data-anchor-id="requirements">Requirements</h4>
 <ul>
-<li><a href="./keys.html">SSH key</a> <!-- - [Duo enrollment](duo.qmd) --></li>
+<li><a href="./keys.html">SSH key</a></li>
+<li><a href="./duo.html">Duo enrollment</a></li>
 </ul>
 </section>
 <section id="usage" class="level4">
@@ -332,12 +337,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="usage-3" class="level4">
 <h4 class="anchored" data-anchor-id="usage-3">Usage</h4>
-<p>If using the built-in SSH client, you simply open a <code>Terminal</code> or <code>Windows PowerShell</code> application and use the SSH command <code>ssh</code> to connect to the desired host. The general syntax for the SSH command is: <code>ssh &lt;user&gt;@&lt;host url&gt;</code> where <code>&lt;user&gt;</code> is your CAM username and <code>&lt;host url&gt;</code> is the URL of the host you want to connect to (e.g.&nbsp;<code>login.hpc.cam.uchc.edu</code> for Mantis external). Node that most hosts will require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> section below for more information on SSH keys and how to generate and use them for authentication.</p>
+<p>If using the built-in SSH client, you simply open a <code>Terminal</code> or <code>Windows PowerShell</code> application and use the SSH command <code>ssh</code> to connect to the desired host. The general syntax for the SSH command is: <code>ssh &lt;user&gt;@&lt;host url&gt;</code> where <code>&lt;user&gt;</code> is your CAM username and <code>&lt;host url&gt;</code> is the URL of the host you want to connect to (e.g.&nbsp;<code>login.hpc.cam.uchc.edu</code> for Mantis external).</p>
 </section>
 </section>
 <section id="ssh-keys" class="level2">
 <h2 class="anchored" data-anchor-id="ssh-keys">SSH Keys</h2>
-<p>Most SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> page for more information and for instructions on how to generate and use SSH keys for authentication.</p>
+<p>All SSH connections made to the UConn Health HPC system require the use of SSH keys for authentication. See the <a href="./keys.html">SSH Keys</a> page for more information and for instructions on how to generate and use SSH keys for authentication.</p>
 <!-- # SSH Tunnelling
  TODO: Verify and improve this
 In some cases, you may need to use SSH tunneling to access certain resources on the cluster. SSH tunneling allows you to create a secure connection between your local machine and a remote server, allowing you to access resources on the remote server as if they were on your local machine.
