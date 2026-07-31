@@ -57,6 +57,9 @@ website:
       - text: "Databases"
         href: databases.qmd
       
+      - text: "Teaching"
+        href: teaching.qmd
+
       # - text: "File Permissions"
       #   href: permissions.qmd
 
