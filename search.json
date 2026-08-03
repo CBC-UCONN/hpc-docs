@@ -93,7 +93,7 @@
     "href": "keys.html",
     "title": "SSH Keys",
     "section": "",
-    "text": "Some modes of access to the HPC system require users to use SSH keys for authentication.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nWhile in many cases it is required, the use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.\nTo be able to login using SSH keys, you will need to follow the setup process outlined below. Only ed25519 keys are accepted.\n\nCreate SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to the Copy to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\nCopy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the Open OnDemand web portal. To copy your public key to the UCHC HPC system, follow the steps below:\n\n1. Copy your public key.\nYour public key will be located in the ~/.ssh/ directory located inside of your user home directory. Select your operating system below for instructions on how to copy your public key to your clipboard.\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nOn MacOS or Linux operating systems, you can easily copy this key to your clipboard by running the following command in the terminal application:\npbcopy &lt; ~/.ssh/id_ed25519.pub\n\n\nOn Windows operating systems, you can easily copy this key to your clipboard by running the following command in the PowerShell application:\nGet-Content \"$env:USERPROFILE\\.ssh\\id_ed25519.pub\" | Set-Clipboard\n\n\n\n\n\n2. Log in to Open OnDemand\nSee the Open OnDemand page for more information about logging in.\n\n\n3. Click the “Files” dropdown menu and under “Utilities” select “SSH Key Manager”.\n\n\n\n4. Paste your key into the “Add a key” text box.\n\n\n\n5. Click the “Add Key” button.\nKeys can be removed at any time by clicking the “Remove” button next to the key you wish to remove.",
+    "text": "SSH keys are required to access the UCHC HPC system. This page will walk you through the process of creating and using SSH keys to access the UCHC HPC system.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nTo be able to login using SSH keys, you will need to:\n\nCreate an SSH key pair on your local computer.\nCopy the public key to the UCHC HPC system.\n\nOnly ed25519 keys are accepted.\n\n1. Create SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to step 2, Copy to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\n2. Copy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the Open OnDemand web portal. To copy your public key to the UCHC HPC system, follow the steps below:\n\n1. Copy your public key.\nYour public key will be located in the ~/.ssh/ directory located inside of your user home directory. Select your operating system below for instructions on how to copy your public key to your clipboard.\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nOn MacOS or Linux operating systems, you can easily copy the public key to your clipboard by running the following command in the terminal application:\npbcopy &lt; ~/.ssh/id_ed25519.pub\n\n\nOn Windows operating systems, you can easily copy the public key to your clipboard by running the following command in the PowerShell application:\nGet-Content \"$env:USERPROFILE\\.ssh\\id_ed25519.pub\" | Set-Clipboard\n\n\n\n\n\n2. Log in to Open OnDemand\nSee the Open OnDemand page for more information about logging in.\n\n\n3. Click the “Files” dropdown menu and under “Utilities” select “SSH Key Manager”.\n\n\n\n4. Paste your key into the “Add a key” text box.\n\n\n\n5. Click the “Add Key” button.\nKeys can be removed at any time by clicking the “Remove” button next to the key you wish to remove.",
     "crumbs": [
       "Connecting",
       "SSH Keys"
@@ -210,60 +210,123 @@
     ]
   },
   {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Information for courses using Mantis",
     "section": "",
-    "text": "File permissions"
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "text": "The Mantis computer cluster is available for instructors at UConn and UConn Health who wish to use it in their courses. This document provides basic information for instructors (and students) who use it in their courses.",
     "crumbs": [
-      "Get Help"
+      "Teaching"
     ]
   },
   {
-    "objectID": "help.html#slack",
-    "href": "help.html#slack",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
+    "objectID": "teaching.html#course-accounts",
+    "href": "teaching.html#course-accounts",
+    "title": "Information for courses using Mantis",
+    "section": "Course accounts",
+    "text": "Course accounts\nAccounts for a given course can be created on request here. Select the Submit a Ticket tab and under Request Type select Course or Workshop Accounts.\nA course directory will be created under /home/FCAM, and user accounts will be populated there. For example, the course MCB5672 has directory /home/FCAM/mcb5672/. Within that are numbered user home directories:\n$ ls -lh /home/FCAM/mcb5672/\ntotal 28K\ndrwxrwx--T 11 jklassen domain users 6.5K Jan 20  2026 usr1\ndrwxrwx--T 13 jklassen domain users  23K Jan 21  2026 usr2\ndrwxrwx--T 15 jklassen domain users  12K Jan 19  2026 usr3\ndrwxrwx--T 18 jklassen domain users  12K Jan 20  2026 usr4\ndrwxrwx--T 15 jklassen domain users 9.5K Jan 22  2026 usr5\ndrwxrwx--T 11 jklassen domain users 5.5K Feb  8 13:15 usr6\ndrwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7\nThese directories are owned by the instructor, in this case jklassen.\nCourse user IDs will be mcb5672usr1, mcb5672usr2 etc. The course instructor will be provided with a table listing user IDs and passwords (which can be changed HOW DO YOU CHANGE PASSWORDS ON STUDENT ACCOUNTS????) for each account.\n\nInstructor access to course accounts\nBecause the course account home directories are owned by the instructor, they are accessible by default. If the instructor retains course account passwords, the instructor may also switch to a student account after logging in to the server using the command:\nsu - mcbstudent5672usr1\nand entering that user’s password.",
     "crumbs": [
-      "Get Help"
+      "Teaching"
     ]
   },
   {
-    "objectID": "help.html#data-therapy",
-    "href": "help.html#data-therapy",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
+    "objectID": "teaching.html#connecting-to-mantis",
+    "href": "teaching.html#connecting-to-mantis",
+    "title": "Information for courses using Mantis",
+    "section": "Connecting to Mantis",
+    "text": "Connecting to Mantis\nWith updated security requirements, course account access to Mantis is only through a special instance of Open OnDemand and requires 2-factor authentication with an authenticator app NEED A CLEAR EXPLANATION HERE. Several apps are suitable, including Google Authenticator, Microsoft Authenticator and FreeOTP. Once configured these apps generate time-based one-time passwords(TOTP) as a second form of authentication in addition to your user ID and password.\nTo log in with a course account, visit https://learn.hpc.cam.uchc.edu and enter the user ID and password assigned to you:\n Upon initial login you will be presented with the Mobile Authenticator Setup message with instructions to configure your OTP device.\nFollow the instructions, retrieve the TOTP code from the OTP application you have chosen, enter the code in the One-time code field and click “Submit”. You will be logged into the Mantis Open OnDemand portal.",
     "crumbs": [
-      "Get Help"
+      "Teaching"
     ]
   },
   {
-    "objectID": "help.html#workshops",
-    "href": "help.html#workshops",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
+    "objectID": "teaching.html#open-ondemand",
+    "href": "teaching.html#open-ondemand",
+    "title": "Information for courses using Mantis",
+    "section": "Open OnDemand",
+    "text": "Open OnDemand\nOpen OnDemand allows remote access to Mantis resources via a web browser. Some key resources are available in the form of “apps”.\n\nYou can start a BASH terminal. Once there you can request resources for an interactive session as usual.\nYou can open a GUI desktop with the “Mantis Desktop” app.\nYou can start RStudio or Jupyter sessions.\n\nPlease contact us with questions or requests.",
     "crumbs": [
-      "Get Help"
+      "Teaching"
     ]
   },
   {
-    "objectID": "help.html#consultations",
-    "href": "help.html#consultations",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "objectID": "teaching.html#resource-requests",
+    "href": "teaching.html#resource-requests",
+    "title": "Information for courses using Mantis",
+    "section": "Resource requests",
+    "text": "Resource requests\nTENTATIVE PLEASE PROVIDE FEEDBACK\nOn Mantis, a “partition” defines a group of nodes and a “quality of service” (QoS) sets the conditions of access.\nIn the past we had a teaching partition, but because those resources frequently sat idle, we are trying a new approach. Courses should now use the general partition for most, if not all, work. himem resources are scarce and course accounts should not request them unless they are specifically required.\nStudent accounts will have access to four QoSes: student, interactive, general, and debug.\n\nstudent QoS has a per user limit of 24 CPUs and 64G of memory. COMMENTS?? It has very high priority, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition.\ninteractive QoS has similarly high priority but slightly lower resource limits and is intended for interactive sessions. It is limited to one concurrent job per user.\ngeneral QoS is the general purpose QoS used by most cluster users. Jobs submitted with this QoS have much larger resource limits and are subject to standard queueing policies.\ndebug QoS has very high priority but jobs are restricted to 5 minute wall times and 2 concurrent jobs. This QoS is intended for test running scripts to check for problems.\n\n\nExample resource requests:\nFor an interactive session with 2 cpus and 8G of memory:\nsrun -p general --qos=interactive -c 2 --mem=8G --pty bash\nstudent QoS would be suitable for this as well.\nFor a batch script intended to start very quickly (e.g. during class):\n#!/bin/bash\n#SBATCH --job-name=map_reads\n#SBATCH -n 1\n#SBATCH -c 12\n#SBATCH --mem=20G\n#SBATCH --partition=general\n#SBATCH --qos=student\n#SBATCH -o %x_%j.out\n#SBATCH -e %x_%j.err",
     "crumbs": [
-      "Get Help"
+      "Teaching"
+    ]
+  },
+  {
+    "objectID": "teaching.html#data-transfer",
+    "href": "teaching.html#data-transfer",
+    "title": "Information for courses using Mantis",
+    "section": "Data transfer",
+    "text": "Data transfer\nIf users wish to download files from their home directories select the Files menu and then Home Directory. Files can be downloaded from here.\nUpload is not possible (I THINK??) via Open OnDemand, but students can use Globus. It is not recommended for anyone with a regular CAM HPC account to try to link a student account.",
+    "crumbs": [
+      "Teaching"
+    ]
+  },
+  {
+    "objectID": "starting.html",
+    "href": "starting.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n\n3) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n4) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n5) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n6) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "Tranferring Data",
+    "section": "",
+    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#getting-started",
+    "href": "transfer.html#getting-started",
+    "title": "Tranferring Data",
+    "section": "Getting Started",
+    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#transferring-files-locally",
+    "href": "transfer.html#transferring-files-locally",
+    "title": "Tranferring Data",
+    "section": "Transferring Files Locally",
+    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#sharing-files",
+    "href": "transfer.html#sharing-files",
+    "title": "Tranferring Data",
+    "section": "Sharing Files",
+    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#connecting",
+    "href": "transfer.html#connecting",
+    "title": "Tranferring Data",
+    "section": "Connecting",
+    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
+    "crumbs": [
+      "Transferring Data"
     ]
   },
   {
@@ -347,64 +410,61 @@
     ]
   },
   {
-    "objectID": "transfer.html",
-    "href": "transfer.html",
-    "title": "Tranferring Data",
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
     "section": "",
-    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
     "crumbs": [
-      "Transferring Data"
+      "Get Help"
     ]
   },
   {
-    "objectID": "transfer.html#getting-started",
-    "href": "transfer.html#getting-started",
-    "title": "Tranferring Data",
-    "section": "Getting Started",
-    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#transferring-files-locally",
-    "href": "transfer.html#transferring-files-locally",
-    "title": "Tranferring Data",
-    "section": "Transferring Files Locally",
-    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#sharing-files",
-    "href": "transfer.html#sharing-files",
-    "title": "Tranferring Data",
-    "section": "Sharing Files",
-    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#connecting",
-    "href": "transfer.html#connecting",
-    "title": "Tranferring Data",
-    "section": "Connecting",
-    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "starting.html",
-    "href": "starting.html",
-    "title": "Getting Started",
+    "objectID": "help.html#slack",
+    "href": "help.html#slack",
+    "title": "Getting Help",
     "section": "",
-    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n\n3) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n4) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n5) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n6) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
+    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
     "crumbs": [
-      "Getting Started"
+      "Get Help"
     ]
+  },
+  {
+    "objectID": "help.html#data-therapy",
+    "href": "help.html#data-therapy",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#workshops",
+    "href": "help.html#workshops",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#consultations",
+    "href": "help.html#consultations",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "File permissions"
   },
   {
     "objectID": "running.html",

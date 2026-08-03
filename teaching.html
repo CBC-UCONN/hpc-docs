@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>permissions – UCHC HPC</title>
+<title>Information for courses using Mantis – UCHC HPC</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teaching.html">Teaching</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+  <a href="./teaching.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Teaching</span></a>
   </div>
 </li>
@@ -231,18 +266,137 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#course-accounts" id="toc-course-accounts" class="nav-link active" data-scroll-target="#course-accounts">Course accounts</a>
+  <ul class="collapse">
+  <li><a href="#instructor-access-to-course-accounts" id="toc-instructor-access-to-course-accounts" class="nav-link" data-scroll-target="#instructor-access-to-course-accounts">Instructor access to course accounts</a></li>
+  </ul></li>
+  <li><a href="#connecting-to-mantis" id="toc-connecting-to-mantis" class="nav-link" data-scroll-target="#connecting-to-mantis">Connecting to Mantis</a></li>
+  <li><a href="#open-ondemand" id="toc-open-ondemand" class="nav-link" data-scroll-target="#open-ondemand">Open OnDemand</a></li>
+  <li><a href="#resource-requests" id="toc-resource-requests" class="nav-link" data-scroll-target="#resource-requests">Resource requests</a>
+  <ul class="collapse">
+  <li><a href="#example-resource-requests" id="toc-example-resource-requests" class="nav-link" data-scroll-target="#example-resource-requests">Example resource requests:</a></li>
+  </ul></li>
+  <li><a href="#data-transfer" id="toc-data-transfer" class="nav-link" data-scroll-target="#data-transfer">Data transfer</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Information for courses using Mantis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>File permissions</p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>The Mantis computer cluster is available for instructors at UConn and UConn Health who wish to use it in their courses. This document provides basic information for instructors (and students) who use it in their courses.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Due to changes in security policies, Xanadu can no longer be used for teaching. All courses starting Fall 2026 must use Mantis.</p>
+</div>
+</div>
+<section id="course-accounts" class="level2">
+<h2 class="anchored" data-anchor-id="course-accounts">Course accounts</h2>
+<p>Accounts for a given course can be <a href="https://health.uconn.edu/high-performance-computing/contact/">created on request here</a>. Select the <code>Submit a Ticket</code> tab and under <code>Request Type</code> select <strong>Course or Workshop Accounts</strong>.</p>
+<p>A course directory will be created under <code>/home/FCAM</code>, and user accounts will be populated there. For example, the course MCB5672 has directory <code>/home/FCAM/mcb5672/</code>. Within that are numbered user home directories:</p>
+<pre><code>$ ls -lh /home/FCAM/mcb5672/
+total 28K
+drwxrwx--T 11 jklassen domain users 6.5K Jan 20  2026 usr1
+drwxrwx--T 13 jklassen domain users  23K Jan 21  2026 usr2
+drwxrwx--T 15 jklassen domain users  12K Jan 19  2026 usr3
+drwxrwx--T 18 jklassen domain users  12K Jan 20  2026 usr4
+drwxrwx--T 15 jklassen domain users 9.5K Jan 22  2026 usr5
+drwxrwx--T 11 jklassen domain users 5.5K Feb  8 13:15 usr6
+drwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7</code></pre>
+<p>These directories are owned by the instructor, in this case <code>jklassen</code>.</p>
+<p>Course user IDs will be <code>mcb5672usr1</code>, <code>mcb5672usr2</code> etc. The course instructor will be provided with a table listing user IDs and passwords (which can be changed <strong>HOW DO YOU CHANGE PASSWORDS ON STUDENT ACCOUNTS????</strong>) for each account.</p>
+<section id="instructor-access-to-course-accounts" class="level3">
+<h3 class="anchored" data-anchor-id="instructor-access-to-course-accounts">Instructor access to course accounts</h3>
+<p>Because the course account home directories are owned by the instructor, they are accessible by default. If the instructor retains course account passwords, the instructor may also switch to a student account after logging in to the server using the command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">su</span> <span class="at">-</span> mcbstudent5672usr1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and entering that user’s password.</p>
+</section>
+</section>
+<section id="connecting-to-mantis" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-mantis">Connecting to Mantis</h2>
+<p>With updated security requirements, course account access to Mantis is only through a special instance of Open OnDemand and requires 2-factor authentication with an authenticator app <strong>NEED A CLEAR EXPLANATION HERE</strong>. Several apps are suitable, including Google Authenticator, Microsoft Authenticator and FreeOTP. Once configured these apps generate <a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">time-based one-time passwords</a>(TOTP) as a second form of authentication in addition to your user ID and password.</p>
+<p>To log in with a course account, visit <a href="https://learn.hpc.cam.uchc.edu">https://learn.hpc.cam.uchc.edu</a> and enter the user ID and password assigned to you:</p>
+<p><img src="img/authentication1.jpg" class="img-fluid"> Upon initial login you will be presented with the Mobile Authenticator Setup message with instructions to configure your OTP device.</p>
+<p>Follow the instructions, retrieve the TOTP code from the OTP application you have chosen, enter the code in the One-time code field and click “Submit”. You will be logged into the Mantis Open OnDemand portal.</p>
+<p><img src="img/authentication2.jpg" class="img-fluid"></p>
+</section>
+<section id="open-ondemand" class="level2">
+<h2 class="anchored" data-anchor-id="open-ondemand">Open OnDemand</h2>
+<p><a href="https://www.openondemand.org/">Open OnDemand</a> allows remote access to Mantis resources via a web browser. Some key resources are available in the form of “apps”.</p>
+<ul>
+<li>You can start a BASH terminal. Once there you can request resources for an interactive session as usual.</li>
+<li>You can open a GUI desktop with the “Mantis Desktop” app.</li>
+<li>You can start RStudio or Jupyter sessions.</li>
+</ul>
+<p>Please contact us with questions or requests.</p>
+</section>
+<section id="resource-requests" class="level2">
+<h2 class="anchored" data-anchor-id="resource-requests">Resource requests</h2>
+<p><strong>TENTATIVE PLEASE PROVIDE FEEDBACK</strong></p>
+<p>On Mantis, a “partition” defines a group of nodes and a “quality of service” (QoS) sets the conditions of access.</p>
+<p>In the past we had a teaching partition, but because those resources frequently sat idle, we are trying a new approach. Courses should now use the <code>general</code> partition for most, if not all, work. <code>himem</code> resources are scarce and course accounts should not request them unless they are specifically required.</p>
+<p>Student accounts will have access to four QoSes: <code>student</code>, <code>interactive</code>, <code>general</code>, and <code>debug</code>.</p>
+<ul>
+<li><code>student</code> QoS has a per user limit of 24 CPUs and 64G of memory. <strong>COMMENTS??</strong> It has <em>very high priority</em>, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition.</li>
+<li><code>interactive</code> QoS has similarly high priority but <a href="./running.html#interactive-job">slightly lower resource limits</a> and is intended for interactive sessions. It is limited to one concurrent job per user.</li>
+<li><code>general</code> QoS is the general purpose QoS used by most cluster users. Jobs submitted with this QoS have much larger resource limits and are subject to standard queueing policies.</li>
+<li><code>debug</code> QoS has very high priority but jobs are restricted to 5 minute wall times and 2 concurrent jobs. This QoS is intended for test running scripts to check for problems.</li>
+</ul>
+<section id="example-resource-requests" class="level3">
+<h3 class="anchored" data-anchor-id="example-resource-requests">Example resource requests:</h3>
+<p>For an interactive session with 2 cpus and 8G of memory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> general <span class="at">--qos</span><span class="op">=</span>interactive <span class="at">-c</span> 2 <span class="at">--mem</span><span class="op">=</span>8G <span class="at">--pty</span> bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>student</code> QoS would be suitable for this as well.</p>
+<p>For a batch script intended to start very quickly (e.g.&nbsp;during class):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=map_reads</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -c 12</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=20G</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=student</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -o %x_%j.out</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -e %x_%j.err</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="data-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="data-transfer">Data transfer</h2>
+<p>If users wish to download files from their home directories select the <code>Files</code> menu and then <code>Home Directory</code>. Files can be downloaded from here.</p>
+<p>Upload is not possible (<strong>I THINK??</strong>) via Open OnDemand, but students can use <a href="./transfer.html#globus">Globus</a>. It is not recommended for anyone with a regular CAM HPC account to try to link a student account.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

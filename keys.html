@@ -251,6 +251,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get Help</span></a>
   </div>
@@ -265,8 +271,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link active" data-scroll-target="#create-ssh-keys">Create SSH keys</a></li>
-  <li><a href="#copy-public-ssh-key-to-the-uchc-hpc-system" id="toc-copy-public-ssh-key-to-the-uchc-hpc-system" class="nav-link" data-scroll-target="#copy-public-ssh-key-to-the-uchc-hpc-system">Copy Public SSH Key to the UCHC HPC system</a></li>
+  <li><a href="#create-ssh-keys" id="toc-create-ssh-keys" class="nav-link active" data-scroll-target="#create-ssh-keys">1. Create SSH keys</a></li>
+  <li><a href="#copy-public-ssh-key-to-the-uchc-hpc-system" id="toc-copy-public-ssh-key-to-the-uchc-hpc-system" class="nav-link" data-scroll-target="#copy-public-ssh-key-to-the-uchc-hpc-system">2. Copy Public SSH Key to the UCHC HPC system</a></li>
   </ul>
 </nav>
     </div>
@@ -292,12 +298,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Some modes of access to the HPC system require users to use SSH keys for authentication.</p>
+<p>SSH keys are required to access the UCHC HPC system. This page will walk you through the process of creating and using SSH keys to access the UCHC HPC system.</p>
 <p>SSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.</p>
-<p>While in many cases it is required, the use of SSH keys is also generally recommended for convenience and enhanced security when connecting to any UCHC HPC resources.</p>
-<p>To be able to login using SSH keys, you will need to follow the setup process outlined below. Only ed25519 keys are accepted.</p>
+<p>To be able to login using SSH keys, you will need to:</p>
+<ol type="1">
+<li>Create an SSH key pair on your local computer.</li>
+<li>Copy the public key to the UCHC HPC system.</li>
+</ol>
+<p>Only ed25519 keys are accepted.</p>
 <section id="create-ssh-keys" class="level3">
-<h3 class="anchored" data-anchor-id="create-ssh-keys">Create SSH keys</h3>
+<h3 class="anchored" data-anchor-id="create-ssh-keys">1. Create SSH keys</h3>
 <p>You can create a public and private SSH key pair using your SSH client in <code>Windows PowerShell</code> or a MacOS / Linux <code>Terminal</code>.</p>
 <ol type="1">
 <li>First check for an existing SSH key pair by running the following command:</li>
@@ -313,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to the <a href="#copy-public-ssh-key-to-the-uchc-hpc-system">Copy to UCHC HPC system</a> section. If you do not see these files or get an error message, you will need to create a new SSH key pair.</p>
+<p>If you see files named <code>id_ed25519.pub</code> and <code>id_ed25519</code>, you already have an SSH key pair and can skip ahead to step 2, <a href="#copy-public-ssh-key-to-the-uchc-hpc-system">Copy to UCHC HPC system</a> section. If you do not see these files or get an error message, you will need to create a new SSH key pair.</p>
 <ol start="2" type="1">
 <li>To create a key pair run the following command:</li>
 </ol>
@@ -338,7 +348,7 @@ Warning
 </div>
 </section>
 <section id="copy-public-ssh-key-to-the-uchc-hpc-system" class="level3">
-<h3 class="anchored" data-anchor-id="copy-public-ssh-key-to-the-uchc-hpc-system">Copy Public SSH Key to the UCHC HPC system</h3>
+<h3 class="anchored" data-anchor-id="copy-public-ssh-key-to-the-uchc-hpc-system">2. Copy Public SSH Key to the UCHC HPC system</h3>
 <p>Once you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the <a href="./ondemand.html">Open OnDemand</a> web portal. To copy your public key to the UCHC HPC system, follow the steps below:</p>
 <section id="copy-your-public-key." class="level4">
 <h4 class="anchored" data-anchor-id="copy-your-public-key.">1. Copy your public key.</h4>
@@ -347,11 +357,11 @@ Warning
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">MacOS / Linux Terminal</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows PowerShell</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>On MacOS or Linux operating systems, you can easily copy this key to your clipboard by running the following command in the terminal application:</p>
+<p>On MacOS or Linux operating systems, you can easily copy the public key to your clipboard by running the following command in the terminal application:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> ~/.ssh/id_ed25519.pub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>On Windows operating systems, you can easily copy this key to your clipboard by running the following command in the PowerShell application:</p>
+<p>On Windows operating systems, you can easily copy the public key to your clipboard by running the following command in the PowerShell application:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Get-Content</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\.ssh\id_ed25519.pub"</span> <span class="kw">|</span> <span class="ex">Set-Clipboard</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
