@@ -45,7 +45,7 @@ The Mantis internal host is an alternative access point for Mantis that is only 
 `ssh <user>@mantis-submit.cam.uchc.edu` where `<user>` is replaced with your CAM username.
 
 
-# SSH (Secure Shell)
+# SSH (Secure Shell) {#ssh}
 Any connection made through the command line interface must be made through SSH (Secure Shell) using an SSH client. SSH is a secure protocol that allows users to connect to a remote server and execute commands on that server.
 
 ## SSH Client

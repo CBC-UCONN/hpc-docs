@@ -23,7 +23,7 @@ Before running jobs, it is important to understand the file system and storage o
 A large number of software tools are available on the HPC system. See the [Software](software.qmd) page for information on how to find and use software on the HPC system. 
 
 ### 6) Learn how to submit jobs.
-It is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the [Running Jobs](scheduler.qmd) page for instructions on how to submit jobs to compute nodes.
+It is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the [Running Jobs](running.qmd) page for instructions on how to submit jobs to compute nodes.
 
 <!-- ### 8) Read about best practices.
 To ensure that you are using the HPC system efficiently and effectively, we strongly encourage users to read over our [Best Practices](best-practices.qmd) page in order to avoid mistakes that can impact your work and the work of others.  -->
