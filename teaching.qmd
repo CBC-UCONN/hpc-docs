@@ -75,7 +75,7 @@ In the past we had a teaching partition, but because those resources frequently 
 
 Student accounts will have access to four QoSes: `student`, `interactive`, `general`, and `debug`. 
 
-  - `student` QoS has a per user limit of 24 CPUs and 64G of memory. **COMMENTS??** It has *very high priority*, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition. 
+  - `student` QoS has a per user limit of 24 CPUs and 64G of memory. It has *very high priority*, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition. 
   - `interactive` QoS has similarly high priority but [slightly lower resource limits](running.qmd#interactive-job) and is intended for interactive sessions. It is limited to one concurrent job per user. 
   - `general` QoS is the general purpose QoS used by most cluster users. Jobs submitted with this QoS have much larger resource limits and are subject to standard queueing policies. 
   - `debug` QoS has very high priority but jobs are restricted to 5 minute wall times and 2 concurrent jobs. This QoS is intended for test running scripts to check for problems. 
