@@ -7,7 +7,7 @@ title: "Tranferring Data"
 There are several recommended approaches for transferring data to and from the UConn Health HPC file system.
 
 1. [Secure Copy through transfer node](#secure-copy)
-2. [Globus Connect](#Globus)
+2. [Globus](#globus)
 3. [Mounting SMB Share](#mounting-smb-share)
 
 Each is most suitable for different situations. We explain the usage of each tool below.
