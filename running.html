@@ -274,24 +274,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#batch-job-submission" id="toc-batch-job-submission" class="nav-link active" data-scroll-target="#batch-job-submission">Batch job submission</a>
   <ul class="collapse">
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  <li><a href="#required-arguments" id="toc-required-arguments" class="nav-link" data-scroll-target="#required-arguments">Required arguments</a></li>
-  <li><a href="#commonly-used-arguments" id="toc-commonly-used-arguments" class="nav-link" data-scroll-target="#commonly-used-arguments">Commonly used arguments</a></li>
+  <li><a href="#required-arguments" id="toc-required-arguments" class="nav-link" data-scroll-target="#required-arguments">Required arguments</a>
+  <ul class="collapse">
+  <li><a href="#qos" id="toc-qos" class="nav-link" data-scroll-target="#qos">--qos</a></li>
   </ul></li>
-  <li><a href="#interactive-job" id="toc-interactive-job" class="nav-link" data-scroll-target="#interactive-job">Interactive Job</a></li>
+  <li><a href="#commonly-used-arguments" id="toc-commonly-used-arguments" class="nav-link" data-scroll-target="#commonly-used-arguments">Commonly used arguments</a>
+  <ul class="collapse">
+  <li><a href="#job-name" id="toc-job-name" class="nav-link" data-scroll-target="#job-name">--job-name</a></li>
+  <li><a href="#cpus-per-task" id="toc-cpus-per-task" class="nav-link" data-scroll-target="#cpus-per-task">--cpus-per-task</a></li>
+  <li><a href="#mem" id="toc-mem" class="nav-link" data-scroll-target="#mem">--mem</a></li>
+  <li><a href="#time" id="toc-time" class="nav-link" data-scroll-target="#time">--time</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">--output</a></li>
+  <li><a href="#partition" id="toc-partition" class="nav-link" data-scroll-target="#partition">--partition</a></li>
+  <li><a href="#mail-type" id="toc-mail-type" class="nav-link" data-scroll-target="#mail-type">--mail-type</a></li>
+  <li><a href="#mail-user" id="toc-mail-user" class="nav-link" data-scroll-target="#mail-user">--mail-user</a></li>
+  <li><a href="#additional-commands" id="toc-additional-commands" class="nav-link" data-scroll-target="#additional-commands">Additional commands</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#interactive-jobs" id="toc-interactive-jobs" class="nav-link" data-scroll-target="#interactive-jobs">Interactive Jobs</a>
+  <ul class="collapse">
+  <li><a href="#required-arguments-1" id="toc-required-arguments-1" class="nav-link" data-scroll-target="#required-arguments-1">Required arguments</a></li>
+  <li><a href="#qos-1" id="toc-qos-1" class="nav-link" data-scroll-target="#qos-1">QOS</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
   <li><a href="#job-status-and-monitoring" id="toc-job-status-and-monitoring" class="nav-link" data-scroll-target="#job-status-and-monitoring">Job status and monitoring</a></li>
   <li><a href="#canceling-a-job" id="toc-canceling-a-job" class="nav-link" data-scroll-target="#canceling-a-job">Canceling a job</a></li>
   <li><a href="#request-time-extensions" id="toc-request-time-extensions" class="nav-link" data-scroll-target="#request-time-extensions">Request time extensions</a></li>
   <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a></li>
-  <li><a href="#premtible-qos" id="toc-premtible-qos" class="nav-link" data-scroll-target="#premtible-qos">Premtible QOS</a></li>
+  <li><a href="#qos" id="toc-qos" class="nav-link" data-scroll-target="#qos">QOS (Quality of Service)</a></li>
   <li><a href="#slurm-environment-variables" id="toc-slurm-environment-variables" class="nav-link" data-scroll-target="#slurm-environment-variables">SLURM Environment Variables</a></li>
   <li><a href="#gpus" id="toc-gpus" class="nav-link" data-scroll-target="#gpus">GPUs</a></li>
   <li><a href="#feature-constraints" id="toc-feature-constraints" class="nav-link" data-scroll-target="#feature-constraints">Feature Constraints</a>
   <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   </ul></li>
   <li><a href="#job-arrays" id="toc-job-arrays" class="nav-link" data-scroll-target="#job-arrays">Job Arrays</a>
   <ul class="collapse">
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
   </ul></li>
   <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding">X11 Forwarding</a></li>
   </ul>
@@ -354,73 +373,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This would be run with the command: <code>sbatch &lt;script&gt;.sh</code></p>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Here is a complete example which also demonstrates the use of <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables</a> which access the values of the <code>--job-name</code> and <code>--cpus-per-task</code> arguments in the job script. Note the use of the <code>hostname</code> command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.</p>
+<p>Here is a more complete example which also demonstrates the use of <a href="https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES">SLURM environment variables</a> which access the values of the <code>--job-name</code> and <code>--cpus-per-task</code> arguments in the job script. Note the use of the <code>hostname</code> command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-job</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1 </span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100mb</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SBATCH_JOB_NAME</span> with <span class="va">$SLURM_CPUS_PER_TASK</span> cpus</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$SBATCH_JOB_NAME</span><span class="st"> with </span><span class="va">$SLURM_CPUS_PER_TASK</span><span class="st"> cpus"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="required-arguments" class="level3">
-<h3 class="anchored" data-anchor-id="required-arguments">Required arguments</h3>
-<p>The following arguments are required when running <code>sbatch</code> on the Mantis cluster.</p>
-<section id="qos" class="level4">
-<h4 class="anchored" data-anchor-id="qos">--qos</h4>
-<p>The qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition if specifying a partition. If using the <code>general</code> paritition, only the qos needs to be specified.</p>
+<section id="required-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="required-arguments">Required arguments</h2>
+<p>The following arguments are required when running <code>sbatch</code> on the UCHC HPC system.</p>
+<section id="qos" class="level3">
+<h3 class="anchored" data-anchor-id="qos">--qos</h3>
+<p>The qos (quality of service) argument constrains or modifies characteristics of a job such as scheduling priority, preemption, and resource limits. The qos argument must be specified for every job run on the Mantis cluster. This argument will often be the same as that given for the partition if specifying a partition. See the <a href="#qos">QOS</a> section for more information about available QOS options.</p>
 </section>
 </section>
-<section id="commonly-used-arguments" class="level3">
-<h3 class="anchored" data-anchor-id="commonly-used-arguments">Commonly used arguments</h3>
+<section id="commonly-used-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="commonly-used-arguments">Commonly used arguments</h2>
 <p>Below are some of the most useful and commonly used arguments for <code>sbatch</code>.</p>
-<section id="job-name" class="level4">
-<h4 class="anchored" data-anchor-id="job-name">--job-name</h4>
+<section id="job-name" class="level3">
+<h3 class="anchored" data-anchor-id="job-name">--job-name</h3>
 <p>The name of the job. Used for displaying job information when monitoring the job and for naming log files.</p>
 </section>
-<section id="cpus-per-task" class="level4">
-<h4 class="anchored" data-anchor-id="cpus-per-task">--cpus-per-task</h4>
+<section id="cpus-per-task" class="level3">
+<h3 class="anchored" data-anchor-id="cpus-per-task">--cpus-per-task</h3>
 <p>The number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.</p>
 </section>
-<section id="mem" class="level4">
-<h4 class="anchored" data-anchor-id="mem">--mem</h4>
+<section id="mem" class="level3">
+<h3 class="anchored" data-anchor-id="mem">--mem</h3>
 <p>The amount of memory to allocate. This argument takes a number followed by a unit such as <code>mb</code> for megabytes or <code>gb</code> for gigabytes. If no unit is given, megabytes are used. If no <code>--mem</code> argument is used, a job defaults to 120 MB.</p>
 </section>
-<section id="time" class="level4">
-<h4 class="anchored" data-anchor-id="time">--time</h4>
-<p>Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format <code>days-hrs:min:sec</code>, <code>days-hrs</code>, <code>hrs:min:sec</code>, <code>min:sec</code>, or <code>sec</code>. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.</p>
+<section id="time" class="level3">
+<h3 class="anchored" data-anchor-id="time">--time</h3>
+<p>Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format <code>days-hrs:min:sec</code>, <code>days-hrs</code>, <code>hrs:min:sec</code>, <code>min:sec</code>, or <code>sec</code>. The default time limit in non-debug partitions is 21 days. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.</p>
 </section>
-<section id="output" class="level4">
-<h4 class="anchored" data-anchor-id="output">--output</h4>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">--output</h3>
 <p>This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options <a href="https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN">here</a>.</p>
 </section>
-<section id="partition" class="level4">
-<h4 class="anchored" data-anchor-id="partition">--partition</h4>
+<section id="partition" class="level3">
+<h3 class="anchored" data-anchor-id="partition">--partition</h3>
 <p>A group of nodes which the job will be allocated to. This defaults to <code>general</code>. See the <a href="#partitions">partitions section</a> for available partitions.</p>
 </section>
-<section id="mail-type" class="level4">
-<h4 class="anchored" data-anchor-id="mail-type">--mail-type</h4>
+<section id="mail-type" class="level3">
+<h3 class="anchored" data-anchor-id="mail-type">--mail-type</h3>
 <p>When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.</p>
 </section>
-<section id="mail-user" class="level4">
-<h4 class="anchored" data-anchor-id="mail-user">--mail-user</h4>
+<section id="mail-user" class="level3">
+<h3 class="anchored" data-anchor-id="mail-user">--mail-user</h3>
 <p>Address to send mail to.</p>
 </section>
-<section id="additional-commands" class="level4">
-<h4 class="anchored" data-anchor-id="additional-commands">Additional commands</h4>
+<section id="additional-commands" class="level3">
+<h3 class="anchored" data-anchor-id="additional-commands">Additional commands</h3>
 <p><code>sbatch</code> is a powerful tool with many other configuration options beyond the scope of this documentation.</p>
 <p>See the <a href="https://slurm.schedmd.com/sbatch.html">sbatch documentation</a> for more information about command arguments.</p>
 </section>
 </section>
 </section>
-<section id="interactive-job" class="level1">
-<h1>Interactive Job</h1>
-<p>An interactive session can be started on a compute node using the <code>srun</code> command.</p>
+<section id="interactive-jobs" class="level1">
+<h1>Interactive Jobs</h1>
+<p>An interactive session can be started on a compute node using the <code>srun</code> command. Most <code>sbatch</code> arguments can also be used with <code>srun</code>.</p>
+<section id="required-arguments-1" class="level3">
+<h3 class="anchored" data-anchor-id="required-arguments-1">Required arguments</h3>
+<p>As with <code>sbatch</code>, the <code>--qos</code> argument is required for <code>srun</code>.</p>
+<p>The <code>--pty</code> argument and a command to execute are also required to start an interactive session.</p>
+</section>
+<section id="qos-1" class="level3">
+<h3 class="anchored" data-anchor-id="qos-1">QOS</h3>
 <p>A special QOS (<code>interactive</code>) can optionally be used for starting interactive jobs which will give the job a higher priority in the queue. This QOS has the following limits:</p>
 <ul>
 <li>1 concurrent job</li>
@@ -428,11 +453,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>no more than 64 GB memory</li>
 <li>no more than 8 hours of wall time</li>
 </ul>
-<p>At a minimum, you would use these arguments when requesting an interactive session:</p>
+</section>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>At a minimum, you would need to use these arguments when requesting an interactive session:</p>
 <p><code>srun --qos interactive --pty bash</code></p>
 <p>or if you don’t want to be bound by the limits of the <code>interactive</code> QOS:</p>
 <p><code>srun --qos general --pty bash</code></p>
 <p>Most <code>sbatch</code> arguments can also be used with <code>srun</code>. For example, <code>--mem</code> or <code>--cpus-per-task</code> if you needed to request additional resources.</p>
+<p>Commands other than <code>bash</code> could be used to start an interactive session. But this is a topic is beyond the scope of this documentation. See the <a href="https://slurm.schedmd.com/srun.html">srun documentation</a> for more information about command arguments.</p>
+</section>
 </section>
 <section id="job-status-and-monitoring" class="level1">
 <h1>Job status and monitoring</h1>
@@ -456,10 +486,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <section id="general" class="level3">
 <h3 class="anchored" data-anchor-id="general">general</h3>
-<p>This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.</p>
+<p>This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition. Slurm defaults to this partition if no partition is specified.</p>
 <section id="slurm-arguments" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="himem" class="level3">
@@ -471,83 +502,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=himem</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="debug" class="level3">
-<h3 class="anchored" data-anchor-id="debug">debug</h3>
-<p>This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.</p>
-<section id="slurm-arguments-2" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-2">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <section id="general-1" class="level3">
 <h3 class="anchored" data-anchor-id="general-1">general</h3>
 <p>These nodes are suitable for most tasks.</p>
-<section id="slurm-arguments-3" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-3">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="slurm-arguments-2" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-2">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="xeon" class="level3">
 <h3 class="anchored" data-anchor-id="xeon">xeon</h3>
 <p>Use this partition if you need to run on Intel Xeon CPUs.</p>
-<section id="slurm-arguments-4" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-4">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=xeon</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="slurm-arguments-3" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-3">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=xeon</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="amd" class="level3">
 <h3 class="anchored" data-anchor-id="amd">amd</h3>
 <p>Use this partition if you need to run on AMD CPUs.</p>
-<section id="slurm-arguments-5" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-5">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=amd</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="slurm-arguments-4" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-4">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=amd</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="himem-1" class="level3">
 <h3 class="anchored" data-anchor-id="himem-1">himem</h3>
 <p>Use this partition if you have very large memory requirements &gt; 500 GB.</p>
-<section id="slurm-arguments-6" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-6">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=himem</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=himem</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="slurm-arguments-5" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-5">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=himem</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=himem</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="gpu" class="level3">
 <h3 class="anchored" data-anchor-id="gpu">gpu</h3>
 <p>Use this partition if you need to run on a GPU.</p>
-<section id="slurm-arguments-7" class="level5">
-<h5 class="anchored" data-anchor-id="slurm-arguments-7">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=gpu</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="slurm-arguments-6" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-6">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=gpu</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=general</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="mcbstudent" class="level3">
 <h3 class="anchored" data-anchor-id="mcbstudent">mcbstudent</h3>
 <p>This partition is available for students in courses or workshops who have been given access.</p>
+<section id="slurm-arguments-7" class="level5">
+<h5 class="anchored" data-anchor-id="slurm-arguments-7">Slurm Arguments:</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=mcbstudent</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=mcbstudent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="qos" class="level1">
+<h1>QOS (Quality of Service)</h1>
+<p>QOS (Quality of Service) is a SLURM feature that allows for the specification of job characteristics such as scheduling priority, preemption, and resource limits. The Mantis and Xanadu clusters have different QOS options available. See below for details.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<section id="general-2" class="level3">
+<h3 class="anchored" data-anchor-id="general-2">general</h3>
+<p>Suitable for most tasks.</p>
+</section>
+<section id="himem-2" class="level3">
+<h3 class="anchored" data-anchor-id="himem-2">himem</h3>
+<p>Required for jobs to run in the himem partition.</p>
+</section>
+<section id="debug" class="level3">
+<h3 class="anchored" data-anchor-id="debug">debug</h3>
+<p>The debug QOS is intended for testing and debugging jobs. Jobs with this QOS will have a time limit of only 5 minutes but will be given high priority and should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.</p>
 <section id="slurm-arguments-8" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-8">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=mcbstudent</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=mcbstudent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-</div>
-</div>
-</div>
-</section>
-<section id="premtible-qos" class="level1">
-<h1>Premtible QOS</h1>
+<section id="preemtible" class="level3">
+<h3 class="anchored" data-anchor-id="preemtible">preemtible</h3>
 <p>The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.</p>
 <section id="slurm-arguments-9" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-9">Slurm Arguments:</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=general</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=preemptible</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=preemptible</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+</section>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<section id="general-3" class="level3">
+<h3 class="anchored" data-anchor-id="general-3">general</h3>
+<p>Suitable for most tasks.</p>
+</section>
+<section id="himem-3" class="level3">
+<h3 class="anchored" data-anchor-id="himem-3">himem</h3>
+<p>Required for jobs to run in the himem partition.</p>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="slurm-environment-variables" class="level1">
 <h1>SLURM Environment Variables</h1>
@@ -558,9 +616,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>GPUs</h1>
 <p>Allocation of a GPU differs on Mantis and Xanadu. See below for details on how to request a GPU on each cluster.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Xanadu</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gres=gpu:[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.</p>
 <section id="gpu-types" class="level3">
 <h3 class="anchored" data-anchor-id="gpu-types">GPU Types</h3>
@@ -587,23 +645,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-gpu</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --gres=gpu:A100:1</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect GPU</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="ex">nvidia-smi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --gres=gpu:A100:1</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect GPU</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="ex">nvidia-smi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>Visit <a href="https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage">https://github.com/CBC-UCONN/CBC_Docs/wiki/xanadu-gpu-usage</a> for information about requesting and using GPUs on the Xanadu cluster.</p>
 </div>
 </div>
@@ -615,9 +672,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The features defined for each node can be listed with the command <code>sinfo -o "%N %f"</code>.</p>
 <p>The defined features will differ between the Mantis and Xanadu clusters. See below for information about the defined features on each cluster.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Xanadu</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Xanadu</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <section id="defined-features" class="level3">
 <h3 class="anchored" data-anchor-id="defined-features">Defined Features</h3>
 <table class="caption-top table">
@@ -648,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <section id="some-defined-features" class="level3">
 <h3 class="anchored" data-anchor-id="some-defined-features">Some Defined Features</h3>
 <table class="caption-top table">
@@ -674,41 +731,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
 <p>Having software compiled for a specific CPU architecture is a common reason to need constraints. For example, if you have software that is optimized for AMD CPUs, you can use the following command on Mantis to ensure that your job runs on a node with AMD CPUs.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-feature-constraint</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1 </span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --constraint=cpu_amd</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ex">lscpu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%j.out</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --constraint=cpu_amd</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="ex">lscpu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="job-arrays" class="level1">
 <h1>Job Arrays</h1>
 <p>If you have a large set of similar tasks that can be run in parallel, job arrays offer a convenient solution for managing these. Job arrays are created using the <code>--array=&lt;indexes&gt;[%limit]</code> argument where the required <code>&lt;indexes&gt;</code> is a range (e.g.&nbsp;<code>0-4</code>) or list (e.g.&nbsp;<code>1,3,5,7</code>) of indexes and an optional <code>limit</code>, separated by a <code>%</code> is the maximum allowed number of simultaneously running jobs (e.g.&nbsp;<code>%20</code>). Jobs which are part of a job array will have the environment variable <code>SLURM_ARRAY_TASK_ID</code> set to the array index value for that job. The maximum index allowed in a job array is 5001.</p>
-<section id="example-3" class="level3">
-<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
 <p>Here is a basic example where the job array will run 5 jobs in parallel, each with a different index value from 1 to 5. A different <code>param</code> value is printed to stdout based on the job index. Only 2 jobs will run at the same time due to the <code>%2</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=test-array-job</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1 </span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=100M</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=1:00</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=debug</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%A-%a.out</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array=1-5%2</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="va">params</span><span class="op">=</span><span class="va">(</span><span class="st">"A"</span> <span class="st">"B"</span> <span class="st">"C"</span> <span class="st">"D"</span> <span class="st">"E"</span><span class="va">)</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="va">${params</span><span class="op">[</span><span class="va">$SLURM_ARRAY_TASK_ID</span>-1<span class="op">]</span><span class="va">}</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$param</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=debug</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=%x-%A-%a.out</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array=1-5%2</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="va">params</span><span class="op">=</span><span class="va">(</span><span class="st">"A"</span> <span class="st">"B"</span> <span class="st">"C"</span> <span class="st">"D"</span> <span class="st">"E"</span><span class="va">)</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="va">param</span><span class="op">=</span><span class="va">${params</span><span class="op">[</span><span class="va">$SLURM_ARRAY_TASK_ID</span>-1<span class="op">]</span><span class="va">}</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$param</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Parameter values will often be stored in a separate file. Below are some examples of ways to access these values in a job array script.</p>
 <section id="accessing-nth-line-from-a-text-file" class="level4">
 <h4 class="anchored" data-anchor-id="accessing-nth-line-from-a-text-file">Accessing nth line from a text file</h4>
@@ -734,9 +789,9 @@ A shared Nextflow Singularity cache is available at `/isg/shared/databases/nfx_m
 <h1>X11 Forwarding</h1>
 <p>Some applications, such as <code>R</code>, can produce graphical output. <a href="https://en.wikipedia.org/wiki/X_Window_System">X Windows</a>, a.k.a. <code>X11</code>, is an option for displaying that output in an interactive session.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Linux</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false" href="">Linux</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>First you need to install <a href="https://www.xquartz.org/">XQuartz</a> on your local machine.</p>
 <p>Then, when connecting to Mantis, use the the ssh option <code>-X</code> (or possibly <code>-Y</code> if your application requires it) like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># external:</span></span>
@@ -752,10 +807,10 @@ A shared Nextflow Singularity cache is available at `/isg/shared/databases/nfx_m
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The histogram should pop up in an XQuartz window.</p>
 </div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <p>In development</p>
 </div>
-<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <p>In development</p>
 </div>
 </div>
