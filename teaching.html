@@ -335,7 +335,7 @@ drwxrwx--T 15 jklassen domain users 9.5K Jan 22  2026 usr5
 drwxrwx--T 11 jklassen domain users 5.5K Feb  8 13:15 usr6
 drwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7</code></pre>
 <p>These directories are owned by the instructor, in this case <code>jklassen</code>.</p>
-<p>Course user IDs will be <code>mcb5672usr1</code>, <code>mcb5672usr2</code> etc. The course instructor will be provided with a table listing user IDs and passwords (which can be changed <strong>HOW DO YOU CHANGE PASSWORDS ON STUDENT ACCOUNTS????</strong>) for each account.</p>
+<p>Course user IDs will be <code>mcb5672usr1</code>, <code>mcb5672usr2</code> etc. The course instructor will be provided with a table listing user IDs and passwords (which can be changed) for each account.</p>
 <section id="instructor-access-to-course-accounts" class="level3">
 <h3 class="anchored" data-anchor-id="instructor-access-to-course-accounts">Instructor access to course accounts</h3>
 <p>Because the course account home directories are owned by the instructor, they are accessible by default. If the instructor retains course account passwords, the instructor may also switch to a student account after logging in to the server using the command:</p>
@@ -345,11 +345,12 @@ drwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7</code></pre>
 </section>
 <section id="connecting-to-mantis" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-to-mantis">Connecting to Mantis</h2>
-<p>With updated security requirements, course account access to Mantis is only through a special instance of Open OnDemand and requires 2-factor authentication with an authenticator app <strong>NEED A CLEAR EXPLANATION HERE</strong>. Several apps are suitable, including Google Authenticator, Microsoft Authenticator and FreeOTP. Once configured these apps generate <a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">time-based one-time passwords</a>(TOTP) as a second form of authentication in addition to your user ID and password.</p>
+<p>With updated security requirements, course account access to Mantis is only through a special instance of Open OnDemand and requires 2-factor authentication with an authenticator app. Several apps are suitable, including Google Authenticator, Microsoft Authenticator and FreeOTP. Once configured these apps generate <a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">time-based one-time passwords</a>(TOTP) as a second form of authentication in addition to your user ID and password.</p>
 <p>To log in with a course account, visit <a href="https://learn.hpc.cam.uchc.edu">https://learn.hpc.cam.uchc.edu</a> and enter the user ID and password assigned to you:</p>
-<p><img src="img/authentication1.jpg" class="img-fluid"> Upon initial login you will be presented with the Mobile Authenticator Setup message with instructions to configure your OTP device.</p>
-<p>Follow the instructions, retrieve the TOTP code from the OTP application you have chosen, enter the code in the One-time code field and click “Submit”. You will be logged into the Mantis Open OnDemand portal.</p>
-<p><img src="img/authentication2.jpg" class="img-fluid"></p>
+<p><img src="img/authentication1.jpg" class="img-fluid" style="width:30.0%"></p>
+<p>Upon initial login you will be presented with the Mobile Authenticator Setup message with instructions to configure your OTP device.</p>
+<p>Follow the instructions, retrieve the code from the OTP application you have chosen. Enter the code in the One-time code field and click “Submit”. You will be logged into the Mantis Open OnDemand portal.</p>
+<p><img src="img/authentication2.jpg" class="img-fluid" style="width:30.0%"></p>
 </section>
 <section id="open-ondemand" class="level2">
 <h2 class="anchored" data-anchor-id="open-ondemand">Open OnDemand</h2>
@@ -359,16 +360,15 @@ drwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7</code></pre>
 <li>You can open a GUI desktop with the “Mantis Desktop” app.</li>
 <li>You can start RStudio or Jupyter sessions.</li>
 </ul>
-<p>Please contact us with questions or requests.</p>
+<p>Please contact us with questions or requests for specific apps.</p>
 </section>
 <section id="resource-requests" class="level2">
 <h2 class="anchored" data-anchor-id="resource-requests">Resource requests</h2>
-<p><strong>TENTATIVE PLEASE PROVIDE FEEDBACK</strong></p>
-<p>On Mantis, a “partition” defines a group of nodes and a “quality of service” (QoS) sets the conditions of access.</p>
+<p>On Mantis, a “partition” defines a group of nodes, and a “quality of service” (QoS) sets the conditions of access.</p>
 <p>In the past we had a teaching partition, but because those resources frequently sat idle, we are trying a new approach. Courses should now use the <code>general</code> partition for most, if not all, work. <code>himem</code> resources are scarce and course accounts should not request them unless they are specifically required.</p>
 <p>Student accounts will have access to four QoSes: <code>student</code>, <code>interactive</code>, <code>general</code>, and <code>debug</code>.</p>
 <ul>
-<li><code>student</code> QoS has a per user limit of 24 CPUs and 64G of memory. <strong>COMMENTS??</strong> It has <em>very high priority</em>, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition.</li>
+<li><code>student</code> QoS has a per user limit of 24 CPUs and 64G of memory. It has <em>very high priority</em>, so resource requests with this QoS should be granted very quickly. This should allow courses that require compute resources during class to obtain them without a wait. There is no limit on the total resources available to the QoS, so if classes overlap in time they will not compete for resources as they would on a small partition.</li>
 <li><code>interactive</code> QoS has similarly high priority but <a href="./running.html#interactive-job">slightly lower resource limits</a> and is intended for interactive sessions. It is limited to one concurrent job per user.</li>
 <li><code>general</code> QoS is the general purpose QoS used by most cluster users. Jobs submitted with this QoS have much larger resource limits and are subject to standard queueing policies.</li>
 <li><code>debug</code> QoS has very high priority but jobs are restricted to 5 minute wall times and 2 concurrent jobs. This QoS is intended for test running scripts to check for problems.</li>
@@ -388,12 +388,13 @@ drwxrwx--T  7 jklassen domain users 6.0K Jan 15  2026 usr7</code></pre>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=student</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -o %x_%j.out</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -e %x_%j.err</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Students with compute needs that exceed <code>student</code> QoS (e.g for a final project) can use <code>general</code> QoS.</p>
 </section>
 </section>
 <section id="data-transfer" class="level2">
 <h2 class="anchored" data-anchor-id="data-transfer">Data transfer</h2>
-<p>If users wish to download files from their home directories select the <code>Files</code> menu and then <code>Home Directory</code>. Files can be downloaded from here.</p>
-<p>Upload is not possible (<strong>I THINK??</strong>) via Open OnDemand, but students can use <a href="./transfer.html#globus">Globus</a>. It is not recommended for anyone with a regular CAM HPC account to try to link a student account.</p>
+<p>If users wish to upload or download files from their home directories select the <code>Files</code> menu and then <code>Home Directory</code>. Files can be transferred here.</p>
+<p>For large files, students can use <a href="./transfer.html#globus">Globus</a>. It is not recommended for anyone with a regular CAM HPC account to try to link a student account.</p>
 
 
 </section>
