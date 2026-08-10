@@ -14,7 +14,7 @@ The UCHC Computer clusters use [SLURM](https://slurm.schedmd.com) for managing a
 With SLURM there are two primary ways that a job can be run on a compute node. 
 
 1. [Batch Submission](#batch-job-submission)
-2. [Interactive Job](#interactive-job)
+2. [Interactive Jobs](#interactive-jobs)
 
 # Batch job submission
 A batch job submission will take your job script, put it into a queue, and run it for you once the required resources are available. This is the most common way to run jobs on the cluster.

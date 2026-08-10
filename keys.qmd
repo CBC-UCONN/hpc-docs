@@ -30,7 +30,7 @@ ls $env:USERPROFILE\.ssh\
 ```
 :::
 
-If you see files named `id_ed25519.pub` and `id_ed25519`, you already have an SSH key pair and can skip ahead to step 2, [Copy to UCHC HPC system](#2.-copy-public-ssh-key-to-the-uchc-hpc-system) section. If you do not see these files or get an error message, you will need to create a new SSH key pair.
+If you see files named `id_ed25519.pub` and `id_ed25519`, you already have an SSH key pair and can skip ahead to step the [Copy key to UCHC HPC system](#copy-key) section. If you do not see these files or get an error message, you will need to create a new SSH key pair.
 
 2. To create a key pair run the following command:
 
@@ -48,7 +48,7 @@ Do not share your private key with anyone! Your private key should be kept secre
 :::
 
 
-### 2. Copy Public SSH Key to the UCHC HPC system
+### 2. Copy Public SSH Key to the UCHC HPC system {#copy-key}
 Once you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the [Open OnDemand](ondemand.qmd) web portal. To copy your public key to the UCHC HPC system, follow the steps below:
 
 
