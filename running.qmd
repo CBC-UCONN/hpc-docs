@@ -50,7 +50,7 @@ Alternatively, the `sbatch` arguments can be specified as a header in your scrip
 This would be run with the command: `sbatch <script>.sh`
 
 ### Example
-Here is a complete example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
+Here is a more complete example which also demonstrates the use of [SLURM environment variables](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES) which access the values of the `--job-name` and `--cpus-per-task` arguments in the job script. Note the use of the `hostname` command to show the node that the job is running on. This information can be useful for debugging jobs. Particularly if you request help from the CBC as we will ask for this information.
 
 ```bash
 #!/bin/bash
@@ -58,57 +58,62 @@ Here is a complete example which also demonstrates the use of [SLURM environment
 #SBATCH --cpus-per-task=1 
 #SBATCH --mem=100mb
 #SBATCH --time=1:00
-#SBATCH --partition=debug
 #SBATCH --qos=debug
 #SBATCH --output=%x-%j.out
 
 hostname
 
-echo $SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus
+echo "$SBATCH_JOB_NAME with $SLURM_CPUS_PER_TASK cpus"
 ```
 
-### Required arguments
-The following arguments are required when running `sbatch` on the Mantis cluster.
+## Required arguments
+The following arguments are required when running `sbatch` on the UCHC HPC system.
 
-#### \-\-qos
-The qos (quality of service) argument constrains or modifies characteristics of a job. A qos argument must be specified for every job run on the Mantis cluster. This argument will usually be the same as that given for the partition if specifying a partition. If using the `general` paritition, only the qos needs to be specified.  
+### \-\-qos
+The qos (quality of service) argument constrains or modifies characteristics of a job such as scheduling priority, preemption, and resource limits. The qos argument must be specified for every job run on the Mantis cluster. This argument will often be the same as that given for the partition if specifying a partition. See the [QOS](#qos) section for more information about available QOS options. 
 
-### Commonly used arguments
+## Commonly used arguments
 Below are some of the most useful and commonly used arguments for `sbatch`.
 
-#### \-\-job-name
+### \-\-job-name
 The name of the job. Used for displaying job information when monitoring the job and for naming log files.
 
-#### \-\-cpus-per-task
+### \-\-cpus-per-task
 The number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.
 
-#### \-\-mem
+### \-\-mem
 The amount of memory to allocate. This argument takes a number followed by a unit such as `mb` for megabytes or `gb` for gigabytes. If no unit is given, megabytes are used. If no `--mem` argument is used, a job defaults to 120 MB.
 
-#### \-\-time
-Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format `days-hrs:min:sec`, `days-hrs`, `hrs:min:sec`, `min:sec`, or `sec`. The default time limit in non-debug partitions is Infinite. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.
+### \-\-time
+Time limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format `days-hrs:min:sec`, `days-hrs`, `hrs:min:sec`, `min:sec`, or `sec`. The default time limit in non-debug partitions is 21 days. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.
 
-#### \-\-output
+### \-\-output
 This specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options [here](https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN).
 
-#### \-\-partition 
+### \-\-partition 
 A group of nodes which the job will be allocated to. This defaults to `general`. See the [partitions section](#partitions) for available partitions.
 
-#### \-\-mail-type
+### \-\-mail-type
 When to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.
 
-#### \-\-mail-user
+### \-\-mail-user
 Address to send mail to. 
 
-#### Additional commands
+### Additional commands
 `sbatch` is a powerful tool with many other configuration options beyond the scope of this documentation.
 
 See the [sbatch documentation](https://slurm.schedmd.com/sbatch.html) for more information about command arguments.
 
 
-# Interactive Job
-An interactive session can be started on a compute node using the `srun` command.
+# Interactive Jobs
+An interactive session can be started on a compute node using the `srun` command. Most `sbatch` arguments can also be used with `srun`.
 
+### Required arguments
+As with `sbatch`, the `--qos` argument is required for `srun`. 
+
+The `--pty` argument and a command to execute are also required to start an interactive session.
+
+### QOS
 A special QOS (`interactive`) can optionally be used for starting interactive jobs which will give the job a higher priority in the queue. This QOS has the following limits:
 
 - 1 concurrent job
@@ -116,7 +121,9 @@ A special QOS (`interactive`) can optionally be used for starting interactive jo
 - no more than 64 GB memory
 - no more than 8 hours of wall time
 
-At a minimum, you would use these arguments when requesting an interactive session:
+
+### Example
+At a minimum, you would need to use these arguments when requesting an interactive session:
 
 `srun --qos interactive --pty bash`
 
@@ -125,6 +132,8 @@ or if you don't want to be bound by the limits of the `interactive` QOS:
 `srun --qos general --pty bash`
 
 Most `sbatch` arguments can also be used with `srun`. For example, `--mem` or `--cpus-per-task` if you needed to request additional resources. 
+
+Commands other than `bash` could be used to start an interactive session. But this is a topic is beyond the scope of this documentation. See the [srun documentation](https://slurm.schedmd.com/srun.html) for more information about command arguments.
 
 
 # Job status and monitoring
@@ -148,10 +157,11 @@ A partition is a group of compute nodes that share certain specifications and po
 ::: {.panel-tabset}
 ## Mantis
 ### general
-This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition.
+This partition contains nodes suitable for most tasks. These nodes have 64-128 AMD or Intel Xeon CPUs and 192 GB - 512 GB of ram. Most nodes in this partition have either one NVIDIA A100 or three NVIDIA L40S GPUs. Users can utilize up to 400 CPUs concurrently or with a limit of 400 concurrent jobs in this partition. Slurm defaults to this partition if no partition is specified.
 
 ##### Slurm Arguments:
 ```bash
+#SBATCH --partition=general
 #SBATCH --qos=general
 ```
 
@@ -164,16 +174,6 @@ This parition contains nodes suitable for jobs that have very large memory requi
 #SBATCH --partition=himem
 #SBATCH --qos=himem
 ```
-
-### debug
-This partition is intended for testing and debugging jobs. It has a time limit of only 5 minutes but jobs should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
-
-##### Slurm Arguments:
-```bash
-#SBATCH --partition=debug
-#SBATCH --qos=debug
-```
-
 
 
 ## Xanadu
@@ -233,15 +233,40 @@ This partition is available for students in courses or workshops who have been g
 ```
 :::
 
+# QOS (Quality of Service) {#qos}
+QOS (Quality of Service) is a SLURM feature that allows for the specification of job characteristics such as scheduling priority, preemption, and resource limits. The Mantis and Xanadu clusters have different QOS options available. See below for details.
 
-# Premtible QOS
+::: {.panel-tabset}
+## Mantis
+### general
+Suitable for most tasks.
+
+### himem
+Required for jobs to run in the himem partition.
+
+### debug
+The debug QOS is intended for testing and debugging jobs. Jobs with this QOS will have a time limit of only 5 minutes but will be given high priority and should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
+
+##### Slurm Arguments:
+```bash
+#SBATCH --qos=debug
+```
+### preemtible 
 The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.
 
 ##### Slurm Arguments:
 ```bash
-#SBATCH --partition=general
 #SBATCH --qos=preemptible
 ``` 
+
+## Xanadu
+### general
+Suitable for most tasks.
+
+### himem
+Required for jobs to run in the himem partition.
+
+:::
 
 # SLURM Environment Variables
 <!-- TODO: Show a couple of examples to illustrate their use -->
@@ -269,7 +294,6 @@ A GPU will not be allocated to a job unless it is explicitly requested. In order
 #SBATCH --cpus-per-task 1
 #SBATCH --mem=100M
 #SBATCH --time=1:00
-#SBATCH --partition=debug
 #SBATCH --qos=debug
 #SBATCH --output=%x-%j.out
 #SBATCH --gres=gpu:A100:1
@@ -320,7 +344,6 @@ Having software compiled for a specific CPU architecture is a common reason to n
 #SBATCH --cpus-per-task 1 
 #SBATCH --mem=100M
 #SBATCH --time=1:00
-#SBATCH --partition=debug
 #SBATCH --qos=debug
 #SBATCH --output=%x-%j.out
 #SBATCH --constraint=cpu_amd
@@ -340,7 +363,6 @@ Here is a basic example where the job array will run 5 jobs in parallel, each wi
 #SBATCH --cpus-per-task 1 
 #SBATCH --mem=100M
 #SBATCH --time=1:00
-#SBATCH --partition=debug
 #SBATCH --qos=debug
 #SBATCH --output=%x-%A-%a.out
 #SBATCH --array=1-5%2
