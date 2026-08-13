@@ -278,7 +278,7 @@ Allocation of a GPU differs on Mantis and Xanadu. See below for details on how t
 
 ::: {.panel-tabset}
 ## Mantis
-A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gres=gpu:[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.  
+A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the `--gres=gpu:[type:]<number>` agrument where the required `<number>` is the number of GPUs to allocate to the job. The `type` is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below. When requested under the `general` QOS, users will be limited to a maximum of 8 GPUs to be used concurrently. No limit is placed on the number of GPUs that can be used concurrently under the `preemptible` QOS. However, preemptible jobs can be interrupted by jobs from the `general` QOS at any time.
 
 ### GPU Types
 <!-- TODO: Make this tables not full width of screen -->
