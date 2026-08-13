@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-281de4cc31e2ebf9bb6eea29946d2277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-97992c35a96a311f5b45accbc1876254.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -619,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mantis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Xanadu</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gres=gpu:[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below.</p>
+<p>A GPU will not be allocated to a job unless it is explicitly requested. In order to request a GPU, you can specify the <code>--gres=gpu:[type:]&lt;number&gt;</code> agrument where the required <code>&lt;number&gt;</code> is the number of GPUs to allocate to the job. The <code>type</code> is optional and specifies the type of GPU to allocate. The types of GPUs and the associated type arguments are listed in the table below. When requested under the <code>general</code> QOS, users will be limited to a maximum of 8 GPUs to be used concurrently. No limit is placed on the number of GPUs that can be used concurrently under the <code>preemptible</code> QOS. However, preemptible jobs can be interrupted by jobs from the <code>general</code> QOS at any time.</p>
 <section id="gpu-types" class="level3">
 <h3 class="anchored" data-anchor-id="gpu-types">GPU Types</h3>
 <!-- TODO: Make this tables not full width of screen -->
