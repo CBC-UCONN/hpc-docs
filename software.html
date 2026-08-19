@@ -283,6 +283,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-conda" id="toc-using-conda" class="nav-link" data-scroll-target="#using-conda">Using Conda</a></li>
   </ul></li>
   <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
+  <li><a href="#vscode" id="toc-vscode" class="nav-link" data-scroll-target="#vscode">VSCode</a>
+  <ul class="collapse">
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  </ul></li>
   <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
   <ul class="collapse">
   <li><a href="#ipa" id="toc-ipa" class="nav-link" data-scroll-target="#ipa">IPA</a></li>
@@ -529,6 +533,55 @@ Warning
 <section id="request-software-installation" class="level2">
 <h2 class="anchored" data-anchor-id="request-software-installation">Request Software Installation</h2>
 <p>Users can request the installation of software by <a href="https://bioinformatics.uconn.edu/contact-us/software-database-request/">submitting a software request</a>. We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.</p>
+</section>
+<section id="vscode" class="level2">
+<h2 class="anchored" data-anchor-id="vscode">VSCode</h2>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> is a free and open-source code/text editor. You can use it to edit files on the UCHC HPC system remotely. It has many useful features, including syntax highlighting, code completion, and debugging tools.</p>
+<section id="usage" class="level3">
+<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<section id="start-an-interactive-session" class="level4">
+<h4 class="anchored" data-anchor-id="start-an-interactive-session">1. Start an interactive session</h4>
+<p>Launch an interactive session with the command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--qos</span><span class="op">=</span>general <span class="at">--mem</span><span class="op">=</span>8gb <span class="at">--pty</span> bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="authenticate" class="level4">
+<h4 class="anchored" data-anchor-id="authenticate">2. Authenticate</h4>
+<p>Once the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Microsoft</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>In order to authenticate with a GitHub account, run the following commands:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load vscode</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">vscode</span> tunnel <span class="at">--name</span> mantis </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Look for the URL and authentication code in the output of the command. It will look like:</p>
+<blockquote class="blockquote">
+<p>To grant access to the server, please log into https://github.com/login/device and use code &lt;authentication code&gt; to authenticate.</p>
+</blockquote>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>In order to authenticate with a Microsoft account, run the following commands:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load vscode</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis user login <span class="at">--provider</span> microsoft</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Look for the URL and authentication code in the output of the command. It will look like:</p>
+<blockquote class="blockquote">
+<p>To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code &lt;authentication code&gt; to authenticate.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Navigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account.</p>
+</section>
+<section id="connect" class="level4">
+<h4 class="anchored" data-anchor-id="connect">3. Connect</h4>
+<p>Open VSCode on your local computer and click the <code>Open a Remote Window</code> icon and select <code>Connect to Tunnel</code> as shown below.</p>
+<p><img src="img/vscode-tunnel.png" class="img-fluid" width="600"></p>
+<p>Then select the authentication method and follow the prompts to authenticate.</p>
+<p><img src="img/vscode-auth.png" class="img-fluid" width="400"></p>
+<p>Finally, select the <code>mantis</code> tunnel to connect.</p>
+<p><img src="img/vscode-select-tunnel.png" class="img-fluid" width="500"></p>
+</section>
+</section>
 </section>
 <section id="commercial-software" class="level2">
 <h2 class="anchored" data-anchor-id="commercial-software">Commercial Software</h2>
