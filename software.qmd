@@ -243,7 +243,7 @@ In order to authenticate with a GitHub account, run the following commands:
 
 ```bash
 module load vscode
-vscode tunnel --name mantis 
+code tunnel --name mantis 
 ```
 
 Look for the URL and authentication code in the output of the command. It will look like:
