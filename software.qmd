@@ -223,6 +223,65 @@ The `mamba` command, a faster drop in replacement for `conda`, will also by inst
 ## Request Software Installation
 Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/). We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda. 
 
+
+## VSCode
+[Visual Studio Code](https://code.visualstudio.com/) is a free and open-source code/text editor. You can use it to edit files on the UCHC HPC system remotely. It has many useful features, including syntax highlighting, code completion, and debugging tools.
+
+### Usage
+#### 1. Start an interactive session
+Launch an interactive session with the command:
+```bash
+srun --qos=general --mem=8gb --pty bash
+```
+
+#### 2. Authenticate
+Once the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account. 
+
+::: {.panel-tabset}
+##### GitHub
+In order to authenticate with a GitHub account, run the following commands:
+
+```bash
+module load vscode
+vscode tunnel --name mantis 
+```
+
+Look for the URL and authentication code in the output of the command. It will look like:
+
+> To grant access to the server, please log into https://github.com/login/device and use code \<authentication code\> to authenticate.
+
+##### Microsoft
+In order to authenticate with a Microsoft account, run the following commands:
+```bash
+module load vscode
+code tunnel --name mantis user login --provider microsoft
+```
+
+Look for the URL and authentication code in the output of the command. It will look like:
+
+> To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code \<authentication code\> to authenticate.
+
+:::
+
+Navigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account. 
+
+#### 3. Connect
+Open VSCode on your local computer and click the `Open a Remote Window` icon and select `Connect to Tunnel` as shown below. 
+
+![](img/vscode-tunnel.png){width=600}
+
+Then select the authentication method and follow the prompts to authenticate.
+
+![](img/vscode-auth.png){width=400}
+
+Finally, select the `mantis` tunnel to connect.
+
+![](img/vscode-select-tunnel.png){width=500}
+
+
+
+
+
 ## Commercial Software
 
 The Computational Biology Core posesses licenses for some commercial software and is available to use by any UConn or UConn Health researcher.
