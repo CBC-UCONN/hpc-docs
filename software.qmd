@@ -298,46 +298,9 @@ Log in [here](https://apps.ingenuity.com/ingsso/login?service=https%3A%2F%2Fanal
 
 ### Geneious
 
-[Geneious](https://www.geneious.com/) is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine, not Mantis. Some features:
+[Geneious](https://www.geneious.com/) is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine.
 
- - Reference mapping of sequencing data.
- - Alignment and phylogeny estimation.
- - Visualization of the data and analysis.
- - Searching NCBI databases.
-  
-We have a floating license with 10 seats (10 users can simultaneously run it). 
-
-#### How to Access Geneious
- 
-1. Request an account [here](https://bioinformatics.uconn.edu/). 
- 
-2. Once the request has been approved, connect to the UCHC VPN using Pulse Secure:   
- 
-   [UConn Health CAM VPN Tutorial](https://health.uconn.edu/high-performance-computing/tutorials/cam-vpn/)
-
-3. Use the following URL to download the client for your computer:  
-<!-- markdown-link-check-disable-next-line --> 
-     http://geneious.cam.uchc.edu:8080/GeneiousServer/clients.jsp
-  
-4. Select "Return to Home Page" and select the "Download the Geneious Server bundled plugin file"  link on the home page to download the correct plugins.
-
-#### Installation and Login
-
-1. Double-click to open the Geneious Prime installation file and follow the prompts to accept license agreement and download
-
-2. Leave the defaults for the **Select Destination Directory** window, **Select Start Menu Folder** window, and **Select File Associations** window, clicking "Next >" after each one
-
-3. Click "Finish" to complete installation
-
-4. Open the Geneious Prime application and click "Activate a License" on the pop-up message
-
-5. Click "License server" and enter geneious.cam.uchc.edu next to Server and leave the port as default, Enter your email address and click "OK"
-
-6. You will get a notification that the license has been obtained from the FLEXnet server
-
-7. Install plugins by double clicking the *GeneiousServerbundle.gplugin* file
-
-8. Exit out of Geneious once installation is complete, Re-open to begin analyzing data
+The CBC used to provide access to a floating license but Geneious has changed their licensing model to eliminate floating licenses. The CBC has acquired a handful of licenses, valid until July 2027 to prevent disruption of researchers who have been using Geneious. If you are a UConn or UConn Health researcher and need access to Geneious, please contact the CBC at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com). After July 2027, users will need to acquire their own license to continue using Geneious. 
 
 
 ## Virtual Machines
