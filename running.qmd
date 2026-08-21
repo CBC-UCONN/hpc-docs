@@ -244,6 +244,9 @@ Suitable for most tasks.
 ### himem
 Required for jobs to run in the himem partition.
 
+### interactive
+The interactive QOS is intended for starting interactive sessions. Interactive jobs are limited to 8 hours and only a single concurrent interactive job is allowed per user. This QOS has a higher priority than the general QOS and will allow jobs to start more quickly. 
+
 ### debug
 The debug QOS is intended for testing and debugging jobs. Jobs with this QOS will have a time limit of only 5 minutes but will be given high priority and should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
@@ -252,7 +255,7 @@ The debug QOS is intended for testing and debugging jobs. Jobs with this QOS wil
 #SBATCH --qos=debug
 ```
 ### preemtible 
-The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.
+The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos may be preempted by jobs with general or himem qos if insufficient resources are available for those jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.
 
 ##### Slurm Arguments:
 ```bash
