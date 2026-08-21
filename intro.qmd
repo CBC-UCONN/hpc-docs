@@ -1,0 +1,32 @@
+---
+title: "Introduction to HPC"
+---
+
+High performance computing (HPC) refers to the use of powerful, interconnected computers to solve large, complex problems that are impractical for a single machine. 
+Rather than relying on one system, HPC environments distribute computational tasks across many processors working in parallel.  
+This parallelism allows for problems to be broken down into smaller pieces that can be solved simultaneously, significantly reducing the time required to arrive at a solution. 
+
+
+![UCHC HPC Data Center](img/data-center1.jpg1.jpg)
+
+
+## HPC System Architecture
+A typical HPC system is organized into specialized components that separate user access, data movement, storage, and computation. Users generally begin by connecting to a login node, which serves as the entry point to the system. Login nodes are designed for lightweight tasks such as editing code, compiling programs, and submitting jobs, rather than running heavy computations. On the UCHC HPC system, a load balancer sits in front of multiple login nodes to distribute incoming connections evenly, ensuring responsiveness and preventing any single node from becoming overloaded.
+
+![UCHC HPC Architecture](figures/hpc-architecture.png)
+
+## Login Nodes and Access
+<!-- Login nodes are the gateway to the HPC system, providing users with a command-line interface to interact with the cluster. They are not intended for running computationally intensive tasks, as this can degrade performance for all users. Instead, users should use login nodes to prepare their work, such as editing scripts, compiling code, and submitting jobs to the scheduler. Access to the login nodes is typically secured through -->
+
+## Data and Storage
+Data is stored on dedicated storage nodes that are separate from compute nodes. 
+The storage nodes are connected to compute nodes 
+Data movement is handled through transfer nodes, which are optimized for high-throughput input and output operations. These nodes provide a controlled pathway for moving large datasets in and out of the cluster without interfering with compute performance. Behind the scenes, storage nodes provide access to shared file systems, allowing all parts of the cluster to read and write data efficiently. These storage systems are typically distributed and parallelized, enabling high bandwidth and redundancy for reliability.
+
+## Compute Nodes and Job Scheduling
+Computational work takes place on compute nodes, which are the primary engines of the HPC system. These nodes are managed by Slurm, a job scheduling software tool that allocates resources based on user requests and system availability. Users submit jobs specifying the number of CPUs, memory, GPUs, and runtime required, and the scheduler places those jobs onto appropriate compute nodes. 
+
+<!-- By separating these roles—access, transfer, storage, and computation—HPC architectures maintain both performance and stability, ensuring that large-scale workloads can run efficiently without interfering with other users or system components. -->
+
+
+![HPC Job Scheduler](figures/batch-submission.png.png)
