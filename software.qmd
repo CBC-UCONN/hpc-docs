@@ -234,7 +234,7 @@ Launch an interactive session with the command:
 srun --qos=general --mem=8gb --pty bash
 ```
 
-#### 2. Authenticate
+#### 2. Launch VSCode and Authenticate
 Once the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account. 
 
 ::: {.panel-tabset}
