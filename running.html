@@ -577,6 +577,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="himem-2">himem</h3>
 <p>Required for jobs to run in the himem partition.</p>
 </section>
+<section id="interactive" class="level3">
+<h3 class="anchored" data-anchor-id="interactive">interactive</h3>
+<p>The interactive QOS is intended for starting interactive sessions. Interactive jobs are limited to 8 hours and only a single concurrent interactive job is allowed per user. This QOS has a higher priority than the general QOS and will allow jobs to start more quickly.</p>
+</section>
 <section id="debug" class="level3">
 <h3 class="anchored" data-anchor-id="debug">debug</h3>
 <p>The debug QOS is intended for testing and debugging jobs. Jobs with this QOS will have a time limit of only 5 minutes but will be given high priority and should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times.</p>
@@ -587,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="preemtible" class="level3">
 <h3 class="anchored" data-anchor-id="preemtible">preemtible</h3>
-<p>The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos will have very high priority in the queue but may be preempted by higher priority jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.</p>
+<p>The preemptible QOS is available on the Mantis cluster. Jobs submitted with this qos may be preempted by jobs with general or himem qos if insufficient resources are available for those jobs. This QOS is intended for users who are willing to have their jobs interrupted in exchange for potentially lower wait times when nodes are not in use by higher priority jobs. Tasks with short run times or tasks that can be restarted are good candidates for this QOS. This QOS can be used with any of the Mantis partitions.</p>
 <section id="slurm-arguments-9" class="level5">
 <h5 class="anchored" data-anchor-id="slurm-arguments-9">Slurm Arguments:</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --qos=preemptible</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
