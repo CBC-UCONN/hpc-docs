@@ -14,8 +14,8 @@ website:
       - text: "About"
         href: about.qmd
       
-      # - text: "Intro to HPC"
-      #   href: intro.qmd
+      - text: "Intro to HPC"
+        href: intro.qmd
 
       - text: "Getting Started"
         href: starting.qmd

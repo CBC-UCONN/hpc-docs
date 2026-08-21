@@ -247,6 +247,11 @@ Required for jobs to run in the himem partition.
 ### interactive
 The interactive QOS is intended for starting interactive sessions. Interactive jobs are limited to 8 hours and only a single concurrent interactive job is allowed per user. This QOS has a higher priority than the general QOS and will allow jobs to start more quickly. 
 
+##### Slurm Arguments:
+```bash
+#SBATCH --qos=interactive
+```
+
 ### debug
 The debug QOS is intended for testing and debugging jobs. Jobs with this QOS will have a time limit of only 5 minutes but will be given high priority and should start very quickly, allowing you to check for errors before submitting to a queue with potentially longer wait times. 
 
