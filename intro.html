@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to HPC</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Intro to HPC</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,6 +117,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Intro to HPC</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -269,35 +275,36 @@ ul.task-list li input[type="checkbox"] {
 This parallelism allows for problems to be broken down into smaller pieces that can be solved simultaneously, significantly reducing the time required to arrive at a solution.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/data-center1.jpg1.jpg" class="img-fluid figure-img"></p>
+<p><img src="img/data-center1.jpg" class="img-fluid figure-img" width="500"></p>
 <figcaption>UCHC HPC Data Center</figcaption>
 </figure>
 </div>
 <section id="hpc-system-architecture" class="level2">
 <h2 class="anchored" data-anchor-id="hpc-system-architecture">HPC System Architecture</h2>
-<p>A typical HPC system is organized into specialized components that separate user access, data movement, storage, and computation. Users generally begin by connecting to a login node, which serves as the entry point to the system. Login nodes are designed for lightweight tasks such as editing code, compiling programs, and submitting jobs, rather than running heavy computations. On the UCHC HPC system, a load balancer sits in front of multiple login nodes to distribute incoming connections evenly, ensuring responsiveness and preventing any single node from becoming overloaded.</p>
+<p>A typical HPC system is organized into specialized components that separate user access, data movement, storage, and computation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/hpc-architecture.png" class="img-fluid figure-img"></p>
+<p><img src="figures/hpc-architecture.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>UCHC HPC Architecture</figcaption>
 </figure>
 </div>
 </section>
 <section id="login-nodes-and-access" class="level2">
 <h2 class="anchored" data-anchor-id="login-nodes-and-access">Login Nodes and Access</h2>
-<!-- Login nodes are the gateway to the HPC system, providing users with a command-line interface to interact with the cluster. They are not intended for running computationally intensive tasks, as this can degrade performance for all users. Instead, users should use login nodes to prepare their work, such as editing scripts, compiling code, and submitting jobs to the scheduler. Access to the login nodes is typically secured through -->
+<p>Users generally begin by connecting to a login node, which serves as the entry point to the system. Login nodes are designed for lightweight tasks such as editing code, compiling programs, and submitting jobs, rather than running heavy computations. On the UCHC HPC system, a load balancer sits in front of multiple login nodes to distribute incoming connections evenly, ensuring responsiveness and preventing any single node from becoming overloaded.</p>
+<p>Login nodes are the gateway to the HPC system, providing users with a command-line interface to interact with the cluster. They are not intended for running computationally intensive tasks, as this can degrade performance for all users. Instead, users should use login nodes to prepare their work, such as editing scripts, compiling code, and submitting jobs to the scheduler. Access to the login nodes is typically secured through</p>
 </section>
 <section id="data-and-storage" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-storage">Data and Storage</h2>
-<p>Data is stored on dedicated storage nodes that are separate from compute nodes. The storage nodes are connected to compute nodes Data movement is handled through transfer nodes, which are optimized for high-throughput input and output operations. These nodes provide a controlled pathway for moving large datasets in and out of the cluster without interfering with compute performance. Behind the scenes, storage nodes provide access to shared file systems, allowing all parts of the cluster to read and write data efficiently. These storage systems are typically distributed and parallelized, enabling high bandwidth and redundancy for reliability.</p>
+<p>Data is stored on dedicated storage nodes that are separate from compute nodes. The storage nodes are connected to compute nodes with high-speed interconnects, allowing for fast data transfer between storage and computation. This separation ensures that data-intensive operations do not interfere with the performance of compute nodes, which are optimized for processing rather than storage.</p>
+<p>Movement onto and off of the HPC system is handled through transfer nodes, which are optimized for high-throughput input and output operations. These nodes provide a controlled pathway for moving large datasets in and out of the cluster without interfering with compute performance. Behind the scenes, storage nodes provide access to shared file systems, allowing all parts of the cluster to read and write data efficiently. These storage systems are typically distributed and parallelized, enabling high bandwidth and redundancy for reliability.</p>
 </section>
 <section id="compute-nodes-and-job-scheduling" class="level2">
 <h2 class="anchored" data-anchor-id="compute-nodes-and-job-scheduling">Compute Nodes and Job Scheduling</h2>
-<p>Computational work takes place on compute nodes, which are the primary engines of the HPC system. These nodes are managed by Slurm, a job scheduling software tool that allocates resources based on user requests and system availability. Users submit jobs specifying the number of CPUs, memory, GPUs, and runtime required, and the scheduler places those jobs onto appropriate compute nodes.</p>
-<!-- By separating these roles—access, transfer, storage, and computation—HPC architectures maintain both performance and stability, ensuring that large-scale workloads can run efficiently without interfering with other users or system components. -->
+<p>Computational work takes place on compute nodes, which are the primary engines of the HPC system. These nodes are managed by Slurm, a job scheduling software tool that allocates resources based on user requests and system availability. Users submit jobs specifying the number of CPUs, memory, GPUs, runtime required, and potentially other specifications, and the scheduler places those jobs onto appropriate compute nodes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/batch-submission.png.png" class="img-fluid figure-img"></p>
+<p><img src="figures/batch-submission.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>HPC Job Scheduler</figcaption>
 </figure>
 </div>

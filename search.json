@@ -4,35 +4,50 @@
     "href": "intro.html",
     "title": "Introduction to HPC",
     "section": "",
-    "text": "High performance computing (HPC) refers to the use of powerful, interconnected computers to solve large, complex problems that are impractical for a single machine. Rather than relying on one system, HPC environments distribute computational tasks across many processors working in parallel.\nThis parallelism allows for problems to be broken down into smaller pieces that can be solved simultaneously, significantly reducing the time required to arrive at a solution."
+    "text": "High performance computing (HPC) refers to the use of powerful, interconnected computers to solve large, complex problems that are impractical for a single machine. Rather than relying on one system, HPC environments distribute computational tasks across many processors working in parallel.\nThis parallelism allows for problems to be broken down into smaller pieces that can be solved simultaneously, significantly reducing the time required to arrive at a solution.",
+    "crumbs": [
+      "Intro to HPC"
+    ]
   },
   {
     "objectID": "intro.html#hpc-system-architecture",
     "href": "intro.html#hpc-system-architecture",
     "title": "Introduction to HPC",
     "section": "HPC System Architecture",
-    "text": "HPC System Architecture\nA typical HPC system is organized into specialized components that separate user access, data movement, storage, and computation. Users generally begin by connecting to a login node, which serves as the entry point to the system. Login nodes are designed for lightweight tasks such as editing code, compiling programs, and submitting jobs, rather than running heavy computations. On the UCHC HPC system, a load balancer sits in front of multiple login nodes to distribute incoming connections evenly, ensuring responsiveness and preventing any single node from becoming overloaded.\n\n\n\nUCHC HPC Architecture"
+    "text": "HPC System Architecture\nA typical HPC system is organized into specialized components that separate user access, data movement, storage, and computation.\n\n\n\nUCHC HPC Architecture",
+    "crumbs": [
+      "Intro to HPC"
+    ]
   },
   {
     "objectID": "intro.html#login-nodes-and-access",
     "href": "intro.html#login-nodes-and-access",
     "title": "Introduction to HPC",
     "section": "Login Nodes and Access",
-    "text": "Login Nodes and Access"
+    "text": "Login Nodes and Access\nUsers generally begin by connecting to a login node, which serves as the entry point to the system. Login nodes are designed for lightweight tasks such as editing code, compiling programs, and submitting jobs, rather than running heavy computations. On the UCHC HPC system, a load balancer sits in front of multiple login nodes to distribute incoming connections evenly, ensuring responsiveness and preventing any single node from becoming overloaded.\nLogin nodes are the gateway to the HPC system, providing users with a command-line interface to interact with the cluster. They are not intended for running computationally intensive tasks, as this can degrade performance for all users. Instead, users should use login nodes to prepare their work, such as editing scripts, compiling code, and submitting jobs to the scheduler. Access to the login nodes is typically secured through",
+    "crumbs": [
+      "Intro to HPC"
+    ]
   },
   {
     "objectID": "intro.html#data-and-storage",
     "href": "intro.html#data-and-storage",
     "title": "Introduction to HPC",
     "section": "Data and Storage",
-    "text": "Data and Storage\nData is stored on dedicated storage nodes that are separate from compute nodes. The storage nodes are connected to compute nodes Data movement is handled through transfer nodes, which are optimized for high-throughput input and output operations. These nodes provide a controlled pathway for moving large datasets in and out of the cluster without interfering with compute performance. Behind the scenes, storage nodes provide access to shared file systems, allowing all parts of the cluster to read and write data efficiently. These storage systems are typically distributed and parallelized, enabling high bandwidth and redundancy for reliability."
+    "text": "Data and Storage\nData is stored on dedicated storage nodes that are separate from compute nodes. The storage nodes are connected to compute nodes with high-speed interconnects, allowing for fast data transfer between storage and computation. This separation ensures that data-intensive operations do not interfere with the performance of compute nodes, which are optimized for processing rather than storage.\nMovement onto and off of the HPC system is handled through transfer nodes, which are optimized for high-throughput input and output operations. These nodes provide a controlled pathway for moving large datasets in and out of the cluster without interfering with compute performance. Behind the scenes, storage nodes provide access to shared file systems, allowing all parts of the cluster to read and write data efficiently. These storage systems are typically distributed and parallelized, enabling high bandwidth and redundancy for reliability.",
+    "crumbs": [
+      "Intro to HPC"
+    ]
   },
   {
     "objectID": "intro.html#compute-nodes-and-job-scheduling",
     "href": "intro.html#compute-nodes-and-job-scheduling",
     "title": "Introduction to HPC",
     "section": "Compute Nodes and Job Scheduling",
-    "text": "Compute Nodes and Job Scheduling\nComputational work takes place on compute nodes, which are the primary engines of the HPC system. These nodes are managed by Slurm, a job scheduling software tool that allocates resources based on user requests and system availability. Users submit jobs specifying the number of CPUs, memory, GPUs, and runtime required, and the scheduler places those jobs onto appropriate compute nodes.\n\n\n\n\nHPC Job Scheduler"
+    "text": "Compute Nodes and Job Scheduling\nComputational work takes place on compute nodes, which are the primary engines of the HPC system. These nodes are managed by Slurm, a job scheduling software tool that allocates resources based on user requests and system availability. Users submit jobs specifying the number of CPUs, memory, GPUs, runtime required, and potentially other specifications, and the scheduler places those jobs onto appropriate compute nodes.\n\n\n\nHPC Job Scheduler",
+    "crumbs": [
+      "Intro to HPC"
+    ]
   },
   {
     "objectID": "databases.html",
@@ -637,7 +652,7 @@
     "href": "starting.html",
     "title": "Getting Started",
     "section": "",
-    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n\n3) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n4) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n5) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n6) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
+    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n3) Read Intro to HPC\nIf you are new to high performance computing, it is recommended that you read the Intro to HPC page to learn about the basics.\n\n\n4) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n5) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n6) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n7) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
     "crumbs": [
       "Getting Started"
     ]
