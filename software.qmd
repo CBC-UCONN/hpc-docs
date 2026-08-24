@@ -254,7 +254,8 @@ Look for the URL and authentication code in the output of the command. It will l
 In order to authenticate with a Microsoft account, run the following commands:
 ```bash
 module load vscode
-code tunnel --name mantis user login --provider microsoft
+code tunnel user login --provider microsoft
+code tunnel --name mantis 
 ```
 
 Look for the URL and authentication code in the output of the command. It will look like:
