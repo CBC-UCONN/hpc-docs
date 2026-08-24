@@ -568,7 +568,8 @@ Warning
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>In order to authenticate with a Microsoft account, run the following commands:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load vscode</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis user login <span class="at">--provider</span> microsoft</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel user login <span class="at">--provider</span> microsoft</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Look for the URL and authentication code in the output of the command. It will look like:</p>
 <blockquote class="blockquote">
 <p>To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code &lt;authentication code&gt; to authenticate.</p>
