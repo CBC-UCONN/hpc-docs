@@ -14,7 +14,7 @@ To be able to login using SSH keys, you will need to:
 Only ed25519 keys are accepted.
 
 ### 1. Create SSH keys
-You can create a public and private SSH key pair using your SSH client in `Windows PowerShell` or a MacOS / Linux `Terminal`.  
+You can create a public and private SSH key pair using your SSH client in `Windows PowerShell` or a MacOS / Linux `Terminal`. If using Windows Subsystem for Linux (WSL), you can use the Linux terminal instructions.  
 
 1. First check for an existing SSH key pair by running the following command: 
 
