@@ -1,5 +1,373 @@
 [
   {
+    "objectID": "ondemand.html",
+    "href": "ondemand.html",
+    "title": "Open OnDemand",
+    "section": "",
+    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect with SSH through a terminal or SSH client. See the Command Line Interface page for instructions on how to connect through a terminal.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#prerequisites",
+    "href": "ondemand.html#prerequisites",
+    "title": "Open OnDemand",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nIn order to use Open OnDemand you will need:\n\nA CAM account with a non-expired password. See the Getting Started page for instructions on how to request an account and reset your password.\nEnrollment in Duo two-factor authentication for UCHC HPC. See the Duo Two-Factor Authentication page for instructions on how to enroll and install the Duo mobile app on your device.\nA web browser. Open OnDemand is compatible with most modern web browsers.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#connecting",
+    "href": "ondemand.html#connecting",
+    "title": "Open OnDemand",
+    "section": "Connecting",
+    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.hpc.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. When ready, click the “Log in to Open OnDemand” button. You will then recieve a Duo authentication request on your enrolled device. Approve the request to complete the authentication process.\n\nUpon successful authentication, you will be taken to the Open OnDemand dashboard. From here, you can access various features and applications available through Open OnDemand.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#interactive-apps",
+    "href": "ondemand.html#interactive-apps",
+    "title": "Open OnDemand",
+    "section": "Interactive Apps",
+    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that run on the Mantis cluster and permit access to the UCHC HPC filesystem.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#availabe-applications",
+    "href": "ondemand.html#availabe-applications",
+    "title": "Open OnDemand",
+    "section": "Availabe Applications",
+    "text": "Availabe Applications\n\nJupyterLab: A web-based interactive development environment for Jupyter notebooks, code, and data.\nRStudio: An integrated development environment for R programming language.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "ondemand.html#popup-ad-blockers",
+    "href": "ondemand.html#popup-ad-blockers",
+    "title": "Open OnDemand",
+    "section": "Popup & Ad Blockers",
+    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.hpc.cam.uchc.edu url and see if that resolves the issue.",
+    "crumbs": [
+      "Connecting",
+      "Open OnDemand"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Getting Help",
+    "section": "",
+    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#slack",
+    "href": "help.html#slack",
+    "title": "Getting Help",
+    "section": "",
+    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#data-therapy",
+    "href": "help.html#data-therapy",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#workshops",
+    "href": "help.html#workshops",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "help.html#consultations",
+    "href": "help.html#consultations",
+    "title": "Getting Help",
+    "section": "",
+    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
+    "crumbs": [
+      "Get Help"
+    ]
+  },
+  {
+    "objectID": "transfer.html",
+    "href": "transfer.html",
+    "title": "Tranferring Data",
+    "section": "",
+    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#getting-started",
+    "href": "transfer.html#getting-started",
+    "title": "Tranferring Data",
+    "section": "Getting Started",
+    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the /seqdata directory you would enter /globus/seqdata in the Path text field.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#transferring-files-locally",
+    "href": "transfer.html#transferring-files-locally",
+    "title": "Tranferring Data",
+    "section": "Transferring Files Locally",
+    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#sharing-files",
+    "href": "transfer.html#sharing-files",
+    "title": "Tranferring Data",
+    "section": "Sharing Files",
+    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#connecting",
+    "href": "transfer.html#connecting",
+    "title": "Tranferring Data",
+    "section": "Connecting",
+    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "File permissions"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\n\n\nSome of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.\n\n\nWhen module avail is run on Mantis, you will see three different sections:\nTwo which contain software compiled to run on Mantis:\n\n/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3\n/isg/shared/mantis/modulefiles\n\nAnd one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:\n\n/isg/shared/modulefiles\n\nSee Request Software Installation to request a new installation of incompatible software.\n\n\n\nAll of the modules available on Xanadu are for software compiled to run on Xanadu.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#environment-modules",
+    "href": "software.html#environment-modules",
+    "title": "Software",
+    "section": "",
+    "text": "Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\n\n\nSome of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.\n\n\nWhen module avail is run on Mantis, you will see three different sections:\nTwo which contain software compiled to run on Mantis:\n\n/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3\n/isg/shared/mantis/modulefiles\n\nAnd one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:\n\n/isg/shared/modulefiles\n\nSee Request Software Installation to request a new installation of incompatible software.\n\n\n\nAll of the modules available on Xanadu are for software compiled to run on Xanadu.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#compiling-software-yourself",
+    "href": "software.html#compiling-software-yourself",
+    "title": "Software",
+    "section": "Compiling software yourself",
+    "text": "Compiling software yourself\nSome software is pretty easy to install. See this classic softare in population genetics, psmc.\nAll you have to do to install are the following commands (the instructions are in the README.md file):\n# clone the repository\ngit clone https://github.com/lh3/psmc.git\ncd psmc\nmake; (cd utils; make)\nAnd it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.\nSome software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with Singularity or use isolated environments created with Conda",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#singularity",
+    "href": "software.html#singularity",
+    "title": "Software",
+    "section": "Singularity",
+    "text": "Singularity\n\nReproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).\nSingularity is in your PATH by default on Mantis so it can be run without loading a module.\nTo get an existing container from a repository, you use the command singularity pull &lt;URL&gt;. For example:\nsingularity pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0\nThis will create the file fastqc:0.12.1--hdfd78af_0, a singularity image (some image files will have the extension .sif). This containst the package fastqc.\nTo run a command (e.g. fastqc --help) inside the container, particularly when submitting SLURM batch scripts, you typically you will use singularity exec &lt;container&gt; &lt;command&gt;:\nsingularity exec fastqc:0.12.1--hdfd78af_0 fastqc --help\nYou can also start up a shell inside the container and explore interactively with singularity shell &lt;container&gt;.\nsingularity shell fastqc:0.12.1--hdfd78af_0\nSee here for a more in-depth tutorial.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#conda",
+    "href": "software.html#conda",
+    "title": "Software",
+    "section": "Conda",
+    "text": "Conda\nConda is a package and environment manager that allows users to install and run software in isolated environments. It is particularly useful for software with complicated dependencies that may span multiple languages.\nWhen users install software with conda the software and dependencies are downloaded from one or more repositories, known as channels.\n\n\n\n\n\n\nWarning\n\n\n\nSome conda commands utilize a lot of CPU which can negatively impact other users if run on login nodes. Please refrain from running conda command such as conda install, conda update, or conda create on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.\n\n\n\nInstalling Conda\nConda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the Miniforge distribution.\nMiniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the conda-forge channel by default. conda-forge is free and community-maintained. Other distributions are configured to use the defaults channel. While defaults is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.\n\nStart interactive session\nTo get the Miniforge conda distribution first start an interactive session.\nsrun --qos=general --mem=8gb --pty bash\n\n\nDownload miniforge installer\nwget -O Miniforge3.sh \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh\"\nThere is no need to substitute anything in the URL. The command as given will download the installation script.\n\n\nRun the Miniforge Installation Script\nbash Miniforge3.sh\n\nAgree to license terms (yes)\nChoose installation path (default is fine)\nImportant: Choose whether to initialize conda (select “yes”)\n\n\n\nActivate Conda\nThis will happen automatically when you start a new interactive shell session, but to load it into your current session, run:\nsource ~/.bashrc\n\n\n\n\n\n\nNote\n\n\n\n~/.bashrc is only sourced within interactive sessions such as when you are logged in to a login node or have an interactive job running. If you want to use Conda in non-interactive sessions (e.g. batch jobs), you will need to take an extra step. One option is to simply add source ~/.bashrc to your batch job scripts which will recreate your typical environment on a compute node. Another option is to explicitly source the conda setup script in your batch job scripts with: source ~/miniforge3/etc/profile.d/conda.sh (assuming you installed Miniforge to the default location of ~/miniforge3) or source &lt;miniforge path&gt;/etc/profile.d/conda.sh, substituting &lt;miniforge path&gt; with the appropriate path if you did not install to the default location. This can be desirable if you want more control over what is loaded in your batch job environment.\n\n\n\n\nBase Envirionment\nBy default, conda creates a “base” environment when it is installed. This environment contains the core conda packages and tools. It is generally recommended to avoid installing additional packages into the base environment to keep it clean and stable. You can prevent the base environment from being activated automatically when you start a new shell session by running the following command:\nconda config --set auto_activate false\nThis only needs to be run one time. After running this command, the base environment will not be activated automatically in new shell sessions.\n\n\n\nUsing Conda\nIt is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages.\n\nCreating an Environment\nOnce Miniforge is installed, you can create environments with:\nconda create -n &lt;environment name&gt; \nReplace &lt;environment name&gt; with the desired name for your environment.\nConfirm changes when prompted.\n\n\nActivating & Deactivating an Environment\nOnce you have created an environment, you can activate it with:\nconda activate &lt;environment name&gt;\nReplace &lt;environment name&gt; with the name of the environment you want to activate.\nOnce activated you can install or use packages within that environment.\nTo see a list of all your environments, run:\nconda env list\nTo deactivate the current environment and return to the base environment, run:\nconda deactivate\n\n\nInstalling Packages\nIn order to install packages into a Conda environment, you first need to activate the environment (see above). Once activated, packages can be installed with:\nconda install &lt;package name&gt;\nSome packages may require specifying a channel with the -c &lt;channel name&gt; argument. For example, to install a package from the bioconda channel, you would run:\nconda install -c bioconda &lt;package name&gt;\nTo see a list of installed packages in the current environment, run:\nconda list\n\n\n\n\n\n\nWarning\n\n\n\nPlease avoid using the defaults channel, or any channel that is not free. conda-forge and bioconda are free, community maintained channels that should fit the needs of most users.\n\n\n\n\nMamba\nThe mamba command, a faster drop in replacement for conda, will also by installed with Miniforge. We encourage the use of mamba in place of any conda commands. No changes to the syntax are necessary, simply replace conda with mamba.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#request-software-installation",
+    "href": "software.html#request-software-installation",
+    "title": "Software",
+    "section": "Request Software Installation",
+    "text": "Request Software Installation\nUsers can request the installation of software by submitting a software request. We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#vscode",
+    "href": "software.html#vscode",
+    "title": "Software",
+    "section": "VSCode",
+    "text": "VSCode\nVisual Studio Code is a free and open-source code/text editor. You can use it to edit files on the UCHC HPC system remotely. It has many useful features, including syntax highlighting, code completion, and debugging tools.\n\nUsage\n\n1. Start an interactive session\nLaunch an interactive session with the command:\nsrun --qos=general --mem=8gb --pty bash\n\n\n2. Launch VSCode and Authenticate\nOnce the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account.\n\nGitHubMicrosoft\n\n\nIn order to authenticate with a GitHub account, run the following commands:\nmodule load vscode\ncode tunnel --name mantis \nLook for the URL and authentication code in the output of the command. It will look like:\n\nTo grant access to the server, please log into https://github.com/login/device and use code &lt;authentication code&gt; to authenticate.\n\n\n\nIn order to authenticate with a Microsoft account, run the following commands:\nmodule load vscode\ncode tunnel user login --provider microsoft\ncode tunnel --name mantis \nLook for the URL and authentication code in the output of the command. It will look like:\n\nTo sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code &lt;authentication code&gt; to authenticate.\n\n\n\n\nNavigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account.\n\n\n3. Connect\nOpen VSCode on your local computer and click the Open a Remote Window icon and select Connect to Tunnel as shown below.\n\nThen select the authentication method and follow the prompts to authenticate.\n\nFinally, select the mantis tunnel to connect.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#commercial-software",
+    "href": "software.html#commercial-software",
+    "title": "Software",
+    "section": "Commercial Software",
+    "text": "Commercial Software\nThe Computational Biology Core posesses licenses for some commercial software and is available to use by any UConn or UConn Health researcher.\n\nIPA\nIngenuity Pathway Analysis from Qiagen “allows you to “quickly visualize and understand complex ‘omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.\nRequest an account here.\nLog in here\nSome training materials\n\n\nGeneious\nGeneious is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine.\nThe CBC used to provide access to a floating license but Geneious has changed their licensing model to eliminate floating licenses. The CBC has acquired a handful of licenses, valid until July 2027 to prevent disruption of researchers who have been using Geneious. If you are a UConn or UConn Health researcher and need access to Geneious, please contact the CBC at cbcsupport@helpspotmail.com. After July 2027, users will need to acquire their own license to continue using Geneious.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "software.html#virtual-machines",
+    "href": "software.html#virtual-machines",
+    "title": "Software",
+    "section": "Virtual Machines",
+    "text": "Virtual Machines\nIf you need to run something that requires a virtual machine, you can request one here.",
+    "crumbs": [
+      "Software"
+    ]
+  },
+  {
+    "objectID": "running.html",
+    "href": "running.html",
+    "title": "Job Submission",
+    "section": "",
+    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands.  When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer clusters use SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#required-arguments",
+    "href": "running.html#required-arguments",
+    "title": "Job Submission",
+    "section": "Required arguments",
+    "text": "Required arguments\nThe following arguments are required when running sbatch on the UCHC HPC system.\n\n--qos\nThe qos (quality of service) argument constrains or modifies characteristics of a job such as scheduling priority, preemption, and resource limits. The qos argument must be specified for every job run on the Mantis cluster. This argument will often be the same as that given for the partition if specifying a partition. See the QOS section for more information about available QOS options.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "running.html#commonly-used-arguments",
+    "href": "running.html#commonly-used-arguments",
+    "title": "Job Submission",
+    "section": "Commonly used arguments",
+    "text": "Commonly used arguments\nBelow are some of the most useful and commonly used arguments for sbatch.\n\n--job-name\nThe name of the job. Used for displaying job information when monitoring the job and for naming log files.\n\n\n--cpus-per-task\nThe number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.\n\n\n--mem\nThe amount of memory to allocate. This argument takes a number followed by a unit such as mb for megabytes or gb for gigabytes. If no unit is given, megabytes are used. If no --mem argument is used, a job defaults to 120 MB.\n\n\n--time\nTime limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format days-hrs:min:sec, days-hrs, hrs:min:sec, min:sec, or sec. The default time limit in non-debug partitions is 21 days. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.\n\n\n--output\nThis specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options here.\n\n\n--partition\nA group of nodes which the job will be allocated to. This defaults to general. See the partitions section for available partitions.\n\n\n--mail-type\nWhen to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.\n\n\n--mail-user\nAddress to send mail to.\n\n\nAdditional commands\nsbatch is a powerful tool with many other configuration options beyond the scope of this documentation.\nSee the sbatch documentation for more information about command arguments.",
+    "crumbs": [
+      "Running Jobs"
+    ]
+  },
+  {
+    "objectID": "examples.html",
+    "href": "examples.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "https://services.rt.nyu.edu/docs/hpc/getting_started/intro/ https://www.hpc.caltech.edu/"
+  },
+  {
+    "objectID": "account.html",
+    "href": "account.html",
+    "title": "Requesting an Account",
+    "section": "",
+    "text": "Requesting an Account\nIn order to use the UConn Health HPC system, you must request a CAM account. It is referred to as a CAM account because much of the administration of the UConn Health HPC system is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
+    "crumbs": [
+      "Account & Password"
+    ]
+  },
+  {
+    "objectID": "datapolicy.html",
+    "href": "datapolicy.html",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "This page summarizes storage policies and management practices on the UConn Health HPC. For more information about the file systems and storage locations available on the cluster, please see the storage page.\n\n\n\n\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time after the job has ended.\n\n\n\n\nAll other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
+    "crumbs": [
+      "Storage Policies"
+    ]
+  },
+  {
+    "objectID": "datapolicy.html#managed-storage",
+    "href": "datapolicy.html#managed-storage",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "This location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time after the job has ended.",
+    "crumbs": [
+      "Storage Policies"
+    ]
+  },
+  {
+    "objectID": "datapolicy.html#user-managed-storage",
+    "href": "datapolicy.html#user-managed-storage",
+    "title": "Storage Policies",
+    "section": "",
+    "text": "All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
+    "crumbs": [
+      "Storage Policies"
+    ]
+  },
+  {
+    "objectID": "quick.html",
+    "href": "quick.html",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#internal-login-node",
+    "href": "quick.html#internal-login-node",
+    "title": "UCHC HPC",
+    "section": "",
+    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#external-login-node",
+    "href": "quick.html#external-login-node",
+    "title": "UCHC HPC",
+    "section": "External Login Node",
+    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
+  },
+  {
+    "objectID": "quick.html#transfer-node",
+    "href": "quick.html#transfer-node",
+    "title": "UCHC HPC",
+    "section": "Transfer Node",
+    "text": "Transfer Node\ntransfer.cam.uchc.edu"
+  },
+  {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "Introduction to HPC",
@@ -48,6 +416,87 @@
     "crumbs": [
       "Intro to HPC"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UConn Health High Performance Computing",
+    "section": "",
+    "text": "Introduction\nThe University of Connecticut Health High Performanc Computing Facility provides a variety of high performance computing services and resources to both University of Connecticut and UConn Health researchers at no cost. Most notably the Mantis computer cluster. A summary of available resources and services can be found at the About page. Administration of the UConn Health HPC system is jointly handled by the University of Connecticut Computational Biology Core and the Center for Cell Analysis and Modeling at UConn Health.\n\n\nDocumentation\nThis site serves as documentation for users of UConn Health HPC system and is maintained by the University of Connecticut Computational Biology Core.\n\n\nGetting Started\nNew users should visit the Getting Started page for instructions on how to request an account and access the system. Visit the Get Help page for a list of ways to seek help on using the system.\n\n\n\nStorrs HPC Facility\nThere is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit this site."
+  },
+  {
+    "objectID": "duo.html",
+    "href": "duo.html",
+    "title": "Duo Two-Factor Authentication",
+    "section": "",
+    "text": "Access to all UCHC HPC resources requires two-factor authentication through Duo if you are not connected to UConnHealth-SECURE WiFi or the CAM VPN.\n\nEnrollment in Duo for UCHC HPC\nOnce your CAM account has been approved, you will receive an enrollment invitation email from “Duo Security.” Follow the link in the email to begin the setup process.\n\n\nDuo Mobile App Installation\nYou will then need to install the Duo Mobile app on a mobile device such as a smartphone or tablet. Hardware tokens and Touch ID are not accepted. The Duo Mobile app can be downloaded from the Apple App Store or Google Play Store. Once installed, follow the instructions in the enrollment email to complete the setup process.\n\n\n\n\n\n\nNote\n\n\n\nNote that the UCHC HPC Duo account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the Duo app as “UCHC HPC” as pictured below.\n\n\n\n\n\nAuthentication\nWhen connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. Do no approve Duo requests that you did not initiate! If you receive a Duo request that you did not initiate, deny the request and contact us at cbcsupport@helpspotmail.com.\n\n\nLockouts\nYou will be locked out of Duo after 10 failed authentication attempts. If you are locked out, you must contact the UConn Health IT Service Desk through uconnprod@service-now.com or by phone at 860-679-4400.",
+    "crumbs": [
+      "Connecting",
+      "DUO Two-Factor"
+    ]
+  },
+  {
+    "objectID": "intro-slides.html#uconn-computational-biology-core",
+    "href": "intro-slides.html#uconn-computational-biology-core",
+    "title": "UCHC HPC",
+    "section": "UConn Computational Biology Core",
+    "text": "UConn Computational Biology Core\n\n \n\n\n\n\n\nJill Wegrzyn - Director\n\n\n\n\n\n\nNoah Reid - Acting Associate Director\n\n\n\n\n\n\nKerry Cobb - Bioinformatics Analyst\n\n\n\n\n\n\nAdam Rork - Bioinformatics Analyst\n\n\n\n\n\n\nKendra Maas - Facility Scientist"
+  },
+  {
+    "objectID": "intro-slides.html#what-we-do",
+    "href": "intro-slides.html#what-we-do",
+    "title": "UCHC HPC",
+    "section": "What We Do",
+    "text": "What We Do\n\nComputational analysis as a service\nComputational analysis consultation\nTechnical support\nTraining and workshops\nHigh-performance computing resources\nSoftware licenses"
+  },
+  {
+    "objectID": "intro-slides.html#computational-analysis",
+    "href": "intro-slides.html#computational-analysis",
+    "title": "UCHC HPC",
+    "section": "Computational Analysis",
+    "text": "Computational Analysis\n\n\n\nExtensive expierience with NGS data analysis:\n\nRNA-seq (bulk & single-cell)\nATAC-seq / ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nCost effective"
+  },
+  {
+    "objectID": "intro-slides.html#consulting",
+    "href": "intro-slides.html#consulting",
+    "title": "UCHC HPC",
+    "section": "Consulting",
+    "text": "Consulting\n\n\n\nNo cost for brief consultations\nHelp with experimental design\nAdvice on data analysis strategies\nGuidance on software and tools\nCome to us before you start your project!"
+  },
+  {
+    "objectID": "intro-slides.html#technical-support",
+    "href": "intro-slides.html#technical-support",
+    "title": "UCHC HPC",
+    "section": "Technical Support",
+    "text": "Technical Support\n\n\n\nHit a roadblock?\n\nDon’t waste hours\nQuick assistance available\n\nSlack - uconn-cbc.slack.com\nHelpdesk - https://bioinformatics.uconn.edu/bioinformatics-support/\n\n\nNeed help with software installation or usage?\nAssistance with data management and organization\nNo cost"
+  },
+  {
+    "objectID": "intro-slides.html#workshops",
+    "href": "intro-slides.html#workshops",
+    "title": "UCHC HPC",
+    "section": "Workshops",
+    "text": "Workshops\n\n\n\nMonthly workshops\n\n3 days, 4 hours/day\nHands-on, intensive training\nZero experience necessary\nLeave prepared to analyze your data\n\n\n\n\n\nRecurring Topics\n\nBulk RNA-seq\nSingle-cell RNA-seq\nATAC/ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nSchedule & Registration"
+  },
+  {
+    "objectID": "intro-slides.html#high-performance-computing",
+    "href": "intro-slides.html#high-performance-computing",
+    "title": "UCHC HPC",
+    "section": "High-performance Computing",
+    "text": "High-performance Computing\n\nSome administration of HPC in partnership with department of Cell Analysis & Modeling\nUser support\nDocumentation: https://cbc-uconn.github.io/hpc-docs/\nData management"
+  },
+  {
+    "objectID": "intro-slides.html#software-licenses",
+    "href": "intro-slides.html#software-licenses",
+    "title": "UCHC HPC",
+    "section": "Software Licenses",
+    "text": "Software Licenses\nAvailable to UConn & UCHC researchers at no cost:\n\nIngenuity Pathway Analysis\nGeneious"
+  },
+  {
+    "objectID": "intro-slides.html#useful-links",
+    "href": "intro-slides.html#useful-links",
+    "title": "UCHC HPC",
+    "section": "Useful Links",
+    "text": "Useful Links\n\nhttps://bioinformatics.uconn.edu/\nhttps://cbc-uconn.github.io/hpc-docs/\n\n\n\nLink to Slides"
   },
   {
     "objectID": "databases.html",
@@ -310,216 +759,6 @@
     ]
   },
   {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "If you have a question that is not answered on this site, please submit a ticket\n\n\nUsers can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.\n\n\n\nThe Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.\n\n\n\nThe Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.\n\n\n\nThe Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#slack",
-    "href": "help.html#slack",
-    "title": "Getting Help",
-    "section": "",
-    "text": "Users can also ask questions and receive cluster updates and notifications by joining the CBC slack channel.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#data-therapy",
-    "href": "help.html#data-therapy",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core holds monthly data therapy sessions on the first Friday of each month at 9:00 AM where users can ask questions and receive help with their data analysis. These take place online as well as in person at UConn Health and Storrs. More info can be found on the CBC website.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#workshops",
-    "href": "help.html#workshops",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core offers regular virual workshops on a variety of topics such as RNA-seq, metagenomics, genome assembly, and single-cell analysis. A schedule of upcoming workshops can be found on the CBC Workshops page.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "help.html#consultations",
-    "href": "help.html#consultations",
-    "title": "Getting Help",
-    "section": "",
-    "text": "The Computational Biology Core provides free consultations for researchers at all levels and encourages early engagement for project design, analytics, and data interpretation. For more extensive support, hourly services, and full end to end project support are available. See the Service Rates page for more information.",
-    "crumbs": [
-      "Get Help"
-    ]
-  },
-  {
-    "objectID": "running.html",
-    "href": "running.html",
-    "title": "Job Submission",
-    "section": "",
-    "text": "The submit nodes on the cluster should only be used for a limited range of tasks that do not have high computational demands.  When in doubt it is better to complete a task as a job on a compute node.\nThe UCHC Computer clusters use SLURM for managing and scheduling jobs.\nWith SLURM there are two primary ways that a job can be run on a compute node.",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "running.html#required-arguments",
-    "href": "running.html#required-arguments",
-    "title": "Job Submission",
-    "section": "Required arguments",
-    "text": "Required arguments\nThe following arguments are required when running sbatch on the UCHC HPC system.\n\n--qos\nThe qos (quality of service) argument constrains or modifies characteristics of a job such as scheduling priority, preemption, and resource limits. The qos argument must be specified for every job run on the Mantis cluster. This argument will often be the same as that given for the partition if specifying a partition. See the QOS section for more information about available QOS options.",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "running.html#commonly-used-arguments",
-    "href": "running.html#commonly-used-arguments",
-    "title": "Job Submission",
-    "section": "Commonly used arguments",
-    "text": "Commonly used arguments\nBelow are some of the most useful and commonly used arguments for sbatch.\n\n--job-name\nThe name of the job. Used for displaying job information when monitoring the job and for naming log files.\n\n\n--cpus-per-task\nThe number of cpus to request. The default is 1. More can be requested when a multiple cpus can be used to parallelize tasks.\n\n\n--mem\nThe amount of memory to allocate. This argument takes a number followed by a unit such as mb for megabytes or gb for gigabytes. If no unit is given, megabytes are used. If no --mem argument is used, a job defaults to 120 MB.\n\n\n--time\nTime limit for the job. Jobs not finished by the end of the allocated time will be killed. The value for this argument must specified with the format days-hrs:min:sec, days-hrs, hrs:min:sec, min:sec, or sec. The default time limit in non-debug partitions is 21 days. However, the time limit has an impact on the priority of jobs in the queue. Jobs with shorter time limits are likely to begin running sooner.\n\n\n--output\nThis specifies the path of the log file where stdout is written. In the examples above %x is replaced with the job name and %j is replaced with the job ID. See the other file name pattern options here.\n\n\n--partition\nA group of nodes which the job will be allocated to. This defaults to general. See the partitions section for available partitions.\n\n\n--mail-type\nWhen to send emails. Options are NONE, BEGIN, END, FAIL, REQUEUE, ALL. Defaults to NONE.\n\n\n--mail-user\nAddress to send mail to.\n\n\nAdditional commands\nsbatch is a powerful tool with many other configuration options beyond the scope of this documentation.\nSee the sbatch documentation for more information about command arguments.",
-    "crumbs": [
-      "Running Jobs"
-    ]
-  },
-  {
-    "objectID": "datapolicy.html",
-    "href": "datapolicy.html",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "This page summarizes storage policies and management practices on the UConn Health HPC. For more information about the file systems and storage locations available on the cluster, please see the storage page.\n\n\n\n\nThis location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time after the job has ended.\n\n\n\n\nAll other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "datapolicy.html#managed-storage",
-    "href": "datapolicy.html#managed-storage",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "This location is used for storing raw sequencing data and is intended to alleviate strain on quotas in other locations and to discourage data duplication. Data are stored as read-only. All data generated by the CGI sequencing core are stored here by default. You may request that other raw data be stored here, but CBC will have to move it there for you, as users do not have write access.\nIf you would like to move existing raw data to this location or store data from an external sequencing center, please contact us at cbcsupport@helpspotmail.com.\nRaw sequence data will be stored here for a period of 2 years. After this time, data will be moved to a long-term archival system. Details regarding this archival system are still being finalized, but users will be able to request that data be moved back to /seqdata for a period of time if they need to actively use the the data again for analyses.\nDo not copy data from this directory. For convenience, consider making a symlink to files stored here. By avoiding unnecessary copying, accidental data corruption or deletion can be avoided and space will be used more efficiently on the cluster and within directories you own.\n\n\n\nFiles will automatically be removed from /scratch after 90 days. If you have files in /scratch that you would like to keep, please move them to another location before this time.\n\n\n\nAny files in /tmp belonging to a user without an active job on a node may be removed at any time after the job has ended.",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "datapolicy.html#user-managed-storage",
-    "href": "datapolicy.html#user-managed-storage",
-    "title": "Storage Policies",
-    "section": "",
-    "text": "All other user data is managed by users and will never be modified by HPC administrators. These locations are subject to storage quota limits. Requests can be made to increase the default quotas for \\lab, \\projects, and \\department. To request a quota increase, please submit a ticket.\n\n\n\nLocation\nQuota\n\n\n\n\n/home/FCAM/&lt;user&gt;\n2 TB\n\n\n/labs\n2 TB\n\n\n/projects\n2 TB\n\n\n/department\n2 TB",
-    "crumbs": [
-      "Storage Policies"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the UConn Health HPC",
-    "section": "",
-    "text": "The UConn Health HPC facility provides access to over 12,000 processor cores, 77 TB of memory and over 14 PB of storage housed in a secure, state of the art data center supported 24/7 by a dedicated staff of professionals. These resources are available to any University of Connecticut of UConn Health researcher for use in support of their research activities.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#mantis-cluster",
-    "href": "about.html#mantis-cluster",
-    "title": "About the UConn Health HPC",
-    "section": "Mantis Cluster",
-    "text": "Mantis Cluster\nMantis is the newest cluster, intended to replace the Xanadu cluster. Mantis is recommended over Xanadu for nearly all users.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#xanadu-cluster",
-    "href": "about.html#xanadu-cluster",
-    "title": "About the UConn Health HPC",
-    "section": "Xanadu Cluster",
-    "text": "Xanadu Cluster\nXanadu is a legacy cluster that has been replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#compute-clusters",
-    "href": "about.html#compute-clusters",
-    "title": "About the UConn Health HPC",
-    "section": "Compute Clusters:",
-    "text": "Compute Clusters:\n\n4 Dell R620 nodes with two, 10-core Intel(R) Xeon(R) CPU E5-2660 v2 processors, 256 GB RAM, and 10 GB interfaces\n17 Dell R660 nodes with two, 64-core Intel(R) Xeon(R) Platinum 8462Y+ processors, 512 GB RAM, and 10 GB interfaces\n21 Dell R730 nodes with two, 18-core Intel Xeon E5-2697v4 processors, 256 GB RAM, and 10 GB interfaces\n27 Dell R740 nodes with two, 40-core Intel Xeon Gold 6138 processors, 192/384 GB RAM, and 10 GB interfaces\n3 Dell R815 nodes with four, 12-core AMD Opteron 6172 processors, 396 GB RAM, and 10 GB interfaces\n1 Dell R905 node with four, 6-core AMD Opteron 8435 processors, 256 GB RAM, and 10 GB interfaces\n9 Dell C6145 nodes with four, 12-core AMD Opteron 6172 processors, 256 GB RAM, and 10 GB interfaces\n8 Dell R6525 nodes with two, 64-core AMD EPYC 7662 64-Core processors, 256 GB RAM, and 10 GB interfaces\n21 Dell R7525 nodes with two, 64-core AMD EPYC 7453 processors, 256 GB RAM, and 10 GB interfaces\n24 Penguin MH61-HD3-ZB nodes with Intel Xeon Gold 6230 processors, 192 GB RAM, and 10 GB interfaces\n15 Supermicro AS 2024US-TRT nodes with two, 64-Core AMD EPYC 7713 processors, 512 GB RAM, and 10 GB interfaces\n1 Penguin MZ92-FS0-00 node with eight, 6-Core AMD EPYC 7352 processors, 2048 GB RAM, and 10 GB interfaces\n2 Dell XE8545 AI nodes with two, 64-Core AMD EPYC 7763 processors, 2048 GB RAM, and 10 GB interfaces\n1 Supermicro 6049GP-TRT node with four, 28-Core Intel Xeon 8176 processors, 1500 GB RAM, and 10 GB interfaces\n2 Quanta Cloud S76 nodes with NVIDIA Grace Hopper Superchip, Grace CPU, Hopper GPU processors, 480 GB RAM, and 10 GB interfaces\n15 NVIDIA A100 80gb PCIe GPUs, 6 NVIDIA A10 GPUs, and 2 NVIDIA M10 GPUs",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#virtualization-infrastructure",
-    "href": "about.html#virtualization-infrastructure",
-    "title": "About the UConn Health HPC",
-    "section": "Virtualization Infrastructure",
-    "text": "Virtualization Infrastructure\n\n16 Dell PowerEdge R640 hosts with 1280 CPU cores and 10.8 TB RAM running VMWare 8 hosting 300+ Windows and Linux virtual machines with SSD high OPS performance cache tier",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#datacenter-infrastructure",
-    "href": "about.html#datacenter-infrastructure",
-    "title": "About the UConn Health HPC",
-    "section": "Datacenter Infrastructure",
-    "text": "Datacenter Infrastructure\n\nUPS generator backed power with redundant cooling\n3×40 Gbe dark fiber connection to off-site DR location",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#network-100-gbe",
-    "href": "about.html#network-100-gbe",
-    "title": "About the UConn Health HPC",
-    "section": "Network (100+ Gbe)",
-    "text": "Network (100+ Gbe)\n\nFull non-oversubscribed 10/40/100/400 GbE datacenter network core layer\nBioScienceCT Research Network – 100 GbE to CEN, Internet2, Storrs\nHPC Science DMZ – low latency, 80 Gb-capable firewall",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#storage-1",
-    "href": "about.html#storage-1",
-    "title": "About the UConn Health HPC",
-    "section": "Storage",
-    "text": "Storage\n\nOver 22 PB of storage including 775 TB Quantum, 3.4 PB EMC Isilon, 10.5 PB Qumulo scale-out clusters, 2 PiB Spectra tape backup and archive along with 2.3 PB Amplidata, and 3.1 PB Scality Geo-Spread cloud storage",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "storage.html",
-    "href": "storage.html",
-    "title": "File systems and storage",
-    "section": "",
-    "text": "The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines.",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
-    "objectID": "storage.html#summary-table",
-    "href": "storage.html#summary-table",
-    "title": "File systems and storage",
-    "section": "Summary table",
-    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n91TB (shared)\nFiles unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST.\n\n\n\n\n/seqdata | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |\n/tmp | Node-local temporary space | Shared per node | Small | May fill up unexpectedly. Set TMPDIR to redirect temp files. |\n/local | Larger node-local temp space | Shared per node | Larger than /tmp | Clean up after use. |\n/archive | Medium-term storage (up to ~1 year) | Request via CBC, access varies | NA | Slower than active spaces, geospread, more expensive. |\n/tapebackup | Long-term storage (1+ years) | Request via CBC, access varies | NA | Stored on single magnetic tape, not redundant, very slow access. |\n/tapearchive | Very long-term or permanent storage | Request via CBC, access varies | NA | Redundant magnetic tape storage, very slow access. |",
-    "crumbs": [
-      "File Systems & Storage"
-    ]
-  },
-  {
     "objectID": "vpn.html",
     "href": "vpn.html",
     "title": "VPN Access",
@@ -562,265 +801,6 @@
       "Connecting",
       "VPN"
     ]
-  },
-  {
-    "objectID": "ondemand.html",
-    "href": "ondemand.html",
-    "title": "Open OnDemand",
-    "section": "",
-    "text": "Open OnDemand is a web-based portal that provides users with access to HPC resources. It allows users view and edit files, open a terminal, and use interactive applications through a user-friendly interface. Open OnDemand only provides access to the Mantis cluster. If you want to connect to Xanadu or to a virtual machine, you will need to connect with SSH through a terminal or SSH client. See the Command Line Interface page for instructions on how to connect through a terminal.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#prerequisites",
-    "href": "ondemand.html#prerequisites",
-    "title": "Open OnDemand",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nIn order to use Open OnDemand you will need:\n\nA CAM account with a non-expired password. See the Getting Started page for instructions on how to request an account and reset your password.\nEnrollment in Duo two-factor authentication for UCHC HPC. See the Duo Two-Factor Authentication page for instructions on how to enroll and install the Duo mobile app on your device.\nA web browser. Open OnDemand is compatible with most modern web browsers.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#connecting",
-    "href": "ondemand.html#connecting",
-    "title": "Open OnDemand",
-    "section": "Connecting",
-    "text": "Connecting\nTo connect through Open OnDemand, navigate to https://ondemand.hpc.cam.uchc.edu in your web browser. You will be prompted to enter your CAM username and password. When ready, click the “Log in to Open OnDemand” button. You will then recieve a Duo authentication request on your enrolled device. Approve the request to complete the authentication process.\n\nUpon successful authentication, you will be taken to the Open OnDemand dashboard. From here, you can access various features and applications available through Open OnDemand.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#interactive-apps",
-    "href": "ondemand.html#interactive-apps",
-    "title": "Open OnDemand",
-    "section": "Interactive Apps",
-    "text": "Interactive Apps\nOpen OnDemand provides access to various interactive applications that run on the Mantis cluster and permit access to the UCHC HPC filesystem.\n\nTo launch an interactive app:\n\nClick the link to the app you want to use.\nFill and modify the form specifying the desired resource allocation for you job.\nThe “Environment Configuration” field, available for many of the interactive apps deserves some special attention. This field allows you to make changes to the environment in which your job will run using bash commands. This is useful for loading software modules, activating conda environments, and setting environment variables. In the example below, the ~/.bashrc file is sourced to ensure initialization of conda, and then a conda environment named “myenv” is activated. The app, when launched, will run in the context of the “myenv” conda environment.\n\n\n\nClick the “Launch” button to submit the job to the cluster.\n\n\n\nOnce the job is running, click the “Connect” button to open the application in a new browser tab.\n\n\n\nImportant. When you are finished using the application, navigate back to “My Interactive Sessions” and click delete to stop the job and free up resources for other users.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLeaving interactive jobs running while you are not actively using them constitutes innapproprate use of the shared cluster resources and prevents other users from accessing those resources. Always remember to stop your interactive jobs when you are finished using them.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#availabe-applications",
-    "href": "ondemand.html#availabe-applications",
-    "title": "Open OnDemand",
-    "section": "Availabe Applications",
-    "text": "Availabe Applications\n\nJupyterLab: A web-based interactive development environment for Jupyter notebooks, code, and data.\nRStudio: An integrated development environment for R programming language.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "ondemand.html#popup-ad-blockers",
-    "href": "ondemand.html#popup-ad-blockers",
-    "title": "Open OnDemand",
-    "section": "Popup & Ad Blockers",
-    "text": "Popup & Ad Blockers\nSome features of Open OnDemand may not work properly if you have popup blockers or ad blockers enabled in your web browser. If you are experiencing issues with Open OnDemand, try disabling any popup blockers for the ondemand.hpc.cam.uchc.edu url and see if that resolves the issue.",
-    "crumbs": [
-      "Connecting",
-      "Open OnDemand"
-    ]
-  },
-  {
-    "objectID": "examples.html",
-    "href": "examples.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "https://services.rt.nyu.edu/docs/hpc/getting_started/intro/ https://www.hpc.caltech.edu/"
-  },
-  {
-    "objectID": "keys.html",
-    "href": "keys.html",
-    "title": "SSH Keys",
-    "section": "",
-    "text": "SSH keys are required to access the UCHC HPC system. This page will walk you through the process of creating and using SSH keys to access the UCHC HPC system.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nTo be able to login using SSH keys, you will need to:\n\nCreate an SSH key pair on your local computer.\nCopy the public key to the UCHC HPC system.\n\nOnly ed25519 keys are accepted.\n\n1. Create SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal. If using Windows Subsystem for Linux (WSL), you can use the Linux terminal instructions.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to step the Copy key to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\n2. Copy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the Open OnDemand web portal. To copy your public key to the UCHC HPC system, follow the steps below:\n\n1. Copy your public key.\nYour public key will be located in the ~/.ssh/ directory located inside of your user home directory. Select your operating system below for instructions on how to copy your public key to your clipboard.\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nOn MacOS or Linux operating systems, you can easily copy the public key to your clipboard by running the following command in the terminal application:\npbcopy &lt; ~/.ssh/id_ed25519.pub\n\n\nOn Windows operating systems, you can easily copy the public key to your clipboard by running the following command in the PowerShell application:\nGet-Content \"$env:USERPROFILE\\.ssh\\id_ed25519.pub\" | Set-Clipboard\n\n\n\n\n\n2. Log in to Open OnDemand\nSee the Open OnDemand page for more information about logging in.\n\n\n3. Click the “Files” dropdown menu and under “Utilities” select “SSH Key Manager”.\n\n\n\n4. Paste your key into the “Add a key” text box.\n\n\n\n5. Click the “Add Key” button.\nKeys can be removed at any time by clicking the “Remove” button next to the key you wish to remove.",
-    "crumbs": [
-      "Connecting",
-      "SSH Keys"
-    ]
-  },
-  {
-    "objectID": "starting.html",
-    "href": "starting.html",
-    "title": "Getting Started",
-    "section": "",
-    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n3) Read Intro to HPC\nIf you are new to high performance computing, it is recommended that you read the Intro to HPC page to learn about the basics.\n\n\n4) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n5) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n6) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n7) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
-    "crumbs": [
-      "Getting Started"
-    ]
-  },
-  {
-    "objectID": "account.html",
-    "href": "account.html",
-    "title": "Requesting an Account",
-    "section": "",
-    "text": "Requesting an Account\nIn order to use the UConn Health HPC system, you must request a CAM account. It is referred to as a CAM account because much of the administration of the UConn Health HPC system is handled by the Center for Cell Analysis and Modeling at UConn Health.\nTo request a CAM account:\n\nSubmit an account request ticket.\nSelect New Account Request from the Request Type dropdown menu.\nChoose HPC Cluster Account as the Account Type.\nFill in all relevant and required fields and click submit.\n\nOnce your request is approved, you will receive an email with your account information. This will include a username which is different from your NetID and a temporary password.\n\n\nPasswords\nUpon approval of an account request, you will need to enroll in the CAM Password Manager and reset your password.\nPasswords expire every 90 days.\nAny time you need to reset your password, you can do so in the CAM Password Manager.\n\n\n\n\n\n\nImportant\n\n\n\nIf you are ever not able to login or transfer files, ensure that you don’t have an expired password.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your password with anyone! We will never ask you for your password for any reason.",
-    "crumbs": [
-      "Account & Password"
-    ]
-  },
-  {
-    "objectID": "quick.html",
-    "href": "quick.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#internal-login-node",
-    "href": "quick.html#internal-login-node",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "Accessible on campus or through VPN.\n\n\nmantis-submit.cam.uchc.edu\n\n\n\nmantis-sub-1.cam.uchc.edu\nmantis-sub-2.cam.uchc.edu\nmantis-sub-3.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#external-login-node",
-    "href": "quick.html#external-login-node",
-    "title": "UCHC HPC",
-    "section": "External Login Node",
-    "text": "External Login Node\nRequires SSH key.\nhpc.cam.uchc.edu"
-  },
-  {
-    "objectID": "quick.html#transfer-node",
-    "href": "quick.html#transfer-node",
-    "title": "UCHC HPC",
-    "section": "Transfer Node",
-    "text": "Transfer Node\ntransfer.cam.uchc.edu"
-  },
-  {
-    "objectID": "transfer.html",
-    "href": "transfer.html",
-    "title": "Tranferring Data",
-    "section": "",
-    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#getting-started",
-    "href": "transfer.html#getting-started",
-    "title": "Tranferring Data",
-    "section": "Getting Started",
-    "text": "Getting Started\nGlobus has excellent documentation. We recommend starting with this tutorial which contains almost everything you need to know to use Globus in addition to making note of the specifics below.\n\nAccessing the UCHC Globus Server\n\nOrganizational Login\nWhen first logging in to the Globus App, you will be prompted to select your organization. You should select the University of Connecticut. If you are not already logged in, you will be prompted to enter your UConn NetID and password.\n\n\nUCHC Globus Server Collection\nTo access the UConn Health HPC file system, search for and select, the UCHC Globus Server in the collection text field. Upon selecting the UCHC Globus Server, you will be prompted to enter your CAM username and password.\n\n\n\nFile Paths\nNavigation to your home directory mirrors the cluster file system. You can access your home directory by entering /home/FCAM/&lt;user&gt; in the path text field.\nNavigation to other directories has one minor but unintuitive difference. The root of the cluster file system is /globus instead of /. So, for example, to access the labs directory you would enter /globus/labs in the Path text field.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#transferring-files-locally",
-    "href": "transfer.html#transferring-files-locally",
-    "title": "Tranferring Data",
-    "section": "Transferring Files Locally",
-    "text": "Transferring Files Locally\nIn order to transfer files to a local computer, you will need to install the Globus Connect Personal application.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#sharing-files",
-    "href": "transfer.html#sharing-files",
-    "title": "Tranferring Data",
-    "section": "Sharing Files",
-    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "transfer.html#connecting",
-    "href": "transfer.html#connecting",
-    "title": "Tranferring Data",
-    "section": "Connecting",
-    "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
-    "crumbs": [
-      "Transferring Data"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UConn Health High Performance Computing",
-    "section": "",
-    "text": "Introduction\nThe University of Connecticut Health High Performanc Computing Facility provides a variety of high performance computing services and resources to both University of Connecticut and UConn Health researchers at no cost. Most notably the Mantis computer cluster. A summary of available resources and services can be found at the About page. Administration of the UConn Health HPC system is jointly handled by the University of Connecticut Computational Biology Core and the Center for Cell Analysis and Modeling at UConn Health.\n\n\nDocumentation\nThis site serves as documentation for users of UConn Health HPC system and is maintained by the University of Connecticut Computational Biology Core.\n\n\nGetting Started\nNew users should visit the Getting Started page for instructions on how to request an account and access the system. Visit the Get Help page for a list of ways to seek help on using the system.\n\n\n\nStorrs HPC Facility\nThere is an additional, unaffiliated HPC facilty that is located at the Storrs campus and is also available to all University of Connecticut researchers. This is administered separately from the UConn Health High Performance Computing Facility so we can only provide very limited support for this system. To learn more about accessing and using the Storrs HPC resources, visit this site."
-  },
-  {
-    "objectID": "permissions.html",
-    "href": "permissions.html",
-    "title": "UCHC HPC",
-    "section": "",
-    "text": "File permissions"
-  },
-  {
-    "objectID": "intro-slides.html#uconn-computational-biology-core",
-    "href": "intro-slides.html#uconn-computational-biology-core",
-    "title": "UCHC HPC",
-    "section": "UConn Computational Biology Core",
-    "text": "UConn Computational Biology Core\n\n \n\n\n\n\n\nJill Wegrzyn - Director\n\n\n\n\n\n\nNoah Reid - Acting Associate Director\n\n\n\n\n\n\nKerry Cobb - Bioinformatics Analyst\n\n\n\n\n\n\nAdam Rork - Bioinformatics Analyst\n\n\n\n\n\n\nKendra Maas - Facility Scientist"
-  },
-  {
-    "objectID": "intro-slides.html#what-we-do",
-    "href": "intro-slides.html#what-we-do",
-    "title": "UCHC HPC",
-    "section": "What We Do",
-    "text": "What We Do\n\nComputational analysis as a service\nComputational analysis consultation\nTechnical support\nTraining and workshops\nHigh-performance computing resources\nSoftware licenses"
-  },
-  {
-    "objectID": "intro-slides.html#computational-analysis",
-    "href": "intro-slides.html#computational-analysis",
-    "title": "UCHC HPC",
-    "section": "Computational Analysis",
-    "text": "Computational Analysis\n\n\n\nExtensive expierience with NGS data analysis:\n\nRNA-seq (bulk & single-cell)\nATAC-seq / ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nCost effective"
-  },
-  {
-    "objectID": "intro-slides.html#consulting",
-    "href": "intro-slides.html#consulting",
-    "title": "UCHC HPC",
-    "section": "Consulting",
-    "text": "Consulting\n\n\n\nNo cost for brief consultations\nHelp with experimental design\nAdvice on data analysis strategies\nGuidance on software and tools\nCome to us before you start your project!"
-  },
-  {
-    "objectID": "intro-slides.html#technical-support",
-    "href": "intro-slides.html#technical-support",
-    "title": "UCHC HPC",
-    "section": "Technical Support",
-    "text": "Technical Support\n\n\n\nHit a roadblock?\n\nDon’t waste hours\nQuick assistance available\n\nSlack - uconn-cbc.slack.com\nHelpdesk - https://bioinformatics.uconn.edu/bioinformatics-support/\n\n\nNeed help with software installation or usage?\nAssistance with data management and organization\nNo cost"
-  },
-  {
-    "objectID": "intro-slides.html#workshops",
-    "href": "intro-slides.html#workshops",
-    "title": "UCHC HPC",
-    "section": "Workshops",
-    "text": "Workshops\n\n\n\nMonthly workshops\n\n3 days, 4 hours/day\nHands-on, intensive training\nZero experience necessary\nLeave prepared to analyze your data\n\n\n\n\n\nRecurring Topics\n\nBulk RNA-seq\nSingle-cell RNA-seq\nATAC/ChIP-seq\nVariant Calling\nGenome Assembly\n+ more!\n\nSchedule & Registration"
-  },
-  {
-    "objectID": "intro-slides.html#high-performance-computing",
-    "href": "intro-slides.html#high-performance-computing",
-    "title": "UCHC HPC",
-    "section": "High-performance Computing",
-    "text": "High-performance Computing\n\nSome administration of HPC in partnership with department of Cell Analysis & Modeling\nUser support\nDocumentation: https://cbc-uconn.github.io/hpc-docs/\nData management"
-  },
-  {
-    "objectID": "intro-slides.html#software-licenses",
-    "href": "intro-slides.html#software-licenses",
-    "title": "UCHC HPC",
-    "section": "Software Licenses",
-    "text": "Software Licenses\nAvailable to UConn & UCHC researchers at no cost:\n\nIngenuity Pathway Analysis\nGeneious"
-  },
-  {
-    "objectID": "intro-slides.html#useful-links",
-    "href": "intro-slides.html#useful-links",
-    "title": "UCHC HPC",
-    "section": "Useful Links",
-    "text": "Useful Links\n\nhttps://bioinformatics.uconn.edu/\nhttps://cbc-uconn.github.io/hpc-docs/\n\n\n\nLink to Slides"
   },
   {
     "objectID": "teaching.html",
@@ -949,104 +929,124 @@
     ]
   },
   {
-    "objectID": "duo.html",
-    "href": "duo.html",
-    "title": "Duo Two-Factor Authentication",
+    "objectID": "storage.html",
+    "href": "storage.html",
+    "title": "File systems and storage",
     "section": "",
-    "text": "Access to all UCHC HPC resources requires two-factor authentication through Duo if you are not connected to UConnHealth-SECURE WiFi or the CAM VPN.\n\nEnrollment in Duo for UCHC HPC\nOnce your CAM account has been approved, you will receive an enrollment invitation email from “Duo Security.” Follow the link in the email to begin the setup process.\n\n\nDuo Mobile App Installation\nYou will then need to install the Duo Mobile app on a mobile device such as a smartphone or tablet. Hardware tokens and Touch ID are not accepted. The Duo Mobile app can be downloaded from the Apple App Store or Google Play Store. Once installed, follow the instructions in the enrollment email to complete the setup process.\n\n\n\n\n\n\nNote\n\n\n\nNote that the UCHC HPC Duo account is distinct from those you might already have with UCHC or Storrs campus. It will appear in the Duo app as “UCHC HPC” as pictured below.\n\n\n\n\n\nAuthentication\nWhen connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. Do no approve Duo requests that you did not initiate! If you receive a Duo request that you did not initiate, deny the request and contact us at cbcsupport@helpspotmail.com.",
+    "text": "The UConn Health HPC System offers a variety of systems for storage and archiving of data. With a few noted exceptions, all systems summarized below are network-attached, meaning they are accessible from all cluster compute nodes, login nodes, and virtual machines.",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "storage.html#summary-table",
+    "href": "storage.html#summary-table",
+    "title": "File systems and storage",
+    "section": "Summary table",
+    "text": "Summary table\n\n\n\n\n\n\n\n\n\n\nDirectory\nPurpose\nAccess\nQuota/Capacity\nNotes\n\n\n\n\n/home/FCAM/&lt;user&gt;\nPersonal home directory for code, config, small data\nCreated for each user\n25GB\nPermissions must remain private. For sharing, use /labs or /projects.\n\n\n/scratch\nTemporary storage for active analyses\nOpen to all users\n91TB (shared)\nFiles unmodified for over 90 days will be deleted each Sunday at 9:00 PM EST.\n\n\n\n\n/seqdata | Central store for raw/original sequencing data | Read-only for users | NA | Use symlinks instead of copying. Contact CBC to store new data. |\n/tmp | Node-local temporary space | Shared per node | Small | May fill up unexpectedly. Set TMPDIR to redirect temp files. |\n/local | Larger node-local temp space | Shared per node | Larger than /tmp | Clean up after use. |\n/archive | Medium-term storage (up to ~1 year) | Request via CBC, access varies | NA | Slower than active spaces, geospread, more expensive. |\n/tapebackup | Long-term storage (1+ years) | Request via CBC, access varies | NA | Stored on single magnetic tape, not redundant, very slow access. |\n/tapearchive | Very long-term or permanent storage | Request via CBC, access varies | NA | Redundant magnetic tape storage, very slow access. |",
+    "crumbs": [
+      "File Systems & Storage"
+    ]
+  },
+  {
+    "objectID": "keys.html",
+    "href": "keys.html",
+    "title": "SSH Keys",
+    "section": "",
+    "text": "SSH keys are required to access the UCHC HPC system through an SSH connection. This page will walk you through the process of creating and using SSH keys to access the UCHC HPC system.\nSSH keys are a secure authentication method that can be used for remote access to a server without using passwords. It is in fact a more secure authentication method than using a password. SSH keys consist of a pair of cryptographic keys — a private key kept secret on your computer and a public key placed on the remote server you want to access.\nTo be able to login using SSH keys, you will need to:\n\nCreate an SSH key pair on your local computer.\nCopy the public key to the UCHC HPC system.\n\nOnly ed25519 keys are accepted.\n\n1. Create SSH keys\nYou can create a public and private SSH key pair using your SSH client in Windows PowerShell or a MacOS / Linux Terminal. If using Windows Subsystem for Linux (WSL), you can use the Linux Terminal instructions.\n\nFirst check for an existing SSH key pair by running the following command:\n\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nls ~/.ssh/\n\n\nls $env:USERPROFILE\\.ssh\\\n\n\n\nIf you see files named id_ed25519.pub and id_ed25519, you already have an SSH key pair and can skip ahead to step the Copy key to UCHC HPC system section. If you do not see these files or get an error message, you will need to create a new SSH key pair.\n\nTo create a key pair run the following command:\n\nssh-keygen -t ed25519 -C &lt;comment&gt;\nReplacing &lt;comment&gt; with something to help you identify which computer this key pair was created for. For example: laptop\n\nYou will be prompted to specify the location to save the key. You can press enter to accept the default location.\nNext you will be prompted to create a passphrase which is optional. If you don’t wish to create a passphrase, simply press enter.\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not share your private key with anyone! Your private key should be kept secret and secure on your computer. If someone else has access to your private key, they can access the UCHC HPC system as you. We will never ask you for your private key for any reason.\n\n\n\n\n2. Copy Public SSH Key to the UCHC HPC system\nOnce you have created your SSH key pair, you will need to copy the public key to the UCHC HPC system. This can only be done through the Open OnDemand web portal. To copy your public key to the UCHC HPC system, follow the steps below:\n\n1. Copy your public key.\nYour public key will be located in the ~/.ssh/ directory located inside of your user home directory. Select your operating system below for instructions on how to copy your public key to your clipboard.\n\nMacOS / Linux TerminalWindows PowerShell\n\n\nOn MacOS or Linux operating systems, you can easily copy the public key to your clipboard by running the following command in the terminal application:\npbcopy &lt; ~/.ssh/id_ed25519.pub\n\n\nOn Windows operating systems, you can easily copy the public key to your clipboard by running the following command in the PowerShell application:\nGet-Content \"$env:USERPROFILE\\.ssh\\id_ed25519.pub\" | Set-Clipboard\n\n\n\n\n\n2. Log in to Open OnDemand\nSee the Open OnDemand page for more information about logging in.\n\n\n3. Click the “Files” dropdown menu and under “Utilities” select “SSH Key Manager”.\n\n\n\n4. Paste your key into the “Add a key” text box.\n\n\n\n5. Click the “Add Key” button.\nKeys can be removed at any time by clicking the “Remove” button next to the key you wish to remove.",
     "crumbs": [
       "Connecting",
-      "DUO Two-Factor"
+      "SSH Keys"
     ]
   },
   {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the UConn Health HPC",
     "section": "",
-    "text": "Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\n\n\nSome of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.\n\n\nWhen module avail is run on Mantis, you will see three different sections:\nTwo which contain software compiled to run on Mantis:\n\n/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3\n/isg/shared/mantis/modulefiles\n\nAnd one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:\n\n/isg/shared/modulefiles\n\nSee Request Software Installation to request a new installation of incompatible software.\n\n\n\nAll of the modules available on Xanadu are for software compiled to run on Xanadu.",
+    "text": "The UConn Health HPC facility provides access to over 12,000 processor cores, 77 TB of memory and over 14 PB of storage housed in a secure, state of the art data center supported 24/7 by a dedicated staff of professionals. These resources are available to any University of Connecticut of UConn Health researcher for use in support of their research activities.",
     "crumbs": [
-      "Software"
+      "About"
     ]
   },
   {
-    "objectID": "software.html#environment-modules",
-    "href": "software.html#environment-modules",
-    "title": "Software",
+    "objectID": "about.html#mantis-cluster",
+    "href": "about.html#mantis-cluster",
+    "title": "About the UConn Health HPC",
+    "section": "Mantis Cluster",
+    "text": "Mantis Cluster\nMantis is the newest cluster, intended to replace the Xanadu cluster. Mantis is recommended over Xanadu for nearly all users.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#xanadu-cluster",
+    "href": "about.html#xanadu-cluster",
+    "title": "About the UConn Health HPC",
+    "section": "Xanadu Cluster",
+    "text": "Xanadu Cluster\nXanadu is a legacy cluster that has been replaced by Mantis. A limited number of resources will remain in Xanadu for a period of time to allow users to transition to Mantis. This cluster will eventually be removed from service so users are encouraged to transition to Mantis as soon as possible.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#compute-clusters",
+    "href": "about.html#compute-clusters",
+    "title": "About the UConn Health HPC",
+    "section": "Compute Clusters:",
+    "text": "Compute Clusters:\n\n4 Dell R620 nodes with two, 10-core Intel(R) Xeon(R) CPU E5-2660 v2 processors, 256 GB RAM, and 10 GB interfaces\n17 Dell R660 nodes with two, 64-core Intel(R) Xeon(R) Platinum 8462Y+ processors, 512 GB RAM, and 10 GB interfaces\n21 Dell R730 nodes with two, 18-core Intel Xeon E5-2697v4 processors, 256 GB RAM, and 10 GB interfaces\n27 Dell R740 nodes with two, 40-core Intel Xeon Gold 6138 processors, 192/384 GB RAM, and 10 GB interfaces\n3 Dell R815 nodes with four, 12-core AMD Opteron 6172 processors, 396 GB RAM, and 10 GB interfaces\n1 Dell R905 node with four, 6-core AMD Opteron 8435 processors, 256 GB RAM, and 10 GB interfaces\n9 Dell C6145 nodes with four, 12-core AMD Opteron 6172 processors, 256 GB RAM, and 10 GB interfaces\n8 Dell R6525 nodes with two, 64-core AMD EPYC 7662 64-Core processors, 256 GB RAM, and 10 GB interfaces\n21 Dell R7525 nodes with two, 64-core AMD EPYC 7453 processors, 256 GB RAM, and 10 GB interfaces\n24 Penguin MH61-HD3-ZB nodes with Intel Xeon Gold 6230 processors, 192 GB RAM, and 10 GB interfaces\n15 Supermicro AS 2024US-TRT nodes with two, 64-Core AMD EPYC 7713 processors, 512 GB RAM, and 10 GB interfaces\n1 Penguin MZ92-FS0-00 node with eight, 6-Core AMD EPYC 7352 processors, 2048 GB RAM, and 10 GB interfaces\n2 Dell XE8545 AI nodes with two, 64-Core AMD EPYC 7763 processors, 2048 GB RAM, and 10 GB interfaces\n1 Supermicro 6049GP-TRT node with four, 28-Core Intel Xeon 8176 processors, 1500 GB RAM, and 10 GB interfaces\n2 Quanta Cloud S76 nodes with NVIDIA Grace Hopper Superchip, Grace CPU, Hopper GPU processors, 480 GB RAM, and 10 GB interfaces\n15 NVIDIA A100 80gb PCIe GPUs, 6 NVIDIA A10 GPUs, and 2 NVIDIA M10 GPUs",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#virtualization-infrastructure",
+    "href": "about.html#virtualization-infrastructure",
+    "title": "About the UConn Health HPC",
+    "section": "Virtualization Infrastructure",
+    "text": "Virtualization Infrastructure\n\n16 Dell PowerEdge R640 hosts with 1280 CPU cores and 10.8 TB RAM running VMWare 8 hosting 300+ Windows and Linux virtual machines with SSD high OPS performance cache tier",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#datacenter-infrastructure",
+    "href": "about.html#datacenter-infrastructure",
+    "title": "About the UConn Health HPC",
+    "section": "Datacenter Infrastructure",
+    "text": "Datacenter Infrastructure\n\nUPS generator backed power with redundant cooling\n3×40 Gbe dark fiber connection to off-site DR location",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#network-100-gbe",
+    "href": "about.html#network-100-gbe",
+    "title": "About the UConn Health HPC",
+    "section": "Network (100+ Gbe)",
+    "text": "Network (100+ Gbe)\n\nFull non-oversubscribed 10/40/100/400 GbE datacenter network core layer\nBioScienceCT Research Network – 100 GbE to CEN, Internet2, Storrs\nHPC Science DMZ – low latency, 80 Gb-capable firewall",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#storage-1",
+    "href": "about.html#storage-1",
+    "title": "About the UConn Health HPC",
+    "section": "Storage",
+    "text": "Storage\n\nOver 22 PB of storage including 775 TB Quantum, 3.4 PB EMC Isilon, 10.5 PB Qumulo scale-out clusters, 2 PiB Spectra tape backup and archive along with 2.3 PB Amplidata, and 3.1 PB Scality Geo-Spread cloud storage",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "starting.html",
+    "href": "starting.html",
+    "title": "Getting Started",
     "section": "",
-    "text": "Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).\nBelow is a list of commonly used commands, where &lt;module&gt; is the target module.\n\n\n\nModule Command\nDescription\n\n\n\n\nmodule avail\nDisplay all available modules.\n\n\nmodule load &lt;module&gt;\nLoads a specific module into environemnt.\n\n\nmodule list\nShow list of currently loaded modules.\n\n\nmodule unload &lt;module&gt;\nUnloads a specific module.\n\n\nmodule purge\nUnloads all loaded modules.\n\n\n\n\n\nSome of the software available through environment modules was compiled to run on Xanadu and may not be compatible with Mantis.\n\n\nWhen module avail is run on Mantis, you will see three different sections:\nTwo which contain software compiled to run on Mantis:\n\n/isg/shared/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3\n/isg/shared/mantis/modulefiles\n\nAnd one that contains software which may or may not run on Mantis as it was compiled to run on Xanadu:\n\n/isg/shared/modulefiles\n\nSee Request Software Installation to request a new installation of incompatible software.\n\n\n\nAll of the modules available on Xanadu are for software compiled to run on Xanadu.",
+    "text": "This page outlines the steps necessary to begin using the UConn Health HPC system.\n\n1) Request an account\nTo begin using the HPC system, you will need to request an account. Visit the Account & Passwords page for instructions on how to request an account.\n\n\n2) Reset you password\nOnce you have received your account information, you will need to reset your password. You will receive instructions on this in an email but can also visit the Account & Passwords page for instructions on how to reset your password.\n\n\n3) Read Intro to HPC\nIf you are new to high performance computing, it is recommended that you read the Intro to HPC page to learn about the basics.\n\n\n4) Connecting\nWhen you are ready to connect, see the Connecting to the HPC system page for instructions on connecting to the HPC system.\n\n\n5) Understanding the file system and storage options.\nBefore running jobs, it is important to understand the file system and storage options available on the HPC system. See the Storage page for more information on storage options and best practices for using storage on the HPC system.\n\n\n6) Learn how to use software.\nA large number of software tools are available on the HPC system. See the Software page for information on how to find and use software on the HPC system.\n\n\n7) Learn how to submit jobs.\nIt is important that you not run any computationally intensive commands or processes on the login nodes. Instead, you must submit jobs to the compute nodes using the job scheduler. See the Running Jobs page for instructions on how to submit jobs to compute nodes.",
     "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#compiling-software-yourself",
-    "href": "software.html#compiling-software-yourself",
-    "title": "Software",
-    "section": "Compiling software yourself",
-    "text": "Compiling software yourself\nSome software is pretty easy to install. See this classic softare in population genetics, psmc.\nAll you have to do to install are the following commands (the instructions are in the README.md file):\n# clone the repository\ngit clone https://github.com/lh3/psmc.git\ncd psmc\nmake; (cd utils; make)\nAnd it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.\nSome software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with Singularity or use isolated environments created with Conda",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#singularity",
-    "href": "software.html#singularity",
-    "title": "Software",
-    "section": "Singularity",
-    "text": "Singularity\n\nReproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).\nSingularity is in your PATH by default on Mantis so it can be run without loading a module.\nTo get an existing container from a repository, you use the command singularity pull &lt;URL&gt;. For example:\nsingularity pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0\nThis will create the file fastqc:0.12.1--hdfd78af_0, a singularity image (some image files will have the extension .sif). This containst the package fastqc.\nTo run a command (e.g. fastqc --help) inside the container, particularly when submitting SLURM batch scripts, you typically you will use singularity exec &lt;container&gt; &lt;command&gt;:\nsingularity exec fastqc:0.12.1--hdfd78af_0 fastqc --help\nYou can also start up a shell inside the container and explore interactively with singularity shell &lt;container&gt;.\nsingularity shell fastqc:0.12.1--hdfd78af_0\nSee here for a more in-depth tutorial.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#conda",
-    "href": "software.html#conda",
-    "title": "Software",
-    "section": "Conda",
-    "text": "Conda\nConda is a package and environment manager that allows users to install and run software in isolated environments. It is particularly useful for software with complicated dependencies that may span multiple languages.\nWhen users install software with conda the software and dependencies are downloaded from one or more repositories, known as channels.\n\n\n\n\n\n\nWarning\n\n\n\nSome conda commands utilize a lot of CPU which can negatively impact other users if run on login nodes. Please refrain from running conda command such as conda install, conda update, or conda create on login nodes. Instead, use an interactive session or a batch job to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.\n\n\n\nInstalling Conda\nConda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the Miniforge distribution.\nMiniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the conda-forge channel by default. conda-forge is free and community-maintained. Other distributions are configured to use the defaults channel. While defaults is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.\n\nStart interactive session\nTo get the Miniforge conda distribution first start an interactive session.\nsrun --qos=general --mem=8gb --pty bash\n\n\nDownload miniforge installer\nwget -O Miniforge3.sh \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh\"\nThere is no need to substitute anything in the URL. The command as given will download the installation script.\n\n\nRun the Miniforge Installation Script\nbash Miniforge3.sh\n\nAgree to license terms (yes)\nChoose installation path (default is fine)\nImportant: Choose whether to initialize conda (select “yes”)\n\n\n\nActivate Conda\nThis will happen automatically when you start a new interactive shell session, but to load it into your current session, run:\nsource ~/.bashrc\n\n\n\n\n\n\nNote\n\n\n\n~/.bashrc is only sourced within interactive sessions such as when you are logged in to a login node or have an interactive job running. If you want to use Conda in non-interactive sessions (e.g. batch jobs), you will need to take an extra step. One option is to simply add source ~/.bashrc to your batch job scripts which will recreate your typical environment on a compute node. Another option is to explicitly source the conda setup script in your batch job scripts with: source ~/miniforge3/etc/profile.d/conda.sh (assuming you installed Miniforge to the default location of ~/miniforge3) or source &lt;miniforge path&gt;/etc/profile.d/conda.sh, substituting &lt;miniforge path&gt; with the appropriate path if you did not install to the default location. This can be desirable if you want more control over what is loaded in your batch job environment.\n\n\n\n\nBase Envirionment\nBy default, conda creates a “base” environment when it is installed. This environment contains the core conda packages and tools. It is generally recommended to avoid installing additional packages into the base environment to keep it clean and stable. You can prevent the base environment from being activated automatically when you start a new shell session by running the following command:\nconda config --set auto_activate false\nThis only needs to be run one time. After running this command, the base environment will not be activated automatically in new shell sessions.\n\n\n\nUsing Conda\nIt is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages.\n\nCreating an Environment\nOnce Miniforge is installed, you can create environments with:\nconda create -n &lt;environment name&gt; \nReplace &lt;environment name&gt; with the desired name for your environment.\nConfirm changes when prompted.\n\n\nActivating & Deactivating an Environment\nOnce you have created an environment, you can activate it with:\nconda activate &lt;environment name&gt;\nReplace &lt;environment name&gt; with the name of the environment you want to activate.\nOnce activated you can install or use packages within that environment.\nTo see a list of all your environments, run:\nconda env list\nTo deactivate the current environment and return to the base environment, run:\nconda deactivate\n\n\nInstalling Packages\nIn order to install packages into a Conda environment, you first need to activate the environment (see above). Once activated, packages can be installed with:\nconda install &lt;package name&gt;\nSome packages may require specifying a channel with the -c &lt;channel name&gt; argument. For example, to install a package from the bioconda channel, you would run:\nconda install -c bioconda &lt;package name&gt;\nTo see a list of installed packages in the current environment, run:\nconda list\n\n\n\n\n\n\nWarning\n\n\n\nPlease avoid using the defaults channel, or any channel that is not free. conda-forge and bioconda are free, community maintained channels that should fit the needs of most users.\n\n\n\n\nMamba\nThe mamba command, a faster drop in replacement for conda, will also by installed with Miniforge. We encourage the use of mamba in place of any conda commands. No changes to the syntax are necessary, simply replace conda with mamba.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#request-software-installation",
-    "href": "software.html#request-software-installation",
-    "title": "Software",
-    "section": "Request Software Installation",
-    "text": "Request Software Installation\nUsers can request the installation of software by submitting a software request. We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#vscode",
-    "href": "software.html#vscode",
-    "title": "Software",
-    "section": "VSCode",
-    "text": "VSCode\nVisual Studio Code is a free and open-source code/text editor. You can use it to edit files on the UCHC HPC system remotely. It has many useful features, including syntax highlighting, code completion, and debugging tools.\n\nUsage\n\n1. Start an interactive session\nLaunch an interactive session with the command:\nsrun --qos=general --mem=8gb --pty bash\n\n\n2. Launch VSCode and Authenticate\nOnce the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account.\n\nGitHubMicrosoft\n\n\nIn order to authenticate with a GitHub account, run the following commands:\nmodule load vscode\ncode tunnel --name mantis \nLook for the URL and authentication code in the output of the command. It will look like:\n\nTo grant access to the server, please log into https://github.com/login/device and use code &lt;authentication code&gt; to authenticate.\n\n\n\nIn order to authenticate with a Microsoft account, run the following commands:\nmodule load vscode\ncode tunnel user login --provider microsoft\ncode tunnel --name mantis \nLook for the URL and authentication code in the output of the command. It will look like:\n\nTo sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code &lt;authentication code&gt; to authenticate.\n\n\n\n\nNavigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account.\n\n\n3. Connect\nOpen VSCode on your local computer and click the Open a Remote Window icon and select Connect to Tunnel as shown below.\n\nThen select the authentication method and follow the prompts to authenticate.\n\nFinally, select the mantis tunnel to connect.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#commercial-software",
-    "href": "software.html#commercial-software",
-    "title": "Software",
-    "section": "Commercial Software",
-    "text": "Commercial Software\nThe Computational Biology Core posesses licenses for some commercial software and is available to use by any UConn or UConn Health researcher.\n\nIPA\nIngenuity Pathway Analysis from Qiagen “allows you to “quickly visualize and understand complex ‘omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.\nRequest an account here.\nLog in here\nSome training materials\n\n\nGeneious\nGeneious is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine.\nThe CBC used to provide access to a floating license but Geneious has changed their licensing model to eliminate floating licenses. The CBC has acquired a handful of licenses, valid until July 2027 to prevent disruption of researchers who have been using Geneious. If you are a UConn or UConn Health researcher and need access to Geneious, please contact the CBC at cbcsupport@helpspotmail.com. After July 2027, users will need to acquire their own license to continue using Geneious.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "software.html#virtual-machines",
-    "href": "software.html#virtual-machines",
-    "title": "Software",
-    "section": "Virtual Machines",
-    "text": "Virtual Machines\nIf you need to run something that requires a virtual machine, you can request one here.",
-    "crumbs": [
-      "Software"
+      "Getting Started"
     ]
   }
 ]
