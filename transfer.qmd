@@ -82,7 +82,7 @@ To access the UConn Health HPC file system, search for and select, the `UCHC Glo
 #### File Paths
 Navigation to your home directory mirrors the cluster file system. You can access your home directory by entering `/home/FCAM/<user>` in the **path** text field.
 
-Navigation to other directories has one minor but unintuitive difference. The root of the cluster file system is `/globus` instead of `/`. So, for example, to access the labs directory you would enter `/globus/labs` in the **Path** text field.
+Navigation to other directories has one minor but unintuitive difference. The root of the cluster file system is `/globus` instead of `/`. So, for example, to access the `/seqdata` directory you would enter `/globus/seqdata` in the **Path** text field.
 
 ![](img/globus-root.png){width=500}
 
