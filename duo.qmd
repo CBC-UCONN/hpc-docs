@@ -21,3 +21,6 @@ Note that the UCHC HPC Duo account is distinct from those you might already have
 
 ### Authentication
 When connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. **Do no approve Duo requests that you did not initiate!** If you receive a Duo request that you did not initiate, deny the request and contact us at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com).
+
+### Lockouts
+You will be locked out of Duo after 10 failed authentication attempts. If you are locked out, you must contact the UConn Health IT Service Desk through uconnprod@service-now.com or by phone at 860-679-4400.
