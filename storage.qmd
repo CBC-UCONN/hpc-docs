@@ -195,6 +195,9 @@ This system also includes a `seqdata` directory where data from `/seqdata` are m
 
 To check current usage against quotas for `/labs` and `/projects` directories [visit this link](http://usage.cam.uchc.edu/).
 
+## Running out of space?
+The computational biology core can provide consulting on how to manage your data and storage. For help contact us at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com).
+
 <!-- TODO: Is there no command that will provide this information in the terminal? -->
 <!-- On some systems, there are command like myquota which display usage info. -->
 
