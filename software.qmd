@@ -280,7 +280,8 @@ Finally, select the `mantis` tunnel to connect.
 ![](img/vscode-select-tunnel.png){width=500}
 
 
-
+### Environment Modules
+The integrated terminal in VSCode will not initialize environment modules by default. To load environment modules, you can either run `source /etc/profile` in the integrated terminal or add it to you your `~/.bashrc` file.
 
 
 ## Commercial Software
