@@ -120,7 +120,7 @@
     "href": "transfer.html",
     "title": "Tranferring Data",
     "section": "",
-    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system.\nEach is most suitable for different situations. We explain the usage of each tool below.",
+    "text": "There are several recommended approaches for transferring data to and from the UConn Health HPC file system. Each is most suitable for different situations. The table below summarizes the best use case for each tool.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -150,7 +150,17 @@
     "href": "transfer.html#sharing-files",
     "title": "Tranferring Data",
     "section": "Sharing Files",
-    "text": "Sharing Files\nFor a guide on sharing files with Globus, see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions in step 6, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the cluster file system.",
+    "text": "Sharing Files\nFiles can be shared with anyone that has a Globus account including collaborators at other institutions. For a guide on sharing files with Globus, , see this tutorial.\n\n\n\n\n\n\nNote\n\n\n\nWhen adding permissions, you generally will not need to modify the Path text field. The / in this case refers to the root of the collection and not the UCHC HPC file system.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#globus-command-line-interface",
+    "href": "transfer.html#globus-command-line-interface",
+    "title": "Tranferring Data",
+    "section": "Globus Command Line Interface",
+    "text": "Globus Command Line Interface\nThe Globus Command Line tool is available as a module that can be loaded into your environment with module load globus-cli. See the Globus CLI documentation for more information on using the command line interface.",
     "crumbs": [
       "Transferring Data"
     ]
@@ -161,6 +171,16 @@
     "title": "Tranferring Data",
     "section": "Connecting",
     "text": "Connecting\nTo connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.\n\nWindows 11Windows 10MacOs\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu.\nSelect This PC from the left pane. Then, on the File Explorer ribbon, select More &gt; Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen File Explorer from the taskbar or the Start menu\nSelect This PC from the left pane. Then, on the Computer tab, select Map network drive.\n\n\n\nIn the Drive list, select a drive letter. (Any available letter will do.)\nIn the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.\nSelect Finish.\nWhen prompted for a username and password, enter your username as CAM&lt;user&gt; and enter your CAM password.\n\n\n\n\n\nConnect to the CAM VPN if not on the UConnHealth-SECURE WiFi network.\nOpen Finder and select Go:Connect to Server from the top menu.\nEnter the address of the SMB server URL and path you want to connect to.\nIn order to automatically mount the SMB share, navigate to System Settings &gt; General &gt; Login Items & Extensions.\nUnder the Open at Login section, click the + button and\n\n\n\nSelect the mounted SMB share on the sidebar and then the directory or directories in your finder window.\n\n\n\nWhen prompted for a username and password, enter your CAM username and password.",
+    "crumbs": [
+      "Transferring Data"
+    ]
+  },
+  {
+    "objectID": "transfer.html#usage",
+    "href": "transfer.html#usage",
+    "title": "Tranferring Data",
+    "section": "Usage",
+    "text": "Usage\n\nSetup SSH keys.\nOpen FileZilla and select File:Site Manager from the top menu.\nClick New Site and enter a name for the site.\nSelect SFTP - SSH File Transfer Protocol as the protocol.\nEnter transfer.hpc.cam.uchc.edu as the host.\nSelect Key file as the logon type.\nEnter your CAM username in the User field.\nEnter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.",
     "crumbs": [
       "Transferring Data"
     ]

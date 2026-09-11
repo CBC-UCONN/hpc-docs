@@ -293,10 +293,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#transferring-files-locally" id="toc-transferring-files-locally" class="nav-link" data-scroll-target="#transferring-files-locally">Transferring Files Locally</a></li>
   <li><a href="#sharing-files" id="toc-sharing-files" class="nav-link" data-scroll-target="#sharing-files">Sharing Files</a></li>
+  <li><a href="#globus-command-line-interface" id="toc-globus-command-line-interface" class="nav-link" data-scroll-target="#globus-command-line-interface">Globus Command Line Interface</a></li>
   </ul></li>
   <li><a href="#mounting-smb-share" id="toc-mounting-smb-share" class="nav-link" data-scroll-target="#mounting-smb-share">Mounting SMB Share</a>
   <ul class="collapse">
   <li><a href="#connecting" id="toc-connecting" class="nav-link" data-scroll-target="#connecting">Connecting</a></li>
+  </ul></li>
+  <li><a href="#filezilla" id="toc-filezilla" class="nav-link" data-scroll-target="#filezilla">FileZilla</a>
+  <ul class="collapse">
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -323,14 +328,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- TODO: Add FileZilla SFTP client -->
-<p>There are several recommended approaches for transferring data to and from the UConn Health HPC file system.</p>
-<ol type="1">
-<li><a href="#secure-copy">Secure Copy through transfer node</a></li>
-<li><a href="#globus">Globus</a></li>
-<li><a href="#mounting-smb-share">Mounting SMB Share</a></li>
-</ol>
-<p>Each is most suitable for different situations. We explain the usage of each tool below.</p>
+<p>There are several recommended approaches for transferring data to and from the UConn Health HPC file system. Each is most suitable for different situations. The table below summarizes the best use case for each tool.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Tool</strong></th>
+<th><strong>Intended Use Case</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#secure-copy">Secure Copy (scp)</a></td>
+<td>Transfers of less than &lt; 10 GB. Command line interface and scripting.</td>
+</tr>
+<tr class="even">
+<td><a href="#globus">Globus</a></td>
+<td>Large data transfers of &gt; 10 GB. Highly robust. Recommended for sharing outside of UConn. Interactive user interface and command line interface options</td>
+</tr>
+<tr class="odd">
+<td><a href="#smb-share">SMB Share</a></td>
+<td>Accessing modestly sized files directly from applications running locally.</td>
+</tr>
+</tbody>
+</table>
+<!-- | [Open OnDemand](#open-ondemand)   | Transfers of less than < 10 GB. Interactive user interface. | -->
+<!-- # Open OnDemand
+Open OnDemand is a web-based interface for accessing UConn Health HPC resources including the file system. -->
 <section id="secure-copy" class="level1">
 <h1>Secure Copy</h1>
 <p>Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the <code>scp</code> command which is available in the <code>Windows PowerShell</code> or MacOS / Linux <code>Terminal</code>.</p>
@@ -396,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sharing-files" class="level2">
 <h2 class="anchored" data-anchor-id="sharing-files">Sharing Files</h2>
-<p>For a guide on sharing files with Globus, see <a href="https://docs.globus.org/guides/tutorials/manage-files/share-files/">this tutorial</a>.</p>
+<p>Files can be shared with anyone that has a Globus account including collaborators at other institutions. For a guide on sharing files with Globus, , see <a href="https://docs.globus.org/guides/tutorials/manage-files/share-files/">this tutorial</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -407,10 +430,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When adding permissions in step 6, you generally will not need to modify the <strong>Path</strong> text field. The <code>/</code> in this case refers to the root of the collection and not the cluster file system.</p>
+<p>When adding permissions, you generally will not need to modify the <strong>Path</strong> text field. The <code>/</code> in this case refers to the root of the collection and not the UCHC HPC file system.</p>
 <p><img src="img/globus-sharing.png" class="img-fluid" width="500"></p>
 </div>
 </div>
+</section>
+<section id="globus-command-line-interface" class="level2">
+<h2 class="anchored" data-anchor-id="globus-command-line-interface">Globus Command Line Interface</h2>
+<p>The Globus Command Line tool is available as a module that can be loaded into your environment with <code>module load globus-cli</code>. See the <a href="https://docs.globus.org/cli/">Globus CLI documentation</a> for more information on using the command line interface.</p>
 </section>
 </section>
 <section id="mounting-smb-share" class="level1">
@@ -520,6 +547,24 @@ Note
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="filezilla" class="level1">
+<h1>FileZilla</h1>
+<p>FileZilla is a free and open-source FTP client that supports SFTP. It is available for Windows, MacOS, and Linux. It is suitable for transferring dozens of files or tens of GB of data.</p>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<ol type="1">
+<li><a href="./connect.html#ssh-keys">Setup SSH keys</a>.</li>
+<li>Open FileZilla and select <code>File:Site Manager</code> from the top menu.</li>
+<li>Click <code>New Site</code> and enter a name for the site.</li>
+<li>Select <code>SFTP - SSH File Transfer Protocol</code> as the protocol.</li>
+<li>Enter <code>transfer.hpc.cam.uchc.edu</code> as the host.</li>
+<li>Select <code>Key file</code> as the logon type.</li>
+<li>Enter your CAM username in the <code>User</code> field.</li>
+<li>Enter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.</li>
+</ol>
+<p><img src="img/filezilla.png" class="img-fluid" width="800"></p>
 
 
 </section>
