@@ -592,7 +592,17 @@ Warning
 </section>
 <section id="environment-modules-1" class="level3">
 <h3 class="anchored" data-anchor-id="environment-modules-1">Environment Modules</h3>
-<p>The integrated terminal in VSCode will not initialize environment modules by default. To load environment modules, you can either run <code>source /etc/profile</code> in the integrated terminal or add it to you your <code>~/.bashrc</code> file.</p>
+<p>The integrated terminal in VSCode running with VSCode Tunnelswill not initialize environment modules by default.</p>
+<p>This can be resolve by running <code>source /etc/profile.d/modules.sh</code> in the integrated terminal or adding the command to your <code>~/.bashrc</code> file.</p>
+<p>Alternatively, you can configure VSCode to ensure that a login shell is used for the integrated terminal, which will automatically load environment modules. This can be done by adding the following to your settings.json file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"terminal.integrated.profiles.linux"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"bash"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"bash"</span><span class="fu">,</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"args"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"-l"</span><span class="ot">]</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="commercial-software" class="level2">
