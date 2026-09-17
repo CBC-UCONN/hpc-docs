@@ -279,7 +279,7 @@ Finally, select the `mantis` tunnel to connect.
 
 ![](img/vscode-select-tunnel.png){width=500}
 
-
+::: {.callout-important}
 ### Environment Modules
 The integrated terminal in VSCode running with VSCode Tunnelswill not initialize environment modules by default. 
 
@@ -296,6 +296,7 @@ Alternatively, you can configure VSCode to ensure that a login shell is used for
   },
 }
 ```
+:::
 
 
 ## Commercial Software
