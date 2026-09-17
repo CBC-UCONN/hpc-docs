@@ -231,7 +231,7 @@ Users can request the installation of software by [submitting a software request
 #### 1. Start an interactive session
 Launch an interactive session with the command:
 ```bash
-srun --qos=general --mem=8gb --pty bash
+srun --qos=interactive --mem=8gb --pty bash
 ```
 
 #### 2. Launch VSCode and Authenticate
