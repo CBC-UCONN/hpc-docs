@@ -233,7 +233,7 @@ This partition is available for students in courses or workshops who have been g
 ```
 :::
 
-# QOS (Quality of Service) {#qos}
+# QOS (Quality of Service) {#qos-list}
 QOS (Quality of Service) is a SLURM feature that allows for the specification of job characteristics such as scheduling priority, preemption, and resource limits. The Mantis and Xanadu clusters have different QOS options available. See below for details.
 
 ::: {.panel-tabset}
