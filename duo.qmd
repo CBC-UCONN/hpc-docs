@@ -23,4 +23,4 @@ Note that the UCHC HPC Duo account is distinct from those you might already have
 When connecting to the HPC system through any method that requires Duo authentication, you will receive a Duo authentication request on your enrolled device. Approve the request to complete the authentication process and access the HPC system. **Do no approve Duo requests that you did not initiate!** If you receive a Duo request that you did not initiate, deny the request and contact us at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com).
 
 ### Lockouts
-You will be locked out of Duo after 10 failed authentication attempts. If you are locked out, you must contact the UConn Health IT Service Desk through uconnprod@service-now.com or by phone at 860-679-4400.
+You will be locked out of Duo after 10 failed authentication attempts. If this occurs, [submit a help ticket](https://health.uconn.edu/high-performance-computing/contact/) to request assistance with unlocking the account. You will be asked to change your CAM password before the account can be unlocked which can be done with the [CAM Password Manager](https://password.cam.uchc.edu/).
