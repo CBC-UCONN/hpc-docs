@@ -862,7 +862,7 @@
     "href": "transfer.html#usage",
     "title": "Tranferring Data",
     "section": "Usage",
-    "text": "Usage\nIn order to transfer data with FileZilla:\n\nSetup SSH keys.\nOpen FileZilla and select File:Site Manager from the top menu.\nClick New Site and enter a name for the site.\nSelect SFTP - SSH File Transfer Protocol as the protocol.\nEnter transfer.hpc.cam.uchc.edu as the host.\nSelect Key file as the logon type.\nEnter your CAM username in the User field.\nEnter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.\nUnder Transfer Settings set the Maximum number of connections to 1.\nClick connect to connect to the transfer host.\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou may need to increase the timeout interval in settings to avoid repeated Duo pushes.",
+    "text": "Usage\nIn order to transfer data with FileZilla:\n\nSetup SSH keys.\nOpen FileZilla and select File:Site Manager from the top menu.\nClick New Site and enter a name for the site.\nSelect SFTP - SSH File Transfer Protocol as the protocol.\nEnter transfer.hpc.cam.uchc.edu as the host.\nSelect Key file as the logon type.\nEnter your CAM username in the User field.\nEnter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.\nUnder Transfer Settings set the Maximum number of connections to 1.\nClick connect to connect to the transfer host.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou may need to increase the timeout interval in settings to avoid repeated Duo pushes.",
     "crumbs": [
       "Transferring Data"
     ]
