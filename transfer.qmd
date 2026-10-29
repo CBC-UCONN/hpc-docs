@@ -179,6 +179,7 @@ FileZilla is a free and open-source FTP client that supports SFTP. It is availab
 
 ## Usage
 In order to transfer data with FileZilla:
+
 1. [Setup SSH keys](connect.qmd#ssh-keys).
 2. Open FileZilla and select `File:Site Manager` from the top menu.
 3. Click `New Site` and enter a name for the site.
