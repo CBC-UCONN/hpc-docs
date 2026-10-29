@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a4f3185b2d59aa25e470b6ad1635ba1d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-91a7da6787e59eb68feb248196cc437e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -554,17 +554,21 @@ Note
 <p>FileZilla is a free and open-source FTP client that supports SFTP. It is available for Windows, MacOS, and Linux. It is suitable for transferring dozens of files or tens of GB of data.</p>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
-<ol type="1">
-<li><a href="./connect.html#ssh-keys">Setup SSH keys</a>.</li>
-<li>Open FileZilla and select <code>File:Site Manager</code> from the top menu.</li>
-<li>Click <code>New Site</code> and enter a name for the site.</li>
-<li>Select <code>SFTP - SSH File Transfer Protocol</code> as the protocol.</li>
-<li>Enter <code>transfer.hpc.cam.uchc.edu</code> as the host.</li>
-<li>Select <code>Key file</code> as the logon type.</li>
-<li>Enter your CAM username in the <code>User</code> field.</li>
-<li>Enter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.</li>
-</ol>
+<p>In order to transfer data with FileZilla: 1. <a href="./connect.html#ssh-keys">Setup SSH keys</a>. 2. Open FileZilla and select <code>File:Site Manager</code> from the top menu. 3. Click <code>New Site</code> and enter a name for the site. 4. Select <code>SFTP - SSH File Transfer Protocol</code> as the protocol. 5. Enter <code>transfer.hpc.cam.uchc.edu</code> as the host. 6. Select <code>Key file</code> as the logon type. 7. Enter your CAM username in the <code>User</code> field. 8. Enter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys. 9. Under <code>Transfer Settings</code> set the <code>Maximum number of connections</code> to 1. 10. Click connect to connect to the transfer host.</p>
 <p><img src="img/filezilla.png" class="img-fluid" width="800"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may need to increase the timeout interval in settings to avoid repeated Duo pushes.</p>
+</div>
+</div>
 
 
 </section>
