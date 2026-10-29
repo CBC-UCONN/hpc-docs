@@ -17,7 +17,7 @@ Open OnDemand is a web-based interface for accessing UConn Health HPC resources 
 
 
 # Secure Copy
-Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the `scp` command which is available in the `Windows PowerShell` or MacOS / Linux `Terminal`. 
+Secure copy is ideal for transferring small amounts of data. A secure copy can be performed with the `scp` command which is available in the `Windows PowerShell` or MacOS / Linux `Terminal`.
 
 This command should only be used to transfer data to and from a transfer node which is a dedicated node for transferring data. The transfer nodes have accesses to the same file systems as the login and compute nodes. We recommend using the `transfer.hpc.cam.uchc.edu` URL. Transferring data through this URL requires that you have [setup SSH keys](connect.qmd#ssh-keys) and that you be connected to the UConnHealth-SECURE WiFi or the CAM VPN.
 
@@ -37,15 +37,15 @@ To transfer data from the UConn Health HPC file system to a local computer with 
 
 ```bash
 scp <user>@transfer.hpc.cam.uchc.edu:<remote_file_path> <local_file_path>
-```   
+```
 
-Where `<user` is your CAM username, `<remote_file_path>` is the path to the file on the UConn Health HPC file system, and `<local_file_path>` is the path on your local computer where you want to copy the file. Simply use a `.` for `<local_file_path>` to copy the file to your current working directory. 
+Where `<user` is your CAM username, `<remote_file_path>` is the path to the file on the UConn Health HPC file system, and `<local_file_path>` is the path on your local computer where you want to copy the file. Simply use a `.` for `<local_file_path>` to copy the file to your current working directory.
 
 
 ### Transferring a Directory
 In order to transfer a directory, you will need to use the `-r` flag to recursively copy all files and subdirectories. For example, to copy a directory from your local computer to the UConn Health HPC file system:
 
-```bash 
+```bash
 scp -r <local_directory_path> <user>@transfer.hpc.cam.uchc.edu:<remote_path>
 ```
 
@@ -69,7 +69,7 @@ The URL for this host is `transfer.cam.uchc.edu`.
 
 
 # Globus
-[Globus](https://globus.org) is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator. 
+[Globus](https://globus.org) is well suited for large file transfers, sharing files, and for transferring between institutions such as when you need to share files with a collaborator.
 
 ## Getting Started
 Globus has excellent [documentation](https://docs.globus.org/guides/). We recommend starting with [this tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) which contains almost everything you need to know to use Globus in addition to making note of the specifics below.
@@ -90,7 +90,7 @@ Navigation to other directories has one minor but unintuitive difference. The ro
 
 ![](img/globus-root.png){width=500}
 
-## Transferring Files Locally 
+## Transferring Files Locally
 In order to transfer files to a local computer, you will need to install the [Globus Connect Personal](https://www.globus.org/globus-connect-personal) application.
 
 ## Sharing Files
@@ -107,9 +107,9 @@ The Globus Command Line tool is available as a module that can be loaded into yo
 
 
 # Mounting SMB Share
-SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the UConn Health HPC file system. 
+SMB is a network file sharing protocol that allows applications such as your file manager to read and write to files on a remote server as if they were local files. IGV or your browser are other examples of applications which you may want to use to read files directly on the UConn Health HPC file system.
 
-To connect to the UConn Health HPC file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs. 
+To connect to the UConn Health HPC file system using SMB and mount one of the directories, you will need to determine the URL or IP address and path of the directory you want to mount. Below is a list of the most commonly used directories and their URLs or IPs.
 
 | Directory       | Windows                                   | MacOS / Linux                                 |
 |-----------------|-------------------------------------------|---------------------------------------------  |
@@ -125,7 +125,7 @@ Replace `<user` with your CAM usern`<path>` with the specific subdirectory path 
 The `df -h` command can be used to list all of file systems and their URLs.
 
 ## Connecting
-To connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system. 
+To connect to the UConn Health HPC file system using SMB, you will need to follow the instructions below for your specific operating system.
 
 
 ::: {.panel-tabset}
@@ -139,21 +139,21 @@ To connect to the UConn Health HPC file system using SMB, you will need to follo
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
-7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
+7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password.
 
 ![](img/map-network-drive-username.png){width=300}
 
 ## Windows 10
 1. Connect to the [CAM VPN](connect.qmd#cam-vpn) if not on the UConnHealth-SECURE WiFi network.
 2. Open File Explorer from the taskbar or the Start menu
-3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.  
+3. Select This PC from the left pane. Then, on the Computer tab, select Map network drive.
 
 ![](img/map-network-drive-windows10.png){width=400}
 
 4. In the Drive list, select a drive letter. (Any available letter will do.)
 5. In the Folder box, enter the SMB server URL and path you want to mount from the table above. To connect every time you sign in to your PC, select Reconnect at sign-in.
 6. Select Finish.
-7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password. 
+7. When prompted for a username and password, enter your username as CAM\<user> and enter your CAM password.
 
 ![](img/map-network-drive-username.png){width=300}
 
@@ -162,11 +162,11 @@ To connect to the UConn Health HPC file system using SMB, you will need to follo
 2. Open Finder and select `Go:Connect to Server` from the top menu.
 3. Enter the address of the SMB server URL and path you want to connect to.
 4. In order to automatically mount the SMB share, navigate to `System Settings` > `General` > `Login Items & Extensions`.
-5. Under the `Open at Login` section, click the `+` button and 
+5. Under the `Open at Login` section, click the `+` button and
 
 ![](img/add-login-item-mac1.png){width=500}
 
-6. Select the mounted SMB share on the sidebar and then the directory or directories in your finder window. 
+6. Select the mounted SMB share on the sidebar and then the directory or directories in your finder window.
 
 ![](img/add-login-item-mac2.png){width=500}
 
@@ -178,6 +178,7 @@ To connect to the UConn Health HPC file system using SMB, you will need to follo
 FileZilla is a free and open-source FTP client that supports SFTP. It is available for Windows, MacOS, and Linux. It is suitable for transferring dozens of files or tens of GB of data.
 
 ## Usage
+In order to transfer data with FileZilla:
 1. [Setup SSH keys](connect.qmd#ssh-keys).
 2. Open FileZilla and select `File:Site Manager` from the top menu.
 3. Click `New Site` and enter a name for the site.
@@ -186,5 +187,11 @@ FileZilla is a free and open-source FTP client that supports SFTP. It is availab
 6. Select `Key file`  as the logon type.
 7. Enter your CAM username in the `User` field.
 8. Enter or browse to the path of your private key file. This is the file that you generated when you setup SSH keys.
+9. Under `Transfer Settings` set the `Maximum number of connections` to 1.
+10. Click connect to connect to the transfer host.
 
 ![](img/filezilla.png){width=800}
+
+::: {.callout-note}
+You may need to increase the timeout interval in settings to avoid repeated Duo pushes.
+:::
