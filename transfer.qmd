@@ -193,6 +193,8 @@ In order to transfer data with FileZilla:
 
 ![](img/filezilla.png){width=800}
 
+![](img/filezilla2.png){width=800}
+
 ::: {.callout-note}
 You may need to increase the timeout interval in settings to avoid repeated Duo pushes.
 :::
