@@ -283,7 +283,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#important-caveat" id="toc-important-caveat" class="nav-link" data-scroll-target="#important-caveat">Important Caveat</a></li>
   </ul></li>
   <li><a href="#compiling-software-yourself" id="toc-compiling-software-yourself" class="nav-link" data-scroll-target="#compiling-software-yourself">Compiling software yourself</a></li>
-  <li><a href="#singularity" id="toc-singularity" class="nav-link" data-scroll-target="#singularity">Singularity</a></li>
+  <li><a href="#apptainersingularity" id="toc-apptainersingularity" class="nav-link" data-scroll-target="#apptainersingularity">Apptainer/Singularity</a>
+  <ul class="collapse">
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  </ul></li>
   <li><a href="#conda" id="toc-conda" class="nav-link" data-scroll-target="#conda">Conda</a>
   <ul class="collapse">
   <li><a href="#installing-conda" id="toc-installing-conda" class="nav-link" data-scroll-target="#installing-conda">Installing Conda</a></li>
@@ -292,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#request-software-installation" id="toc-request-software-installation" class="nav-link" data-scroll-target="#request-software-installation">Request Software Installation</a></li>
   <li><a href="#vscode" id="toc-vscode" class="nav-link" data-scroll-target="#vscode">VSCode</a>
   <ul class="collapse">
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#usage-1" id="toc-usage-1" class="nav-link" data-scroll-target="#usage-1">Usage</a></li>
   </ul></li>
   <li><a href="#commercial-software" id="toc-commercial-software" class="nav-link" data-scroll-target="#commercial-software">Commercial Software</a>
   <ul class="collapse">
@@ -409,19 +412,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>And it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.</p>
 <p>Some software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with <a href="#singularity">Singularity</a> or use isolated environments created with <a href="#conda">Conda</a></p>
 </section>
-<section id="singularity" class="level2">
-<h2 class="anchored" data-anchor-id="singularity">Singularity</h2>
-<!-- TODO: Replace this section with Apptainer -->
-<p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis).</p>
-<p>Singularity is in your <code>PATH</code> by default on Mantis so it can be run without loading a module.</p>
-<p>To get an existing container from a repository, you use the command <code>singularity pull &lt;URL&gt;</code>. For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will create the file <code>fastqc:0.12.1--hdfd78af_0</code>, a singularity image (some image files will have the extension <code>.sif</code>). This containst the package <code>fastqc</code>.</p>
-<p>To run a command (e.g.&nbsp;<code>fastqc --help</code>) inside the container, particularly when submitting SLURM batch scripts, you typically you will use <code>singularity exec &lt;container&gt; &lt;command&gt;</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec fastqc:0.12.1--hdfd78af_0 fastqc <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You can also start up a shell inside the container and explore interactively with <code>singularity shell &lt;container&gt;</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See <a href="https://singularity-tutorial.github.io/">here</a> for a more in-depth tutorial.</p>
+<section id="apptainersingularity" class="level2">
+<h2 class="anchored" data-anchor-id="apptainersingularity">Apptainer/Singularity</h2>
+<p>Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Apptainer, formerly known as Singularity, is a container platform that is well-suited for HPC environments. Apptainer can also use Docker images (Docker is the other major containerization platform and unavailable on Mantis). The <code>apptainer</code> and <code>singularity</code> commands are completely interchangable in nearly all cases.</p>
+<section id="usage" class="level3">
+<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<p>Load Apptainer into your <code>PATH</code> with <code>module load apptainer</code>.</p>
+<p>To get an existing container from a repository, you use the command <code>apptainer pull &lt;URL&gt;</code>. For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will create an image file <code>fastqc:0.12.1--hdfd78af_0</code>(some image files will have the extension <code>.sif</code>). This contains the package <code>fastqc</code>.</p>
+<p>To run a command (e.g.&nbsp;<code>fastqc --help</code>) inside the container, particularly when submitting SLURM batch scripts, you typically you will use <code>apptainer exec &lt;container&gt; &lt;command&gt;</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec fastqc:0.12.1--hdfd78af_0 fastqc <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also start up a shell inside the container and explore interactively with <code>apptainer shell &lt;container&gt;</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> shell fastqc:0.12.1--hdfd78af_0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>See <a href="https://apptainer.org/docs/user/main/quick_start.html">here</a> for a more in-depth tutorial as well as comprehensive documentation.</p>
+</section>
 </section>
 <section id="conda" class="level2">
 <h2 class="anchored" data-anchor-id="conda">Conda</h2>
@@ -494,7 +499,7 @@ Note
 <section id="creating-an-environment" class="level4">
 <h4 class="anchored" data-anchor-id="creating-an-environment">Creating an Environment</h4>
 <p>Once Miniforge is installed, you can create environments with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="op">&lt;</span>environment name<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="op">&lt;</span>environment name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Replace <code>&lt;environment name&gt;</code> with the desired name for your environment.</p>
 <p>Confirm changes when prompted.</p>
 </section>
@@ -544,8 +549,8 @@ Warning
 <section id="vscode" class="level2">
 <h2 class="anchored" data-anchor-id="vscode">VSCode</h2>
 <p><a href="https://code.visualstudio.com/">Visual Studio Code</a> is a free and open-source code/text editor. You can use it to edit files on the UCHC HPC system remotely. It has many useful features, including syntax highlighting, code completion, and debugging tools.</p>
-<section id="usage" class="level3">
-<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<section id="usage-1" class="level3">
+<h3 class="anchored" data-anchor-id="usage-1">Usage</h3>
 <section id="start-an-interactive-session" class="level4">
 <h4 class="anchored" data-anchor-id="start-an-interactive-session">1. Start an interactive session</h4>
 <p>Launch an interactive session with the command:</p>
@@ -560,7 +565,7 @@ Warning
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>In order to authenticate with a GitHub account, run the following commands:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load vscode</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Look for the URL and authentication code in the output of the command. It will look like:</p>
 <blockquote class="blockquote">
 <p>To grant access to the server, please log into https://github.com/login/device and use code &lt;authentication code&gt; to authenticate.</p>
@@ -570,7 +575,7 @@ Warning
 <p>In order to authenticate with a Microsoft account, run the following commands:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load vscode</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel user login <span class="at">--provider</span> microsoft</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> tunnel <span class="at">--name</span> mantis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Look for the URL and authentication code in the output of the command. It will look like:</p>
 <blockquote class="blockquote">
 <p>To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code &lt;authentication code&gt; to authenticate.</p>
