@@ -3,9 +3,9 @@ title: Software
 ---
 
 ## Environment Modules
-Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).  
+Environment modules provide a convenient way of using most of the installed software on the HPC system. Environment modules are a dynamic way to modify your shell environment, allowing you to easily load and unload different software packages, compilers, and libraries without conflicts. They work by setting up the necessary environment variables (like PATH, LD_LIBRARY_PATH, and MANPATH).
 
-Below is a list of commonly used commands, where `<module>` is the target module. 
+Below is a list of commonly used commands, where `<module>` is the target module.
 
 | Module Command           | Description |
 |--------------------------|-------------|
@@ -61,7 +61,7 @@ All of the modules available on Xanadu are for software compiled to run on Xanad
 
 ## Compiling software yourself
 
-Some software is pretty easy to install. See this classic softare in population genetics, [psmc](https://github.com/lh3/psmc). 
+Some software is pretty easy to install. See this classic softare in population genetics, [psmc](https://github.com/lh3/psmc).
 
 All you have to do to install are the following commands (the instructions are in the README.md file):
 
@@ -72,55 +72,55 @@ cd psmc
 make; (cd utils; make)
 ```
 
-And it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users. 
+And it should create an executable binary. Some software is slightly more complicated, but still manageable by novice to intermediate users.
 
 Some software, however can be very difficult, with a complex chain of dependencies, in which case we often rely on containerization with [Singularity](#singularity) or use isolated environments created with [Conda](#conda)
 
-## Singularity
-<!-- TODO: Replace this section with Apptainer -->
-Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Singularity is a container platform that is well-suited for HPC environments and can additionally use Docker images (Docker is the other major containerization platform and unavailable on Mantis). 
+## Apptainer/Singularity
+Reproducing environments and managing dependencies is difficult problem. Containerization is a powerful solution, allowing users to package software and its dependencies into a single, portable unit. Apptainer, formerly known as Singularity, is a container platform that is well-suited for HPC environments. Apptainer can also use Docker images (Docker is the other major containerization platform and unavailable on Mantis). The `apptainer` and `singularity` commands are completely interchangable in nearly all cases.
 
-Singularity is in your `PATH` by default on Mantis so it can be run without loading a module.  
+### Usage
+Load Apptainer into your `PATH` with `module load apptainer`.
 
-To get an existing container from a repository, you use the command `singularity pull <URL>`. For example:
-
-```bash
-singularity pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0
-```
-This will create the file `fastqc:0.12.1--hdfd78af_0`, a singularity image (some image files will have the extension `.sif`). This containst the package `fastqc`. 
-
-To run a command (e.g. `fastqc --help`) inside the container, particularly when submitting SLURM batch scripts, you typically you will use `singularity exec <container> <command>`:
-
-```bash 
-singularity exec fastqc:0.12.1--hdfd78af_0 fastqc --help
-```
-
-You can also start up a shell inside the container and explore interactively with `singularity shell <container>`. 
+To get an existing container from a repository, you use the command `apptainer pull <URL>`. For example:
 
 ```bash
-singularity shell fastqc:0.12.1--hdfd78af_0
+apptainer pull https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0
+```
+This will create an image file `fastqc:0.12.1--hdfd78af_0`(some image files will have the extension `.sif`). This contains the package `fastqc`.
+
+To run a command (e.g. `fastqc --help`) inside the container, particularly when submitting SLURM batch scripts, you typically you will use `apptainer exec <container> <command>`:
+
+```bash
+apptainer exec fastqc:0.12.1--hdfd78af_0 fastqc --help
 ```
 
-See [here](https://singularity-tutorial.github.io/) for a more in-depth tutorial. 
+You can also start up a shell inside the container and explore interactively with `apptainer shell <container>`.
+
+```bash
+apptainer shell fastqc:0.12.1--hdfd78af_0
+```
+
+See [here](https://apptainer.org/docs/user/main/quick_start.html) for a more in-depth tutorial as well as comprehensive documentation.
 
 
 ## Conda
 Conda is a package and environment manager that allows users to install and run software in isolated environments. It is particularly useful for software with complicated dependencies that may span multiple languages.
 
-When users install software with conda the software and dependencies are downloaded from one or more repositories, known as *channels*. 
+When users install software with conda the software and dependencies are downloaded from one or more repositories, known as *channels*.
 
 ::: {.callout-warning}
-Some `conda` commands utilize a lot of CPU which can negatively impact other users if run on login nodes. Please refrain from running conda command such as `conda install`, `conda update`, or `conda create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.  
+Some `conda` commands utilize a lot of CPU which can negatively impact other users if run on login nodes. Please refrain from running conda command such as `conda install`, `conda update`, or `conda create` on login nodes. Instead, use an [interactive session](running.qmd#interactive-job) or a [batch job](running.qmd#batch-job-submission) to run these commands. Any long-running, resource-intensive processes running on login nodes may be terminated without notice.
 :::
 
 ### Installing Conda
 Conda is distributed in many ways (e.g. anaconda, miniconda), but we ask our users to install the [`Miniforge`](https://github.com/conda-forge/miniforge) distribution.
 
-Miniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the `conda-forge` channel by default. `conda-forge` is free and community-maintained. Other distributions are configured to use the `defaults` channel. While `defaults` is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use. 
+Miniforge is a lightweight, minimalist installation of Conda. Importantly, Miniforge only uses the `conda-forge` channel by default. `conda-forge` is free and community-maintained. Other distributions are configured to use the `defaults` channel. While `defaults` is not protected by a paywall, it is operated by Anaconda Inc, a for-profit entity and is not free to use.
 
 #### Start interactive session
 
-To get the Miniforge conda distribution first start an interactive session. 
+To get the Miniforge conda distribution first start an interactive session.
 
 ```bash
 srun --qos=general --mem=8gb --pty bash
@@ -154,22 +154,22 @@ source ~/.bashrc
 :::
 
 
-#### Base Envirionment 
+#### Base Envirionment
 By default, conda creates a "base" environment when it is installed. This environment contains the core conda packages and tools. It is generally recommended to avoid installing additional packages into the base environment to keep it clean and stable. You can prevent the base environment from being activated automatically when you start a new shell session by running the following command:
 ```bash
 conda config --set auto_activate false
-``` 
+```
 This only needs to be run one time. After running this command, the base environment will not be activated automatically in new shell sessions.
 
 
 ### Using Conda
-It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages. 
+It is recommended to create separate environments for different projects or sets of packages to avoid conflicts and to avoid installing packages into the base environment. Below are the basic commands for creating environments, activating them, and installing packages.
 
 #### Creating an Environment
 Once Miniforge is installed, you can create environments with:
 
 ```bash
-conda create -n <environment name> 
+conda create -n <environment name>
 ```
 Replace `<environment name>` with the desired name for your environment.
 
@@ -197,7 +197,7 @@ conda deactivate
 
 #### Installing Packages
 In order to install packages into a Conda environment, you first need to activate the environment (see above).
-Once activated, packages can be installed with: 
+Once activated, packages can be installed with:
 
 ```bash
 conda install <package name>
@@ -214,14 +214,14 @@ To see a list of installed packages in the current environment, run:
 conda list
 ```
 :::{.callout-warning}
-Please avoid using the `defaults` channel, or any channel that is not free. `conda-forge` and `bioconda` are free, community maintained channels that should fit the needs of most users. 
+Please avoid using the `defaults` channel, or any channel that is not free. `conda-forge` and `bioconda` are free, community maintained channels that should fit the needs of most users.
 :::
 
 #### Mamba
 The `mamba` command, a faster drop in replacement for `conda`, will also by installed with Miniforge. We encourage the use of `mamba` in place of any `conda` commands. No changes to the syntax are necessary, simply replace `conda` with `mamba`.
 
 ## Request Software Installation
-Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/). We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda. 
+Users can request the installation of software by [submitting a software request](https://bioinformatics.uconn.edu/contact-us/software-database-request/). We can create global environment modules, help you compile something in your home directory, or if you need, help you get a singularity container running or set up conda.
 
 
 ## VSCode
@@ -235,7 +235,7 @@ srun --qos=interactive --mem=8gb --pty bash
 ```
 
 #### 2. Launch VSCode and Authenticate
-Once the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account. 
+Once the interactive session has started, you can start VSCode and authenticate with a GitHub or Microsoft account.
 
 ::: {.panel-tabset}
 ##### GitHub
@@ -243,7 +243,7 @@ In order to authenticate with a GitHub account, run the following commands:
 
 ```bash
 module load vscode
-code tunnel --name mantis 
+code tunnel --name mantis
 ```
 
 Look for the URL and authentication code in the output of the command. It will look like:
@@ -255,7 +255,7 @@ In order to authenticate with a Microsoft account, run the following commands:
 ```bash
 module load vscode
 code tunnel user login --provider microsoft
-code tunnel --name mantis 
+code tunnel --name mantis
 ```
 
 Look for the URL and authentication code in the output of the command. It will look like:
@@ -264,10 +264,10 @@ Look for the URL and authentication code in the output of the command. It will l
 
 :::
 
-Navigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account. 
+Navigate to the URL in your web browser and enter the code provided. You will be prompted to log in with your GitHub or Microsoft account account.
 
 #### 3. Connect
-Open VSCode on your local computer and click the `Open a Remote Window` icon and select `Connect to Tunnel` as shown below. 
+Open VSCode on your local computer and click the `Open a Remote Window` icon and select `Connect to Tunnel` as shown below.
 
 ![](img/vscode-tunnel.png){width=600}
 
@@ -281,11 +281,11 @@ Finally, select the `mantis` tunnel to connect.
 
 ::: {.callout-important}
 ### Environment Modules
-The integrated terminal in VSCode running with VSCode Tunnelswill not initialize environment modules by default. 
+The integrated terminal in VSCode running with VSCode Tunnelswill not initialize environment modules by default.
 
 This can be resolve by running `source /etc/profile.d/modules.sh` in the integrated terminal or adding the command to your `~/.bashrc` file.
 
-Alternatively, you can configure VSCode to ensure that a login shell is used for the integrated terminal, which will automatically load environment modules. This can be done by adding the following to your settings.json file: 
+Alternatively, you can configure VSCode to ensure that a login shell is used for the integrated terminal, which will automatically load environment modules. This can be done by adding the following to your settings.json file:
 ```json
 {
   "terminal.integrated.profiles.linux": {
@@ -307,7 +307,7 @@ The Computational Biology Core posesses licenses for some commercial software an
 
 Ingenuity Pathway Analysis from Qiagen "allows you to “quickly visualize and understand complex ‘omics data and perform insightful data analysis and interpretation by placing your experimental results within the context of biological systems”.
 
-Request an account [here](https://bioinformatics.uconn.edu/ipa_registration/). 
+Request an account [here](https://bioinformatics.uconn.edu/ipa_registration/).
 
 Log in [here](https://apps.ingenuity.com/ingsso/login?service=https%3A%2F%2Fanalysis.ingenuity.com%2Fpa%2Flogin%2Fcas)
 
@@ -317,9 +317,9 @@ Log in [here](https://apps.ingenuity.com/ingsso/login?service=https%3A%2F%2Fanal
 
 [Geneious](https://www.geneious.com/) is a software package which allows you to run many common bioinformatic workflows in a graphical user interface. It runs on your local machine.
 
-The CBC used to provide access to a floating license but Geneious has changed their licensing model to eliminate floating licenses. The CBC has acquired a handful of licenses, valid until July 2027 to prevent disruption of researchers who have been using Geneious. If you are a UConn or UConn Health researcher and need access to Geneious, please contact the CBC at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com). After July 2027, users will need to acquire their own license to continue using Geneious. 
+The CBC used to provide access to a floating license but Geneious has changed their licensing model to eliminate floating licenses. The CBC has acquired a handful of licenses, valid until July 2027 to prevent disruption of researchers who have been using Geneious. If you are a UConn or UConn Health researcher and need access to Geneious, please contact the CBC at [cbcsupport@helpspotmail.com](mailto:cbcsupport@helpspotmail.com). After July 2027, users will need to acquire their own license to continue using Geneious.
 
 
 ## Virtual Machines
 
-If you need to run something that requires a virtual machine, you can request one [here](https://health.uconn.edu/high-performance-computing/contact/). 
+If you need to run something that requires a virtual machine, you can request one [here](https://health.uconn.edu/high-performance-computing/contact/).
